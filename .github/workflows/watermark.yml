@@ -46,3 +46,26 @@ jobs:
           else
             echo "没有检测到新生成的水印图片，跳过提交。"
           fi
+# --- 新增步骤：安装依赖并渲染学术静态网页 ---
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.x'
+
+    - name: Install Build Dependencies
+      run: |
+        pip install markdown pyyaml
+
+    - name: Build Academic HTML & Feeds
+      env:
+        SITE_URL: "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}"
+      run: |
+        python scripts/build_academic_pages.py
+
+    - name: Deploy Academic Pages to GitHub Pages
+      uses: peaceiris/actions-gh-pages@v3
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        publish_dir: ./public
+        publish_branch: gh-pages
+        keep_files: false
