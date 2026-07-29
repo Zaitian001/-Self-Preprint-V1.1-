@@ -268,3 +268,45 @@ def build():
 
 if __name__ == "__main__":
     build()
+    # --- 新增：生成 BibTeX 与 RIS 引用文件 ---
+    BIB_DIR = OUTPUT_DIR / "bib"
+    BIB_DIR.mkdir(exist_ok=True)
+
+    for p in papers:
+        # 1. 生成 BibTeX (.bib)
+        bib_content = f"""@article{{selfpreprint_{p['id']},
+  author = {{{p['authors']}}},
+  title = {{{p['title']}}},
+  journal = {{Self-Preprint Repository}},
+  year = {{{p['date'][:4]}}},
+  url = {{{p['url']}}},
+  note = {{物理锚定存证于纸币序列号: {currency_info.get('serial', 'N/A')}}}
+}}
+"""
+        with open(BIB_DIR / f"{p['id']}.bib", "w", encoding="utf-8") as f:
+            f.write(bib_content)
+
+        # 2. 生成 RIS (.ris) - 通用引文格式
+        ris_content = f"""TY  - JOUR
+AU  - {p['authors']}
+TI  - {p['title']}
+PY  - {p['date'][:4]}
+DA  - {p['date']}
+UR  - {p['url']}
+ER  - 
+"""
+        with open(BIB_DIR / f"{p['id']}.ris", "w", encoding="utf-8") as f:
+            f.write(ris_content)
+
+    # 3. 生成汇总的 all.bib（方便批量导入）
+    with open(BIB_DIR / "all.bib", "w", encoding="utf-8") as f:
+        for p in papers:
+            f.write(f"""@article{{selfpreprint_{p['id']},
+  author = {{{p['authors']}}},
+  title = {{{p['title']}}},
+  journal = {{Self-Preprint Repository}},
+  year = {{{p['date'][:4]}}},
+  url = {{{p['url']}}}
+}}
+""")
+    print(f"[SUCCESS] 已生成 {len(papers)} 个 BibTeX/RIS 引用文件。")
