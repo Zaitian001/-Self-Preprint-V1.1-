@@ -1,3 +1,5 @@
+# 在文件开头的配置区域，加入这行代码
+GOOGLE_SITE_VERIFICATION = '<meta name="google-site-verification" content="BSjHPGpHcG-RyXW56X9T0TZheqNtw1Ew3cIDhJnwzFU" />'
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
