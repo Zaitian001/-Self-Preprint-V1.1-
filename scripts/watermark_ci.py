@@ -1,5 +1,16 @@
+#!/usr/bin/env python3
+# -*- coding: utf-8 -*-
+
+"""
+Self-Preprint V1.2 - Watermark Generator with JSON Proof
+为每篇论文生成防伪水印图，并同时生成 JSON 存证文件。
+JSON 文件包含论文 ID、SHA-256 哈希、纸币序列号及生成时间戳。
+"""
+
 import hashlib
 import os
+import json
+import time
 from PIL import Image, ImageDraw, ImageFont, ImageEnhance
 
 
@@ -93,28 +104,43 @@ def main():
 
     # 遍历 PREPRINTS 目录下的所有 Markdown 论文
     for filename in os.listdir(preprints_dir):
-        if filename.endswith(".md"):
-            paper_id = os.path.splitext(filename)[0]  # 例如 "CN-HB00000001"
-            paper_path = os.path.join(preprints_dir, filename)
+        if not filename.endswith(".md"):
+            continue
 
-            raw_img_name = f"{paper_id}_raw.jpg"
-            raw_img_path = os.path.join(raw_dir, raw_img_name)
-            output_img_path = os.path.join(output_dir, f"{paper_id}.jpg")
+        paper_id = os.path.splitext(filename)[0]  # 例如 "CN-HB00000001" 或 "DW58553901"
+        paper_path = os.path.join(preprints_dir, filename)
 
-            # 1. 检查对应的原始纸币图片是否存在
-            if not os.path.exists(raw_img_path):
-                print(
-                    f"⚠️ 警告: 发现论文 {filename}，但未在 '{raw_dir}' 中找到对应的原始纸币图 {raw_img_name}。跳过。"
-                )
-                continue
+        raw_img_name = f"{paper_id}_raw.jpg"
+        raw_img_path = os.path.join(raw_dir, raw_img_name)
+        output_img_path = os.path.join(output_dir, f"{paper_id}.jpg")
+        output_json_path = os.path.join(output_dir, f"{paper_id}.json")
 
-            # 2. 检查水印图是否已经生成。若已存在，我们依然重新计算，防止论文内容被更新后水印未同步。
-            print(f"\n⚡ 正在处理: {filename} <--> {raw_img_name}")
-            paper_hash = calculate_sha256(paper_path)
-            print(f"-> 论文 SHA-256: {paper_hash}")
+        # 1. 检查对应的原始纸币图片是否存在
+        if not os.path.exists(raw_img_path):
+            print(
+                f"⚠️ 警告: 发现论文 {filename}，但未在 '{raw_dir}' 中找到对应的原始纸币图 {raw_img_name}。跳过。"
+            )
+            continue
 
-            # 3. 生成水印
-            apply_watermark(raw_img_path, output_img_path, paper_hash)
+        # 2. 计算论文哈希
+        print(f"\n⚡ 正在处理: {filename} <--> {raw_img_name}")
+        paper_hash = calculate_sha256(paper_path)
+        print(f"-> 论文 SHA-256: {paper_hash}")
+
+        # 3. 生成水印图片
+        apply_watermark(raw_img_path, output_img_path, paper_hash)
+
+        # 4. 生成对应的 JSON 存证文件（供后续学术页面构建使用）
+        serial = raw_img_name.replace("_raw.jpg", "")  # 提取纸币序列号
+        json_data = {
+            "paper_id": paper_id,
+            "hash": paper_hash,
+            "serial": serial,
+            "generated_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+        }
+        with open(output_json_path, "w", encoding="utf-8") as f:
+            json.dump(json_data, f, indent=2, ensure_ascii=False)
+        print(f"✓ 成功生成存证 JSON: {output_json_path}")
 
 
 if __name__ == "__main__":
