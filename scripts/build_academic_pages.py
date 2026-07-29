@@ -87,7 +87,7 @@ def generate_paper_html(meta: dict, body_html: str, paper_id: str, currency_data
     abstract = meta.get("abstract", "")
     pdf_filename = meta.get("pdf", f"{paper_id}.pdf")
     
-    # 物理防伪信息
+    # 物理防伪信息（从 JSON 或直接传入）
     serial = currency_data.get("serial", "N/A")
     currency_hash = currency_data.get("hash", "N/A")
     img_rel_path = currency_data.get("img_path", "")
@@ -106,7 +106,7 @@ def generate_paper_html(meta: dict, body_html: str, paper_id: str, currency_data
     highwire_meta_str = "\n    ".join(highwire_tags)
     authors_str = ", ".join(authors_list)
 
-    # 纸币存证卡片 HTML
+    # 纸币存证卡片 HTML（如果图片存在则显示）
     currency_card_html = f"""
     <div class="currency-card">
         <div class="card-header">
@@ -137,7 +137,7 @@ def generate_paper_html(meta: dict, body_html: str, paper_id: str, currency_data
         .meta-line {{ font-size: 0.95rem; color: #586069; margin-bottom: 0.5rem; }}
         .abstract {{ background: #f6f8fa; border-left: 4px solid #0366d6; padding: 1rem 1.2rem; margin: 1.5rem 0; font-size: 0.95rem; }}
         .currency-card {{ background: #f0f7ff; border: 1px solid #c8e1ff; border-radius: 8px; padding: 1.2rem; margin: 2rem 0; }}
-        .currency-card .card-header {{ display: flex; justify-space-between; align-items: center; border-bottom: 1px dashed #b4d5ff; padding-bottom: 0.5rem; margin-bottom: 1rem; }}
+        .currency-card .card-header {{ display: flex; justify-space-between: align-items: center; border-bottom: 1px dashed #b4d5ff; padding-bottom: 0.5rem; margin-bottom: 1rem; }}
         .badge {{ background: #28a745; color: white; padding: 0.2rem 0.6rem; border-radius: 12px; font-size: 0.8rem; font-weight: bold; }}
         .serial {{ font-size: 0.9rem; color: #0366d6; }}
         .currency-img {{ max-width: 100%; height: auto; border-radius: 4px; border: 1px solid #d1d5da; margin-bottom: 0.8rem; }}
@@ -153,7 +153,7 @@ def generate_paper_html(meta: dict, body_html: str, paper_id: str, currency_data
         <div class="meta-line"><strong>作者:</strong> {authors_str}</div>
         <div class="meta-line"><strong>发布日期:</strong> {date_str}</div>
         <div class="meta-line"><strong>标识号:</strong> {paper_id}</div>
-        {f'<a href="../pdf/{pdf_filename}" class="pdf-btn" target="_blank">📄 下载 PDF 全文</a>' if os.path.exists(BASE_DIR / "public" / "pdf" / pdf_filename) else ''}
+        {f'<a href="../pdf/{pdf_filename}" class="pdf-btn" target="_blank">📄 下载 PDF 全文</a>' if (BASE_DIR / "public" / "pdf" / pdf_filename).exists() else ''}
     </header>
 
     {currency_card_html}
@@ -173,6 +173,8 @@ def build():
     OUTPUT_DIR.mkdir(exist_ok=True)
     (OUTPUT_DIR / "preprints").mkdir(exist_ok=True)
     (OUTPUT_DIR / "currency").mkdir(exist_ok=True)
+    # 创建 pdf 目录，如果将来有 PDF 可以存放
+    (OUTPUT_DIR / "pdf").mkdir(exist_ok=True)
 
     papers = []
     
@@ -193,18 +195,26 @@ def build():
 
         # 获取防伪纸币信息与关联图片
         currency_info = {"serial": "N/A", "hash": "N/A", "img_path": ""}
+        
+        # 1. 尝试读取 JSON 存证文件
         reg_json = REGISTRY_DIR / f"{paper_id}.json"
         if reg_json.exists():
-            with open(reg_json, "r", encoding="utf-8") as rf:
-                c_data = json.load(rf)
-                currency_info["serial"] = c_data.get("serial", "N/A")
-                currency_info["hash"] = c_data.get("hash", "N/A")
+            try:
+                with open(reg_json, "r", encoding="utf-8") as rf:
+                    c_data = json.load(rf)
+                    currency_info["serial"] = c_data.get("serial", "N/A")
+                    currency_info["hash"] = c_data.get("hash", "N/A")
+            except Exception as e:
+                print(f"[WARN] 读取 JSON 失败 {reg_json}: {e}")
 
-        reg_img = REGISTRY_DIR / f"{paper_id}.png"
+        # 2. 复制水印图片 (现在是 .jpg)
+        reg_img = REGISTRY_DIR / f"{paper_id}.jpg"
         if reg_img.exists():
-            dest_img = OUTPUT_DIR / "currency" / f"{paper_id}.png"
+            dest_img = OUTPUT_DIR / "currency" / f"{paper_id}.jpg"
             shutil.copy(reg_img, dest_img)
-            currency_info["img_path"] = f"currency/{paper_id}.png"
+            currency_info["img_path"] = f"currency/{paper_id}.jpg"
+        else:
+            print(f"[WARN] 未找到水印图片: {reg_img}")
 
         # 生成学术 HTML
         page_html = generate_paper_html(meta, body_html, paper_id, currency_info)
@@ -254,6 +264,7 @@ def build():
     rss_tree.write(OUTPUT_DIR / "feed.xml", encoding="utf-8", xml_declaration=True)
 
     print("[SUCCESS] 学术页面、sitemap.xml 与 feed.xml 全部构建成功！")
+    print(f"[INFO] 共生成 {len(papers)} 个页面。")
 
 if __name__ == "__main__":
     build()
