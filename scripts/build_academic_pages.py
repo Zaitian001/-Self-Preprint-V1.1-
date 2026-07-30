@@ -4,6 +4,7 @@
 """
 Self-Preprint V1.2 - Lilian Weng Style Minimal Academic Archive Generator
 自动读取 PREPRINTS/*.md，渲染极简学术归档首页 (index.html)、论文单页、RSS 及 Sitemap。
+同时支持 PREPRINTS/images 插图自动同步与学术级排版渲染。
 """
 
 import os
@@ -73,7 +74,7 @@ def render_markdown(text: str) -> str:
                 rendered.append(f"<p>{line}</p>")
         return "\n".join(rendered)
 
-# --- CSS 样式定义：极简 Lilian Weng 排版风格 ---
+# --- CSS 样式定义：极简 Lilian Weng 排版风格 + 学术插图适配 ---
 CSS_STYLE = """
 :root {
     --bg-color: #ffffff;
@@ -137,6 +138,34 @@ pre { padding: 1rem; overflow-x: auto; border-radius: 4px; border: 1px solid #ee
 .anchor-box strong { color: #111; }
 .anchor-hash { font-family: monospace; font-size: 0.82rem; word-break: break-all; color: #666; margin-top: 0.3rem; }
 
+/* 学术插图与图注样式 */
+.paper-body img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1.8rem auto 0.5rem auto;
+    border-radius: 4px;
+}
+
+figure {
+    margin: 2rem auto;
+    text-align: center;
+}
+
+figure img {
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+figcaption {
+    font-size: 0.9rem;
+    color: var(--meta-color);
+    margin-top: 0.6rem;
+    font-family: var(--font-main);
+    line-height: 1.4;
+}
+
 footer.site-footer { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border-color); font-size: 0.85rem; color: var(--meta-color); text-align: center; }
 """
 
@@ -174,7 +203,7 @@ def generate_paper_html(meta: dict, body_html: str, paper_id: str, currency_data
 
     highwire_meta_str = "\n    ".join(highwire_tags)
 
-    # 防伪确权锚点 (极简融入，不抢眼)
+    # 防伪确权锚点
     serial = currency_data.get("serial", "N/A")
     currency_hash = currency_data.get("hash", "N/A")
     anchor_html = f"""
@@ -229,7 +258,6 @@ def generate_paper_html(meta: dict, body_html: str, paper_id: str, currency_data
 
 def generate_index_html(papers: list) -> str:
     """生成类似 lilianweng.github.io 的极简归档首页"""
-    # 按年份分组论文
     papers_by_year = {}
     for p in papers:
         year = p["date"].split("-")[0] if "-" in p["date"] else "Archive"
@@ -286,6 +314,15 @@ def build():
     OUTPUT_DIR.mkdir(exist_ok=True)
     (OUTPUT_DIR / "preprints").mkdir(exist_ok=True)
 
+    # 1. 自动同步 PREPRINTS/images 到 public/preprints/images (用于插图展示)
+    images_src = PREPRINTS_DIR / "images"
+    images_dst = OUTPUT_DIR / "preprints" / "images"
+    if images_src.exists():
+        if images_dst.exists():
+            shutil.rmtree(images_dst)
+        shutil.copytree(images_src, images_dst)
+        print("[INFO] 插图目录已成功同步至 public/preprints/images")
+
     papers = []
     
     if PREPRINTS_DIR.exists():
@@ -327,14 +364,13 @@ def build():
     # 按发布日期倒序排列
     papers.sort(key=lambda x: x["date"], reverse=True)
 
-    # 1. 生成极简归档首页 index.html
+    # 2. 生成极简归档首页 index.html
     index_html = generate_index_html(papers)
     with open(OUTPUT_DIR / "index.html", "w", encoding="utf-8") as f:
         f.write(index_html)
 
-    # 2. 生成 sitemap.xml
+    # 3. 生成 sitemap.xml
     urlset = ET.Element("urlset", xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
-    # 添加首页
     url_home = ET.SubElement(urlset, "url")
     ET.SubElement(url_home, "loc").text = f"{SITE_URL}/index.html"
     
@@ -347,7 +383,7 @@ def build():
     ET.indent(tree, space="  ")
     tree.write(OUTPUT_DIR / "sitemap.xml", encoding="utf-8", xml_declaration=True)
 
-    # 3. 生成 feed.xml (RSS 2.0)
+    # 4. 生成 feed.xml (RSS 2.0)
     rss = ET.Element("rss", version="2.0")
     channel = ET.SubElement(rss, "channel")
     ET.SubElement(channel, "title").text = "Self-Preprint Academic Archive"
@@ -365,7 +401,7 @@ def build():
     ET.indent(rss_tree, space="  ")
     rss_tree.write(OUTPUT_DIR / "feed.xml", encoding="utf-8", xml_declaration=True)
 
-    print("[SUCCESS] Lilian Weng 风格极简学术归档（index.html、文章页、RSS、Sitemap）全部生成完成！")
+    print("[SUCCESS] 论文归档、插图同步、RSS 及 Sitemap 已全部构建完成！")
 
 if __name__ == "__main__":
     build()
