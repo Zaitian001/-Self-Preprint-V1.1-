@@ -203,12 +203,29 @@ def generate_paper_html(meta: dict, body_html: str, paper_id: str, currency_data
 
     highwire_meta_str = "\n    ".join(highwire_tags)
 
-    # 防伪确权锚点
+    # 物理确权 + 陀螺坐标锚点
     serial = currency_data.get("serial", "N/A")
     currency_hash = currency_data.get("hash", "N/A")
+
+    # 尝试初始化陀螺观测坐标系并投影（带环境容错）
+    gyro_str = ""
+    try:
+        from core.observer_frame import GyroscopicObserverFrame
+        frame = GyroscopicObserverFrame(genesis_commit="main", secret_seed="Self-Preprint-V1.2")
+        
+        # 优先使用真实 Hash 进行拓扑投影，无 Hash 时退化为 paper_id
+        target_hash = currency_hash if currency_hash != "N/A" else paper_id
+        gyro_proj = frame.project(target_hash)
+
+        coords = gyro_proj["coordinates"]
+        prec_deg = gyro_proj["precession_angle_deg"]
+        gyro_str = f"<br/>🌀 <strong>Gyroscopic Vector</strong>: <code>({coords['x']}, {coords['y']}, {coords['z']})</code> | Precession: <code>{prec_deg}°</code>"
+    except Exception as e:
+        print(f"[WARN] 陀螺坐标计算跳过: {e}")
+
     anchor_html = f"""
     <div class="anchor-box">
-        🛡️ <strong>Physical Proof of Existence</strong> | Banknote Serial: <code>{serial}</code>
+        🛡️ <strong>Physical Proof of Existence</strong> | Banknote Serial: <code>{serial}</code>{gyro_str}
         <div class="anchor-hash">SHA-256 Hash: {currency_hash}</div>
     </div>
     """
