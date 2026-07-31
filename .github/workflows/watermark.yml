@@ -23,9 +23,9 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: 3. 安装依赖 (水印与网页渲染所需)
+      - name: 3. 安装依赖 (水印、网页渲染、陀螺坐标、规矩道引擎)
         run: |
-          pip install markdown pyyaml pillow
+          pip install markdown pyyaml pillow numpy   # 添加 numpy
 
       # --- 阶段一：运行原有的水印生成与回提交逻辑 ---
       - name: 4. 运行 CI 水印配对脚本
