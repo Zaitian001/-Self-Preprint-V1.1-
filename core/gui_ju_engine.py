@@ -3,7 +3,7 @@
 
 """
 Self-Preprint V1.2 - Gui-Ju Dao Cosmic Physics Engine (Luoshu Lie Algebra)
-基于《圭臬道》论文第五章，实现洛书→李代数旋转生成元→零能量宇宙验证。
+基于《规矩道》论文第五章，实现洛书→李代数旋转生成元→零能量宇宙验证。
 提供全局几何范数（Matrix Scale）作为数字系统的“物理常数”。
 """
 
@@ -65,7 +65,7 @@ class GuiJuEngine:
 ENGINE = GuiJuEngine()
 
 if __name__ == "__main__":
-    print("=== 圭臬道宇宙物理引擎初始化 ===")
+    print("=== 规矩道宇宙物理引擎初始化 ===")
     print("1. 洛书中心化三维向量矩阵 (Lc):\n", ENGINE.Lc)
     print("\n2. 俯察地理（右旋地道）李代数生成元 (A_down):\n", ENGINE.A_down)
     print("\n3. 仰观天文（左旋天道）李代数生成元 (A_up):\n", ENGINE.A_up)
