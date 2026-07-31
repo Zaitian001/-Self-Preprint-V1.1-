@@ -2,16 +2,27 @@
 # -*- coding: utf-8 -*-
 
 """
-Self-Preprint V1.2 - Watermark Generator with JSON Proof
+Self-Preprint V1.2 - Watermark Generator with JSON Proof & Gyroscopic Gui-Ju Anchors
 为每篇论文生成防伪水印图，并同时生成 JSON 存证文件。
-JSON 文件包含论文 ID、SHA-256 哈希、纸币序列号及生成时间戳。
+JSON 文件包含：
+  - 论文 ID、SHA-256 哈希、纸币序列号、生成时间戳
+  - 陀螺坐标系拓扑坐标 (x, y, z) 与进动角
+  - 规矩道洛书几何盐 (Geometric Salt) 及矩阵尺度 (Matrix Scale)
 """
 
 import hashlib
 import os
+import sys
 import json
 import time
 from PIL import Image, ImageDraw, ImageFont, ImageEnhance
+
+# 添加仓库根目录到 sys.path，以便导入 core 模块
+sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+
+# 导入核心物理引擎与陀螺坐标系
+from core.gui_ju_engine import ENGINE
+from core.observer_frame import GyroscopicObserverFrame
 
 
 def calculate_sha256(filepath):
@@ -102,12 +113,23 @@ def main():
         print(f"未找到 {preprints_dir} 目录，跳过运行。")
         return
 
+    # --- 初始化全局物理引擎（只做一次）---
+    # 陀螺坐标系（具身原点）
+    gyro_frame = GyroscopicObserverFrame(
+        genesis_commit="main",
+        secret_seed="Self-Preprint-V1.2"
+    )
+    # 规矩道引擎（洛书李代数）已作为全局单例 ENGINE 导入
+
+    print(f"🔭 陀螺坐标系原点 O: {gyro_frame.O.tolist()}")
+    print(f"🧭 规矩道矩阵尺度 (Matrix Scale): {ENGINE.matrix_scale:.15f}\n")
+
     # 遍历 PREPRINTS 目录下的所有 Markdown 论文
     for filename in os.listdir(preprints_dir):
         if not filename.endswith(".md"):
             continue
 
-        paper_id = os.path.splitext(filename)[0]  # 例如 "CN-HB00000001" 或 "DW58553901"
+        paper_id = os.path.splitext(filename)[0]
         paper_path = os.path.join(preprints_dir, filename)
 
         raw_img_name = f"{paper_id}_raw.jpg"
@@ -130,17 +152,47 @@ def main():
         # 3. 生成水印图片
         apply_watermark(raw_img_path, output_img_path, paper_hash)
 
-        # 4. 生成对应的 JSON 存证文件（供后续学术页面构建使用）
-        serial = raw_img_name.replace("_raw.jpg", "")  # 提取纸币序列号
+        # 4. 提取纸币序列号
+        serial = raw_img_name.replace("_raw.jpg", "")
+
+        # 5. 计算陀螺坐标系投影（拓扑坐标与进动角）
+        gyro_proj = gyro_frame.project(paper_hash)
+        coords = gyro_proj["coordinates"]
+        prec_deg = gyro_proj["precession_angle_deg"]
+
+        # 6. 生成规矩道动态几何盐 (Geometric Salt)
+        geometric_salt = ENGINE.get_geometric_salt(paper_hash, serial)
+
+        # 7. 构建完整的 JSON 存证
         json_data = {
             "paper_id": paper_id,
             "hash": paper_hash,
             "serial": serial,
-            "generated_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+            "generated_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
+            # --- 陀螺坐标系锚点 ---
+            "gyroscopic_frame": {
+                "origin": [float(x) for x in gyro_frame.O.tolist()],
+                "coordinates": {
+                    "x": coords["x"],
+                    "y": coords["y"],
+                    "z": coords["z"]
+                },
+                "precession_angle_deg": prec_deg,
+                "topological_balance": gyro_frame.validate_precession_torque(paper_hash, threshold_deg=85.0)
+            },
+            # --- 规矩道洛书李代数锚点 ---
+            "gui_ju_engine": {
+                "matrix_scale": ENGINE.matrix_scale,
+                "geometric_salt": geometric_salt,
+                "zero_energy": ENGINE.is_zero_energy
+            }
         }
+
         with open(output_json_path, "w", encoding="utf-8") as f:
             json.dump(json_data, f, indent=2, ensure_ascii=False)
         print(f"✓ 成功生成存证 JSON: {output_json_path}")
+        print(f"   🌀 陀螺坐标: ({coords['x']:.6f}, {coords['y']:.6f}, {coords['z']:.6f}) 进动角: {prec_deg:.2f}°")
+        print(f"   🧬 几何盐: {geometric_salt[:48]}...")
 
 
 if __name__ == "__main__":
