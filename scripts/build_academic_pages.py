@@ -54,12 +54,23 @@ def parse_frontmatter(content: str):
     return meta, body
 
 def render_markdown(text: str) -> str:
-    """渲染 Markdown 为 HTML"""
+    """渲染 Markdown 为 HTML，并严格保护 LaTeX 公式不被 Python-Markdown 破坏"""
+    math_blocks = []
+
+    def save_math(match):
+        math_blocks.append(match.group(0))
+        # 使用 HTML 注释作为无损占位符
+        return f"<!--MATH_PLACEHOLDER_{len(math_blocks)-1}-->"
+
+    # 正则匹配 $$...$$ (块级公式) 和 $...$ (行内公式)
+    pattern = r"(\$\$.*?\$\$|\$[^$\n]+?\$)"
+    text_protected = re.sub(pattern, save_math, text, flags=re.DOTALL)
+
     if markdown:
-        return markdown.markdown(text, extensions=['extra', 'codehilite', 'toc', 'tables'])
+        html = markdown.markdown(text_protected, extensions=['extra', 'codehilite', 'toc', 'tables'])
     else:
-        # 兜底轻量格式化
-        lines = text.split("\n")
+        # 轻量级兜底渲染
+        lines = text_protected.split("\n")
         rendered = []
         for line in lines:
             if line.startswith("# "):
@@ -72,7 +83,13 @@ def render_markdown(text: str) -> str:
                 rendered.append("<br/>")
             else:
                 rendered.append(f"<p>{line}</p>")
-        return "\n".join(rendered)
+        html = "\n".join(rendered)
+
+    # 还原原始 LaTeX 公式，确保 MathJax 在浏览器端接收到完全纯净的 TeX 代码
+    for i, block in enumerate(math_blocks):
+        html = html.replace(f"<!--MATH_PLACEHOLDER_{i}-->", block)
+
+    return html
 
 # --- CSS 样式定义：极简 Lilian Weng 排版风格 + 学术插图适配 ---
 CSS_STYLE = """
@@ -109,6 +126,18 @@ header.site-header {
 header.site-header h1 { font-size: 1.8rem; margin: 0 0 0.5rem 0; font-weight: 700; letter-spacing: -0.02em; }
 header.site-header nav a { margin-right: 1.2rem; font-size: 0.95rem; color: var(--meta-color); text-decoration: none; }
 header.site-header nav a:hover { color: var(--text-color); text-decoration: underline; }
+
+/* MathJax 公式容器样式保护 */
+mjx-container {
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-width: 100%;
+}
+mjx-container[display="true"] {
+    display: block !important;
+    margin: 1.5rem 0 !important;
+    text-align: center;
+}
 
 /* 归档列表页 (index.html) */
 .archive-year { font-size: 1.4rem; font-weight: 700; margin-top: 2.5rem; margin-bottom: 1rem; border-bottom: 1px solid #f0f0f0; padding-bottom: 0.3rem; }
