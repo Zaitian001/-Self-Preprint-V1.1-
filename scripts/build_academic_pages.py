@@ -171,15 +171,46 @@ footer.site-footer { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid 
 
 # MathJax LaTeX 公式自动渲染脚本
 MATHJAX_SCRIPT = """
+<!-- 使用多个备用 CDN 确保加载成功 -->
 <script>
-MathJax = {
-  tex: {
-    inlineMath: [['$', '$'], ['\\\\(', '\\\\)']],
-    displayMath: [['$$', '$$'], ['\\\\[', \\\\]']]
-  }
-};
+  window.MathJax = {
+    tex: {
+      inlineMath: [['$', '$'], ['\\\\(', '\\\\)']],
+      displayMath: [['$$', '$$'], ['\\\\[', '\\\\]']]
+    },
+    svg: {
+      fontCache: 'global'
+    },
+    options: {
+      enableMenu: false
+    }
+  };
 </script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+<!-- 主 CDN -->
+<script id="MathJax-script" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-chtml.js">
+</script>
+<!-- 备用：如果主 CDN 失败，用 jsdelivr 兜底 -->
+<script>
+  (function() {
+    var script = document.getElementById('MathJax-script');
+    if (script) {
+      script.onerror = function() {
+        var backup = document.createElement('script');
+        backup.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js';
+        backup.async = true;
+        document.head.appendChild(backup);
+      };
+    }
+  })();
+</script>
+<!-- 页面加载完成后强制重新渲染 -->
+<script>
+  window.addEventListener('load', function() {
+    if (window.MathJax && MathJax.typesetPromise) {
+      MathJax.typesetPromise();
+    }
+  });
+</script>
 """
 
 def generate_paper_html(meta: dict, body_html: str, paper_id: str, currency_data: dict) -> str:
