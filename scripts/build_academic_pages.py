@@ -178,6 +178,21 @@ mjx-container[display="true"] {
     overflow-y: hidden;
 }
 
+CSS_STYLE = """
+/* 既有样式保留 ... */
+
+/* MathJax 行内与块级公式对齐优化 */
+mjx-container[display="false"] { 
+    display: inline-block; 
+    vertical-align: middle; 
+}
+.math-block { 
+    display: block; 
+    margin: 1.5rem 0; 
+    text-align: center; 
+}
+"""
+
 /* 归档列表页 (index.html) */
 .archive-year { font-size: 1.4rem; font-weight: 700; margin-top: 2.5rem; margin-bottom: 1rem; border-bottom: 1px solid #f0f0f0; padding-bottom: 0.3rem; }
 .post-item { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 0.8rem; }
