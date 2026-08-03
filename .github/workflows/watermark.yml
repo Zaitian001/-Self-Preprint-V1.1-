@@ -8,6 +8,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
   generate-watermark:
     runs-on: ubuntu-latest
@@ -23,11 +27,10 @@ jobs:
         with:
           python-version: '3.x'
 
-      - name: 3. 安装依赖 (水印、网页渲染、陀螺坐标、规矩道引擎)
+      - name: 3. 安装依赖
         run: |
-          pip install markdown pyyaml pillow numpy   # 添加 numpy
+          pip install markdown pyyaml pillow numpy
 
-      # --- 阶段一：运行原有的水印生成与回提交逻辑 ---
       - name: 4. 运行 CI 水印配对脚本
         run: python scripts/watermark_ci.py
 
@@ -36,12 +39,11 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action Bot"
           
-          # 暂存生成的防伪水印图片及 JSON 存证
           git add CURRENCY_REGISTRY/
           
-          # 检查是否有文件更新，避免变动为空导致 commit 报错
           if [ -n "$(git status --porcelain)" ]; then
             git commit -m "chore: auto-generate secured banknote watermark [skip ci]"
+            git pull --rebase origin main
             git push origin main
           else
             echo "没有检测到新生成的水印图片，跳过提交。"
