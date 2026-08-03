@@ -54,23 +54,30 @@ def parse_frontmatter(content: str):
     return meta, body
 
 def render_markdown(text: str) -> str:
-    """渲染 Markdown 为 HTML，并严格保护 LaTeX 公式不被 Python-Markdown 破坏"""
-    math_blocks = []
+    """渲染 Markdown 为 HTML，分离块级与行内公式，防止 <p> 嵌套导致 MathJax 排版坍塌"""
+    inline_math_list = []
 
-    def save_math(match):
-        math_blocks.append(match.group(0))
-        # 使用 HTML 注释作为无损占位符
-        return f"<!--MATH_PLACEHOLDER_{len(math_blocks)-1}-->"
+    # 1. 抽离块级公式 $$ ... $$，替换为独立的 HTML <div> 块 (Markdown 不会为其包裹 <p>)
+    def replace_block_math(match):
+        content = match.group(1).strip()
+        return f"\n\n<div class=\"math-block\">$$\n{content}\n$$</div>\n\n"
 
-    # 正则匹配 $$...$$ (块级公式) 和 $...$ (行内公式)
-    pattern = r"(\$\$.*?\$\$|\$[^$\n]+?\$)"
-    text_protected = re.sub(pattern, save_math, text, flags=re.DOTALL)
+    # 2. 抽离行内公式 $ ... $
+    def replace_inline_math(match):
+        idx = len(inline_math_list)
+        inline_math_list.append(match.group(1).strip())
+        return f"__INLINE_MATH_{idx}__"
 
+    # 优先匹配块级公式 $$ ... $$ (支持跨行)
+    text = re.sub(r"\$\$\s*\n?(.*?)\n?\s*\$\$", replace_block_math, text, flags=re.DOTALL)
+    # 再匹配行内公式 $ ... $ (不跨行)
+    text = re.sub(r"\$([^$\n]+?)\$", replace_inline_math, text)
+
+    # Markdown 渲染
     if markdown:
-        html = markdown.markdown(text_protected, extensions=['extra', 'codehilite', 'toc', 'tables'])
+        html = markdown.markdown(text, extensions=['extra', 'codehilite', 'toc', 'tables'])
     else:
-        # 轻量级兜底渲染
-        lines = text_protected.split("\n")
+        lines = text.split("\n")
         rendered = []
         for line in lines:
             if line.startswith("# "):
@@ -85,9 +92,9 @@ def render_markdown(text: str) -> str:
                 rendered.append(f"<p>{line}</p>")
         html = "\n".join(rendered)
 
-    # 还原原始 LaTeX 公式，确保 MathJax 在浏览器端接收到完全纯净的 TeX 代码
-    for i, block in enumerate(math_blocks):
-        html = html.replace(f"<!--MATH_PLACEHOLDER_{i}-->", block)
+    # 还原行内公式
+    for i, content in enumerate(inline_math_list):
+        html = html.replace(f"__INLINE_MATH_{i}__", f"${content}$")
 
     return html
 
@@ -137,6 +144,14 @@ mjx-container[display="true"] {
     display: block !important;
     margin: 1.5rem 0 !important;
     text-align: center;
+}
+
+/* 块级公式容器保护 */
+.math-block {
+    margin: 1.5rem 0;
+    text-align: center;
+    overflow-x: auto;
+    overflow-y: hidden;
 }
 
 /* 归档列表页 (index.html) */
@@ -199,47 +214,21 @@ footer.site-footer { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid 
 """
 
 # MathJax LaTeX 公式自动渲染脚本
+# MathJax LaTeX 公式自动渲染脚本 (使用矢量 SVG 引擎)
 MATHJAX_SCRIPT = """
-<!-- 使用多个备用 CDN 确保加载成功 -->
 <script>
-  window.MathJax = {
-    tex: {
-      inlineMath: [['$', '$'], ['\\\\(', '\\\\)']],
-      displayMath: [['$$', '$$'], ['\\\\[', '\\\\]']]
-    },
-    svg: {
-      fontCache: 'global'
-    },
-    options: {
-      enableMenu: false
-    }
-  };
+MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\\\(', '\\\\)']],
+    displayMath: [['$$', '$$'], ['\\\\[', \\\\]']],
+    processEscapes: true
+  },
+  svg: {
+    fontCache: 'global'
+  }
+};
 </script>
-<!-- 主 CDN -->
-<script id="MathJax-script" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-chtml.js">
-</script>
-<!-- 备用：如果主 CDN 失败，用 jsdelivr 兜底 -->
-<script>
-  (function() {
-    var script = document.getElementById('MathJax-script');
-    if (script) {
-      script.onerror = function() {
-        var backup = document.createElement('script');
-        backup.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js';
-        backup.async = true;
-        document.head.appendChild(backup);
-      };
-    }
-  })();
-</script>
-<!-- 页面加载完成后强制重新渲染 -->
-<script>
-  window.addEventListener('load', function() {
-    if (window.MathJax && MathJax.typesetPromise) {
-      MathJax.typesetPromise();
-    }
-  });
-</script>
+<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
 """
 
 def generate_paper_html(meta: dict, body_html: str, paper_id: str, currency_data: dict) -> str:
