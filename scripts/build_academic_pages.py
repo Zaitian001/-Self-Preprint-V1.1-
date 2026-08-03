@@ -135,6 +135,11 @@ CSS_STYLE = """
     --font-serif: "Georgia", "Cambria", "Times New Roman", Times, serif;
 }
 
+/* Global box model */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
 body {
     background: var(--bg-color);
     color: var(--text-color);
@@ -146,7 +151,7 @@ body {
     padding: 3rem 1.5rem;
 }
 
-a { color: var(--text-color); text-decoration: underline; text-underline-offset: 3px; }
+a { color: var(--link-color); text-decoration: underline; text-underline-offset: 3px; }
 a:hover { color: #000; text-decoration: underline; }
 
 header.site-header {
@@ -158,7 +163,7 @@ header.site-header h1 { font-size: 1.8rem; margin: 0 0 0.5rem 0; font-weight: 70
 header.site-header nav a { margin-right: 1.2rem; font-size: 0.95rem; color: var(--meta-color); text-decoration: none; }
 header.site-header nav a:hover { color: var(--text-color); text-decoration: underline; }
 
-/* MathJax 公式容器样式保护 */
+/* MathJax containers */
 mjx-container {
     overflow-x: auto;
     overflow-y: hidden;
@@ -169,46 +174,78 @@ mjx-container[display="true"] {
     margin: 1.5rem 0 !important;
     text-align: center;
 }
+/* Inline math alignment */
+mjx-container[display="false"] {
+    display: inline-block;
+    vertical-align: middle;
+}
 
-/* 块级公式容器保护 */
+/* Block math wrapper */
 .math-block {
+    display: block;
     margin: 1.5rem 0;
     text-align: center;
     overflow-x: auto;
     overflow-y: hidden;
 }
 
-CSS_STYLE = """
-/* 既有样式保留 ... */
+/* Archive list */
+.archive-year { font-size: 1.4rem; font-weight: 700; margin-top: 2.5rem; margin-bottom: 1rem; border-bottom: 1px solid #f0f0f0; padding-bottom: 0.3rem; }
+.post-item { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 0.8rem; }
+.post-title { font-size: 1.1rem; font-weight: 500; }
+.post-date { font-size: 0.9rem; color: var(--meta-color); font-family: monospace; white-space: nowrap; margin-left: 1rem; }
+.post-abstract { font-size: 0.95rem; color: #555; margin: 0.2rem 0 1.2rem 0; font-family: var(--font-serif); }
 
-/* MathJax 行内与块级公式对齐优化 */
-mjx-container[display="false"] { 
-    display: inline-block; 
-    vertical-align: middle; 
-}
-.math-block { 
-    display: block; 
-    margin: 1.5rem 0; 
-    text-align: center; 
-}
+/* Paper page */
+article h1.paper-title { font-size: 2.2rem; line-height: 1.3; margin-bottom: 0.8rem; letter-spacing: -0.02em; }
+.paper-meta { font-size: 0.92rem; color: var(--meta-color); margin-bottom: 2rem; border-bottom: 1px solid var(--border-color); padding-bottom: 1.2rem; }
+.paper-body { font-family: var(--font-serif); font-size: 1.1rem; line-height: 1.8; }
+.paper-body h1, .paper-body h2, .paper-body h3 { font-family: var(--font-main); font-weight: 600; margin-top: 2.2rem; }
+code, pre { font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace; font-size: 0.9rem; background: var(--code-bg); }
+pre { padding: 1rem; overflow-x: auto; border-radius: 4px; border: 1px solid #eee; }
 
-CSS_STYLE = """
-/* 既有样式保留 ... */
-
-/* 全局盒模型重置与 MathJax 行内基线对齐 */
-*, *::before, *::after {
-    box-sizing: border-box;
+/* Anchor box */
+.anchor-box {
+    margin: 2rem 0;
+    padding: 1rem 1.2rem;
+    background: #fafafa;
+    border: 1px solid #eaeaea;
+    border-radius: 6px;
+    font-size: 0.88rem;
+    color: #444;
 }
+.anchor-box strong { color: #111; }
+.anchor-hash { font-family: monospace; font-size: 0.82rem; word-break: break-all; color: #666; margin-top: 0.3rem; }
 
-mjx-container[display="false"] {
-    display: inline-block;
-    vertical-align: middle;
-}
-.math-block {
+/* Figures */
+.paper-body img {
+    max-width: 100%;
+    height: auto;
     display: block;
-    margin: 1.5rem 0;
+    margin: 1.8rem auto 0.5rem auto;
+    border-radius: 4px;
+}
+
+figure {
+    margin: 2rem auto;
     text-align: center;
 }
+
+figure img {
+    max-width: 100%;
+    height: auto;
+    margin: 0 auto;
+}
+
+figcaption {
+    font-size: 0.9rem;
+    color: var(--meta-color);
+    margin-top: 0.6rem;
+    font-family: var(--font-main);
+    line-height: 1.4;
+}
+
+footer.site-footer { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid var(--border-color); font-size: 0.85rem; color: var(--meta-color); text-align: center; }
 """
 
 /* 归档列表页 (index.html) */
