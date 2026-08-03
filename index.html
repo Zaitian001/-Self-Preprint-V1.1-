@@ -39,6 +39,18 @@ header.site-header h1 { font-size: 1.8rem; margin: 0 0 0.5rem 0; font-weight: 70
 header.site-header nav a { margin-right: 1.2rem; font-size: 0.95rem; color: var(--meta-color); text-decoration: none; }
 header.site-header nav a:hover { color: var(--text-color); text-decoration: underline; }
 
+/* MathJax 公式容器样式保护 */
+mjx-container {
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-width: 100%;
+}
+mjx-container[display="true"] {
+    display: block !important;
+    margin: 1.5rem 0 !important;
+    text-align: center;
+}
+
 /* 归档列表页 (index.html) */
 .archive-year { font-size: 1.4rem; font-weight: 700; margin-top: 2.5rem; margin-bottom: 1rem; border-bottom: 1px solid #f0f0f0; padding-bottom: 0.3rem; }
 .post-item { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 0.8rem; }

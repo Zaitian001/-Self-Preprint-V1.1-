@@ -44,6 +44,18 @@ header.site-header h1 { font-size: 1.8rem; margin: 0 0 0.5rem 0; font-weight: 70
 header.site-header nav a { margin-right: 1.2rem; font-size: 0.95rem; color: var(--meta-color); text-decoration: none; }
 header.site-header nav a:hover { color: var(--text-color); text-decoration: underline; }
 
+/* MathJax 公式容器样式保护 */
+mjx-container {
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-width: 100%;
+}
+mjx-container[display="true"] {
+    display: block !important;
+    margin: 1.5rem 0 !important;
+    text-align: center;
+}
+
 /* 归档列表页 (index.html) */
 .archive-year { font-size: 1.4rem; font-weight: 700; margin-top: 2.5rem; margin-bottom: 1rem; border-bottom: 1px solid #f0f0f0; padding-bottom: 0.3rem; }
 .post-item { display: flex; align-items: baseline; justify-content: space-between; margin-bottom: 0.8rem; }
@@ -162,7 +174,7 @@ footer.site-footer { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid 
         
     <div class="anchor-box">
         🛡️ <strong>Physical Proof of Existence</strong> | Banknote Serial: <code>DW58553901</code>
-        <div class="anchor-hash">SHA-256 Hash: d93c3365b3c52c26454d1a6f321653f23a5edb6bf75e52a56608ed0cc8cf03ac</div>
+        <div class="anchor-hash">SHA-256 Hash: 7511d150e475b883c4d415b6398eb89efea5727c2857267b5b2bddd90460537c</div>
     </div>
     
 
@@ -193,8 +205,8 @@ ORCiD: 0009-0003-2051-5247</p>
 <h3 id="21-the-implicit-coordinate-system-in-every-experiment">2.1 The Implicit Coordinate System in Every Experiment</h3>
 <p><img alt="Figure 1: The double-slit experiment in a three-dimensional orthogonal coordinate system" src="images/DW58553901/Figure_1.png" />
 <em>Figure 1. The double-slit experiment in a three-dimensional orthogonal coordinate system.
-A source (S) emits particles toward a double-slit plane (slits L at position $-x_s$ and R at $(+x)_s$, in the X-Y plane). Wavefronts from the two slits interfere en route to the detection screen located at $(z=L)$, producing an interference pattern of alternating maxima and minima.
-The observer (or detector) is located at the origin $O$ of the laboratory coordinate system $((X,Y,Z))$. The Z-axis is along the optical axis (propagation direction), the X-axis lies in the slit plane and connects the two slits, and the Y-axis is perpendicular to both.
+A source (S) emits particles toward a double-slit plane (slits L at position $-x_s$ and R at $\(+x\)_s$, in the X-Y plane). Wavefronts from the two slits interfere en route to the detection screen located at $\(z=L\)$, producing an interference pattern of alternating maxima and minima.
+The observer (or detector) is located at the origin $O$ of the laboratory coordinate system $\((X,Y,Z)\)$. The Z-axis is along the optical axis (propagation direction), the X-axis lies in the slit plane and connects the two slits, and the Y-axis is perpendicular to both.
 All positions and measurement outcomes are defined relative to this coordinate system.</em></p>
 <p>Every physical experiment, whether classical or quantum, is designed, executed, and interpreted within a three-dimensional orthogonal coordinate system. The spatial configuration of the apparatus, the placement of detectors, and the well-defined trajectories of emitted particles all presuppose three mutually perpendicular axes and an origin from which distances and orientations are measured. This coordinate frame is not an optional mathematical convenience—it is a logical and epistemological prerequisite for formulating any empirical statement.</p>
 <p>The canonical double-slit experiment (Figure 1) provides the clearest illustration of this dynamic. A source emits particles toward a plane containing two slits (left $L$ and right $R$), with a detection screen situated downstream. To formalize this setup, a coordinate system is naturally adopted with its origin located at the observer's position. The optical axis (the source-to-screen direction) defines the $Z$-axis, while the transverse line connecting the two slits establishes the $X$-axis, with the left slit occupying the negative domain and the right slit the positive. The $Y$-axis completes the right-handed triad. Consequently, all path lengths, arrival times, and detection positions are rigorously defined relative to this specific geometric frame.</p>
@@ -214,17 +226,19 @@ All positions and measurement outcomes are defined relative to this coordinate s
 <h2 id="3-the-outcome-problem-from-geometry-to-probability">3. The Outcome Problem: From Geometry to Probability</h2>
 <h3 id="31-the-challenge">3.1 The Challenge</h3>
 <p>While the geometric resolution of the Basis Problem is relatively straightforward, the Outcome Problem presents a deeper challenge. Even if the observer's coordinate choice determines the measurement basis, why does a specific outcome occur with a specific probability? Why, in the double-slit experiment, does the electron register at the left slit 50% of the time and the right slit 50% of the time? Why does Eq. (1) the Born rule hold?</p>
-<p>$$
+$$
 P(a) = \left|\langle a | \psi \rangle\right|^2 \tag{1}
-$$</p>
+$$
+
 <p>At first glance, geometry alone appears unable to explain probability. Geometry deals with deterministic spatial relationships; probability deals with stochastic events. However, we shall demonstrate that this apparent gap is bridged when we consider dynamic geometry with inherent symmetries, and that the Born rule is a necessary consequence of parity-time symmetry and rotational invariance in the three-dimensional coordinate system.</p>
 <h3 id="32-parity-time-symmetry-and-equal-probability">3.2 Parity-Time Symmetry and Equal Probability</h3>
 <p>Consider a quantum system in an unmeasured superposition state. In the double-slit experiment, the electron's wavefunction is a coherent superposition of two path-states:</p>
-<p>$$
-|\psi\rangle = \frac{1}{\sqrt{2}}\bigl(|L\rangle + |R\rangle\bigr) \tag{2}
-$$</p>
+$$
+|\psi\rangle = \frac{1}{\sqrt{2}}\big(|L\rangle + |R\rangle\big) \tag{2}
+$$
+
 <p>where $|L\rangle$ and $|R\rangle$ represent passage through the left and right slits, respectively.</p>
-<p>Geometrically, these two states correspond to two opposite orientations in the coordinate system established by the experimental apparatus. The left slit is located at $-x$; the right slit is located at $(+x)$. In an unmeasured state, the system possesses a fundamental symmetry: parity symmetry (P-symmetry), which guarantees that the probability amplitudes for $|L\rangle$ and $|R\rangle$ must have equal magnitude. If they did not, the system would possess an intrinsic spatial bias, violating the spatial isotropy of the unmeasured quantum state.</p>
+<p>Geometrically, these two states correspond to two opposite orientations in the coordinate system established by the experimental apparatus. The left slit is located at $-x$; the right slit is located at $\(+x\)$. In an unmeasured state, the system possesses a fundamental symmetry: parity symmetry (P-symmetry), which guarantees that the probability amplitudes for $|L\rangle$ and $|R\rangle$ must have equal magnitude. If they did not, the system would possess an intrinsic spatial bias, violating the spatial isotropy of the unmeasured quantum state.</p>
 <p>Furthermore, this symmetry extends to time reversal symmetry (T-symmetry). The time-reversed evolution of a particle passing through the left slit is physically indistinguishable from the forward evolution of a particle passing through the right slit. This PT-symmetry—the combined invariance under parity and time reversal—ensures that the two path-states are exact geometric mirror images of each other in the coordinate system.</p>
 <p>Therefore, the 50/50 probability is not a random coin-toss imposed from outside the geometric framework. It is the necessary consequence of PT-symmetry: when an observer, by introducing a which-path detector, breaks this symmetry and forces the system to register in one of two geometrically symmetric states, the squared amplitudes of those states must be equal.</p>
 <h3 id="33-the-born-rule-as-a-geometric-invariant">3.3 The Born Rule as a Geometric Invariant</h3>
@@ -244,9 +258,10 @@ $$</p>
 <p>If the magnet is rotated to align with the X-axis instead, the measurement basis changes accordingly—and again, 50/50 probabilities are observed. This is precisely the coordinate-dependence we have described: the observer's choice of spatial orientation determines the basis, and PT-symmetry ensures equal probabilities for the symmetric outcomes.</p>
 <h3 id="42-the-time-evolution-operator-as-dynamic-geometry">4.2 The Time Evolution Operator as Dynamic Geometry</h3>
 <p>The Schrödinger equation governs the time evolution of quantum states via the unitary operator:</p>
-<p>$$
-(U(t)) = e^{\frac{-iHt}{\hbar}} \tag{3}
-$$</p>
+$$
+\(U(t)\) = e^{\frac{-iHt}{\hbar}} \tag{3}
+$$
+
 <p>This operator is a rotation in Hilbert space, preserving the norm of the state vector. Geometrically, it represents the continuous evolution of the quantum state as a trajectory on the unit sphere in Hilbert space—a dynamic geometry entirely analogous to the rotation of a vector in three-dimensional space.</p>
 <p>In the double-slit experiment, the two path-states accumulate different phases as they evolve from source to screen. This phase difference, which arises from the geometric path-length difference, produces the interference pattern. When a which-path measurement is made, this dynamic phase evolution is disrupted—the system is forced to "register" at a specific coordinate location, collapsing the continuous geometric evolution into a discrete projection.</p>
 <p>The Born-rule probabilities for detection at different points on the screen are then simply the squared projections of the evolved state vector onto the position eigenstates—a direct consequence of the geometric framework we have described.</p>
@@ -302,10 +317,10 @@ $$</p>
 <p>The nature of light is not a dual paradox of being "both particle and wave," but rather the varying projection forms of a unified three-dimensional geometric entity within the observer's coordinate system. This entity of light—which we term "Quantum-Geometric Body"—evolves freely according to strict geometric rotational laws when unmeasured; upon measurement, it is forcibly projected onto a definite spatial component defined by the observer's coordinate system.</p>
 <p>Light is neither a wave nor a particle, but a "Quantum-Geometric Body"—containing all possible measurement outcomes—that rotates freely in geometric space.</p>
 <h4 id="651-the-wave-aspect-unprojected-superposition">6.5.1 The Wave Aspect: Unprojected Superposition</h4>
-<p>When no which-path detector is present, the observer has not imposed a coordinate distinction between the alternative paths. The quantum state $|\psi\rangle$ evolves unitarily according to the Schrödinger time-evolution operator $(U(t))$, which, as established in Section 4.2, is a continuous rotation in Hilbert space. The state remains a coherent superposition of path-states, accumulating relative phases as it propagates. This phase-coherent superposition, when projected onto the detection screen, produces the interference pattern characteristic of wave behavior.</p>
+<p>When no which-path detector is present, the observer has not imposed a coordinate distinction between the alternative paths. The quantum state $|\psi\rangle$ evolves unitarily according to the Schrödinger time-evolution operator $\(U(t)\)$, which, as established in Section 4.2, is a continuous rotation in Hilbert space. The state remains a coherent superposition of path-states, accumulating relative phases as it propagates. This phase-coherent superposition, when projected onto the detection screen, produces the interference pattern characteristic of wave behavior.</p>
 <p>Geometrically, this "wave" is nothing other than the state vector's continuous, unbroken trajectory on the unit sphere in Hilbert space—a trajectory that has not been forced to register with respect to any particular spatial coordinate. The wave aspect is the geometric expression of the system's unmeasured evolution: the state vector rotates freely, sampling all possible path orientations, without being compelled to commit to any single spatial distinction.</p>
 <h4 id="652-the-particle-aspect-coordinate-forced-projection">6.5.2 The Particle Aspect: Coordinate-Forced Projection</h4>
-<p>When a which-path detector is introduced, the observer imposes a spatial coordinate alignment that distinguishes the two paths as separate locations (e.g., left slit at $-x$, right slit at $(+x)$). This alignment forces the state vector to project onto one of the two orthogonal measurement eigenstates corresponding to these spatial distinctions. The continuous rotation is disrupted; the state vector is compelled to "register" at a definite coordinate location.</p>
+<p>When a which-path detector is introduced, the observer imposes a spatial coordinate alignment that distinguishes the two paths as separate locations (e.g., left slit at $-x$, right slit at $\(+x\)$). This alignment forces the state vector to project onto one of the two orthogonal measurement eigenstates corresponding to these spatial distinctions. The continuous rotation is disrupted; the state vector is compelled to "register" at a definite coordinate location.</p>
 <p>Geometrically, this "particle" is the state vector's projected component onto a specific measurement axis. The particle aspect emerges not because the quantum entity itself undergoes a physical transformation, but because the observer's coordinate framework has forced the state vector to align with a particular spatial basis. The wavefunction "collapse" is the instantaneous geometric recalibration of the state vector from a freely rotating superposition into a fixed coordinate register.</p>
 <h4 id="653-complementarity-as-geometric-duality">6.5.3 Complementarity as Geometric Duality</h4>
 <p>Thus, wave-particle duality is not a dualism of substance but a duality of geometric representations. The wave aspect corresponds to the state vector's unprojected, continuously evolving form; the particle aspect corresponds to its projected, coordinate-registered form. These two aspects are complementary in the geometric sense: they are orthogonal projections of the same underlying state vector, and one cannot be reduced to the other any more than a shadow on the X-Y plane can be reduced to a shadow on the X-Z plane.</p>
