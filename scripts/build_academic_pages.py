@@ -191,6 +191,24 @@ mjx-container[display="false"] {
     margin: 1.5rem 0; 
     text-align: center; 
 }
+
+CSS_STYLE = """
+/* 既有样式保留 ... */
+
+/* 全局盒模型重置与 MathJax 行内基线对齐 */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+mjx-container[display="false"] {
+    display: inline-block;
+    vertical-align: middle;
+}
+.math-block {
+    display: block;
+    margin: 1.5rem 0;
+    text-align: center;
+}
 """
 
 /* 归档列表页 (index.html) */
