@@ -240,13 +240,14 @@ footer.site-footer { margin-top: 4rem; padding-top: 2rem; border-top: 1px solid 
 # MathJax LaTeX 公式自动渲染脚本
 # MathJax LaTeX 公式自动渲染脚本 (使用矢量 SVG 引擎)
 # MathJax LaTeX 公式自动渲染脚本 (开启 AMS 标签支持)
+# MathJax LaTeX 公式自动渲染脚本 (修复 JS 转义语法错误 + 开启 AMS 标签支持)
 MATHJAX_SCRIPT = """
 <script>
 MathJax = {
   tex: {
     inlineMath: [['$', '$'], ['\\\\(', '\\\\)']],
-    displayMath: [['$$', '$$'], ['\\\\[', \\\\]']],
-    tags: 'ams', // 关键：开启 \tag{} 等公式编号扩展
+    displayMath: [['$$', '$$'], ['\\\\[', '\\\\]']],
+    tags: 'ams',
     processEscapes: true
   },
   svg: {
