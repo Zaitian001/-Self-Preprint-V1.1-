@@ -5,6 +5,7 @@
 Self-Preprint V1.2 - Lilian Weng Style Minimal Academic Archive Generator
 自动读取 PREPRINTS/*.md，渲染极简学术归档首页 (index.html)、论文单页、RSS 及 Sitemap。
 同时支持 PREPRINTS/images 插图自动同步与学术级排版渲染。
+已修复 LaTeX 公式渲染问题。
 """
 
 import os
@@ -54,52 +55,32 @@ def parse_frontmatter(content: str):
     return meta, body
 
 def render_markdown(text: str) -> str:
-    """渲染 Markdown 为 HTML，无损保护 LaTeX 公式与反斜杠"""
+    """渲染 Markdown 为 HTML，无损保护 LaTeX 公式"""
     block_math_list = []
     inline_math_list = []
 
-    # 1. 提取 display 块级公式 $$ ... $$
     def save_block_math(match):
         idx = len(block_math_list)
         block_math_list.append(match.group(1).strip())
-        return f"\n\n__BLOCK_MATH_{idx}__\n\n"
+        return f"\n\n[[[BLOCK_MATH_{idx}]]]\n\n"
 
-    # 2. 提取 inline 行内公式 $ ... $
     def save_inline_math(match):
         idx = len(inline_math_list)
         inline_math_list.append(match.group(1).strip())
-        return f"__INLINE_MATH_{idx}__"
+        return f"[[[INLINE_MATH_{idx}]]]"
 
-    # 正则提取公式
+    # 1. 先提取块级公式 $$ ... $$
     text = re.sub(r"\$\$\s*\n?(.*?)\n?\s*\$\$", save_block_math, text, flags=re.DOTALL)
-    text = re.sub(r"\$([^$\n]+?)\$", save_inline_math, text)
+    
+    # 2. 再提取行内公式 $ ... $（避免匹配到 $$）
+    text = re.sub(r"(?<!\$)\$([^$\n]+?)\$(?!\$)", save_inline_math, text)
 
     # Markdown 编译
     if markdown:
-        html = markdown.markdown(text, extensions=['extra', 'codehilite', 'toc', 'tables'])
-    else:
-        lines = text.split("\n")
-        rendered = [f"<p>{line}</p>" if line.strip() else "<br/>" for line in lines]
-        html = "\n".join(rendered)
-
-    # 还原块级公式 (使用 str.replace 避免 re.sub 损坏 \tag 和 \right 等反斜杠)
-    for i, content in enumerate(block_math_list):
-        placeholder = f"<p>__BLOCK_MATH_{i}__</p>"
-        target_html = f'<div class="math-block">$$\n{content}\n$$</div>'
-        if placeholder in html:
-            html = html.replace(placeholder, target_html)
-        else:
-            html = html.replace(f"__BLOCK_MATH_{i}__", target_html)
-
-    # 还原行内公式
-    for i, content in enumerate(inline_math_list):
-        html = html.replace(f"__INLINE_MATH_{i}__", f"${content}$")
-
-    return html
-
-    # Markdown 渲染
-    if markdown:
-        html = markdown.markdown(text, extensions=['extra', 'codehilite', 'toc', 'tables'])
+        html = markdown.markdown(
+            text,
+            extensions=['extra', 'codehilite', 'toc', 'tables', 'fenced_code']
+        )
     else:
         lines = text.split("\n")
         rendered = []
@@ -116,9 +97,24 @@ def render_markdown(text: str) -> str:
                 rendered.append(f"<p>{line}</p>")
         html = "\n".join(rendered)
 
+    # 还原块级公式
+    for i, content in enumerate(block_math_list):
+        placeholder = f"[[[BLOCK_MATH_{i}]]]"
+        target_html = f'<div class="math-block">$$\n{content}\n$$</div>'
+        html = html.replace(f"<p>{placeholder}</p>", target_html)
+        html = html.replace(placeholder, target_html)
+
     # 还原行内公式
     for i, content in enumerate(inline_math_list):
-        html = html.replace(f"__INLINE_MATH_{i}__", f"${content}$")
+        html = html.replace(f"[[[INLINE_MATH_{i}]]]", f"${content}$")
+
+    # 自动为所有 table 套上响应式外壳（推荐）
+    html = re.sub(
+        r'(<table\b[^>]*>.*?</table>)',
+        r'<div class="table-wrap">\1</div>',
+        html,
+        flags=re.DOTALL
+    )
 
     return html
 
@@ -404,47 +400,37 @@ footer.site-footer {
 }
 """
 
-# MathJax LaTeX 公式自动渲染脚本
-# MathJax LaTeX 公式自动渲染脚本 (使用矢量 SVG 引擎)
-# MathJax LaTeX 公式自动渲染脚本 (开启 AMS 标签支持)
-# MathJax LaTeX 公式自动渲染脚本 (修复 JS 转义语法错误 + 开启 AMS 标签支持)
-# MathJax LaTeX 公式自动渲染脚本 (使用矢量 SVG 引擎 + 左对齐显示)
+# 优化后的 MathJax 配置
 MATHJAX_SCRIPT = """
 <script>
-MathJax = {
+window.MathJax = {
   tex: {
     inlineMath: [['$', '$'], ['\\\\(', '\\\\)']],
-    displayMath: [['$$', '$$'], ['\\\\[', '\\\\]']]
+    displayMath: [['$$', '$$'], ['\\\\[', '\\\\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    tags: 'ams'
   },
   svg: {
-    fontCache: 'global'
+    fontCache: 'global',
+    displayAlign: 'center',
+    displayIndent: '0'
   },
-  displayAlign: "left",
-  displayIndent: "0em",
   options: {
-    enableMenu: false
+    enableMenu: false,
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
   }
 };
 </script>
-<script id="MathJax-script" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.js">
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
 </script>
 <script>
-  (function() {
-    var script = document.getElementById('MathJax-script');
-    if (script) {
-      script.onerror = function() {
-        var backup = document.createElement('script');
-        backup.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js';
-        backup.async = true;
-        document.head.appendChild(backup);
-      };
-    }
-  })();
-</script>
-<script>
-  window.addEventListener('load', function() {
+  window.addEventListener('load', function () {
     if (window.MathJax && MathJax.typesetPromise) {
-      MathJax.typesetPromise();
+      MathJax.typesetPromise().catch(function (err) {
+        console.log('MathJax typeset failed: ', err);
+      });
     }
   });
 </script>
@@ -481,7 +467,6 @@ def generate_paper_html(meta: dict, body_html: str, paper_id: str, currency_data
         from core.observer_frame import GyroscopicObserverFrame
         frame = GyroscopicObserverFrame(genesis_commit="main", secret_seed="Self-Preprint-V1.2")
         
-        # 优先使用真实 Hash 进行拓扑投影，无 Hash 时退化为 paper_id
         target_hash = currency_hash if currency_hash != "N/A" else paper_id
         gyro_proj = frame.project(target_hash)
 
@@ -557,7 +542,7 @@ def generate_index_html(papers: list) -> str:
                 <a class="post-title" href="preprints/{p['id']}.html">{p['title']}</a>
                 <span class="post-date">{p['date']}</span>
             </div>
-            {f'<div class="post-abstract">{p["abstract"]}</div>' if p["abstract"] else ''}
+            {f'<div class="post-abstract">{p["abstract"]}</div>' if p.get("abstract") else ''}
             """)
 
     archive_content = "\n".join(list_html)
@@ -599,7 +584,7 @@ def build():
     OUTPUT_DIR.mkdir(exist_ok=True)
     (OUTPUT_DIR / "preprints").mkdir(exist_ok=True)
 
-    # 1. 自动同步 PREPRINTS/images 到 public/preprints/images (用于插图展示)
+    # 1. 自动同步 PREPRINTS/images 到 public/preprints/images
     images_src = PREPRINTS_DIR / "images"
     images_dst = OUTPUT_DIR / "preprints" / "images"
     if images_src.exists():
