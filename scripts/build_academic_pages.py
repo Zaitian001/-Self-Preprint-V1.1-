@@ -55,7 +55,7 @@ def parse_frontmatter(content: str):
     return meta, body
 
 def render_markdown(text: str) -> str:
-    """渲染 Markdown 为 HTML，无损保护 LaTeX 公式"""
+    """渲染 Markdown 为 HTML，无损保护 LaTeX 公式并防止 HTML 标签解析冲突"""
     block_math_list = []
     inline_math_list = []
 
@@ -69,10 +69,10 @@ def render_markdown(text: str) -> str:
         inline_math_list.append(match.group(1).strip())
         return f"[[[INLINE_MATH_{idx}]]]"
 
-    # 1. 先提取块级公式 $$ ... $$
+    # 1. 提取块级公式 $$ ... $$
     text = re.sub(r"\$\$\s*\n?(.*?)\n?\s*\$\$", save_block_math, text, flags=re.DOTALL)
     
-    # 2. 再提取行内公式 $ ... $（避免匹配到 $$）
+    # 2. 提取行内公式 $ ... $
     text = re.sub(r"(?<!\$)\$([^$\n]+?)\$(?!\$)", save_inline_math, text)
 
     # Markdown 编译
@@ -83,38 +83,24 @@ def render_markdown(text: str) -> str:
         )
     else:
         lines = text.split("\n")
-        rendered = []
-        for line in lines:
-            if line.startswith("# "):
-                rendered.append(f"<h1>{line[2:]}</h1>")
-            elif line.startswith("## "):
-                rendered.append(f"<h2>{line[3:]}</h2>")
-            elif line.startswith("### "):
-                rendered.append(f"<h3>{line[4:]}</h3>")
-            elif line.strip() == "":
-                rendered.append("<br/>")
-            else:
-                rendered.append(f"<p>{line}</p>")
+        rendered = [f"<p>{line}</p>" if line.strip() else "<br/>" for line in lines]
         html = "\n".join(rendered)
 
-    # 还原块级公式
+    # 还原块级公式 (转义 < 与 >，防止 bra-ket 被浏览器误认为 HTML 标签)
     for i, content in enumerate(block_math_list):
+        escaped_content = content.replace("<", "&lt;").replace(">", "&gt;")
         placeholder = f"[[[BLOCK_MATH_{i}]]]"
-        target_html = f'<div class="math-block">$$\n{content}\n$$</div>'
+        target_html = f'<div class="math-block">$$\n{escaped_content}\n$$</div>'
         html = html.replace(f"<p>{placeholder}</p>", target_html)
         html = html.replace(placeholder, target_html)
 
     # 还原行内公式
     for i, content in enumerate(inline_math_list):
-        html = html.replace(f"[[[INLINE_MATH_{i}]]]", f"${content}$")
+        escaped_content = content.replace("<", "&lt;").replace(">", "&gt;")
+        html = html.replace(f"[[[INLINE_MATH_{i}]]]", f"${escaped_content}$")
 
-    # 自动为所有 table 套上响应式外壳（推荐）
-    html = re.sub(
-        r'(<table\b[^>]*>.*?</table>)',
-        r'<div class="table-wrap">\1</div>',
-        html,
-        flags=re.DOTALL
-    )
+    # 自动为表格包裹响应式外壳
+    html = re.sub(r'(<table>.*?</table>)', r'<div class="table-wrap">\1</div>', html, flags=re.DOTALL)
 
     return html
 
@@ -250,6 +236,7 @@ mjx-container {
 
 mjx-container[display="true"] {
     display: block !important;
+    width: 100% !important;
     margin: 1.5rem 0 !important;
     text-align: center;
 }
@@ -261,6 +248,7 @@ mjx-container[display="false"] {
 
 .math-block {
     display: block;
+    width: 100%;
     margin: 1.5rem 0;
     text-align: center;
     overflow-x: auto;
