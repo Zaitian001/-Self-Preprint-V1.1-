@@ -408,21 +408,46 @@ footer.site-footer {
 # MathJax LaTeX 公式自动渲染脚本 (使用矢量 SVG 引擎)
 # MathJax LaTeX 公式自动渲染脚本 (开启 AMS 标签支持)
 # MathJax LaTeX 公式自动渲染脚本 (修复 JS 转义语法错误 + 开启 AMS 标签支持)
+# MathJax LaTeX 公式自动渲染脚本 (使用矢量 SVG 引擎 + 左对齐显示)
 MATHJAX_SCRIPT = """
 <script>
 MathJax = {
   tex: {
     inlineMath: [['$', '$'], ['\\\\(', '\\\\)']],
-    displayMath: [['$$', '$$'], ['\\\\[', '\\\\]']],
-    tags: 'ams',
-    processEscapes: true
+    displayMath: [['$$', '$$'], ['\\\\[', '\\\\]']]
   },
   svg: {
     fontCache: 'global'
+  },
+  displayAlign: "left",
+  displayIndent: "0em",
+  options: {
+    enableMenu: false
   }
 };
 </script>
-<script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+<script id="MathJax-script" async src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.js">
+</script>
+<script>
+  (function() {
+    var script = document.getElementById('MathJax-script');
+    if (script) {
+      script.onerror = function() {
+        var backup = document.createElement('script');
+        backup.src = 'https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js';
+        backup.async = true;
+        document.head.appendChild(backup);
+      };
+    }
+  })();
+</script>
+<script>
+  window.addEventListener('load', function() {
+    if (window.MathJax && MathJax.typesetPromise) {
+      MathJax.typesetPromise();
+    }
+  });
+</script>
 """
 
 def generate_paper_html(meta: dict, body_html: str, paper_id: str, currency_data: dict) -> str:
