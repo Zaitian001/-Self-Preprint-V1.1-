@@ -59,9 +59,9 @@ jobs:
       # 阶段二：学术网页构建
       # ============================================================
       - name: 6. 安装 PDF 编译依赖 (Pandoc & XeLaTeX)
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y pandoc texlive-xetex texlive-fonts-recommended texlive-plain-generic
+  run: |
+    sudo apt-get update
+    sudo apt-get install -y pandoc texlive-xetex texlive-fonts-recommended texlive-plain-generic texlive-lang-chinese
 
       - name: 7. 构建学术 HTML 与 RSS/Sitemap 索引
         env:
