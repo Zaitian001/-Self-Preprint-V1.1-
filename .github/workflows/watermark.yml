@@ -17,9 +17,6 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # ============================================================
-      # 1. 基础环境准备
-      # ============================================================
       - name: 1. 拉取仓库代码
         uses: actions/checkout@v4
         with:
@@ -34,9 +31,6 @@ jobs:
         run: |
           pip install markdown pyyaml pillow numpy
 
-      # ============================================================
-      # 阶段一：水印生成与 JSON 存证（含陀螺坐标 + 规矩道引擎）
-      # ============================================================
       - name: 4. 运行 CI 水印配对脚本
         run: python scripts/watermark_ci.py
 
@@ -56,12 +50,12 @@ jobs:
           fi
 
       # ============================================================
-      # 阶段二：学术网页构建
+      # 阶段二：学术网页构建 + PDF 生成
       # ============================================================
       - name: 6. 安装 PDF 编译依赖 (Pandoc & XeLaTeX)
-  run: |
-    sudo apt-get update
-    sudo apt-get install -y pandoc texlive-xetex texlive-fonts-recommended texlive-plain-generic texlive-lang-chinese
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y pandoc texlive-xetex texlive-fonts-recommended texlive-plain-generic texlive-lang-chinese
 
       - name: 7. 构建学术 HTML 与 RSS/Sitemap 索引
         env:
@@ -92,4 +86,4 @@ jobs:
       - name: 10. 验证多平台时空因果性 (T₁…T₇)
         run: |
           python scripts/verify_time_anchor.py --auto-git
-        continue-on-error: true   # 验证失败不影响部署
+        continue-on-error: true
