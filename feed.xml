@@ -5,10 +5,10 @@
     <link>https://Zaitian001.github.io/-Self-Preprint-V1.1-</link>
     <description>Decentralized Physical-Anchored Academic Papers</description>
     <item>
-      <title>DW58553901</title>
+      <title>The Overlooked Coordinate System Exorcising the Demons and Ghosts of Quantum Measurement</title>
       <link>https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553901.html</link>
-      <description />
-      <pubDate>2026-08-04</pubDate>
+      <description>The quantum measurement problem has persisted for nearly a century despite the extraordinary empirical success of quantum mechanics. This paper advances a novel thesis: any quantum measurement necessarily presupposes a three-dimensional orthogonal coordinate system with the observer positioned at its origin—a geometric precondition that has been systematically overlooked in foundational discussions. We distinguish two sub-problems within the measurement problem: the Basis Problem (why a specific measurement basis is selected) and the Outcome Problem (why specific outcomes occur with Born-rule probabilities). We demonstrate that the Basis Problem admits a straightforward geometric resolution: the observer's choice of coordinate orientation physically determines the measurement basis. For the Outcome Problem, we prove that the stochastic nature of quantum mechanics emerges not from fundamental randomness but from the deterministic geometry of parity-time (PT) symmetry. When an observer in a perfectly PT-symmetric superposition state imposes a coordinate frame that breaks this symmetry, the squared projection amplitudes—the Born rule—follow necessarily from the rotational invariance of orthogonal transformations in three-dimensional space. We further show that this geometric framework is isomorphic to the Stern-Gerlach experiment and the time evolution operator of the Schrödinger equation. This reframing will spark a revolution in quantum mechanics.</description>
+      <pubDate>2026-08-03</pubDate>
     </item>
   </channel>
 </rss>
