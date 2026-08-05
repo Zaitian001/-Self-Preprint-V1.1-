@@ -30,9 +30,8 @@ OUTPUT_PDF_DIR = BASE_DIR / "public" / "pdf"
 SITE_URL = os.getenv("SITE_URL", "https://your-username.github.io/your-repo").rstrip("/")
 
 
-def extract_metadata_and_body(md_content: str) -> tuple[dict, str]:
+def extract_metadata_and_body(md_content: str):
     """提取 YAML Frontmatter 元数据并返回剥离了 Frontmatter 的正文"""
-    # 统一换行符
     content = md_content.replace("\r\n", "\n")
     meta = {}
     
@@ -54,6 +53,14 @@ def extract_metadata_and_body(md_content: str) -> tuple[dict, str]:
     return meta, body
 
 
+def extract_author(meta: dict) -> str:
+    """从 meta 中提取作者字符串，支持列表或字符串格式"""
+    author = meta.get("author", meta.get("authors", "Anonymous"))
+    if isinstance(author, list):
+        return ", ".join(author)
+    return str(author)
+
+
 def sanitize_latex_math(md_body: str) -> str:
     """
     预处理 Markdown 其中的 LaTeX 公式：
@@ -66,7 +73,6 @@ def sanitize_latex_math(md_body: str) -> str:
             return f"\n\\begin{{equation}}\n{eq_content}\n\\end{{equation}}\n"
         return f"\n$$\n{eq_content}\n$$\n"
 
-    # 匹配 $$ ... $$ 块级公式
     return re.sub(r"\$\$\s*\n?(.*?)\n?\s*\$\$", replace_math_block, md_body, flags=re.DOTALL)
 
 
@@ -117,7 +123,7 @@ def build_pdf(md_path: Path) -> bool:
 
     meta, body = extract_metadata_and_body(raw_content)
     title = meta.get("title", paper_id)
-    author = meta.get("author", meta.get("authors", "Anonymous"))
+    author = extract_author(meta)  # ← 使用修正后的函数
     date_str = str(meta.get("date", datetime.now().strftime("%Y-%m-%d")))
 
     # 2. 修复公式中的 \tag{} 兼容问题
@@ -166,7 +172,7 @@ def build_pdf(md_path: Path) -> bool:
             '-o', str(output_path)
         ]
 
-        # 如果包含中文字符，设置正确的 CJK 字体参数（无带转义字面引号）
+        # 如果包含中文字符，设置正确的 CJK 字体参数
         if re.search(r'[\u4e00-\u9fff]', raw_content):
             cmd.extend(['-V', 'CJKmainfont=Noto Sans CJK SC'])
             cmd.extend(['-V', 'CJKoptions=AutoFakeBold'])
