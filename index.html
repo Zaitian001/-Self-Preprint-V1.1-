@@ -8,13 +8,8 @@
 /* ==========================================================================
    -Self-Preprint- Academic Theme (Complete Merged & Responsive Version)
    ========================================================================== */
+*, *::before, *::after { box-sizing: border-box; }
 
-/* 1. 全局盒模型重置 */
-*, *::before, *::after {
-    box-sizing: border-box;
-}
-
-/* 2. 基础变量定义 */
 :root {
     --bg-color: #fcfcfc;
     --text-color: #2b2b2b;
@@ -29,7 +24,6 @@
     --font-serif: Georgia, Cambria, "Times New Roman", Times, serif;
 }
 
-/* 3. 页面主体框架 */
 body {
     font-family: var(--font-main);
     line-height: 1.75;
@@ -38,113 +32,92 @@ body {
     margin: 0;
     padding: 2rem 1rem;
 }
-
 .container {
     max-width: var(--max-width);
     margin: 0 auto;
     background: #ffffff;
     padding: 3rem 2.5rem;
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     border: 1px solid var(--border-color);
 }
+a { color: var(--link-color); text-decoration: none; }
+a:hover { text-decoration: underline; }
 
-a {
-    color: var(--link-color);
-    text-decoration: none;
+/* 归档列表页 (index.html) */
+.archive-year {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.3rem;
+    color: var(--primary-color);
+}
+.post-item {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+}
+.post-title { font-size: 1.1rem; font-weight: 500; }
+.post-date {
+    font-size: 0.9rem;
+    color: var(--meta-color);
+    font-family: monospace;
+    white-space: nowrap;
+    margin-left: 1rem;
+}
+.post-abstract {
+    font-size: 0.95rem;
+    color: #555;
+    margin: 0.2rem 0 1.2rem 0;
+    font-family: var(--font-serif);
 }
 
-a:hover {
-    text-decoration: underline;
+/* 文章单页 (paper_id.html) */
+article h1.paper-title {
+    font-size: 2.2rem;
+    line-height: 1.3;
+    margin-bottom: 0.8rem;
+    letter-spacing: -0.02em;
+    color: var(--primary-color);
 }
-
-/* 4. 归档列表页 (index.html) */
-.archive-year { 
-    font-size: 1.4rem; 
-    font-weight: 700; 
-    margin-top: 2.5rem; 
-    margin-bottom: 1rem; 
-    border-bottom: 1px solid var(--border-color); 
-    padding-bottom: 0.3rem; 
+.paper-meta {
+    font-size: 0.92rem;
+    color: var(--meta-color);
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1.2rem;
+}
+.paper-body {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+.paper-body h1, .paper-body h2, .paper-body h3 {
+    font-family: var(--font-main);
+    font-weight: 600;
+    margin-top: 2.2rem;
     color: var(--primary-color);
 }
 
-.post-item { 
-    display: flex; 
-    align-items: baseline; 
-    justify-content: space-between; 
-    margin-bottom: 0.8rem; 
-}
-
-.post-title { 
-    font-size: 1.1rem; 
-    font-weight: 500; 
-}
-
-.post-date { 
-    font-size: 0.9rem; 
-    color: var(--meta-color); 
-    font-family: monospace; 
-    white-space: nowrap; 
-    margin-left: 1rem; 
-}
-
-.post-abstract { 
-    font-size: 0.95rem; 
-    color: #555; 
-    margin: 0.2rem 0 1.2rem 0; 
-    font-family: var(--font-serif); 
-}
-
-/* 5. 文章单页 (paper_id.html) */
-article h1.paper-title { 
-    font-size: 2.2rem; 
-    line-height: 1.3; 
-    margin-bottom: 0.8rem; 
-    letter-spacing: -0.02em; 
-    color: var(--primary-color);
-}
-
-.paper-meta { 
-    font-size: 0.92rem; 
-    color: var(--meta-color); 
-    margin-bottom: 2rem; 
-    border-bottom: 1px solid var(--border-color); 
-    padding-bottom: 1.2rem; 
-}
-
-.paper-body { 
-    font-family: var(--font-serif); 
-    font-size: 1.1rem; 
-    line-height: 1.8; 
-}
-
-.paper-body h1, .paper-body h2, .paper-body h3 { 
-    font-family: var(--font-main); 
-    font-weight: 600; 
-    margin-top: 2.2rem; 
-    color: var(--primary-color);
-}
-
-/* 6. MathJax & LaTeX 公式排版防护 */
+/* MathJax & LaTeX 公式排版防护 */
 mjx-container {
     overflow-x: auto;
     overflow-y: hidden;
     max-width: 100%;
 }
-
 mjx-container[display="true"] {
     display: block !important;
     width: 100% !important;
     margin: 1.5rem 0 !important;
     text-align: center;
 }
-
 mjx-container[display="false"] {
     display: inline-block;
     vertical-align: middle;
 }
-
 .math-block {
     display: block;
     width: 100%;
@@ -154,7 +127,7 @@ mjx-container[display="false"] {
     overflow-y: hidden;
 }
 
-/* 7. 物理确权卡片 (拓扑锚定/水印卡片) */
+/* 物理确权卡片 */
 .anchor-box {
     margin: 2rem 0;
     padding: 1rem 1.2rem;
@@ -164,46 +137,41 @@ mjx-container[display="false"] {
     font-size: 0.88rem;
     color: #444;
 }
-
 .anchor-box strong { color: #111; }
-
-.anchor-hash { 
-    font-family: monospace; 
-    font-size: 0.82rem; 
-    word-break: break-all; 
-    color: #666; 
-    margin-top: 0.3rem; 
+.anchor-hash {
+    font-family: monospace;
+    font-size: 0.82rem;
+    word-break: break-all;
+    color: #666;
+    margin-top: 0.3rem;
 }
 
-/* 8. 代码与预格式化文本 */
-code, pre { 
-    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; 
-    font-size: 0.9rem; 
+/* 代码与预格式化文本 */
+code, pre {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-size: 0.9rem;
 }
-
 code {
     background-color: var(--code-bg);
     padding: 0.2em 0.4em;
     border-radius: 4px;
     border: 1px solid var(--border-color);
 }
-
-pre { 
-    padding: 1rem; 
-    overflow-x: auto; 
-    border-radius: 6px; 
-    border: 1px solid var(--border-color); 
+pre {
+    padding: 1rem;
+    overflow-x: auto;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
     background-color: var(--code-bg);
     line-height: 1.45;
 }
-
 pre code {
     background-color: transparent;
     padding: 0;
     border: none;
 }
 
-/* 9. 引用与表格 */
+/* 引用与表格 */
 blockquote {
     margin: 1.5rem 0;
     padding: 0.8rem 1.2rem;
@@ -211,36 +179,29 @@ blockquote {
     border-left: 4px solid var(--primary-color);
     border-radius: 0 4px 4px 0;
 }
-
-blockquote p:last-child {
-    margin-bottom: 0;
-}
-
+blockquote p:last-child { margin-bottom: 0; }
 .table-wrap {
     width: 100%;
     overflow-x: auto;
     margin: 1.5rem 0;
     -webkit-overflow-scrolling: touch;
 }
-
 table {
     width: 100%;
     border-collapse: collapse;
     font-size: 0.95rem;
 }
-
 th, td {
     padding: 0.75rem 1rem;
     border: 1px solid var(--border-color);
     text-align: left;
 }
-
 th {
     background-color: var(--code-bg);
     font-weight: 600;
 }
 
-/* 10. 学术插图与图注样式 */
+/* 学术插图与图注 */
 img, .paper-body img {
     max-width: 100%;
     height: auto;
@@ -248,18 +209,8 @@ img, .paper-body img {
     margin: 1.8rem auto 0.5rem auto;
     border-radius: 4px;
 }
-
-figure {
-    margin: 2rem auto;
-    text-align: center;
-}
-
-figure img {
-    max-width: 100%;
-    height: auto;
-    margin: 0 auto;
-}
-
+figure { margin: 2rem auto; text-align: center; }
+figure img { max-width: 100%; height: auto; margin: 0 auto; }
 figcaption {
     font-size: 0.9rem;
     color: var(--meta-color);
@@ -268,16 +219,111 @@ figcaption {
     line-height: 1.4;
 }
 
-/* 11. 页脚与移动端响应式 */
-footer.site-footer { 
-    margin-top: 4rem; 
-    padding-top: 2rem; 
-    border-top: 1px solid var(--border-color); 
-    font-size: 0.85rem; 
-    color: var(--meta-color); 
-    text-align: center; 
+/* 引用格式选择器 (Google Scholar 风格) */
+.citation-toggle {
+    display: inline-block;
+    margin: 2rem 0 0.5rem 0;
+    padding: 0.5rem 1.2rem;
+    background: #f1f5f9;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: #1e293b;
+    transition: background 0.2s;
+    user-select: none;
+}
+.citation-toggle:hover { background: #e2e8f0; }
+.citation-toggle .cite-arrow {
+    display: inline-block;
+    margin-left: 0.4rem;
+    font-size: 0.7rem;
+    transition: transform 0.3s ease;
+}
+.citation-toggle.open .cite-arrow { transform: rotate(180deg); }
+
+.citation-panel {
+    display: none;
+    margin: 0 0 2rem 0;
+    padding: 1.2rem 1.5rem;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    max-width: 100%;
+}
+.citation-panel.open { display: block; }
+
+.citation-format-selector {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    margin-bottom: 0.8rem;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 0.8rem;
+}
+.format-btn {
+    background: transparent;
+    border: none;
+    padding: 0.3rem 1rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+    color: #64748b;
+    border-radius: 12px;
+    transition: all 0.2s;
+}
+.format-btn:hover { background: #e2e8f0; color: #1e293b; }
+.format-btn.active {
+    background: #1e293b;
+    color: white;
+    font-weight: 500;
 }
 
+.citation-display {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+.citation-text {
+    flex: 1;
+    font-size: 0.88rem;
+    font-family: var(--font-serif);
+    color: #1e293b;
+    background: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    border: 1px solid #e9edf2;
+    word-break: break-word;
+    min-height: 2.2rem;
+}
+.citation-text.bibtex-display {
+    font-family: monospace;
+    font-size: 0.82rem;
+    white-space: pre-wrap;
+}
+.copy-btn {
+    background: #e2e8f0;
+    border: none;
+    border-radius: 4px;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.8rem;
+    cursor: pointer;
+    color: #334155;
+    white-space: nowrap;
+    transition: all 0.2s;
+    align-self: center;
+}
+.copy-btn:hover { background: #cbd5e1; }
+.copy-btn.copied { background: #22c55e; color: white; }
+
+/* 页脚与移动端响应式 */
+footer.site-footer {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.85rem;
+    color: var(--meta-color);
+    text-align: center;
+}
 @media (max-width: 768px) {
     body { padding: 1rem 0.5rem; }
     .container { padding: 1.5rem 1rem; }
