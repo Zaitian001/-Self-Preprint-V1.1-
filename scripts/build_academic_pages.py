@@ -4,8 +4,8 @@
 """
 Self-Preprint V1.2 - Lilian Weng Style Minimal Academic Archive Generator
 自动读取 PREPRINTS/*.md，渲染极简学术归档首页 (index.html)、论文单页、RSS 及 Sitemap。
-同时支持 PREPRINTS/images 插图自动同步与学术级排版渲染。
-已修复 LaTeX 公式渲染问题。
+支持 PREPRINTS/images 插图自动同步。
+已修复 LaTeX 公式渲染，并内置 Google Scholar 风格的“引用本文”活态按钮。
 """
 
 import os
@@ -34,13 +34,14 @@ REGISTRY_DIR = BASE_DIR / "CURRENCY_REGISTRY"
 OUTPUT_DIR = BASE_DIR / "public"
 SITE_URL = os.getenv("SITE_URL", "https://your-username.github.io/your-repo").rstrip("/")
 
+# ==================== 工具函数 ====================
 def parse_frontmatter(content: str):
     """解析 Markdown 文件中的 YAML Frontmatter"""
     meta = {}
     body = content
     pattern = r"^---\s*\n(.*?)\n---\s*\n(.*)$"
     match = re.search(pattern, content, re.DOTALL)
-    
+
     if match:
         yaml_str = match.group(1)
         body = match.group(2)
@@ -51,7 +52,6 @@ def parse_frontmatter(content: str):
                 if ":" in line:
                     k, v = line.split(":", 1)
                     meta[k.strip()] = v.strip().strip("\"'")
-    
     return meta, body
 
 def render_markdown(text: str) -> str:
@@ -71,7 +71,6 @@ def render_markdown(text: str) -> str:
 
     # 1. 提取块级公式 $$ ... $$
     text = re.sub(r"\$\$\s*\n?(.*?)\n?\s*\$\$", save_block_math, text, flags=re.DOTALL)
-    
     # 2. 提取行内公式 $ ... $
     text = re.sub(r"(?<!\$)\$([^$\n]+?)\$(?!\$)", save_inline_math, text)
 
@@ -101,21 +100,15 @@ def render_markdown(text: str) -> str:
 
     # 自动为表格包裹响应式外壳
     html = re.sub(r'(<table>.*?</table>)', r'<div class="table-wrap">\1</div>', html, flags=re.DOTALL)
-
     return html
 
-# --- CSS 样式定义：极简 Lilian Weng 排版风格 + 学术插图适配 ---
+# ==================== CSS 样式 ====================
 CSS_STYLE = """
 /* ==========================================================================
    -Self-Preprint- Academic Theme (Complete Merged & Responsive Version)
    ========================================================================== */
+*, *::before, *::after { box-sizing: border-box; }
 
-/* 1. 全局盒模型重置 */
-*, *::before, *::after {
-    box-sizing: border-box;
-}
-
-/* 2. 基础变量定义 */
 :root {
     --bg-color: #fcfcfc;
     --text-color: #2b2b2b;
@@ -130,7 +123,6 @@ CSS_STYLE = """
     --font-serif: Georgia, Cambria, "Times New Roman", Times, serif;
 }
 
-/* 3. 页面主体框架 */
 body {
     font-family: var(--font-main);
     line-height: 1.75;
@@ -139,113 +131,92 @@ body {
     margin: 0;
     padding: 2rem 1rem;
 }
-
 .container {
     max-width: var(--max-width);
     margin: 0 auto;
     background: #ffffff;
     padding: 3rem 2.5rem;
     border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
     border: 1px solid var(--border-color);
 }
+a { color: var(--link-color); text-decoration: none; }
+a:hover { text-decoration: underline; }
 
-a {
-    color: var(--link-color);
-    text-decoration: none;
+/* 归档列表页 (index.html) */
+.archive-year {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.3rem;
+    color: var(--primary-color);
+}
+.post-item {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+}
+.post-title { font-size: 1.1rem; font-weight: 500; }
+.post-date {
+    font-size: 0.9rem;
+    color: var(--meta-color);
+    font-family: monospace;
+    white-space: nowrap;
+    margin-left: 1rem;
+}
+.post-abstract {
+    font-size: 0.95rem;
+    color: #555;
+    margin: 0.2rem 0 1.2rem 0;
+    font-family: var(--font-serif);
 }
 
-a:hover {
-    text-decoration: underline;
+/* 文章单页 (paper_id.html) */
+article h1.paper-title {
+    font-size: 2.2rem;
+    line-height: 1.3;
+    margin-bottom: 0.8rem;
+    letter-spacing: -0.02em;
+    color: var(--primary-color);
 }
-
-/* 4. 归档列表页 (index.html) */
-.archive-year { 
-    font-size: 1.4rem; 
-    font-weight: 700; 
-    margin-top: 2.5rem; 
-    margin-bottom: 1rem; 
-    border-bottom: 1px solid var(--border-color); 
-    padding-bottom: 0.3rem; 
+.paper-meta {
+    font-size: 0.92rem;
+    color: var(--meta-color);
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1.2rem;
+}
+.paper-body {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+.paper-body h1, .paper-body h2, .paper-body h3 {
+    font-family: var(--font-main);
+    font-weight: 600;
+    margin-top: 2.2rem;
     color: var(--primary-color);
 }
 
-.post-item { 
-    display: flex; 
-    align-items: baseline; 
-    justify-content: space-between; 
-    margin-bottom: 0.8rem; 
-}
-
-.post-title { 
-    font-size: 1.1rem; 
-    font-weight: 500; 
-}
-
-.post-date { 
-    font-size: 0.9rem; 
-    color: var(--meta-color); 
-    font-family: monospace; 
-    white-space: nowrap; 
-    margin-left: 1rem; 
-}
-
-.post-abstract { 
-    font-size: 0.95rem; 
-    color: #555; 
-    margin: 0.2rem 0 1.2rem 0; 
-    font-family: var(--font-serif); 
-}
-
-/* 5. 文章单页 (paper_id.html) */
-article h1.paper-title { 
-    font-size: 2.2rem; 
-    line-height: 1.3; 
-    margin-bottom: 0.8rem; 
-    letter-spacing: -0.02em; 
-    color: var(--primary-color);
-}
-
-.paper-meta { 
-    font-size: 0.92rem; 
-    color: var(--meta-color); 
-    margin-bottom: 2rem; 
-    border-bottom: 1px solid var(--border-color); 
-    padding-bottom: 1.2rem; 
-}
-
-.paper-body { 
-    font-family: var(--font-serif); 
-    font-size: 1.1rem; 
-    line-height: 1.8; 
-}
-
-.paper-body h1, .paper-body h2, .paper-body h3 { 
-    font-family: var(--font-main); 
-    font-weight: 600; 
-    margin-top: 2.2rem; 
-    color: var(--primary-color);
-}
-
-/* 6. MathJax & LaTeX 公式排版防护 */
+/* MathJax & LaTeX 公式排版防护 */
 mjx-container {
     overflow-x: auto;
     overflow-y: hidden;
     max-width: 100%;
 }
-
 mjx-container[display="true"] {
     display: block !important;
     width: 100% !important;
     margin: 1.5rem 0 !important;
     text-align: center;
 }
-
 mjx-container[display="false"] {
     display: inline-block;
     vertical-align: middle;
 }
-
 .math-block {
     display: block;
     width: 100%;
@@ -255,7 +226,7 @@ mjx-container[display="false"] {
     overflow-y: hidden;
 }
 
-/* 7. 物理确权卡片 (拓扑锚定/水印卡片) */
+/* 物理确权卡片 */
 .anchor-box {
     margin: 2rem 0;
     padding: 1rem 1.2rem;
@@ -265,46 +236,41 @@ mjx-container[display="false"] {
     font-size: 0.88rem;
     color: #444;
 }
-
 .anchor-box strong { color: #111; }
-
-.anchor-hash { 
-    font-family: monospace; 
-    font-size: 0.82rem; 
-    word-break: break-all; 
-    color: #666; 
-    margin-top: 0.3rem; 
+.anchor-hash {
+    font-family: monospace;
+    font-size: 0.82rem;
+    word-break: break-all;
+    color: #666;
+    margin-top: 0.3rem;
 }
 
-/* 8. 代码与预格式化文本 */
-code, pre { 
-    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace; 
-    font-size: 0.9rem; 
+/* 代码与预格式化文本 */
+code, pre {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-size: 0.9rem;
 }
-
 code {
     background-color: var(--code-bg);
     padding: 0.2em 0.4em;
     border-radius: 4px;
     border: 1px solid var(--border-color);
 }
-
-pre { 
-    padding: 1rem; 
-    overflow-x: auto; 
-    border-radius: 6px; 
-    border: 1px solid var(--border-color); 
+pre {
+    padding: 1rem;
+    overflow-x: auto;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
     background-color: var(--code-bg);
     line-height: 1.45;
 }
-
 pre code {
     background-color: transparent;
     padding: 0;
     border: none;
 }
 
-/* 9. 引用与表格 */
+/* 引用与表格 */
 blockquote {
     margin: 1.5rem 0;
     padding: 0.8rem 1.2rem;
@@ -312,36 +278,29 @@ blockquote {
     border-left: 4px solid var(--primary-color);
     border-radius: 0 4px 4px 0;
 }
-
-blockquote p:last-child {
-    margin-bottom: 0;
-}
-
+blockquote p:last-child { margin-bottom: 0; }
 .table-wrap {
     width: 100%;
     overflow-x: auto;
     margin: 1.5rem 0;
     -webkit-overflow-scrolling: touch;
 }
-
 table {
     width: 100%;
     border-collapse: collapse;
     font-size: 0.95rem;
 }
-
 th, td {
     padding: 0.75rem 1rem;
     border: 1px solid var(--border-color);
     text-align: left;
 }
-
 th {
     background-color: var(--code-bg);
     font-weight: 600;
 }
 
-/* 10. 学术插图与图注样式 */
+/* 学术插图与图注 */
 img, .paper-body img {
     max-width: 100%;
     height: auto;
@@ -349,18 +308,8 @@ img, .paper-body img {
     margin: 1.8rem auto 0.5rem auto;
     border-radius: 4px;
 }
-
-figure {
-    margin: 2rem auto;
-    text-align: center;
-}
-
-figure img {
-    max-width: 100%;
-    height: auto;
-    margin: 0 auto;
-}
-
+figure { margin: 2rem auto; text-align: center; }
+figure img { max-width: 100%; height: auto; margin: 0 auto; }
 figcaption {
     font-size: 0.9rem;
     color: var(--meta-color);
@@ -369,16 +318,111 @@ figcaption {
     line-height: 1.4;
 }
 
-/* 11. 页脚与移动端响应式 */
-footer.site-footer { 
-    margin-top: 4rem; 
-    padding-top: 2rem; 
-    border-top: 1px solid var(--border-color); 
-    font-size: 0.85rem; 
-    color: var(--meta-color); 
-    text-align: center; 
+/* 引用格式选择器 (Google Scholar 风格) */
+.citation-toggle {
+    display: inline-block;
+    margin: 2rem 0 0.5rem 0;
+    padding: 0.5rem 1.2rem;
+    background: #f1f5f9;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: #1e293b;
+    transition: background 0.2s;
+    user-select: none;
+}
+.citation-toggle:hover { background: #e2e8f0; }
+.citation-toggle .cite-arrow {
+    display: inline-block;
+    margin-left: 0.4rem;
+    font-size: 0.7rem;
+    transition: transform 0.3s ease;
+}
+.citation-toggle.open .cite-arrow { transform: rotate(180deg); }
+
+.citation-panel {
+    display: none;
+    margin: 0 0 2rem 0;
+    padding: 1.2rem 1.5rem;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    max-width: 100%;
+}
+.citation-panel.open { display: block; }
+
+.citation-format-selector {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    margin-bottom: 0.8rem;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 0.8rem;
+}
+.format-btn {
+    background: transparent;
+    border: none;
+    padding: 0.3rem 1rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+    color: #64748b;
+    border-radius: 12px;
+    transition: all 0.2s;
+}
+.format-btn:hover { background: #e2e8f0; color: #1e293b; }
+.format-btn.active {
+    background: #1e293b;
+    color: white;
+    font-weight: 500;
 }
 
+.citation-display {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+.citation-text {
+    flex: 1;
+    font-size: 0.88rem;
+    font-family: var(--font-serif);
+    color: #1e293b;
+    background: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    border: 1px solid #e9edf2;
+    word-break: break-word;
+    min-height: 2.2rem;
+}
+.citation-text.bibtex-display {
+    font-family: monospace;
+    font-size: 0.82rem;
+    white-space: pre-wrap;
+}
+.copy-btn {
+    background: #e2e8f0;
+    border: none;
+    border-radius: 4px;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.8rem;
+    cursor: pointer;
+    color: #334155;
+    white-space: nowrap;
+    transition: all 0.2s;
+    align-self: center;
+}
+.copy-btn:hover { background: #cbd5e1; }
+.copy-btn.copied { background: #22c55e; color: white; }
+
+/* 页脚与移动端响应式 */
+footer.site-footer {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.85rem;
+    color: var(--meta-color);
+    text-align: center;
+}
 @media (max-width: 768px) {
     body { padding: 1rem 0.5rem; }
     .container { padding: 1.5rem 1rem; }
@@ -388,7 +432,7 @@ footer.site-footer {
 }
 """
 
-# 优化后的 MathJax 配置
+# ==================== MathJax 脚本 ====================
 MATHJAX_SCRIPT = """
 <script>
 window.MathJax = {
@@ -424,14 +468,30 @@ window.MathJax = {
 </script>
 """
 
+# ==================== 论文单页生成 ====================
 def generate_paper_html(meta: dict, body_html: str, paper_id: str, currency_data: dict) -> str:
-    """生成符合 Lilian Weng 极致可读排版的单篇论文 HTML"""
+    """生成符合 Lilian Weng 极致可读排版的单篇论文 HTML，包含引用活态按钮"""
     title = meta.get("title", paper_id)
-    authors = meta.get("authors", meta.get("author", "Anonymous"))
-    authors_str = ", ".join(authors) if isinstance(authors, list) else authors
+    authors_raw = meta.get("authors", meta.get("author", "Anonymous"))
+    
+    # 格式化作者列表：显示用逗号，BibTeX 用 ' and '
+    if isinstance(authors_raw, list):
+        authors_list = [str(a).strip() for a in authors_raw]
+        authors_str = ", ".join(authors_list)
+        bibtex_authors = " and ".join(authors_list)
+    else:
+        authors_str = str(authors_raw).strip()
+        authors_list = [a.strip() for a in authors_str.split(",") if a.strip()]
+        bibtex_authors = " and ".join(authors_list) if len(authors_list) > 1 else authors_str
+
     date_str = str(meta.get("date", datetime.date.today().isoformat()))
+    # 稳健提取年份
+    year_match = re.search(r'\b(19|20)\d{2}\b', date_str)
+    year_str = year_match.group(0) if year_match else str(datetime.date.today().year)
+
     abstract = meta.get("abstract", "")
     pdf_filename = meta.get("pdf", f"{paper_id}.pdf")
+    has_pdf = (BASE_DIR / "public" / "pdf" / pdf_filename).exists()
 
     # Highwire Press 元数据 (Google Scholar & Zotero)
     highwire_tags = [
@@ -440,24 +500,22 @@ def generate_paper_html(meta: dict, body_html: str, paper_id: str, currency_data
         f'<meta name="citation_fulltext_html_url" content="{SITE_URL}/preprints/{paper_id}.html">',
         f'<meta name="citation_journal_title" content="Self-Preprint Archive">'
     ]
-    for author in (authors if isinstance(authors, list) else [authors_str]):
-        highwire_tags.append(f'<meta name="citation_author" content="{author.strip()}">')
+    if has_pdf:
+        highwire_tags.append(f'<meta name="citation_pdf_url" content="{SITE_URL}/pdf/{pdf_filename}">')
 
+    for author in authors_list:
+        highwire_tags.append(f'<meta name="citation_author" content="{author}">')
     highwire_meta_str = "\n    ".join(highwire_tags)
 
-    # 物理确权 + 陀螺坐标锚点
+    # 物理确权 + 陀螺坐标
     serial = currency_data.get("serial", "N/A")
     currency_hash = currency_data.get("hash", "N/A")
-
-    # 尝试初始化陀螺观测坐标系并投影（带环境容错）
     gyro_str = ""
     try:
         from core.observer_frame import GyroscopicObserverFrame
         frame = GyroscopicObserverFrame(genesis_commit="main", secret_seed="Self-Preprint-V1.2")
-        
         target_hash = currency_hash if currency_hash != "N/A" else paper_id
         gyro_proj = frame.project(target_hash)
-
         coords = gyro_proj["coordinates"]
         prec_deg = gyro_proj["precession_angle_deg"]
         gyro_str = f"<br/>🌀 <strong>Gyroscopic Vector</strong>: <code>({coords['x']}, {coords['y']}, {coords['z']})</code> | Precession: <code>{prec_deg}°</code>"
@@ -474,7 +532,22 @@ def generate_paper_html(meta: dict, body_html: str, paper_id: str, currency_data
     has_pdf = (BASE_DIR / "public" / "pdf" / pdf_filename).exists()
     pdf_link = f' · <a href="../pdf/{pdf_filename}" target="_blank">PDF</a>' if has_pdf else ''
 
-    return f"""<!DOCTYPE html>
+    # 生成引用格式数据
+    citation_data = {
+        "apa": f"{authors_str} ({year_str}). {title}. Self-Preprint Archive. {SITE_URL}/preprints/{paper_id}.html",
+        "mla": f"{authors_str}. \"{title}.\" Self-Preprint Archive, {year_str}, {SITE_URL}/preprints/{paper_id}.html.",
+        "chicago": f"{authors_str}. \"{title}.\" Self-Preprint Archive. Accessed {datetime.date.today().strftime('%B %d, %Y')}. {SITE_URL}/preprints/{paper_id}.html.",
+        "bibtex": f"""@article{{selfpreprint_{paper_id},
+  author = {{{bibtex_authors}}},
+  title = {{{title}}},
+  journal = {{Self-Preprint Archive}},
+  year = {{{year_str}}},
+  url = {{{SITE_URL}/preprints/{paper_id}.html}}
+}}"""
+    }
+    citation_json = json.dumps(citation_data)
+
+    html_template = f"""<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
     <meta charset="UTF-8">
@@ -507,13 +580,101 @@ def generate_paper_html(meta: dict, body_html: str, paper_id: str, currency_data
         </div>
     </article>
 
+    <!-- 引用格式选择器（Google Scholar 风格） -->
+    <div class="citation-toggle">
+        <span class="cite-label">📚 Cite this paper</span>
+        <span class="cite-arrow">▾</span>
+    </div>
+    <div class="citation-panel" id="citationPanel">
+        <div class="citation-format-selector">
+            <button class="format-btn active" data-format="apa">APA</button>
+            <button class="format-btn" data-format="mla">MLA</button>
+            <button class="format-btn" data-format="chicago">Chicago</button>
+            <button class="format-btn" data-format="bibtex">BibTeX</button>
+        </div>
+        <div class="citation-display" id="citationDisplay">
+            <span class="citation-text" id="citationText"></span>
+            <button class="copy-btn" id="copyCitationBtn">📋 Copy</button>
+        </div>
+    </div>
+
     <footer class="site-footer">
         © {datetime.date.today().year} {authors_str} · Self-Preprint Decentralized Academic Archive
     </footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {{
+    const citationData = {citation_json};
+    const toggle = document.querySelector('.citation-toggle');
+    const panel = document.getElementById('citationPanel');
+    const textDisplay = document.getElementById('citationText');
+    const copyBtn = document.getElementById('copyCitationBtn');
+    let currentFormat = 'apa';
+
+    toggle.addEventListener('click', function() {{
+        this.classList.toggle('open');
+        panel.classList.toggle('open');
+        if (panel.classList.contains('open')) {{
+            updateCitation('apa');
+        }}
+    }});
+
+    document.querySelectorAll('.format-btn').forEach(function(btn) {{
+        btn.addEventListener('click', function() {{
+            document.querySelectorAll('.format-btn').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            currentFormat = this.getAttribute('data-format');
+            updateCitation(currentFormat);
+        }});
+    }});
+
+    function updateCitation(format) {{
+        let text = citationData[format] || 'Citation not available';
+        if (format === 'bibtex') {{
+            textDisplay.className = 'citation-text bibtex-display';
+            textDisplay.textContent = text;
+        }} else {{
+            textDisplay.className = 'citation-text';
+            textDisplay.textContent = text;
+        }}
+        copyBtn.textContent = '📋 Copy';
+        copyBtn.classList.remove('copied');
+    }}
+
+    copyBtn.addEventListener('click', function() {{
+        const text = textDisplay.textContent;
+        navigator.clipboard.writeText(text).then(function() {{
+            copyBtn.textContent = '✅ Copied!';
+            copyBtn.classList.add('copied');
+            setTimeout(function() {{
+                copyBtn.textContent = '📋 Copy';
+                copyBtn.classList.remove('copied');
+            }}, 2000);
+        }}).catch(function() {{
+            // 降级方案
+            const ta = document.createElement('textarea');
+            ta.value = text;
+            document.body.appendChild(ta);
+            ta.select();
+            document.execCommand('copy');
+            document.body.removeChild(ta);
+            copyBtn.textContent = '✅ Copied!';
+            setTimeout(function() {{
+                copyBtn.textContent = '📋 Copy';
+            }}, 2000);
+        }});
+    }});
+
+    // 默认设置（不展开面板）
+    updateCitation('apa');
+}});
+</script>
 </body>
 </html>
 """
+    return html_template
 
+# ==================== 首页生成 ====================
 def generate_index_html(papers: list) -> str:
     """生成类似 lilianweng.github.io 的极简归档首页"""
     papers_by_year = {}
@@ -567,6 +728,7 @@ def generate_index_html(papers: list) -> str:
 </html>
 """
 
+# ==================== 主构建函数 ====================
 def build():
     """全量构建过程"""
     OUTPUT_DIR.mkdir(exist_ok=True)
@@ -582,7 +744,7 @@ def build():
         print("[INFO] 插图目录已成功同步至 public/preprints/images")
 
     papers = []
-    
+
     if PREPRINTS_DIR.exists():
         md_files = glob.glob(str(PREPRINTS_DIR / "*.md"))
         print(f"[INFO] 找到 {len(md_files)} 篇 Markdown 预印本，开始生成归档页面...")
@@ -631,12 +793,10 @@ def build():
     urlset = ET.Element("urlset", xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
     url_home = ET.SubElement(urlset, "url")
     ET.SubElement(url_home, "loc").text = f"{SITE_URL}/index.html"
-    
     for p in papers:
         url_el = ET.SubElement(urlset, "url")
         ET.SubElement(url_el, "loc").text = p["url"]
         ET.SubElement(url_el, "lastmod").text = p["date"]
-    
     tree = ET.ElementTree(urlset)
     ET.indent(tree, space="  ")
     tree.write(OUTPUT_DIR / "sitemap.xml", encoding="utf-8", xml_declaration=True)
@@ -647,14 +807,12 @@ def build():
     ET.SubElement(channel, "title").text = "Self-Preprint Academic Archive"
     ET.SubElement(channel, "link").text = SITE_URL
     ET.SubElement(channel, "description").text = "Decentralized Physical-Anchored Academic Papers"
-    
     for p in papers:
         item = ET.SubElement(channel, "item")
         ET.SubElement(item, "title").text = p["title"]
         ET.SubElement(item, "link").text = p["url"]
         ET.SubElement(item, "description").text = p["abstract"]
         ET.SubElement(item, "pubDate").text = p["date"]
-
     rss_tree = ET.ElementTree(rss)
     ET.indent(rss_tree, space="  ")
     rss_tree.write(OUTPUT_DIR / "feed.xml", encoding="utf-8", xml_declaration=True)
