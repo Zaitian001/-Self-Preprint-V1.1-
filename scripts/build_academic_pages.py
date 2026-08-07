@@ -671,30 +671,25 @@ document.addEventListener('DOMContentLoaded', function() {{
 </script>
 
 <!-- 引入 Mermaid 渲染引擎 -->
+# ✅ 正确转义大括号后的写法
+mermaid_script = f"""
 <script type="module">
   import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
 
-  document.addEventListener("DOMContentLoaded", async function () {
+  document.addEventListener("DOMContentLoaded", async function () {{
     // 查找 Markdown 转换出的所有 language-mermaid 代码块
     const codeBlocks = document.querySelectorAll('pre code.language-mermaid, pre code.mermaid');
-    
-    codeBlocks.forEach((codeBlock) => {
+    codeBlocks.forEach((codeBlock) => {{
       const pre = codeBlock.parentElement;
       const div = document.createElement('div');
       div.className = 'mermaid';
       div.textContent = codeBlock.textContent;
       pre.replaceWith(div);
-    });
+    }});
 
-    // 初始化并渲染
-    mermaid.initialize({ 
-      startOnLoad: false, 
-      theme: 'default',
-      securityLevel: 'loose'
-    });
-    
+    mermaid.initialize({{ startOnLoad: false, theme: 'default', securityLevel: 'loose' }});
     await mermaid.run();
-  });
+  }});
 </script>
 </body>
 </html>
