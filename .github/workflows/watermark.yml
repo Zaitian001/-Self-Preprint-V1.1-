@@ -68,7 +68,7 @@ jobs:
             exit 1
           fi
 
-      - name: 6. 自动提交并推送生成的水印图与 JSON 至 main 分支
+      - name: 6. 自动提交并推送生成的水印图与 JSON 至 main 分支 (含冲突防崩机制)
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action Bot"
@@ -77,7 +77,11 @@ jobs:
           
           if [ -n "$(git status --porcelain)" ]; then
             git commit -m "chore: auto-generate secured banknote watermark [skip ci]"
-            git pull --rebase origin main
+            
+            # 拉取远程 main 最新提交并变基
+            # 若遇 JSON / 水印图片冲突，优先保留本次 CI 重新生成的最新文件 (-X theirs)
+            git pull --rebase origin main -X theirs || git rebase --skip
+            
             git push origin main
           else
             echo "没有检测到新生成的水印图片/JSON，跳过提交。"
