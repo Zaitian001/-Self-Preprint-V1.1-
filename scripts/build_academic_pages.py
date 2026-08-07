@@ -1,8 +1,3 @@
-已为你修复了**非标准空格（Unicode U+00A0）**、**Mermaid JS 语法未塞入 HTML 模板的语法报错**、**f-string 花括号未正确双重转义**以及**页脚未闭合引用的问题**。
-
-请**全选并复制**下方完整代码，直接粘贴覆盖替换 `scripts/build_academic_pages.py` 的全部内容：
-
-```python
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
