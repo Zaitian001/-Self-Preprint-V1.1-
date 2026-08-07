@@ -389,7 +389,7 @@ window.MathJax = {
         
     <div class="anchor-box">
         🛡️ <strong>Physical Proof of Existence</strong> | Banknote Serial: <code>DW58553902</code>
-        <div class="anchor-hash">SHA-256 Hash: e6aa17652825e2e785e80b2593b760b3e26b04ba33d45029993afbd8b3828018</div>
+        <div class="anchor-hash">SHA-256 Hash: 2e22898f48bb95f471b1209b07b81d7d98a27e0fd53ad4b8026ba3f448a97a6b</div>
     </div>
     
 
@@ -998,8 +998,6 @@ $$</div>
 <p>[31] Bronstein, M. M., Bruna, J., Cohen, T., &amp; Veličković, P. (2021). Geometric Deep Learning: Grids, Groups, Graphs, Geodesics, and Gauges. arXiv:2104.13478.</p>
 <p>[32] Vaswani, A., et al. (2017). Attention Is All You Need. NeurIPS 2017.</p>
 <p>[33] Rombach, R., et al. (2022). High-Resolution Image Synthesis with Latent Diffusion Models. CVPR 2022.</p>
-<pre class="codehilite"><code>
-</code></pre>
         </div>
     </article>
 
@@ -1034,13 +1032,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const copyBtn = document.getElementById('copyCitationBtn');
     let currentFormat = 'apa';
 
-    toggle.addEventListener('click', function() {
-        this.classList.toggle('open');
-        panel.classList.toggle('open');
-        if (panel.classList.contains('open')) {
-            updateCitation('apa');
-        }
-    });
+    if (toggle && panel) {
+        toggle.addEventListener('click', function() {
+            this.classList.toggle('open');
+            panel.classList.toggle('open');
+            if (panel.classList.contains('open')) {
+                updateCitation('apa');
+            }
+        });
+    }
 
     document.querySelectorAll('.format-btn').forEach(function(btn) {
         btn.addEventListener('click', function() {
@@ -1064,33 +1064,52 @@ document.addEventListener('DOMContentLoaded', function() {
         copyBtn.classList.remove('copied');
     }
 
-    copyBtn.addEventListener('click', function() {
-        const text = textDisplay.textContent;
-        navigator.clipboard.writeText(text).then(function() {
-            copyBtn.textContent = '✅ Copied!';
-            copyBtn.classList.add('copied');
-            setTimeout(function() {
-                copyBtn.textContent = '📋 Copy';
-                copyBtn.classList.remove('copied');
-            }, 2000);
-        }).catch(function() {
-            // 降级方案
-            const ta = document.createElement('textarea');
-            ta.value = text;
-            document.body.appendChild(ta);
-            ta.select();
-            document.execCommand('copy');
-            document.body.removeChild(ta);
-            copyBtn.textContent = '✅ Copied!';
-            setTimeout(function() {
-                copyBtn.textContent = '📋 Copy';
-            }, 2000);
+    if (copyBtn) {
+        copyBtn.addEventListener('click', function() {
+            const text = textDisplay.textContent;
+            navigator.clipboard.writeText(text).then(function() {
+                copyBtn.textContent = '✅ Copied!';
+                copyBtn.classList.add('copied');
+                setTimeout(function() {
+                    copyBtn.textContent = '📋 Copy';
+                    copyBtn.classList.remove('copied');
+                }, 2000);
+            }).catch(function() {
+                const ta = document.createElement('textarea');
+                ta.value = text;
+                document.body.appendChild(ta);
+                ta.select();
+                document.execCommand('copy');
+                document.body.removeChild(ta);
+                copyBtn.textContent = '✅ Copied!';
+                setTimeout(function() {
+                    copyBtn.textContent = '📋 Copy';
+                }, 2000);
+            });
         });
-    });
+    }
 
-    // 默认设置（不展开面板）
     updateCitation('apa');
 });
+</script>
+
+<!-- 引入 Mermaid 渲染引擎 -->
+<script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+    document.addEventListener("DOMContentLoaded", async function () {
+        const codeBlocks = document.querySelectorAll('pre code.language-mermaid, pre code.mermaid');
+        codeBlocks.forEach((codeBlock) => {
+            const pre = codeBlock.parentElement;
+            const div = document.createElement('div');
+            div.className = 'mermaid';
+            div.textContent = codeBlock.textContent;
+            pre.replaceWith(div);
+        });
+
+        mermaid.initialize({ startOnLoad: false, theme: 'default', securityLevel: 'loose' });
+        await mermaid.run();
+    });
 </script>
 </body>
 </html>

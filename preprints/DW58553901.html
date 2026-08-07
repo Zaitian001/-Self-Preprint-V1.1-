@@ -616,13 +616,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const copyBtn = document.getElementById('copyCitationBtn');
     let currentFormat = 'apa';
 
-    toggle.addEventListener('click', function() {
-        this.classList.toggle('open');
-        panel.classList.toggle('open');
-        if (panel.classList.contains('open')) {
-            updateCitation('apa');
-        }
-    });
+    if (toggle && panel) {
+        toggle.addEventListener('click', function() {
+            this.classList.toggle('open');
+            panel.classList.toggle('open');
+            if (panel.classList.contains('open')) {
+                updateCitation('apa');
+            }
+        });
+    }
 
     document.querySelectorAll('.format-btn').forEach(function(btn) {
         btn.addEventListener('click', function() {
@@ -646,33 +648,52 @@ document.addEventListener('DOMContentLoaded', function() {
         copyBtn.classList.remove('copied');
     }
 
-    copyBtn.addEventListener('click', function() {
-        const text = textDisplay.textContent;
-        navigator.clipboard.writeText(text).then(function() {
-            copyBtn.textContent = '✅ Copied!';
-            copyBtn.classList.add('copied');
-            setTimeout(function() {
-                copyBtn.textContent = '📋 Copy';
-                copyBtn.classList.remove('copied');
-            }, 2000);
-        }).catch(function() {
-            // 降级方案
-            const ta = document.createElement('textarea');
-            ta.value = text;
-            document.body.appendChild(ta);
-            ta.select();
-            document.execCommand('copy');
-            document.body.removeChild(ta);
-            copyBtn.textContent = '✅ Copied!';
-            setTimeout(function() {
-                copyBtn.textContent = '📋 Copy';
-            }, 2000);
+    if (copyBtn) {
+        copyBtn.addEventListener('click', function() {
+            const text = textDisplay.textContent;
+            navigator.clipboard.writeText(text).then(function() {
+                copyBtn.textContent = '✅ Copied!';
+                copyBtn.classList.add('copied');
+                setTimeout(function() {
+                    copyBtn.textContent = '📋 Copy';
+                    copyBtn.classList.remove('copied');
+                }, 2000);
+            }).catch(function() {
+                const ta = document.createElement('textarea');
+                ta.value = text;
+                document.body.appendChild(ta);
+                ta.select();
+                document.execCommand('copy');
+                document.body.removeChild(ta);
+                copyBtn.textContent = '✅ Copied!';
+                setTimeout(function() {
+                    copyBtn.textContent = '📋 Copy';
+                }, 2000);
+            });
         });
-    });
+    }
 
-    // 默认设置（不展开面板）
     updateCitation('apa');
 });
+</script>
+
+<!-- 引入 Mermaid 渲染引擎 -->
+<script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+    document.addEventListener("DOMContentLoaded", async function () {
+        const codeBlocks = document.querySelectorAll('pre code.language-mermaid, pre code.mermaid');
+        codeBlocks.forEach((codeBlock) => {
+            const pre = codeBlock.parentElement;
+            const div = document.createElement('div');
+            div.className = 'mermaid';
+            div.textContent = codeBlock.textContent;
+            pre.replaceWith(div);
+        });
+
+        mermaid.initialize({ startOnLoad: false, theme: 'default', securityLevel: 'loose' });
+        await mermaid.run();
+    });
 </script>
 </body>
 </html>
