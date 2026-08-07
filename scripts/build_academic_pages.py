@@ -1,3 +1,8 @@
+已为你修复了**非标准空格（Unicode U+00A0）**、**Mermaid JS 语法未塞入 HTML 模板的语法报错**、**f-string 花括号未正确双重转义**以及**页脚未闭合引用的问题**。
+
+请**全选并复制**下方完整代码，直接粘贴覆盖替换 `scripts/build_academic_pages.py` 的全部内容：
+
+```python
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
@@ -529,7 +534,6 @@ def generate_paper_html(meta: dict, body_html: str, paper_id: str, currency_data
     </div>
     """
 
-    has_pdf = (BASE_DIR / "public" / "pdf" / pdf_filename).exists()
     pdf_link = f' · <a href="../pdf/{pdf_filename}" target="_blank">PDF</a>' if has_pdf else ''
 
     # 生成引用格式数据
@@ -546,6 +550,8 @@ def generate_paper_html(meta: dict, body_html: str, paper_id: str, currency_data
 }}"""
     }
     citation_json = json.dumps(citation_data)
+
+    abstract_block = f'<blockquote style="font-family: var(--font-serif); font-style: italic; background:#fdfdfd; padding:0.8rem 1.2rem; border-left:3px solid #ccc; margin: 1.5rem 0;">{abstract}</blockquote>' if abstract else ''
 
     html_template = f"""<!DOCTYPE html>
 <html lang="zh-CN">
@@ -573,7 +579,7 @@ def generate_paper_html(meta: dict, body_html: str, paper_id: str, currency_data
 
         {anchor_html}
 
-        {f'<blockquote style="font-family: var(--font-serif); font-style: italic; background:#fdfdfd; padding:0.8rem 1.2rem; border-left:3px solid #ccc; margin: 1.5rem 0;">{abstract}</blockquote>' if abstract else ''}
+        {abstract_block}
 
         <div class="paper-body">
             {body_html}
@@ -611,13 +617,15 @@ document.addEventListener('DOMContentLoaded', function() {{
     const copyBtn = document.getElementById('copyCitationBtn');
     let currentFormat = 'apa';
 
-    toggle.addEventListener('click', function() {{
-        this.classList.toggle('open');
-        panel.classList.toggle('open');
-        if (panel.classList.contains('open')) {{
-            updateCitation('apa');
-        }}
-    }});
+    if (toggle && panel) {{
+        toggle.addEventListener('click', function() {{
+            this.classList.toggle('open');
+            panel.classList.toggle('open');
+            if (panel.classList.contains('open')) {{
+                updateCitation('apa');
+            }}
+        }});
+    }}
 
     document.querySelectorAll('.format-btn').forEach(function(btn) {{
         btn.addEventListener('click', function() {{
@@ -641,55 +649,52 @@ document.addEventListener('DOMContentLoaded', function() {{
         copyBtn.classList.remove('copied');
     }}
 
-    copyBtn.addEventListener('click', function() {{
-        const text = textDisplay.textContent;
-        navigator.clipboard.writeText(text).then(function() {{
-            copyBtn.textContent = '✅ Copied!';
-            copyBtn.classList.add('copied');
-            setTimeout(function() {{
-                copyBtn.textContent = '📋 Copy';
-                copyBtn.classList.remove('copied');
-            }}, 2000);
-        }}).catch(function() {{
-            // 降级方案
-            const ta = document.createElement('textarea');
-            ta.value = text;
-            document.body.appendChild(ta);
-            ta.select();
-            document.execCommand('copy');
-            document.body.removeChild(ta);
-            copyBtn.textContent = '✅ Copied!';
-            setTimeout(function() {{
-                copyBtn.textContent = '📋 Copy';
-            }}, 2000);
+    if (copyBtn) {{
+        copyBtn.addEventListener('click', function() {{
+            const text = textDisplay.textContent;
+            navigator.clipboard.writeText(text).then(function() {{
+                copyBtn.textContent = '✅ Copied!';
+                copyBtn.classList.add('copied');
+                setTimeout(function() {{
+                    copyBtn.textContent = '📋 Copy';
+                    copyBtn.classList.remove('copied');
+                }}, 2000);
+            }}).catch(function() {{
+                const ta = document.createElement('textarea');
+                ta.value = text;
+                document.body.appendChild(ta);
+                ta.select();
+                document.execCommand('copy');
+                document.body.removeChild(ta);
+                copyBtn.textContent = '✅ Copied!';
+                setTimeout(function() {{
+                    copyBtn.textContent = '📋 Copy';
+                }}, 2000);
+            }});
         }});
-    }});
+    }}
 
-    // 默认设置（不展开面板）
     updateCitation('apa');
 }});
 </script>
 
 <!-- 引入 Mermaid 渲染引擎 -->
-# ✅ 正确转义大括号后的写法
-mermaid_script = f"""
 <script type="module">
-  import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
 
-  document.addEventListener("DOMContentLoaded", async function () {{
-    // 查找 Markdown 转换出的所有 language-mermaid 代码块
-    const codeBlocks = document.querySelectorAll('pre code.language-mermaid, pre code.mermaid');
-    codeBlocks.forEach((codeBlock) => {{
-      const pre = codeBlock.parentElement;
-      const div = document.createElement('div');
-      div.className = 'mermaid';
-      div.textContent = codeBlock.textContent;
-      pre.replaceWith(div);
+    document.addEventListener("DOMContentLoaded", async function () {{
+        const codeBlocks = document.querySelectorAll('pre code.language-mermaid, pre code.mermaid');
+        codeBlocks.forEach((codeBlock) => {{
+            const pre = codeBlock.parentElement;
+            const div = document.createElement('div');
+            div.className = 'mermaid';
+            div.textContent = codeBlock.textContent;
+            pre.replaceWith(div);
+        }});
+
+        mermaid.initialize({{ startOnLoad: false, theme: 'default', securityLevel: 'loose' }});
+        await mermaid.run();
     }});
-
-    mermaid.initialize({{ startOnLoad: false, theme: 'default', securityLevel: 'loose' }});
-    await mermaid.run();
-  }});
 </script>
 </body>
 </html>
@@ -708,12 +713,13 @@ def generate_index_html(papers: list) -> str:
     for year in sorted(papers_by_year.keys(), reverse=True):
         list_html.append(f'<div class="archive-year">{year}</div>')
         for p in papers_by_year[year]:
+            abstract_div = f'<div class="post-abstract">{p["abstract"]}</div>' if p.get("abstract") else ''
             list_html.append(f"""
             <div class="post-item">
                 <a class="post-title" href="preprints/{p['id']}.html">{p['title']}</a>
                 <span class="post-date">{p['date']}</span>
             </div>
-            {f'<div class="post-abstract">{p["abstract"]}</div>' if p.get("abstract") else ''}
+            {abstract_div}
             """)
 
     archive_content = "\n".join(list_html)
@@ -744,7 +750,7 @@ def generate_index_html(papers: list) -> str:
     </main>
 
     <footer class="site-footer">
-        "Powered by Self-Preprint Engine · Cryptographically Timestamped"
+        Powered by Self-Preprint Engine | Cryptographically Timestamped
     </footer>
 </body>
 </html>
@@ -843,3 +849,5 @@ def build():
 
 if __name__ == "__main__":
     build()
+
+```
