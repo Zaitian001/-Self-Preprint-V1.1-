@@ -744,7 +744,7 @@ def generate_index_html(papers: list) -> str:
     </main>
 
     <footer class="site-footer">
-        Powered by Self-Preprint Engine · Cryptographically Timestamped
+        "Powered by Self-Preprint Engine · Cryptographically Timestamped"
     </footer>
 </body>
 </html>
