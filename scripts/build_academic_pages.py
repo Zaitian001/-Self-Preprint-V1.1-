@@ -5,7 +5,7 @@
 Self-Preprint V1.2 - Lilian Weng Style Minimal Academic Archive Generator
 自动读取 PREPRINTS/*.md，渲染极简学术归档首页 (index.html)、论文单页、RSS 及 Sitemap。
 支持 PREPRINTS/images 插图自动同步。
-已修复 LaTeX 公式渲染，并内置 Google Scholar 风格的“引用本文”活态按钮。
+已修复 Abstract 摘要 Markdown 语法解析、LaTeX 公式渲染，并内置 Google Scholar 风格的“引用本文”活态按钮。
 """
 
 import os
@@ -56,6 +56,9 @@ def parse_frontmatter(content: str):
 
 def render_markdown(text: str) -> str:
     """渲染 Markdown 为 HTML，无损保护 LaTeX 公式并防止 HTML 标签解析冲突"""
+    if not text:
+        return ""
+
     block_math_list = []
     inline_math_list = []
 
@@ -489,7 +492,9 @@ def generate_paper_html(meta: dict, body_html: str, paper_id: str, currency_data
     year_match = re.search(r'\b(19|20)\d{2}\b', date_str)
     year_str = year_match.group(0) if year_match else str(datetime.date.today().year)
 
-    abstract = meta.get("abstract", "")
+    raw_abstract = meta.get("abstract", "")
+    abstract_html = render_markdown(raw_abstract) if raw_abstract else ""
+
     pdf_filename = meta.get("pdf", f"{paper_id}.pdf")
     has_pdf = (BASE_DIR / "public" / "pdf" / pdf_filename).exists()
 
@@ -546,7 +551,7 @@ def generate_paper_html(meta: dict, body_html: str, paper_id: str, currency_data
     }
     citation_json = json.dumps(citation_data)
 
-    abstract_block = f'<blockquote style="font-family: var(--font-serif); font-style: italic; background:#fdfdfd; padding:0.8rem 1.2rem; border-left:3px solid #ccc; margin: 1.5rem 0;">{abstract}</blockquote>' if abstract else ''
+    abstract_block = f'<blockquote style="font-family: var(--font-serif); background:#fdfdfd; padding:0.8rem 1.2rem; border-left:3px solid #ccc; margin: 1.5rem 0;">{abstract_html}</blockquote>' if abstract_html else ''
 
     html_template = f"""<!DOCTYPE html>
 <html lang="zh-CN">
@@ -795,11 +800,15 @@ def build():
             with open(out_page, "w", encoding="utf-8") as f:
                 f.write(page_html)
 
+            # 提取无格式摘要用于首页/RSS
+            raw_abstract = meta.get("abstract", "")
+            rendered_abstract = render_markdown(raw_abstract) if raw_abstract else ""
+
             papers.append({
                 "id": paper_id,
                 "title": meta.get("title", paper_id),
                 "date": str(meta.get("date", datetime.date.today().isoformat())),
-                "abstract": meta.get("abstract", ""),
+                "abstract": rendered_abstract,
                 "authors": meta.get("authors", meta.get("author", "Anonymous")),
                 "url": f"{SITE_URL}/preprints/{paper_id}.html"
             })
