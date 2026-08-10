@@ -5,7 +5,7 @@
 Self-Preprint V1.2 - Lilian Weng Style Minimal Academic Archive Generator
 自动读取 PREPRINTS/*.md，渲染极简学术归档首页 (index.html)、论文单页、RSS 及 Sitemap。
 支持 PREPRINTS/images 插图自动同步。
-已修复 Abstract 摘要 Markdown 语法解析、LaTeX 公式渲染，并内置 Google Scholar 风格的“引用本文”活态按钮。
+已修复 Abstract 摘要 Markdown 语法解析、首页与单页全局 LaTeX 公式渲染，并内置 Google Scholar 风格的“引用本文”活态按钮。
 """
 
 import os
@@ -703,7 +703,7 @@ document.addEventListener('DOMContentLoaded', function() {{
 
 # ==================== 首页生成 ====================
 def generate_index_html(papers: list) -> str:
-    """生成类似 lilianweng.github.io 的极简归档首页"""
+    """生成类似 lilianweng.github.io 的极简归档首页（支持 MathJax 公式渲染）"""
     papers_by_year = {}
     for p in papers:
         year = p["date"].split("-")[0] if "-" in p["date"] else "Archive"
@@ -731,6 +731,7 @@ def generate_index_html(papers: list) -> str:
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Academic Preprint Archives</title>
     <style>{CSS_STYLE}</style>
+    {MATHJAX_SCRIPT}
 </head>
 <body>
     <header class="site-header">
