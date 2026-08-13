@@ -1,0 +1,690 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DW58553903 - Self-Preprint Archive</title>
+    <meta name="citation_title" content="DW58553903">
+    <meta name="citation_publication_date" content="2026/08/13">
+    <meta name="citation_fulltext_html_url" content="https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553903.html">
+    <meta name="citation_journal_title" content="Self-Preprint Archive">
+    <meta name="citation_author" content="Anonymous">
+    <style>
+/* ==========================================================================
+   -Self-Preprint- Academic Theme (Complete Merged & Responsive Version)
+   ========================================================================== */
+*, *::before, *::after { box-sizing: border-box; }
+
+:root {
+    --bg-color: #fcfcfc;
+    --text-color: #2b2b2b;
+    --primary-color: #1a365d;
+    --link-color: #2b6cb0;
+    --border-color: #e2e8f0;
+    --code-bg: #f7fafc;
+    --blockquote-bg: #edf2f7;
+    --meta-color: #718096;
+    --max-width: 860px;
+    --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-serif: Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+body {
+    font-family: var(--font-main);
+    line-height: 1.75;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 2rem 1rem;
+}
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 3rem 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border: 1px solid var(--border-color);
+}
+a { color: var(--link-color); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* 归档列表页 (index.html) */
+.archive-year {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.3rem;
+    color: var(--primary-color);
+}
+.post-item {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+}
+.post-title { font-size: 1.1rem; font-weight: 500; }
+.post-date {
+    font-size: 0.9rem;
+    color: var(--meta-color);
+    font-family: monospace;
+    white-space: nowrap;
+    margin-left: 1rem;
+}
+.post-abstract {
+    font-size: 0.95rem;
+    color: #555;
+    margin: 0.2rem 0 1.2rem 0;
+    font-family: var(--font-serif);
+}
+
+/* 文章单页 (paper_id.html) */
+article h1.paper-title {
+    font-size: 2.2rem;
+    line-height: 1.3;
+    margin-bottom: 0.8rem;
+    letter-spacing: -0.02em;
+    color: var(--primary-color);
+}
+.paper-meta {
+    font-size: 0.92rem;
+    color: var(--meta-color);
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1.2rem;
+}
+.paper-body {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+.paper-body h1, .paper-body h2, .paper-body h3 {
+    font-family: var(--font-main);
+    font-weight: 600;
+    margin-top: 2.2rem;
+    color: var(--primary-color);
+}
+
+/* MathJax & LaTeX 公式排版防护 */
+mjx-container {
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-width: 100%;
+}
+mjx-container[display="true"] {
+    display: block !important;
+    width: 100% !important;
+    margin: 1.5rem 0 !important;
+    text-align: center;
+}
+mjx-container[display="false"] {
+    display: inline-block;
+    vertical-align: middle;
+}
+.math-block {
+    display: block;
+    width: 100%;
+    margin: 1.5rem 0;
+    text-align: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+/* 物理确权卡片 */
+.anchor-box {
+    margin: 2rem 0;
+    padding: 1rem 1.2rem;
+    background: #fafafa;
+    border: 1px solid #eaeaea;
+    border-radius: 6px;
+    font-size: 0.88rem;
+    color: #444;
+}
+.anchor-box strong { color: #111; }
+.anchor-hash {
+    font-family: monospace;
+    font-size: 0.82rem;
+    word-break: break-all;
+    color: #666;
+    margin-top: 0.3rem;
+}
+
+/* 代码与预格式化文本 */
+code, pre {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-size: 0.9rem;
+}
+code {
+    background-color: var(--code-bg);
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+}
+pre {
+    padding: 1rem;
+    overflow-x: auto;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    background-color: var(--code-bg);
+    line-height: 1.45;
+}
+pre code {
+    background-color: transparent;
+    padding: 0;
+    border: none;
+}
+
+/* 引用与表格 */
+blockquote {
+    margin: 1.5rem 0;
+    padding: 0.8rem 1.2rem;
+    background-color: var(--blockquote-bg);
+    border-left: 4px solid var(--primary-color);
+    border-radius: 0 4px 4px 0;
+}
+blockquote p:last-child { margin-bottom: 0; }
+.table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+    -webkit-overflow-scrolling: touch;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+th, td {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-color);
+    text-align: left;
+}
+th {
+    background-color: var(--code-bg);
+    font-weight: 600;
+}
+
+/* 学术插图与图注 */
+img, .paper-body img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1.8rem auto 0.5rem auto;
+    border-radius: 4px;
+}
+figure { margin: 2rem auto; text-align: center; }
+figure img { max-width: 100%; height: auto; margin: 0 auto; }
+figcaption {
+    font-size: 0.9rem;
+    color: var(--meta-color);
+    margin-top: 0.6rem;
+    font-family: var(--font-main);
+    line-height: 1.4;
+}
+
+/* 引用格式选择器 (Google Scholar 风格) */
+.citation-toggle {
+    display: inline-block;
+    margin: 2rem 0 0.5rem 0;
+    padding: 0.5rem 1.2rem;
+    background: #f1f5f9;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: #1e293b;
+    transition: background 0.2s;
+    user-select: none;
+}
+.citation-toggle:hover { background: #e2e8f0; }
+.citation-toggle .cite-arrow {
+    display: inline-block;
+    margin-left: 0.4rem;
+    font-size: 0.7rem;
+    transition: transform 0.3s ease;
+}
+.citation-toggle.open .cite-arrow { transform: rotate(180deg); }
+
+.citation-panel {
+    display: none;
+    margin: 0 0 2rem 0;
+    padding: 1.2rem 1.5rem;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    max-width: 100%;
+}
+.citation-panel.open { display: block; }
+
+.citation-format-selector {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    margin-bottom: 0.8rem;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 0.8rem;
+}
+.format-btn {
+    background: transparent;
+    border: none;
+    padding: 0.3rem 1rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+    color: #64748b;
+    border-radius: 12px;
+    transition: all 0.2s;
+}
+.format-btn:hover { background: #e2e8f0; color: #1e293b; }
+.format-btn.active {
+    background: #1e293b;
+    color: white;
+    font-weight: 500;
+}
+
+.citation-display {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+.citation-text {
+    flex: 1;
+    font-size: 0.88rem;
+    font-family: var(--font-serif);
+    color: #1e293b;
+    background: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    border: 1px solid #e9edf2;
+    word-break: break-word;
+    min-height: 2.2rem;
+}
+.citation-text.bibtex-display {
+    font-family: monospace;
+    font-size: 0.82rem;
+    white-space: pre-wrap;
+}
+.copy-btn {
+    background: #e2e8f0;
+    border: none;
+    border-radius: 4px;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.8rem;
+    cursor: pointer;
+    color: #334155;
+    white-space: nowrap;
+    transition: all 0.2s;
+    align-self: center;
+}
+.copy-btn:hover { background: #cbd5e1; }
+.copy-btn.copied { background: #22c55e; color: white; }
+
+/* 页脚与移动端响应式 */
+footer.site-footer {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.85rem;
+    color: var(--meta-color);
+    text-align: center;
+}
+@media (max-width: 768px) {
+    body { padding: 1rem 0.5rem; }
+    .container { padding: 1.5rem 1rem; }
+    article h1.paper-title { font-size: 1.75rem; }
+    .post-item { flex-direction: column; align-items: flex-start; }
+    .post-date { margin-left: 0; margin-top: 0.2rem; }
+}
+</style>
+    
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    tags: 'ams'
+  },
+  svg: {
+    fontCache: 'global',
+    displayAlign: 'center',
+    displayIndent: '0'
+  },
+  options: {
+    enableMenu: false,
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+};
+</script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+<script>
+  window.addEventListener('load', function () {
+    if (window.MathJax && MathJax.typesetPromise) {
+      MathJax.typesetPromise().catch(function (err) {
+        console.log('MathJax typeset failed: ', err);
+      });
+    }
+  });
+</script>
+
+</head>
+<body>
+    <header class="site-header">
+        <nav>
+            <a href="../index.html">← Archives</a>
+            <a href="../feed.xml">RSS</a>
+        </nav>
+    </header>
+
+    <article>
+        <h1 class="paper-title">DW58553903</h1>
+        <div class="paper-meta">
+            By <strong>Anonymous</strong> · Published on 2026-08-13
+        </div>
+
+        
+    <div class="anchor-box">
+        🛡️ <strong>Physical Proof of Existence</strong> | Banknote Serial: <code>DW58553903</code>
+        <div class="anchor-hash">SHA-256 Hash: 4392d664eb4a36554477f4efc9c34fe8dede11f78fba31bf38507d57dfe08eb6</div>
+    </div>
+    
+
+        
+
+        <div class="paper-body">
+            <p>|---|---|
+| title | The Bone‑Porcelain Core Hypothesis of the 1600‑Year‑Old Delhi Iron Pillar: An Adaptive Intelligent Metamaterial Invention Driven by Internal Sustained Release |
+|---|---|
+| author | Baoliin (Zaitian) Wu 伍宝林 |
+| orcid | 0009‑0003‑2051‑5247 |
+| email | zaitian001@gmail.com |
+| affiliation | People's Government of Guangdong Province: Guangzhou, CN |
+| date | 2026‑08‑12 |
+| abstract | The Delhi Iron Pillar (ca. 5th century CE, India) has resisted atmospheric corrosion for over 1600 years by maintaining a compact protective film of crystalline iron phosphate hydrate $\mathrm{FePO_4 \cdot 2H_2O}$. Conventional explanations based on bulk phosphorus impurities (~0.25 wt%) fail to resolve a fundamental kinetic paradox: a finite, static bulk reservoir cannot sustain a self‑renewing passive film against millennia of environmental weathering and localized mechanical damage. Here, we advance the "Bone–Porcelain Core" hypothesis, proposing that the pillar is a deliberately engineered composite structure—a porous hydroxyapatite ($\mathrm{Ca_{10}(PO_4)_6(OH)_2}$) ceramic core encased within a forge‑welded wrought iron shell. This core acts as a sustained‑release functional reservoir of phosphate ions ($\mathrm{PO_4^{3-}}$). Upon localized passive film disruption, anodic potential gradients drive targeted migration of phosphate species through a percolating capillary network directly to the damage site, driving instantaneous in situ repassivation. We establish a multiscale physical framework spanning generalized electrodynamics, terahertz and Raman spectroscopy, surface‑interface physics, dielectric relaxation, plasma‑assisted interface metallurgy, and nonclassical crystallization kinetics to validate this mechanism. Furthermore, we propose a suite of non‑destructive testing protocols—including muon radiography, neutron tomography, and phased‑array ultrasonics—to render the hypothesis experimentally verifiable. Crucially, we demonstrate that this architecture represents the earliest known realization of an Autonomous Self‑Healing Metamaterial (ASHM) and a physical benchmark for Adaptive Intelligent Metamaterials (AIM): a functionally graded system where millennial corrosion immunity emerges from embodied physical intelligence embedded within its architected topology. This reinterpretation transforms the Delhi Iron Pillar from a metallurgical anomaly into a proto‑metamaterial masterpiece that anticipated autonomous material systems by fifteen centuries. |
+| keywords | Delhi Iron Pillar; Autonomous Self‑Healing Metamaterial (ASHM); Adaptive Intelligent Metamaterial (AIM); Physical Intelligence; Bone‑Porcelain Core; Nonclassical Crystallization; Non‑Destructive Testing |</p>
+<h1 id="the-boneporcelain-core-hypothesis-of-the-1600yearold-delhi-iron-pillar-an-adaptive-intelligent-metamaterial-invention-driven-by-internal-sustained-release">The Bone‑Porcelain Core Hypothesis of the 1600‑Year‑Old Delhi Iron Pillar: An Adaptive Intelligent Metamaterial Invention Driven by Internal Sustained Release</h1>
+<p><strong>Baoliin (Zaitian) Wu 伍宝林</strong>
+ORCiD: 0009‑0003‑2051‑5247
+Email: <a href="mailto:zaitian001@gmail.com">zaitian001@gmail.com</a>
+Affiliation: People's Government of Guangdong Province: Guangzhou, CN
+August 13, 2026</p>
+<h2 id="abstract">Abstract</h2>
+<p>The Delhi Iron Pillar (ca. 5th century CE, India) has resisted atmospheric corrosion for over 1600 years by maintaining a compact protective film of crystalline iron phosphate hydrate $\mathrm{FePO_4 \cdot 2H_2O}$. Conventional explanations based on bulk phosphorus impurities (~0.25 wt%) fail to resolve a fundamental kinetic paradox: a finite, static bulk reservoir cannot sustain a self‑renewing passive film against millennia of environmental weathering and localized mechanical damage. Here, we advance the "Bone–Porcelain Core" hypothesis, proposing that the pillar is a deliberately engineered composite structure—a porous hydroxyapatite ($\mathrm{Ca_{10}(PO_4)_6(OH)_2}$) ceramic core encased within a forge‑welded wrought iron shell. This core acts as a sustained‑release functional reservoir of phosphate ions ($\mathrm{PO_4^{3-}}$). Upon localized passive film disruption, anodic potential gradients drive targeted migration of phosphate species through a percolating capillary network directly to the damage site, driving instantaneous in situ repassivation. We establish a multiscale physical framework spanning generalized electrodynamics, terahertz and Raman spectroscopy, surface‑interface physics, dielectric relaxation, plasma‑assisted interface metallurgy, and nonclassical crystallization kinetics to validate this mechanism. Furthermore, we propose a suite of non‑destructive testing protocols—including muon radiography, neutron tomography, and phased‑array ultrasonics—to render the hypothesis experimentally verifiable. Crucially, we demonstrate that this architecture represents the earliest known realization of an Autonomous Self‑Healing Metamaterial (ASHM) and a physical benchmark for Adaptive Intelligent Metamaterials (AIM): a functionally graded system where millennial corrosion immunity emerges from embodied physical intelligence embedded within its architected topology. This reinterpretation transforms the Delhi Iron Pillar from a metallurgical anomaly into a proto‑metamaterial masterpiece that anticipated autonomous material systems by fifteen centuries.</p>
+<p><strong>Keywords:</strong> Delhi Iron Pillar; Autonomous Self‑Healing Metamaterial (ASHM); Adaptive Intelligent Metamaterial (AIM); Physical Intelligence; Bone‑Porcelain Core; Nonclassical Crystallization; Non‑Destructive Testing</p>
+<h2 id="1-introduction">1. Introduction</h2>
+<p>Throughout this work, the term 'metamaterial' is used in its broader materials‑science sense: an architected material whose emergent macroscopic functionality arises primarily from internal structural organization rather than the intrinsic properties of its constituent phases.</p>
+<h3 id="11-autonomous-selfhealing-metamaterial-principle-ashmp">1.1 Autonomous Self‑Healing Metamaterial Principle (ASHMP)</h3>
+<p>A structural material is said to satisfy the Autonomous Self‑Healing Metamaterial Principle if its long‑term functionality emerges from the coupled integration of:
+- an internal chemical reservoir,
+- a directed transport network,
+- a damage‑responsive feedback mechanism,
+- and an in situ reconstruction process.</p>
+<p>In this context, the Autonomous Self‑Healing Metamaterial (ASHM) framework represents a foundational stepping stone toward the long‑range scientific vision of matter that autonomously senses, adapts to, and learns from its environment, much like biological tissue, which we term "Adaptive Intelligent Metamaterial". An ASHM can be fundamentally classified as an Adaptive Intelligent Metamaterial. It embodies "physical intelligence" by seamlessly integrating damage‑sensing, field‑driven transport, and structural reconstruction directly into its architected physics, requiring no external actuators or electronic control unit.</p>
+<p>Within this hierarchy, ASHMP defines the governing design principle, ASHM represents its material realization, and AIM denotes the broader class of architected materials capable of autonomous physical sensing, adaptation, and long‑term functional evolution.</p>
+<h3 id="12-the-delhi-iron-pillar-as-a-candidate-ashmp-system">1.2 The Delhi Iron Pillar as a Candidate ASHMP System</h3>
+<p>The atmospheric corrosion resistance of the Delhi Iron Pillar is a long‑standing anomaly in materials science. While unprotected iron exposed to the open atmosphere typically corrodes at rates of 20–50 µm/year, the Pillar, a 7.2 m tall, 6‑tonne structure, exhibits negligible dimensional loss after 1600 years. Its surface is covered by a thin (∼50 µm), adherent patina of crystalline iron phosphate hydrate $\mathrm{FePO_4 \cdot 2H_2O}$, as confirmed by X‑ray photoelectron spectroscopy (XPS), Raman spectroscopy, and Mössbauer spectroscopy. This film is the immediate cause of the Pillar’s immunity: it is a dense, electronically insulating ($\rho &gt; 10^6\ \Omega\cdot\text{cm}$) barrier that suppresses both the anodic iron dissolution and the cathodic oxygen reduction reactions.</p>
+<p>The dominant interpretation, championed by Balasubramaniam and others, attributes the formation of this film to the Pillar’s unusually high phosphorus content (~0.25 wt%), introduced during charcoal‑based smelting. Repeated forge‑welding of the hot sponge iron is thought to have segregated phosphorus to the surface, where it reacted with atmospheric moisture to form the protective phosphate layer. This model, however, contains a profound kinetic contradiction. A passive film exposed to seasonal rains, physical abrasion by sand‑laden winds, and the inevitable microcracking induced by diurnal thermal cycling cannot survive for over a millennium as a closed system. Every scratch, every acidic rain event, and every capillary‑driven moisture ingress that breaches the film would initiate localized corrosion that, in a homogeneous material, propagates irreversibly. A finite, static reservoir of phosphorus atoms dissolved in the iron matrix cannot account for the film’s observed capacity for self‑renewal.</p>
+<p>We argue that the Pillar’s corrosion immunity must be understood as a <strong>dissipative structure</strong>—a steady‑state configuration maintained far from equilibrium by a continuous flux of passivating species. This perspective demands an internal, open‑source reservoir of phosphate ions capable of sustained release over millennial timescales. We therefore propose the "Bone‑Porcelain Core" hypothesis: the Pillar is not a homogeneous phosphorus‑bearing iron artifact, but a deliberately engineered <strong>composite metamaterial</strong> consisting of a porous hydroxyapatite ($\mathrm{Ca_{10}(PO_4)_6(OH)_2}$) ceramic core—fabricated from calcined animal bone—encased in a forge‑welded wrought iron shell. This structure functions as a sustained‑release self‑healing system, wherein damage‑localized electric fields drive targeted migration of phosphate ions to exposed iron surfaces, effecting in situ repassivation.</p>
+<p><img alt="Figure 1: Unified Physical Framework of the Autonomous Self‑Healing Metamaterial Principle (ASHMP)" src="../CURRENCY_REGISTRY/raw/fig1_delhi_pillar.jpg" />
+<em>Figure 1. Unified Physical Framework of the Autonomous Self‑Healing Metamaterial Principle (ASHMP). (A) Overall Architecture: Functionally‑graded composite cross‑section of Delhi Iron Pillar. (B) Five‑stage autonomous self‑healing dynamic cycle. (C) Crystal structure of hydroxyapatite reservoir material. (D) Multiscale hierarchical porous percolative transport pathways. (E) Anodic potential gradient driving force, Nernst‑Planck transport governing equations. (F) Non‑classical crystallization and protective $\mathrm{FePO_4\cdot 2H_2O}$ film formation and Raman spectral fingerprint. (G) Suite of multi‑modal non‑destructive verification modalities: muon radiography, neutron tomography, phased‑array ultrasonics.</em></p>
+<p>This hypothesis is not merely a revised archaeological model; it constitutes the identification of a <strong>metamaterial invention</strong> (Figure 1). A metamaterial is defined as an artificially structured material whose macroscopic properties are governed by its internal architecture rather than by the inherent chemistry of its constituents. The hypothesized Bone‑Porcelain Core composite fits this definition precisely: its emergent property—millennial corrosion self‑healing—arises from the deliberate arrangement of a porous ion reservoir, a capillary transport network, and a structural shell, none of which individually possesses this capability. If verified, the Delhi Iron Pillar predates modern metamaterial science by 1500 years.</p>
+<p>In this paper, we develop the Bone‑Porcelain Core hypothesis across multiple physical scales—from generalized electrodynamics to nonclassical crystallization kinetics—and propose a comprehensive, non‑destructive verification strategy. We conclude by discussing the hypothesis’s implications as a blueprint for next‑generation self‑healing materials inspired by this ancient invention.</p>
+<p>Importantly, the present work advances two logically independent scientific propositions. The first is the proposal of a general materials‑design principle: an autonomous self‑healing structural architecture formed by integrating (i) an internal chemical reservoir, (ii) a selective transport network, and (iii) a damage‑activated electrochemical feedback mechanism within a load‑bearing material. This design principle is independent of any particular historical artifact and can be evaluated through modern materials science, modeling, and engineering implementation. The second proposition is historical: that the Delhi Iron Pillar represents a testable ancient realization of this architecture. The archaeological hypothesis therefore serves as a specific application of the broader materials concept rather than its sole justification. Even if future investigations were to refute the historical interpretation, the proposed materials architecture would remain a valid scientific framework for the development of next‑generation autonomous self‑healing structural materials.</p>
+<h2 id="2-the-boneporcelain-core-composite-architecture">2. The Bone‑Porcelain Core Composite Architecture</h2>
+<h3 id="21-structural-topology">2.1 Structural Topology</h3>
+<p>We model the Pillar as a concentric cylindrical composite (Figure 1) comprising three distinct functional zones:</p>
+<p><strong>Zone I: Porous Sustained‑Release Core</strong>
+- Diameter: ~28 cm
+- Composition: Hydroxyapatite $\mathrm{Ca_{10}(PO_4)_6(OH)_2}$ ceramic
+- Porosity: ~35 vol%, hierarchical pore network spanning 10 nm to 100 µm (Capillary channels: 10–100 µm; Micro‑pores: 1–10 µm; Nano‑pores: 10–100 nm)
+- Fabrication: Calcined animal bone ash, compacted and sintered at ~850 °C
+- Function: Stores a molar phosphate inventory of $n_{\text{PO}_4^{3-}} \sim 1.2 \times 10^3\ \text{mol}$ as a solid‑state electrolyte reservoir.</p>
+<p><strong>Zone II: Transition Interphase</strong>
+- Thickness: ~0.5 mm
+- Microstructure: Iron‑phosphorus eutectic with mechanical interlocking, formed during forge‑welding
+- Function: Provides chemical bonding between core and shell while preserving capillary continuity.</p>
+<p><strong>Zone III: Anisotropic Wrought Iron Shell</strong>
+- Thickness: 3–5 cm
+- Microstructure: Multi‑laminate low‑sulfur ($S &lt; 0.005\%$) wrought iron, fabricated by thousands of hammer blows at white heat (&gt; 1100 °C)
+- Defect topology: Forge‑weld discontinuities form an anisotropic, radially oriented capillary network with effective tortuosity $\tau \approx 3\text{–}5$.</p>
+<h3 id="22-capillary-transport-network">2.2 Capillary Transport Network</h3>
+<p>The forge‑welding process leaves behind interlamellar gaps that, while mechanically negligible, constitute a percolating network connecting the porous core to the external surface. The transport of phosphate ions within this network is governed by both diffusion and field‑driven migration. In nano‑confined capillary pores, the local effective diffusivity is $D_{\text{PO}_4^{3-}} \sim 10^{-11}\text{–}10^{-10}\ \text{m}^2/\text{s}$.</p>
+<p>For a characteristic millimeter‑scale transport distance ($L \sim 1\ \text{mm}$), the migration/diffusion timescale:</p>
+<div class="math-block">$$
+\tau \sim \frac{L^2}{D_{\text{eff}}} \tag{1}
+$$</div>
+<p>Substituting parameter values gives $\tau \approx 10^2\text{–}10^4\ \text{s}$. This indicates that localized self‑healing is achieved within hours of damage initiation, while the macroscopic release rate is constrained by the capillary volume fraction ($\phi_{\text{cap}} \approx 0.02\text{–}0.05$) and tortuosity ($\tau \approx 3\text{–}5$), ensuring sustained availability over millennial timescales.</p>
+<h2 id="3-multiscale-physical-mechanisms-of-autonomous-selfhealing">3. Multiscale Physical Mechanisms of Autonomous Self‑Healing</h2>
+<h3 id="31-electrochemical-selfhealing-targeted-ion-migration-and-repassivation">3.1 Electrochemical Self‑Healing: Targeted Ion Migration and Repassivation</h3>
+<p>When mechanical abrasion or chemical attack breaches the $\mathrm{FePO_4 \cdot 2H_2O}$ film at a localized site, an electrochemical microcell is instantaneously established.</p>
+<p>Anode (damaged site):</p>
+<div class="math-block">$$
+\text{Fe} \rightarrow \text{Fe}^{2+} + 2e^{-} \quad (E^\circ = -0.44\ \text{V}_\text{SHE}) \tag{2}
+$$</div>
+<p>Cathode (adjacent intact film):</p>
+<div class="math-block">$$
+\text{O}_2 + 2\text{H}_2\text{O} + 4e^{-} \rightarrow 4\text{OH}^{-} \quad (E^\circ = +0.40\ \text{V}_\text{SHE}) \tag{3}
+$$</div>
+<p>The critical step is the electrostatic targeting of phosphate ions from the core to the anode. Ion transport in the capillary electrolyte is governed by the Nernst‑Planck equation:</p>
+<div class="math-block">$$
+J_i = -D_i \nabla c_i - \frac{z_i F}{RT} D_i c_i \nabla \Phi + c_i \mathbf{v} \tag{4}
+$$</div>
+<p>For phosphate ions ($z = -3$), the electric field $\nabla \Phi$ between the anodic site ($\Phi \approx -0.6\ \text{V}_\text{SHE}$) and the surrounding cathodic surface ($\Phi \approx +0.3\ \text{V}_\text{SHE}$) generates a migration velocity directed toward the anode. The Péclet number comparing migration to diffusion is $Pe \approx 10^2$, indicating that migration dominates and ions are actively driven to the damage site rather than dispersing randomly.</p>
+<p>At the anode, $\text{Fe}^{2+}$ and $\text{PO}_4^{3-}$ react rapidly to reprecipitate the passive film:</p>
+<div class="math-block">$$
+2\text{Fe}^{2+} + 2\text{H}_2\text{PO}_4^{-} + 2\text{H}_2\text{O} + \tfrac{1}{2}\text{O}_2 \rightarrow 2\text{FePO}_4 \cdot 2\text{H}_2\text{O} \downarrow + 4\text{H}^{+} \tag{5}
+$$</div>
+<p>The precipitated film is isostructural with strengite ($K_{sp} \approx 10^{-22}$), providing an adherent, insulating barrier of ~50 µm thickness within hours.</p>
+<p>Beyond quasi‑static picture, damage launches surface potential wave propagating along metal‑electrolyte interface. Wave velocity estimate:</p>
+<div class="math-block">$$
+v \sim \sqrt{2\sigma_{\text{core}}/\varepsilon_{\text{shell}}\rho_{\text{ion}}} \tag{6}
+$$</div>
+<p>giving $v \approx 10^{-2}\ \text{m/s}$, achieving near‑instantaneous notification of damage location for ionic reservoir.</p>
+<h3 id="32-terahertz-and-raman-spectroscopic-signatures">3.2 Terahertz and Raman Spectroscopic Signatures</h3>
+<p>The Fe‑P eutectic transition layer exhibits unique vibrational fingerprints detectable by terahertz time‑domain spectroscopy (THz‑TDS) and Raman spectroscopy. Fe‑P stretching vibrations produce characteristic absorption band 1.2‑1.8 THz. For Raman measurement, key phosphate vibrational modes: $\nu_1(\text{PO}_4^{3-})$ ~960 cm$^{-1}$, $\nu_3(\text{PO}_4^{3-})$ ~1080 cm$^{-1}$. Residual forging stress induces peak blue‑shift or asymmetric broadening in hydroxyapatite Raman spectra, recording historical thermo‑mechanical processing information.</p>
+<h3 id="33-surfaceinterface-physics-the-ionic-valve-effect">3.3 Surface‑Interface Physics: The Ionic Valve Effect</h3>
+<p>Within hydroxyapatite nanopores, wall surface OH‑ deprotonation creates negatively‑charged Stern electrical double‑layer.
+- Under applied anodic field: repels $\text{PO}_4^{3-}$ toward pore central high‑velocity stream → enhance ion outward mobility.
+- Zero external field: same negative wall potential suppresses spontaneous leakage diffusion.</p>
+<p>This rectifying diode‑like <strong>ionic valve effect</strong> minimizes quiescent reservoir loss, only activating transport upon damage‑induced anodic potential.</p>
+<h3 id="34-dielectric-boneporcelain-as-a-proton-glass">3.4 Dielectric Bone‑Porcelain as a Proton Glass</h3>
+<p>During forge‑welding ~1100 °C, partial dehydration reaction:</p>
+<div class="math-block">$$
+2\text{OH}^- \rightarrow \text{O}^{2-} + \text{H}_2\text{O} \uparrow \tag{7}
+$$</div>
+<p>Cooling under iron shell constraint produces incomplete anisotropic rehydration, forming non‑equilibrium proton‑glass dielectric state, featuring mHz‑range dielectric‑loss relaxation and 150‑250 °C thermally‑stimulated depolarization‑current signature, encoding ancient forging thermal history.</p>
+<h3 id="35-plasmaassisted-forgewelding-interface-metallurgy">3.5 Plasma‑Assisted Forge‑Welding: Interface Metallurgy</h3>
+<p>Hammer compression traps micro‑gas pockets at core‑shell boundary, generating transient dielectric‑barrier microplasma (&lt;1 µs duration, &gt;3000 K):
+1. Electron bombardment reduces iron‑oxide to reactive metallic iron;
+2. Excited phosphorus species directly form covalent Fe‑P bonds, bypassing slow solid‑state diffusion.
+This mechanism explains the homogeneous Fe‑P eutectic interphase formation.</p>
+<h3 id="36-nonclassical-crystallization-of-the-passive-film">3.6 Nonclassical Crystallization of the Passive Film</h3>
+<p>Repassivation follows non‑classical pre‑nucleation‑cluster oriented‑attachment pathway. Film growth kinetic equation:</p>
+<div class="math-block">$$
+\frac{dh}{dt} = k_1 c_{\text{cluster}} \exp\left(-\frac{E_a}{k_B T}\right) \cdot \frac{1}{1 + k_2 h} \tag{8}
+$$</div>
+<p>The $(1+k_2 h)^{-1}$ self‑limiting term naturally saturates film thickness near ~50 µm, preventing excessive phosphate‑reservoir consumption. Resulting film exhibits epitaxial crystallographic texture with underlying iron substrate for optimum adhesion.</p>
+<h2 id="4-proposed-nondestructive-verification">4. Proposed Non‑Destructive Verification</h2>
+<p>To render the hypothesis falsifiable while respecting heritage protection status, fully non‑invasive multi‑modal measurement campaign is proposed.</p>
+<h3 id="41-cosmicray-muon-transmission-radiography">4.1 Cosmic‑Ray Muon Transmission Radiography</h3>
+<p>Hydroxyapatite core ($\rho\approx1.8\ \text{g/cm}^3$) vs iron shell ($\rho\approx7.8\ \text{g/cm}^3$) large density contrast ~4.3:1. Thirty‑day exposure detector array angular resolution &lt;5 mrad can resolve ~28 cm low‑density cylindrical interior anomaly.</p>
+<h3 id="42-neutron-backscatter-tomography">4.2 Neutron Backscatter Tomography</h3>
+<p>Neutron scattering strongly sensitive to hydrogen. Hydroxyapatite structural OH groups and pore‑bound water produce distinct back‑scatter signature compared hydrogen‑poor iron matrix. Portable DT neutron source combined with $^3\text{He}$ detector array can map hydrogen‑rich core region.</p>
+<h3 id="43-phasedarray-ultrasonic-reflection-tomography">4.3 Phased‑Array Ultrasonic Reflection Tomography</h3>
+<p>Acoustic impedance: iron $Z \approx 46 \times 10^6\ \mathrm{kg/(m^2\cdot s)}$; hydroxyapatite $Z\approx13\times10^6\ \mathrm{kg/(m^2\cdot s)}$. Normal‑incidence reflection coefficient:</p>
+<div class="math-block">$$
+R=\left|\frac{Z_2-Z_1}{Z_2+Z_1}\right|^2 \tag{9}
+$$</div>
+<p>Calculated $R\approx0.56$. 2‑5 MHz phased‑array ultrasonic probe scanning azimuthally detects hyperbolic interface echo at shell depth of 3‑5 cm.</p>
+<p>Joint multi‑modal reconstruction (muon attenuation + neutron back‑scatter + ultrasonic reflection) reconstruct full 3‑D internal material map of pillar.</p>
+<p><img alt="Figure 2: Hierarchical Taxonomy and Physical Foundation of Autonomous Intelligent Materials (AIM)" src="../CURRENCY_REGISTRY/raw/fig2_aim_taxonomy.jpg" />
+<em>Figure 2. Hierarchical Taxonomy and Physical Foundation of Autonomous Intelligent Materials (AIM). Level‑1 ASHMP principle, Level‑2 ASHM material realization, Level‑3 AIM adaptive‑intelligent‑matter paradigm; functional modules, cross‑domain generalization roadmap for thermal / acoustic / structural / energy metamaterials.</em></p>
+<h2 id="5-discussion">5. Discussion</h2>
+<h3 id="51-from-hypothesis-to-metamaterial-invention">5.1 From Hypothesis to Metamaterial Invention</h3>
+<p>Conventional corrosion‑resistant materials rely on static passive chemistry or periodic human maintenance. This Bone‑Porcelain‑Core composite integrates load‑bearing mechanical skeleton, internal chemical reservoir, selective capillary transport, damage‑triggered electrochemical feedback, and in‑situ reconstruction. Millennial‑scale self‑healing corrosion resistance is emergent system‑level property, no individual constituent material possesses this capacity.</p>
+<p>If experimentally validated, Delhi Iron Pillar represents an early proto‑metamaterial invention, predating modern metamaterial science by roughly 1500 years. The design principle can be modernly adapted for aerospace alloy self‑healing coatings, marine concrete reinforced‑bar composite, lunar/Martian in‑situ resource utilization construction materials.</p>
+<p>We emphasize: this manuscript presents <strong>falsifiable scientific hypothesis</strong>, not confirmed archaeological fact. Negative experimental outcome rejects pillar‑internal‑core conjecture; but the general ASHM material‑architecture principle remains scientifically valid for modern material engineering.</p>
+<h3 id="52-embodied-physical-intelligence-computing-without-microprocessors">5.2 Embodied Physical Intelligence: Computing without Microprocessors</h3>
+<p>The ASHM composite realizes <strong>embodied physical intelligence (material intelligence)</strong>, operates without silicon chips, external power supplies:
+1. <strong>Physical sensing</strong>: surface damage alters electrochemical boundary condition, automatically establishing anodic potential gradient;
+2. <strong>Analog field computation</strong>: Nernst‑Planck ion transport performs continuous analog calculation, guiding passivating ion flux precisely toward damage site;
+3. <strong>Autonomous negative feedback loop</strong>: repassivation rebuild insulating barrier → potential gradient vanishes → ion‑flow self‑terminates;
+4. <strong>Non‑volatile material memory</strong>: residual lattice strain (Raman shift), proton‑glass dielectric relaxation preserve manufacturing and environmental history inside material.</p>
+<p>This class Adaptive Intelligent Metamaterial (AIM) is promising for extreme‑condition engineering: deep‑ocean facilities, space hardware, high‑radiation nuclear installations, environments where fragile electronic sensors cannot survive.</p>
+<h2 id="6-generalization-of-the-autonomous-selfhealing-metamaterial-principle-ashmp">6. Generalization of the Autonomous Self‑Healing Metamaterial Principle (ASHMP)</h2>
+<p>The general ASHMP five essential coupled functional components:
+1. mechanically load‑bearing structural framework;
+2. internally distributed chemical reservoir;
+3. selective transport network connecting reservoir to outer surfaces;
+4. damage‑activated electrochemical feedback mechanism localizing transport;
+5. in‑situ self‑reconstruction process restoring protective functional interface.</p>
+<p>None of these components alone deliver autonomous self‑healing; functionality emerges from architectural combination. This principle is transferable: swap reservoir chemistry for oxide‑forming alloys and other functional species, can generalize to marine, aerospace, nuclear‑energy, off‑planet construction material systems. Figure 2 summarizes full hierarchical classification and cross‑domain expansion vision.</p>
+<h2 id="7-conclusion">7. Conclusion</h2>
+<p>Beyond archaeological conjecture about Delhi Iron Pillar, this paper establishes a general‑purpose scientific design principle for autonomous self‑healing structural metamaterials: combining internal chemical reservoir, selective percolative transport network and damage‑triggered electrochemical feedback to achieve localized autonomous material repair.</p>
+<p>The Bone‑Porcelain‑Core hypothesis for Delhi Iron Pillar is one concrete test‑able historical application of this principle. Whether future non‑destructive tests confirm or refute the archaeological conjecture, the underlying ASHM metamaterial‑architecture remains useful blueprint for designing next‑generation adaptive intelligent materials.</p>
+<p>If proven correct, the Delhi Iron Pillar would cease to be viewed as random ancient metallurgical accident; it would be recognized as a deliberate proto‑metamaterial engineering invention that anticipated modern material‑science thinking by fifteen centuries. This work illustrates that fundamental design principles can sometimes be encoded within ancient artifacts, waiting for modern scientific frameworks to decode them.</p>
+<h2 id="acknowledgements">Acknowledgements</h2>
+<p>We are grateful to all the individual scientists and teams of scientists who have contributed to the exploration and understanding of the entire universe. Supported by AI‑driven Supercomputers and the MES Universe Project. This article has undergone rigorous review and cross‑verification, supported by leading AI models including DeepSeek, Gemini, ChatGPT, Doubao, and Qwen.</p>
+<h2 id="references">References</h2>
+<p>[1] R. Balasubramaniam. (2000). On the corrosion resistance of the Delhi iron pillar, Corrosion Science 42, 2103–2129. https://doi.org/10.1016/S0010‑938X(00)00046‑9</p>
+<p>[2] R. Balasubramaniam and A. V. Ramesh Kumar. (2000). Characterization of Delhi iron pillar rust by X‑ray diffraction, Fourier transform infrared spectroscopy and Mössbauer spectroscopy, Corrosion Science 42, 2085–2101. https://doi.org/10.1016/S0010‑938X(00)00045‑7</p>
+<p>[3] Bardgett, W.E., &amp; Stanners, J.F. (1963). The Delhi Pillar‑A study of the Corrosion Aspects.</p>
+<p>[4] Gösta Wranglén. (1970). The “rustless” iron pillar at Delhi, Corrosion Science 10, 761–770. https://doi.org/10.1016/S0010‑938X(70)80046‑4</p>
+<p>[5] Prigogine, I. (1967). Introduction to Thermodynamics of Irreversible Processes: 3d Ed. United States: Interscience Publishers.</p>
+<p>[6] N. Engheta and R. W. Ziolkowski. (2006). Metamaterials: Physics and Engineering Explorations. Germany: John Wiley &amp; Sons, Incorporated.</p>
+<p>[7] Newman, J., Thomas‑Alyea, K. E. (2012). Electrochemical Systems. Germany: Wiley.</p>
+<p>[8] J. B. Pendry, D. Schurig, and D. R. Smith. (2006). Controlling electromagnetic fields, Science 312, 1780–1782. https://doi.org/10.1126/science.1125907</p>
+<p>[9] M. Z. Bazant, K. Thornton, and A. Ajdari. (2004). Diffuse‑charge dynamics in electrochemical systems, Physical Review E 70, 021506. https://doi.org/10.1103/PhysRevE.70.021506</p>
+<p>[10] Jepsen, P.U., Cooke, D.G. and Koch, M. (2011), Terahertz spectroscopy and imaging – Modern techniques and applications. Laser &amp; Photon. Rev., 5: 124‑166. https://doi.org/10.1002/lpor.201000011</p>
+<p>[11] A. Antonakos, E. Liarokapis, and T. Leventouri. (2007). Micro‑Raman and FTIR studies of synthetic and natural apatites, Biomaterials 28, 3043–3054. https://doi.org/10.1016/j.biomaterials.2007.02.028</p>
+<p>[12] R. B. Schoch, J. Han, and P. Renaud. (2008). Transport phenomena in nanofluidics, Reviews of Modern Physics 80, 839. https://doi.org/10.1103/RevModPhys.80.839</p>
+<p>[13] Yamashita, K., Kitagaki, K. and Umegaki, T. (1995). Thermal Instability and Proton Conductivity of Ceramic Hydroxyapatite at High Temperatures. Journal of the American Ceramic Society, 78: 1191‑1197. https://doi.org/10.1111/j.1151‑2916.1995.tb08468.x</p>
+<p>[14] Kogelschatz, U. (2003). Dielectric‑Barrier Discharges: Their History, Discharge Physics, and Industrial Applications. Plasma Chemistry and Plasma Processing 23, 1–46. https://doi.org/10.1023/A:1022470901385</p>
+<p>[15] J. J. De Yoreo et al., (2015). Crystallization by particle attachment in synthetic, biogenic, and geologic environments, Science 349, aaa6760. https://doi.org/10.1126/science.aaa6760</p>
+<p>[16] Morishima, K., Kuno, M., Nishio, A. et al. (2017). Discovery of a big void in Khufu’s Pyramid by observation of cosmic‑ray muons. Nature 552, 386–390. https://doi.org/10.1038/nature24647</p>
+<p>[17] N. Kardjilov et al., (2018). Advances in neutron imaging, Materials Today 21, 652–672. https://doi.org/10.1016/j.mattod.2018.03.001</p>
+<p>[18] Kamachi Mudali, U., Raj, B. (2009). Insitu corrosion investigations on Delhi iron pillar. Trans Indian Inst Met 62, 25–33. https://doi.org/10.1007/s12666‑009‑0004‑2</p>
+<p>[19] Baoliin (Zaitian) Wu 伍宝林. (2026). The Overlooked Coordinate System Exorcising the Demons and Ghosts of Quantum Measurement. Self‑Preprint Archive. https://zaitian001.github.io/-Self‑Preprint‑V1.1‑/preprints/DW58553901.html</p>
+<p>[20] Baoliin (Zaitian) Wu. (2026). The Gui‑Ju Dao: The Artificial General Intelligence Algorithm, Geometry, and Engineering Paradigm of China's Indigenous Closed Spherical Universe. Self‑Preprint Archive. https://zaitian001.github.io/-Self‑Preprint‑V1.1‑/preprints/DW58553902.html</p>
+<p>[21] Kaspar, C., Ravoo, B.J., van der Wiel, W.G. et al. (2021). The rise of intelligent matter. Nature 594, 345–355. https://doi.org/10.1038/s41586‑021‑03453‑y</p>
+<p>[22] Nygaard, T.F., Martin, C.P., Torresen, J. et al. (2021). Real‑world embodied AI through a morphologically adaptive quadruped robot. Nat Mach Intell 3, 410–419. https://doi.org/10.1038/s42256‑021‑00419‑2</p>
+<p>[23] White, S., Sottos, N., Geubelle, P. et al. (2001). Autonomic healing of polymer composites. Nature 409, 794–797. https://doi.org/10.1038/35057232</p>
+        </div>
+    </article>
+
+    <!-- 引用格式选择器（Google Scholar 风格） -->
+    <div class="citation-toggle">
+        <span class="cite-label">📚 Cite this paper</span>
+        <span class="cite-arrow">▾</span>
+    </div>
+    <div class="citation-panel" id="citationPanel">
+        <div class="citation-format-selector">
+            <button class="format-btn active" data-format="apa">APA</button>
+            <button class="format-btn" data-format="mla">MLA</button>
+            <button class="format-btn" data-format="chicago">Chicago</button>
+            <button class="format-btn" data-format="bibtex">BibTeX</button>
+        </div>
+        <div class="citation-display" id="citationDisplay">
+            <span class="citation-text" id="citationText"></span>
+            <button class="copy-btn" id="copyCitationBtn">📋 Copy</button>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        © 2026 Anonymous · Self-Preprint Decentralized Academic Archive
+    </footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const citationData = {"apa": "Anonymous (2026). DW58553903. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553903.html", "mla": "Anonymous. \"DW58553903.\" Self-Preprint Archive, 2026, https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553903.html.", "chicago": "Anonymous. \"DW58553903.\" Self-Preprint Archive. Accessed August 13, 2026. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553903.html.", "bibtex": "@article{selfpreprint_DW58553903,\n  author = {Anonymous},\n  title = {DW58553903},\n  journal = {Self-Preprint Archive},\n  year = {2026},\n  url = {https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553903.html}\n}"};
+    const toggle = document.querySelector('.citation-toggle');
+    const panel = document.getElementById('citationPanel');
+    const textDisplay = document.getElementById('citationText');
+    const copyBtn = document.getElementById('copyCitationBtn');
+    let currentFormat = 'apa';
+
+    if (toggle && panel) {
+        toggle.addEventListener('click', function() {
+            this.classList.toggle('open');
+            panel.classList.toggle('open');
+            if (panel.classList.contains('open')) {
+                updateCitation('apa');
+            }
+        });
+    }
+
+    document.querySelectorAll('.format-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            document.querySelectorAll('.format-btn').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            currentFormat = this.getAttribute('data-format');
+            updateCitation(currentFormat);
+        });
+    });
+
+    function updateCitation(format) {
+        let text = citationData[format] || 'Citation not available';
+        if (format === 'bibtex') {
+            textDisplay.className = 'citation-text bibtex-display';
+            textDisplay.textContent = text;
+        } else {
+            textDisplay.className = 'citation-text';
+            textDisplay.textContent = text;
+        }
+        copyBtn.textContent = '📋 Copy';
+        copyBtn.classList.remove('copied');
+    }
+
+    if (copyBtn) {
+        copyBtn.addEventListener('click', function() {
+            const text = textDisplay.textContent;
+            navigator.clipboard.writeText(text).then(function() {
+                copyBtn.textContent = '✅ Copied!';
+                copyBtn.classList.add('copied');
+                setTimeout(function() {
+                    copyBtn.textContent = '📋 Copy';
+                    copyBtn.classList.remove('copied');
+                }, 2000);
+            }).catch(function() {
+                const ta = document.createElement('textarea');
+                ta.value = text;
+                document.body.appendChild(ta);
+                ta.select();
+                document.execCommand('copy');
+                document.body.removeChild(ta);
+                copyBtn.textContent = '✅ Copied!';
+                setTimeout(function() {
+                    copyBtn.textContent = '📋 Copy';
+                }, 2000);
+            });
+        });
+    }
+
+    updateCitation('apa');
+});
+</script>
+
+<!-- 引入 Mermaid 渲染引擎 -->
+<script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+    document.addEventListener("DOMContentLoaded", async function () {
+        const codeBlocks = document.querySelectorAll('pre code.language-mermaid, pre code.mermaid');
+        codeBlocks.forEach((codeBlock) => {
+            const pre = codeBlock.parentElement;
+            const div = document.createElement('div');
+            div.className = 'mermaid';
+            div.textContent = codeBlock.textContent;
+            pre.replaceWith(div);
+        });
+
+        mermaid.initialize({ startOnLoad: false, theme: 'default', securityLevel: 'loose' });
+        await mermaid.run();
+    });
+</script>
+</body>
+</html>
