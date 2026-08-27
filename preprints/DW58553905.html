@@ -1,0 +1,1673 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wuxing Dao - Self-Preprint Archive</title>
+    <meta name="citation_title" content="Wuxing Dao">
+    <meta name="citation_publication_date" content="2026/08/27">
+    <meta name="citation_fulltext_html_url" content="https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553905.html">
+    <meta name="citation_journal_title" content="Self-Preprint Archive">
+    <meta name="citation_author" content="Baoliin (Zaitian) Wu 伍宝林">
+    <style>
+/* ==========================================================================
+   -Self-Preprint- Academic Theme (Complete Merged & Responsive Version)
+   ========================================================================== */
+*, *::before, *::after { box-sizing: border-box; }
+
+:root {
+    --bg-color: #fcfcfc;
+    --text-color: #2b2b2b;
+    --primary-color: #1a365d;
+    --link-color: #2b6cb0;
+    --border-color: #e2e8f0;
+    --code-bg: #f7fafc;
+    --blockquote-bg: #edf2f7;
+    --meta-color: #718096;
+    --max-width: 860px;
+    --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-serif: Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+body {
+    font-family: var(--font-main);
+    line-height: 1.75;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 2rem 1rem;
+}
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 3rem 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border: 1px solid var(--border-color);
+}
+a { color: var(--link-color); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* 归档列表页 (index.html) */
+.archive-year {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.3rem;
+    color: var(--primary-color);
+}
+.post-item {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+}
+.post-title { font-size: 1.1rem; font-weight: 500; }
+.post-date {
+    font-size: 0.9rem;
+    color: var(--meta-color);
+    font-family: monospace;
+    white-space: nowrap;
+    margin-left: 1rem;
+}
+.post-abstract {
+    font-size: 0.95rem;
+    color: #555;
+    margin: 0.2rem 0 1.2rem 0;
+    font-family: var(--font-serif);
+}
+
+/* 文章单页 (paper_id.html) */
+article h1.paper-title {
+    font-size: 2.2rem;
+    line-height: 1.3;
+    margin-bottom: 0.8rem;
+    letter-spacing: -0.02em;
+    color: var(--primary-color);
+}
+.paper-meta {
+    font-size: 0.92rem;
+    color: var(--meta-color);
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1.2rem;
+}
+.paper-body {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+.paper-body h1, .paper-body h2, .paper-body h3 {
+    font-family: var(--font-main);
+    font-weight: 600;
+    margin-top: 2.2rem;
+    color: var(--primary-color);
+}
+
+/* MathJax & LaTeX 公式排版防护 */
+mjx-container {
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-width: 100%;
+}
+mjx-container[display="true"] {
+    display: block !important;
+    width: 100% !important;
+    margin: 1.5rem 0 !important;
+    text-align: center;
+}
+mjx-container[display="false"] {
+    display: inline-block;
+    vertical-align: middle;
+}
+.math-block {
+    display: block;
+    width: 100%;
+    margin: 1.5rem 0;
+    text-align: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+/* 物理确权卡片 */
+.anchor-box {
+    margin: 2rem 0;
+    padding: 1rem 1.2rem;
+    background: #fafafa;
+    border: 1px solid #eaeaea;
+    border-radius: 6px;
+    font-size: 0.88rem;
+    color: #444;
+}
+.anchor-box strong { color: #111; }
+.anchor-hash {
+    font-family: monospace;
+    font-size: 0.82rem;
+    word-break: break-all;
+    color: #666;
+    margin-top: 0.3rem;
+}
+
+/* 代码与预格式化文本 */
+code, pre {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-size: 0.9rem;
+}
+code {
+    background-color: var(--code-bg);
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+}
+pre {
+    padding: 1rem;
+    overflow-x: auto;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    background-color: var(--code-bg);
+    line-height: 1.45;
+}
+pre code {
+    background-color: transparent;
+    padding: 0;
+    border: none;
+}
+
+/* 引用与表格 */
+blockquote {
+    margin: 1.5rem 0;
+    padding: 0.8rem 1.2rem;
+    background-color: var(--blockquote-bg);
+    border-left: 4px solid var(--primary-color);
+    border-radius: 0 4px 4px 0;
+}
+blockquote p:last-child { margin-bottom: 0; }
+.table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+    -webkit-overflow-scrolling: touch;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+th, td {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-color);
+    text-align: left;
+}
+th {
+    background-color: var(--code-bg);
+    font-weight: 600;
+}
+
+/* 学术插图与图注 */
+img, .paper-body img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1.8rem auto 0.5rem auto;
+    border-radius: 4px;
+}
+figure { margin: 2rem auto; text-align: center; }
+figure img { max-width: 100%; height: auto; margin: 0 auto; }
+figcaption {
+    font-size: 0.9rem;
+    color: var(--meta-color);
+    margin-top: 0.6rem;
+    font-family: var(--font-main);
+    line-height: 1.4;
+}
+
+/* 引用格式选择器 (Google Scholar 风格) */
+.citation-toggle {
+    display: inline-block;
+    margin: 2rem 0 0.5rem 0;
+    padding: 0.5rem 1.2rem;
+    background: #f1f5f9;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: #1e293b;
+    transition: background 0.2s;
+    user-select: none;
+}
+.citation-toggle:hover { background: #e2e8f0; }
+.citation-toggle .cite-arrow {
+    display: inline-block;
+    margin-left: 0.4rem;
+    font-size: 0.7rem;
+    transition: transform 0.3s ease;
+}
+.citation-toggle.open .cite-arrow { transform: rotate(180deg); }
+
+.citation-panel {
+    display: none;
+    margin: 0 0 2rem 0;
+    padding: 1.2rem 1.5rem;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    max-width: 100%;
+}
+.citation-panel.open { display: block; }
+
+.citation-format-selector {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    margin-bottom: 0.8rem;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 0.8rem;
+}
+.format-btn {
+    background: transparent;
+    border: none;
+    padding: 0.3rem 1rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+    color: #64748b;
+    border-radius: 12px;
+    transition: all 0.2s;
+}
+.format-btn:hover { background: #e2e8f0; color: #1e293b; }
+.format-btn.active {
+    background: #1e293b;
+    color: white;
+    font-weight: 500;
+}
+
+.citation-display {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+.citation-text {
+    flex: 1;
+    font-size: 0.88rem;
+    font-family: var(--font-serif);
+    color: #1e293b;
+    background: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    border: 1px solid #e9edf2;
+    word-break: break-word;
+    min-height: 2.2rem;
+}
+.citation-text.bibtex-display {
+    font-family: monospace;
+    font-size: 0.82rem;
+    white-space: pre-wrap;
+}
+.copy-btn {
+    background: #e2e8f0;
+    border: none;
+    border-radius: 4px;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.8rem;
+    cursor: pointer;
+    color: #334155;
+    white-space: nowrap;
+    transition: all 0.2s;
+    align-self: center;
+}
+.copy-btn:hover { background: #cbd5e1; }
+.copy-btn.copied { background: #22c55e; color: white; }
+
+/* 页脚与移动端响应式 */
+footer.site-footer {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.85rem;
+    color: var(--meta-color);
+    text-align: center;
+}
+@media (max-width: 768px) {
+    body { padding: 1rem 0.5rem; }
+    .container { padding: 1.5rem 1rem; }
+    article h1.paper-title { font-size: 1.75rem; }
+    .post-item { flex-direction: column; align-items: flex-start; }
+    .post-date { margin-left: 0; margin-top: 0.2rem; }
+}
+</style>
+    
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    tags: 'ams'
+  },
+  svg: {
+    fontCache: 'global',
+    displayAlign: 'center',
+    displayIndent: '0'
+  },
+  options: {
+    enableMenu: false,
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+};
+</script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+<script>
+  window.addEventListener('load', function () {
+    if (window.MathJax && MathJax.typesetPromise) {
+      MathJax.typesetPromise().catch(function (err) {
+        console.log('MathJax typeset failed: ', err);
+      });
+    }
+  });
+</script>
+
+</head>
+<body>
+    <header class="site-header">
+        <nav>
+            <a href="../index.html">← Archives</a>
+            <a href="../feed.xml">RSS</a>
+        </nav>
+    </header>
+
+    <article>
+        <h1 class="paper-title">Wuxing Dao</h1>
+        <div class="paper-meta">
+            By <strong>Baoliin (Zaitian) Wu 伍宝林</strong> · Published on 2026-08-27
+        </div>
+
+        
+    <div class="anchor-box">
+        🛡️ <strong>Physical Proof of Existence</strong> | Banknote Serial: <code>DW58553905</code>
+        <div class="anchor-hash">SHA-256 Hash: bf1949fcb5a32ee20d82153796402562e4bbf3f21f42514a5377e0c48cc06f69</div>
+    </div>
+    
+
+        <blockquote style="font-family: var(--font-serif); background:#fdfdfd; padding:0.8rem 1.2rem; border-left:3px solid #ccc; margin: 1.5rem 0;"><p>Using the ancient Chinese Wuxing (Five Elements 五行) theory as its algebraic core, the Jade Cong‑Luoshu geometry as its geometric carrier, and the curvature attractors of immune memory as its biological implementation, this paper constructs a unified mathematical framework integrating group theory, dynamical systems, geometry, open quantum dynamics, and Physical AGI. We first formalize the generative and destructive (overcoming) relationships of Wuxing as two operators, $S$ and $K=S^2$, on the cyclic group $\mathbb{Z}_5$, proving that they satisfy a spectral duality: $\sigma(K)=\sigma(S)^2$. Furthermore, we generalize this to a cycle‑length proposition: for any modulo $n$ and step size $r$, the destructive mapping forms a single cycle if and only if $\gcd(n,r)=1$; the uniqueness of the Wuxing system stems from the combination of a five‑element odd‑order structure with coprime step sizes. This discrete group can be embedded into a three‑dimensional orthogonal coordinate system and corresponds to the continuous rotation group $SO(3)$ via the icosahedral group $A_5$. The five‑dimensional attribute space is naturally realized as the five‑dimensional irreducible representation of $SO(3)$, denoted as $\mathrm{Sym}^2_0(\mathbb{R}^3)$, which, upon restriction to the $\mathbb{Z}_5$ subgroup, decomposes into two rotation sectors perfectly matching the generative‑destructive spectral duality. The antisymmetric part of the Luoshu matrix yields the Lie algebra rotation generators along the spatial diagonal $(1,1,1)$. We correct its normalization and rigorously demonstrate that the four‑cardinal $C_4$ rotation is merely an effective approximation of the Wuxing cycle in lower‑dimensional projection.</p>
+<p>The Wuxing combat dynamics employ an extended Lanchester equation. Under bounded positive conditions, the "Wugu (Five‑Bone 伍骨) Locking" configuration leads to the asymptotic exponential collapse and finite‑time $\epsilon$‑collapse of the opponent system, topologically interpreted as a defect with a winding number $w=2$. We map this algebraic structure to a Stratonovich stochastic geometric flow on a curved manifold, proving that negative curvature regions naturally emerge as stable attractors—providing a dynamical basis for immune memory. The germinal center is identified as a biological Jade Cong, and MHC restriction as the Gui‑Ju (Compass‑Square) gauge constraint. This paper also derives a curvature‑driven master equation for open quantum dynamics, strictly distinguishing between coordinate singularities and physical curvature singularities, and discusses regularization approaches for divergences under extremely high negative curvature. Finally, we propose a corrected Universe Generative Master Equation (a homogeneous coordinate affine transformation), a $\mathbb{Z}_5$‑equivariant Variational Autoencoder (VAE) computational scheme, and a Physical AGI architecture based on Quaternion Processing Units (QPUs). The entire text introduces a four‑level evidence hierarchy, explicitly distinguishing among rigorous mathematical results, mathematical constructions, modeling hypotheses, and physical conjectures, aiming to provide a testable mathematical language for symmetry, dissipation, and the mechanisms of attractor formation and collapse in complex systems.</p></blockquote>
+
+        <div class="paper-body">
+            <h1 id="wuxing-dao">Wuxing Dao</h1>
+<p><strong>Baoliin (Zaitian) Wu 伍宝林</strong></p>
+<p><em>ORCiD:</em> <a href="https://orcid.org/0009-0003-2051-5247">0009-0003-2051-5247</a></p>
+<p><em>Email:</em> zaitian001@gmail.com</p>
+<p><em>Affiliation:</em> People's Government of Guangdong Province: Guangzhou, CN</p>
+<p><em>Date:</em> August 27, 2026</p>
+<hr />
+<h2 id="abstract">Abstract</h2>
+<p>Using the ancient Chinese Wuxing (Five Elements五行) theory as its algebraic core, the Jade Cong-Luoshu geometry as its geometric carrier, and the curvature attractors of immune memory as its biological implementation, this paper constructs a unified mathematical framework integrating group theory, dynamical systems, geometry, open quantum dynamics, and Physical AGI. We first formalize the generative and destructive (overcoming) relationships of Wuxing as two operators, $S$ and $K=S^2$, on the cyclic group $\mathbb{Z}_5$, proving that they satisfy a spectral duality: $\sigma(K)=\sigma(S)^2$. Furthermore, we generalize this to a cycle-length proposition: for any modulo $n$ and step size $r$, the destructive mapping forms a single cycle if and only if $\gcd(n,r)=1$; the uniqueness of the Wuxing system stems from the combination of a five-element odd-order structure with coprime step sizes. This discrete group can be embedded into a three-dimensional orthogonal coordinate system and corresponds to the continuous rotation group $SO(3)$ via the icosahedral group $A_5$. The five-dimensional attribute space is naturally realized as the five-dimensional irreducible representation of $SO(3)$, denoted as $\mathrm{Sym}^2_0(\mathbb{R}^3)$, which, upon restriction to the $\mathbb{Z}_5$ subgroup, decomposes into two rotation sectors perfectly matching the generative-destructive spectral duality. The antisymmetric part of the Luoshu matrix yields the Lie algebra rotation generators along the spatial diagonal $(1,1,1)$. We correct its normalization and rigorously demonstrate that the four-cardinal $C_4$ rotation is merely an effective approximation of the Wuxing cycle in lower-dimensional projection.</p>
+<p>The Wuxing combat dynamics employ an extended Lanchester equation. Under bounded positive conditions, the "Wugu (Five-Bone伍骨) Locking" configuration leads to the asymptotic exponential collapse and finite-time $\epsilon$-collapse of the opponent system, topologically interpreted as a defect with a winding number $w=2$. We map this algebraic structure to a Stratonovich stochastic geometric flow on a curved manifold, proving that negative curvature regions naturally emerge as stable attractors—providing a dynamical basis for immune memory. The germinal center is identified as a biological Jade Cong, and MHC restriction as the Gui-Ju (Compass-Square) gauge constraint. This paper also derives a curvature-driven master equation for open quantum dynamics, strictly distinguishing between coordinate singularities and physical curvature singularities, and discusses regularization approaches for divergences under extremely high negative curvature. Finally, we propose a corrected Universe Generative Master Equation (a homogeneous coordinate affine transformation), a $\mathbb{Z}_5$-equivariant Variational Autoencoder (VAE) computational scheme, and a Physical AGI architecture based on Quaternion Processing Units (QPUs). The entire text introduces a four-level evidence hierarchy, explicitly distinguishing among rigorous mathematical results, mathematical constructions, modeling hypotheses, and physical conjectures, aiming to provide a testable mathematical language for symmetry, dissipation, and the mechanisms of attractor formation and collapse in complex systems.</p>
+<p><strong>Keywords:</strong> Wuxing; $\mathbb{Z}_5$ Group; Spectral Duality; Lie Algebra; Immune Memory; Physical AGI; Open Quantum Systems</p>
+<h2 id="0-evidence-hierarchy-and-reading-guide">0. Evidence Hierarchy and Reading Guide</h2>
+<p>To ensure academic integrity and logical clarity, this paper introduces a four-level evidence hierarchy. Every core conclusion is annotated with its evidence level, allowing readers to accurately assess its mathematical reliability.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Content</th>
+<th>Nature of Evidence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>L1</td>
+<td>$\mathbb{Z}_5$ group theory, $K=S^2$, spectral relation $\sigma(K)=\sigma(S)^2$, cycle length proposition, $\mathbb{Z}_5\to SO(3)$ faithful representation, $\mathrm{Sym}^2_0(\mathbb{R}^3)$ 5D irreducible representation and its $\mathbb{Z}_5$ restriction decomposition</td>
+<td>Rigorous Mathematical Theorems</td>
+</tr>
+<tr>
+<td>L2</td>
+<td>Luoshu Lie algebra generators, extended Lanchester equations, Reynolds operator symmetrization, Fisher metric construction</td>
+<td>Rigorous Mathematical Constructions or Standard Tools</td>
+</tr>
+<tr>
+<td>L3</td>
+<td>Curvature-memory correspondence, Wuxing-immunity mapping, Wugu-combinatorial immunotherapy hypothesis, curvature-driven quantum dissipation model</td>
+<td>Testable Modeling Hypotheses</td>
+</tr>
+<tr>
+<td>L4</td>
+<td>PT critical self-limitation regularization, curvature Born-Infeld truncation, Ju-Prior AGI engineering architecture</td>
+<td>Unverified Conjectures or Engineering Blueprints</td>
+</tr>
+</tbody>
+</table></div>
+<p>In the text below, core propositions will be tagged with [L1], [L2], [L3], or [L4].</p>
+<h2 id="1-introduction">1. Introduction</h2>
+<p>The ultimate goal of complex systems science is to uncover the unifying principles governing networks, feedback loops, and emergent order. From germinal centers in molecular immunology to macroscopic strategic warfare, and from stable memory in neural networks to the coordinate origins in quantum measurement, the mechanisms underlying the maintenance and collapse of systemic steady states often share deep topological and algebraic structures. This paper takes the ancient Chinese Wuxing theory as its core, strips away its historical and metaphorical exterior, rigorously formalizes it as a $\mathbb{Z}_5$-symmetric dynamical system, and thereby constructs a unified mathematical framework spanning discrete algebra, continuous geometry, dissipative dynamics, and Physical AGI.</p>
+<p>The core of this paper is not a loose phenomenological patchwork, but rather a tightly integrated "hierarchically progressive" three-tier equation architecture. These three tiers constitute the absolute foundation, the dynamical engine, and the supreme governing program of this theory:</p>
+<p>1.1 Algebraic Core: Generative-Destructive Spectral Duality (Absolute Foundation)</p>
+<p>The underlying logic of the Wuxing system manifests mathematically in the elegant properties of the single-cycle generated group $\mathbb{Z}_5$. We prove that Wuxing destruction ($K$) is not a distinct law independent of generation ($S$), but rather the second-order iteration of the generative cycle. In spectral space, this geometric intuition is rigorously distilled into a frequency-doubling dual relationship:</p>
+<div class="math-block">$$
+\sigma(K)=\sigma(S)^2 \quad (1)
+$$</div>
+<p>This pure algebraic identity relies on no physical assumptions and serves as the "source code" for the entire Wuxing framework. It establishes an unassailable algebraic foundation for all subsequent curvature scaling, geometric mappings, and energy dissipation analyses.</p>
+<p>1.2 Dynamical Engine: Wuxing Combat Equation and Exponential Collapse Theorem</p>
+<p>When the static algebraic structure enters time evolution and systemic game theory, we derive an extended Lanchester equation describing complex adversarial networks. Based on this, under the topological interpretation of this paper, we reveal the nonlinear dynamical essence of the ancient "Wugu (Five-Bone伍骨) Algorithm": by adjusting the alignment of forces (or intervention factors), a topological defect with winding number $w=2$ is forcibly injected into a highly coupled enemy system, instantaneously severing its internal "generative supply lines."</p>
+<p>We strictly prove Theorem 4 (Exponential Collapse) under explicit conditions: when the Wugu locking and positive lower-bound conditions are met, this topological defect strips the opponent system of its resistance, causing asymptotic exponential collapse, reducing its state to any given threshold $\epsilon$ within a finite time $t_\epsilon$:</p>
+<div class="math-block">$$
+\Vert Y(t)\Vert \le \Vert Y(0)\Vert \,e^{-ct} \quad (2)
+$$</div>
+<p>This not only replicates the decisive "three-day city breach" mechanism of the legendary Yellow Emperor defeating Chiyou within our framework, but directly provides a quantifiable stability criterion for combinatorial immunotherapy aiming to dismantle the immunosuppressive microenvironment (the Chiyou Matrix) in modern oncology.</p>
+<p>1.3 Governing Program: Universe Generative Master Equation</p>
+<p>At the highest dimension, we unify the discrete $\mathbb{Z}_5$ symmetry, the continuous 3D orthogonal coordinate system (observer origin), the Luoshu Lie algebra rotation generators, and the Hetu spatial translations into a homogeneous affine transformation defined on the 5D irreducible representation $\mathrm{Sym}^2_0(\mathbb{R}^3)$:</p>
+<div class="math-block">$$
+\tilde{X}_{\text{gen}} = \boldsymbol{\Gamma}_{\text{aug}} \cdot \mathbf{M}_{\text{Cong}} \cdot \tilde{\mathbf{x}}_0 \quad (3)
+$$</div>
+<p>This master equation perfectly fuses the rigid gauge constraint of "Gui-Ju" ($\boldsymbol{\Gamma}_{\text{gauge}}$), the nonlinear rotational evolution of Luoshu, and the translational baseline of Hetu. It acts not only as a geometric bridge spanning the discrete and the continuous, but also as a unified template for deriving stochastic geometric flows on curved manifolds, the open quantum master equation (Lindblad equation), and the underlying hardware logic for Physical AGI.</p>
+<p>Following this robust mathematical spine, this paper projects the theory smoothly across three frontier domains:</p>
+<h2 id="1-immunology-identifying-immune-memory-as-a-negative-curvature-attractor-in-state-space-and-precisely-mapping-the-germinal-center-and-mhc-restriction-to-the-biological-jade-cong-hardware-and-gui-ju-dao-gauge-constraint">1. Immunology: Identifying immune memory as a negative curvature attractor in state space, and precisely mapping the Germinal Center and MHC restriction to the biological "Jade Cong" hardware and "Gui-Ju Dao" gauge constraint.</h2>
+<h2 id="2-open-quantum-systems-deriving-a-curvature-driven-completely-positive-master-equation-and-introducingas-a-conjecturept-critical-self-limitation-and-nonlinear-saturation-regularization-mechanisms-for-extremely-high-negative-curvature-singularities">2. Open Quantum Systems: Deriving a curvature-driven completely positive master equation, and introducing—as a conjecture—PT critical self-limitation and nonlinear saturation regularization mechanisms for extremely high negative curvature singularities.</h2>
+<h2 id="3-physical-agi-proposing-a-inline_math_34-equivariant-variational-autoencoder-vae-scheme-using-the-reynolds-operator-for-symmetrization-to-reconstruct-manifolds-from-massive-single-cell-data-and-conceptualizing-a-next-generation-physical-agi-hardware-architecture-based-on-quaternion-processing-units-and-the-gui-ju-prior-ju-prior">3. Physical AGI: Proposing a $\mathbb{Z}_5$-equivariant Variational Autoencoder (VAE) scheme using the Reynolds operator for symmetrization to reconstruct manifolds from massive single-cell data; and conceptualizing a next-generation Physical AGI hardware architecture based on Quaternion Processing Units and the Gui-Ju Prior (Ju-Prior).</h2>
+<p>Epistemologically, this paper delineates strict boundaries: clearly separating rigorous theorems based on group theory and PDEs, modeling hypotheses based on cross-disciplinary phenomenological mappings, and physical conjectures intended to guide future experimental verification.</p>
+<p>In brief, within this framework: Spectral duality is the foundation, combat dynamics is the engine, and the universe generative equation is the governing program. This paper aims to imbue millennium-old Eastern topological intuition with the most rigorous modern mathematical expressions, providing a highly penetrative computational language for investigating the evolution, steady states, and collapse of complex systems.</p>
+<h2 id="2-algebraic-structure-of-the-wuxing-group-inline_math_35">2. Algebraic Structure of the Wuxing Group $\mathbb{Z}_5$</h2>
+<p>2.1 Generative and Destructive Mappings</p>
+<p>Let $G=\mathbb{Z}_5=\{0,1,2,3,4\}$, sequentially corresponding to Wood, Fire, Earth, Metal, and Water. We define the generative mapping $s$ and the destructive mapping $k$:</p>
+<div class="math-block">$$
+s(g)=g+1 \pmod 5,\qquad k(g)=g+2 \pmod 5 \quad (4)
+$$</div>
+<p>Theorem 1 (Destruction is the Square of Generation) [L1] $k=s^2$.</p>
+<p>Proof: $s(s(g))=s(g+1)=g+2=k(g)$.</p>
+<p>This identity reveals that "destruction" (overcoming) is not an independent rule, but a second-order iteration of the generative cycle. Group-theoretically, the Wuxing system is generated by a single 5-cycle, with generation and destruction corresponding to different powers.</p>
+<p>2.2 Spectral Duality</p>
+<p>Define linear operators $S, K$ on the regular representation $V=\mathbb{C}^5$: $(Sx)_i=x_{i-1}$, $(Kx)_i=x_{i-2}$, with indices modulo 5. Let $\omega=e^{2\pi i/5}$, and the Fourier basis $v_j=(1,\omega^j,\omega^{2j},\omega^{3j},\omega^{4j})^\top$ satisfies:</p>
+<div class="math-block">$$
+S v_j = \omega^{-j} v_j,\qquad K v_j = \omega^{-2j} v_j \quad (5)
+$$</div>
+<p>Theorem 2 (Spectral Duality) [L1]</p>
+<p>$\sigma(S)=\{1,\omega^{-1},\omega^{-2},\omega^{-3},\omega^{-4}\}$ and $\sigma(K)=\sigma(S)^2=\{\lambda^2:\lambda\in\sigma(S)\}$.</p>
+<p>Proof: By direct calculation.</p>
+<p>Generation and destruction are precisely dual in the spectral domain: the spectrum of the destructive operator is the square of the generative operator's spectrum. This is analogous to frequency doubling, laying the algebraic groundwork for subsequent geometric and dissipative analyses.</p>
+<p>2.3 Spectral Gap</p>
+<div class="math-block">$$
+\Delta = \min_{j\neq 0}\vert 1-\omega^{-j}\vert  = 2\sin\left(\frac{\pi}{5}\right)\approx 1.176 \quad (6)
+$$</div>
+<p>The spectral gap controls the rate at which the system recovers or collapses. In the curvature attractor framework, it directly correlates to attractor depth and escape time.</p>
+<p>2.4 General Cycle Length Proposition and the Uniqueness of Wuxing</p>
+<p>Proposition 1 (Cycle Length) [L1] For modulo $n$ and step size $r$, define $k_r(g)=g+r\pmod n$. Its cycle length is</p>
+<div class="math-block">$$
+\frac{n}{\gcd(n,r)} \quad (7)
+$$</div>
+<p>Thus, $k_r$ is a single cycle if and only if</p>
+<div class="math-block">$$
+\gcd(n,r)=1 \quad (8)
+$$</div>
+<p>Proof: From cyclic group theory, the order of the subgroup generated by $g\mapsto g+r$ is $n/\gcd(n,r)$.</p>
+<p>Wuxing ($n=5, r=2$) satisfies $\gcd(5,2)=1$, hence the destructive mapping forms a single cycle. The uniqueness of Wuxing does not merely lie in "5 being a prime number", but in the fact that a five-element system possesses an odd order, the minimum non-trivial prime period, and a destructive step size $2$ that is coprime to $5$. This formulation is more universal and avoids the overly restrictive requirement of primality.</p>
+<h2 id="3-3d-orthogonal-coordinate-embedding-and-the-platonic-bridge">3. 3D Orthogonal Coordinate Embedding and the Platonic Bridge</h2>
+<p>3.1 Projection Operator and Pentagonal Representation in $\mathbb{R}^3$</p>
+<p>Consider a 3D orthogonal coordinate system $(X,Y,Z)$. The diagonal direction of the Jade Cong hole is $\mathbf{n} = (1,1,1)^\top/\sqrt{3}$. Define the projection operator onto the orthogonal plane $\Pi$:</p>
+<div class="math-block">$$
+P_{\Pi} = \mathbf{I}_{3\times3} - \mathbf{n}\mathbf{n}^\top = \frac{1}{3}\begin{pmatrix} 2 & -1 & -1 \\ -1 & 2 & -1 \\ -1 & -1 & 2 \end{pmatrix} \quad (9)
+$$</div>
+<p>Choose an orthonormal basis within $\Pi$:</p>
+<div class="math-block">$$
+\mathbf{u}_1 = \frac{1}{\sqrt{2}}(1,-1,0)^\top,\qquad \mathbf{u}_2 = \mathbf{n} \times \mathbf{u}_1 = \frac{1}{\sqrt{6}}(1,1,-2)^\top \quad (10)
+$$</div>
+<p>Define the Wuxing vertex vectors:</p>
+<div class="math-block">$$
+\mathbf{v}_j = \cos\frac{2\pi j}{5}\,\mathbf{u}_1 + \sin\frac{2\pi j}{5}\,\mathbf{u}_2, \quad j=0,\dots,4 \quad (11)
+$$</div>
+<p>These vertices are uniformly distributed on the unit circle within the plane $\Pi$. The generative operator $S$ corresponds to a rotation of $2\pi/5$ around $\mathbf{n}$, and the destructive operator $K$ corresponds to a rotation of $4\pi/5$.</p>
+<p>3.2 Rotation Axes of the Icosahedral Group $A_5$</p>
+<p>The regular icosahedron has six five-fold rotation axes (passing through opposite vertices) and ten three-fold rotation axes (passing through opposite face centers, along the $(1,1,1)$ direction). The Wuxing cycle is the discrete action of $A_5$ on a five-fold axis, while the Luoshu rotation generators along $(1,1,1)$ correspond to the three-fold axis components of $A_5$. This establishes the Platonic bridge from the discrete $\mathbb{Z}_5$ to the continuous $SO(3)$.</p>
+<p>Theorem 3 (Discrete-Continuous Correspondence) [L1] There exists a faithful representation $\rho:\mathbb{Z}_5\to SO(3)$, such that $\rho(s)$ is a rotation of $2\pi/5$ around a five-fold axis, and $\rho(k)=\rho(s)^2$. The trace of this representation is $1+2\cos(2\pi/5)=\varphi\approx 1.618$, where $\varphi=(1+\sqrt5)/2$ is the Golden Ratio.</p>
+<p>3.3 Correspondence Between Wuxing and 3D Axes</p>
+<p>Wood (East) $\to +X$, Fire (South) $\to +Y$, Metal (West) $\to -X$, Water (North) $\to -Y$, Earth (Center) $\to +Z$. Earth corresponds to the vertical axis and serves as the observer's origin axis. It does not govern a specific season, which aligns with "Earth resides in the center." Within the plane $\Pi$, the four elements are located at the vertices of an approximate square, with Earth at the origin (the intersection of the $Z$-axis and $\Pi$).</p>
+<h2 id="4-luoshu-matrix-and-lie-algebra-rotation-generators">4. Luoshu Matrix and Lie Algebra Rotation Generators</h2>
+<p>4.1 Centralization and Antisymmetrization [L2]</p>
+<p>The Luoshu matrix:</p>
+<div class="math-block">$$
+L = \begin{pmatrix}4&9&2\\3&5&7\\8&1&6\end{pmatrix} \quad (12)
+$$</div>
+<p>Centralization $L_c = L - 5\mathbf{1}_{3\times3}$ (where $\mathbf{1}$ is the all-ones matrix). Its antisymmetric part:</p>
+<div class="math-block">$$
+A_{\text{down}} = \frac{1}{2}(L_c - L_c^\top)=\begin{pmatrix}0&3&-3\\-3&0&3\\3&-3&0\end{pmatrix} \quad (13)
+$$</div>
+<p>The Hodge dual gives the rotation axis vector $\vec{\omega}=(A_{23},A_{31},A_{12})=(3,3,3)$, along the spatial diagonal $(1,1,1)$. This represents right-handed rotation (the Way of Earth) from a "looking down at geography" perspective.</p>
+<p>4.2 Normalization and Rotation Matrix [L2]</p>
+<p>Calculate $\Vert{}\omega\Vert{} = \sqrt{3^2+3^2+3^2}=3\sqrt{3}$, and define the unit rotation generator:</p>
+<div class="math-block">$$
+\hat{\omega} = \frac{A_{\text{down}}}{\Vert \omega\Vert } = \frac{1}{3\sqrt{3}}\begin{pmatrix}0&3&-3\\-3&0&3\\3&-3&0\end{pmatrix} \quad (14)
+$$</div>
+<p>Then the Luoshu rotation matrix is:</p>
+<div class="math-block">$$
+R_{\text{Luoshu}}(\theta) = \exp(\theta \hat{\omega}) \in SO(3) \quad (15)
+$$</div>
+<p>where $\theta$ is the true rotation angle around the axis $(1,1,1)/\sqrt{3}$. This matrix satisfies orthogonality $R R^\top = I$.</p>
+<p>4.3 Projection Relationship Between $C_4$ and $\mathbb{Z}_5$: Approximation, Not Strict [L2]</p>
+<p>The odd-number chain $1\to7\to9\to3\to1$ in the Luoshu's four cardinal positions forms a $C_4$ group action when projected onto a 2D plane. However, this projection is a composite process: first mapping the $\mathbb{Z}_5$ cycle to the plane $\Pi$, and then orthogonally projecting $\Pi$ onto the $XY$ plane. The precise projection operator chain is:</p>
+<div class="math-block">$$
+P_{XY} \circ P_{\Pi}: \mathbb{R}^3 \to \mathbb{R}^2 \quad (16)
+$$</div>
+<p>On the $XY$ plane, the pentagonal vertices are no longer strictly equidistant on a circle, but experience deformation. Therefore, the $C_4$ rotation is not a strict subrepresentation of the $\mathbb{Z}_5$ generative cycle, but a low-dimensional effective approximation. Its error is controlled by the projection deformation, quantifiable via the Frobenius distance. In this paper, $C_4$ is used only for simplified discrete description; the full symmetry remains borne by $\mathbb{Z}_5$.</p>
+<p>4.4 Upward Perspective and Transposition [L2]</p>
+<p>When the observer looks up from the bottom of the Jade Cong, it is equivalent to taking the transpose:</p>
+<div class="math-block">$$
+A_{\text{up}} = \frac{1}{2}(L_c^\top - L_c) = -A_{\text{down}} \quad (17)
+$$</div>
+<p>corresponding to the rotation axis $\vec{\omega}_{\text{up}} = -\vec{\omega}_{\text{down}}$, which is the left-handed rotation (the Way of Heaven) from the "looking up at astronomy" perspective.</p>
+<p>This yields a formal symmetry:</p>
+<p>Spatial Inversion (P): $A_{\text{up}} = -A_{\text{down}}$, the top-down and bottom-up perspectives are spatial inversions of each other.</p>
+<p>Rotation Reversal (Formal T): $R_{\text{up}}(\theta) = \exp(-\theta \hat{\omega}) = R_{\text{down}}(-\theta)$, the rotation directions are opposite.</p>
+<p>Note: This is a formal symmetry within the model, not equivalent to discrete symmetries in fundamental particle physics. However, this structure provides an intuitive discrete prototype for PT symmetry. Zero energy corresponds to the guarantee provided by $\vec{\omega}_{\text{up}}+\vec{\omega}_{\text{down}}=0$.</p>
+<h2 id="5-from-wuxing-discrete-dynamics-to-curvature-driven-stable-attractors">5. From Wuxing Discrete Dynamics to Curvature-Driven Stable Attractors</h2>
+<p>5.1 Wuxing Combat Dynamics and Exponential Collapse</p>
+<p>Let the Yellow Emperor's five armies be $X=(x_0,\dots,x_4)^\top$, and Chiyou's five armies be $Y=(y_0,\dots,y_4)^\top$. The extended Lanchester equations are:</p>
+<div class="math-block">$$
+\begin{aligned} \dot{x}_i &= \alpha x_{i-1} - \beta y_{i+2} x_i + \gamma x_i y_{i-2},\\ \dot{y}_i &= -\beta x_{i+2} y_i, \end{aligned} \quad (18)
+$$</div>
+<p>with indices modulo 5, and parameters $\alpha,\beta,\gamma&gt;0$.</p>
+<p>Theorem 4 (Asymptotic Exponential Collapse and Finite-Time $\epsilon$-Collapse) [L2]</p>
+<p>If the initial conditions satisfy Wugu Locking ($x_i$ destroys/overcomes $y_{i-2}$), and there exists an $m&gt;0$ such that all components of the Yellow Emperor's army have a lower bound during the relevant timeframe, then there exists a $c&gt;0$ such that</p>
+<div class="math-block">$$
+\|Y(t)\|\le \|Y(0)\|e^{-ct},\qquad \forall t\ge 0 \quad (19)
+$$</div>
+<p>Thus, $\|Y(t)\|\to 0$ holds asymptotically (asymptotic exponential collapse). For any given threshold $\epsilon&gt;0$, there exists a finite time</p>
+<div class="math-block">$$
+t_\epsilon \le \frac{1}{\beta m}\ln\frac{\|Y(0)\|}{\epsilon} \quad (20)
+$$</div>
+<p>such that $\|Y(t_\epsilon)\|\le \epsilon$ (finite-time $\epsilon$-collapse).</p>
+<p>Proof Summary: The locking condition ensures $\dot{y}_i = -\beta x_{i+2} y_i$. Given the positivity of the Yellow Emperor's army and its generative growth, the bound $m&gt;0$ exists. Applying Grönwall's inequality yields exponential decay.</p>
+<p>Note: The physical interpretation of the "three-day city breach" corresponds to the finite-time $\epsilon$-collapse: when $\epsilon$ is chosen as the minimum troop threshold required for the defense to break, $t_\epsilon$ is the breach time.</p>
+<p>5.2 Stochastic Geometric Flow and Negative Curvature Attractors</p>
+<p>Upgrading the Wuxing state space to a curved Riemannian manifold $(M, g_{\mu\nu})$, the state $z^\mu(t)$ satisfies the Stratonovich stochastic differential equation:</p>
+<div class="math-block">$$
+\boxed{ dz^\mu = -g^{\mu\nu}(z)\,\partial_\nu F(z)\,dt + \sqrt{2D}\,e^\mu_a(z) \circ dW^a_t } \quad (21)
+$$</div>
+<p>where $F(z)$ is the effective free energy functional, $D$ is the noise intensity, $e^\mu_a$ is the Vielbein (local orthogonal frame, i.e., "Ju/Square"), and $W^a_t$ is an independent Wiener process.</p>
+<p>Curvature Convention.</p>
+<p>In the present framework, we adopt a reversed curvature convention in which negative scalar curvature $R&lt;0$ corresponds to local geodesic convergence and hence to an attracting region. Equivalently, all scalar curvature quantities appearing in this work are understood as effective curvatures</p>
+<div class="math-block">$$
+R=-R_{\mathrm{standard}} \quad (22)
+$$</div>
+<p>where $R_{\mathrm{standard}}$ denotes the conventional Riemannian scalar curvature. This convention is inherited from the geometric-dynamical formulation developed in [12] and is used consistently throughout this work.</p>
+<p>Under this convention, the local geodesic-deviation dynamics are represented by an effective radial convergence equation whose stable branch is postulated/modelled to satisfy</p>
+<div class="math-block">$$
+|\delta z(\tau)| \sim e^{-\sqrt{|R|}\tau}, \qquad R&lt;0 \quad (23)
+$$</div>
+<p>thereby yielding exponential convergence of neighboring trajectories and identifying negative effective-curvature regions as dynamical attractors.</p>
+<p>Proposition 2 (Effective Negative-Curvature Attractor under the adopted convention) [L3]</p>
+<p>Let $R(z)$ be the scalar curvature. In regions where $R(z)&lt;0$, adjacent geodesics converge according to the Jacobi equation:</p>
+<div class="math-block">$$
+\frac{D^2 \delta z^\mu}{d\tau^2} = -R^\mu{}_{\nu\alpha\beta} \frac{dz^\nu}{d\tau} \frac{dz^\alpha}{d\tau} \delta z^\beta \quad (24)
+$$</div>
+<p>Under the reversed-curvature convention adopted here, the stable branch is interpreted as an attracting effective geometry. This statement is a modeling interpretation rather than a consequence of standard Riemannian negative sectional curvature.</p>
+<p>Proof Summary: Solving the second-order equation of the Jacobi field in a background of constant negative curvature yields $\|\delta z\| \propto e^{-\sqrt{|R|} \tau}$.</p>
+<p>5.3 Wuxing Spectral Duality and Curvature Scaling Law (Modeling Hypothesis)</p>
+<p>In spectral space, the eigenvalue frequency ratio between the generative operator $S$ and the destructive operator $K$ is 1:2. If a restoring force $\lambda \propto \Delta = 2\sin(\pi/5)$ is introduced, we can formally define:</p>
+<div class="math-block">$$
+c\propto |R|^{1/2},\qquad
+m\propto |R|^{-1/2} \quad (25)
+$$</div>
+<p>where $c$ is the signal propagation speed, $m$ is the state inertia, and $R_0$ is a fixed reference effective curvature. The dimensionless ratios $c/c_0$ and $m/m_0$ avoid identifying a dimensionless spectral gap directly with a dimensionful curvature. This scaling law is currently an L3 modeling hypothesis: the operational definitions of $c$ and $m$ in biological or physical systems need to be derived from specific dynamical equations, rather than relying solely on group theory analogies. Future rigorous derivations should start from the linearized stochastic geometric flow to prove that the restoring force is proportional to curvature.</p>
+<p>5.4 Wuxing Free Energy Functional [L3]</p>
+<p>To directly apply the stochastic geometric flow to the Wuxing system, a free energy functional can be explicitly constructed:</p>
+<div class="math-block">$$
+F(z) = \frac{\alpha}{2} \sum_i (x_i - x_{i-1})^2 + \frac{\beta}{2} \sum_i (x_i \cdot x_{i-2})^2 - \gamma \sum_i \ln(x_i) \quad (26)
+$$</div>
+<p>where the first term represents generative attraction (adjacent attributes tend toward balance), the second term represents destructive suppression (overgrowth of a targeted attribute is penalized), and the third term is an entropy term (preventing the state from collapsing to zero). Under this free energy, the system tends toward a negative curvature attractor of "generative-destructive balance" amid random perturbations. This form is a reasonable phenomenological choice; its uniqueness has not yet been derived from first principles.</p>
+<h2 id="6-biological-implementation-immune-memory-as-a-wuxing-curvature-attractor">6. Biological Implementation: Immune Memory as a Wuxing Curvature Attractor</h2>
+<p>6.1 Immune State Space and Geometric Definition [L3]</p>
+<p>Assume the macroscopic state of the immune system is a point $z(t)$ on a high-dimensional manifold $M$, composed of single-cell gene expressions, surface markers, and spatial coordinates. The Riemannian metric $g_{\mu\nu}(z)$ defines the "biological distance"—changes in certain directions correspond to massive phenotypic shifts, while others remain rigid. The metric can be estimated from single-cell data using the Fisher information matrix [12].</p>
+<p>6.2 Implementation of the Generative-Destructive Cycle in Immunity (Modeling Analogy) [L3]</p>
+<p>The following mappings are structural analogies, not yet proven biological facts, and require subsequent experimental verification.</p>
+<p>Generative Cycle ($S$):</p>
+<ul>
+<li>
+<p>Wood (Growth) $\to$ Fire (Activation): Naive T/B cells activate and proliferate post-antigen stimulation.</p>
+</li>
+<li>
+<p>Fire (Activation) $\to$ Earth (Stability): Effector cells differentiate into memory precursors, entering a steady state.</p>
+</li>
+<li>
+<p>Earth (Stability) $\to$ Metal (Refinement): Memory cells undergo affinity maturation, forming a highly specific memory pool.</p>
+</li>
+<li>
+<p>Metal (Refinement) $\to$ Water (Flow): Memory cells enter circulation and homing, ready for secondary responses.</p>
+</li>
+<li>
+<p>Water (Flow) $\to$ Wood (Growth): Upon re-encountering the antigen, rapid reactivation completes the loop.</p>
+</li>
+</ul>
+<p>Destructive Cycle ($K$):</p>
+<ul>
+<li>
+<p>Wood overcomes Earth: Activated effector T cells suppress excessive regulatory steady-states—clearing infection.</p>
+</li>
+<li>
+<p>Earth overcomes Water: Steady-state regulation restricts excessive inflammation and immune flow—preventing autoimmunity.</p>
+</li>
+<li>
+<p>Water overcomes Fire: Immune tolerance and negative selection suppress hyper-activation—preventing clonal exhaustion.</p>
+</li>
+<li>
+<p>Fire overcomes Metal: Inflammatory responses prune overly stubborn memory clones—remodeling the memory repertoire.</p>
+</li>
+<li>
+<p>Metal overcomes Wood: Highly specific memory suppresses irrelevant naive activation—ensuring precision.</p>
+</li>
+</ul>
+<p>6.3 Immune Memory = Negative Curvature Attractor [L3]</p>
+<p>Core Hypothesis: Immune memory is not merely static cell storage; rather, it is a negative curvature region spontaneously formed in the state space by the generative-destructive cycle. Individual memory cells constantly die and turnover, but the manifold curvature guides new cells back to the same functional state, achieving "decentralized robustness."</p>
+<p>In a negative curvature attractor, the escape time follows an Arrhenius-type law:</p>
+<div class="math-block">$$
+\tau_{\text{memory}} \sim \tau_0 \exp\left(\frac{\Delta F}{D}\right) \quad (27)
+$$</div>
+<p>where $\Delta F$ is the effective free energy difference between the attractor and the saddle point, and $D$ is the noise intensity. The persistence of memory is determined not by cell lifespan, but jointly by the manifold curvature depth and noise level.</p>
+<p>6.4 Germinal Center = Biological Jade Cong [L3]</p>
+<p>The Germinal Center (GC) is the highest-precision "Jade Cong hardware" in the immune system:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Jade Cong Structure</th>
+<th>Germinal Center Equivalent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Inner Circle (Continuous Manifold)</td>
+<td>Light Zone (LZ), B cell somatic hypermutation and affinity selection</td>
+</tr>
+<tr>
+<td>Outer Square (Discrete Lattice)</td>
+<td>Dark Zone (DZ) and peripheral T cell zone, orthogonal screening</td>
+</tr>
+<tr>
+<td>Center Hole (Observer Origin)</td>
+<td>Follicular Dendritic Cell (FDC) network, providing a rigid antigen baseline</td>
+</tr>
+<tr>
+<td>Gui-Ju Dao (Gauge Constraint)</td>
+<td>MHC Restriction, T cells only recognize antigens on a specific MHC grid</td>
+</tr>
+</tbody>
+</table></div>
+<p>6.5 Reenacting "Severing Earth-Heaven Communication" in Immunity [L3]</p>
+<p>The development of the immune system is a microscopic reenactment of "Juedi Tiantong" (Severing Earth-Heaven Communication): the bone marrow and thymus (akin to the mythical figures "Zhong" and "Li") monopolize the "measurement rights," utilizing positive and negative selection to sever the "mingling of divine and mortal" self-reactive lymphocytes, thereby establishing an ordered immune universe with the MHC-antigen complex as the absolute origin.</p>
+<h2 id="7-wugu-algorithm-in-strategic-immune-interventions">7. Wugu Algorithm in Strategic Immune Interventions</h2>
+<p>7.1 Tumor as the "Chiyou Matrix" [L3]</p>
+<p>The pathological attractor formed by the tumor microenvironment is akin to Chiyou's defensive matrix: highly solidified, possessing a complete internal generative loop (immunosuppression $\to$ angiogenesis $\to$ metabolic reprogramming $\to$ immune evasion $\to$ immunosuppression), and extremely robust against linear external attacks. This explains why single immune checkpoint inhibitors often fail to induce complete tumor regression.</p>
+<p>7.2 Wugu Locking as Combinatorial Immunotherapy (Computable Stability Hypothesis) [L3]</p>
+<p>The Wugu algorithm is not a brute-force attack; it injects a defect with a winding number $w=2$ at the topological level. For immunotherapy:</p>
+<ul>
+<li>
+<p>Fire overcomes Metal: Use innate immune-activating adjuvants (e.g., STING agonists, oncolytic viruses) to attack the tumor's core "Metal array" (immune evasion mechanisms).</p>
+</li>
+<li>
+<p>Wood overcomes Earth: Use effector T cell activators (e.g., CAR-T, bispecific antibodies) to dismantle the tumor's "Earth array" (immunosuppressive stroma).</p>
+</li>
+<li>
+<p>Water overcomes Fire: Use metabolic regulation (e.g., inhibiting tumor glycolysis) to suppress the tumor's "Fire array" (hyperproliferation).</p>
+</li>
+<li>
+<p>Metal overcomes Wood: Use specific memory T cells to inhibit the tumor's "Wood array" (early regeneration and metastasis).</p>
+</li>
+<li>
+<p>Yellow Dragon Center: Use the patient's own immune system as the observer origin to coordinate these attacks.</p>
+</li>
+</ul>
+<p>Hypothesis: A Wugu-locked combinatorial therapy leads to exponential collapse of the tumor system. To quantify this, we introduce a kinetic model:</p>
+<div class="math-block">$$
+\frac{dY_i}{dt} = -\sum_j a_{ij} X_j Y_i \quad (28)
+$$</div>
+<p>where $Y_i$ are tumor attributes, $X_j$ are immune interventions, and $a_{ij}$ is the destruction matrix. Wugu locking is equivalent to choosing $a_{ij}$ such that all eigenvalues of the Jacobian matrix $J$ satisfy:</p>
+<div class="math-block">$$
+\Re[\lambda_i(J)] &lt; -\lambda_0 &lt; 0 \quad (29)
+$$</div>
+<p>In this state, the tumor system undergoes exponential collapse, corresponding to the "three-day city breach." This criterion provides a testable stability condition, though clinical validation is still required.</p>
+<p>7.3 A Wugu Interpretation of Original Antigenic Sin [L3]</p>
+<p>"Original Antigenic Sin" in immunology is fundamentally a "geodesic bias" of the old memory attractor: the negative curvature of the old attractor is so deep that the trajectories of new variants are captured by its gravity, preventing the establishment of a new attractor.</p>
+<p>Wugu Breakthrough: Instead of merely reinforcing the old memory with a single variant antigen, a multidimensional simultaneous strike must be employed—altering antigen presentation (rule layer), introducing novel adjuvants (spatiotemporal gain layer), and adjusting T cell polarization (attribute redirection layer)—to allow the system to "escape" the old geodesic and carve a new attractor in a novel region.</p>
+<h2 id="8-curvature-driven-open-quantum-dynamics-and-regularization">8. Curvature-Driven Open Quantum Dynamics and Regularization</h2>
+<p>8.1 Jade Cong Geometry and Curved Manifold-Discrete Lattice Coupling [L3]</p>
+<p>The inner circle and outer square of the Jade Cong form a coupling between a curved manifold and a discrete lattice. Quantum states on the inner circle evolve according to a curvature-dependent Hamiltonian:</p>
+<div class="math-block">$$
+H_g = -\frac{\hbar^2}{2m}\Delta_g + \xi R \quad (30)
+$$</div>
+<p>where $R$ is the scalar curvature and $\xi$ is the curvature coupling constant.</p>
+<p>8.2 Gauge Connection Between Luoshu Antisymmetric Matrix and Curvature Tensor [L3]</p>
+<p>The Luoshu antisymmetric matrix $A_{\text{down}}$ is an $SO(3)$ rotation generator. To avoid directly equating a constant matrix to a curvature tensor field on a curved manifold, a standard local gauge construction is adopted. To set the curvature tensor at the origin to a given value $F_{\mu\nu}(0)$, let</p>
+<div class="math-block">$$
+A_\mu(x) = -\frac{1}{2} F_{\mu\nu}(0) x^\nu + O(x^2) \quad (31)
+$$</div>
+<p>From this, the curvature tensor is calculated:</p>
+<div class="math-block">$$
+F_{\mu\nu} = \partial_\mu A_\nu - \partial_\nu A_\mu + [A_\mu, A_\nu] \quad (32)
+$$</div>
+<p>At the origin, the dominant term is precisely $F_{\mu\nu}(0)$. To incorporate non-Abelian $SO(3)$/$SU(2)$ structures, introduce generators $J_a$ satisfying $[J_a,J_b]=\epsilon_{abc}J_c$, and set</p>
+<div class="math-block">$$
+A_\mu = A_\mu^a J_a \quad (33)
+$$</div>
+<p>Thus, the Luoshu rotation generators are identified as the linearization of the curvature tensor at the observer's origin, rather than a global equivalency.</p>
+<p>8.3 Unified Master Equation (Completely Positive Form) [L3]</p>
+<p>The Lindblad master equation for open quantum systems must be written in a completely positive form. Compressing the operator indices into a single index $a$:</p>
+<div class="math-block">$$
+\boxed{ \dot{\rho} = -i[H_g, \rho] + \sum_{a,b} C_{ab} \left( L_a \rho L_b^\dagger - \frac{1}{2}\{L_b^\dagger L_a, \rho\} \right) } \quad (34)
+$$</div>
+<p>where the Kossakowski matrix satisfies</p>
+<div class="math-block">$$
+C = C^\dagger,\qquad C \succeq 0 \quad (35)
+$$</div>
+<p>If curvature tensor components $F_{\mu\nu}$ are used as Lindblad operators, then $L_a$ corresponds to $F_{\mu\nu}$, and $\gamma_{\mu\nu}$ must be organized into a positive semi-definite matrix. This equation simultaneously covers curved space evolution, curvature-induced decoherence and dissipation, non-Hermitian PT-symmetric steady states, and geometric phase accumulation. In the classical limit, it reduces to the stochastic geometric flow equation from Section 5.</p>
+<p>8.4 Regularization of Divergence Issues Under Extremely High Negative Curvature [L4]</p>
+<p>When $R \to -\infty$, the curvature potential energy term $\xi R$ and the dissipative terms may diverge, threatening the existence of the Non-Equilibrium Steady State (NESS). Two types of singularities must be distinguished:</p>
+<ul>
+<li>
+<p>Coordinate Singularities: Caused by improper coordinate system choice; can be eliminated via local orthogonal frames (Vielbeins) $e_a^\mu$. Vielbein transformations ensure local observables possess defined physical dimensions.</p>
+</li>
+<li>
+<p>Physical Curvature Singularities: The scalar curvature $R$ is a coordinate invariant. If $R \to -\infty$ is a physical reality, no coordinate transformation can eliminate the divergence.</p>
+</li>
+</ul>
+<p>Therefore, merely switching frames cannot resolve physical singularities. We propose two regularization conjectures pending verification:</p>
+<p>Conjecture 1 (PT Critical Self-Limitation) [L4]: The effective non-Hermitian Hamiltonian</p>
+<div class="math-block">$$
+H_{\text{eff}} = H_g - \frac{i}{2}\sum_{a,b} C_{ab} L_b^\dagger L_a \quad (36)
+$$</div>
+<p>may undergo spontaneous PT symmetry breaking under changing curvature parameters. When the system hits an Exceptional Point (EP), the eigenvalues split into $\lambda_0 \pm i\Gamma$. However, the emergence of an imaginary part does not automatically guarantee self-suppression: a negative imaginary part corresponds to a decaying branch, while a positive one corresponds to a gain branch. To guarantee systemic stability, a positive-definite condition on dissipative entropy flow must be added:</p>
+<div class="math-block">$$
+\left.\frac{d}{dt}\langle H_{\text{eff}}\rangle\right|_{\text{EP}} \leq 0  \quad \Leftrightarrow  \quad \mathrm{Im}(\lambda) &lt; 0 \quad (37)
+$$</div>
+<p>A physically realizable NESS must select the decaying branch. This condition requires verification in specific models and cannot serve as a generalized conclusion.</p>
+<p>Conjecture 2 (Nonlinear Curvature Saturation) [L4]: Introduce a Born-Infeld-style truncation to bound the dissipative coupling strength:</p>
+<div class="math-block">$$
+\lim_{R \to -\infty} \gamma(R) = \gamma_{\max} \quad (38)
+$$</div>
+<p>Simultaneously, a cutoff can be applied to the curvature itself: $R_{\text{eff}} = R/(1+\ell^2 |R|)$, where $\ell$ is a short-distance cutoff scale. This mechanism is straightforward and guarantees that the Lindblad equation remains well-defined under extreme curvature.</p>
+<p>Summary: Local orthogonal frames address "coordinate mapping divergence from the observer's perspective" (treating symptoms); preventing physical singularities from destroying NESS relies on PT critical self-limitation and nonlinear curvature saturation (treating the root cause). Currently, both remain physical conjectures (L4), necessitating verification via specific modeling and numerical simulation.</p>
+<h2 id="9-universe-generative-master-equation">9. Universe Generative Master Equation</h2>
+<p>9.1 The 5D Attribute Space Irreducible Representation and its $\mathbb{Z}_5$ Restriction Decomposition</p>
+<p>The Wuxing attribute space is naturally realized as the five-dimensional irreducible representation of $SO(3)$, denoted as $\mathrm{Sym}^2_0(\mathbb{R}^3)$—the space of traceless symmetric second-rank tensors. For any $R\in SO(3)$, define the representation:</p>
+<div class="math-block">$$
+\rho_5(R)\,T = R T R^\top,\qquad \operatorname{Tr}(T)=0 \quad (39)
+$$</div>
+<p>We have $\dim \mathrm{Sym}^2_0(\mathbb{R}^3)=5$, and $\rho_5$ is a strict group homomorphism:</p>
+<div class="math-block">$$
+\rho_5(R_1R_2)=\rho_5(R_1)\rho_5(R_2) \quad (40)
+$$</div>
+<p>This representation provides a robust representation-theoretic foundation for the Wuxing space. [L1]</p>
+<p>Crucial Correction: $\mathrm{Sym}^2_0(\mathbb{R}^3)$ is a 5D irreducible representation of $SO(3)$, and is not directly equivalent to the regular representation of $\mathbb{Z}_5$. The correct relationship is a restricted decomposition: let $\mathbb{Z}_5\subset SO(3)$ be the subgroup generated by a rotation of $2\pi/5$ around a fixed axis. The restricted representation decomposes as:</p>
+<div class="math-block">$$
+\mathrm{Sym}^2_0(\mathbb{R}^3)\big|_{\mathbb{Z}_5} \cong \mathbf{1} \oplus \rho_1 \oplus \rho_2 \quad (41)
+$$</div>
+<p>where:</p>
+<ul>
+<li>
+<p>$\mathbf{1}$ is the trivial 1D representation, corresponding to the traceless symmetric tensor along the rotation axis (i.e., the Central Earth, which does not participate in the rotation);</p>
+</li>
+<li>
+<p>$\rho_1$ is an irreducible 2D real representation with rotation angle $2\pi/5$ (the generative cycle sector);</p>
+</li>
+<li>
+<p>$\rho_2$ is an irreducible 2D real representation with rotation angle $4\pi/5$ (the destructive cycle sector).</p>
+</li>
+</ul>
+<p>This decomposition flawlessly aligns with the generative-destructive spectral duality $\sigma(K)=\sigma(S)^2$ from Section 2: the generative sector frequency is $2\pi/5$, the destructive sector frequency is $4\pi/5$, and the two are related by a square (frequency doubling). [L1]</p>
+<p>9.2 Homogeneous Coordinates and Affine Transformation</p>
+<p>Let the initial Wuxing state be $\mathbf{x}_0\in\mathbb{R}^5$. Adopting homogeneous coordinates:</p>
+<div class="math-block">$$
+\tilde{\mathbf{x}}_0 = \begin{pmatrix}\mathbf{x}_0\\1\end{pmatrix}\in\mathbb{R}^6 \quad (42)
+$$</div>
+<p>Define the affine transformation matrix:</p>
+<div class="math-block">$$
+\mathbf{M}_{\text{Cong}} = \begin{pmatrix} \rho_5(R_{\text{Luoshu}}(\theta)) & \mathbf{b}_{\text{Hetu}}^{(5D)} \\[4pt] \mathbf{0}^\top & 1 \end{pmatrix} \quad (43)
+$$</div>
+<p>where $\mathbf{b}_{\text{Hetu}}^{(5D)}\in\mathbb{R}^5$ is the 5D embedding of the Hetu translation vector, and $\rho_5(R_{\text{Luoshu}})$ is the irreducible representation of the Luoshu rotation operating on the Wuxing space. The gauge scaling $\boldsymbol{\Gamma}_{\text{gauge}}$ can act as a diagonal matrix left-multiplying the first five dimensions.</p>
+<p>9.3 Universe Generative Master Equation (Corrected Version)</p>
+<div class="math-block">$$
+\boxed{ \tilde{X}_{\text{gen}} = \boldsymbol{\Gamma}_{\text{aug}} \cdot \mathbf{M}_{\text{Cong}} \cdot \tilde{\mathbf{x}}_0 } \quad (44)
+$$</div>
+<p>where</p>
+<div class="math-block">$$
+\boldsymbol{\Gamma}_{\text{aug}} = \begin{pmatrix} \boldsymbol{\Gamma}_{\text{gauge}} & 0 \\ 0 & 1 \end{pmatrix} \quad (45)
+$$</div>
+<p>with $\boldsymbol{\Gamma}_{\text{gauge}} = \mathrm{diag}(\gamma_0,\dots,\gamma_4)$. In the collisionless, dissipation-free limit, this equation degrades into the discrete dynamical system of the Wuxing generative cycle; introducing time and stochastic terms reduces it to the Stratonovich stochastic geometric flow of Section 5; incorporating a density matrix and curvature tensor reduces it to the Lindblad master equation of Section 8. Therefore, it stands as the "Universe Generative Master Equation" traversing the entire framework. [L3]</p>
+<p>9.4 Algorithm Summary</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Ancient Term</th>
+<th>Physical Entity</th>
+<th>Modern Mathematics</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hetu</td>
+<td>Outer Square of Cong</td>
+<td>Translation vector $\mathbf{b}_{\text{Hetu}}^{(5D)}$</td>
+<td>Spatial baseline, scale measurement, linear translation</td>
+</tr>
+<tr>
+<td>Luoshu</td>
+<td>Inner Circle of Cong</td>
+<td>Rotational representation $\rho_5(R_{\text{Luoshu}})$</td>
+<td>Time evolution, curvature rotation, nonlinear transformation</td>
+</tr>
+<tr>
+<td>Ju (Square)</td>
+<td>3D Orthogonal System</td>
+<td>Orthonormal basis, observer at origin</td>
+<td>Establishing absolute reference frame</td>
+</tr>
+<tr>
+<td>Ten Thousand Things</td>
+<td>All universe phenomena</td>
+<td>Initial state vector $\mathbf{x}_0\in\mathbb{R}^5$</td>
+<td>Objects regulated by the "Gui-Ju" gauge</td>
+</tr>
+<tr>
+<td>Gui-Ju Dao</td>
+<td>Universe generative law</td>
+<td>Affine transformation matrix $\mathbf{M}_{\text{Cong}}$</td>
+<td>Combinatorially generating all things</td>
+</tr>
+</tbody>
+</table></div>
+<h2 id="10-inline_math_227-equivariant-vae-reconstructing-wuxing-geometry-from-single-cell-data">10. $\mathbb{Z}_5$-Equivariant VAE: Reconstructing Wuxing Geometry from Single-Cell Data</h2>
+<p><strong>Preliminary-concept note.</strong> This chapter presents a preliminary conceptual design intended to serve as a starting point for discussion and experimentation—an invitation to further work rather than a completed engineering specification.</p>
+<p>To dock this theoretical framework with real biological data, we must solve the dimensionality reduction problem from high-dimensional single-cell transcriptomic data into a low-dimensional latent space, while preserving Riemannian geodesic distance fidelity and the $\mathbb{Z}_5$ generative-destructive symmetry. The core lies in constructing a $\mathbb{Z}_5$-equivariant Variational Autoencoder (VAE) and applying the Reynolds operator to project the high-dimensional Fisher information matrix via group averaging.</p>
+<p>10.1 Latent Space Representation: Faithful Real Representation of Dual Generative-Destructive Frequencies [L2]</p>
+<p>Set the latent space dimensionality to $d=4$. Define the orthogonal representation of the $\mathbb{Z}_5$ generator $g$ on $\mathbb{R}^4$:</p>
+<div class="math-block">$$
+R = \rho_1(g) \oplus \rho_2(g) \quad (46)
+$$</div>
+<p>where $\rho_1$ corresponds to the rotation angle $2\pi/5$ (generative cycle spectrum), and $\rho_2$ corresponds to $4\pi/5$ (destructive cycle spectrum). Its explicit form is:</p>
+<div class="math-block">$$
+R = \begin{pmatrix} \cos\frac{2\pi}{5} & -\sin\frac{2\pi}{5} & 0 & 0 \\ \sin\frac{2\pi}{5} & \cos\frac{2\pi}{5} & 0 & 0 \\ 0 & 0 & \cos\frac{4\pi}{5} & -\sin\frac{4\pi}{5} \\ 0 & 0 & \sin\frac{4\pi}{5} & \cos\frac{4\pi}{5} \end{pmatrix} \quad (47)
+$$</div>
+<p>Important Correction: This 4D representation is not the "minimal" faithful representation of $\mathbb{Z}_5$. The minimal faithful real representation is 2D (taking just the 2D rotation block $\rho_1$ is sufficient, since its rotation angle $2\pi/5$ generates $\mathbb{Z}_5$). The purpose of the 4D representation $\rho_1\oplus\rho_2$ is to simultaneously encode both the generative and destructive cycle frequencies, strictly corresponding to the spectral duality $\sigma(K)=\sigma(S)^2$ in Section 2 and the restriction decomposition in Section 9.1.</p>
+<p>10.2 Equivariant Encoder and Decoder</p>
+<ul>
+<li>
+<p>Equivariant Decoder: $\mu_\theta(R z) = \pi_g \mu_\theta(z)$, where $\pi_g$ is the gene module permutation on high-dimensional expression profiles.</p>
+</li>
+<li>
+<p>Equivariant Encoder: $q_\phi(\cdot \vert \pi_g y) = (R)_* q_\phi(\cdot \vert y)$, where $(R)_*$ is the pushforward action on the latent space distribution. If the encoder outputs a Gaussian distribution, it must satisfy $\mu_\phi(\pi_g y) = R \mu_\phi(y)$ and $\Sigma_\phi(\pi_g y) = R \Sigma_\phi(y) R^\top$.</p>
+</li>
+</ul>
+<p>The gene module permutation $\pi_g$ should not be simplified as a trivial cyclic shift; it must be implemented via an explicit permutation matrix $P_{\pi_g}$. This matrix can be manually constructed from known functional gene sets (e.g., Th1/Th2/Th17 polarization signatures) or fine-tuned as learnable parameters during training.</p>
+<p>10.3 Reynolds Operator Symmetrization [L2]</p>
+<p>For the raw metric tensor $g_{\mu\nu}^{\text{raw}}(z)$ output by the high-dimensional network, utilize the Reynolds operator for symmetrization:</p>
+<div class="math-block">$$
+\tilde{g}(z)=\frac{1}{5}\sum_{k=0}^{4}(R^k)^\top\,g^{\mathrm{raw}}(R^k z)\,R^k \quad (48)
+$$</div>
+<p>This operation ensures the metric tensor possesses $\mathbb{Z}_5$-isometry:</p>
+<div class="math-block">$$
+\tilde{g}(R z) = R^{-\top} \, \tilde{g}(z) \, R^{-1} \quad (49)
+$$</div>
+<p>10.4 Loss Function</p>
+<div class="math-block">$$
+\mathcal{L} = \mathcal{L}_{\text{NB}}(Y, \mu_\theta(z)) + \beta_{\text{KL}} \mathcal{L}_{\text{KL}} + \lambda_1 \mathcal{L}_{\text{dist}} + \lambda_2 \mathcal{L}_{\text{sym-enc}} + \lambda_3 \mathcal{L}_{\text{sym-dec}} \quad (50)
+$$</div>
+<p>where:</p>
+<ul>
+<li>
+<p>Negative Binomial Reconstruction Loss: $\mathcal{L}_{\text{NB}}$ utilizes zero-inflated negative binomial likelihood, suited for scRNA-seq count data.</p>
+</li>
+<li>
+<p>KL Divergence: $\mathcal{L}_{\text{KL}} = -\frac{1}{2}\sum_i (1+\log\sigma_i^2 - \mu_i^2 - \sigma_i^2)$.</p>
+</li>
+<li>
+<p>Geodesic Distance Preservation Loss: To avoid online solving of two-point boundary value geodesic equations, a source-conditioned Eikonal network is used. Define $T_\psi(z;s)$ satisfying</p>
+</li>
+</ul>
+<div class="math-block">$$
+|\nabla_z T_\psi(z;s)|_{\tilde{g}^{-1}}=1,\qquad T_\psi(s;s)=0 \quad (51)
+$$</div>
+<p>Then $d_{\tilde{g}}(z,s)\approx T_\psi(z;s)$. The loss term is</p>
+<div class="math-block">$$
+\mathcal{L}_{\text{dist}} = \sum_{i,j} \left| T_\psi(z_i;z_j)^2 - d_{\text{Fisher}}^{\text{high}}(y_i,y_j)^2 \right| \quad (52)
+$$</div>
+<ul>
+<li>
+<p>Encoder Equivariance Loss: $\mathcal{L}_{\text{sym-enc}} = \sum_{k=1}^{4} \left\Vert{} \mu_\phi(P_{\pi_g}^k y) - R^k \mu_\phi(y) \right\Vert{}_2^2$.</p>
+</li>
+<li>
+<p>Decoder Equivariance Loss: $\mathcal{L}_{\text{sym-dec}} = \sum_{k=1}^{4} \left\Vert{} \mu_\theta(R^k z) - P_{\pi_g}^k \mu_\theta(z) \right\Vert{}_2^2$.</p>
+</li>
+</ul>
+<p>10.5 Validation Metrics</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Validation Dimension</th>
+<th>Quantitative Metric</th>
+<th>Theoretical Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$\mathbb{Z}_5$ Structure Retention</td>
+<td>$E_{\text{sym}} = \frac{1}{5} \sum_{k=0}^4 \Vert{} \tilde{g}(R^k z) - (R^k)^{-\top}\tilde{g}(z)(R^k)^{-1} \Vert{}_F$</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Local Metric Distortion Rate</td>
+<td>$D_{\text{metric}} = \frac{\left\vert{} d_{\tilde{g}}(z_i, z_j) - d_{\text{high}}(y_i, y_j) \right\vert{}}{d_{\text{high}}(y_i, y_j)}$</td>
+<td>As small as possible</td>
+</tr>
+<tr>
+<td>Curvature Attractor Fidelity</td>
+<td>$\Delta R = \Vert{} R_{\text{latent}}(z) - R_{\text{high}}(y) \Vert{}_{L^2}$</td>
+<td>As small as possible</td>
+</tr>
+</tbody>
+</table></div>
+<p>This scheme provides an operational computational path to test the $\mathbb{Z}_5$ symmetry of the immune state space from single-cell data, although numerical simulations and real data validation are still required.</p>
+<h2 id="11-ju-prior-physical-agi-architecture">11. Ju-Prior Physical AGI Architecture</h2>
+<p>11.1 Quaternion Processing Unit (QPU) [L4]</p>
+<p>The foundational hardware adopts quaternion arithmetic units, averting gimbal lock and naturally maintaining PT symmetry and zero-drift. The quaternion group $SU(2)$ is a double cover of $SO(3)$. The relationship between the Swastika symbol and the four fundamental quaternion units should be viewed as a historical-cultural symbolic analogy rather than a strict algebraic correspondence.</p>
+<p>11.2 Gui-Ju Prior (Ju-Prior) Constraint [L4]</p>
+<p>It is necessary to distinguish between invariance and equivariance. For an encoder $E$, the equivariance constraint is</p>
+<div class="math-block">$$
+\|E(gx) - \rho(g)E(x)\|^2 \quad (53)
+$$</div>
+<p>and for a decoder $D$, it is</p>
+<div class="math-block">$$
+\|D(\rho(g)z) - gD(z)\|^2 \quad (54)
+$$</div>
+<p>Since this framework requires the latent space to carry the $\mathbb{Z}_5$ group action, equivariance rather than invariance must be adopted. The corrected regularization term is:</p>
+<div class="math-block">$$
+\mathcal{L}_{\text{Ju}} = \mathbb{E}\left[\|E(gx) - \rho(g)E(x)\|^2\right] \quad (55)
+$$</div>
+<p>11.3 Topological Attractor Storage [L4]</p>
+<p>Long-range spatial memory is encoded as holonomy group elements (Wilson lines):</p>
+<div class="math-block">$$
+W_{ij} = \mathcal{P}\exp\left(\int_{\mathbf{x}_i}^{\mathbf{x}_j} A_{\text{overlook}} \cdot d\mathbf{x}\right) \quad (56)
+$$</div>
+<p>stored within topological attractors on the Luoshu gauge graph. Its dynamics are governed by the Stratonovich stochastic geometric flow detailed in Section 5, ensuring stability against long-term drift.</p>
+<p>11.4 Wugu Strategic Engine [L4]</p>
+<p>At the symbolic level, it simulates $\mathbb{Z}_5$ game theory, conducts spectral analysis on known opponent systems, automatically identifies destructive chains, and outputs Wugu locking configurations. In immunological applications, this engine could design optimal combinatorial immunotherapy strategies based on single-cell sequencing data of the tumor microenvironment.</p>
+<p>11.5 "Severing Earth-Heaven Communication" as Hardware Synchronization [L4]</p>
+<p>"Juedi Tiantong" correlates in modern silicon architectures to hardware-level synchronization mimicking "Zhong" and "Li": pre-computed $C_4$ Lie algebra operators and Luoshu chord tables are locked in absolute synchronization with single-cycle multiply-accumulate arrays and Hetu translation vector logic. By eliminating all online transcendental iterations and stochastic gradient noise, it achieves a zero-drift baseline between the continuous physical space and discrete computational grids.</p>
+<h2 id="12-discussion-and-open-questions">12. Discussion and Open Questions</h2>
+<p>The rigorous mathematical results in this paper are primarily concentrated in the algebraic sections: the $\mathbb{Z}_5$ generative-destructive spectral duality, the Lie algebra structure of Luoshu rotation generators, and the exponential collapse theorem for the extended Lanchester equation. The extensions from algebra to continuous geometry, biological immunity, and open quantum dynamics currently remain in the phase of modeling hypotheses and analogical reasoning. Key open questions include:</p>
+<p>Precise Relationship Between $C_4$ and $\mathbb{Z}_5$: A quantitative estimation of projection errors is required.</p>
+<p>Derivation of Curvature Scaling Laws: It must be proven, starting from linearized stochastic geometric flow equations, that the restoring force is directly proportional to curvature.</p>
+<p>Regularization of Divergences at Extreme Negative Curvature: Specific models are needed to verify whether PT critical self-limitation and nonlinear curvature saturation are sufficient to guarantee NESS.</p>
+<p>$\mathbb{Z}_5$ Symmetry of the Immune State Space: This needs to be validated against real single-cell data using the VAE scheme proposed in Section 10.</p>
+<p>Clinical Testability of Wugu Locking: Clinical trials for the proposed combinatorial immunotherapy need to be designed.</p>
+<p>Derivation of the Born Rule: In the unified framework of this paper, the Born rule can be mentioned as a consequence of PT symmetry and rotational invariance; however, one must note that its strict derivation remains heavily debated [1]. Within the Wuxing framework, we only adopt the projection modulus squared as a postulate for measurement probability, without claiming it is an inevitable deduction from pure geometry.</p>
+<h2 id="13-conclusion">13. Conclusion</h2>
+<p>Using Wuxing theory as its central thread, this paper unites group theory, dynamical systems, geometry, topology, open quantum dynamics, immune memory, and Physical AGI to construct a cross-hierarchical unified mathematical model. We have proven the $\mathbb{Z}_5$ generative-destructive spectral duality, the general cycle length proposition, the existence of negative curvature attractors, and the asymptotic exponential collapse and finite-time $\epsilon$-collapse mechanisms triggered by Wugu locking. We also proposed a curvature-driven open quantum dynamics formulation and its regularization pathways. The corrected Universe Generative Master Equation adopts a 5D irreducible representation and homogeneous coordinate affine transformations; the $\mathbb{Z}_5$-equivariant VAE scheme provides a computational path to verify symmetries using single-cell data; and the Ju-Prior AGI architecture offers a design blueprint for hardware-encoded geometric inductive biases.</p>
+<p>This paper strictly differentiates between theorems and hypotheses, utilizing a four-level evidence hierarchy to clearly demarcate the reliability of every core conclusion. It aims to offer a novel computational model for understanding symmetries, attractor formations, and collapse mechanisms in complex systems, all while maintaining an open stance toward future empirical verification. Future work will focus on numerical simulations, immunological experimental validations, and implementing the Wuxing dynamical system on quantum processors.</p>
+<h2 id="14-epilogue-establishing-the-rules-at-the-origin-all-things-find-their-way-the-genesis-automaton-of-the-stationary-observer">14. Epilogue: Establishing the Rules at the Origin, All Things Find Their Way — The Genesis Automaton of the Stationary Observer</h2>
+<p>Creation through the Guiju-Dao (Way of the Compass and Square) does not yield something out of nothing, but rather extracts order out of being: the observer establishes the rules at the origin, and all things consequently find their orientation.</p>
+<p>As the observer sits at the origin, the universe rotates and circulates; it is not the observer who travels the world, but the world that rushes toward the solitary observer.</p>
+<p>14.1 The Fundamental Concept</p>
+<p>The preceding chapters have established a three-dimensional orthogonal coordinate system centered on the observer, demonstrating that quantum measurement is a deterministic projection dictated by the observer's choice of coordinates. This chapter pushes this concept to its ultimate extreme: the observer does not move through space, but remains eternally fixed at the cosmic origin. Every "step" the observer takes is mathematically equivalent to a reverse translation of the entire universal state relative to the origin. Thus, Genesis is not the observer wandering through space, but space unfolding around the observer.</p>
+<p>This postulate perfectly resonates with the spirit of relativity: every observer is entitled to consider themselves stationary while the rest of the universe is in motion. Within the Guiju-Dao framework, this is not merely a valid choice of coordinates, but the only valid mechanism for cosmic generation.</p>
+<p>14.2 Formal Definition</p>
+<p>Let the universe be modeled as a discrete grid $\mathcal{L}=\mathbb{Z}^2$. Each grid point $(x,y)$ carries a Five Phases (Wu-Xing) density matrix:</p>
+<div class="math-block">$$
+\rho(x,y)\in\mathcal{D}(\mathbb{C}^5),\qquad \rho^\dagger=\rho, \quad \mathrm{Tr}(\rho)=1, \quad \rho\succeq 0 \quad (57)
+$$</div>
+<p>The observer is eternally fixed at the origin $O=(x_0,y_0)$, carrying a specific directional vector:</p>
+<div class="math-block">$$
+d\in\mathcal{D}_4=\{\text{East}, \text{South}, \text{West}, \text{North}\} \quad (58)
+$$</div>
+<p>The four directions map to the Five Phases as follows:</p>
+<div class="math-block">$$
+\text{East}\mapsto\text{Wood}, \quad \text{South}\mapsto\text{Fire}, \quad \text{West}\mapsto\text{Metal}, \quad \text{North}\mapsto\text{Water} \quad (59)
+$$</div>
+<p>The central "Earth" phase corresponds to the origin $O$ itself.</p>
+<p>14.2.1 Deterministic Coordinate Projection</p>
+<p>We define the Generating-Overcoming (Sheng-Ke) function:</p>
+<div class="math-block">$$
+\chi(d,j)= \begin{cases} +1, & \text{if direction } d \text{ generates (Sheng) state } j,\\ -1, & \text{if direction } d \text{ overcomes (Ke) state } j,\\ 0, & \text{otherwise}. \end{cases} \quad (60)
+$$</div>
+<p>At the origin $O$, the observer executes a deterministic projection:</p>
+<div class="math-block">$$
+k=\arg\max_{j:\,\chi(d,j)\neq 0}\chi(d,j)\,\rho_{jj} \quad (61)
+$$</div>
+<p>In cases of ties, they are broken according to the sequence of the Luoshu rotation axis. Once $k$ is selected, the density matrix at the origin collapses into a pure state:</p>
+<div class="math-block">$$
+\rho(O)\mapsto \vert e_k\rangle\langle e_k\vert \quad (62)
+$$</div>
+<p>Crucially, this is not a probabilistic measurement; it is a forced projection dictated by the observer's coordinate selection.</p>
+<p>14.2.2 Open Quantum Evolution</p>
+<p>Once the observer "leaves" the origin (conceptually), the density matrix of the origin point evolves according to a curvature-driven Lindblad equation:</p>
+<div class="math-block">$$
+\frac{d\rho}{dt} = -i[H_g,\rho] + \sum_{a,b} C_{ab} \left( L_a \rho L_b^\dagger - \frac{1}{2}\{L_b^\dagger L_a,\rho\} \right) \quad (63)
+$$</div>
+<p>where $H_g$ contains the curvature coupling terms, $L_a$ is constructed from the Luoshu rotation generators, and $C_{ab}\succeq 0$. This evolution is entirely deterministic and contains no stochastic elements.</p>
+<p>Theoretical Integration: Aligning perfectly with the Curvature $\rightarrow$ Mass paradigm, the continuous deterministic projection and subsequent Lindblad evolution at the origin continuously alter the local geometric curvature. Because spacetime curvature acts as the fundamental driver for mass generation rather than its consequence, the observer's "stationary projection" at the origin is fundamentally the continuous generative engine for cosmic mass and physical reality.</p>
+<p>14.2.3 The Stationary Observer and the Retrograde Universe</p>
+<p>The observer "turns" based on the Sheng-Ke relationship between the measured state $k$ and the direction $d$:</p>
+<p>If $\chi(d,k)=+1$: Turn right by $90^\circ$;</p>
+<p>If $\chi(d,k)=-1$: Turn left by $90^\circ$.</p>
+<p>Let the new directional vector after turning be $\mathbf{v}=(v_x,v_y)$. Classically, the observer would move along $\mathbf{v}$. However, in this paradigm, the observer remains stationary, and the universe's state undergoes a reverse translation:</p>
+<div class="math-block">$$
+\rho(x,y)\mapsto \rho(x+v_x,\ y+v_y) \quad (64)
+$$</div>
+<p>Equivalently, the entire fabric of the universe flows in the $-\mathbf{v}$ direction.</p>
+<p>14.3 The Main Loop</p>
+<p>The observer sits steadfast at the origin $O$; the direction $d$ determines the local frame.</p>
+<p>A deterministic projection is executed on the local density matrix at the origin.</p>
+<p>The observer turns according to the Sheng-Ke relations.</p>
+<p>The new directional vector $\mathbf{v}$ is determined.</p>
+<p>The entire universal state shifts in reverse by $\mathbf{v}$.</p>
+<p>The "old grid" currently occupying the origin evolves via the Lindblad equation.</p>
+<p>Repeat continuously.</p>
+<p>Initially, the entire grid exists in a maximally mixed state:</p>
+<div class="math-block">$$
+\rho_0(x,y)=\frac{1}{5}\mathbf{I}_5 \quad (65)
+$$</div>
+<p>The universe is quite literally written into existence, step-by-step, through the observer's stationary presence.</p>
+<p>14.4 Philosophical Significance</p>
+<p>This model elevates the Guiju-Dao from a mere geometrical and dynamical framework into a comprehensive cosmology:</p>
+<p>Where does probability originate? Before the establishment of a coordinate system, all things exist as a probability cloud; once the observer establishes the rules at the origin, probability collapses into order.</p>
+<p>What is the beginning of the universe? It is not "Time Zero," but "Origin Zero." By placing themselves at the origin, the observer slashes the absolute boundary between the "uncoordinated" void and the "coordinated" reality.</p>
+<p>What is the myth of "Severing the Connection between Heaven and Earth" (Juedi Tiantong)? It is the ultimate monopoly over the right of coordinate projection. Without a unique origin, the universe is mere primordial chaos; with a unique origin, the universe acquires a singular, deterministic history.</p>
+<p>Why do "all changes never depart from their origin (Cong/宗/琮)"? The ancient Jade Cong is the ultimate artifact of the origin. If the origin remains stationary and the projection rules remain invariant, then even though all things flow and circulate endlessly, their root remains eternal.</p>
+<p>14.5 A Final Word</p>
+<p>This automaton is not a mathematical proof of physical laws, but a mathematical allegory. Yet, its ambition is unmistakable:</p>
+<p>The universe is not a gambling game of rolling dice. The universe is the unfolding of a coordinate system.</p>
+<p>The observer establishes the rules at the origin, and all things consequently find their way.</p>
+<p>This is precisely the genesis poem that the Guiju-Dao bequeaths to us.</p>
+<h2 id="acknowledgments">Acknowledgments</h2>
+<p>We are grateful to all the individual scientists and teams of scientists who have contributed to the exploration and understanding of the entire universe. Supported by AI-driven Supercomputers and the MES Universe Project. This article has undergone rigorous review and cross-verification, supported by the intelligent assistance of leading AI models such as DeepSeek, Gemini, ChatGPT, Doubao, Qwen, and Grok.</p>
+<h2 id="data-availability-statement">Data Availability Statement</h2>
+<p>Code, mathematical scripts, and preprints are available at GitHub: https://github.com/Zaitian001/-Self-Preprint-V1.1-</p>
+<h2 id="references">References</h2>
+<p>[1] Tai Ping Yu Lan 太平御览.</p>
+<p>[2] Lanchester, F. W. (1916). Aircraft in Warfare.</p>
+<p>[3] TRYON, E. (1973). Is the Universe a Vacuum Fluctuation?. Nature 246, 396–397. https://doi.org/10.1038/246396a0</p>
+<p>[4] Bender, C. M., &amp; Boettcher, S. (1998). Real Spectra in Non-Hermitian Hamiltonians Having PT Symmetry. Physical Review Letters, 80, 5243. https://doi.org/10.1103/PhysRevLett.80.5243</p>
+<p>[5] Lopez, R., Regier, J., Cole, M.B. et al. (2018). Deep generative modeling for single-cell transcriptomics. Nat Methods 15, 1053–1058. https://doi.org/10.1038/s41592-018-0229-2</p>
+<p>[6] Conway, J. H., Smith, D. A. (2003). On Quaternions and Octonions. United States: CRC Press.</p>
+<p>[7] Breuer, H., Petruccione, F. (2002). The Theory of Open Quantum Systems. United Kingdom: Oxford University Press.</p>
+<p>[8] Nakahara, M. (2018). Geometry, Topology and Physics. United Kingdom: Taylor &amp; Francis.</p>
+<p>[9] Hall, B. C. (2003). Lie Groups, Lie Algebras, and Representations: An Elementary Introduction. Germany: Springer.</p>
+<p>[10] Baoliin (Zaitian) Wu 伍宝林. (2026). The Overlooked Coordinate System Exorcising the Demons and Ghosts of Quantum Measurement. Self-Preprint Archive. https://zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553901.html</p>
+<p>[11] Baoliin (Zaitian) Wu 伍宝林. (2026). The Gui-Ju Dao: The Artificial General Intelligence Algorithm, Geometry, and Engineering Paradigm of China's Indigenous Closed Spherical Universe. Self-Preprint Archive. https://zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553902.html</p>
+<p>[12] Baoliin (Zaitian) Wu 伍宝林. (2026). Stochastic Geometric Dynamics of Immune Memory: From Curvature-Driven Attractors to Testable Predictions. Self-Preprint Archive. https://zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553904.html</p>
+<h2 id="appendix-a-the-huangdichiyou-case-a-historical-prototype-of-wuxing-coordination">Appendix A — The Huangdi–Chiyou Case: A Historical Prototype of Wuxing Coordination</h2>
+<h3 id="a1-purpose-and-scope">A.1. Purpose and Scope</h3>
+<p>The mathematical framework developed in this work is concerned with the organization of cyclic states, directional relations, antagonistic interactions, and coordinated dynamics. A historically documented textual example provides an unusually rich early instance of such a structured system: the account of the Huangdi–Chiyou campaign preserved in the Tai Ping Yu Lan (《太平御览》), which cites the military text traditionally attributed to the Xuan Nü Bingfa (《玄女兵法》).</p>
+<p>《玄女兵法》曰：凡行兵之道，天地大宝得者全胜，失者必负。北斗之中，禽有旬始，状像雄鸡，制百兵之母。能得其术，何神不使。九地九天，各有表里，三奇六合主威军事。 又曰：黄帝攻蚩尤，三年城不下。募求术士，乃得伍骨。与之言曰：“今日余攻蚩尤，三年城不下，其咎安在？”伍骨曰：“此城中之将，为人必白色、商音，帝始攻时，得无以秋之东方行乎？今黄帝为人苍色、角音，此雄军也。以战为之。”黄帝曰：“善！为之若何？”伍骨曰：“臣请攻蚩尤，三日城必下。”黄帝大喜。其中黄直曰：“帝积三年攻蚩尤而城不下，今子欲以三日下之，何以为明？”伍骨曰：“不如臣言，请以军法论。”黄帝曰：“子欲以何时？”“臣请朱雀之日日正中时，立赤色徵音绛衣之军于南方，以辅角军；臣请以青龙之日平旦时，立青色角音青衣之军于东方，以辅羽军；臣请以玄武之日人定时，立黑色羽音黑衣之将于北方，以辅商军；臣请以白虎之日日入时，立白色商音白衣之将于西方，以辅宫军。四将以立，臣请为帝以黄龙之日日中，建黄旗于中央，以制四方。”五军已具，四面攻蚩尤，三日其城果下，黄帝即封骨世世不绝。</p>
+<p>The passage describes a strategic configuration involving fivefold correspondence among direction, color, musical mode, temporal phase, and military deployment. It further introduces a central yellow configuration that coordinates the four directional formations. In the present work, this account is treated as a historical prototype of fivefold coordination, not as evidence that an ancient military system constituted a modern scientific theory.</p>
+<p>The purpose of this appendix is therefore limited to three tasks:</p>
+<p>to document the structural content of the historical account;</p>
+<p>to formulate its fivefold coordination scheme in a mathematically explicit language;</p>
+<p>to identify the resulting structure as a historical motivation for the abstract mathematical framework developed in Wuxing Dao.</p>
+<p>The analysis does not attempt to establish the historical factuality of the Huangdi–Chiyou campaign, the supernatural claims contained in the source, or the literal military effectiveness of the reported strategy. Those questions belong to historical and philological scholarship rather than to the mathematical argument of this paper.</p>
+<h3 id="a2-historical-source">A.2. Historical Source</h3>
+<p>The relevant passage is preserved in the Tai Ping Yu Lan and attributed there to the Xuan Nü Bingfa. It first states:</p>
+<p>“凡行兵之道，天地大宝得者全胜，失者必负。”</p>
+<p>The passage then describes a cosmological-military correspondence involving the Northern Dipper, the celestial configuration of Xunshi, the Nine Heavens and Nine Earths, and the strategic significance of the sanqi and liuhe.</p>
+<p>The account subsequently presents a dialogue concerning Huangdi's prolonged campaign against Chiyou. After three years without capturing the city, Huangdi asks why his campaign has failed. The strategist Wugu (伍骨; textual transmission and identification should be treated with appropriate philological caution) attributes the difficulty to a mismatch between the characteristics of the opposing commanders and the temporal-directional organization of Huangdi's forces.</p>
+<p>The proposed solution consists of a coordinated deployment of four directional formations:</p>
+<p>a red, zhi-mode formation associated with the south;</p>
+<p>a blue, jiao-mode formation associated with the east;</p>
+<p>a black, yu-mode formation associated with the north;</p>
+<p>a white, shang-mode formation associated with the west;</p>
+<p>followed by the establishment of a yellow central formation under Huangdi.</p>
+<p>The text specifies temporal phases for these deployments, including dawn, midday, sunset, and nightfall. It concludes:</p>
+<p>“五军已具，四面攻蚩尤，三日其城果下。”</p>
+<p>The narrative therefore describes not merely five symbolic categories but a coordinated spatiotemporal configuration in which the four directional formations are organized around a central configuration.</p>
+<h3 id="a3-the-fivefold-correspondence">A.3. The Fivefold Correspondence</h3>
+<p>The most mathematically relevant feature of the account is its simultaneous use of several categorical dimensions.</p>
+<p>Let the five Wuxing states be represented by</p>
+<p>$E=\{\mathrm{Wood},\mathrm{Fire},\mathrm{Earth},\mathrm{Metal},\mathrm{Water}\}.$</p>
+<p>For the purposes of algebraic representation, we identify these states with the cyclic group</p>
+<div class="math-block">$$
+\boxed{E\simeq\mathbb Z_5.} \quad (A1)
+$$</div>
+<p>The fivefold structure can then be represented abstractly as</p>
+<p>$g\in\mathbb Z_5,\; g=0,1,2,3,4.$</p>
+<p>The historical text additionally associates each state with several attributes. We may therefore define a multidimensional categorical state</p>
+<div class="math-block">$$
+\boxed{X_i=(e_i,d_i,c_i,m_i,\tau_i).} \quad (A2)
+$$</div>
+<p>where</p>
+<p>$e_i=\text{Wuxing state},$ $d_i=\text{direction},$ $c_i=\text{color},$ $m_i=\text{musical mode},$</p>
+<p>and</p>
+<p>$\tau_i=\text{temporal phase}.$</p>
+<p>The historical system can consequently be interpreted as a multimodal discrete encoding scheme.</p>
+<p>Importantly, the mathematical formalization does not require the modern assumption that these categorical dimensions represent physically independent variables. They are treated here as distinct symbolic coordinates within the historical system.</p>
+<h3 id="a4-directional-organization">A.4. Directional Organization</h3>
+<p>The four directional formations described in the passage are naturally represented by</p>
+<p>$D=\{E,S,W,N\}. \quad (A3)$</p>
+<p>The fifth position is the center,</p>
+<p>$C.$</p>
+<p>Thus the complete configuration is</p>
+<div class="math-block">$$
+\boxed{D_5=\{E,S,C,W,N\}.} \quad (A4)
+$$</div>
+<p>The central position requires an important qualification.</p>
+<p>The center should not be interpreted as a fifth spatial direction. Rather, it functions as a coordination or reference state relative to the four directional sectors.</p>
+<p>Accordingly, we distinguish</p>
+<div class="math-block">$$
+\boxed{\text{four directional states}+\text{one central reference state}.} \quad (A5)
+$$</div>
+<p>This distinction is mathematically useful because it anticipates a general construction in which a system possesses multiple dynamical states together with a reference configuration relative to which deviations are evaluated.</p>
+<h3 id="a5-historical-fivefold-encoding">A.5. Historical Fivefold Encoding</h3>
+<p>The directional formations described in the text can be represented schematically as follows:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Sector</th>
+<th>Color</th>
+<th>Musical mode</th>
+<th>Temporal phase</th>
+<th>Symbolic correspondence</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>East</td>
+<td>Green-blue</td>
+<td>Jiao</td>
+<td>Dawn</td>
+<td>Azure Dragon</td>
+</tr>
+<tr>
+<td>South</td>
+<td>Red</td>
+<td>Zhi</td>
+<td>Apparent noon</td>
+<td>Vermilion Bird</td>
+</tr>
+<tr>
+<td>Center</td>
+<td>Yellow</td>
+<td>—</td>
+<td>Midday</td>
+<td>Yellow Dragon</td>
+</tr>
+<tr>
+<td>West</td>
+<td>White</td>
+<td>Shang</td>
+<td>Sunset</td>
+<td>White Tiger</td>
+</tr>
+<tr>
+<td>North</td>
+<td>Black</td>
+<td>Yu</td>
+<td>Nightfall</td>
+<td>Black Tortoise‑Snake</td>
+</tr>
+</tbody>
+</table></div>
+<p>The temporal labels are modern approximations. In particular, “Apparent noon” denotes the exact instant of local solar culmination (日正中时). Midday corresponds to wu‑shi (午时/日中，11:00‑13:00), the traditional Chinese noon‑time window rather than a discrete solar moment. The central “Midday” serves as a coordinating reference rather than as a fifth independent temporal phase.</p>
+<p>The table should be understood as a formal representation of the textual associations, not as an empirical physical classification.</p>
+<p>The important structural observation is that the system simultaneously coordinates</p>
+<div class="math-block">$$
+\boxed{\text{state}+\text{space}+\text{symbol}+\text{sound}+\text{time}.} \quad (A6)
+$$</div>
+<p>The resulting organization is therefore considerably richer than a simple five-element list.</p>
+<h3 id="a6-cyclic-transformation">A.6. Cyclic Transformation</h3>
+<p>The fivefold structure admits a natural cyclic representation.</p>
+<p>Let</p>
+<p>$S:\mathbb Z_5\rightarrow\mathbb Z_5$</p>
+<p>be defined by</p>
+<div class="math-block">$$
+\boxed{S(g)=g+1\pmod5.} \quad (A7)
+$$</div>
+<p>Then</p>
+<p>$S^5=I. \quad (A8)$</p>
+<p>The five states therefore form a closed cyclic transformation system.</p>
+<p>A second transformation can be defined by</p>
+<p>$K(g)=g+2\pmod5. \quad (A9)$</p>
+<p>so that</p>
+<div class="math-block">$$
+\boxed{K=S^2.} \quad (A10)
+$$</div>
+<p>This provides a compact algebraic representation of two distinct relations:</p>
+<p>$S:$ first-order cyclic transformation,</p>
+<p>and</p>
+<p>$S^2:$ second-order relation.</p>
+<p>The historical terminology of sheng (generation) and ke (overcoming) belongs to the traditional Wuxing conceptual system. The present mathematical representation does not claim that the ancient text explicitly formulated the transformations as elements of $\mathbb Z_5$. Rather, it shows that the relational structure can be represented naturally by such an algebraic system.</p>
+<h3 id="a7-from-symbolic-correspondence-to-coordinated-action">A.7. From Symbolic Correspondence to Coordinated Action</h3>
+<p>The historical account becomes particularly interesting when the symbolic categories are translated into military deployment.</p>
+<p>Let the four directional formations be</p>
+<p>$G_E,\; G_S,\; G_W,\; G_N,$</p>
+<p>and let the central formation be</p>
+<p>$G_C.$</p>
+<p>The complete deployment is</p>
+<div class="math-block">$$
+\boxed{\mathcal G=\{G_E,G_S,G_C,G_W,G_N\}.} \quad (A11)
+$$</div>
+<p>The text does not describe these formations as independent units operating without relation. Instead, it specifies their mutual coordination through direction, time, symbolic attributes, and ultimately central command.</p>
+<p>This may be represented abstractly as</p>
+<p>$G_C\longrightarrow(G_E,G_S,G_W,G_N). \quad (A12)$</p>
+<p>where $G_C$ represents the central coordinating state.</p>
+<p>The important mathematical point is therefore not the literal military interpretation but the architecture:</p>
+<div class="math-block">$$
+\boxed{\text{distributed states}+\text{central coordination}\rightarrow\text{collective action}.} \quad (A13)
+$$</div>
+<p>This structure is directly relevant to the broader concept of coordinated dynamics developed in the main text.</p>
+<h3 id="a8-temporal-phase-coordination">A.8. Temporal Phase Coordination</h3>
+<p>The passage introduces an additional layer of organization by associating different formations with different temporal phases.</p>
+<p>Let</p>
+<p>$\tau_i\in\mathcal T$</p>
+<p>denote a temporal phase, with representative states</p>
+<div class="math-block">$$
+\boxed{\mathcal T=\{\text{dawn},\text{midday},\text{sunset},\text{nightfall}\}.} \quad (A14)
+$$</div>
+<p>The deployment can then be represented as</p>
+<p>$G_i=G(e_i,d_i,c_i,m_i,\tau_i). \quad (A15)$</p>
+<p>The system is therefore not merely a static configuration in space:</p>
+<p>$\mathcal G(t) \neq \mathcal G_0.$</p>
+<p>Instead, it possesses an explicitly coordinated temporal structure,</p>
+<div class="math-block">$$
+\boxed{\mathcal G(t)=\mathcal F[E,D,C,M,\tau(t)].} \quad (A16)
+$$</div>
+<p>This observation is important because it introduces the possibility of interpreting the fivefold system as a state-transition architecture rather than merely a taxonomy.</p>
+<h3 id="a9-central-coordination-as-a-reference-state">A.9. Central Coordination as a Reference State</h3>
+<p>The establishment of the yellow central formation provides the most conceptually important feature of the narrative for the present framework.</p>
+<p>The text states that the central yellow flag is established:</p>
+<p>“建黄旗于中央，以制四方。”</p>
+<p>This can be represented mathematically by introducing a reference state</p>
+<p>$x_{\rm ref}.$</p>
+<p>Let the collective system state be</p>
+<p>$x=(x_E,x_S,x_W,x_N,x_C). \quad (A17)$</p>
+<p>Define a deviation functional</p>
+<p>$B(x)=\Phi(x)-\Phi(x_{\rm ref}). \quad (A18)$</p>
+<p>where $\Phi$ maps the multidimensional configuration into a chosen coordination variable.</p>
+<p>The historical text obviously does not define such a function. Equation (A18) is a modern mathematical abstraction motivated by the structural role of the center.</p>
+<p>The conceptual correspondence is:</p>
+<div class="math-block">$$
+\boxed{\text{central configuration}\longleftrightarrow\text{reference state}.} \quad (A19)
+$$</div>
+<p>This correspondence later becomes important in the formulation of Adaptive Intelligence Dao, where a dynamically defined reference state is represented by</p>
+<p>$B(x)=0.$</p>
+<p>The two should not be regarded as historically identical. The connection is structural rather than genealogical.</p>
+<h3 id="a10-fivefold-coordination-as-a-dynamical-system">A.10. Fivefold Coordination as a Dynamical System</h3>
+<p>The historical configuration may therefore be represented abstractly as</p>
+<div class="math-block">$$
+\boxed{\dot x_i=F_i(x,\tau)+C_i(x_C).} \quad (A20)
+$$</div>
+<p>for the directional states</p>
+<p>$i\in\{E,S,W,N\},$</p>
+<p>with a central state</p>
+<p>$x_C$</p>
+<p>providing a coordination variable.</p>
+<p>A more general formulation is</p>
+<div class="math-block">$$
+\boxed{\dot{\mathbf x}=F_{\rm local}(\mathbf x)+F_{\rm coord}(\mathbf x,x_C)+F_{\rm phase}(\mathbf x,\tau).} \quad (A21)
+$$</div>
+<p>Here:</p>
+<p>$F_{\rm local}$ represents local state transformations;</p>
+<p>$F_{\rm coord}$ represents interactions among the formations;</p>
+<p>$F_{\rm phase}$ represents temporal coordination.</p>
+<p>This equation is not claimed to be a reconstruction of the ancient military system. It is a mathematical abstraction of the structural relations encoded in the narrative.</p>
+<h3 id="a11-historical-prototype-and-modern-dynamical-interpretation">A.11. Historical Prototype and Modern Dynamical Interpretation</h3>
+<p>The significance of the Huangdi–Chiyou account for the present work can now be stated precisely.</p>
+<p>The text describes a system in which:</p>
+<div class="math-block">$$
+\boxed{\text{categorical states}\rightarrow\text{spatial assignment}\rightarrow\text{temporal scheduling}\rightarrow\text{central coordination}\rightarrow\text{collective action}.} \quad (A22)
+$$</div>
+<p>This sequence resembles, at an abstract level, the architecture of a coordinated dynamical system.</p>
+<p>The historical account therefore provides a useful prototype configuration for asking a modern mathematical question:</p>
+<p>Can a finite cyclic state structure, coupled through local relations and constrained by a reference state, generate coherent macroscopic behavior?</p>
+<p>This question can be studied independently of the historical narrative.</p>
+<h3 id="a12-from-historical-prototype-to-mathematical-hypothesis">A.12. From Historical Prototype to Mathematical Hypothesis</h3>
+<p>The preceding analysis motivates the following hypothesis:</p>
+<p>Historical-to-Mathematical Hypothesis</p>
+<p>A finite structured state space with cyclic transformation rules, inter-state interactions, temporal modulation, and a coordination reference may support coherent collective dynamics that cannot be reduced to any single component state.</p>
+<p>Symbolically,</p>
+<div class="math-block">$$
+\boxed{\mathcal H: \quad(\mathbb Z_5,S,K,B,D,\tau)\rightarrow\text{coordinated macroscopic dynamics}.} \quad (A23)
+$$</div>
+<p>The hypothesis is deliberately formulated without assuming that the final organization is predetermined.</p>
+<p>The resulting macroscopic structure should instead be determined by the dynamics:</p>
+<p>$x(t)\xrightarrow{\text{evolution}}\mathcal A. \quad (A24)$</p>
+<p>where</p>
+<p>$\mathcal A$</p>
+<p>is an attracting or persistent invariant structure when such a structure exists.</p>
+<h3 id="a13-from-mathematical-hypothesis-to-computational-experiment">A.13. From Mathematical Hypothesis to Computational Experiment</h3>
+<p>The computational development of Wuxing Dao can be understood as a sequence of increasingly explicit tests of this hypothesis.</p>
+<p>The conceptual progression is:</p>
+<div class="math-block">$$
+\boxed{\begin{array}{c}\text{historical configuration}\\\downarrow\\\mathbb Z_5\text{ algebraic structure}\\\downarrow\\\text{coupled dynamical model}\\\downarrow\\\text{numerical simulation}\\\downarrow\\\text{V4.52 autonomous-emergence experiment}\end{array}} \quad (A25)
+$$</div>
+<p>The purpose of the computational stage is not to reproduce the historical battle.</p>
+<p>Rather, it asks whether mathematical structures inspired by the fivefold organization can produce stable, recurrent, or emergent collective structures under explicitly specified dynamical rules.</p>
+<p>This distinction separates historical inspiration from computational evidence.</p>
+<h3 id="a14-the-no-injected-structure-test">A.14. The No-Injected-Structure Test</h3>
+<p>A particularly important methodological consequence follows from this historical-to-computational progression.</p>
+<p>If a macroscopic structure is claimed to emerge autonomously, then the structure should not simply be inserted into the initial condition or explicitly encoded as the target of the evolution.</p>
+<p>Let</p>
+<p>$x(0)=x_0$</p>
+<p>contain only generic perturbations and seed information, while the target structure</p>
+<p>$Y^\ast$</p>
+<p>is absent from the governing dynamics.</p>
+<p>Then the relevant test is whether</p>
+<p>$\Phi(x(t)) \rightarrow Y_{\rm emergent}$</p>
+<p>for sufficiently large $t$, with</p>
+<p>$Y_{\rm emergent}$</p>
+<p>not explicitly prescribed.</p>
+<p>This gives an operational distinction between:</p>
+<p>structure imposed</p>
+<p>and</p>
+<div class="math-block">$$
+\boxed{\text{structure emergent}.} \quad (A26)
+$$</div>
+<p>The distinction becomes particularly important for the later development of the Physical AGI framework.</p>
+<h3 id="a15-relation-to-the-broader-wuxing-framework">A.15. Relation to the Broader Wuxing Framework</h3>
+<p>The Huangdi–Chiyou case should therefore be understood as one historical realization of several structural ideas developed mathematically in this work:</p>
+<div class="math-block">$$
+\boxed{\begin{aligned}\mathbb Z_5&\rightarrow\text{fivefold state space},\\S&\rightarrow\text{cyclic transformation},\\S^2&\rightarrow\text{second-order relation},\\D&\rightarrow\text{directional embedding},\\\tau&\rightarrow\text{temporal phase},\\x_C&\rightarrow\text{coordination reference}.\end{aligned}} \quad (A27)
+$$</div>
+<p>The historical case thus supplies a concrete example in which multiple symbolic dimensions are integrated into a single coordinated system.</p>
+<p>It does not, however, determine the modern mathematical formalism uniquely. Other mathematical structures could also be used to represent the same historical relations.</p>
+<h3 id="a16-historical-interpretation-versus-mathematical-interpretation">A.16. Historical Interpretation versus Mathematical Interpretation</h3>
+<p>For clarity, the following distinction is maintained throughout this work.</p>
+<p>Historical claim</p>
+<p>The transmitted text describes a fivefold strategic configuration involving direction, color, musical mode, temporal phase, and central coordination.</p>
+<p>Mathematical claim</p>
+<p>The structural relations described in the text can be represented using a finite state space, cyclic transformations, multidimensional categorical states, and a central reference variable.</p>
+<p>Computational claim</p>
+<p>A mathematical system constructed from such structures can be simulated and experimentally tested for stability, coordination, and emergence.</p>
+<p>Theoretical claim</p>
+<p>The mathematical mechanisms underlying such behavior may contribute to a more general theory of adaptive self-organization.</p>
+<p>These four levels should not be conflated:</p>
+<div class="math-block">$$
+\boxed{\text{history}\neq\text{mathematical formalization}\neq\text{simulation}\neq\text{physical proof}.} \quad (A28)
+$$</div>
+<p>Maintaining this distinction is essential for the scientific interpretation of the work.</p>
+<h3 id="a17-historical-prototype-wuxing-dao-physical-agi-dao">A.17. Historical Prototype → Wuxing Dao → Physical AGI Dao</h3>
+<p>The significance of the case extends beyond the scope of the present appendix because it provides the historical starting point for a broader research trajectory.</p>
+<p>The conceptual development can be summarized as</p>
+<div class="math-block">$$
+\boxed{\begin{array}{c}\text{Huangdi--Chiyou historical configuration}\\\downarrow\\\text{fivefold relational abstraction}\\\downarrow\\\textit{Wuxing Dao}\\\downarrow\\\text{computational dynamical models}\\\downarrow\\\text{V4.52 autonomous-emergence experiments}\\\downarrow\\\textit{Physical AGI Dao}\\\downarrow\\\textit{Adaptive Intelligence Dao}\end{array}} \quad (A29)
+$$</div>
+<p>The later frameworks should not be regarded as direct reconstructions of the ancient military text. Instead, the historical case serves as the initial conceptual stimulus from which progressively more abstract mathematical and computational questions are developed.</p>
+<h3 id="a18-toward-adaptive-intelligence">A.18. Toward Adaptive Intelligence</h3>
+<p>The final abstraction is particularly compact.</p>
+<p>The historical configuration suggests:</p>
+<p>structured states $\rightarrow$ coordination.</p>
+<p>The Wuxing mathematical framework adds:</p>
+<p>cyclic transformation + inter-state relations.</p>
+<p>The Physical AGI framework adds:</p>
+<p>balance + restoration + memory.</p>
+<p>Their mathematical synthesis leads to the more general sequence:</p>
+<div class="math-block">$$
+\boxed{\text{Change}\rightarrow\text{Balance}\rightarrow\text{Restoration}\rightarrow\text{Emergence}\rightarrow\text{Self-Organization}\rightarrow\text{Adaptive Intelligence}.} \quad (A30)
+$$</div>
+<p>This sequence is not presented here as a historical statement. It is the modern theoretical abstraction that emerges from the research program.</p>
+<h3 id="a19-concluding-remark">A.19. Concluding Remark</h3>
+<p>The Huangdi–Chiyou account is therefore best understood as a historical prototype of coordinated fivefold organization.</p>
+<p>Its scientific value for the present work does not depend on accepting every historical, cosmological, or supernatural claim contained in the source. Its value lies in the unusually explicit organization of multiple relational dimensions:</p>
+<div class="math-block">$$
+\boxed{\text{fivefold state}+\text{direction}+\text{symbol}+\text{sound}+\text{time}+\text{central coordination}.}
+$$</div>
+<p>When abstracted mathematically, this structure provides a natural starting point for studying finite cyclic state spaces, coordinated transformations, reference states, and emergent collective behavior.</p>
+<p>The historical narrative thus marks the beginning of a research trajectory rather than its conclusion:</p>
+<div class="math-block">$$
+\boxed{\text{Historical Prototype}\rightarrow\text{Mathematical Abstraction}\rightarrow\text{Computational Test}\rightarrow\text{General Dynamical Principle}.} \quad (A31)
+$$</div>
+<p>In this sense, the Huangdi–Chiyou case is not offered as proof of the modern theory. It is offered as the historical point of departure from which the mathematical question became visible.</p>
+<p>The purpose of revisiting this ancient configuration is therefore not to demonstrate that modern mathematics was already present in antiquity, but to ask whether a structure once expressed symbolically as the coordinated action of the Five Phases can, after rigorous abstraction, yield a general mathematical language for transformation, balance, emergence, and self-organization.</p>
+<h2 id="appendix-b-pseudocode">Appendix B — Pseudocode</h2>
+<pre class="codehilite"><code class="language-python">&quot;&quot;&quot;
+The Guiju-Dao Genesis Automaton (Retrograde Version)
+
+The observer remains eternally at the origin; the universe flows in reverse.
+&quot;&quot;&quot;
+
+import numpy as np
+
+# Five Phases (Wuxing) indices
+WOOD, FIRE, EARTH, METAL, WATER = 0, 1, 2, 3, 4
+
+# Generating (Sheng) and Overcoming (Ke) relationships
+SHENG = {
+    WOOD: FIRE,
+    FIRE: EARTH,
+    EARTH: METAL,
+    METAL: WATER,
+    WATER: WOOD,
+}
+
+KE = {
+    WOOD: EARTH,
+    EARTH: WATER,
+    WATER: FIRE,
+    FIRE: METAL,
+    METAL: WOOD,
+}
+
+# Directional mapping: East, South, West, North
+DIR_TO_ELEM = {
+    0: WOOD,
+    1: FIRE,
+    2: METAL,
+    3: WATER,
+}
+
+DIR_VECTORS = [
+    (1, 0),
+    (0, 1),
+    (-1, 0),
+    (0, -1),
+]
+
+N = 200
+
+# Density matrices on the grid
+rho = np.zeros((N, N, 5, 5), dtype=float)
+rho[:] = np.eye(5) / 5.0  # Initial maximally mixed state
+
+# Observer fixed at the center of the grid
+observer = (N // 2, N // 2)
+d = 0  # Facing East
+
+
+def chi(d, j):
+    &quot;&quot;&quot;Return the Sheng-Ke relation between direction d and state j.&quot;&quot;&quot;
+    de = DIR_TO_ELEM[d]
+
+    if SHENG.get(de) == j:
+        return +1
+    if KE.get(de) == j:
+        return -1
+    return 0
+
+
+def observe_and_project(rho_local, d):
+    &quot;&quot;&quot;
+    Deterministic coordinate projection.
+
+    Only states participating in the Sheng or Ke relation are candidates.
+    &quot;&quot;&quot;
+    diag = np.real(np.diag(rho_local))
+    candidates = [j for j in range(5) if chi(d, j) != 0]
+
+    scores = np.array(
+        [chi(d, j) * diag[j] for j in candidates],
+        dtype=float,
+    )
+
+    k = candidates[int(np.argmax(scores))]
+
+    rho_new = np.zeros((5, 5), dtype=float)
+    rho_new[k, k] = 1.0
+
+    return k, rho_new
+
+
+def lindblad_evolve(rho_local, dt=0.01):
+    &quot;&quot;&quot;
+    Reduced diagonal population update used by the pseudocode model.
+
+    This is an effective population model rather than a full complex
+    Lindblad integration of the density matrix.
+    &quot;&quot;&quot;
+    p = np.real(np.diag(rho_local))
+
+    A = np.zeros((5, 5), dtype=float)
+
+    for j in range(5):
+        A[SHENG[j], j] += 0.1
+        A[KE[j], j] -= 0.05
+        A[j, j] -= 0.1
+
+    p_new = p + dt * (A @ p)
+    p_new = np.clip(p_new, 0.0, None)
+
+    total = p_new.sum()
+    if total &gt; 0:
+        p_new /= total
+    else:
+        p_new[:] = 1.0 / 5.0
+
+    return np.diag(p_new)
+
+
+# Main Genesis Loop
+for t in range(100000):
+    x0, y0 = observer
+
+    # 1. Deterministic projection at the origin
+    k, rho[y0, x0] = observe_and_project(rho[y0, x0], d)
+
+    # 2. Turn based on Sheng-Ke
+    if chi(d, k) == +1:
+        d = (d + 1) % 4
+    elif chi(d, k) == -1:
+        d = (d - 1) % 4
+
+    # 3. Determine the directional vector
+    vx, vy = DIR_VECTORS[d]
+
+    # 4. Observer remains stationary; the universe flows in reverse
+    rho = np.roll(rho, shift=(-vx, -vy), axis=(0, 1))
+
+    # 5. Evolve the old grid now occupying the origin
+    rho[y0, x0] = lindblad_evolve(rho[y0, x0])
+</code></pre>
+
+<p><strong>Architecture Note.</strong> This “stationary subject, shifting world” mechanism represents an algorithmic architecture for building cognitive world models in Physical AGI. Instead of continuously expending compute to track an agent's coordinates through a potentially unbounded external state space, the architecture allows the external environment to be represented relative to a stationary internal Gui-Ju projection kernel.</p>
+        </div>
+    </article>
+
+    <!-- 引用格式选择器（Google Scholar 风格） -->
+    <div class="citation-toggle">
+        <span class="cite-label">📚 Cite this paper</span>
+        <span class="cite-arrow">▾</span>
+    </div>
+    <div class="citation-panel" id="citationPanel">
+        <div class="citation-format-selector">
+            <button class="format-btn active" data-format="apa">APA</button>
+            <button class="format-btn" data-format="mla">MLA</button>
+            <button class="format-btn" data-format="chicago">Chicago</button>
+            <button class="format-btn" data-format="bibtex">BibTeX</button>
+        </div>
+        <div class="citation-display" id="citationDisplay">
+            <span class="citation-text" id="citationText"></span>
+            <button class="copy-btn" id="copyCitationBtn">📋 Copy</button>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        © 2026 Baoliin (Zaitian) Wu 伍宝林 · Self-Preprint Decentralized Academic Archive
+    </footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const citationData = {"apa": "Baoliin (Zaitian) Wu \u4f0d\u5b9d\u6797 (2026). Wuxing Dao. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553905.html", "mla": "Baoliin (Zaitian) Wu \u4f0d\u5b9d\u6797. \"Wuxing Dao.\" Self-Preprint Archive, 2026, https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553905.html.", "chicago": "Baoliin (Zaitian) Wu \u4f0d\u5b9d\u6797. \"Wuxing Dao.\" Self-Preprint Archive. Accessed August 27, 2026. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553905.html.", "bibtex": "@article{selfpreprint_DW58553905,\n  author = {Baoliin (Zaitian) Wu \u4f0d\u5b9d\u6797},\n  title = {Wuxing Dao},\n  journal = {Self-Preprint Archive},\n  year = {2026},\n  url = {https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553905.html}\n}"};
+    const toggle = document.querySelector('.citation-toggle');
+    const panel = document.getElementById('citationPanel');
+    const textDisplay = document.getElementById('citationText');
+    const copyBtn = document.getElementById('copyCitationBtn');
+    let currentFormat = 'apa';
+
+    if (toggle && panel) {
+        toggle.addEventListener('click', function() {
+            this.classList.toggle('open');
+            panel.classList.toggle('open');
+            if (panel.classList.contains('open')) {
+                updateCitation('apa');
+            }
+        });
+    }
+
+    document.querySelectorAll('.format-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            document.querySelectorAll('.format-btn').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            currentFormat = this.getAttribute('data-format');
+            updateCitation(currentFormat);
+        });
+    });
+
+    function updateCitation(format) {
+        let text = citationData[format] || 'Citation not available';
+        if (format === 'bibtex') {
+            textDisplay.className = 'citation-text bibtex-display';
+            textDisplay.textContent = text;
+        } else {
+            textDisplay.className = 'citation-text';
+            textDisplay.textContent = text;
+        }
+        copyBtn.textContent = '📋 Copy';
+        copyBtn.classList.remove('copied');
+    }
+
+    if (copyBtn) {
+        copyBtn.addEventListener('click', function() {
+            const text = textDisplay.textContent;
+            navigator.clipboard.writeText(text).then(function() {
+                copyBtn.textContent = '✅ Copied!';
+                copyBtn.classList.add('copied');
+                setTimeout(function() {
+                    copyBtn.textContent = '📋 Copy';
+                    copyBtn.classList.remove('copied');
+                }, 2000);
+            }).catch(function() {
+                const ta = document.createElement('textarea');
+                ta.value = text;
+                document.body.appendChild(ta);
+                ta.select();
+                document.execCommand('copy');
+                document.body.removeChild(ta);
+                copyBtn.textContent = '✅ Copied!';
+                setTimeout(function() {
+                    copyBtn.textContent = '📋 Copy';
+                }, 2000);
+            });
+        });
+    }
+
+    updateCitation('apa');
+});
+</script>
+
+<!-- 引入 Mermaid 渲染引擎 -->
+<script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+    document.addEventListener("DOMContentLoaded", async function () {
+        const codeBlocks = document.querySelectorAll('pre code.language-mermaid, pre code.mermaid');
+        codeBlocks.forEach((codeBlock) => {
+            const pre = codeBlock.parentElement;
+            const div = document.createElement('div');
+            div.className = 'mermaid';
+            div.textContent = codeBlock.textContent;
+            pre.replaceWith(div);
+        });
+
+        mermaid.initialize({ startOnLoad: false, theme: 'default', securityLevel: 'loose' });
+        await mermaid.run();
+    });
+</script>
+</body>
+</html>
