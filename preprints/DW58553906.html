@@ -1,0 +1,933 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Physical AGI Dao: Nonlinear Symmetry Anchor Zero as the Theoretical Foundation of Adaptive Intelligence World Model - Self-Preprint Archive</title>
+    <meta name="citation_title" content="Physical AGI Dao: Nonlinear Symmetry Anchor Zero as the Theoretical Foundation of Adaptive Intelligence World Model">
+    <meta name="citation_publication_date" content="2026/09/02">
+    <meta name="citation_fulltext_html_url" content="https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553906.html">
+    <meta name="citation_journal_title" content="Self-Preprint Archive">
+    <meta name="citation_author" content="Baoliin (Zaitian) Wu 伍宝林">
+    <style>
+/* ==========================================================================
+   -Self-Preprint- Academic Theme (Complete Merged & Responsive Version)
+   ========================================================================== */
+*, *::before, *::after { box-sizing: border-box; }
+
+:root {
+    --bg-color: #fcfcfc;
+    --text-color: #2b2b2b;
+    --primary-color: #1a365d;
+    --link-color: #2b6cb0;
+    --border-color: #e2e8f0;
+    --code-bg: #f7fafc;
+    --blockquote-bg: #edf2f7;
+    --meta-color: #718096;
+    --max-width: 860px;
+    --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-serif: Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+body {
+    font-family: var(--font-main);
+    line-height: 1.75;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 2rem 1rem;
+}
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 3rem 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border: 1px solid var(--border-color);
+}
+a { color: var(--link-color); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* 归档列表页 (index.html) */
+.archive-year {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.3rem;
+    color: var(--primary-color);
+}
+.post-item {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+}
+.post-title { font-size: 1.1rem; font-weight: 500; }
+.post-date {
+    font-size: 0.9rem;
+    color: var(--meta-color);
+    font-family: monospace;
+    white-space: nowrap;
+    margin-left: 1rem;
+}
+.post-abstract {
+    font-size: 0.95rem;
+    color: #555;
+    margin: 0.2rem 0 1.2rem 0;
+    font-family: var(--font-serif);
+}
+
+/* 文章单页 (paper_id.html) */
+article h1.paper-title {
+    font-size: 2.2rem;
+    line-height: 1.3;
+    margin-bottom: 0.8rem;
+    letter-spacing: -0.02em;
+    color: var(--primary-color);
+}
+.paper-meta {
+    font-size: 0.92rem;
+    color: var(--meta-color);
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1.2rem;
+}
+.paper-body {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+.paper-body h1, .paper-body h2, .paper-body h3 {
+    font-family: var(--font-main);
+    font-weight: 600;
+    margin-top: 2.2rem;
+    color: var(--primary-color);
+}
+
+/* MathJax & LaTeX 公式排版防护 */
+mjx-container {
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-width: 100%;
+}
+mjx-container[display="true"] {
+    display: block !important;
+    width: 100% !important;
+    margin: 1.5rem 0 !important;
+    text-align: center;
+}
+mjx-container[display="false"] {
+    display: inline-block;
+    vertical-align: middle;
+}
+.math-block {
+    display: block;
+    width: 100%;
+    margin: 1.5rem 0;
+    text-align: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+/* 物理确权卡片 */
+.anchor-box {
+    margin: 2rem 0;
+    padding: 1rem 1.2rem;
+    background: #fafafa;
+    border: 1px solid #eaeaea;
+    border-radius: 6px;
+    font-size: 0.88rem;
+    color: #444;
+}
+.anchor-box strong { color: #111; }
+.anchor-hash {
+    font-family: monospace;
+    font-size: 0.82rem;
+    word-break: break-all;
+    color: #666;
+    margin-top: 0.3rem;
+}
+
+/* 代码与预格式化文本 */
+code, pre {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-size: 0.9rem;
+}
+code {
+    background-color: var(--code-bg);
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+}
+pre {
+    padding: 1rem;
+    overflow-x: auto;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    background-color: var(--code-bg);
+    line-height: 1.45;
+}
+pre code {
+    background-color: transparent;
+    padding: 0;
+    border: none;
+}
+
+/* 引用与表格 */
+blockquote {
+    margin: 1.5rem 0;
+    padding: 0.8rem 1.2rem;
+    background-color: var(--blockquote-bg);
+    border-left: 4px solid var(--primary-color);
+    border-radius: 0 4px 4px 0;
+}
+blockquote p:last-child { margin-bottom: 0; }
+.table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+    -webkit-overflow-scrolling: touch;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+th, td {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-color);
+    text-align: left;
+}
+th {
+    background-color: var(--code-bg);
+    font-weight: 600;
+}
+
+/* 学术插图与图注 */
+img, .paper-body img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1.8rem auto 0.5rem auto;
+    border-radius: 4px;
+}
+figure { margin: 2rem auto; text-align: center; }
+figure img { max-width: 100%; height: auto; margin: 0 auto; }
+figcaption {
+    font-size: 0.9rem;
+    color: var(--meta-color);
+    margin-top: 0.6rem;
+    font-family: var(--font-main);
+    line-height: 1.4;
+}
+
+/* 引用格式选择器 (Google Scholar 风格) */
+.citation-toggle {
+    display: inline-block;
+    margin: 2rem 0 0.5rem 0;
+    padding: 0.5rem 1.2rem;
+    background: #f1f5f9;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: #1e293b;
+    transition: background 0.2s;
+    user-select: none;
+}
+.citation-toggle:hover { background: #e2e8f0; }
+.citation-toggle .cite-arrow {
+    display: inline-block;
+    margin-left: 0.4rem;
+    font-size: 0.7rem;
+    transition: transform 0.3s ease;
+}
+.citation-toggle.open .cite-arrow { transform: rotate(180deg); }
+
+.citation-panel {
+    display: none;
+    margin: 0 0 2rem 0;
+    padding: 1.2rem 1.5rem;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    max-width: 100%;
+}
+.citation-panel.open { display: block; }
+
+.citation-format-selector {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    margin-bottom: 0.8rem;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 0.8rem;
+}
+.format-btn {
+    background: transparent;
+    border: none;
+    padding: 0.3rem 1rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+    color: #64748b;
+    border-radius: 12px;
+    transition: all 0.2s;
+}
+.format-btn:hover { background: #e2e8f0; color: #1e293b; }
+.format-btn.active {
+    background: #1e293b;
+    color: white;
+    font-weight: 500;
+}
+
+.citation-display {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+.citation-text {
+    flex: 1;
+    font-size: 0.88rem;
+    font-family: var(--font-serif);
+    color: #1e293b;
+    background: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    border: 1px solid #e9edf2;
+    word-break: break-word;
+    min-height: 2.2rem;
+}
+.citation-text.bibtex-display {
+    font-family: monospace;
+    font-size: 0.82rem;
+    white-space: pre-wrap;
+}
+.copy-btn {
+    background: #e2e8f0;
+    border: none;
+    border-radius: 4px;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.8rem;
+    cursor: pointer;
+    color: #334155;
+    white-space: nowrap;
+    transition: all 0.2s;
+    align-self: center;
+}
+.copy-btn:hover { background: #cbd5e1; }
+.copy-btn.copied { background: #22c55e; color: white; }
+
+/* 页脚与移动端响应式 */
+footer.site-footer {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.85rem;
+    color: var(--meta-color);
+    text-align: center;
+}
+@media (max-width: 768px) {
+    body { padding: 1rem 0.5rem; }
+    .container { padding: 1.5rem 1rem; }
+    article h1.paper-title { font-size: 1.75rem; }
+    .post-item { flex-direction: column; align-items: flex-start; }
+    .post-date { margin-left: 0; margin-top: 0.2rem; }
+}
+</style>
+    
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    tags: 'ams'
+  },
+  svg: {
+    fontCache: 'global',
+    displayAlign: 'center',
+    displayIndent: '0'
+  },
+  options: {
+    enableMenu: false,
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+};
+</script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+<script>
+  window.addEventListener('load', function () {
+    if (window.MathJax && MathJax.typesetPromise) {
+      MathJax.typesetPromise().catch(function (err) {
+        console.log('MathJax typeset failed: ', err);
+      });
+    }
+  });
+</script>
+
+</head>
+<body>
+    <header class="site-header">
+        <nav>
+            <a href="../index.html">← Archives</a>
+            <a href="../feed.xml">RSS</a>
+        </nav>
+    </header>
+
+    <article>
+        <h1 class="paper-title">Physical AGI Dao: Nonlinear Symmetry Anchor Zero as the Theoretical Foundation of Adaptive Intelligence World Model</h1>
+        <div class="paper-meta">
+            By <strong>Baoliin (Zaitian) Wu 伍宝林</strong> · Published on 2026-09-02
+        </div>
+
+        
+    <div class="anchor-box">
+        🛡️ <strong>Physical Proof of Existence</strong> | Banknote Serial: <code>DW58553906</code>
+        <div class="anchor-hash">SHA-256 Hash: 5d1e09f00670a28258522a4e324f904abb0e9345eb0c0fddbcc3fc63d2780e60</div>
+    </div>
+    
+
+        <blockquote style="font-family: var(--font-serif); background:#fdfdfd; padding:0.8rem 1.2rem; border-left:3px solid #ccc; margin: 1.5rem 0;"><p>Physical Artificial General Intelligence (AGI) must operate in open, noisy, and nonstationary environments. A central unsolved problem is how an embodied agent can maintain a stable internal world model under continuous perturbations. We propose that the concept of zero, understood not as mere nothingness but as a <strong>nonlinear symmetry anchor</strong>, provides a theoretical foundation for adaptive intelligence world model. Within the V4.52 framework—an <strong>observer-centric curvature-driven adaptive intelligence system</strong> acting as a dynamic physical engine for AGI—we define the balanced state $B=0$ as a Nonlinear Symmetry Anchor Zero (NSAZ). It is characterized by an odd, saturating, genuinely nonlinear restoring function $\psi(B)$ with $\psi(0)=0$, $\psi(-B)=-\psi(B)$, and $\sup|\psi|&lt;\infty$. A Yin–Yang coupling, termed <strong>Zaitian Quantum Power (ZQP)</strong>, drives restoration toward this anchor. We prove analytically that the restoring rate scales linearly with the coupling strength, and we verify this prediction numerically across multiple system sizes and random seeds. A Zero Duality Principle links the algebraic identity of addition (preservation) and the absorbing property of multiplication (restoration) to dynamical anchoring and recovery. We then map NSAZ and the Zero Self-Balancing Law onto observer-centric coordinate systems, restorative control, immune-like memory, and gauge attention for physical AGI. The paper does not claim experimental validation in a physical robot; it establishes a model-level foundation and an explicit research pathway for embodied intelligence. A philosophical meta-principle emerges: <em>Zero anchors order, dynamics, and all things.</em></p></blockquote>
+
+        <div class="paper-body">
+            <h1 id="physical-agi-dao-nonlinear-symmetry-anchor-zero-as-the-theoretical-foundation-of-adaptive-intelligence-world-model">Physical AGI Dao: Nonlinear Symmetry Anchor Zero as the Theoretical Foundation of Adaptive Intelligence World Model</h1>
+<p><strong>Baoliin (Zaitian) Wu 伍宝林</strong><br />
+<em>ORCiD:</em> <a href="https://orcid.org/0009-0003-2051-5247">0009-0003-2051-5247</a><br />
+<em>Email:</em> zaitian001@gmail.com<br />
+<em>Affiliation:</em> People's Government of Guangdong Province: Guangzhou, CN<br />
+<em>Date:</em> September 2, 2026  </p>
+<hr />
+<h2 id="abstract">Abstract</h2>
+<p>Physical Artificial General Intelligence (AGI) must operate in open, noisy, and nonstationary environments. A central unsolved problem is how an embodied agent can maintain a stable internal world model under continuous perturbations. We propose that the concept of zero, understood not as mere nothingness but as a <strong>nonlinear symmetry anchor</strong>, provides a theoretical foundation for adaptive intelligence world model. Within the V4.52 framework—an <strong>observer-centric curvature-driven adaptive intelligence system</strong> acting as a dynamic physical engine for AGI—we define the balanced state $B=0$ as a Nonlinear Symmetry Anchor Zero (NSAZ). It is characterized by an odd, saturating, genuinely nonlinear restoring function $\psi(B)$ with $\psi(0)=0$, $\psi(-B)=-\psi(B)$, and $\sup|\psi|&lt;\infty$. A Yin–Yang coupling, termed <strong>Zaitian Quantum Power (ZQP)</strong>, drives restoration toward this anchor. We prove analytically that the restoring rate scales linearly with the coupling strength, and we verify this prediction numerically across multiple system sizes and random seeds. A Zero Duality Principle links the algebraic identity of addition (preservation) and the absorbing property of multiplication (restoration) to dynamical anchoring and recovery. We then map NSAZ and the Zero Self-Balancing Law onto observer-centric coordinate systems, restorative control, immune-like memory, and gauge attention for physical AGI. The paper does not claim experimental validation in a physical robot; it establishes a model-level foundation and an explicit research pathway for embodied intelligence. A philosophical meta-principle emerges: <em>Zero anchors order, dynamics, and all things.</em></p>
+<p><strong>Keywords:</strong> nonlinear symmetry anchor zero; physical AGI; adaptive intelligence world model; coupled fields; topological-gauge emergence; observer-centric coordinate system; Zaitian Quantum Power (ZQP)</p>
+<hr />
+<h2 id="1-introduction">1. Introduction</h2>
+<p>Physical AGI faces a fundamental difficulty not present in purely digital intelligence: the world is continuous, noisy, and full of unexpected perturbations. An embodied agent must constantly maintain a coherent internal representation of itself and its environment, and it must recover from disturbances. Existing approaches often rely on large neural networks trained end-to-end, but such systems can be fragile under distribution shift and lack a principled mechanism for returning to a stable baseline after perturbation.</p>
+<p>This paper asks a deeper question: <em>What is the minimal mathematical structure that allows a complex system to preserve and restore its own order?</em></p>
+<p>Our answer is <strong>zero</strong>. Not zero as emptiness, but zero as a <strong>nonlinear symmetry anchor</strong>: a balanced state that is preserved when reached, and toward which deviations are robustly restored.</p>
+<p>We build this idea in three stages:</p>
+<ol>
+<li><strong>Philosophical and mathematical groundwork</strong> (Section 2): zero has a dual algebraic nature—addition identity (preservation) and multiplication absorber (restoration). This duality maps onto the roles of a balanced state in a dynamical system.</li>
+<li><strong>Formal model and discovery</strong> (Sections 3–6): within the V4.52 coupled-field model, a Yin–Yang coupling, termed <strong>Zaitian Quantum Power (ZQP)</strong>, makes $B=0$ a Nonlinear Symmetry Anchor Zero (NSAZ). We derive the Zero Self-Balancing Law (ZSBL): the restoring rate is linear in the coupling strength, and the recovery time is inversely proportional to it. Numerical experiments confirm this law and show that ZQP is the dominant restoring mechanism, describing the contribution of quantum entanglement effect to space geometry, a foundational postulate derived from the Modified Einstein Spherical (MES) cosmology framework [8, 9].</li>
+<li><strong>Physical AGI mapping</strong> (Section 7): we translate the NSAZ/ZSBL framework into a world-model architecture for embodied intelligence, including observer-centric coordinates, restorative control, immune-like memory, and gauge attention.</li>
+</ol>
+<p>The paper makes no claim of physical-world validation; rather, it provides a model-level foundation and a clear path toward experimental verification in real robots. Furthermore, while this paper focuses on the dynamical foundation of the NSAZ, the ultimate realization of this <strong>observer-centric curvature-driven adaptive intelligence system</strong> inherently aligns with <strong>Topological-Attractor Storage (TAS)</strong> and near-memory computing paradigms. By demonstrating how stable, phase-locked "cores" naturally emerge from continuous field balancing, we establish a theoretical continuum from mathematical abstraction to physical non-von Neumann hardware logic.</p>
+<hr />
+<h2 id="2-the-zero-duality-and-the-dao-of-measurement">2. The Zero Duality and the Dao of Measurement</h2>
+<h3 id="21-the-two-faces-of-zero">2.1 The Two Faces of Zero</h3>
+<p>The same zero plays two distinct algebraic roles:</p>
+<div class="math-block">$$
+\underbrace{a+0=a}_{\text{preservation}} \qquad \underbrace{a\cdot 0=0}_{\text{absorption}}
+$$</div>
+<p>As an additive identity, zero preserves: every number remains itself when zero is added. As a multiplicative absorber, zero annihilates: every number is reduced to zero when multiplied by zero.</p>
+<p>This is not a trivial curiosity. It is a structural duality. If a system contains a balanced state $B=0$ that is preserved when reached, and a restoring mechanism that drives deviations back toward it, then zero is not merely a reference point but an <strong>anchor</strong> of dynamics.</p>
+<h3 id="22-measurement-and-the-origin">2.2 Measurement and the Origin</h3>
+<p>In any measurement, an observer must establish a coordinate system with an origin. That origin is zero. Without zero, there is no distinction between positive and negative, left and right, before and after. Zero is the condition of measurement.</p>
+<p>This insight is deeply related to the Chinese concept of <strong>Dao</strong>: the way that is both connecting and separating. As stated in the <em>Heguanzi 鶡冠子</em>: "通而鬲谓之道, 连万物领天地, 合膊同根, 命曰宇宙 That which connects yet separates is called the Dao; connecting all things and leading the Yin–Yang universe, sharing the one root, is called the universe."</p>
+<p>Zero is the "one root." It is the common anchor of all distinctions, the reference from which all dynamics become meaningful.</p>
+<hr />
+<h2 id="3-nonlinear-symmetry-anchor-zero-nsaz">3. Nonlinear Symmetry Anchor Zero (NSAZ)</h2>
+<h3 id="31-formal-definition">3.1 Formal Definition</h3>
+<p>Let a global imbalance $B$ evolve according to:</p>
+<div class="math-block">$$
+\frac{dB}{dt} = -\Gamma \cdot \psi(B) + \xi(t) \quad (1)
+$$</div>
+<p>where:
+* $\Gamma &gt; 0$ is the restoring rate;
+* $\psi(B)$ is the restoring function;
+* $\xi(t)$ is stochastic or deterministic forcing.</p>
+<p>We say $B=0$ is a <strong>Nonlinear Symmetry Anchor Zero (NSAZ)</strong> if $\psi$ satisfies the following five conditions:</p>
+<div class="math-block">$$
+\begin{aligned} &\psi(-B) = -\psi(B) && \text{(odd symmetry)} \\ &\psi(0) = 0 && \text{(anchor point)} \\ &\psi'(B) &gt; 0 \quad \text{in the restoring region} && \text{(local restoring)} \\ &\sup_B |\psi(B)| &lt; \infty && \text{(saturating)} \\ &\psi(B) \not\equiv cB && \text{(genuine nonlinearity)} \end{aligned} \quad (2)
+$$</div>
+<p>The first three conditions define a symmetric anchor. The fourth ensures that the restoring force is bounded, preventing violent over-reaction to large perturbations. The fifth excludes trivial linear systems and captures the essential nonlinearity.</p>
+<h3 id="32-why-nonlinearity-matters">3.2 Why Nonlinearity Matters</h3>
+<p>In a linear system, $\psi(B)=B$, the restoring force grows without bound as $B$ increases. Under a strong perturbation, this can produce large oscillations or overshooting. The nonlinear saturation of $\psi$, however, guarantees:
+* The restoring force is bounded;
+* Recovery is smooth;
+* The system is robust to strong perturbations.</p>
+<p>Thus, Nonlinear Symmetry Anchor Zero (NSAZ) is not merely a stable fixed point; it is a <strong>robust dynamical anchor</strong>.</p>
+<h3 id="33-stochastic-setting">3.3 Stochastic Setting</h3>
+<p>When $\xi(t)\neq 0$, the system does not reach $B=0$ exactly. Instead:</p>
+<div class="math-block">$$
+B(t) \to \mathcal{N}_0(\xi) \quad (3)
+$$</div>
+<p>where $\mathcal{N}_0(\xi)$ is a bounded statistical neighborhood around zero, with:</p>
+<div class="math-block">$$
+\langle B \rangle \to 0, \qquad \langle |B| \rangle \to B_{\rm res} &gt; 0 \quad (4)
+$$</div>
+<p>The NSAZ therefore confines $B$ within a bounded residual neighborhood, rather than forcing it to exactly zero.</p>
+<hr />
+<h2 id="4-the-v452-model-and-zaitian-quantum-power-zqp-coupling">4. The V4.52 Model and Zaitian Quantum Power (ZQP) Coupling</h2>
+<h3 id="41-the-system-architecture-a-3d-topological-gauge-emergent-engine">4.1 The System Architecture: A 3D Topological-Gauge Emergent Engine</h3>
+<p>The V4.52 model is not merely a generic coupled-field simulation, but an <strong>observer-centric curvature-driven adaptive intelligence system</strong>. It functions as a foundational world model for physical AGI. In this architecture, spatial metrics and material points are not predefined; rather, they emerge through a <strong>curvature-driven mass paradigm</strong> constrained by $\mathfrak{so}(d)$ gauge attention and local tensor networks. To maintain thermodynamic bounds and coherent equilibrium within this highly dynamic fluid-like space, the system requires a fundamental mathematical anchor. This necessity leads to the introduction of the specific field variables and the ZQP coupling.</p>
+<h3 id="42-field-variables">4.2 Field Variables</h3>
+<p>We consider two scalar fields on a three-dimensional lattice $\mathcal{L}$ with periodic boundary conditions:
+* $M(x,t)$: positive field (Yang)
+* $M_{\text{bar}}(x,t)$: negative field (Yin)</p>
+<p>The global imbalance is:</p>
+<div class="math-block">$$
+B(t) = \sum_{x\in\mathcal{L}} \left[ M(x,t) - M_{\text{bar}}(x,t) \right] \quad (5)
+$$</div>
+<p>The balanced state is $B=0$.</p>
+<h3 id="43-zaitian-quantum-power-zqp-coupling">4.3 Zaitian Quantum Power (ZQP) Coupling</h3>
+<p>The Yin–Yang coupling, termed <strong>Zaitian Quantum Power (ZQP)</strong>, is:</p>
+<div class="math-block">$$
+D(x,t) = \lambda_{\text{ZQP}} \cdot \tanh\left( \frac{M(x,t)-M_{\text{bar}}(x,t)}{s_{\text{sat}}} \right) \quad (6)
+$$</div>
+<p>where:
+* $\lambda_{\text{ZQP}}$ is the coupling strength;
+* $s_{\text{sat}}$ is the saturation scale.</p>
+<p>This term acts antisymmetrically:</p>
+<div class="math-block">$$
+\left. \frac{\partial M}{\partial t} \right|_{\text{ZQP}} = -D, \qquad \left. \frac{\partial M_{\text{bar}}}{\partial t} \right|_{\text{ZQP}} = +D \quad (7)
+$$</div>
+<p>It is a negative-feedback mechanism: when $M &gt; M_{\text{bar}}$, $D &gt; 0$, so $M$ is suppressed and $M_{\text{bar}}$ is enhanced, and vice versa.</p>
+<h3 id="44-full-dynamics">4.4 Full Dynamics</h3>
+<p>The complete V4.52 system also includes:
+* Frobenius-norm gauge attention;
+* mass saturation;
+* immune memory field;
+* chaotic forcing;
+* observer origin projection;
+* local peak core detection.</p>
+<p>These mechanisms modulate the landscape, organize structure, and provide historical adaptation. However, as shown in Section 6, they do not independently maintain the global Yin–Yang balance. The dominant restoring mechanism is Zaitian Quantum Power (ZQP).</p>
+<hr />
+<h2 id="5-zero-self-balancing-law-zsbl">5. Zero Self-Balancing Law (ZSBL)</h2>
+<h3 id="51-statement">5.1 Statement</h3>
+<p><strong>Zero Self-Balancing Law (ZSBL):</strong> <em>For a coupled Yin–Yang field system with ZQP coupling, the restoration of global imbalance toward the Nonlinear Symmetry Anchor Zero (NSAZ) is governed by a linear-in-coupling restoring rate:</em></p>
+<div class="math-block">$$
+\Gamma_{\rm ZQP} \simeq \gamma_0 \lambda_{\rm ZQP} \quad (8)
+$$</div>
+<p>and a coupling-inverse recovery time:</p>
+<div class="math-block">$$
+\tau_{\rm restore} \simeq \frac{1}{\gamma_0 \lambda_{\rm ZQP}} \quad (9)
+$$</div>
+<h3 id="52-analytical-derivation">5.2 Analytical Derivation</h3>
+<p>In the linearizing regime $|B| \ll s_{\text{sat}}$:</p>
+<div class="math-block">$$
+\tanh\left(\frac{B}{s_{\text{sat}}}\right) \approx \frac{B}{s_{\text{sat}}} \quad (10)
+$$</div>
+<p>The ZQP contribution to the imbalance equation is:</p>
+<div class="math-block">$$
+\left. \frac{dB}{dt} \right|_{\text{ZQP}} \approx -2 \lambda_{\text{ZQP}} \sum \frac{B}{s_{\text{sat}}} \cdot \langle \text{sat} \rangle \quad (11)
+$$</div>
+<p>Thus:</p>
+<div class="math-block">$$
+\Gamma_{\text{ZQP}} = \frac{2\lambda_{\text{ZQP}}}{s_{\text{sat}}} \langle \text{sat} \rangle = 4\lambda_{\text{ZQP}} \langle \text{sat} \rangle \quad (12)
+$$</div>
+<p>where $\langle \text{sat} \rangle$ is the mean saturation factor. With measured $\langle \text{sat} \rangle \approx 0.6$:</p>
+<div class="math-block">$$
+\Gamma_{\text{ZQP}} \approx 2.4 \lambda_{\text{ZQP}} \quad (13)
+$$</div>
+<h3 id="53-dynamic-correction">5.3 Dynamic Correction</h3>
+<p>The full restoring rate includes:</p>
+<div class="math-block">$$
+\Gamma_{\rm ZQP} \approx 4\,\lambda_{\rm ZQP}\,\langle \mathrm{sat}\rangle_{\rm late} + \Delta_{\rm NL} + \Delta_{\rm disc} \quad (14)
+$$</div>
+<p>where:
+* $\langle \mathrm{sat}\rangle_{\rm late}$ is the late-time saturation factor;
+* $\Delta_{\rm NL}$ is the nonlinear correction;
+* $\Delta_{\rm disc}$ is the discrete-time correction.</p>
+<hr />
+<h2 id="6-numerical-evidence">6. Numerical Evidence</h2>
+<h3 id="61-experimental-setup">6.1 Experimental Setup</h3>
+<ul>
+<li><strong>Model</strong>: V4.51 base framework</li>
+<li><strong>Grid</strong>: $N=9, 11, 13, 15$</li>
+<li><strong>Seeds</strong>: 451, 452, 453</li>
+<li><strong>Steps</strong>: 100–350 (dt = 0.02)</li>
+<li><strong>ZQP sweep</strong>: $\lambda_{\text{ZQP}} \in \{0.05, 0.10, 0.20, 0.35, 0.50, 0.70, 1.00, 1.50\}$</li>
+</ul>
+<h3 id="62-restoration-rate-inline_math_39">6.2 Restoration Rate $\Gamma$</h3>
+<p>For $\lambda=0.6$, the directly measured $\Gamma$:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>N</th>
+<th>$\Gamma$ (mean)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9</td>
+<td>1.242</td>
+</tr>
+<tr>
+<td>11</td>
+<td>1.259</td>
+</tr>
+<tr>
+<td>13</td>
+<td>1.267</td>
+</tr>
+<tr>
+<td>15</td>
+<td>1.271</td>
+</tr>
+</tbody>
+</table></div>
+<p>The variation is less than $2.3\%$, and seed-to-seed variation is at machine noise level. The rate converges rapidly with increasing $N$.</p>
+<h3 id="63-residual-imbalance">6.3 Residual Imbalance</h3>
+<p>The late-time residual $\langle |B| \rangle_{\text{late}}$:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>$\lambda_{\rm ZQP}$</th>
+<th>$\langle |B| \rangle_{\text{late}}$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.05</td>
+<td>423.3</td>
+</tr>
+<tr>
+<td>0.10</td>
+<td>350.8</td>
+</tr>
+<tr>
+<td>0.20</td>
+<td>231.2</td>
+</tr>
+<tr>
+<td>0.35</td>
+<td>113.2</td>
+</tr>
+<tr>
+<td>0.50</td>
+<td>52.6</td>
+</tr>
+<tr>
+<td>0.70</td>
+<td>19.1</td>
+</tr>
+<tr>
+<td>1.00</td>
+<td>4.44</td>
+</tr>
+<tr>
+<td>1.50</td>
+<td>0.43</td>
+</tr>
+</tbody>
+</table></div>
+<p>The residual is extensive: $\langle |B| \rangle / N \approx 0.067\text{–}0.072$, consistent with spatially homogeneous competition between weak driving and Zaitian Quantum Power (ZQP) restoration.</p>
+<h3 id="64-lyapunov-like-exponents">6.4 Lyapunov-like Exponents</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>$\lambda_{\rm ZQP}$</th>
+<th>Lyapunov-like exponent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0.05</td>
+<td>+0.41</td>
+</tr>
+<tr>
+<td>0.15</td>
+<td>+0.27</td>
+</tr>
+<tr>
+<td>0.30</td>
+<td>$\approx 0$</td>
+</tr>
+<tr>
+<td>0.60</td>
+<td>−0.75</td>
+</tr>
+<tr>
+<td>1.00</td>
+<td>−2.15</td>
+</tr>
+</tbody>
+</table></div>
+<p>The transition from positive to negative occurs at $\lambda_{\text{ZQP}} \approx 0.2\text{–}0.3$, marking the onset of the self-balancing regime.</p>
+<h3 id="65-analytical-vs-numerical">6.5 Analytical vs. Numerical</h3>
+<p>Using measured $\langle \text{sat} \rangle_{\text{late}}$:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>N</th>
+<th>$\langle \text{sat} \rangle$</th>
+<th>$\Gamma_{\text{theory}}$</th>
+<th>$\Gamma_{\text{meas}}$</th>
+<th>Deviation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>9</td>
+<td>0.6016</td>
+<td>1.444</td>
+<td>1.239</td>
+<td>14.2%</td>
+</tr>
+<tr>
+<td>11</td>
+<td>0.5974</td>
+<td>1.434</td>
+<td>1.262</td>
+<td>12.0%</td>
+</tr>
+<tr>
+<td>13</td>
+<td>0.5944</td>
+<td>1.427</td>
+<td>1.273</td>
+<td>10.7%</td>
+</tr>
+<tr>
+<td>15</td>
+<td>0.5926</td>
+<td>1.422</td>
+<td>1.279</td>
+<td>10.1%</td>
+</tr>
+</tbody>
+</table></div>
+<p>The deviation decreases with increasing $N$. The residual deviation at $N=15$ ($\approx 10.1\%$) primarily arises from discrete grid time-step truncation errors ($dt=0.02$) and high-dimensional nonlinear energy cascade shunting, which are not fully captured by the linearized approximation.</p>
+<h3 id="66-zqp-as-the-dominant-restoring-mechanism">6.6 ZQP as the Dominant Restoring Mechanism</h3>
+<p>Controlled ablation experiments show that when Zaitian Quantum Power (ZQP) is disabled ($\lambda_{\text{ZQP}}=0$), the global imbalance grows from $B \approx 180$ to $B \approx 1100$. In contrast, disabling the gauge pump while keeping ZQP active produces almost no measurable change. Thus, <strong>ZQP is the dominant restoring mechanism</strong> responsible for global Yin–Yang balance.</p>
+<hr />
+<h2 id="7-physical-agi-world-model-architecture">7. Physical AGI World Model Architecture</h2>
+<h3 id="71-observer-centric-coordinates">7.1 Observer-Centric Coordinates</h3>
+<p>In the V4.52 model, the observer is fixed at the origin, and the universe flows past it. For physical AGI, this corresponds to an <strong>egocentric world model</strong>: every perception and action is represented relative to the agent's own body frame, not a fragile global map.</p>
+<p>But this raises a prior question: <em>What establishes the observer as a stable origin?</em></p>
+<p>The answer is <em>shen zheng</em> (身正, “body-mind unity”) — the state in which the observer, through the unity of body and mind, aligns oneself with the coordinate origin $O$ of the orthogonal frame $\mathcal{F}_0 = (X, Y, Z)$. Before any external measurement can be registered, the observer must first establish this alignment. This is the physical, cognitive, and operational precondition for all subsequent perception and action.</p>
+<p><em>Shen zheng</em> is thus not a static posture but an active state of attunement — precisely the operational meaning of “以身合矩” (<em>yi shen he ju</em>): aligning the body with the Ju, making the self the absolute reference. The observer is not a point particle in the universe; the observer <em>is</em> the coordinate origin itself.</p>
+<p>The causal chain is simple and complete:</p>
+<div class="math-block">$$
+\boxed{ \text{身正 → 四方正} }
+$$</div>
+<p><em>Body-mind unity → the four directions true.</em></p>
+<p>The reliability of the system depends not on external conditions, but on the internal state of the observer — on whether the observer has achieved <em>shen zheng</em>. A vernacular expression independently preserves this truth: “身正不怕影子斜” (<em>shēn zhèng bù pà yǐngzi xié</em>, “a body-mind upright fears not the slanted shadow”). The shadow is always slanted — this is not a defect but the very mechanism by which directional information is encoded. The upright observer does not eliminate the slant; the upright observer provides the stable reference frame from which the slant can be read as signal rather than noise. In V4.52 terms: NSAZ does not eliminate perturbations — it provides the baseline from which perturbations become measurable, recoverable, and actionable.</p>
+<p>Thus, <em>shen zheng</em> is not merely the first step in the observation chain; it is the precondition for the entire observer-centric world model. Without it, there is no origin, no vertical, no baseline, no balance — only drift.</p>
+<div class="math-block">$$
+\boxed{ \text{先正己，后正物} }
+$$</div>
+<p><em>First zero the self, then create the world.</em></p>
+<p>This is the physical, cognitive, and operational foundation upon which the V4.52 model’s observer-centric coordinates, restorative control, and gauge attention ultimately rest.</p>
+<h3 id="72-restorative-control-via-nsaz">7.2 Restorative Control via NSAZ</h3>
+<p>The Nonlinear Symmetry Anchor Zero (NSAZ) directly translates into a control law. For a robot balancing its tilt angle $\theta$, the Zaitian Quantum Power (ZQP) controller is:</p>
+<div class="math-block">$$
+u = -\Gamma \cdot \tanh\left(\frac{\theta}{\theta_{\text{sat}}}\right) - \Gamma_d \cdot \tanh\left(\frac{\dot{\theta}}{\omega_{\text{sat}}}\right) \quad (15)
+$$</div>
+<p>In classical control theory, this naturally corresponds to <strong>Saturating Sliding Mode Control</strong> or <strong>Bounded State Feedback Control</strong>. This provides:
+* smooth recovery for small deviations;
+* bounded control output for large deviations;
+* robustness against actuator saturation and overshoot.</p>
+<h3 id="73-immune-like-memory">7.3 Immune-Like Memory</h3>
+<p>The V4.52 memory field stabilizes high-curvature regions. In physical AGI, this corresponds to selective preservation of important experiences and graceful forgetting of noise. The result is stable long-term memory without catastrophic forgetting.</p>
+<h3 id="74-gauge-attention">7.4 Gauge Attention</h3>
+<p>Gauge attention weights sensory inputs by local physical gradient strength. In robots, this means attending preferentially to depth discontinuities, force spikes, and thermal gradients—signals that matter for physical interaction—rather than uniform processing.</p>
+<h3 id="75-integrated-architecture">7.5 Integrated Architecture</h3>
+<p>The integration of Nonlinear Symmetry Anchor Zero (NSAZ) within this <strong>dynamic physical engine</strong> guarantees thermodynamic coherence. Unlike statistical neural network models that hallucinate under distribution shifts, this architecture provides embodied agents with a structurally robust, thermodynamically bounded prior that intrinsically resists chaotic collapse.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>V4.52 Component</th>
+<th>Physical AGI Mapping</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Observer origin</td>
+<td>Egocentric coordinate system</td>
+</tr>
+<tr>
+<td>Universe reverse flow</td>
+<td>Relative motion computation</td>
+</tr>
+<tr>
+<td>NSAZ</td>
+<td>Stable latent-space anchor</td>
+</tr>
+<tr>
+<td>ZSBL</td>
+<td>Restorative control law</td>
+</tr>
+<tr>
+<td>ZQP</td>
+<td>Nonlinear negative feedback controller</td>
+</tr>
+<tr>
+<td>Immune memory</td>
+<td>Long-term stable memory</td>
+</tr>
+<tr>
+<td>Gauge attention</td>
+<td>Physical saliency weighting</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2 id="8-discussion">8. Discussion</h2>
+<h3 id="81-the-origin-of-order">8.1 The Origin of Order</h3>
+<p>The experiments reported here do not merely show that a model is stable. They point to a deeper principle: <strong>order does not need to be injected; it can emerge from the existence of a single anchor point.</strong></p>
+<p>If a system contains an intrinsic nonlinear symmetry anchor (zero) and a restoring coupling toward it, then:
+<code>Zero -&gt; Reference -&gt; Deviation -&gt; Restoration -&gt; Emergent Order</code></p>
+<h3 id="82-model-level-vs-physical-discovery">8.2 Model-Level vs. Physical Discovery</h3>
+<p>We must be explicit: Nonlinear Symmetry Anchor Zero (NSAZ) and Zero Self-Balancing Law (ZSBL) are <strong>model-level discoveries</strong>. They are properties of the V4.52 framework, not yet validated in a physical robot. However, the mathematical structure is general and may apply to many real systems, including biological homeostasis, ecological balance, and market equilibrium. <strong>Computationally, the stable topological attractors generated by this thermodynamic ground-state engine also provide the exact algorithmic blueprint for hardware mapping onto non-von Neumann TAS (Topological-Attractor Storage) arrays.</strong></p>
+<h3 id="83-future-experimental-validation">8.3 Future Experimental Validation</h3>
+<p>The next step is to implement the Zaitian Quantum Power (ZQP) controller on a physical two-wheeled self-balancing robot. Predictions:
+* Recovery time $\tau \propto 1/\lambda_{\text{ZQP}}$;
+* Bounded control output under large perturbations;
+* Superior robustness compared to linear PID under actuator saturation.</p>
+<p>A separate paper will report these physical results.</p>
+<hr />
+<h2 id="9-conclusion">9. Conclusion</h2>
+<p>We have formalized zero as a <strong>Nonlinear Symmetry Anchor (NSAZ)</strong> in a coupled-field dynamical system and discovered the <strong>Zero Self-Balancing Law (ZSBL)</strong>. The key findings are:
+1. NSAZ is characterized by an odd, saturating, genuinely nonlinear restoring function;
+2. ZSBL states that the restoring rate is linear in the coupling strength;
+3. Zero Duality Principle connects algebraic zero to dynamical preservation and restoration;
+4. ZQP is the dominant restoring mechanism; other mechanisms are auxiliary;
+5. The framework maps naturally onto observer-centric coordinates, restorative control, immune-like memory, and gauge attention for physical AGI.</p>
+<h3 id="philosophical-meta-principle">Philosophical Meta-Principle</h3>
+<blockquote>
+<p><strong>Zero anchors order, dynamics, and all things.</strong></p>
+</blockquote>
+<p>This is not a physical law, but a recognition that zero is not the absence of being—it is the condition under which being can be distinguished, ordered, and dynamically restored.</p>
+<p>The V4.52 model demonstrates this principle in a concrete, computationally verifiable form: <strong>order does not need to be injected; it emerges from the existence of a single anchor point called zero.</strong></p>
+<hr />
+<h2 id="data-availability">Data Availability</h2>
+<p>The mathematical core and algorithmic structure are fully described in the text. Seed values and parameter configurations are documented in Section 6. If required, a reference implementation sufficient to reproduce all numerical results will be made available in a public repository. </p>
+<hr />
+<h2 id="references">References</h2>
+<p>[1] Shang Gao. (c. 11th century BCE). Zhoubi Suanjing 周髀算经.</p>
+<p>[2] Kangxi Imperial Compilation. (1722). Yuzhi Shuli Jingyun 御制数理精蕴.</p>
+<p>[3] I Ching 易经.</p>
+<p>[4] Yang Xiong, (2 BCE). Tai Xuan Jing 太玄经.</p>
+<p>[5] Bender, C. M., and Boettcher, S. (1998). Real Spectra in Non-Hermitian Hamiltonians Having PT Symmetry. Physical Review Letters, 80, 5243. https://doi.org/10.1103/PhysRevLett.80.5243</p>
+<p>[6] Brahmagupta. (628). Brāhmasphuṭasiddhānta.</p>
+<p>[7] Knuth, D. E. (1972). Ancient Babylonian Algorithms. Communications of the ACM, 15, 671. https://doi.org/10.1145/361454.361514</p>
+<p>[8] Baoliin (Zaitian) Wu. (2025). The Return to the Einstein Spherical Universe Model. Preprints. https://doi.org/10.20944/preprints202501.2189.v1</p>
+<p>[9] Baoliin (Zaitian) Wu. (2025). The Return to the Einstein Spherical Universe: The Dawning Moment of a New Cosmic Science. Preprints. https://doi.org/10.20944/preprints202504.0727.v2</p>
+<p>[10] Baoliin (Zaitian) Wu 伍宝林. (2026). The Overlooked Coordinate System Exorcising the Demons and Ghosts of Quantum Measurement. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553901.html</p>
+<p>[11] Baoliin (Zaitian) Wu 伍宝林. (2026). The Gui-Ju Dao: The Artificial General Intelligence Algorithm, Geometry, and Engineering Paradigm of China's Indigenous Closed Spherical Universe. Self-Preprint Archive. https://zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553902.html</p>
+<p>[12] Baoliin (Zaitian) Wu 伍宝林. (2026). The Bone‑Porcelain Core Hypothesis of the 1600‑Year‑Old Delhi Iron Pillar: An Adaptive Intelligent Metamaterial Invention Driven by Internal Sustained Release. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553903.html</p>
+<p>[13] Baoliin (Zaitian) Wu 伍宝林. (2026). Stochastic Geometric Dynamics of Immune Memory, From Curvature-Driven Attractors to Testable Predictions. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553904.html</p>
+<p>[14] Baoliin (Zaitian) Wu 伍宝林. (2026). Wuxing Dao. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553905.html</p>
+        </div>
+    </article>
+
+    <!-- 引用格式选择器（Google Scholar 风格） -->
+    <div class="citation-toggle">
+        <span class="cite-label">📚 Cite this paper</span>
+        <span class="cite-arrow">▾</span>
+    </div>
+    <div class="citation-panel" id="citationPanel">
+        <div class="citation-format-selector">
+            <button class="format-btn active" data-format="apa">APA</button>
+            <button class="format-btn" data-format="mla">MLA</button>
+            <button class="format-btn" data-format="chicago">Chicago</button>
+            <button class="format-btn" data-format="bibtex">BibTeX</button>
+        </div>
+        <div class="citation-display" id="citationDisplay">
+            <span class="citation-text" id="citationText"></span>
+            <button class="copy-btn" id="copyCitationBtn">📋 Copy</button>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        © 2026 Baoliin (Zaitian) Wu 伍宝林 · Self-Preprint Decentralized Academic Archive
+    </footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const citationData = {"apa": "Baoliin (Zaitian) Wu \u4f0d\u5b9d\u6797 (2026). Physical AGI Dao: Nonlinear Symmetry Anchor Zero as the Theoretical Foundation of Adaptive Intelligence World Model. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553906.html", "mla": "Baoliin (Zaitian) Wu \u4f0d\u5b9d\u6797. \"Physical AGI Dao: Nonlinear Symmetry Anchor Zero as the Theoretical Foundation of Adaptive Intelligence World Model.\" Self-Preprint Archive, 2026, https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553906.html.", "chicago": "Baoliin (Zaitian) Wu \u4f0d\u5b9d\u6797. \"Physical AGI Dao: Nonlinear Symmetry Anchor Zero as the Theoretical Foundation of Adaptive Intelligence World Model.\" Self-Preprint Archive. Accessed September 02, 2026. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553906.html.", "bibtex": "@article{selfpreprint_DW58553906,\n  author = {Baoliin (Zaitian) Wu \u4f0d\u5b9d\u6797},\n  title = {Physical AGI Dao: Nonlinear Symmetry Anchor Zero as the Theoretical Foundation of Adaptive Intelligence World Model},\n  journal = {Self-Preprint Archive},\n  year = {2026},\n  url = {https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553906.html}\n}"};
+    const toggle = document.querySelector('.citation-toggle');
+    const panel = document.getElementById('citationPanel');
+    const textDisplay = document.getElementById('citationText');
+    const copyBtn = document.getElementById('copyCitationBtn');
+    let currentFormat = 'apa';
+
+    if (toggle && panel) {
+        toggle.addEventListener('click', function() {
+            this.classList.toggle('open');
+            panel.classList.toggle('open');
+            if (panel.classList.contains('open')) {
+                updateCitation('apa');
+            }
+        });
+    }
+
+    document.querySelectorAll('.format-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            document.querySelectorAll('.format-btn').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            currentFormat = this.getAttribute('data-format');
+            updateCitation(currentFormat);
+        });
+    });
+
+    function updateCitation(format) {
+        let text = citationData[format] || 'Citation not available';
+        if (format === 'bibtex') {
+            textDisplay.className = 'citation-text bibtex-display';
+            textDisplay.textContent = text;
+        } else {
+            textDisplay.className = 'citation-text';
+            textDisplay.textContent = text;
+        }
+        copyBtn.textContent = '📋 Copy';
+        copyBtn.classList.remove('copied');
+    }
+
+    if (copyBtn) {
+        copyBtn.addEventListener('click', function() {
+            const text = textDisplay.textContent;
+            navigator.clipboard.writeText(text).then(function() {
+                copyBtn.textContent = '✅ Copied!';
+                copyBtn.classList.add('copied');
+                setTimeout(function() {
+                    copyBtn.textContent = '📋 Copy';
+                    copyBtn.classList.remove('copied');
+                }, 2000);
+            }).catch(function() {
+                const ta = document.createElement('textarea');
+                ta.value = text;
+                document.body.appendChild(ta);
+                ta.select();
+                document.execCommand('copy');
+                document.body.removeChild(ta);
+                copyBtn.textContent = '✅ Copied!';
+                setTimeout(function() {
+                    copyBtn.textContent = '📋 Copy';
+                }, 2000);
+            });
+        });
+    }
+
+    updateCitation('apa');
+});
+</script>
+
+<!-- 引入 Mermaid 渲染引擎 -->
+<script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+    document.addEventListener("DOMContentLoaded", async function () {
+        const codeBlocks = document.querySelectorAll('pre code.language-mermaid, pre code.mermaid');
+        codeBlocks.forEach((codeBlock) => {
+            const pre = codeBlock.parentElement;
+            const div = document.createElement('div');
+            div.className = 'mermaid';
+            div.textContent = codeBlock.textContent;
+            pre.replaceWith(div);
+        });
+
+        mermaid.initialize({ startOnLoad: false, theme: 'default', securityLevel: 'loose' });
+        await mermaid.run();
+    });
+</script>
+</body>
+</html>
