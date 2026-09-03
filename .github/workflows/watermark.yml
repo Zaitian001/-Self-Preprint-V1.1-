@@ -28,17 +28,22 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: 2. 安装 Python 环境
+      - name: 2. 配置 Node 环境（解决 Node 20 弃用警告）
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+
+      - name: 3. 安装 Python 环境
         uses: actions/setup-python@v5
         with:
           python-version: '3.11'
 
-      - name: 3. 安装 Python 依赖库
+      - name: 4. 安装 Python 依赖库
         run: |
           python -m pip install --upgrade pip
           pip install pyyaml markdown pillow reportlab pypdf numpy
 
-      - name: 4. 安装系统依赖与中英文字体 (含 Pandoc & XeLaTeX)
+      - name: 5. 安装系统依赖与中英文字体 (含 Pandoc & XeLaTeX)
         run: |
           sudo apt-get update
           sudo apt-get install -y \
@@ -55,7 +60,7 @@ jobs:
       # ============================================================
       # 阶段一：水印生成与 JSON 存证
       # ============================================================
-      - name: 5. 运行 CI 水印配对脚本 (兼容不同脚本命名)
+      - name: 6. 运行 CI 水印配对脚本 (兼容不同脚本命名)
         run: |
           if [ -f "scripts/generate_watermarks.py" ]; then
             python scripts/generate_watermarks.py
@@ -68,7 +73,7 @@ jobs:
             exit 1
           fi
 
-      - name: 6. 自动提交并推送生成的水印图与 JSON 至 main 分支 (含冲突防崩机制)
+      - name: 7. 自动提交并推送生成的水印图与 JSON 至 main 分支 (含冲突防崩机制)
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action Bot"
@@ -90,7 +95,7 @@ jobs:
       # ============================================================
       # 阶段二：学术网页构建 + PDF 生成
       # ============================================================
-      - name: 7. 构建学术 HTML 与 RSS/Sitemap 索引
+      - name: 8. 构建学术 HTML 与 RSS/Sitemap 索引
         env:
           SITE_URL: "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}"
         run: |
@@ -98,7 +103,7 @@ jobs:
             python scripts/build_academic_pages.py
           fi
 
-      - name: 8. 自动生成学术 PDF（含防伪封面与附录）
+      - name: 9. 自动生成学术 PDF（含防伪封面与附录）
         env:
           SITE_URL: "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}"
         run: |
@@ -106,10 +111,18 @@ jobs:
             python scripts/generate_pdf.py
           fi
 
+      - name: 9.5 上传生成的 PDF 到 GitHub Actions Artifacts
+        uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: generated-pdfs
+          path: public/pdf/
+          retention-days: 30
+
       # ============================================================
       # 阶段三：部署至 GitHub Pages
       # ============================================================
-      - name: 9. 部署所有产物到 GitHub Pages (gh-pages 分支)
+      - name: 10. 部署所有产物到 GitHub Pages (gh-pages 分支)
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
@@ -120,7 +133,7 @@ jobs:
       # ============================================================
       # 阶段四：多平台时空锚定验证（可选）
       # ============================================================
-      - name: 10. 验证多平台时空因果性 (T₁…T₇)
+      - name: 11. 验证多平台时空因果性 (T₁…T₇)
         run: |
           if [ -f "scripts/verify_time_anchor.py" ]; then
             python scripts/verify_time_anchor.py --auto-git
