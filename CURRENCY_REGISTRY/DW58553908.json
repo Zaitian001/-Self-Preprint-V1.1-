@@ -1,8 +1,8 @@
 {
   "paper_id": "DW58553908",
-  "hash": "4e36da6033d9f72274051cd1ea94f155ea0d565024fa67fd53857d0a35c478ea",
+  "hash": "50f92b90e1e0e737b2979fee66a54fd1f1ce547fe3030406aa612567a71ca876",
   "serial": "DW58553908",
-  "generated_at": "2026-09-08T08:02:06Z",
+  "generated_at": "2026-09-08T08:06:16Z",
   "gyroscopic_frame": {
     "origin": [
       -0.746902437978522,
@@ -10,16 +10,16 @@
       0.5091378208783082
     ],
     "coordinates": {
-      "x": 0.199234,
-      "y": -0.383026,
-      "z": 0.351587
+      "x": -1.649712,
+      "y": 0.690987,
+      "z": 0.87193
     },
-    "precession_angle_deg": 50.84,
+    "precession_angle_deg": 64.01,
     "topological_balance": true
   },
   "gui_ju_engine": {
     "matrix_scale": 7.3484692283495345,
-    "geometric_salt": "4e36da6033d9f72274051cd1ea94f155ea0d565024fa67fd53857d0a35c478ea_430281591.137609660625458",
+    "geometric_salt": "50f92b90e1e0e737b2979fee66a54fd1f1ce547fe3030406aa612567a71ca876_430281591.137609660625458",
     "zero_energy": true
   }
 }
