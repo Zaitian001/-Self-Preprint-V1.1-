@@ -1,0 +1,2233 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Geometry of Qi: A Riemannian Architecture for Physiological Information Flow and Meridian Emergence - Self-Preprint Archive</title>
+    <meta name="citation_title" content="The Geometry of Qi: A Riemannian Architecture for Physiological Information Flow and Meridian Emergence">
+    <meta name="citation_publication_date" content="2026/09/08">
+    <meta name="citation_fulltext_html_url" content="https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553908.html">
+    <meta name="citation_journal_title" content="Self-Preprint Archive">
+    <meta name="citation_author" content="Baoliin (Zaitian) Wu 伍宝林">
+    <style>
+/* ==========================================================================
+   -Self-Preprint- Academic Theme (Complete Merged & Responsive Version)
+   ========================================================================== */
+*, *::before, *::after { box-sizing: border-box; }
+
+:root {
+    --bg-color: #fcfcfc;
+    --text-color: #2b2b2b;
+    --primary-color: #1a365d;
+    --link-color: #2b6cb0;
+    --border-color: #e2e8f0;
+    --code-bg: #f7fafc;
+    --blockquote-bg: #edf2f7;
+    --meta-color: #718096;
+    --max-width: 860px;
+    --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-serif: Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+body {
+    font-family: var(--font-main);
+    line-height: 1.75;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 2rem 1rem;
+}
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 3rem 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border: 1px solid var(--border-color);
+}
+a { color: var(--link-color); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* 归档列表页 (index.html) */
+.archive-year {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.3rem;
+    color: var(--primary-color);
+}
+.post-item {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+}
+.post-title { font-size: 1.1rem; font-weight: 500; }
+.post-date {
+    font-size: 0.9rem;
+    color: var(--meta-color);
+    font-family: monospace;
+    white-space: nowrap;
+    margin-left: 1rem;
+}
+.post-abstract {
+    font-size: 0.95rem;
+    color: #555;
+    margin: 0.2rem 0 1.2rem 0;
+    font-family: var(--font-serif);
+}
+
+/* 文章单页 (paper_id.html) */
+article h1.paper-title {
+    font-size: 2.2rem;
+    line-height: 1.3;
+    margin-bottom: 0.8rem;
+    letter-spacing: -0.02em;
+    color: var(--primary-color);
+}
+.paper-meta {
+    font-size: 0.92rem;
+    color: var(--meta-color);
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1.2rem;
+}
+.paper-body {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+.paper-body h1, .paper-body h2, .paper-body h3 {
+    font-family: var(--font-main);
+    font-weight: 600;
+    margin-top: 2.2rem;
+    color: var(--primary-color);
+}
+
+/* MathJax & LaTeX 公式排版防护 */
+mjx-container {
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-width: 100%;
+}
+mjx-container[display="true"] {
+    display: block !important;
+    width: 100% !important;
+    margin: 1.5rem 0 !important;
+    text-align: center;
+}
+mjx-container[display="false"] {
+    display: inline-block;
+    vertical-align: middle;
+}
+.math-block {
+    display: block;
+    width: 100%;
+    margin: 1.5rem 0;
+    text-align: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+/* 物理确权卡片 */
+.anchor-box {
+    margin: 2rem 0;
+    padding: 1rem 1.2rem;
+    background: #fafafa;
+    border: 1px solid #eaeaea;
+    border-radius: 6px;
+    font-size: 0.88rem;
+    color: #444;
+}
+.anchor-box strong { color: #111; }
+.anchor-hash {
+    font-family: monospace;
+    font-size: 0.82rem;
+    word-break: break-all;
+    color: #666;
+    margin-top: 0.3rem;
+}
+
+/* 代码与预格式化文本 */
+code, pre {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-size: 0.9rem;
+}
+code {
+    background-color: var(--code-bg);
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+}
+pre {
+    padding: 1rem;
+    overflow-x: auto;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    background-color: var(--code-bg);
+    line-height: 1.45;
+}
+pre code {
+    background-color: transparent;
+    padding: 0;
+    border: none;
+}
+
+/* 引用与表格 */
+blockquote {
+    margin: 1.5rem 0;
+    padding: 0.8rem 1.2rem;
+    background-color: var(--blockquote-bg);
+    border-left: 4px solid var(--primary-color);
+    border-radius: 0 4px 4px 0;
+}
+blockquote p:last-child { margin-bottom: 0; }
+.table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+    -webkit-overflow-scrolling: touch;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+th, td {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-color);
+    text-align: left;
+}
+th {
+    background-color: var(--code-bg);
+    font-weight: 600;
+}
+
+/* 学术插图与图注 */
+img, .paper-body img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1.8rem auto 0.5rem auto;
+    border-radius: 4px;
+}
+figure { margin: 2rem auto; text-align: center; }
+figure img { max-width: 100%; height: auto; margin: 0 auto; }
+figcaption {
+    font-size: 0.9rem;
+    color: var(--meta-color);
+    margin-top: 0.6rem;
+    font-family: var(--font-main);
+    line-height: 1.4;
+}
+
+/* 引用格式选择器 (Google Scholar 风格) */
+.citation-toggle {
+    display: inline-block;
+    margin: 2rem 0 0.5rem 0;
+    padding: 0.5rem 1.2rem;
+    background: #f1f5f9;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: #1e293b;
+    transition: background 0.2s;
+    user-select: none;
+}
+.citation-toggle:hover { background: #e2e8f0; }
+.citation-toggle .cite-arrow {
+    display: inline-block;
+    margin-left: 0.4rem;
+    font-size: 0.7rem;
+    transition: transform 0.3s ease;
+}
+.citation-toggle.open .cite-arrow { transform: rotate(180deg); }
+
+.citation-panel {
+    display: none;
+    margin: 0 0 2rem 0;
+    padding: 1.2rem 1.5rem;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    max-width: 100%;
+}
+.citation-panel.open { display: block; }
+
+.citation-format-selector {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    margin-bottom: 0.8rem;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 0.8rem;
+}
+.format-btn {
+    background: transparent;
+    border: none;
+    padding: 0.3rem 1rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+    color: #64748b;
+    border-radius: 12px;
+    transition: all 0.2s;
+}
+.format-btn:hover { background: #e2e8f0; color: #1e293b; }
+.format-btn.active {
+    background: #1e293b;
+    color: white;
+    font-weight: 500;
+}
+
+.citation-display {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+.citation-text {
+    flex: 1;
+    font-size: 0.88rem;
+    font-family: var(--font-serif);
+    color: #1e293b;
+    background: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    border: 1px solid #e9edf2;
+    word-break: break-word;
+    min-height: 2.2rem;
+}
+.citation-text.bibtex-display {
+    font-family: monospace;
+    font-size: 0.82rem;
+    white-space: pre-wrap;
+}
+.copy-btn {
+    background: #e2e8f0;
+    border: none;
+    border-radius: 4px;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.8rem;
+    cursor: pointer;
+    color: #334155;
+    white-space: nowrap;
+    transition: all 0.2s;
+    align-self: center;
+}
+.copy-btn:hover { background: #cbd5e1; }
+.copy-btn.copied { background: #22c55e; color: white; }
+
+/* 页脚与移动端响应式 */
+footer.site-footer {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.85rem;
+    color: var(--meta-color);
+    text-align: center;
+}
+@media (max-width: 768px) {
+    body { padding: 1rem 0.5rem; }
+    .container { padding: 1.5rem 1rem; }
+    article h1.paper-title { font-size: 1.75rem; }
+    .post-item { flex-direction: column; align-items: flex-start; }
+    .post-date { margin-left: 0; margin-top: 0.2rem; }
+}
+</style>
+    
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    tags: 'ams'
+  },
+  svg: {
+    fontCache: 'global',
+    displayAlign: 'center',
+    displayIndent: '0'
+  },
+  options: {
+    enableMenu: false,
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+};
+</script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+<script>
+  window.addEventListener('load', function () {
+    if (window.MathJax && MathJax.typesetPromise) {
+      MathJax.typesetPromise().catch(function (err) {
+        console.log('MathJax typeset failed: ', err);
+      });
+    }
+  });
+</script>
+
+</head>
+<body>
+    <header class="site-header">
+        <nav>
+            <a href="../index.html">← Archives</a>
+            <a href="../feed.xml">RSS</a>
+        </nav>
+    </header>
+
+    <article>
+        <h1 class="paper-title">The Geometry of Qi: A Riemannian Architecture for Physiological Information Flow and Meridian Emergence</h1>
+        <div class="paper-meta">
+            By <strong>Baoliin (Zaitian) Wu 伍宝林</strong> · Published on 2026-09-08
+        </div>
+
+        
+    <div class="anchor-box">
+        🛡️ <strong>Physical Proof of Existence</strong> | Banknote Serial: <code>DW58553908</code>
+        <div class="anchor-hash">SHA-256 Hash: 23bdc3d9da5b8324ee54b6c4ee51978453fbe8ca3d2240a7ca0589a92ed0039f</div>
+    </div>
+    
+
+        <blockquote style="font-family: var(--font-serif); background:#fdfdfd; padding:0.8rem 1.2rem; border-left:3px solid #ccc; margin: 1.5rem 0;"><p>The meridian system of traditional Chinese medicine (TCM) has long been described as a spatially organized network associated with the propagation of sensation, physiological regulation, and therapeutic responses to acupuncture. Yet the relationship between the traditional meridian representation and measurable biological structures remains unresolved. Here we propose a mathematical framework in which meridians and acupoints are not assumed to be anatomical tubes or independent material entities, but are treated as emergent structures associated with the geometry and dynamics of a high-dimensional physiological state space.
+We represent the accessible physiological states of an organism as a differentiable manifold $\mathcal{M}$ equipped with a data-derived Riemannian metric $g_{\mu\nu}$. The metric represents local statistical distinguishability, sensitivity, and effective dynamical distance between physiological states. Physiological regulation is described by stochastic dynamics on $\mathcal{M}$, while stable functional states are identified dynamically through attractor structure rather than through scalar curvature alone. In this formulation, the traditional concept of Qi is interpreted operationally as a stochastic flow of physiological state, whereas meridian-like structures correspond to preferred low-cost pathways or lower-dimensional transport structures connecting dynamically important regions of the state manifold.
+We further formulate an ontogenetic hypothesis for meridian emergence. During embryogenesis, symmetry breaking, morphogen gradients, tissue differentiation, and the formation of organ-specific dynamical states progressively restructure the physiological state space. We hypothesize that the resulting network of critical points, stable and unstable manifolds, and separatrices may generate a lower-dimensional geometric skeleton that is statistically related to the mature meridian network. This hypothesis is formulated without requiring meridians to be genetically pre-specified anatomical structures.
+A central contribution of this work is the <strong>topological protection</strong> mechanism: we argue that the meridian network, once established during development, is preserved not by continuous maintenance signals but by <strong>topological invariants</strong>—Chern numbers and Euler characteristics—imprinted on the physiological state manifold during embryogenesis. These invariants guarantee the persistence of meridian-like edge states throughout life, analogous to topologically protected edge states in condensed matter physics. This mechanism explains the remarkable robustness of meridian organization to cellular turnover, local injury, and stochastic noise.
+Acupoints are modeled more conservatively as regions of unusually high geometric sensitivity or metric anisotropy rather than as literal singularities of a regular Riemannian metric. We define a local anisotropy index from the eigenvalue spectrum of $g_{\mu\nu}$ and propose that candidate acupoints should correspond to statistically significant extrema of this index and/or of related curvature or dynamical-sensitivity measures.
+The framework yields experimentally testable predictions, including a <strong>crucial experiment</strong> that predicts non-local, counterintuitive coupling between anatomically distant regions that are geometrically close in state space—a phenomenon that cannot be explained by conventional neural or vascular physiology. We provide a computational pipeline based on multimodal biological measurements, manifold learning, metric estimation, dynamical-systems analysis, curvature estimation, topological data analysis, and geodesic computation.
+The central proposal is therefore not that traditional terminology constitutes a previously undiscovered physical substance, but that the phenomenology encoded by concepts such as Qi, meridians, and acupoints may admit a mathematically testable description in terms of geometry, stochastic dynamics, developmental organization, and topological protection.
+<strong>Keywords:</strong> Qi; meridian system; acupoints; Riemannian manifold; information geometry; physiological state space; dynamical systems; attractors; embryogenesis; morphogen gradients; topological protection; Chern number; stochastic dynamics; traditional Chinese medicine</p></blockquote>
+
+        <div class="paper-body">
+            <h1 id="the-geometry-of-qi-a-riemannian-architecture-for-physiological-information-flow-and-meridian-emergence">The Geometry of Qi: A Riemannian Architecture for Physiological Information Flow and Meridian Emergence</h1>
+<p><strong>Baoliin (Zaitian) Wu 伍宝林</strong></p>
+<p><em>ORCiD:</em> <a href="https://orcid.org/0009-0003-2051-5247">0009-0003-2051-5247</a></p>
+<p><em>Email:</em> zaitian001@gmail.com</p>
+<p><em>Affiliation:</em> People's Government of Guangdong Province: Guangzhou, CN</p>
+<p><em>Date:</em> September 8, 2026</p>
+<hr />
+<h2 id="abstract">Abstract</h2>
+<p>The meridian system of traditional Chinese medicine (TCM) has long been described as a spatially organized network associated with the propagation of sensation, physiological regulation, and therapeutic responses to acupuncture. Yet the relationship between the traditional meridian representation and measurable biological structures remains unresolved. Here we propose a mathematical framework in which meridians and acupoints are not assumed to be anatomical tubes or independent material entities, but are treated as emergent structures associated with the geometry and dynamics of a high-dimensional physiological state space.</p>
+<p>We represent the accessible physiological states of an organism as a differentiable manifold $\mathcal{M}$ equipped with a data-derived Riemannian metric $g_{\mu\nu}$. The metric represents local statistical distinguishability, sensitivity, and effective dynamical distance between physiological states. Physiological regulation is described by stochastic dynamics on $\mathcal{M}$, while stable functional states are identified dynamically through attractor structure rather than through scalar curvature alone. In this formulation, the traditional concept of Qi is interpreted operationally as a stochastic flow of physiological state, whereas meridian-like structures correspond to preferred low-cost pathways or lower-dimensional transport structures connecting dynamically important regions of the state manifold.</p>
+<p>We further formulate an ontogenetic hypothesis for meridian emergence. During embryogenesis, symmetry breaking, morphogen gradients, tissue differentiation, and the formation of organ-specific dynamical states progressively restructure the physiological state space. We hypothesize that the resulting network of critical points, stable and unstable manifolds, and separatrices may generate a lower-dimensional geometric skeleton that is statistically related to the mature meridian network. This hypothesis is formulated without requiring meridians to be genetically pre-specified anatomical structures.</p>
+<p>A central contribution of this work is the <strong>topological protection</strong> mechanism: we argue that the meridian network, once established during development, is preserved not by continuous maintenance signals but by <strong>topological invariants</strong>—Chern numbers and Euler characteristics—imprinted on the physiological state manifold during embryogenesis. These invariants guarantee the persistence of meridian-like edge states throughout life, analogous to topologically protected edge states in condensed matter physics. This mechanism explains the remarkable robustness of meridian organization to cellular turnover, local injury, and stochastic noise.</p>
+<p>Acupoints are modeled more conservatively as regions of unusually high geometric sensitivity or metric anisotropy rather than as literal singularities of a regular Riemannian metric. We define a local anisotropy index from the eigenvalue spectrum of $g_{\mu\nu}$ and propose that candidate acupoints should correspond to statistically significant extrema of this index and/or of related curvature or dynamical-sensitivity measures.</p>
+<p>The framework yields experimentally testable predictions, including a <strong>crucial experiment</strong> that predicts non-local, counterintuitive coupling between anatomically distant regions that are geometrically close in state space—a phenomenon that cannot be explained by conventional neural or vascular physiology. We provide a computational pipeline based on multimodal biological measurements, manifold learning, metric estimation, dynamical-systems analysis, curvature estimation, topological data analysis, and geodesic computation.</p>
+<p>The central proposal is therefore not that traditional terminology constitutes a previously undiscovered physical substance, but that the phenomenology encoded by concepts such as Qi, meridians, and acupoints may admit a mathematically testable description in terms of geometry, stochastic dynamics, developmental organization, and topological protection.</p>
+<p><strong>Keywords:</strong> Qi; meridian system; acupoints; Riemannian manifold; information geometry; physiological state space; dynamical systems; attractors; embryogenesis; morphogen gradients; topological protection; Chern number; stochastic dynamics; traditional Chinese medicine</p>
+<hr />
+<h2 id="1-introduction">1. Introduction</h2>
+<h3 id="11-from-anatomical-localization-to-state-space-geometry">1.1. From anatomical localization to state-space geometry</h3>
+<p>The concepts of Qi (氣) and meridian networks (經絡) occupy a central position in traditional Chinese medicine. Classical descriptions associate the meridian system with organized pathways, localized points of intervention, propagated sensations, and functional relationships among anatomically separated regions of the organism.</p>
+<p>Modern biomedical anatomy, however, does not identify a discrete set of physical tubes corresponding directly to the classical meridian channels. This observation creates a conceptual difficulty: if meridians are not conventional anatomical structures, what kind of object could a meridian be?</p>
+<p>The present work explores a different possibility. Rather than requiring a meridian to be a material structure embedded in physical space, we ask whether it could instead represent a structured pathway in <strong>physiological state space</strong>.</p>
+<p>This distinction is fundamental.</p>
+<p>An organism does not occupy a single static physical state. Its physiological condition is continuously changing through interactions among molecular, cellular, tissue, organ, and organismal processes. Consequently, a complete description of an organism requires a state vector</p>
+<div class="math-block">$$
+z(t)=(z^1,z^2,\ldots,z^N),
+$$</div>
+<p>where the components may include molecular concentrations, gene-expression states, electrical potentials, mechanical variables, metabolic quantities, immune states, hormonal signals, and other measurable physiological observables.</p>
+<p>The set of physiologically accessible states may occupy only a small structured subset of the full observation space. We therefore represent it as a manifold</p>
+<div class="math-block">$$
+\mathcal M\subseteq\mathbb R^N.
+$$</div>
+<p>The central hypothesis of this paper is that biologically meaningful pathways may emerge from the geometry and dynamics of $\mathcal M$, even when they have no one-to-one anatomical representation.</p>
+<h3 id="12-relation-to-previous-work">1.2. Relation to previous work</h3>
+<p>The present work builds upon a geometric framework previously developed in the context of immune memory (Wu, 2026). In that work, immune memory was modeled as a dynamically stabilized attractor on a Riemannian state manifold governed by stochastic geometric flow. The present paper extends this methodology to the meridian system, with four significant modifications:</p>
+<ol>
+<li>
+<p><strong>Curvature–dynamics distinction</strong>: Unlike the immune-memory framework, which employed negative scalar curvature as a heuristic indicator of attractor stability, the present work rigorously distinguishes between geometric curvature (a property of the state-space metric) and dynamical stability (a property of the flow). This distinction is made explicit and maintained throughout.</p>
+</li>
+<li>
+<p><strong>Ontogenetic hypothesis</strong>: The present work introduces a novel hypothesis—that meridian-like structures emerge during embryogenesis as topological necessities rather than being genetically pre-specified—which was not present in the earlier immune-memory formulation.</p>
+</li>
+<li>
+<p><strong>Topological protection</strong>: We introduce a mechanism by which meridian structures, once established, are preserved throughout life by topological invariants (Chern numbers, Euler characteristics) rather than by continuous maintenance. This provides a resolution to the puzzle of meridian persistence despite cellular turnover.</p>
+</li>
+<li>
+<p><strong>Conservatism in interpretation</strong>: While the immune-memory work employed a gradient-flow formulation with a defined free-energy functional, the present framework adopts a more general drift form and treats gradient-flow as a special case, allowing for the fundamentally nonequilibrium nature of physiological regulation.</p>
+</li>
+</ol>
+<h3 id="13-the-central-hypothesis">1.3. The central hypothesis</h3>
+<p>We propose four linked hypotheses.</p>
+<p><strong>Hypothesis I — Physiological Geometry.</strong> The accessible physiological states of an organism form a structured manifold $(\mathcal{M},g)$, where $g$ is an empirically inferable metric encoding local physiological distinguishability and dynamical sensitivity.</p>
+<p><strong>Hypothesis II — Meridian Emergence.</strong> Meridian-like structures correspond to preferred pathways, transport structures, or lower-dimensional geometric skeletons in this physiological state space. They need not be anatomical tubes.</p>
+<p><strong>Hypothesis III — Ontogenetic Emergence.</strong> The geometry underlying these structures may emerge during development as a consequence of symmetry breaking, differentiation, morphogen dynamics, and the organization of interacting physiological attractors.</p>
+<p><strong>Hypothesis IV — Topological Protection.</strong> Once established, these geometric structures are preserved by topological invariants imprinted on the state manifold during development, providing robustness to cellular turnover and local perturbations.</p>
+<p>These hypotheses are deliberately formulated so that they can be tested independently.</p>
+<h3 id="14-qi-as-a-dynamical-rather-than-material-concept">1.4. Qi as a dynamical rather than material concept</h3>
+<p>Within this framework, Qi is not introduced as an additional physical substance.</p>
+<p>Instead, we define it operationally as:</p>
+<div class="math-block">$$
+\boxed{\mathrm{Qi} \equiv \text{stochastic physiological state flow on }(\mathcal M,g)}
+$$</div>
+<p>This definition does not claim that the historical concept of Qi was originally formulated in mathematical terms. It proposes only that the phenomenology associated with Qi may be represented by a dynamical process on a physiological state manifold.</p>
+<p>This distinction allows the theory to remain compatible with conventional physics while providing a mathematical language for studying phenomena traditionally described using TCM terminology.</p>
+<h3 id="15-scope-of-the-present-work">1.5. Scope of the present work</h3>
+<p>The purpose of this paper is not to establish that classical meridian theory has already been experimentally validated.</p>
+<p>Instead, the paper develops a mathematical framework from which explicit hypotheses can be derived.</p>
+<p>The central scientific question is:</p>
+<div class="math-block">$$
+\boxed{\textit{Can organized meridian-like pathways emerge from the geometry, developmental dynamics, and topological invariants of a complex organism?}}
+$$</div>
+<p>If the answer is negative, the framework should fail through quantitative comparison with experimental data.</p>
+<p>If the answer is positive, the result would provide a new interpretation of meridian phenomenology as an emergent property of physiological organization.</p>
+<hr />
+<h2 id="2-the-physiological-state-manifold">2. The Physiological State Manifold</h2>
+<h3 id="21-definition-of-the-physiological-state-space">2.1. Definition of the physiological state space</h3>
+<p>Let</p>
+<div class="math-block">$$
+z(t)=(z^1,\ldots,z^N)\in\mathbb R^N
+$$</div>
+<p>denote a vector of physiological observables.</p>
+<p>These observables may be distributed across multiple scales:</p>
+<ul>
+<li>molecular concentrations;</li>
+<li>metabolites and ions;</li>
+<li>gene-expression states;</li>
+<li>cellular phenotypes;</li>
+<li>tissue mechanical properties;</li>
+<li>electrical activity;</li>
+<li>temperature and metabolic variables;</li>
+<li>endocrine and immune variables;</li>
+<li>organ-level physiological measurements;</li>
+<li>organism-level behavioral and autonomic states.</li>
+</ul>
+<p>The set of physiologically accessible configurations is assumed to form a lower-dimensional structure</p>
+<div class="math-block">$$
+\mathcal M\subset\mathbb R^N,
+\qquad
+d=\dim\mathcal M\ll N.
+$$</div>
+<p>This assumption is not unique to the present framework. It follows naturally from the observation that biological systems are constrained by homeostasis, regulatory feedback, developmental programs, energetic constraints, and inter-scale coupling.</p>
+<h3 id="22-riemannian-metric">2.2. Riemannian metric</h3>
+<p>We equip $\mathcal M$ with a Riemannian metric</p>
+<div class="math-block">$$
+g=g_{\mu\nu}(z)\,dz^\mu\otimes dz^\nu.
+$$</div>
+<p>The infinitesimal physiological distance is</p>
+<div class="math-block">$$
+\boxed{ds^2=g_{\mu\nu}(z)\,dz^\mu dz^\nu} \quad (1)
+$$</div>
+<p>The metric does not represent ordinary anatomical distance. Rather, it defines a distance between physiological states.</p>
+<p>Two states that are physically close but physiologically very different may therefore have a large state-space distance, whereas anatomically distant configurations may be dynamically close.</p>
+<p>This distinction is essential for interpreting non-local physiological responses.</p>
+<h3 id="23-information-geometric-interpretation">2.3. Information-geometric interpretation</h3>
+<p>A principled way to infer the metric is through statistical distinguishability.</p>
+<p>Suppose physiological observations are described by a family of probability distributions</p>
+<div class="math-block">$$
+p(x|\theta),
+$$</div>
+<p>where $\theta\in\Theta$ parameterizes the relevant physiological states.</p>
+<p>The Fisher information metric is</p>
+<div class="math-block">$$
+\boxed{g_{ij}(\theta) = \mathbb E_{x\sim p(x|\theta)} \left[ \partial_i\log p(x|\theta) \, \partial_j\log p(x|\theta) \right].} \quad (2)
+$$</div>
+<p>Here the metric is defined on the parameter/state manifold $\Theta$, not arbitrarily on the raw observation coordinates.</p>
+<p>In empirical applications, other estimators may be used, including local covariance-based metrics, diffusion metrics, kernel-induced metrics, or learned Riemannian metrics. The choice of metric must be treated as a model assumption and evaluated for robustness.</p>
+<p>Thus the theory does not require one unique metric-construction algorithm.</p>
+<h3 id="24-a-geometric-intuition-for-biological-readers">2.4. A geometric intuition for biological readers</h3>
+<p>For readers less familiar with differential geometry, the following analogy may be helpful.</p>
+<p>Imagine a topographical map. The altitude at each point is not the geometry itself; rather, the geometry is the <strong>relationship between points</strong>—the steepness of slopes, the distance between valleys, the curvature of ridges. In a similar way, the physiological state manifold is not a physical organ but a <strong>map of physiological possibilities</strong>. The metric tells us, for any two states, how "difficult" it is to move from one to the other—not in terms of physical distance, but in terms of physiological cost, sensitivity, or regulatory effort.</p>
+<p>A meridian on this map is like a <strong>mountain pass</strong> or a <strong>river valley</strong>: a preferred route that connects important regions (attractors) with minimal effort. It is not a physical structure like a road, but a <strong>geometric feature</strong> of the landscape that emerges from the shape of the terrain itself. Acupoints, correspondingly, are like <strong>strategic passes or crossroads</strong>—places where small changes in the terrain can have large effects on the flow of traffic.</p>
+<p>This map analogy is imperfect—the true geometry is high-dimensional and dynamic—but it may help orient the reader toward the kind of reasoning that follows.</p>
+<hr />
+<h2 id="3-notation-and-symbol-table">3. Notation and Symbol Table</h2>
+<p>To avoid ambiguity, the following symbols are used consistently throughout the paper.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">Symbol</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Reference</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">$\mathcal M$</td>
+<td style="text-align: left;">Physiological state manifold</td>
+<td style="text-align: left;">Section 2.1</td>
+</tr>
+<tr>
+<td style="text-align: left;">$g_{\mu\nu}(z)$</td>
+<td style="text-align: left;">Riemannian metric tensor on $\mathcal M$</td>
+<td style="text-align: left;">Section 2.2</td>
+</tr>
+<tr>
+<td style="text-align: left;">$d = \dim \mathcal M$</td>
+<td style="text-align: left;">Dimension of the state manifold</td>
+<td style="text-align: left;">Section 2.1</td>
+</tr>
+<tr>
+<td style="text-align: left;">$R(z)$</td>
+<td style="text-align: left;">Scalar curvature of $(\mathcal M,g)$</td>
+<td style="text-align: left;">Section 4.1</td>
+</tr>
+<tr>
+<td style="text-align: left;">$R_{\mu\nu}(z)$</td>
+<td style="text-align: left;">Ricci curvature tensor</td>
+<td style="text-align: left;">Section 4.1</td>
+</tr>
+<tr>
+<td style="text-align: left;">$\Gamma^\rho_{\mu\nu}$</td>
+<td style="text-align: left;">Christoffel symbols (Levi-Civita connection)</td>
+<td style="text-align: left;">Section 4.1</td>
+</tr>
+<tr>
+<td style="text-align: left;">$\mathcal A_i$</td>
+<td style="text-align: left;">Physiological attractor (dynamical definition)</td>
+<td style="text-align: left;">Section 4.2</td>
+</tr>
+<tr>
+<td style="text-align: left;">$f^\mu(z)$</td>
+<td style="text-align: left;">Deterministic physiological drift</td>
+<td style="text-align: left;">Section 9.1</td>
+</tr>
+<tr>
+<td style="text-align: left;">$J_f(z)$</td>
+<td style="text-align: left;">Jacobian matrix of $f$: $J_f = \partial f/\partial z$</td>
+<td style="text-align: left;">Section 4.2</td>
+</tr>
+<tr>
+<td style="text-align: left;">$\mathcal F(z)$</td>
+<td style="text-align: left;">Effective physiological potential (gradient-flow case)</td>
+<td style="text-align: left;">Section 9.2</td>
+</tr>
+<tr>
+<td style="text-align: left;">$\mathcal N_{\text{meridian}}$</td>
+<td style="text-align: left;">Meridian network (traditional or independently defined)</td>
+<td style="text-align: left;">Section 6.5</td>
+</tr>
+<tr>
+<td style="text-align: left;">$\mathcal S_{\text{morphogen}}$</td>
+<td style="text-align: left;">Developmental dynamical skeleton from morphogen fields</td>
+<td style="text-align: left;">Section 6.4</td>
+</tr>
+<tr>
+<td style="text-align: left;">$\pi$</td>
+<td style="text-align: left;">Coarse-graining map between scales</td>
+<td style="text-align: left;">Section 4.5</td>
+</tr>
+<tr>
+<td style="text-align: left;">$J_\pi(z)$</td>
+<td style="text-align: left;">Jacobian of $\pi$: $J_\pi = \partial \pi/\partial z$</td>
+<td style="text-align: left;">Section 4.5</td>
+</tr>
+<tr>
+<td style="text-align: left;">$\mathcal A_{\text{aniso}}(z)$</td>
+<td style="text-align: left;">Metric anisotropy index: $\lambda_{\max}/\lambda_{\min}$</td>
+<td style="text-align: left;">Section 8.2</td>
+</tr>
+<tr>
+<td style="text-align: left;">$S_{\text{acupoint}}(z)$</td>
+<td style="text-align: left;">Composite acupoint sensitivity score</td>
+<td style="text-align: left;">Section 8.4</td>
+</tr>
+<tr>
+<td style="text-align: left;">$\gamma_{ij}(t)$</td>
+<td style="text-align: left;">Geodesic or low-cost pathway between attractors</td>
+<td style="text-align: left;">Section 5.2</td>
+</tr>
+<tr>
+<td style="text-align: left;">$v_{\text{meridian}}$</td>
+<td style="text-align: left;">Propagated sensation velocity along meridians</td>
+<td style="text-align: left;">Section 11.1</td>
+</tr>
+<tr>
+<td style="text-align: left;">$\rho(z,t)$</td>
+<td style="text-align: left;">Invariant probability density (relative to $dV_g$)</td>
+<td style="text-align: left;">Section 10.1</td>
+</tr>
+<tr>
+<td style="text-align: left;">$\mathcal C$</td>
+<td style="text-align: left;">Chern number (topological invariant)</td>
+<td style="text-align: left;">Section 7.2</td>
+</tr>
+<tr>
+<td style="text-align: left;">$\chi(\mathcal M)$</td>
+<td style="text-align: left;">Euler characteristic of $\mathcal M$</td>
+<td style="text-align: left;">Section 7.1</td>
+</tr>
+<tr>
+<td style="text-align: left;">$\Omega$</td>
+<td style="text-align: left;">Berry curvature (morphogen-induced)</td>
+<td style="text-align: left;">Section 7.2</td>
+</tr>
+<tr>
+<td style="text-align: left;">$\Phi_{AB}(t)$</td>
+<td style="text-align: left;">Physiological response function between regions $A$ and $B$</td>
+<td style="text-align: left;">Section 14.2</td>
+</tr>
+<tr>
+<td style="text-align: left;">$\alpha$</td>
+<td style="text-align: left;">Nonlinear scaling exponent for response</td>
+<td style="text-align: left;">Section 14.3</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2 id="4-geometry-dynamics-and-physiological-attractors">4. Geometry, Dynamics, and Physiological Attractors</h2>
+<h3 id="41-why-curvature-alone-cannot-define-an-attractor">4.1. Why curvature alone cannot define an attractor</h3>
+<p>A central correction to simplistic geometric interpretations is necessary.</p>
+<p>The scalar curvature</p>
+<div class="math-block">$$
+R=g^{\mu\nu}R_{\mu\nu}
+$$</div>
+<p>is a property of the geometry of $(\mathcal M,g)$.</p>
+<p>An attractor, by contrast, is a property of a dynamical system</p>
+<div class="math-block">$$
+\dot z=f(z).
+$$</div>
+<p>Therefore,</p>
+<div class="math-block">$$
+\boxed{R&lt;0 \not\Rightarrow \text{attractor}}
+$$</div>
+<p>and</p>
+<div class="math-block">$$
+\boxed{R&gt;0 \not\Rightarrow \text{repeller}.}
+$$</div>
+<p>Curvature and dynamical stability belong to related but distinct mathematical layers.</p>
+<p>This distinction is critical for the present theory.</p>
+<h3 id="42-dynamical-definition-of-an-attractor">4.2. Dynamical definition of an attractor</h3>
+<p>Let</p>
+<div class="math-block">$$
+\dot z^\mu=f^\mu(z)
+$$</div>
+<p>be a deterministic physiological flow.</p>
+<p>A fixed point $z_*$ satisfies</p>
+<div class="math-block">$$
+f(z_*)=0.
+$$</div>
+<p>Its local stability is determined by the Jacobian</p>
+<div class="math-block">$$
+J_f^{\mu}{}_{\nu}(z_{\ast}) = \left.\frac{\partial f^\mu}{\partial z^\nu}\right|_{z_{\ast}}
+$$</div>
+<p>For a hyperbolic fixed point, local asymptotic stability requires</p>
+<div class="math-block">$$
+\boxed{\Re\lambda_i(J_f)&lt;0 \quad \forall i.} \quad (3)
+$$</div>
+<p>More generally, attractors may be limit cycles, invariant sets, chaotic attractors, or higher-dimensional structures.</p>
+<p>We therefore define physiological attractors dynamically rather than by curvature sign.</p>
+<h3 id="43-the-possible-role-of-curvature">4.3. The possible role of curvature</h3>
+<p>Although curvature does not by itself determine stability, geometry can influence the behavior of trajectories.</p>
+<p>The metric determines:</p>
+<ul>
+<li>geodesic distance;</li>
+<li>local anisotropy;</li>
+<li>diffusion geometry;</li>
+<li>volume elements;</li>
+<li>Laplace–Beltrami operators;</li>
+<li>geometric transport costs.</li>
+</ul>
+<p>Curvature can therefore act as a descriptor of the organization of physiological state space.</p>
+<p>A scientifically testable question is whether geometric quantities such as</p>
+<div class="math-block">$$
+R(z),
+\qquad
+\|{\rm Ric}(z)\|,
+\qquad
+\mathcal A_{\text{aniso}}(z)
+$$</div>
+<p>correlate with independently measured dynamical quantities such as relaxation time, susceptibility, basin depth, or Jacobian eigenvalues.</p>
+<p>We formulate this as an empirical problem rather than an identity.</p>
+<h3 id="44-nested-physiological-attractors">4.4. Nested physiological attractors</h3>
+<p>Biological organization is hierarchical.</p>
+<p>We therefore consider a hierarchy</p>
+<div class="math-block">$$
+\mathcal A_{\rm organism}
+\supset
+\mathcal A_{\rm organ}
+\supset
+\mathcal A_{\rm tissue}
+\supset
+\mathcal A_{\rm cell}
+\supset
+\mathcal A_{\rm molecular}.
+$$</div>
+<p>This notation represents dynamical organization rather than literal set-theoretic containment.</p>
+<p>A coarse-graining map</p>
+<div class="math-block">$$
+\pi_k:\mathcal M_k\rightarrow\mathcal M_{k+1}
+$$</div>
+<p>maps microscopic states to macroscopic descriptions.</p>
+<p>The organism can consequently be viewed as a hierarchy of coupled dynamical systems linked by coarse-graining transformations.</p>
+<h3 id="45-geometry-of-coarse-graining">4.5. Geometry of coarse-graining</h3>
+<p>Suppose a microscopic state $x$ is mapped to a macroscopic state</p>
+<div class="math-block">$$
+z=\pi(x).
+$$</div>
+<p>The Jacobian</p>
+<div class="math-block">$$
+J_\pi
+$$</div>
+<p>describes how perturbations at one scale are represented at another.</p>
+<p>If $J_\pi$ becomes strongly anisotropic, certain microscopic directions may produce disproportionately large macroscopic changes.</p>
+<p>This provides a mathematically precise route toward the idea of a physiologically sensitive location.</p>
+<p>Instead of requiring a true metric singularity, we can define a sensitivity field from the singular-value spectrum of $J_\pi$.</p>
+<hr />
+<h2 id="5-meridian-networks-as-geometric-dynamical-structures">5. Meridian Networks as Geometric-Dynamical Structures</h2>
+<h3 id="51-from-anatomical-channels-to-state-space-pathways">5.1. From anatomical channels to state-space pathways</h3>
+<p>The proposed theory does not identify a meridian with a physical tube.</p>
+<p>Instead, let</p>
+<div class="math-block">$$
+\mathcal A_1,\ldots,\mathcal A_n
+$$</div>
+<p>be dynamically important physiological attractors.</p>
+<p>A meridian-like pathway is then defined as a low-cost pathway through state space connecting regions of physiological significance.</p>
+<p>The simplest geometric candidate is a geodesic</p>
+<div class="math-block">$$
+\gamma:[0,1]\rightarrow\mathcal M
+$$</div>
+<p>satisfying</p>
+<div class="math-block">$$
+\nabla_{\dot\gamma}\dot\gamma=0.
+$$</div>
+<p>However, biological transport need not minimize geometric distance alone. We therefore introduce an effective path functional</p>
+<div class="math-block">$$
+\boxed{\mathcal J[\gamma] = \int_0^1 \left[ g_{\mu\nu}(\gamma) \dot\gamma^\mu\dot\gamma^\nu + V(\gamma,\dot\gamma) \right]ds.} \quad (4)
+$$</div>
+<p>Here $V$ represents dynamical, metabolic, transport, or control costs.</p>
+<p>A meridian-like pathway is then a minimizer or low-cost family of this functional under appropriate boundary conditions.</p>
+<h3 id="52-geodesic-networks">5.2. Geodesic networks</h3>
+<p>For multiple attractors, the relevant structure is not necessarily one geodesic but a network.</p>
+<p>Let</p>
+<div class="math-block">$$
+\mathcal N = \bigcup_{i,j} \gamma_{ij}.
+$$</div>
+<p>We define a candidate physiological network through an optimization problem such as</p>
+<div class="math-block">$$
+\boxed{\mathcal N^* = \arg\min_{\mathcal N} \left[ L_g(\mathcal N) + \lambda C_{\rm dyn}(\mathcal N) + \eta C_{\rm top}(\mathcal N) \right].} \quad (5)
+$$</div>
+<p>The terms represent geometric length, dynamical cost, and topological or connectivity constraints.</p>
+<p>This formulation is intentionally broader than the claim that all meridians must be exact geodesics.</p>
+<hr />
+<h2 id="6-the-ontogenetic-hypothesis">6. The Ontogenetic Hypothesis</h2>
+<h3 id="61-the-problem-of-meridian-origin">6.1. The problem of meridian origin</h3>
+<p>If meridian-like structures correspond to emergent physiological geometry, a fundamental question follows:</p>
+<div class="math-block">$$
+\boxed{\text{How does this geometry arise during development?}}
+$$</div>
+<p>Several possibilities can be distinguished:</p>
+<ol>
+<li>genetic specification;</li>
+<li>epigenetic self-organization;</li>
+<li>developmental lineage constraints;</li>
+<li>evolutionary conservation;</li>
+<li>emergent geometry generated by interacting developmental fields.</li>
+</ol>
+<p>The present work investigates the fifth possibility.</p>
+<h3 id="62-development-as-symmetry-breaking-and-morse-theoretic-organization">6.2. Development as symmetry breaking and Morse-theoretic organization</h3>
+<p>The fertilized zygote is a highly symmetric biological state compared with the differentiated organism.</p>
+<p>As development proceeds,</p>
+<div class="math-block">$$
+\text{zygote}
+\rightarrow
+\text{cleavage}
+\rightarrow
+\text{gastrulation}
+\rightarrow
+\text{germ-layer organization}
+\rightarrow
+\text{organogenesis},
+$$</div>
+<p>symmetries are progressively broken.</p>
+<p>A powerful mathematical framework for this process is <strong>Morse theory</strong>. Let</p>
+<div class="math-block">$$
+F_{\rm dev}:\mathcal M\rightarrow\mathbb R
+$$</div>
+<p>be an effective developmental potential whose critical points and gradient flows describe cell-fate decisions, morphogen-driven organization, and tissue differentiation.</p>
+<p>Critical points satisfy</p>
+<div class="math-block">$$
+\nabla F_{\rm dev}=0.
+$$</div>
+<p>Their stable and unstable manifolds form a dynamical complex. For a Morse function (all critical points nondegenerate), the associated Morse–Smale complex provides a decomposition of state space into basins, separatrices, and connecting trajectories.</p>
+<p>We therefore propose that developmental organization may generate a lower-dimensional dynamical skeleton</p>
+<div class="math-block">$$
+\mathcal S_{\rm dev}
+$$</div>
+<p>consisting of critical points and their connecting invariant manifolds.</p>
+<p>The meridian hypothesis then becomes:</p>
+<div class="math-block">$$
+\boxed{\mathcal N_{\rm meridian} \sim \Pi\left(\mathcal S_{\rm dev}\right),} \quad (6)
+$$</div>
+<p>where $\Pi$ represents an appropriate projection from developmental physiological state space to the mature anatomical coordinate system.</p>
+<p>This is substantially more precise than identifying meridians directly with scalar-curvature compensation structures.</p>
+<h3 id="63-topological-constraints-in-development">6.3. Topological constraints in development</h3>
+<p>The developmental state space evolves according to</p>
+<div class="math-block">$$
+g_{\mu\nu}=g_{\mu\nu}(z,t).
+$$</div>
+<p>The resulting geometry is not assumed to be static.</p>
+<p>For a compact oriented $2m$-dimensional manifold, the Gauss–Bonnet–Chern theorem states schematically that</p>
+<div class="math-block">$$
+\boxed{\int_{\mathcal M}\mathcal E_{2m}(\text{Riem})\,dV = (2\pi)^m\chi(\mathcal M),} \quad (7)
+$$</div>
+<p>where $\mathcal E_{2m}$ is the Euler density constructed from the Riemann curvature tensor.</p>
+<p>In general dimensions,</p>
+<div class="math-block">$$
+\int_{\mathcal M}R\,dV
+$$</div>
+<p>is not itself a topological invariant.</p>
+<p>Therefore, the present theory does <strong>not</strong> require a global conservation law for scalar curvature.</p>
+<p>Instead, the relevant statement is that developmental reorganization occurs subject to global topological constraints while the local geometry and dynamical structure evolve. Since the scalar curvature $R$ corresponds only to the trace of the Ricci tensor and does not capture the full Euler density $\mathcal{E}_{2m}$ in dimensions $d &gt; 2$, the conservation of topological invariants during morphogenesis constrains the global Morse–Smale complex (MS-complex) rather than bounding the local scalar curvature variations. This global MS-complex—whose separatrices delineate the boundaries between developmental basins—provides the natural mathematical object for comparing developmental organization with meridian topology, as elaborated in the following section.</p>
+<h3 id="64-the-morphogen-separatrix-hypothesis">6.4. The morphogen separatrix hypothesis</h3>
+<p>Embryonic development is regulated by interacting spatial and temporal fields, including morphogen signaling systems such as BMP, Wnt, SHH, and Nodal.</p>
+<p>Let</p>
+<div class="math-block">$$
+M_a(x,t)
+$$</div>
+<p>denote a morphogen field.</p>
+<p>The associated developmental dynamics may be represented schematically by</p>
+<div class="math-block">$$
+\frac{\partial M_a}{\partial t} = D_a\nabla^2M_a + F_a(M_1,\ldots,M_k,x,t). \quad (8)
+$$</div>
+<p>Cell fate depends on combinations of these fields and downstream regulatory networks.</p>
+<p>The important objects are not simply surfaces where one scalar gradient vanishes.</p>
+<p>For a coupled developmental system, one may define:</p>
+<ul>
+<li>critical points;</li>
+<li>nullclines;</li>
+<li>basin boundaries;</li>
+<li>stable and unstable manifolds;</li>
+<li>separatrices;</li>
+<li>intersections of multiple developmental boundaries.</li>
+</ul>
+<p>These structures form a developmental dynamical complex.</p>
+<p>We denote it</p>
+<div class="math-block">$$
+\mathcal S_{\rm morphogen}.
+$$</div>
+<h3 id="65-core-ontogenetic-prediction">6.5. Core ontogenetic prediction</h3>
+<p>The central prediction of this paper is:</p>
+<div class="math-block">$$
+\boxed{\mathcal N_{\rm meridian} \text{ should show significant topological correspondence with } \Pi(\mathcal S_{\rm morphogen}).} \quad (9)
+$$</div>
+<p>This does <strong>not</strong> imply point-by-point identity.</p>
+<p>The appropriate statistical test should compare:</p>
+<ul>
+<li>network topology;</li>
+<li>branch structure;</li>
+<li>critical-point organization;</li>
+<li>spatial correspondence;</li>
+<li>graph invariants;</li>
+<li>persistent homology;</li>
+<li>null-model statistics.</li>
+</ul>
+<p>The hypothesis can therefore be falsified.</p>
+<h3 id="66-experimental-conditions-for-testing-the-ontogenetic-hypothesis">6.6. Experimental conditions for testing the ontogenetic hypothesis</h3>
+<p>To test the ontogenetic hypothesis, the following minimum experimental conditions must be met:</p>
+<ol>
+<li>
+<p><strong>Independent meridian map</strong>: An independently defined meridian network for the same species (e.g., mouse) must be available, obtained through循经感传 (propagated sensation along meridians) mapping, electrophysiological measurements along proposed pathways, or other standardized meridian identification protocols.</p>
+</li>
+<li>
+<p><strong>Morphogen gradient data</strong>: High-resolution three-dimensional spatial distributions of key morphogens (BMP, Wnt, SHH, Nodal, and others) must be reconstructed during the relevant developmental stages (embryonic days E8.5–E14.5 for mouse), using spatial transcriptomics, reporter systems, or quantitative imaging.</p>
+</li>
+<li>
+<p><strong>Topological comparison</strong>: The topological features of $\mathcal S_{\text{morphogen}}$ (e.g., number of connected components, loops, branch points) must be compared with those of $\mathcal N_{\text{meridian}}$ using methods such as persistent homology. A statistically significant correspondence above a carefully constructed null model would constitute support for the hypothesis; absence of such correspondence would constitute falsification.</p>
+</li>
+</ol>
+<h3 id="67-what-would-falsify-the-hypothesis">6.7. What would falsify the hypothesis?</h3>
+<p>The hypothesis would be weakened or rejected if, after controlling for body geometry and developmental patterning, the inferred morphogen-derived structures show no statistically significant relationship to independently defined meridian networks.</p>
+<p>Conversely, a robust correspondence across species, developmental stages, and experimental datasets would provide substantial support.</p>
+<p>This criterion is essential because the theory must not be constructed so that any developmental pattern can be retrospectively labeled a meridian.</p>
+<hr />
+<h2 id="7-topological-protection-of-meridian-structures">7. Topological Protection of Meridian Structures</h2>
+<p>A central question in meridian research is: <strong>Once established during development, how does the meridian network persist throughout life, despite continuous cellular turnover, local injury, and stochastic noise?</strong></p>
+<p>We propose that the answer lies in <strong>topological protection</strong>—a mechanism analogous to the protection of edge states in topological insulators. The meridian network is not maintained by continuous molecular signaling but is preserved by <strong>topological invariants</strong> imprinted on the physiological state manifold during embryogenesis.</p>
+<h3 id="71-topological-invariants-from-developmental-symmetry-breaking">7.1. Topological invariants from developmental symmetry breaking</h3>
+<p>During gastrulation and organogenesis, morphogen gradients break the high symmetry of the early embryo. This symmetry breaking can be described by a <strong>non-Abelian gauge field</strong></p>
+<div class="math-block">$$
+\mathcal A_\mu^{\text{dev}}(z)
+$$</div>
+<p>whose curvature determines cell-fate decisions and tissue boundaries.</p>
+<p>The integrated Berry curvature over the developmental state space defines a <strong>Chern number</strong>:</p>
+<div class="math-block">$$
+\boxed{\mathcal C = \frac{1}{2\pi} \int_{\mathcal S} \Omega} \quad (10)
+$$</div>
+<p>where $\Omega$ is the Berry curvature 2-form derived from $\mathcal A_\mu^{\text{dev}}$, and $\mathcal S$ is a closed 2-dimensional submanifold (2-cycle) in the developmental state space, i.e., $\mathcal S \in H_2(\mathcal M, \mathbb Z)$.</p>
+<p>The Chern number $\mathcal C$ is a topological invariant: it is integer-valued and unchanged by continuous deformations of the system. Once imprinted, $\mathcal C$ does not require ongoing maintenance.</p>
+<h3 id="72-bulk-edge-correspondence-and-meridian-edge-states">7.2. Bulk-edge correspondence and meridian edge states</h3>
+<p>In condensed matter physics, the <strong>bulk-edge correspondence</strong> theorem states that a nontrivial topological invariant in the bulk implies the existence of protected edge states at the boundary.</p>
+<p>We propose an analogous mechanism for the meridian system:</p>
+<ul>
+<li>
+<p>The <strong>bulk</strong> of the physiological state manifold—representing the deep interior of organs and tissues—acquires a nontrivial topological invariant $\mathcal C$ during development.</p>
+</li>
+<li>
+<p>This invariant <strong>forces</strong> the existence of protected <strong>edge states</strong> at the boundaries of the manifold.</p>
+</li>
+<li>
+<p>These edge states, projected onto the physical body, correspond to the <strong>meridian pathways</strong>.</p>
+</li>
+</ul>
+<p>The meridian pathways are therefore not maintained by ongoing signals but are <strong>topologically protected</strong>. They persist as long as the manifold's topology remains unchanged—that is, as long as the organism does not undergo a topological phase transition (which would correspond to catastrophic injury or death).</p>
+<h3 id="73-the-euler-characteristic-and-meridian-network-topology">7.3. The Euler characteristic and meridian network topology</h3>
+<p>For a 2-dimensional spatial projection of the meridian network, the Euler characteristic $\chi(\mathcal N)$ provides a topological invariant:</p>
+<div class="math-block">$$
+\chi(\mathcal N) = V - E + F
+$$</div>
+<p>where $V$, $E$, and $F$ are the numbers of vertices (acupoints), edges (meridian segments), and faces (regions enclosed by meridians).</p>
+<p>We hypothesize that $\chi(\mathcal N)$ is determined during development and remains invariant throughout life. This implies that:</p>
+<ul>
+<li>The number of acupoints and their connectivity pattern are topologically constrained.</li>
+<li>Local perturbations (injury, inflammation) can displace individual acupoints but cannot change the overall topology of the network.</li>
+</ul>
+<h3 id="74-robustness-without-maintenance">7.4. Robustness without maintenance</h3>
+<p>The topological protection mechanism explains several otherwise puzzling features of the meridian system:</p>
+<ol>
+<li>
+<p><strong>Persistence despite cellular turnover</strong>: Topological invariants are properties of the manifold, not of individual cells. Cells may die and be replaced, but the topology remains.</p>
+</li>
+<li>
+<p><strong>Resilience to local injury</strong>: A local perturbation that does not change the manifold's topology leaves the meridian network intact. Only a topological phase transition (severe trauma, necrosis crossing a critical threshold) can disrupt the network.</p>
+</li>
+<li>
+<p><strong>Conservation across individuals</strong>: Topological invariants are determined by developmental constraints that are universal across individuals of the same species, explaining the conserved organization of meridians.</p>
+</li>
+<li>
+<p><strong>No requirement for continuous signaling</strong>: Unlike neural circuits or vascular networks that require ongoing maintenance signals, topologically protected structures are self-preserving.</p>
+</li>
+</ol>
+<h3 id="75-phase-transitions-and-meridian-collapse">7.5. Phase transitions and meridian collapse</h3>
+<p>If a perturbation is strong enough to change the manifold's topology—for example, extensive tissue necrosis, severe inflammation, or the formation of a pathological attractor in cancer—the meridian network may undergo a <strong>topological phase transition</strong>.</p>
+<p>We identify this with the clinical concept of meridian "blockage" or "collapse" (经络不通). The pathway does not merely become less conductive; its <strong>topological structure changes</strong>, potentially irreversibly.</p>
+<p>This predicts that severe pathological states should be associated with measurable changes in the topology of the meridian network—not merely changes in conductivity, but changes in connectivity patterns.</p>
+<hr />
+<h2 id="8-acupoints-as-geometric-sensitivity-nodes">8. Acupoints as Geometric Sensitivity Nodes</h2>
+<h3 id="81-from-metric-singularities-to-sensitivity-extrema">8.1. From metric singularities to sensitivity extrema</h3>
+<p>A literal singularity of a Riemannian metric requires degeneracy of the metric tensor.</p>
+<p>For a regular Riemannian manifold,</p>
+<div class="math-block">$$
+\det g&gt;0.
+$$</div>
+<p>We therefore do not identify an acupoint with a mathematical singularity by definition.</p>
+<p>Instead, we define an acupoint candidate as a region of anomalously high geometric or dynamical sensitivity.</p>
+<h3 id="82-metric-anisotropy">8.2. Metric anisotropy</h3>
+<p>Let the eigenvalues of $g$ be</p>
+<div class="math-block">$$
+\lambda_1\geq\lambda_2\geq\cdots\geq\lambda_d&gt;0.
+$$</div>
+<p>Define the anisotropy index</p>
+<div class="math-block">$$
+\boxed{\mathcal A_{\text{aniso}}(z) = \frac{\lambda_{\max}(g(z))}{\lambda_{\min}(g(z))}.} \quad (11)
+$$</div>
+<p>This ratio is precisely the <strong>condition number</strong> $\kappa(g(z))$ of the Riemannian metric tensor. In numerical linear algebra and information geometry, $\kappa(g(z)) \gg 1$ indicates strong metric anisotropy: the physiological state manifold is highly polarized, meaning that infinitesimal perturbations in certain directions induce disproportionately large responses in orthogonal directions.</p>
+<p>A high value of $\mathcal A_{\text{aniso}}$ indicates that physiological state-space distances differ strongly among local directions.</p>
+<p>Candidate acupoint regions may therefore be identified as statistically significant local maxima of</p>
+<div class="math-block">$$
+\mathcal A_{\text{aniso}}(z).
+$$</div>
+<h3 id="83-coarse-graining-sensitivity">8.3. Coarse-graining sensitivity</h3>
+<p>If</p>
+<div class="math-block">$$
+\pi:\mathcal M_{\rm micro}\rightarrow\mathcal M_{\rm macro},
+$$</div>
+<p>then the singular values of</p>
+<div class="math-block">$$
+J_\pi
+$$</div>
+<p>provide another measure of cross-scale sensitivity.</p>
+<p>Define</p>
+<div class="math-block">$$
+\mathcal A_\pi(z) = \frac{s_{\max}(J_\pi)}{s_{\min}(J_\pi)}
+$$</div>
+<p>where $s_{\max}$ and $s_{\min}$ are the largest and smallest nonzero singular values.</p>
+<p>High $\mathcal A_\pi$ identifies regions where small changes in microscopic states can be amplified or selectively transmitted to macroscopic variables.</p>
+<p>This provides a candidate mathematical interpretation of the traditional notion that certain localized points have disproportionately large systemic effects.</p>
+<h3 id="84-curvature-and-sensitivity">8.4. Curvature and sensitivity</h3>
+<p>Curvature can be included as an additional descriptor:</p>
+<div class="math-block">$$
+C_R(z)=|R(z)|.
+$$</div>
+<p>However, large curvature alone should not be interpreted as evidence for an acupoint.</p>
+<p>A stronger candidate score may combine several independent quantities:</p>
+<div class="math-block">$$
+\boxed{S_{\text{acupoint}} = w_1\widetilde{\mathcal A}_{\text{aniso}} + w_2\widetilde{\mathcal A}_\pi + w_3\widetilde C_R + w_4\widetilde S_{\rm dyn},} \quad (12)
+$$</div>
+<p>where tildes indicate normalized variables and $S_{\rm dyn}$ represents experimentally inferred dynamical sensitivity.</p>
+<p><strong>Crucially, the weights $w_1, w_2, w_3, w_4$ must not be estimated by regressing against known acupoint locations</strong>—that would constitute circular validation. Instead, the weights should be determined through cross-validation on held-out data, using prediction of independently defined sensitivity measures as the objective. A stable weight vector across multiple random splits of the data would provide confidence that the composite score captures a genuine geometric phenomenon rather than an artifact of overfitting.</p>
+<hr />
+<h2 id="9-stochastic-geometric-dynamics-of-qi">9. Stochastic Geometric Dynamics of Qi</h2>
+<h3 id="91-general-physiological-stochastic-dynamics">9.1. General physiological stochastic dynamics</h3>
+<p>Let the physiological state evolve according to</p>
+<div class="math-block">$$
+\boxed{dz^\mu = f^\mu(z)\,dt + \sqrt{2D}\,e^\mu_a(z)\circ dW^a_t.} \quad (13)
+$$</div>
+<p>Here:</p>
+<ul>
+<li>$f^\mu(z)$ is the deterministic physiological drift;</li>
+<li>$e^\mu_a(z)$ defines the noise geometry;</li>
+<li>$W_t^a$ are independent Wiener processes;</li>
+<li>$\circ$ denotes Stratonovich integration.</li>
+</ul>
+<p>This formulation is natural when physiological variables evolve on a manifold and when noise represents unresolved biological fluctuations.</p>
+<p>To ensure that the Stratonovich SDE (13) is geometrically well-defined and that its covariant Fokker–Planck equation has diffusion term $D\Delta_g\rho$, we assume that the noise frame fields $e^\mu_a(z)$ form a local orthonormal frame:</p>
+<div class="math-block">$$
+\boxed{\sum_{a=1}^d e^\mu_a(z) e^\nu_a(z) = g^{\mu\nu}(z)}
+$$</div>
+<p>This condition guarantees that in the transition from Stratonovich to Itô calculus, the diffusion tensor is $2Dg^{\mu\nu}$, giving the coordinate-invariant diffusion operator $D\Delta_g\rho$ in equation (15) below.</p>
+<h3 id="92-gradient-flow-special-case">9.2. Gradient-flow special case</h3>
+<p>A useful special case is</p>
+<div class="math-block">$$
+f^\mu(z) = -g^{\mu\nu}\nabla_\nu \mathcal F(z),
+$$</div>
+<p>giving</p>
+<div class="math-block">$$
+\boxed{dz^\mu = -g^{\mu\nu}\nabla_\nu \mathcal F\,dt + \sqrt{2D}\,e^\mu_a\circ dW_t^a.} \quad (14)
+$$</div>
+<p>Here $\mathcal F(z)$ is an effective physiological potential.</p>
+<p>This model represents systems whose deterministic component approximately follows a gradient toward preferred physiological states.</p>
+<p>However, living organisms are generally nonequilibrium systems. Therefore, the more general drift $f^\mu(z)$ should remain the primary formulation.</p>
+<h3 id="93-operational-definition-of-qi">9.3. Operational definition of Qi</h3>
+<p>Within this model,</p>
+<div class="math-block">$$
+\boxed{Qi(t) \equiv \{z(t),\dot z(t)\}}
+$$</div>
+<p>in the operational sense that Qi refers to the evolving physiological state and its flow rather than to an independent material substance.</p>
+<p>A "flow of Qi" therefore corresponds to a statistically structured transition through physiological state space.</p>
+<hr />
+<h2 id="10-covariant-fokkerplanck-dynamics">10. Covariant Fokker–Planck Dynamics</h2>
+<h3 id="101-probability-density-relative-to-riemannian-volume">10.1. Probability density relative to Riemannian volume</h3>
+<p>The natural volume element on $(\mathcal M,g)$ is</p>
+<div class="math-block">$$
+dV_g = \sqrt{|g|}\,d^dz.
+$$</div>
+<p>We define $\rho(z,t)$ by</p>
+<div class="math-block">$$
+\Pr[z(t)\in dz] = \rho(z,t)dV_g.
+$$</div>
+<p>This convention avoids ambiguity between coordinate density and invariant probability density.</p>
+<h3 id="102-fokkerplanck-equation">10.2. Fokker–Planck equation</h3>
+<p>For a diffusion process with drift $f^\mu$ and isotropic diffusion coefficient $D$, a covariant form is</p>
+<div class="math-block">$$
+\boxed{\partial_t\rho = -\nabla_\mu(f^\mu\rho) + D\Delta_g\rho,} \quad (15)
+$$</div>
+<p>where</p>
+<div class="math-block">$$
+\Delta_g = \nabla_\mu\nabla^\mu
+$$</div>
+<p>is the Laplace–Beltrami operator.</p>
+<p>For the gradient-flow drift</p>
+<div class="math-block">$$
+f^\mu=-g^{\mu\nu}\nabla_\nu \mathcal F,
+$$</div>
+<p>Equation (15) becomes</p>
+<div class="math-block">$$
+\boxed{\partial_t\rho = \nabla_\mu \left( \rho\,g^{\mu\nu}\nabla_\nu \mathcal F \right) + D\Delta_g\rho.} \quad (16)
+$$</div>
+<p>Under appropriate boundary conditions and equilibrium assumptions, the stationary density takes the form</p>
+<div class="math-block">$$
+\boxed{\rho_{\rm ss} \propto e^{-\mathcal F/D}.} \quad (17)
+$$</div>
+<p>The corresponding coordinate density is</p>
+<div class="math-block">$$
+P_{\rm ss}(z) = \sqrt{|g(z)|}\,\rho_{\rm ss}(z).
+$$</div>
+<p>Thus the distinction between invariant density and coordinate density is explicit.</p>
+<hr />
+<h2 id="11-meridian-transport-and-propagated-sensation">11. Meridian Transport and Propagated Sensation</h2>
+<h3 id="111-transport-speed-as-an-empirical-quantity">11.1. Transport speed as an empirical quantity</h3>
+<p>A central question is whether measurable propagation phenomena associated with meridian stimulation can be related to state-space geometry.</p>
+<p>We do not assume a universal curvature law.</p>
+<p>Instead, we introduce a generalized scaling hypothesis:</p>
+<div class="math-block">$$
+\boxed{v_{\rm meridian} = v_0 \left( \frac{|R|}{R_0} \right)^\alpha,} \quad (18)
+$$</div>
+<p>where:</p>
+<ul>
+<li>$v_0$ is a reference velocity;</li>
+<li>$R_0$ is a reference curvature scale;</li>
+<li>$\alpha$ is an empirical exponent.</li>
+</ul>
+<p>The value</p>
+<div class="math-block">$$
+\alpha=\frac12
+$$</div>
+<p>may be tested as a particular model hypothesis because curvature defines an inverse-length-squared scale.</p>
+<p>However, the dimensional normalization by $R_0$ is essential.</p>
+<p>The theory therefore predicts a possible relationship, not an established law.</p>
+<h3 id="112-more-general-transport-formulation">11.2. More general transport formulation</h3>
+<p>A more fundamental description may involve an effective mobility tensor</p>
+<div class="math-block">$$
+D^{\mu\nu}(z)
+$$</div>
+<p>and drift field</p>
+<div class="math-block">$$
+f^\mu(z).
+$$</div>
+<p>Propagation velocity would then emerge from the characteristic timescale of the resulting stochastic dynamics.</p>
+<p>Thus the experimentally relevant relation may ultimately be</p>
+<div class="math-block">$$
+v = \mathcal V \left( g, R, D^{\mu\nu}, f, \text{local physiology} \right). \quad (19)
+$$</div>
+<p>Equation (18) is therefore treated as a falsifiable reduced-order model.</p>
+<hr />
+<h2 id="12-acupuncture-as-a-geometric-perturbation">12. Acupuncture as a Geometric Perturbation</h2>
+<h3 id="121-local-perturbation">12.1. Local perturbation</h3>
+<p>Let an intervention applied at location $x_a$ modify the physiological state or effective dynamics.</p>
+<p>The most general representation is</p>
+<div class="math-block">$$
+f^\mu(z) \rightarrow f^\mu(z)+\delta f^\mu(z,t;x_a). \quad (20)
+$$</div>
+<p>If the intervention modifies the effective geometry itself, one may additionally write</p>
+<div class="math-block">$$
+g_{\mu\nu} \rightarrow g_{\mu\nu} + \delta g_{\mu\nu}. \quad (21)
+$$</div>
+<p>The latter should be treated as a modeling hypothesis rather than assumed automatically.</p>
+<h3 id="122-geodesic-distance-to-a-physiological-target">12.2. Geodesic distance to a physiological target</h3>
+<p>Let</p>
+<div class="math-block">$$
+\mathcal A_a
+$$</div>
+<p>represent the state-space region associated with the stimulated location and</p>
+<div class="math-block">$$
+\mathcal A_T
+$$</div>
+<p>the target physiological attractor.</p>
+<p>Define the geodesic distance</p>
+<div class="math-block">$$
+d_g(\mathcal A_a,\mathcal A_T) = \inf_{x\in\mathcal A_a,\, y\in\mathcal A_T} d_g(x,y).
+$$</div>
+<p>A simple response model is</p>
+<div class="math-block">$$
+\boxed{E(d_g) = E_0 \exp\left( -\frac{d_g^2}{2\sigma^2} \right).} \quad (22)
+$$</div>
+<p>This is a phenomenological hypothesis.</p>
+<p>It predicts that, after controlling for stimulation intensity and other confounders, response magnitude may decrease with state-space distance from the relevant physiological target.</p>
+<p>Alternative functional forms should be compared statistically rather than excluded a priori.</p>
+<hr />
+<h2 id="13-testable-predictions">13. Testable Predictions</h2>
+<p>The framework generates six principal experimental predictions.</p>
+<h3 id="prediction-1-geometrydynamics-relationship">Prediction 1 — Geometry–dynamics relationship</h3>
+<p>Regions with distinct geometric organization should exhibit systematic relationships with independently measured dynamical stability and sensitivity.</p>
+<p>The prediction is not</p>
+<div class="math-block">$$
+R&lt;0\Rightarrow\text{attractor},
+$$</div>
+<p>but rather that quantities such as curvature, metric anisotropy, and geodesic structure may correlate with measurable dynamical properties.</p>
+<h3 id="prediction-2-meridian-like-pathways-are-low-cost-physiological-pathways">Prediction 2 — Meridian-like pathways are low-cost physiological pathways</h3>
+<p>If meridians represent state-space transport structures, independently measured physiological transitions associated with meridian stimulation should preferentially occupy lower-cost regions of the inferred state manifold.</p>
+<p>This can be tested by comparing observed trajectories with randomized or anatomically constrained null models.</p>
+<h3 id="prediction-3-developmental-morphogen-topology">Prediction 3 — Developmental morphogen topology</h3>
+<p>The strongest ontogenetic prediction is</p>
+<div class="math-block">$$
+\boxed{\mathcal N_{\rm meridian} \sim \Pi(\mathcal S_{\rm morphogen}).}
+$$</div>
+<p>A statistically significant topological correspondence should emerge between developmental dynamical skeletons and independently specified meridian networks.</p>
+<h3 id="prediction-4-acupoints-exhibit-enhanced-geometric-sensitivity">Prediction 4 — Acupoints exhibit enhanced geometric sensitivity</h3>
+<p>Candidate acupoints should display statistically elevated values of</p>
+<div class="math-block">$$
+\mathcal A_{\text{aniso}}, \qquad \mathcal A_\pi, \qquad S_{\rm dyn}
+$$</div>
+<p>relative to appropriately matched control locations.</p>
+<p>The control locations must be selected without using the same data that define the candidate metric.</p>
+<h3 id="prediction-5-response-depends-on-physiological-geodesic-distance">Prediction 5 — Response depends on physiological geodesic distance</h3>
+<p>For a given physiological target,</p>
+<div class="math-block">$$
+E \sim E(d_g)
+$$</div>
+<p>should explain response variation across stimulation sites better than anatomical Euclidean distance alone, if the geometric hypothesis is correct.</p>
+<p>A decisive test would compare competing models:</p>
+<div class="math-block">$$
+E\sim d_{\rm anatomical}
+$$</div>
+<p>versus</p>
+<div class="math-block">$$
+E\sim d_g
+$$</div>
+<p>versus</p>
+<div class="math-block">$$
+E\sim d_{\rm anatomical}+d_g.
+$$</div>
+<h3 id="prediction-6-topological-protection-of-meridian-connectivity">Prediction 6 — Topological protection of meridian connectivity</h3>
+<p>The meridian network's connectivity pattern (measured via循经感传 propagation or physiological correlation) should remain stable under local perturbations that do not induce topological phase transitions. The stability should be quantifiable in terms of topological invariants ($\mathcal C$, $\chi$) rather than in terms of pointwise anatomical correspondence.</p>
+<hr />
+<h2 id="14-crucial-experiment-a-falsifiable-test-of-geometric-prediction">14. Crucial Experiment: A Falsifiable Test of Geometric Prediction</h2>
+<p>A hallmark of a mature scientific theory is its ability to predict phenomena that are <strong>counterintuitive</strong>—that cannot be explained by existing frameworks. We propose such a crucial experiment.</p>
+<h3 id="141-the-concept-geodesic-distance-dominates-anatomical-distance">14.1. The concept: Geodesic distance dominates anatomical distance</h3>
+<p>Standard physiology predicts that the strength of physiological coupling between two body regions should decrease with anatomical distance:</p>
+<div class="math-block">$$
+\Phi_{AB} \propto \frac{1}{|r_A - r_B|^2}
+$$</div>
+<p>(neural conduction) or with some characteristic decay length (diffusion, vascular transport).</p>
+<p>Our framework predicts a different organizing principle: coupling strength should be determined by <strong>geodesic distance on the physiological state manifold</strong>, not by anatomical distance.</p>
+<h3 id="142-experimental-design">14.2. Experimental design</h3>
+<p><strong>Step 1: State manifold reconstruction</strong></p>
+<p>Using multimodal data from a human subject or animal model (single-cell transcriptomics, spatial transcriptomics, proteomics, metabolomics, electrophysiology), construct a low-dimensional embedding of the physiological state manifold $\mathcal M$ and compute the Riemannian metric $g_{\mu\nu}$.</p>
+<p><strong>Step 2: Identify counterintuitive point pairs</strong></p>
+<p>Search for pairs of anatomical locations $(A,B)$ such that:</p>
+<div class="math-block">$$
+|r_A - r_B| \gg 1
+\quad\text{(anatomically distant)}
+$$</div>
+<p>but</p>
+<div class="math-block">$$
+d_g(\mathcal A_A, \mathcal A_B) \ll 1
+\quad\text{(geodesically close in state space)}.
+$$</div>
+<p>Traditional acupuncture points that are anatomically distant but belong to the same meridian (e.g., points on the foot and head along the same channel) are natural candidates.</p>
+<p><strong>Step 3: Stimulation-response measurement</strong></p>
+<p>Apply a controlled, low-amplitude physical perturbation at location $A$—for example, a sub-threshold mechanical vibration or a low-intensity electrical stimulus that is insufficient to activate conventional neural pathways directly. The stimulus should be weak enough that classical neural conduction would predict no measurable response at a distant site.</p>
+<p>Measure the physiological response at location $B$ using high-temporal-resolution techniques (e.g., MEG, EEG, or functional near-infrared spectroscopy).</p>
+<h3 id="143-the-predicted-response-function">14.3. The predicted response function</h3>
+<p>Our framework predicts a specific functional form for the response:</p>
+<div class="math-block">$$
+\boxed{\Phi_{AB}(\omega) = \Phi_0 \exp\left( -\frac{d_g^2(\mathcal A_A, \mathcal A_B)}{2\sigma^2} \right) e^{i\omega t_{\text{delay}}}} \quad (23)
+$$</div>
+<p>where the time delay is given by the geodesic travel time:</p>
+<div class="math-block">$$
+t_{\text{delay}} = \int_{\gamma_{AB}} \frac{ds}{v_{\text{meridian}}(s)}.
+$$</div>
+<p>Crucially, for a counterintuitive point pair with $d_g \ll 1$ but $|r_A - r_B| \gg 1$, this predicts:</p>
+<ol>
+<li>
+<p><strong>High response magnitude</strong>—comparable to or exceeding the response between anatomically close but geodesically distant pairs.</p>
+</li>
+<li>
+<p><strong>Specific time delay</strong>—determined by the geodesic path length and the curvature-dependent velocity (Eq. 18), not by anatomical nerve conduction velocity.</p>
+</li>
+<li>
+<p><strong>Nonlinear scaling</strong>—the response amplitude should scale nonlinearly with stimulus intensity:</p>
+</li>
+</ol>
+<div class="math-block">$$
+\Phi_{AB}(I) \propto I^\beta,
+$$</div>
+<p>where the exponent $\beta &gt; 1$ reflects the critical behavior near the topological edge-state threshold. Specifically, we predict a threshold phenomenon:</p>
+<div class="math-block">$$
+\Phi_{AB}(I) \approx 0 \quad\text{for } I &lt; I_{\text{th}}
+$$</div>
+<p>(no response below threshold—the topological edge state is "protected")</p>
+<p>and</p>
+<div class="math-block">$$
+\Phi_{AB}(I) \propto (I - I_{\text{th}})^\beta \quad\text{for } I &gt; I_{\text{th}},
+$$</div>
+<p>where the threshold $I_{\text{th}}$ is determined by the local curvature barrier:</p>
+<div class="math-block">$$
+I_{\text{th}} \propto \Delta R(z_A, z_B).
+$$</div>
+<p>This nonlinear, thresholded response—arising from the need to overcome the topological protection gap—is a distinctive signature that distinguishes geometric/topological coupling from conventional neural or vascular transmission (which are typically linear or saturating, not thresholded in this manner).</p>
+<h3 id="144-falsification-criteria">14.4. Falsification criteria</h3>
+<p>The hypothesis would be falsified if:</p>
+<ol>
+<li>
+<p>No statistically significant coupling is observed between anatomically distant but geodesically close point pairs, after controlling for conventional neural and vascular pathways.</p>
+</li>
+<li>
+<p>The observed coupling strength is better predicted by anatomical distance than by geodesic distance.</p>
+</li>
+<li>
+<p>The response time delay is better explained by conventional conduction velocities than by geodesic path length.</p>
+</li>
+</ol>
+<p>Conversely, if the predicted coupling is observed with the predicted time delay and nonlinear scaling, this would provide strong support for the geometric framework and would challenge the completeness of conventional anatomical physiology.</p>
+<h3 id="145-why-this-experiment-is-decisive">14.5. Why this experiment is decisive</h3>
+<p>This experiment is decisive because it targets a phenomenon that <strong>cannot</strong> be explained by any existing physiological mechanism:</p>
+<ul>
+<li>Neural conduction requires a physical neural pathway.</li>
+<li>Vascular transport requires a physical vascular connection.</li>
+<li>Diffusion requires a concentration gradient and is slow.</li>
+</ul>
+<p>A robust, reproducible coupling between anatomically distant points that is predicted by state-space geometry but not by any known physical pathway would demand a new class of explanation—precisely the one we provide.</p>
+<hr />
+<h2 id="15-computational-pipeline">15. Computational Pipeline</h2>
+<h3 id="151-data-acquisition">15.1. Data acquisition</h3>
+<p>A multimodal dataset should be collected across multiple spatial and temporal scales.</p>
+<p>Potential measurements include:</p>
+<ul>
+<li>single-cell transcriptomics;</li>
+<li>spatial transcriptomics;</li>
+<li>proteomics;</li>
+<li>metabolomics;</li>
+<li>electrophysiology;</li>
+<li>mechanical measurements;</li>
+<li>tissue impedance;</li>
+<li>temperature;</li>
+<li>metabolic activity;</li>
+<li>immune-state measurements;</li>
+<li>developmental imaging.</li>
+</ul>
+<p>The datasets should be collected longitudinally whenever feasible.</p>
+<h3 id="152-dimensionality-reduction">15.2. Dimensionality reduction</h3>
+<p>High-dimensional observations can first be embedded into a low-dimensional representation using methods such as:</p>
+<ul>
+<li>diffusion maps;</li>
+<li>PHATE;</li>
+<li>UMAP;</li>
+<li>nonlinear manifold learning;</li>
+<li>variational latent-state models.</li>
+</ul>
+<p>Dimensionality reduction must be evaluated carefully because the inferred geometry may depend strongly on the embedding method.</p>
+<h3 id="153-metric-estimation">15.3. Metric estimation</h3>
+<p>The metric may be estimated through:</p>
+<ul>
+<li>Fisher information metric from $p(x|\theta)$;</li>
+<li>local covariance geometry;</li>
+<li>diffusion geometry;</li>
+<li>learned metric from neural networks or kernel methods.</li>
+</ul>
+<p>The resulting metrics should be compared for robustness.</p>
+<h3 id="154-dynamical-inference">15.4. Dynamical inference</h3>
+<p>Trajectory data can be used to estimate</p>
+<div class="math-block">$$
+\dot z=f(z)
+$$</div>
+<p>or its stochastic counterpart.</p>
+<p>Local stability can then be estimated from</p>
+<div class="math-block">$$
+J_f(z)=Df(z).
+$$</div>
+<p>This allows attractors to be identified independently of curvature.</p>
+<h3 id="155-curvature-estimation">15.5. Curvature estimation</h3>
+<p>Once $g_{\mu\nu}$ is estimated, one may compute:</p>
+<ul>
+<li>$\Gamma^\rho_{\mu\nu}$,</li>
+<li>$R^\rho_{\;\sigma\mu\nu}$,</li>
+<li>$R_{\mu\nu}$,</li>
+<li>$R=g^{\mu\nu}R_{\mu\nu}$.</li>
+</ul>
+<p>Because curvature estimation is highly sensitive to noise and dimensionality, uncertainty quantification and bootstrap analysis are required.</p>
+<h3 id="156-topological-data-analysis">15.6. Topological data analysis</h3>
+<p>Persistent homology can be used to determine whether the inferred developmental and physiological structures contain robust topological features.</p>
+<p>For example,</p>
+<div class="math-block">$$
+H_0,\quad H_1,\quad H_2
+$$</div>
+<p>can quantify connected components, loops, and higher-dimensional cavities.</p>
+<p>This provides a natural framework for comparing developmental networks with independently defined meridian networks, and for quantifying the topological invariants that support protection.</p>
+<h3 id="157-topological-invariant-computation">15.7. Topological invariant computation</h3>
+<p>To test the topological protection hypothesis, we propose computing the following quantities:</p>
+<ol>
+<li>
+<p><strong>Chern number</strong> $\mathcal C$: estimated from the Berry curvature derived from the metric and its connection on the state manifold.</p>
+</li>
+<li>
+<p><strong>Euler characteristic</strong> $\chi(\mathcal N)$: computed from the graph structure of the inferred meridian network.</p>
+</li>
+<li>
+<p><strong>Stability under perturbation</strong>: the invariance of these quantities under synthetic perturbations (e.g., simulated local injury, parameter variations) should be assessed.</p>
+</li>
+</ol>
+<hr />
+<h2 id="16-experimental-program">16. Experimental Program</h2>
+<h3 id="161-stage-i-developmental-state-space-reconstruction">16.1. Stage I — Developmental state-space reconstruction</h3>
+<p>A model organism such as the mouse can be sampled across developmental stages.</p>
+<p>Candidate stages include:</p>
+<div class="math-block">$$
+E8.5,\;
+E10.5,\;
+E12.5,\;
+E14.5,\;
+P1,\;
+P7,\;
+P30,\;
+P90.
+$$</div>
+<p>Multimodal measurements can be integrated to construct</p>
+<div class="math-block">$$
+\mathcal M(t),
+\qquad
+g(t),
+\qquad
+f(t).
+$$</div>
+<p>The primary question is whether stable geometric and dynamical structures emerge progressively during development.</p>
+<h3 id="162-stage-ii-morphogen-topology-and-topological-imprinting">16.2. Stage II — Morphogen topology and topological imprinting</h3>
+<p>Morphogen distributions for pathways including BMP, Wnt, SHH, and Nodal can be reconstructed using spatial transcriptomics, reporter systems, imaging, and perturbation experiments.</p>
+<p>The resulting critical structures can be represented as</p>
+<div class="math-block">$$
+\mathcal S_{\rm morphogen}(t).
+$$</div>
+<p>Their mature projections can then be compared with independently defined meridian maps.</p>
+<p>Additionally, the <strong>Chern number</strong> $\mathcal C$ derived from the morphogen field's Berry curvature should be computed and tracked through development. The hypothesis predicts that $\mathcal C$ becomes stable after gastrulation and remains invariant.</p>
+<h3 id="163-stage-iii-acupoint-sensitivity">16.3. Stage III — Acupoint sensitivity</h3>
+<p>Candidate acupoint and control locations should be compared using measurements of:</p>
+<ul>
+<li>electrical impedance;</li>
+<li>mechanical properties;</li>
+<li>temperature;</li>
+<li>microcirculation;</li>
+<li>molecular composition;</li>
+<li>local neural activity;</li>
+<li>inflammatory response;</li>
+<li>multimodal physiological sensitivity.</li>
+</ul>
+<p>The key quantity is not whether an acupoint has an unusual value of one arbitrary variable, but whether it exhibits reproducible multivariate geometric sensitivity.</p>
+<h3 id="164-stage-iv-propagation-dynamics-and-crucial-experiment">16.4. Stage IV — Propagation dynamics and crucial experiment</h3>
+<p>Stimulation can be applied while recording temporally resolved physiological responses.</p>
+<p>The measured propagation trajectory</p>
+<div class="math-block">$$
+z(t)
+$$</div>
+<p>can be projected onto the inferred manifold.</p>
+<p>The crucial experiment (Section 14) should be performed: testing whether anatomically distant but geodesically close points exhibit the predicted non-linear, thresholded coupling with characteristic time delays.</p>
+<h3 id="165-stage-v-therapeutic-response">16.5. Stage V — Therapeutic response</h3>
+<p>For a defined physiological target, stimulation can be performed at multiple candidate points.</p>
+<p>The response model can then be compared against:</p>
+<div class="math-block">$$
+d_{\rm anatomical},
+\qquad
+d_g,
+\qquad
+\mathcal A_{\text{aniso}},
+\qquad
+\mathcal A_\pi.
+$$</div>
+<p>Cross-validation should determine whether geometric variables provide predictive information beyond anatomical distance and conventional physiological covariates.</p>
+<h3 id="166-stage-vi-topological-perturbation">16.6. Stage VI — Topological perturbation</h3>
+<p>To test the topological protection hypothesis, controlled local perturbations (e.g., localized inflammation, surgical lesion, chemical ablation) should be applied to the organism. The following predictions should be tested:</p>
+<ol>
+<li>
+<p>Small, localized perturbations that do not alter the manifold's topology should leave the meridian network's topological invariants unchanged.</p>
+</li>
+<li>
+<p>Sufficiently large perturbations (extensive necrosis, complete transection of a region) should induce a topological phase transition, marked by abrupt changes in meridian connectivity patterns and loss of循经感传 along affected pathways.</p>
+</li>
+</ol>
+<hr />
+<h2 id="17-statistical-and-falsification-framework">17. Statistical and Falsification Framework</h2>
+<p>A major requirement of this theory is avoiding circular validation.</p>
+<p>The following procedure is therefore proposed.</p>
+<h3 id="step-1">Step 1</h3>
+<p>Define the meridian map independently of the biological data used to infer the manifold.</p>
+<h3 id="step-2">Step 2</h3>
+<p>Construct the physiological manifold without using meridian labels.</p>
+<h3 id="step-3">Step 3</h3>
+<p>Infer metric, curvature, dynamical attractors, topological invariants, and topological structures.</p>
+<h3 id="step-4">Step 4</h3>
+<p>Only after model construction compare predicted structures with the independent meridian map.</p>
+<h3 id="step-5">Step 5</h3>
+<p>Use randomized spatial networks, anatomical-distance-preserving null models, and cross-species controls.</p>
+<h3 id="step-6">Step 6</h3>
+<p>Correct for multiple comparisons.</p>
+<h3 id="step-7">Step 7</h3>
+<p>Perform preregistered tests on held-out data.</p>
+<p>The hypothesis should therefore survive prediction on data that played no role in model construction.</p>
+<hr />
+<h2 id="18-relation-to-existing-views-of-the-meridian-system">18. Relation to Existing Views of the Meridian System</h2>
+<p>The present framework does not require choosing exclusively among genetic, epigenetic, anatomical, mechanical, neural, vascular, or informational interpretations.</p>
+<p>Instead, it asks whether several mechanisms may contribute to a higher-level emergent geometry.</p>
+<p>A meridian-like pathway could therefore emerge from interactions among:</p>
+<div class="math-block">$$
+\text{development}
++
+\text{mechanics}
++
+\text{neural regulation}
++
+\text{vascular/immune signaling}
++
+\text{metabolism}
++
+\text{information flow}.
+$$</div>
+<p>The geometric framework operates at the organizational level above these individual mechanisms.</p>
+<p>This is important because an emergent structure does not necessarily have a single microscopic substrate.</p>
+<h3 id="181-comparison-with-existing-hypotheses">18.1. Comparison with existing hypotheses</h3>
+<p>The following table summarizes how the present "geometric emergence + topological protection" hypothesis differs from other major accounts of meridian origin on seven key questions.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">Question</th>
+<th style="text-align: left;">Genetic Pre-specification</th>
+<th style="text-align: left;">Epigenetic Self-organization</th>
+<th style="text-align: left;">Evolutionary Vestige</th>
+<th style="text-align: left;">Stem Cell/Developmental Lineage</th>
+<th style="text-align: left;"><strong>Geometric Emergence + Topological Protection (This Work)</strong></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Are meridians encoded in DNA?</strong></td>
+<td style="text-align: left;">Yes, directly</td>
+<td style="text-align: left;">No</td>
+<td style="text-align: left;">Partially (indirectly)</td>
+<td style="text-align: left;">Partially (indirectly)</td>
+<td style="text-align: left;"><strong>No</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Are meridians anatomical structures?</strong></td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;">Yes</td>
+<td style="text-align: left;"><strong>No</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Do meridians have a single physical substrate?</strong></td>
+<td style="text-align: left;">Yes (genetic program)</td>
+<td style="text-align: left;">No (multi-scale dynamics)</td>
+<td style="text-align: left;">Yes (evolutionary remnant)</td>
+<td style="text-align: left;">Yes (cell migration paths)</td>
+<td style="text-align: left;"><strong>No</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Why are meridian locations conserved across individuals?</strong></td>
+<td style="text-align: left;">Genetic conservation</td>
+<td style="text-align: left;">Statistical self-organization</td>
+<td style="text-align: left;">Shared ancestry</td>
+<td style="text-align: left;">Shared developmental constraints</td>
+<td style="text-align: left;"><strong>Topological invariants of development</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Why do meridians not dissect?</strong></td>
+<td style="text-align: left;">They would if looked properly</td>
+<td style="text-align: left;">They are distributed, not discrete</td>
+<td style="text-align: left;">They are degenerate remnants</td>
+<td style="text-align: left;">They are migratory paths, not tubes</td>
+<td style="text-align: left;"><strong>They are not objects; they are topological features</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>What is the mechanism of non-local effects?</strong></td>
+<td style="text-align: left;">Hard to explain</td>
+<td style="text-align: left;">Via self-organization</td>
+<td style="text-align: left;">Not addressed</td>
+<td style="text-align: left;">Not addressed</td>
+<td style="text-align: left;"><strong>Geodesic connectivity in state space + topological edge-state transmission</strong></td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>How do meridians persist despite cellular turnover?</strong></td>
+<td style="text-align: left;">Continuous genetic maintenance</td>
+<td style="text-align: left;">Continuous self-organization</td>
+<td style="text-align: left;">Not applicable</td>
+<td style="text-align: left;">Not applicable</td>
+<td style="text-align: left;"><strong>Topological protection (Chern number invariance)</strong></td>
+</tr>
+</tbody>
+</table></div>
+<p>This comparison highlights the unique explanatory structure of the geometric framework: it explains robustness without requiring a fixed physical substrate, persistence without continuous maintenance, and non-locality through state-space connectivity rather than anatomical proximity.</p>
+<hr />
+<h2 id="19-meridians-as-a-general-property-of-complex-adaptive-systems">19. Meridians as a General Property of Complex Adaptive Systems</h2>
+<p>If the proposed framework is correct, meridian-like structures should not be unique to human physiology.</p>
+<p>Any sufficiently complex adaptive system with:</p>
+<ol>
+<li>multiple interacting scales;</li>
+<li>constrained state space;</li>
+<li>dynamically stable states;</li>
+<li>directed information flow;</li>
+<li>developmental or adaptive reorganization;</li>
+</ol>
+<p>may generate preferred state-space pathways.</p>
+<h3 id="191-neural-systems">19.1. Neural systems</h3>
+<p>Neural activity evolves on a high-dimensional state space.</p>
+<p>Functional attractors may correspond to:</p>
+<ul>
+<li>perceptual states;</li>
+<li>motor programs;</li>
+<li>memory states;</li>
+<li>cognitive states.</li>
+</ul>
+<p>Transitions among these attractors may follow structured low-cost pathways. Topological protection may similarly apply: once established, certain neural pathways (e.g., engrams) may be protected by the topology of the neural state manifold.</p>
+<h3 id="192-ecological-systems">19.2. Ecological systems</h3>
+<p>Population and ecosystem states form dynamical manifolds.</p>
+<p>Migration, resource flow, and ecological transitions may similarly generate preferred pathways. Species migration routes may be understood as ecological meridians, protected by the topology of the ecological state space.</p>
+<h3 id="193-social-systems">19.3. Social systems</h3>
+<p>Information and behavioral states in social systems can also be represented geometrically.</p>
+<p>Network trajectories may form low-cost routes between social attractors. The "six degrees of separation" phenomenon may be a manifestation of social state-space topology.</p>
+<h3 id="194-artificial-intelligence">19.4. Artificial intelligence</h3>
+<p>Internal representations of machine-learning systems may occupy structured latent manifolds.</p>
+<p>If these representations contain attractors and preferred transition pathways, geometric methods may reveal "meridian-like" structures in artificial systems. The robustness of certain learned representations to pruning or perturbation may be understood as topological protection.</p>
+<p>This suggests a broader principle:</p>
+<div class="math-block">$$
+\text{Complex adaptive dynamics}
+\rightarrow
+\text{structured state-space geometry}
+\rightarrow
+\text{preferred information pathways}
+\rightarrow
+\text{topological protection of robust structures}.
+\quad (24)
+$$</div>
+<p>The biological meridian system would then represent one possible manifestation of a general phenomenon.</p>
+<hr />
+<h2 id="20-discussion">20. Discussion</h2>
+<h3 id="201-what-the-framework-explains">20.1. What the framework explains</h3>
+<p>The proposed framework offers a possible explanation for why a physiological network could simultaneously be:</p>
+<ul>
+<li>spatially organized;</li>
+<li>dynamically responsive;</li>
+<li>robust across individuals;</li>
+<li>plastic under perturbation;</li>
+<li>persistent despite cellular turnover;</li>
+<li>not reducible to a single anatomical structure.</li>
+</ul>
+<p>These properties are natural consequences of emergent geometry if the relevant state-space structures are generated by conserved developmental and physiological constraints, and preserved by topological invariants.</p>
+<h3 id="202-robustness-without-rigid-anatomy">20.2. Robustness without rigid anatomy</h3>
+<p>A central conceptual advantage is that geometric structures can be robust without being anatomically rigid.</p>
+<p>For example, the location of a dynamically defined pathway may remain statistically stable despite substantial variation in microscopic variables.</p>
+<p>Thus:</p>
+<div class="math-block">$$
+\text{robust phenotype}
+\not\Rightarrow
+\text{rigid anatomical structure}.
+$$</div>
+<p>This provides a possible explanation for why a functional network could be reproducible while remaining difficult to identify by conventional dissection.</p>
+<h3 id="203-plasticity">20.3. Plasticity</h3>
+<p>Because</p>
+<div class="math-block">$$
+g=g(z,t)
+$$</div>
+<p>and</p>
+<div class="math-block">$$
+f=f(z,t),
+$$</div>
+<p>the state-space geometry can change with:</p>
+<ul>
+<li>disease;</li>
+<li>inflammation;</li>
+<li>aging;</li>
+<li>stress;</li>
+<li>injury;</li>
+<li>treatment;</li>
+<li>metabolic state.</li>
+</ul>
+<p>The same organism could therefore possess a relatively stable developmental geometry while undergoing substantial local geometric remodeling.</p>
+<h3 id="204-disease-as-geometric-dynamical-reorganization">20.4. Disease as geometric-dynamical reorganization</h3>
+<p>Disease need not be interpreted simply as movement from one anatomical state to another.</p>
+<p>Instead, pathological transitions may correspond to:</p>
+<div class="math-block">$$
+\mathcal M_{\rm healthy}
+\rightarrow
+\mathcal M_{\rm pathological},
+$$</div>
+<p>with changes in:</p>
+<ul>
+<li>attractor structure;</li>
+<li>basin geometry;</li>
+<li>metric anisotropy;</li>
+<li>transition barriers;</li>
+<li>stochastic transport;</li>
+<li>network connectivity;</li>
+<li>topological invariants.</li>
+</ul>
+<p>This is a testable systems-biology interpretation.</p>
+<h3 id="205-topological-protection-as-a-unifying-principle">20.5. Topological protection as a unifying principle</h3>
+<p>The topological protection mechanism introduced in this work provides a unifying explanation for several features of the meridian system:</p>
+<ul>
+<li>
+<p><strong>Persistence</strong>: The meridian network persists because it is protected by topological invariants, not because it is continuously regenerated.</p>
+</li>
+<li>
+<p><strong>Resilience</strong>: Local injury does not disrupt the network because topological invariants are global properties.</p>
+</li>
+<li>
+<p><strong>Threshold effects</strong>: The observation that acupuncture effects often require a minimal stimulation intensity ("得气") may correspond to the threshold required to overcome the topological protection gap.</p>
+</li>
+<li>
+<p><strong>Non-locality</strong>: Topological edge states are inherently non-local—they connect regions that are not adjacent in physical space but are topologically related.</p>
+</li>
+</ul>
+<hr />
+<h2 id="21-limitations">21. Limitations</h2>
+<p>Several limitations are fundamental.</p>
+<h3 id="211-the-physiological-manifold-is-model-dependent">21.1. The physiological manifold is model dependent</h3>
+<p>There is no unique representation of an organism's complete physiological state.</p>
+<p>Different measurements and embeddings can produce different manifolds.</p>
+<p>Therefore, claims must be robust across reasonable modeling choices.</p>
+<h3 id="212-metric-inference-is-difficult">21.2. Metric inference is difficult</h3>
+<p>Estimating a Riemannian metric from sparse, noisy, heterogeneous biological data is technically challenging.</p>
+<p>The metric should therefore be treated as an inferred statistical object with uncertainty, not as a directly observed physical tensor.</p>
+<h3 id="213-curvature-estimation-is-unstable">21.3. Curvature estimation is unstable</h3>
+<p>Numerical curvature estimation from finite biological datasets is particularly sensitive to:</p>
+<ul>
+<li>sampling density;</li>
+<li>dimensionality;</li>
+<li>noise;</li>
+<li>embedding distortion;</li>
+<li>regularization.</li>
+</ul>
+<p>Any curvature-based prediction requires uncertainty analysis.</p>
+<h3 id="214-topological-invariant-computation-is-nontrivial">21.4. Topological invariant computation is nontrivial</h3>
+<p>Computing Chern numbers and other topological invariants from empirical data requires careful treatment of gauge choices, discretization, and finite-size effects. These computations must be validated using synthetic data with known topology before being applied to biological data.</p>
+<h3 id="215-developmental-correspondence-is-not-guaranteed">21.5. Developmental correspondence is not guaranteed</h3>
+<p>The ontogenetic hypothesis is a hypothesis, not an established developmental mechanism.</p>
+<p>A relationship between morphogen topology and meridian organization must be demonstrated quantitatively.</p>
+<h3 id="216-tcm-terminology-is-phenomenological">21.6. TCM terminology is phenomenological</h3>
+<p>The present mathematical definitions should not be interpreted as historical claims about what ancient physicians literally meant by Qi or meridians.</p>
+<p>The theory constructs a modern mathematical interpretation of selected phenomenological concepts.</p>
+<h3 id="217-clinical-efficacy-is-not-assumed">21.7. Clinical efficacy is not assumed</h3>
+<p>This paper does not establish the clinical efficacy of acupuncture.</p>
+<p>Clinical effectiveness must be evaluated through appropriate randomized, blinded, controlled, and independently replicated studies.</p>
+<p>The mathematical framework instead provides hypotheses that could potentially be incorporated into such studies.</p>
+<hr />
+<h2 id="22-future-directions">22. Future Directions</h2>
+<p>Several developments are particularly important.</p>
+<h3 id="221-geometric-dynamical-topological-unification">22.1. Geometric-dynamical-topological unification</h3>
+<p>The next theoretical step is to derive explicit relationships between:</p>
+<div class="math-block">$$
+g,
+\quad
+R,
+\quad
+J_f,
+\quad
+\mathcal C,
+\quad
+\chi,
+\quad
+D,
+\quad
+\text{and attractor stability}.
+$$</div>
+<p>This would establish when geometric and topological quantities predict dynamical quantities.</p>
+<h3 id="222-developmental-simulation">22.2. Developmental simulation</h3>
+<p>A computational embryogenesis model could couple:</p>
+<div class="math-block">$$
+\text{morphogen fields}
++
+\text{cell differentiation}
++
+\text{mechanical deformation}
++
+\text{state-space geometry}
++
+\text{topological invariant computation}.
+$$</div>
+<p>The objective would be to determine whether meridian-like network structures emerge and whether they acquire topological protection.</p>
+<h3 id="223-cross-species-analysis">22.3. Cross-species analysis</h3>
+<p>If the theory is fundamentally developmental, geometric, and topological, related network structures should exhibit predictable scaling and transformation across species.</p>
+<p>This provides a powerful falsification test.</p>
+<h3 id="224-crucial-experiment-implementation">22.4. Crucial experiment implementation</h3>
+<p>The crucial experiment proposed in Section 14 should be implemented. Even a single positive result—demonstrating non-local, thresholded coupling predicted by geodesic distance—would provide compelling evidence for the geometric framework.</p>
+<h3 id="225-human-data">22.5. Human data</h3>
+<p>Eventually, multimodal human physiological datasets could be used to determine whether geometric distances and topological invariants provide predictive information for physiological responses.</p>
+<p>The central criterion should remain out-of-sample prediction.</p>
+<h3 id="226-therapeutic-applications">22.6. Therapeutic applications</h3>
+<p>If the geometric framework is validated, it suggests new approaches to acupuncture:</p>
+<ul>
+<li>Optimizing acupoint selection based on geodesic distance to target attractors.</li>
+<li>Tailoring stimulation parameters based on local curvature and topological thresholds.</li>
+<li>Assessing meridian "health" via topological invariant changes.</li>
+<li>Predicting treatment response from state-space geometry.</li>
+</ul>
+<hr />
+<h2 id="23-conclusion">23. Conclusion</h2>
+<p>We have proposed a Riemannian framework for interpreting the meridian system as an emergent feature of physiological state-space geometry, dynamics, and topology.</p>
+<p>The organism is represented by a physiological manifold</p>
+<div class="math-block">$$
+(\mathcal M,g),
+$$</div>
+<p>while physiological evolution is described by stochastic dynamics</p>
+<div class="math-block">$$
+dz^\mu = f^\mu dt + e^\mu_a\circ dW^a.
+$$</div>
+<p>Within this framework, Qi is interpreted operationally as stochastic physiological state flow.</p>
+<p>Meridian-like structures are modeled not as assumed anatomical tubes but as preferred low-cost pathways or lower-dimensional geometric-dynamical structures connecting physiologically important regions of state space.</p>
+<p>Acupoints are modeled conservatively as regions of enhanced metric anisotropy, coarse-graining sensitivity, or dynamical responsiveness rather than as literal singularities of a regular Riemannian metric.</p>
+<p>The ontogenetic hypothesis proposes that developmental symmetry breaking and morphogen-driven organization may generate a dynamical skeleton whose projected topology is statistically related to the mature meridian network.</p>
+<p>The most novel contribution of this work is the <strong>topological protection hypothesis</strong>: the meridian network, once established, is preserved by topological invariants (Chern numbers, Euler characteristics) imprinted on the physiological state manifold during development. This mechanism explains meridian persistence without requiring continuous maintenance, provides a mathematical basis for meridian resilience, and predicts threshold phenomena that can be experimentally tested.</p>
+<p>The theory does not rely on the incorrect identification of scalar-curvature integrals with topological invariants in arbitrary dimensions. Instead, it distinguishes local differential geometry, global topology, and dynamical stability and connects them through developmental and statistical modeling. In particular, the conservation of topological invariants during morphogenesis constrains the global Morse–Smale complex rather than bounding local scalar curvature variations, providing a mathematically consistent foundation for comparing meridian topology with developmental organization.</p>
+<p>We have proposed a <strong>crucial experiment</strong> that would provide decisive support for the framework: the prediction of non-local, thresholded coupling between anatomically distant but geodesically close points, with response functions and time delays determined by state-space geometry rather than conventional neural or vascular pathways.</p>
+<p>The central empirical question is therefore:</p>
+<div class="math-block">$$
+\boxed{\text{Does the geometry, topology, and developmental dynamics of physiological state space contain a reproducible network corresponding to meridian organization?}}
+$$</div>
+<p>This question is experimentally accessible.</p>
+<p>If the predicted correspondence is absent, the ontogenetic hypothesis should be rejected or substantially revised. If a robust correspondence emerges across independent datasets, developmental stages, and species, the result would provide evidence that meridian-like organization can arise as an emergent property of biological geometry.</p>
+<p>If the crucial experiment yields positive results, it would challenge the completeness of conventional anatomical physiology and provide compelling support for a geometric-topological framework for biological information flow.</p>
+<p>More broadly, the framework suggests a general principle:</p>
+<div class="math-block">$$
+\text{Complex adaptive systems may generate preferred information-flow pathways,}
+$$</div>
+<div class="math-block">$$
+\text{protected by topological invariants, from the geometry of their constrained state spaces.}
+$$</div>
+<p>Under this interpretation, the geometry of Qi is not proposed as a replacement for anatomy, physiology, or molecular biology. Rather, it is proposed as a higher-level mathematical description of how biological states are organized, connected, dynamically transformed, and topologically preserved across scales.</p>
+<p>The ultimate significance of the framework therefore depends not on whether traditional terminology can be given modern mathematical names, but on whether the resulting mathematical objects make successful, quantitative, and falsifiable predictions about living systems.</p>
+<hr />
+<h2 id="acknowledgments">Acknowledgments</h2>
+<p>We are grateful to all the individual scientists and teams of scientists who have contributed to the exploration and understanding of the entire universe. Supported by AI-driven Supercomputers and the MES Universe Project. We have benefited from our amazing AI partners.</p>
+<hr />
+<h2 id="data-availability-statement">Data Availability Statement</h2>
+<p>Code, mathematical scripts, and preprints are available at GitHub: https://github.com/Zaitian001/-Self-Preprint-V1.1-</p>
+<hr />
+<h2 id="references">References</h2>
+<p>[1] Unschuld, P. U., &amp; Tessenow, H. (2011). <em>Huang Di Nei Jing Su Wen: Nature, Knowledge, Imagery in an Ancient Chinese Medical Text</em>. University of California Press.</p>
+<p>[2] Zhang, C., Yang, L., Yang, W. B., et al. (2008). Preliminary properties of meridian system as a complex network. <em>Journal of Acupuncture and Tuina Science</em>, 6, 301. https://doi.org/10.1007/s11726-008-0301-z</p>
+<p>[3] Coifman, R. R., &amp; Lafon, S. (2006). Diffusion maps. <em>Applied and Computational Harmonic Analysis</em>, 21, 5. https://doi.org/10.1016/j.acha.2006.04.006</p>
+<p>[4] Schroeder, S., Epplée, S., Zhang, J., Meyer-Hamme, G., Friedemann, T., &amp; Hu, W. (2012). Mathematical reflections on acupoint combinations in the traditional meridian systems. <em>Evidence-Based Complementary and Alternative Medicine</em>, 2012, 268237. https://doi.org/10.1155/2012/268237</p>
+<p>[5] Wan, X. H. (2020). Mathematical analysis of the meridian system in traditional Chinese medicine. <em>Digital Chinese Medicine</em>, 3, 145. https://doi.org/10.1016/j.dcmed.2020.09.001</p>
+<p>[6] Luo, L., &amp; Bao, F. (2021). Theoretical model on meridian conduction. <em>arXiv preprint</em>, arXiv:2106.04507.</p>
+<p>[7] Chen, B. G., Upadhyaya, N., &amp; Vitelli, V. (2014). Nonlinear conduction via solitons in a topological mechanical insulator. <em>Proceedings of the National Academy of Sciences</em>, 111, 13004. https://doi.org/10.1073/pnas.1405969111</p>
+<p>[8] Lee, T. N. (2002). Thalamic neuron theory: meridians = DNA. The genetic and embryological basis of traditional Chinese medicine including acupuncture. <em>Medical Hypotheses</em>, 59, 510. https://doi.org/10.1016/S0306-9877(02)00190-1</p>
+<p>[9] Brizhik, L., Chiappini, E., Stefanini, P., et al. (2019). Modeling meridians within the quantum field theory. <em>Journal of Acupuncture and Meridian Studies</em>, 12, 29. https://doi.org/10.1016/j.jams.2018.06.009</p>
+<p>[10] Thom, R. (1975). <em>Structural Stability and Morphogenesis: An Outline of a General Theory of Applied Catastrophe</em>. W. A. Benjamin.</p>
+<p>[11] Hatsugai, Y. (1993). Chern number and edge states in the integer quantum Hall effect. <em>Physical Review Letters</em>, 71, 3697. https://doi.org/10.1103/PhysRevLett.71.3697</p>
+<p>[12] Haldane, F. D. M. (1988). Model for a quantum Hall effect without Landau levels: Condensed-matter realization of the "parity anomaly". <em>Physical Review Letters</em>, 61, 2015. https://doi.org/10.1103/PhysRevLett.61.2015</p>
+<p>[13] Hasan, M. Z., &amp; Kane, C. L. (2010). Colloquium: Topological insulators. <em>Reviews of Modern Physics</em>, 82, 3045. https://doi.org/10.1103/RevModPhys.82.3045</p>
+<p>[14] Qi, X.-L., &amp; Zhang, S.-C. (2011). Topological insulators and superconductors. <em>Reviews of Modern Physics</em>, 83, 1057. https://doi.org/10.1103/RevModPhys.83.1057</p>
+<p>[15] Thouless, D. J., Kohmoto, M., Nightingale, M. P., &amp; den Nijs, M. (1982). Quantized Hall conductance in a two-dimensional periodic potential. <em>Physical Review Letters</em>, 49, 405. https://doi.org/10.1103/PhysRevLett.49.405</p>
+<p>[16] Veret, P., Cuomo, C., Burigana, F., &amp; Dell'Aglio, A. (2011). <em>Nutripuncture: Stimulating the Energy Pathways of the Body Without Needles</em>. Inner Traditions/Bear.</p>
+<p>[17] Amari, S. (2016). <em>Information Geometry and Its Applications</em>. Springer Japan.</p>
+<p>[18] Milnor, J. W. (1963). <em>Morse Theory</em>. Princeton University Press.</p>
+<p>[19] Hirsch, M. W., Smale, S., &amp; Devaney, R. L. (2004). <em>Differential Equations, Dynamical Systems, and an Introduction to Chaos</em>. Elsevier.</p>
+<p>[20] Jost, J. (2008). <em>Riemannian Geometry and Geometric Analysis</em>. Springer.</p>
+<p>[21] Hurtado, A., Markvorsen, S., Min-Oo, M., &amp; Palmer, V. (2020). <em>Global Riemannian Geometry: Curvature and Topology</em>. Springer Basel AG.</p>
+<p>[22] Simon, S. H. (2023). <em>Topological Quantum</em>. Oxford University Press.</p>
+<p>[23] Ryu, Y., &amp; Chae, Y. (2026). Meridian systems as spatiotemporal networks: An internal body geographic information system. <em>Journal of Integrative Medicine</em>, 24, 312. https://doi.org/10.1016/j.joim.2026.08.004</p>
+<p>[24] Wang, Y., Zhou, X., &amp; He, S. (2026). Biological fundamental functional units of meridians: mechanosensitive ion channels. <em>Frontiers in Medicine</em>, 13, 1775475. https://doi.org/10.3389/fmed.2026.1775475</p>
+<p>[25] Guo, X., Cao, J., Su, T., Ding, X., Chen, A., Kosgei, B. K., Zhang, D., Wang, F., &amp; Luo, P. (2026). Revolutionizing the understanding of acupoint biology and acupuncture mechanisms through spatial omics: current perspectives and future directions. <em>Frontiers in Medicine</em>, 13, 1863599. https://doi.org/10.3389/fmed.2026.1863599</p>
+<p>[26] Baoliin (Zaitian) Wu 伍宝林. (2026). Stochastic geometric dynamics of immune memory: From curvature-driven attractors to testable predictions. <em>Self-Preprint Archive</em>, DW58553904. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553904.html</p>
+<hr />
+<h2 id="appendix-a-complete-equation-register-and-cross-reference">Appendix A — Complete Equation Register and Cross-Reference</h2>
+<p>This appendix provides a complete canonical register of every explicitly numbered equation in the manuscript. Each entry reproduces the corresponding mathematical expression in the main text and identifies its section of origin. The equation numbering is continuous from Eq. (1) through Eq. (24); no numbered equation is omitted.</p>
+<h3 id="a1-equation-cross-reference-table">A.1. Equation Cross-Reference Table</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">Equation</th>
+<th style="text-align: left;">Description</th>
+<th style="text-align: left;">Main-text location</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>Eq. (1)</strong></td>
+<td style="text-align: left;">Riemannian physiological metric</td>
+<td style="text-align: left;">Section 2.2</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Eq. (2)</strong></td>
+<td style="text-align: left;">Fisher information metric</td>
+<td style="text-align: left;">Section 2.3</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Eq. (3)</strong></td>
+<td style="text-align: left;">Dynamical attractor criterion</td>
+<td style="text-align: left;">Section 4.2</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Eq. (4)</strong></td>
+<td style="text-align: left;">Low-cost pathway functional</td>
+<td style="text-align: left;">Section 5.1</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Eq. (5)</strong></td>
+<td style="text-align: left;">Optimal physiological network</td>
+<td style="text-align: left;">Section 5.2</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Eq. (6)</strong></td>
+<td style="text-align: left;">Ontogenetic hypothesis via developmental dynamical skeleton</td>
+<td style="text-align: left;">Section 6.2</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Eq. (7)</strong></td>
+<td style="text-align: left;">Gauss–Bonnet–Chern topological relation</td>
+<td style="text-align: left;">Section 6.3</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Eq. (8)</strong></td>
+<td style="text-align: left;">Schematic morphogen-field dynamics</td>
+<td style="text-align: left;">Section 6.4</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Eq. (9)</strong></td>
+<td style="text-align: left;">Morphogen separatrix / meridian correspondence prediction</td>
+<td style="text-align: left;">Section 6.5</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Eq. (10)</strong></td>
+<td style="text-align: left;">Chern number on a closed 2-cycle</td>
+<td style="text-align: left;">Section 7.1</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Eq. (11)</strong></td>
+<td style="text-align: left;">Metric anisotropy / condition number</td>
+<td style="text-align: left;">Section 8.2</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Eq. (12)</strong></td>
+<td style="text-align: left;">Composite acupoint sensitivity score</td>
+<td style="text-align: left;">Section 8.4</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Eq. (13)</strong></td>
+<td style="text-align: left;">General stochastic physiological flow</td>
+<td style="text-align: left;">Section 9.1</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Eq. (14)</strong></td>
+<td style="text-align: left;">Gradient-flow special case</td>
+<td style="text-align: left;">Section 9.2</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Eq. (15)</strong></td>
+<td style="text-align: left;">Covariant Fokker–Planck equation</td>
+<td style="text-align: left;">Section 10.2</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Eq. (16)</strong></td>
+<td style="text-align: left;">Gradient-flow Fokker–Planck equation</td>
+<td style="text-align: left;">Section 10.2</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Eq. (17)</strong></td>
+<td style="text-align: left;">Stationary density in the gradient case</td>
+<td style="text-align: left;">Section 10.2</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Eq. (18)</strong></td>
+<td style="text-align: left;">Curvature-velocity scaling hypothesis</td>
+<td style="text-align: left;">Section 11.1</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Eq. (19)</strong></td>
+<td style="text-align: left;">General transport functional</td>
+<td style="text-align: left;">Section 11.2</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Eq. (20)</strong></td>
+<td style="text-align: left;">Perturbation of physiological drift by intervention</td>
+<td style="text-align: left;">Section 12.1</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Eq. (21)</strong></td>
+<td style="text-align: left;">Perturbation of the effective metric</td>
+<td style="text-align: left;">Section 12.1</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Eq. (22)</strong></td>
+<td style="text-align: left;">Phenomenological response versus physiological geodesic distance</td>
+<td style="text-align: left;">Section 12.2</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Eq. (23)</strong></td>
+<td style="text-align: left;">Crucial-experiment response function</td>
+<td style="text-align: left;">Section 14.3</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>Eq. (24)</strong></td>
+<td style="text-align: left;">General complex-adaptive-systems pathway principle</td>
+<td style="text-align: left;">Section 19.1</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="a2-canonical-forms">A.2. Canonical Forms</h3>
+<h4 id="eq-1-riemannian-physiological-metric">Eq. (1) — Riemannian physiological metric</h4>
+<div class="math-block">$$
+\boxed{ds^2=g_{\mu\nu}(z)\,dz^\mu dz^\nu} \quad (1)
+$$</div>
+<h4 id="eq-2-fisher-information-metric">Eq. (2) — Fisher information metric</h4>
+<div class="math-block">$$
+\boxed{g_{ij}(\theta) = \mathbb E_{x\sim p(x|\theta)} \left[ \partial_i\log p(x|\theta) \, \partial_j\log p(x|\theta) \right].} \quad (2)
+$$</div>
+<h4 id="eq-3-dynamical-attractor-criterion">Eq. (3) — Dynamical attractor criterion</h4>
+<div class="math-block">$$
+\boxed{\Re\lambda_i(J_f)&lt;0 \quad \forall i.} \quad (3)
+$$</div>
+<h4 id="eq-4-low-cost-pathway-functional">Eq. (4) — Low-cost pathway functional</h4>
+<div class="math-block">$$
+\boxed{\mathcal J[\gamma] = \int_0^1 \left[ g_{\mu\nu}(\gamma) \dot\gamma^\mu\dot\gamma^\nu + V(\gamma,\dot\gamma) \right]ds.} \quad (4)
+$$</div>
+<h4 id="eq-5-optimal-physiological-network">Eq. (5) — Optimal physiological network</h4>
+<div class="math-block">$$
+\boxed{\mathcal N^* = \arg\min_{\mathcal N} \left[ L_g(\mathcal N) + \lambda C_{\rm dyn}(\mathcal N) + \eta C_{\rm top}(\mathcal N) \right].} \quad (5)
+$$</div>
+<h4 id="eq-6-ontogenetic-hypothesis-via-developmental-dynamical-skeleton">Eq. (6) — Ontogenetic hypothesis via developmental dynamical skeleton</h4>
+<div class="math-block">$$
+\boxed{\mathcal N_{\rm meridian} \sim \Pi\left(\mathcal S_{\rm dev}\right),} \quad (6)
+$$</div>
+<h4 id="eq-7-gaussbonnetchern-topological-relation">Eq. (7) — Gauss–Bonnet–Chern topological relation</h4>
+<div class="math-block">$$
+\boxed{\int_{\mathcal M}\mathcal E_{2m}(\text{Riem})\,dV = (2\pi)^m\chi(\mathcal M),} \quad (7)
+$$</div>
+<h4 id="eq-8-schematic-morphogen-field-dynamics">Eq. (8) — Schematic morphogen-field dynamics</h4>
+<div class="math-block">$$
+\frac{\partial M_a}{\partial t} = D_a\nabla^2M_a + F_a(M_1,\ldots,M_k,x,t). \quad (8)
+$$</div>
+<h4 id="eq-9-morphogen-separatrix-meridian-correspondence-prediction">Eq. (9) — Morphogen separatrix / meridian correspondence prediction</h4>
+<div class="math-block">$$
+\boxed{\mathcal N_{\rm meridian} \text{ should show significant topological correspondence with } \Pi(\mathcal S_{\rm morphogen}).} \quad (9)
+$$</div>
+<h4 id="eq-10-chern-number-on-a-closed-2-cycle">Eq. (10) — Chern number on a closed 2-cycle</h4>
+<div class="math-block">$$
+\boxed{\mathcal C = \frac{1}{2\pi} \int_{\mathcal S} \Omega} \quad (10)
+$$</div>
+<h4 id="eq-11-metric-anisotropy-condition-number">Eq. (11) — Metric anisotropy / condition number</h4>
+<div class="math-block">$$
+\boxed{\mathcal A_{\text{aniso}}(z) = \frac{\lambda_{\max}(g(z))}{\lambda_{\min}(g(z))}.} \quad (11)
+$$</div>
+<h4 id="eq-12-composite-acupoint-sensitivity-score">Eq. (12) — Composite acupoint sensitivity score</h4>
+<div class="math-block">$$
+\boxed{S_{\text{acupoint}} = w_1\widetilde{\mathcal A}_{\text{aniso}} + w_2\widetilde{\mathcal A}_\pi + w_3\widetilde C_R + w_4\widetilde S_{\rm dyn},} \quad (12)
+$$</div>
+<h4 id="eq-13-general-stochastic-physiological-flow">Eq. (13) — General stochastic physiological flow</h4>
+<div class="math-block">$$
+\boxed{dz^\mu = f^\mu(z)\,dt + \sqrt{2D}\,e^\mu_a(z)\circ dW^a_t.} \quad (13)
+$$</div>
+<h4 id="eq-14-gradient-flow-special-case">Eq. (14) — Gradient-flow special case</h4>
+<div class="math-block">$$
+\boxed{dz^\mu = -g^{\mu\nu}\nabla_\nu \mathcal F\,dt + \sqrt{2D}\,e^\mu_a\circ dW_t^a.} \quad (14)
+$$</div>
+<h4 id="eq-15-covariant-fokkerplanck-equation">Eq. (15) — Covariant Fokker–Planck equation</h4>
+<div class="math-block">$$
+\boxed{\partial_t\rho = -\nabla_\mu(f^\mu\rho) + D\Delta_g\rho,} \quad (15)
+$$</div>
+<h4 id="eq-16-gradient-flow-fokkerplanck-equation">Eq. (16) — Gradient-flow Fokker–Planck equation</h4>
+<div class="math-block">$$
+\boxed{\partial_t\rho = \nabla_\mu \left( \rho\,g^{\mu\nu}\nabla_\nu \mathcal F \right) + D\Delta_g\rho.} \quad (16)
+$$</div>
+<h4 id="eq-17-stationary-density-in-the-gradient-case">Eq. (17) — Stationary density in the gradient case</h4>
+<div class="math-block">$$
+\boxed{\rho_{\rm ss} \propto e^{-\mathcal F/D}.} \quad (17)
+$$</div>
+<h4 id="eq-18-curvature-velocity-scaling-hypothesis">Eq. (18) — Curvature-velocity scaling hypothesis</h4>
+<div class="math-block">$$
+\boxed{v_{\rm meridian} = v_0 \left( \frac{|R|}{R_0} \right)^\alpha,} \quad (18)
+$$</div>
+<h4 id="eq-19-general-transport-functional">Eq. (19) — General transport functional</h4>
+<div class="math-block">$$
+v = \mathcal V \left( g, R, D^{\mu\nu}, f, \text{local physiology} \right). \quad (19)
+$$</div>
+<h4 id="eq-20-perturbation-of-physiological-drift-by-intervention">Eq. (20) — Perturbation of physiological drift by intervention</h4>
+<div class="math-block">$$
+f^\mu(z) \rightarrow f^\mu(z)+\delta f^\mu(z,t;x_a). \quad (20)
+$$</div>
+<h4 id="eq-21-perturbation-of-the-effective-metric">Eq. (21) — Perturbation of the effective metric</h4>
+<div class="math-block">$$
+g_{\mu\nu} \rightarrow g_{\mu\nu} + \delta g_{\mu\nu}. \quad (21)
+$$</div>
+<h4 id="eq-22-phenomenological-response-versus-physiological-geodesic-distance">Eq. (22) — Phenomenological response versus physiological geodesic distance</h4>
+<div class="math-block">$$
+\boxed{E(d_g) = E_0 \exp\left( -\frac{d_g^2}{2\sigma^2} \right).} \quad (22)
+$$</div>
+<h4 id="eq-23-crucial-experiment-response-function">Eq. (23) — Crucial-experiment response function</h4>
+<div class="math-block">$$
+\boxed{\Phi_{AB}(\omega) = \Phi_0 \exp\left( -\frac{d_g^2(\mathcal A_A, \mathcal A_B)}{2\sigma^2} \right) e^{i\omega t_{\text{delay}}}} \quad (23)
+$$</div>
+<h4 id="eq-24-general-complex-adaptive-systems-pathway-principle">Eq. (24) — General complex-adaptive-systems pathway principle</h4>
+<div class="math-block">$$
+\text{Complex adaptive dynamics} \rightarrow \text{structured state-space geometry} \rightarrow \text{preferred information pathways} \rightarrow \text{topological protection of robust structures}. \quad (24)
+$$</div>
+<h3 id="a3-synchronization-rules">A.3. Synchronization Rules</h3>
+<p>The following rules are used to maintain equation integrity between the main text and this appendix:</p>
+<ol>
+<li><strong>One-to-one numbering:</strong> every explicitly numbered equation in the main text has exactly one corresponding entry in Appendix A.</li>
+<li><strong>No silent renumbering:</strong> equation numbers are not reused or skipped.</li>
+<li><strong>Canonical expression:</strong> Appendix A reproduces the mathematical form used in the main text after the consistency corrections documented in this revision.</li>
+<li><strong>Cross-reference integrity:</strong> when the manuscript refers to “Eq. (n)”, that reference denotes the equation carrying the same number in this register.</li>
+<li><strong>Unnumbered displayed equations:</strong> displayed mathematical expressions without <code>\quad (n)</code> remain intentionally unnumbered and are not assigned artificial equation numbers in Appendix A.</li>
+<li><strong>Model status is preserved:</strong> inclusion in this register does not elevate a modeling hypothesis or conjecture to the status of an established physical law.</li>
+</ol>
+<p>In particular, Eq. (10) is written as an integral of the Berry-curvature 2-form over a closed 2-cycle, and Eqs. (13)–(14) use a consistent noise-frame convention so that the diffusion coefficient appearing in Eq. (15) is $D$.</p>
+        </div>
+    </article>
+
+    <!-- 引用格式选择器（Google Scholar 风格） -->
+    <div class="citation-toggle">
+        <span class="cite-label">📚 Cite this paper</span>
+        <span class="cite-arrow">▾</span>
+    </div>
+    <div class="citation-panel" id="citationPanel">
+        <div class="citation-format-selector">
+            <button class="format-btn active" data-format="apa">APA</button>
+            <button class="format-btn" data-format="mla">MLA</button>
+            <button class="format-btn" data-format="chicago">Chicago</button>
+            <button class="format-btn" data-format="bibtex">BibTeX</button>
+        </div>
+        <div class="citation-display" id="citationDisplay">
+            <span class="citation-text" id="citationText"></span>
+            <button class="copy-btn" id="copyCitationBtn">📋 Copy</button>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        © 2026 Baoliin (Zaitian) Wu 伍宝林 · Self-Preprint Decentralized Academic Archive
+    </footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const citationData = {"apa": "Baoliin (Zaitian) Wu \u4f0d\u5b9d\u6797 (2026). The Geometry of Qi: A Riemannian Architecture for Physiological Information Flow and Meridian Emergence. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553908.html", "mla": "Baoliin (Zaitian) Wu \u4f0d\u5b9d\u6797. \"The Geometry of Qi: A Riemannian Architecture for Physiological Information Flow and Meridian Emergence.\" Self-Preprint Archive, 2026, https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553908.html.", "chicago": "Baoliin (Zaitian) Wu \u4f0d\u5b9d\u6797. \"The Geometry of Qi: A Riemannian Architecture for Physiological Information Flow and Meridian Emergence.\" Self-Preprint Archive. Accessed September 08, 2026. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553908.html.", "bibtex": "@article{selfpreprint_DW58553908,\n  author = {Baoliin (Zaitian) Wu \u4f0d\u5b9d\u6797},\n  title = {The Geometry of Qi: A Riemannian Architecture for Physiological Information Flow and Meridian Emergence},\n  journal = {Self-Preprint Archive},\n  year = {2026},\n  url = {https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553908.html}\n}"};
+    const toggle = document.querySelector('.citation-toggle');
+    const panel = document.getElementById('citationPanel');
+    const textDisplay = document.getElementById('citationText');
+    const copyBtn = document.getElementById('copyCitationBtn');
+    let currentFormat = 'apa';
+
+    if (toggle && panel) {
+        toggle.addEventListener('click', function() {
+            this.classList.toggle('open');
+            panel.classList.toggle('open');
+            if (panel.classList.contains('open')) {
+                updateCitation('apa');
+            }
+        });
+    }
+
+    document.querySelectorAll('.format-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            document.querySelectorAll('.format-btn').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            currentFormat = this.getAttribute('data-format');
+            updateCitation(currentFormat);
+        });
+    });
+
+    function updateCitation(format) {
+        let text = citationData[format] || 'Citation not available';
+        if (format === 'bibtex') {
+            textDisplay.className = 'citation-text bibtex-display';
+            textDisplay.textContent = text;
+        } else {
+            textDisplay.className = 'citation-text';
+            textDisplay.textContent = text;
+        }
+        copyBtn.textContent = '📋 Copy';
+        copyBtn.classList.remove('copied');
+    }
+
+    if (copyBtn) {
+        copyBtn.addEventListener('click', function() {
+            const text = textDisplay.textContent;
+            navigator.clipboard.writeText(text).then(function() {
+                copyBtn.textContent = '✅ Copied!';
+                copyBtn.classList.add('copied');
+                setTimeout(function() {
+                    copyBtn.textContent = '📋 Copy';
+                    copyBtn.classList.remove('copied');
+                }, 2000);
+            }).catch(function() {
+                const ta = document.createElement('textarea');
+                ta.value = text;
+                document.body.appendChild(ta);
+                ta.select();
+                document.execCommand('copy');
+                document.body.removeChild(ta);
+                copyBtn.textContent = '✅ Copied!';
+                setTimeout(function() {
+                    copyBtn.textContent = '📋 Copy';
+                }, 2000);
+            });
+        });
+    }
+
+    updateCitation('apa');
+});
+</script>
+
+<!-- 引入 Mermaid 渲染引擎 -->
+<script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+    document.addEventListener("DOMContentLoaded", async function () {
+        const codeBlocks = document.querySelectorAll('pre code.language-mermaid, pre code.mermaid');
+        codeBlocks.forEach((codeBlock) => {
+            const pre = codeBlock.parentElement;
+            const div = document.createElement('div');
+            div.className = 'mermaid';
+            div.textContent = codeBlock.textContent;
+            pre.replaceWith(div);
+        });
+
+        mermaid.initialize({ startOnLoad: false, theme: 'default', securityLevel: 'loose' });
+        await mermaid.run();
+    });
+</script>
+</body>
+</html>
