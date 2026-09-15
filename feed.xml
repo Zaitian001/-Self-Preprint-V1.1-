@@ -5,21 +5,10 @@
     <link>https://Zaitian001.github.io/-Self-Preprint-V1.1-</link>
     <description>Decentralized Physical-Anchored Academic Papers</description>
     <item>
-      <title>Groma-Ju Dao: The Six Modes of the *Zhoubi Suanjing* "Ju" as a Geometric Operator System</title>
+      <title>DW58553910</title>
       <link>https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553910.html</link>
-      <description>&lt;p&gt;The opening dialogue of the &lt;em&gt;Zhoubi Suanjing&lt;/em&gt; records Shang Gao's six oral instructions on the "Way of the Ju" 用矩之道 to the Duke of Zhou: &lt;em&gt;Ping Ju Yi Zheng Sheng&lt;/em&gt; 平矩以正绳, &lt;em&gt;Yan Ju Yi Wang Gao&lt;/em&gt; 偃矩以望高, &lt;em&gt;Fu Ju Yi Ce Shen&lt;/em&gt; 覆矩以测深, &lt;em&gt;Wo Ju Yi Zhi Yuan&lt;/em&gt; 卧矩以知远, &lt;em&gt;Huan Ju Yi Wei Yuan&lt;/em&gt; 环矩以为圆, and &lt;em&gt;He Ju Yi Wei Fang&lt;/em&gt; 合矩以为方. For over two millennia, these six phrases have commonly been read either as independent measuring techniques or as instructions for a two-dimensional carpenter's square.&lt;/p&gt;
-&lt;p&gt;This paper presents a reconstructive thought experiment: &lt;strong&gt;the six instructions are not independent techniques, but six modes of a single geometric operator system.&lt;/strong&gt; Following the &lt;em&gt;Gui-Ju Dao&lt;/em&gt; framework, which redefines the Ju as the minimal unit of an observer-centered three-dimensional orthogonal coordinate system, we introduce the Roman Groma surveying system---comprising Groma, Dioptra, level, and plumb---as an independent engineering parallel to the Ju. We then reconstruct each of Shang Gao's six operations in precise geometric terms.&lt;/p&gt;
-&lt;p&gt;Within this reconstruction we show that:&lt;/p&gt;
-&lt;ol&gt;
-&lt;li&gt;&lt;em&gt;Ping Ju Yi Zheng Sheng&lt;/em&gt; 平矩以正绳 is the initialization of the 3D orthogonal frame $\mathcal{F}_0=(O;\mathbf{e}_x,\mathbf{e}_y,\mathbf{e}_z)$.&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;Yan Ju Yi Wang Gao&lt;/em&gt; 偃矩以望高 and &lt;em&gt;Fu Ju Yi Ce Shen&lt;/em&gt; 覆矩以测深 are the positive and negative directions of the same vertical-angle operator $\pm\theta$.&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;Wo Ju Yi Zhi Yuan&lt;/em&gt; 卧矩以知远 is horizontal triangulation.&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;Huan Ju Yi Wei Yuan&lt;/em&gt; 环矩以为圆 is the rotation $R_Z(\phi)$ about the $Z$-axis, generating the circle $x^2+y^2=r^2$.&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;He Ju Yi Wei Fang&lt;/em&gt; 合矩以为方 is the translation combination $(T_x,T_y)$, generating orthogonal grids.&lt;/li&gt;
-&lt;/ol&gt;
-&lt;p&gt;The six operations unify under a single 3D orthogonal frame $\mathcal{F}_0$ as a three-level system: &lt;strong&gt;frame initialization, frame transformation, and frame composition.&lt;/strong&gt; The six oral instructions of the &lt;em&gt;Zhoubi Suanjing&lt;/em&gt; may therefore constitute one of the earliest known encodings of a geometric instruction set in human civilization. The paper further maps this system onto the &lt;em&gt;Kao Gong Ji&lt;/em&gt; state-surveying protocol, the "4+1" meta-structure of classical Chinese cosmic frameworks, the embodied gnomon of Gregor Reisch's 1503 &lt;em&gt;Demonstratio&lt;/em&gt;, the &lt;em&gt;Wu Qi&lt;/em&gt; 無器 ontology of the &lt;em&gt;Xuan Yin Yi Mi&lt;/em&gt;, and the $2^6=64$ hexagram state space of the &lt;em&gt;I Ching&lt;/em&gt;.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Keywords:&lt;/strong&gt; Zhoubi Suanjing; Shang Gao; Ju; Groma; Gui-Ju Dao; Geometric Operator System; 3D Orthogonal Frame; Shen Zheng; Wu Qi; 4+1 Meta-Structure; I Ching; Cosmic Engineering&lt;/p&gt;</description>
-      <pubDate>2026-09-14</pubDate>
+      <description />
+      <pubDate>2026-09-15</pubDate>
     </item>
     <item>
       <title>Geometric Pathology: Topological Collapse and Landscape Reprogramming in Complex Adaptive Systems</title>
