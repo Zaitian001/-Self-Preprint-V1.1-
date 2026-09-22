@@ -1,3 +1,0 @@
-User-agent: *
-Allow: /
-Sitemap: https://zaitian001.github.io/-Self-Preprint-V1.1-/sitemap.xml
