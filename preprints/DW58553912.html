@@ -389,7 +389,7 @@ window.MathJax = {
         
     <div class="anchor-box">
         🛡️ <strong>Physical Proof of Existence</strong> | Banknote Serial: <code>DW58553912</code>
-        <div class="anchor-hash">SHA-256 Hash: e2c43690165b738a7664906656e912a5fd187d6af1905c5598c147c701a67af5</div>
+        <div class="anchor-hash">SHA-256 Hash: 6378a48d485947dc5465e83d5fbe339ee4af7cb0120522af4d0b151ca703a142</div>
     </div>
     
 
@@ -428,12 +428,12 @@ window.MathJax = {
 <p>It is to ask whether the information contained in the evolving Earth system can be represented more effectively by reconstructing its <strong>dynamical state and stability landscape</strong> before constructing a probabilistic forecast.</p>
 <p>The central question becomes:</p>
 <blockquote>
-<p><strong>Does the Earth--fault system undergo a measurable and reproducible degradation of dynamical stability and restructuring of its attractor landscape before selected major earthquakes?</strong></p>
+<p><strong>Does the Earth-fault system undergo a measurable and reproducible degradation of dynamical stability and restructuring of its attractor landscape before selected major earthquakes?</strong></p>
 </blockquote>
 <p>This paper assumes the answer as a working hypothesis and develops the architecture required to test it.</p>
 <p><strong>Figure 1. Graphical Overview. Trans-Scale Earth-GAIS Architecture for Earthquake Forecasting</strong></p>
 <p><img alt="Figure 1. Graphical Overview. Trans-Scale Earth-GAIS Architecture for Earthquake Forecasting" src="images/DW58553912/Figure_1.png" /></p>
-<p>The architecture represents the coupled Earth--fault system as a generalized adaptive intelligent system and reframes earthquake forecasting from isolated precursor detection toward reconstruction of an evolving dynamical state and stability landscape.</p>
+<p>The architecture represents the coupled Earth-fault system as a generalized adaptive intelligent system and reframes earthquake forecasting from isolated precursor detection toward reconstruction of an evolving dynamical state and stability landscape.</p>
 <hr />
 <h2 id="12-the-limitation-of-the-single-precursor-paradigm">1.2 The limitation of the single-precursor paradigm</h2>
 <p>The search for earthquake precursors has historically considered many candidate signals, including:</p>
@@ -640,12 +640,12 @@ $$</div>
 K(s) = \frac{1}{T_{\mathrm{ref}}} \mathbb{I}\left[|s| \leq T_{\mathrm{ref}}/2\right] \quad (6\text{d})
 $$</div>
 <ul>
-<li><strong>Savitzky--Golay filter</strong> (polynomial-preserving, suitable when the reference state has slow but non-zero drift):</li>
+<li><strong>Savitzky-Golay filter</strong> (polynomial-preserving, suitable when the reference state has slow but non-zero drift):</li>
 </ul>
 <div class="math-block">$$
 K(s) = \text{SG}(s; \text{order } p, \text{window } T_{\mathrm{ref}}) \quad (6\text{e})
 $$</div>
-<p>The choice of kernel affects the trade-off between reference-state smoothness and adaptation latency. For real-time forecasting, the causal exponential kernel is preferred because it introduces no future information. For retrospective analysis, the centered moving average or Savitzky--Golay filter may reduce boundary artifacts.</p>
+<p>The choice of kernel affects the trade-off between reference-state smoothness and adaptation latency. For real-time forecasting, the causal exponential kernel is preferred because it introduces no future information. For retrospective analysis, the centered moving average or Savitzky-Golay filter may reduce boundary artifacts.</p>
 <hr />
 <h1 id="5-trans-scale-architecture">5. Trans-Scale Architecture</h1>
 <h2 id="51-why-a-trans-scale-model-is-required">5.1 Why a trans-scale model is required</h2>
@@ -683,19 +683,60 @@ $$</div>
 <h1 id="6-from-physical-observables-to-a-geophysical-manifold">6. From Physical Observables to a Geophysical Manifold</h1>
 <h2 id="61-observation-space">6.1 Observation space</h2>
 <p>The Earth-GAIS architecture integrates heterogeneous observations:</p>
-<p>| Domain | Candidate observations |
-|<strong><em>|</em></strong>|
-| Seismic | event rate, magnitude, moment, waveform features |
-| Geodetic | GNSS displacement, velocity, strain |
-| Satellite | InSAR displacement and deformation |
-| Geological | fault geometry, slip rate, segmentation |
-| Hydrological | pore pressure, groundwater where available |
-| Thermal | crustal thermal anomalies where independently justified |
-| Electromagnetic | exploratory EM observations subject to validation |
-| Nucleation-scale | THz phonons, neutron/particle emissions (exploratory; requires independent replication) |
-| Ionospheric | TEC anomalies (exploratory) |
-| Gravity | temporal gravity variations where available |
-| Environmental | variables only where physically justified |</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Domain</th>
+<th>Candidate observations</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Seismic</td>
+<td>event rate, magnitude, moment, waveform features</td>
+</tr>
+<tr>
+<td>Geodetic</td>
+<td>GNSS displacement, velocity, strain</td>
+</tr>
+<tr>
+<td>Satellite</td>
+<td>InSAR displacement and deformation</td>
+</tr>
+<tr>
+<td>Geological</td>
+<td>fault geometry, slip rate, segmentation</td>
+</tr>
+<tr>
+<td>Hydrological</td>
+<td>pore pressure, groundwater where available</td>
+</tr>
+<tr>
+<td>Thermal</td>
+<td>crustal thermal anomalies where independently justified</td>
+</tr>
+<tr>
+<td>Electromagnetic</td>
+<td>exploratory EM observations subject to validation</td>
+</tr>
+<tr>
+<td>Nucleation-scale</td>
+<td>THz phonons, neutron/particle emissions (exploratory; requires independent replication)</td>
+</tr>
+<tr>
+<td>Ionospheric</td>
+<td>TEC anomalies (exploratory)</td>
+</tr>
+<tr>
+<td>Gravity</td>
+<td>temporal gravity variations where available</td>
+</tr>
+<tr>
+<td>Environmental</td>
+<td>variables only where physically justified</td>
+</tr>
+</tbody>
+</table></div>
 <p>The architecture does not assume that every channel contains a useful earthquake precursor.</p>
 <p>Instead, each channel is treated as an observation of a partially hidden dynamical state.</p>
 <p>The THz and particle-emission channels are treated as <strong>exploratory hypotheses</strong> in the sense of [2]. They are not assumed to carry predictive information a priori; they must pass the same ablation and prospective tests as any other channel.</p>
@@ -709,7 +750,7 @@ $$</div>
 <p>The architecture therefore does not require a single computational algorithm.</p>
 <p>It defines the <strong>information structure</strong> that the algorithm must satisfy.</p>
 <h2 id="63-spatial-temporal-sparsity-and-metric-regularization">6.3 Spatial-Temporal Sparsity and Metric Regularization</h2>
-<p>Observational channels are inherently non-uniform in spatial and temporal dimensions. GNSS stations provide continuous temporal sampling at spatially discrete locations, InSAR offers high spatial density constrained by satellite orbital repeat intervals (e.g., 6--12 days), and seismic catalogs are limited by the magnitude of completeness $M_c(\mathbf{r}, t)$. Directly computing the state-space metric $g_{\mu\nu}$ from raw, irregularly sampled geophysical streams presents an ill-posed inverse problem.</p>
+<p>Observational channels are inherently non-uniform in spatial and temporal dimensions. GNSS stations provide continuous temporal sampling at spatially discrete locations, InSAR offers high spatial density constrained by satellite orbital repeat intervals (e.g., 6-12 days), and seismic catalogs are limited by the magnitude of completeness $M_c(\mathbf{r}, t)$. Directly computing the state-space metric $g_{\mu\nu}$ from raw, irregularly sampled geophysical streams presents an ill-posed inverse problem.</p>
 <p>To guarantee mathematical well-posedness, state estimation incorporates a spatio-temporal smoothness operator and latent manifold regularization into the objective function:</p>
 <div class="math-block">$$
 \hat{\mathbf X}_t = \arg\min_{\mathbf X} \left[ \|\mathbf y_t - \mathcal H(\mathbf X)\|_{\mathbf R^{-1}}^2 + \|\mathbf X - \mathbf X_t^{\mathrm{prior}}\|_{\mathbf P^{-1}}^2 + \gamma_{\mathcal M} \mathcal R_{\mathrm{manifold}}(\mathbf X) \right] \quad (10\text{a})
@@ -790,7 +831,7 @@ $$</div>
 <p>We now state the principal hypothesis.</p>
 <h2 id="hypothesis-inline_math_69">Hypothesis $H_{\mathrm{E-GAIS}}$</h2>
 <blockquote>
-<p><strong>Before selected major earthquakes, the coupled Earth--fault system undergoes a measurable and reproducible degradation of state-space resilience, expressed by deformation of attractor basins, migration or weakening of stable states, increasing cross-scale coupling, increasing recovery time, and approach toward a critical dynamical boundary.</strong></p>
+<p><strong>Before selected major earthquakes, the coupled Earth-fault system undergoes a measurable and reproducible degradation of state-space resilience, expressed by deformation of attractor basins, migration or weakening of stable states, increasing cross-scale coupling, increasing recovery time, and approach toward a critical dynamical boundary.</strong></p>
 </blockquote>
 <p>Symbolically:</p>
 <div class="math-block">$$
@@ -861,7 +902,7 @@ $$</div>
 $$</div>
 <p>The arrow in Eq. (25) is a hypothesis to be tested, not an established law.</p>
 <hr />
-<h1 id="12-morse-smale-representation-of-the-earthquake-landscape">12. Morse--Smale Representation of the Earthquake Landscape</h1>
+<h1 id="12-morse-smale-representation-of-the-earthquake-landscape">12. Morse-Smale Representation of the Earthquake Landscape</h1>
 <p>A smooth dynamical system can be decomposed into:</p>
 <ul>
 <li>attractors;</li>
@@ -869,36 +910,36 @@ $$</div>
 <li>separatrices;</li>
 <li>connecting trajectories.</li>
 </ul>
-<p>For an Earth-GAIS state manifold, the Morse--Smale complex is proposed as a representation of dynamically distinct regimes.</p>
+<p>For an Earth-GAIS state manifold, the Morse-Smale complex is proposed as a representation of dynamically distinct regimes.</p>
 <p>The conceptual sequence is:</p>
-<h3 id="stage-0-quasi-stable-earth-system">Stage 0 *** quasi-stable Earth system</h3>
+<h3 id="stage-0-quasi-stable-earth-system">Stage 0 - quasi-stable Earth system</h3>
 <div class="math-block">$$
 \mathcal A_0.
 $$</div>
-<h3 id="stage-1-local-deformation">Stage 1 *** local deformation</h3>
+<h3 id="stage-1-local-deformation">Stage 1 - local deformation</h3>
 <p>Localized state-space curvature increases.</p>
 <div class="math-block">$$
 \mathcal A_0 \rightarrow \mathcal A_0+\delta\mathcal M.
 $$</div>
-<h3 id="stage-2-regional-organization">Stage 2 *** regional organization</h3>
+<h3 id="stage-2-regional-organization">Stage 2 - regional organization</h3>
 <p>Multiple local domains become coupled.</p>
 <div class="math-block">$$
 R_{ij}\uparrow.
 $$</div>
-<h3 id="stage-3-basin-migration">Stage 3 *** basin migration</h3>
+<h3 id="stage-3-basin-migration">Stage 3 - basin migration</h3>
 <p>The attractor structure changes:</p>
 <div class="math-block">$$
 \mathcal A_i(t) \rightarrow \mathcal A_i(t+\Delta t).
 $$</div>
-<h3 id="stage-4-separatrix-approach">Stage 4 *** separatrix approach</h3>
+<h3 id="stage-4-separatrix-approach">Stage 4 - separatrix approach</h3>
 <div class="math-block">$$
 D_{\mathrm{crit}}\rightarrow0.
 $$</div>
-<h3 id="stage-5-critical-transition">Stage 5 *** critical transition</h3>
+<h3 id="stage-5-critical-transition">Stage 5 - critical transition</h3>
 <div class="math-block">$$
 \lambda_{\max}\rightarrow0 \rightarrow \lambda_{\max}&gt;0.
 $$</div>
-<h3 id="stage-6-rupture">Stage 6 *** rupture</h3>
+<h3 id="stage-6-rupture">Stage 6 - rupture</h3>
 <p>A rapid macroscopic transition occurs.</p>
 <hr />
 <h1 id="13-geometric-pathology-of-the-earth-gais">13. Geometric Pathology of the Earth-GAIS</h1>
@@ -1011,31 +1052,98 @@ $$</div>
 $$</div>
 <p>This is the central computational chain of the paper.</p>
 <p>The architecture has seven conceptual layers:</p>
-<p>| Layer | Function |
-|<strong><em>|</em></strong>|
-| L0 | Physical observation |
-| L1 | Adaptive imbalance |
-| L2 | Nonlinear latent transformation |
-| L3 | Cross-scale coupling |
-| L4 | State-space reconstruction |
-| L5 | Stability and topology |
-| L6 | Probabilistic forecasting |</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>L0</td>
+<td>Physical observation</td>
+</tr>
+<tr>
+<td>L1</td>
+<td>Adaptive imbalance</td>
+</tr>
+<tr>
+<td>L2</td>
+<td>Nonlinear latent transformation</td>
+</tr>
+<tr>
+<td>L3</td>
+<td>Cross-scale coupling</td>
+</tr>
+<tr>
+<td>L4</td>
+<td>State-space reconstruction</td>
+</tr>
+<tr>
+<td>L5</td>
+<td>Stability and topology</td>
+</tr>
+<tr>
+<td>L6</td>
+<td>Probabilistic forecasting</td>
+</tr>
+</tbody>
+</table></div>
 <hr />
 <h1 id="18-relation-to-conventional-earthquake-forecasting">18. Relation to Conventional Earthquake Forecasting</h1>
 <p>The proposed architecture does not discard established methods.</p>
 <p>Instead, it defines a higher-level integration layer.</p>
-<p>| Existing method | Earth-GAIS role |
-|<strong><em>|</em></strong>|
-| Gutenberg--Richter statistics | seismicity distribution |
-| Omori-type laws | temporal response |
-| ETAS | baseline event-rate model |
-| Rate-and-state friction | physical fault dynamics |
-| Coulomb stress transfer | coupling mechanism |
-| GNSS | deformation observation |
-| InSAR | spatial deformation |
-| Machine learning | state reconstruction / nonlinear mapping |
-| Data assimilation | latent state estimation |
-| Earth-GAIS | integrated state-space architecture |</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Existing method</th>
+<th>Earth-GAIS role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Gutenberg--Richter statistics</td>
+<td>seismicity distribution</td>
+</tr>
+<tr>
+<td>Omori-type laws</td>
+<td>temporal response</td>
+</tr>
+<tr>
+<td>ETAS</td>
+<td>baseline event-rate model</td>
+</tr>
+<tr>
+<td>Rate-and-state friction</td>
+<td>physical fault dynamics</td>
+</tr>
+<tr>
+<td>Coulomb stress transfer</td>
+<td>coupling mechanism</td>
+</tr>
+<tr>
+<td>GNSS</td>
+<td>deformation observation</td>
+</tr>
+<tr>
+<td>InSAR</td>
+<td>spatial deformation</td>
+</tr>
+<tr>
+<td>Machine learning</td>
+<td>state reconstruction / nonlinear mapping</td>
+</tr>
+<tr>
+<td>Data assimilation</td>
+<td>latent state estimation</td>
+</tr>
+<tr>
+<td>Earth-GAIS</td>
+<td>integrated state-space architecture</td>
+</tr>
+</tbody>
+</table></div>
 <p>The key distinction is:</p>
 <div class="math-block">$$
 \boxed{ \text{existing models} \subset \text{Earth-GAIS observation and dynamics layer} }
@@ -1086,14 +1194,14 @@ $$</div>
 <hr />
 <h1 id="20-verifiable-predictions">20. Verifiable Predictions</h1>
 <p>The architecture produces the following testable predictions.</p>
-<h2 id="prediction-1-resilience-loss">Prediction 1 *** Resilience loss</h2>
+<h2 id="prediction-1-resilience-loss">Prediction 1 - Resilience loss</h2>
 <p>Before selected major earthquakes:</p>
 <div class="math-block">$$
 \tau_{\mathrm{restore}}\uparrow.
 $$</div>
 <p>The effect must remain after controlling for changing noise and catalog completeness.</p>
 <hr />
-<h2 id="prediction-2-jacobian-spectral-drift">Prediction 2 *** Jacobian spectral drift</h2>
+<h2 id="prediction-2-jacobian-spectral-drift">Prediction 2 - Jacobian spectral drift</h2>
 <p>The reconstructed system should exhibit:</p>
 <div class="math-block">$$
 \lambda_{\max}(J) \rightarrow0^{-}
@@ -1101,26 +1209,26 @@ $$</div>
 <p>before a subset of major events.</p>
 <p>The magnitude, consistency, and lead time must be established prospectively.</p>
 <hr />
-<h2 id="prediction-3-basin-deformation">Prediction 3 *** Basin deformation</h2>
+<h2 id="prediction-3-basin-deformation">Prediction 3 - Basin deformation</h2>
 <p>The estimated attractor basin should become shallower or narrower:</p>
 <div class="math-block">$$
 D_{\mathcal A}\downarrow.
 $$</div>
 <hr />
-<h2 id="prediction-4-critical-distance-reduction">Prediction 4 *** Critical distance reduction</h2>
+<h2 id="prediction-4-critical-distance-reduction">Prediction 4 - Critical distance reduction</h2>
 <p>The state should approach a reconstructed stability boundary:</p>
 <div class="math-block">$$
 D_{\mathrm{crit}}\downarrow.
 $$</div>
 <hr />
-<h2 id="prediction-5-increasing-cross-scale-coherence">Prediction 5 *** Increasing cross-scale coherence</h2>
+<h2 id="prediction-5-increasing-cross-scale-coherence">Prediction 5 - Increasing cross-scale coherence</h2>
 <p>The architecture predicts:</p>
 <div class="math-block">$$
 R_{ij}\uparrow
 $$</div>
 <p>among dynamically related scales or regions before selected major transitions.</p>
 <hr />
-<h2 id="prediction-6-correlation-length-growth">Prediction 6 *** Correlation-length growth</h2>
+<h2 id="prediction-6-correlation-length-growth">Prediction 6 - Correlation-length growth</h2>
 <p>The characteristic state-space correlation length:</p>
 <div class="math-block">$$
 \xi_c
@@ -1130,24 +1238,24 @@ $$</div>
 \xi_c\uparrow.
 $$</div>
 <hr />
-<h2 id="prediction-7-dynamic-leverage-points">Prediction 7 *** Dynamic leverage points</h2>
+<h2 id="prediction-7-dynamic-leverage-points">Prediction 7 - Dynamic leverage points</h2>
 <p>Earthquake Acupoints should exhibit unusually large:</p>
 <div class="math-block">$$
 L(q)
 $$</div>
 <p>relative to non-acupoint locations.</p>
 <hr />
-<h2 id="prediction-8-forecast-improvement">Prediction 8 *** Forecast improvement</h2>
+<h2 id="prediction-8-forecast-improvement">Prediction 8 - Forecast improvement</h2>
 <p>A model incorporating Earth-GAIS state variables should outperform an appropriate baseline on strictly prospective test sets:</p>
 <div class="math-block">$$
 \mathrm{Skill}_{\mathrm{GAIS}} &gt; \mathrm{Skill}_{\mathrm{baseline}}
 $$</div>
 <p>under pre-registered evaluation metrics.</p>
 <hr />
-<h2 id="prediction-9-cross-region-transfer">Prediction 9 *** Cross-region transfer</h2>
+<h2 id="prediction-9-cross-region-transfer">Prediction 9 - Cross-region transfer</h2>
 <p>If the architecture represents a genuine dynamical principle rather than a region-specific statistical artifact, its core state variables should transfer across tectonic settings after recalibration.</p>
 <hr />
-<h2 id="prediction-10-ablation-necessity">Prediction 10 *** Ablation necessity</h2>
+<h2 id="prediction-10-ablation-necessity">Prediction 10 - Ablation necessity</h2>
 <p>Removing the state-space geometry layer should reduce forecasting performance:</p>
 <div class="math-block">$$
 \mathrm{Skill}_{\mathrm{full}} &gt; \mathrm{Skill}_{\mathrm{no\ geometry}}.
@@ -1158,7 +1266,7 @@ $$</div>
 $$</div>
 <p>This provides a direct architecture-level verification test.</p>
 <hr />
-<h2 id="prediction-11-sampling-artifact-independence">Prediction 11 *** Sampling-artifact independence</h2>
+<h2 id="prediction-11-sampling-artifact-independence">Prediction 11 - Sampling-artifact independence</h2>
 <p>If the estimated metric derivatives $\partial g_{\mu\nu}/\partial z^\lambda$ are driven by sampling artifacts rather than physical processes, then artificially decimating the observational data should produce similar metric changes.</p>
 <p>If the derivatives are physical, decimation should degrade but not systematically bias them.</p>
 <p>A statistically significant systematic bias under decimation would falsify the claim that the reconstructed geometry reflects physical state-space organization.</p>
@@ -1371,19 +1479,56 @@ $$</div>
 <li>validation;</li>
 <li>communication of uncertainty.</li>
 </ul>
-<p>The latent state vector $\mathbf q(t) = [B_i, R_{ij}, D_{\rm crit}, \lambda_{\max}, \ldots]$ may additionally be projected into an <strong>auditory representation</strong> (sonification) as a low-dimensional human interface. The operational hypothesis *** that auditory presentation of multi-scale state transitions improves human detection performance relative to numerical displays *** is itself testable in a human-factors experiment.</p>
+<p>The latent state vector $\mathbf q(t) = [B_i, R_{ij}, D_{\rm crit}, \lambda_{\max}, \ldots]$ may additionally be projected into an <strong>auditory representation</strong> (sonification) as a low-dimensional human interface. The operational hypothesis <strong>that auditory presentation of multi-scale state transitions improves human detection performance relative to numerical displays</strong> is itself testable in a human-factors experiment.</p>
 <hr />
 <h1 id="30-t0-t6-earth-gais-research-roadmap">30. T0--T6 Earth-GAIS Research Roadmap</h1>
 <p>The engineering roadmap is adapted from the T0--T6 architecture of DW58553911 [1].</p>
-<p>| Task | Theoretical basis | Earthquake objective |
-|<strong><em>|</em></strong>|***|
-| T0 | Adaptive recovery | Estimate recovery-time fields |
-| T1 | State-space reconstruction | Build Earth-GAIS manifold |
-| T2 | Trans-scale encoding | Connect regional and local states |
-| T3 | Geometric dynamics | Estimate attractors and curvature |
-| T4 | Morse analysis | Identify basins and separatrices |
-| T5 | Acupoint detection | Find high-leverage observation regions |
-| T6 | Probabilistic forecasting | Produce calibrated seismic probabilities |</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Task</th>
+<th>Theoretical basis</th>
+<th>Earthquake objective</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>T0</td>
+<td>Adaptive recovery</td>
+<td>Estimate recovery-time fields</td>
+</tr>
+<tr>
+<td>T1</td>
+<td>State-space reconstruction</td>
+<td>Build Earth-GAIS manifold</td>
+</tr>
+<tr>
+<td>T2</td>
+<td>Trans-scale encoding</td>
+<td>Connect regional and local states</td>
+</tr>
+<tr>
+<td>T3</td>
+<td>Geometric dynamics</td>
+<td>Estimate attractors and curvature</td>
+</tr>
+<tr>
+<td>T4</td>
+<td>Morse analysis</td>
+<td>Identify basins and separatrices</td>
+</tr>
+<tr>
+<td>T5</td>
+<td>Acupoint detection</td>
+<td>Find high-leverage observation regions</td>
+</tr>
+<tr>
+<td>T6</td>
+<td>Probabilistic forecasting</td>
+<td>Produce calibrated seismic probabilities</td>
+</tr>
+</tbody>
+</table></div>
 <hr />
 <h1 id="31-t0-recovery-field-estimation">31. T0 - Recovery Field Estimation</h1>
 <p>Estimate:</p>
@@ -1735,11 +1880,11 @@ $$</div>
 <p>The significance of the proposed architecture does not depend on the immediate success of every component.</p>
 <p>The central scientific test is whether the Earth-GAIS representation captures information that is systematically absent from conventional representations.</p>
 <p>Three outcomes are possible.</p>
-<h3 id="outcome-a-no-additional-information">Outcome A *** No additional information</h3>
+<h3 id="outcome-a-no-additional-information">Outcome A - No additional information</h3>
 <p>If Earth-GAIS variables provide no predictive improvement, the architecture should be rejected or substantially revised.</p>
-<h3 id="outcome-b-additional-descriptive-information">Outcome B *** Additional descriptive information</h3>
+<h3 id="outcome-b-additional-descriptive-information">Outcome B - Additional descriptive information</h3>
 <p>If Earth-GAIS variables reveal reproducible state transitions but do not improve forecasting, the architecture may still provide a useful theoretical description of earthquake preparation.</p>
-<h3 id="outcome-c-additional-prospective-forecasting-skill">Outcome C *** Additional prospective forecasting skill</h3>
+<h3 id="outcome-c-additional-prospective-forecasting-skill">Outcome C - Additional prospective forecasting skill</h3>
 <p>If the architecture produces statistically significant, calibrated, transferable improvement over established baselines, the Earth-GAIS representation would constitute evidence for a new forecasting architecture.</p>
 <p>The strongest result would be:</p>
 <div class="math-block">$$
@@ -1765,12 +1910,12 @@ $$</div>
 <div class="math-block">$$
 B_i, \quad \Delta C_i, \quad \Phi_{ij}, \quad D_{\mathrm{crit}}, \quad \tau_{\mathrm{restore}}, \quad \lambda_{\max}, \quad L(q).
 $$</div>
-<p>Together they provide a computational language for describing the evolving stability of the Earth--fault system.</p>
+<p>Together they provide a computational language for describing the evolving stability of the Earth-fault system.</p>
 <p>The proposed <strong>Earthquake Acupoint</strong> concept further changes the observation problem from purely geographic localization to dynamical leverage identification.</p>
 <p>Most importantly, the architecture does not require deterministic prediction as its first validation target.</p>
 <p>The first scientific test is much more precise:</p>
 <blockquote>
-<p><strong>Before major earthquakes, does the Earth--fault system exhibit a measurable and reproducible transition toward a less resilient state-space configuration?</strong></p>
+<p><strong>Before major earthquakes, does the Earth-fault system exhibit a measurable and reproducible transition toward a less resilient state-space configuration?</strong></p>
 </blockquote>
 <p>If this phenomenon exists, then the next question becomes whether its measurement improves probabilistic earthquake forecasting.</p>
 <p>The complete causal chain proposed here is therefore:</p>
@@ -1829,11 +1974,11 @@ $$</div>
 <p>[9] Elliott, J. R., Walters, R. J., and Wright, T. J. (2016). The role of space-based observation in understanding and responding to active tectonics and earthquakes. <em>Nature Communications</em>, 7, 13844. https://doi.org/10.1038/ncomms13844</p>
 <p>[10] U.S. Geological Survey. (2025). <em>Can you predict earthquakes?</em> Earthquake Hazards Program.</p>
 <p>[11] U.S. Geological Survey. (2025). <em>What is the difference between earthquake early warning, earthquake forecasts, earthquake probabilities, and earthquake prediction?</em> Earthquake Hazards Program.</p>
-<p>[12] Lindh, A. G. (2003). The nature of earthquake prediction. Seismological Research Letters, 74(6), 723--725. https://doi.org/10.1785/gssrl.74.6.723</p>
+<p>[12] Lindh, A. G. (2003). The nature of earthquake prediction. Seismological Research Letters, 74(6), 723-725. https://doi.org/10.1785/gssrl.74.6.723</p>
 <p>[13] Carpinteri, A. (2026). Terahertz Phonons and Nanomechanical Instabilities: Unlocking LENR in Condensed Matter with Insights Into Geo, Astro, Electro, and Biochemical Systems. Springer Nature Switzerland.</p>
 <p>[14] Carpinteri, A. (2026). Acoustic, Electromagnetic, and Neutron Emissions as Seismic Precursors. In: Terahertz Phonons and Nanomechanical Instabilities. Springer, Cham. https://doi.org/10.1007/978-3-032-14692-2_16</p>
-<p>[15] Doodson A. T. (1921). A harmonic development of the tide-generating potential. Proc. R. Soc. A 1 December; 100 (704): 305--329. https://doi.org/10.1098/rspa.1921.0088</p>
-<p>[16] Scheffer, M., Bascompte, J., Brock, W. A., et al. (2009). Early-warning signals for critical transitions. Nature, 461, 53--59. https://doi.org/10.1038/nature08227</p>
+<p>[15] Doodson A. T. (1921). A harmonic development of the tide-generating potential. Proc. R. Soc. A 1 December; 100 (704): 305-329. https://doi.org/10.1098/rspa.1921.0088</p>
+<p>[16] Scheffer, M., Bascompte, J., Brock, W. A., et al. (2009). Early-warning signals for critical transitions. Nature, 461, 53-59. https://doi.org/10.1038/nature08227</p>
 <p>[17] Dakos, V., Carpenter, S. R., Brock, W. A., et al. (2012). Methods for detecting early warnings of critical transitions in time series illustrated using simulated ecological data. PLoS ONE, 7(7), e41010. https://doi.org/10.1371/journal.pone.0041010</p>
 <hr />
 <h1 id="appendix-a-core-mathematical-definitions">Appendix A. Core Mathematical Definitions</h1>
@@ -1888,16 +2033,48 @@ $$</div>
 <hr />
 <h1 id="appendix-b-minimum-experimental-data-specification">Appendix B. Minimum Experimental Data Specification</h1>
 <p>A minimum Earth-GAIS experiment should contain:</p>
-<p>| Data type | Minimum role |
-|<strong><em>|</em></strong>|
-| Earthquake catalog | seismic-state reconstruction |
-| Waveforms | event characterization |
-| GNSS | deformation |
-| InSAR | spatial deformation |
-| Fault geometry | physical topology |
-| Strain | local deformation |
-| Geological constraints | long-term state |
-| Optional physical channels | independent hypothesis testing |</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Data type</th>
+<th>Minimum role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Earthquake catalog</td>
+<td>seismic-state reconstruction</td>
+</tr>
+<tr>
+<td>Waveforms</td>
+<td>event characterization</td>
+</tr>
+<tr>
+<td>GNSS</td>
+<td>deformation</td>
+</tr>
+<tr>
+<td>InSAR</td>
+<td>spatial deformation</td>
+</tr>
+<tr>
+<td>Fault geometry</td>
+<td>physical topology</td>
+</tr>
+<tr>
+<td>Strain</td>
+<td>local deformation</td>
+</tr>
+<tr>
+<td>Geological constraints</td>
+<td>long-term state</td>
+</tr>
+<tr>
+<td>Optional physical channels</td>
+<td>independent hypothesis testing</td>
+</tr>
+</tbody>
+</table></div>
 <p>The experiment should maintain a strict timestamped data archive.</p>
 <p>Every forecast must be reproducible from the information available at that time.</p>
 <hr />
@@ -1960,7 +2137,7 @@ $$</div>
 $$</div>
 <p>DW58553909 [4] develops the Geometric Pathology formalism:</p>
 <div class="math-block">$$
-\text{stress-driven curvature inversion} \rightarrow \text{Morse--Smale transversality breaking} \rightarrow \text{landscape reprogramming}.
+\text{stress-driven curvature inversion} \rightarrow \text{Morse-Smale transversality breaking} \rightarrow \text{landscape reprogramming}.
 $$</div>
 <p>The present Earth-GAIS architecture translates this organizational logic to the geophysical scale:</p>
 <div class="math-block">$$
