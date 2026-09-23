@@ -163,8 +163,6 @@ def build_pdf(md_path: Path) -> bool:
             str(tmp_md_path),
             '--pdf-engine=xelatex',
             '-V', 'geometry:margin=1in',
-            '-V', f'title={title}',
-            '-V', f'author={author}',
             '-V', 'fontsize=11pt',
             '--toc',
             '--number-sections',
