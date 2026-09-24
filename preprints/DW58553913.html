@@ -1,0 +1,2150 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>A Trans-Scale Adaptive Intelligence Architecture for Earthquake Forecasting: From Nucleation Signals to Seismic Rupture through Adaptive State Estimation, Phase Synchronization, and Sonification - Self-Preprint Archive</title>
+    <meta name="citation_title" content="A Trans-Scale Adaptive Intelligence Architecture for Earthquake Forecasting: From Nucleation Signals to Seismic Rupture through Adaptive State Estimation, Phase Synchronization, and Sonification">
+    <meta name="citation_publication_date" content="2026/09/24">
+    <meta name="citation_fulltext_html_url" content="https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553913.html">
+    <meta name="citation_journal_title" content="Self-Preprint Archive">
+    <meta name="citation_author" content="Baoliin (Zaitian) Wu 伍宝林">
+    <style>
+/* ==========================================================================
+   -Self-Preprint- Academic Theme (Complete Merged & Responsive Version)
+   ========================================================================== */
+*, *::before, *::after { box-sizing: border-box; }
+
+:root {
+    --bg-color: #fcfcfc;
+    --text-color: #2b2b2b;
+    --primary-color: #1a365d;
+    --link-color: #2b6cb0;
+    --border-color: #e2e8f0;
+    --code-bg: #f7fafc;
+    --blockquote-bg: #edf2f7;
+    --meta-color: #718096;
+    --max-width: 860px;
+    --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-serif: Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+body {
+    font-family: var(--font-main);
+    line-height: 1.75;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 2rem 1rem;
+}
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 3rem 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border: 1px solid var(--border-color);
+}
+a { color: var(--link-color); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* 归档列表页 (index.html) */
+.archive-year {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.3rem;
+    color: var(--primary-color);
+}
+.post-item {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+}
+.post-title { font-size: 1.1rem; font-weight: 500; }
+.post-date {
+    font-size: 0.9rem;
+    color: var(--meta-color);
+    font-family: monospace;
+    white-space: nowrap;
+    margin-left: 1rem;
+}
+.post-abstract {
+    font-size: 0.95rem;
+    color: #555;
+    margin: 0.2rem 0 1.2rem 0;
+    font-family: var(--font-serif);
+}
+
+/* 文章单页 (paper_id.html) */
+article h1.paper-title {
+    font-size: 2.2rem;
+    line-height: 1.3;
+    margin-bottom: 0.8rem;
+    letter-spacing: -0.02em;
+    color: var(--primary-color);
+}
+.paper-meta {
+    font-size: 0.92rem;
+    color: var(--meta-color);
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1.2rem;
+}
+.paper-body {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+.paper-body h1, .paper-body h2, .paper-body h3 {
+    font-family: var(--font-main);
+    font-weight: 600;
+    margin-top: 2.2rem;
+    color: var(--primary-color);
+}
+
+/* MathJax & LaTeX 公式排版防护 */
+mjx-container {
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-width: 100%;
+}
+mjx-container[display="true"] {
+    display: block !important;
+    width: 100% !important;
+    margin: 1.5rem 0 !important;
+    text-align: center;
+}
+mjx-container[display="false"] {
+    display: inline-block;
+    vertical-align: middle;
+}
+.math-block {
+    display: block;
+    width: 100%;
+    margin: 1.5rem 0;
+    text-align: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+/* 物理确权卡片 */
+.anchor-box {
+    margin: 2rem 0;
+    padding: 1rem 1.2rem;
+    background: #fafafa;
+    border: 1px solid #eaeaea;
+    border-radius: 6px;
+    font-size: 0.88rem;
+    color: #444;
+}
+.anchor-box strong { color: #111; }
+.anchor-hash {
+    font-family: monospace;
+    font-size: 0.82rem;
+    word-break: break-all;
+    color: #666;
+    margin-top: 0.3rem;
+}
+
+/* 代码与预格式化文本 */
+code, pre {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-size: 0.9rem;
+}
+code {
+    background-color: var(--code-bg);
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+}
+pre {
+    padding: 1rem;
+    overflow-x: auto;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    background-color: var(--code-bg);
+    line-height: 1.45;
+}
+pre code {
+    background-color: transparent;
+    padding: 0;
+    border: none;
+}
+
+/* 引用与表格 */
+blockquote {
+    margin: 1.5rem 0;
+    padding: 0.8rem 1.2rem;
+    background-color: var(--blockquote-bg);
+    border-left: 4px solid var(--primary-color);
+    border-radius: 0 4px 4px 0;
+}
+blockquote p:last-child { margin-bottom: 0; }
+.table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+    -webkit-overflow-scrolling: touch;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+th, td {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-color);
+    text-align: left;
+}
+th {
+    background-color: var(--code-bg);
+    font-weight: 600;
+}
+
+/* 学术插图与图注 */
+img, .paper-body img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1.8rem auto 0.5rem auto;
+    border-radius: 4px;
+}
+figure { margin: 2rem auto; text-align: center; }
+figure img { max-width: 100%; height: auto; margin: 0 auto; }
+figcaption {
+    font-size: 0.9rem;
+    color: var(--meta-color);
+    margin-top: 0.6rem;
+    font-family: var(--font-main);
+    line-height: 1.4;
+}
+
+/* 引用格式选择器 (Google Scholar 风格) */
+.citation-toggle {
+    display: inline-block;
+    margin: 2rem 0 0.5rem 0;
+    padding: 0.5rem 1.2rem;
+    background: #f1f5f9;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: #1e293b;
+    transition: background 0.2s;
+    user-select: none;
+}
+.citation-toggle:hover { background: #e2e8f0; }
+.citation-toggle .cite-arrow {
+    display: inline-block;
+    margin-left: 0.4rem;
+    font-size: 0.7rem;
+    transition: transform 0.3s ease;
+}
+.citation-toggle.open .cite-arrow { transform: rotate(180deg); }
+
+.citation-panel {
+    display: none;
+    margin: 0 0 2rem 0;
+    padding: 1.2rem 1.5rem;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    max-width: 100%;
+}
+.citation-panel.open { display: block; }
+
+.citation-format-selector {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    margin-bottom: 0.8rem;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 0.8rem;
+}
+.format-btn {
+    background: transparent;
+    border: none;
+    padding: 0.3rem 1rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+    color: #64748b;
+    border-radius: 12px;
+    transition: all 0.2s;
+}
+.format-btn:hover { background: #e2e8f0; color: #1e293b; }
+.format-btn.active {
+    background: #1e293b;
+    color: white;
+    font-weight: 500;
+}
+
+.citation-display {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+.citation-text {
+    flex: 1;
+    font-size: 0.88rem;
+    font-family: var(--font-serif);
+    color: #1e293b;
+    background: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    border: 1px solid #e9edf2;
+    word-break: break-word;
+    min-height: 2.2rem;
+}
+.citation-text.bibtex-display {
+    font-family: monospace;
+    font-size: 0.82rem;
+    white-space: pre-wrap;
+}
+.copy-btn {
+    background: #e2e8f0;
+    border: none;
+    border-radius: 4px;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.8rem;
+    cursor: pointer;
+    color: #334155;
+    white-space: nowrap;
+    transition: all 0.2s;
+    align-self: center;
+}
+.copy-btn:hover { background: #cbd5e1; }
+.copy-btn.copied { background: #22c55e; color: white; }
+
+/* 页脚与移动端响应式 */
+footer.site-footer {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.85rem;
+    color: var(--meta-color);
+    text-align: center;
+}
+@media (max-width: 768px) {
+    body { padding: 1rem 0.5rem; }
+    .container { padding: 1.5rem 1rem; }
+    article h1.paper-title { font-size: 1.75rem; }
+    .post-item { flex-direction: column; align-items: flex-start; }
+    .post-date { margin-left: 0; margin-top: 0.2rem; }
+}
+</style>
+    
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    tags: 'ams'
+  },
+  svg: {
+    fontCache: 'global',
+    displayAlign: 'center',
+    displayIndent: '0'
+  },
+  options: {
+    enableMenu: false,
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+};
+</script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+<script>
+  window.addEventListener('load', function () {
+    if (window.MathJax && MathJax.typesetPromise) {
+      MathJax.typesetPromise().catch(function (err) {
+        console.log('MathJax typeset failed: ', err);
+      });
+    }
+  });
+</script>
+
+</head>
+<body>
+    <header class="site-header">
+        <nav>
+            <a href="../index.html">← Archives</a>
+            <a href="../feed.xml">RSS</a>
+        </nav>
+    </header>
+
+    <article>
+        <h1 class="paper-title">A Trans-Scale Adaptive Intelligence Architecture for Earthquake Forecasting: From Nucleation Signals to Seismic Rupture through Adaptive State Estimation, Phase Synchronization, and Sonification</h1>
+        <div class="paper-meta">
+            By <strong>Baoliin (Zaitian) Wu 伍宝林</strong> · Published on 2026-09-24
+        </div>
+
+        
+    <div class="anchor-box">
+        🛡️ <strong>Physical Proof of Existence</strong> | Banknote Serial: <code>DW58553913</code>
+        <div class="anchor-hash">SHA-256 Hash: e41c7f49595f6ee640e9ad237942223d4e7178d1362b8cba39e2e5dd3b279b42</div>
+    </div>
+    
+
+        <blockquote style="font-family: var(--font-serif); background:#fdfdfd; padding:0.8rem 1.2rem; border-left:3px solid #ccc; margin: 1.5rem 0;"><p>This DW58553913 is a companion work to DW58553912. Both address the same scientific challenge: a trans-scale adaptive intelligence architecture for earthquake forecasting. DW58553912 establishes the general Earth-GAIS architecture, the abstract state-space formulation, the falsifiability protocol, and the prospective validation roadmap. The present work addresses a complementary question: what specific physical channels and mathematical structures can instantiate that architecture?</p>
+<p>We propose four nested encoding layers: a nucleation layer $N$ associated with candidate nanoscale and microscale fracture emissions; a phenological layer $2^{1/72}$; a seasonal/environmental layer $2^{1/24}$; and a seismic/elastic layer $2^{1/12}$, associated historically with Zhu Zaiyu. A Riemannian geometric pathology formalism is adapted from DW58553909 and specialized to seismic nucleation. Candidate terahertz and particle precursor channels are proposed as exploratory observation channels within the general architecture. A sonification interface provides a concrete human-interface implementation for the general Human–AI–Instrument loop.</p>
+<p>A forecast state is generated only when multiple independently observed layers exhibit statistically significant and temporally coherent anomalies. The architecture does not assume that any single precursor is sufficient for earthquake prediction. The principal contribution is not a claim that earthquakes can currently be predicted deterministically, but a testable trans-scale implementation in which heterogeneous observations are assimilated, environmental confounders are explicitly modeled, cross-scale synchronization is quantified, geometric phase transitions are diagnosed, and forecast performance can be evaluated prospectively against null models and pre-registered statistical criteria.</p>
+<p>The ultimate objective is practical: to investigate whether progressively narrowing probabilistic windows of elevated seismic risk can be obtained early enough to improve preparedness and reduce human and economic losses.</p>
+<p>DW58553912 establishes the architecture and falsification framework; DW58553913 specifies candidate physical realizations and implementation pathways. Neither is complete without the other.</p></blockquote>
+
+        <div class="paper-body">
+            <h1 id="a-trans-scale-adaptive-intelligence-architecture-for-earthquake-forecasting-from-nucleation-signals-to-seismic-rupture-through-adaptive-state-estimation-phase-synchronization-and-sonification">A Trans-Scale Adaptive Intelligence Architecture for Earthquake Forecasting: From Nucleation Signals to Seismic Rupture through Adaptive State Estimation, Phase Synchronization, and Sonification</h1>
+<p><strong>Baoliin (Zaitian) Wu 伍宝林</strong></p>
+<p>ORCiD: 0009-0003-2051-5247<br />
+Email: zaitian001@gmail.com<br />
+Affiliation: People's Government of Guangdong Province, Guangzhou, China</p>
+<p>September 24, 2026</p>
+<hr />
+<h2 id="abstract">Abstract</h2>
+<p>This DW58553913 is a companion work to DW58553912. Both address the same scientific challenge: a trans-scale adaptive intelligence architecture for earthquake forecasting. DW58553912 establishes the general Earth-GAIS architecture, the abstract state-space formulation, the falsifiability protocol, and the prospective validation roadmap. The present work addresses a complementary question: what specific physical channels and mathematical structures can instantiate that architecture?</p>
+<p>We propose four nested encoding layers: a nucleation layer $N$ associated with candidate nanoscale and microscale fracture emissions; a phenological layer $2^{1/72}$; a seasonal/environmental layer $2^{1/24}$; and a seismic/elastic layer $2^{1/12}$, associated historically with Zhu Zaiyu. A Riemannian geometric pathology formalism is adapted from DW58553909 and specialized to seismic nucleation. Candidate terahertz and particle precursor channels are proposed as exploratory observation channels within the general architecture. A sonification interface provides a concrete human-interface implementation for the general Human–AI–Instrument loop.</p>
+<p>A forecast state is generated only when multiple independently observed layers exhibit statistically significant and temporally coherent anomalies. The architecture does not assume that any single precursor is sufficient for earthquake prediction. The principal contribution is not a claim that earthquakes can currently be predicted deterministically, but a testable trans-scale implementation in which heterogeneous observations are assimilated, environmental confounders are explicitly modeled, cross-scale synchronization is quantified, geometric phase transitions are diagnosed, and forecast performance can be evaluated prospectively against null models and pre-registered statistical criteria.</p>
+<p>The ultimate objective is practical: to investigate whether progressively narrowing probabilistic windows of elevated seismic risk can be obtained early enough to improve preparedness and reduce human and economic losses.</p>
+<p>DW58553912 establishes the architecture and falsification framework; DW58553913 specifies candidate physical realizations and implementation pathways. Neither is complete without the other.</p>
+<p><strong>Keywords:</strong> earthquake forecasting; Earth-GAIS; physical realization; Riemannian geometric pathology; curvature inversion; attractor fracture; Morse–Smale complex; fracture emissions; terahertz phonons; neutron emissions; phase synchronization; sonification; Zhu Zaiyu; 24 solar terms; 72 pentads</p>
+<hr />
+<h2 id="1-introduction">1. Introduction</h2>
+<h3 id="11-from-early-warning-to-forecasting">1.1 From Early Warning to Forecasting</h3>
+<p>Earthquakes remain among the most difficult natural hazards to anticipate because rupture nucleation emerges from a complex, heterogeneous, nonlinear fault system whose state cannot be completely observed.</p>
+<p>A conventional earthquake early-warning system does not predict earthquake initiation. Instead, it detects an earthquake after rupture begins and attempts to estimate the event and warn locations that have not yet experienced the strongest shaking. This approach can provide seconds to tens of seconds of warning under favorable conditions and remains an important component of earthquake-risk reduction.</p>
+<p>The scientific problem addressed in this paper is different. The central question is:</p>
+<div class="math-block">$$
+\boxed{ \textit{Can measurable changes in the physical state of the Earth be detected before macroscopic rupture,} }
+$$</div>
+<p>and, if so,</p>
+<div class="math-block">$$
+\boxed{ \textit{can independent precursor channels be combined to progressively narrow the probability of impending seismic activity?} }
+$$</div>
+<p>This distinction is essential. The present work therefore uses <strong>forecasting</strong> rather than deterministic prediction as its primary scientific objective.</p>
+<p>A deterministic earthquake prediction would require specification of location, time, and magnitude. No reliable general method currently provides all three for an individual future earthquake. A probabilistic forecasting system has a different objective:</p>
+<div class="math-block">$$
+P(E \mid \mathcal D_t),
+$$</div>
+<p>where $E$ represents a future seismic event and $\mathcal D_t$ represents all observations available up to time $t$. The goal is not to claim certainty. The goal is to determine whether</p>
+<div class="math-block">$$
+P(E\mid\mathcal D_t) &gt; P_0(E)
+$$</div>
+<p>with sufficient statistical significance, reliability, calibration, and lead time to support practical risk reduction.</p>
+<hr />
+<h3 id="12-the-trans-scale-problem">1.2 The Trans-Scale Problem</h3>
+<p>Earthquake rupture is a multiscale process. At the smallest scales, microscopic defects, grain boundaries, fluid-assisted cracking, and nanoscale fracture processes contribute to material failure. At larger scales, microcracking and acoustic emissions emerge. At still larger scales, deformation, slow-slip, fluid migration, electromagnetic effects, and seismicity become observable. Finally, macroscopic rupture generates elastic waves that propagate through the Earth.</p>
+<p>The observational challenge is therefore not simply</p>
+<div class="math-block">$$
+\text{high frequency}\rightarrow\text{low frequency}.
+$$</div>
+<p>It is a more general transformation:</p>
+<div class="math-block">$$
+\boxed{ \text{microscopic state} \rightarrow \text{mesoscopic organization} \rightarrow \text{fault-scale preparation} \rightarrow \text{macroscopic rupture}. }
+$$</div>
+<p>The central hypothesis of this work is that if such a cascade contains measurable information, the information may be distributed across multiple observational channels rather than concentrated in a single precursor. This motivates a trans-scale state-space formulation.</p>
+<hr />
+<h3 id="13-the-candidate-nucleation-layer">1.3 The Candidate Nucleation Layer</h3>
+<p>Recent experimental studies have investigated emissions generated during fracture of rocks, including acoustic, electromagnetic, and neutron signals. More recent work has proposed that nanoscale mechanical instabilities can generate terahertz-frequency phonons and that these processes may be associated with particle emissions.</p>
+<p>These observations are scientifically interesting because they suggest that fracture may generate measurable signatures well below the frequency range of conventional seismology. However, a critical distinction must be maintained:</p>
+<div class="math-block">$$
+\boxed{ \text{fracture emission} \neq \text{validated earthquake precursor}. }
+$$</div>
+<p>A laboratory fracture signal does not automatically establish that the same signal can be detected remotely in the Earth's crust or that it systematically precedes large earthquakes. Accordingly, this paper treats THz and particle emissions as a <strong>candidate nucleation channel</strong>.</p>
+<p>The relevant hypothesis is:</p>
+<div class="math-block">$$
+H_{\rm N}: \quad \text{statistically significant anomalies in nucleation-scale emissions}
+$$</div>
+<p>may contain information about the evolving state of a fault system. The competing null hypothesis is:</p>
+<div class="math-block">$$
+H_0: \quad \text{observed anomalies are explainable by background variability, instrumental effects, environmental forcing, or unrelated processes}.
+$$</div>
+<p>Only prospective testing can distinguish these hypotheses.</p>
+<hr />
+<h3 id="14-relation-to-the-earth-gais-architecture">1.4 Relation to the Earth-GAIS Architecture</h3>
+<p>This manuscript should be read as a <strong>specific physical realization</strong> of the general Earth-GAIS architecture developed in DW58553912. The relationship between the two works can be stated compactly:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>General architecture: DW58553912</th>
+<th>Specific realization: this work, DW58553913</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Adaptive imbalance $B_i$</td>
+<td>Four-layer nested decomposition $(N,72,24,12)$</td>
+</tr>
+<tr>
+<td>Nonlinear transformation $\Delta C_i$</td>
+<td>Stress-to-interval mapping with $\tanh$ saturation</td>
+</tr>
+<tr>
+<td>Cross-scale coupling $\Phi_{ij}$</td>
+<td>Phase-locking cascade criterion</td>
+</tr>
+<tr>
+<td>Geometric pathology, DW58553909</td>
+<td>Curvature inversion equation, Attractor Fracture criterion</td>
+</tr>
+<tr>
+<td>Exploratory observation channels</td>
+<td>THz phonons, neutron/particle emissions</td>
+</tr>
+<tr>
+<td>Human–AI loop</td>
+<td>Sonification interface</td>
+</tr>
+</tbody>
+</table></div>
+<p>Specifically:</p>
+<ul>
+<li>The four-layer nested manifold $(N,72,24,12)$ provides a concrete encoding of the general adaptive imbalance variable $B_i$.</li>
+<li>The geometric pathology formalism provides the mathematical mechanism for the curvature inversion and attractor fracture introduced conceptually.</li>
+<li>The terahertz and particle precursor channels provide specific candidates for the exploratory observation channels.</li>
+<li>The sonification layer provides a concrete human-interface implementation for the general Human–AI–Instrument loop.</li>
+</ul>
+<p>The present work does <strong>not</strong> replace or supersede DW58553912. DW58553912 defines the general architectural framework and validation protocol. DW58553909 develops the full geometric pathology formalism. DW58553911 establishes the broader GAIS/DEQM theoretical foundation. This work proposes specific physical channels and mathematical structures that can instantiate the general architecture. Cross-references are given by paper ID rather than by local reference number to avoid ambiguity.</p>
+<p><em>Cross-reference convention:</em> Paper IDs are authoritative. DW58553912's reference [2] refers to this companion paper; the intended relationship is general architecture ↔ specific implementation layer, not temporal precedence.</p>
+<hr />
+<h3 id="15-contributions-and-paper-structure">1.5 Contributions and Paper Structure</h3>
+<p>The principal contributions are:</p>
+<ol>
+<li>A <strong>four-tiered nested representational manifold formulation</strong> extending from terahertz/nanoscale to plate scale.</li>
+<li>A <strong>trans-scale stress-to-interval mapping</strong> that renders physical deviations at each scale as distinct auditory strata.</li>
+<li>A <strong>Riemannian geometric pathology formalism</strong>, adapted from DW58553909, including the Curvature Inversion Equation and Attractor Fracture criterion.</li>
+<li>An <strong>extended AID coupling architecture</strong> incorporating terahertz precursors, atmospheric, oceanic, tidal, rotational, and geomagnetic forcings.</li>
+<li>A <strong>phase-locking cascade criterion</strong> that distinguishes tectonic cascades from environmental artifacts.</li>
+<li>A <strong>Lyapunov-type stability analysis under stated assumptions</strong> for the four-tiered adaptive estimator.</li>
+<li>A <strong>sonification interface</strong> providing a concrete human-machine interaction layer.</li>
+</ol>
+<p>Section 2 presents the conceptual foundation. Section 3 develops the geometric pathology of seismic nucleation. Section 4 describes trans-scale state estimation. Section 5 presents the AID dynamics. Sections 6–12 develop the remaining theoretical components. Sections 13–18 present adaptive parameter learning, statistical forecasting formulation, numerical experiments, prospective validation, ablation experiments, and stability analysis. Sections 19–24 present limitations, research roadmap, sonification, historical interpretation, discussion, and conclusion. Appendices provide validation experiments, terminology, and the correspondence table with DW58553912.</p>
+<hr />
+<h2 id="2-conceptual-foundation">2. Conceptual Foundation</h2>
+<h3 id="21-the-earth-as-a-driven-nonequilibrium-system">2.1 The Earth as a Driven Nonequilibrium System</h3>
+<p>The Earth is continuously driven by tectonic loading, gravitational forcing, fluid migration, thermal processes, atmospheric pressure, ocean loading, and other environmental processes. Let</p>
+<div class="math-block">$$
+x(t)\in\mathcal M
+$$</div>
+<p>represent a latent state of the monitored Earth system. Its evolution is represented generically as</p>
+<div class="math-block">$$
+\dot{x} = F_{\rm tectonic}(x) + F_{\rm env}(t) + F_{\rm nuc}(x) + D(x,t) + \xi(t), \quad (1)
+$$</div>
+<p>where:</p>
+<ul>
+<li>$F_{\rm tectonic}$ represents tectonic loading;</li>
+<li>$F_{\rm env}$ represents environmental forcing;</li>
+<li>$F_{\rm nuc}$ represents candidate nucleation-scale processes;</li>
+<li>$D$ represents cross-scale coupling;</li>
+<li>$\xi$ represents stochastic forcing and unresolved processes.</li>
+</ul>
+<p>The purpose of AID is not to assume that the exact physical state $x$ is directly observable. Instead, the architecture estimates a reduced state:</p>
+<div class="math-block">$$
+\hat{x}(t) = \mathcal A[\mathcal D_{0:t}],
+$$</div>
+<p>where $\mathcal A$ is an adaptive assimilation operator and $\mathcal D_{0:t}$ is the complete observational history.</p>
+<hr />
+<h3 id="22-four-nested-representational-layers">2.2 Four Nested Representational Layers</h3>
+<p>The architecture defines:</p>
+<div class="math-block">$$
+\mathcal S = \{ N,72,24,12 \}.
+$$</div>
+<p>Here $N$ denotes the nucleation layer. The remaining three indices correspond to representational anchors:</p>
+<div class="math-block">$$
+2^{1/72}, \qquad 2^{1/24}, \qquad 2^{1/12}.
+$$</div>
+<p>The nested state architecture is written as</p>
+<div class="math-block">$$
+\boxed{ \mathcal Z_N \subset \mathcal Z_{72} \subset \mathcal Z_{24} \subset \mathcal Z_{12} \subset \mathcal M. } \quad (2)
+$$</div>
+<p>Importantly, this relation is a <strong>model architecture</strong>, not a claim that physical space is literally divided into four nested manifolds having these numerical ratios.</p>
+<hr />
+<h3 id="23-zhu-zaiyu-and-the-inline_math_23-anchor">2.3 Zhu Zaiyu and the $2^{1/12}$ Anchor</h3>
+<p>Zhu Zaiyu's mathematical treatment of equal temperament established the twelfth-root-of-two ratio:</p>
+<div class="math-block">$$
+r_{12}=2^{1/12}.
+$$</div>
+<p>The mathematical relation is</p>
+<div class="math-block">$$
+(r_{12})^{12}=2. \quad (3)
+$$</div>
+<p>This provides a natural logarithmic representation of pitch. Within the present architecture, however, the ratio is not interpreted as a physical constant governing Earth's crust. Instead:</p>
+<div class="math-block">$$
+\boxed{ 2^{1/12} = \text{harmonic encoding anchor}. }
+$$</div>
+<p>It provides a mathematically exact map between normalized physical deviations and perceptual pitch. This distinction is fundamental.</p>
+<hr />
+<h3 id="24-the-inline_math_24-and-inline_math_25-anchors">2.4 The $2^{1/24}$ and $2^{1/72}$ Anchors</h3>
+<p>The 24 solar terms and 72 pentads provide historically established subdivisions of seasonal and phenological cycles. In this architecture they are used as <strong>temporal organization anchors</strong>. The corresponding logarithmic ratios are</p>
+<div class="math-block">$$
+r_{24}=2^{1/24}, \quad (4)
+$$</div>
+<p>and</p>
+<div class="math-block">$$
+r_{72}=2^{1/72}. \quad (5)
+$$</div>
+<p>They do not represent empirically established geophysical constants. Instead they provide a hierarchical coordinate system for organizing slowly varying environmental and phenomenological information. Thus:</p>
+<div class="math-block">$$
+\boxed{ 12,\;24,\;72 \text{ are representational symmetries, not assumed physical laws.} }
+$$</div>
+<hr />
+<h3 id="25-the-daoist-principle-of-chong-qi-yi-he">2.5 The Daoist Principle of <em>Chong Qi Yi He</em></h3>
+<p>The <em>Tao Te Ching</em> states:</p>
+<blockquote>
+<p>万物负阴而抱阳，冲气以为和。</p>
+</blockquote>
+<p>Within the mathematical architecture:</p>
+<div class="math-block">$$
+\text{Yin} \rightarrow \text{stored deviation / potential}.
+$$</div>
+<div class="math-block">$$
+\text{Yang} \rightarrow \text{restorative response}.
+$$</div>
+<div class="math-block">$$
+\text{Chong Qi} \rightarrow \text{cross-scale coupling and fluctuation}.
+$$</div>
+<div class="math-block">$$
+\text{He} \rightarrow \text{bounded dynamical state}.
+$$</div>
+<p>This should not be confused with a physical claim that the Earth is biologically alive. A more precise scientific interpretation is:</p>
+<div class="math-block">$$
+\boxed{ \text{Earthquake rupture may be modeled as a relaxation event in a driven nonequilibrium system.} } \quad (6)
+$$</div>
+<p>The metaphor of "planetary breathing" is therefore an interpretive visualization of nonlinear loading and relaxation.</p>
+<hr />
+<h2 id="3-geometric-pathology-of-seismic-nucleation">3. Geometric Pathology of Seismic Nucleation</h2>
+<p>The geometric pathology formalism presented in this section is adapted from DW58553909. In DW58553909 the full mathematical derivation is given. Here we specialize the formalism to seismic nucleation. A key methodological point is maintained throughout:</p>
+<div class="math-block">$$
+\boxed{ \text{geometric structure identifies candidate organization; dynamical stability must be determined from the flow.} }
+$$</div>
+<p>The curvature inversion equation below does not by itself determine earthquake instability. It identifies a geometric precondition under which the Jacobian spectrum may approach marginal stability.</p>
+<hr />
+<h3 id="31-the-stress-driven-metric-evolution-law">3.1 The Stress-Driven Metric Evolution Law</h3>
+<p>We consider a fault system as a complex adaptive system whose states are confined to a differentiable seismic state manifold $\mathcal{M}$ of dimension $d = \dim \mathcal{M} &gt; 2$. The local geometric structures of this parameter space—such as structural distinguishability, sensitivity, and transport efficiency—are determined by a data-derived, smooth Riemannian metric tensor $g_{\mu\nu}$. In a baseline locked state, $g_{\mu\nu}$ maintains a configuration dominated by negative scalar curvature $R &lt; 0$, establishing a convergent topological landscape where natural background fluctuations are structurally guided back into stable locked basins.</p>
+<p>To model the progression of seismic nucleation, we introduce a localized, non-stationary tectonic stress field $\chi(x, t) \in \mathbb{R}^k$, representing sustained tectonic loading, pore pressure diffusion, or thermal stress. We hypothesize that prolonged exposure to $\chi$ forces a dynamic, non-equilibrium deformation of the underlying manifold geometry. We formalize this process via a covariant geometric flow equation governing the rate of metric variation:</p>
+<div class="math-block">$$
+\frac{\partial g_{\mu\nu}}{\partial t} = -2 \gamma_{\rm response} R_{\mu\nu} + \alpha_{\rm stress} T_{\mu\nu}(\chi) - \beta_{\rm dissipation} g_{\mu\nu} \quad (7)
+$$</div>
+<p>where:</p>
+<ul>
+<li>$R_{\mu\nu}$ is the Ricci curvature tensor of $(\mathcal{M}, g)$;</li>
+<li>$\gamma_{\rm response} &gt; 0$ represents the intrinsic relaxation rate of the fault attempting to return to locked configuration;</li>
+<li>$\beta_{\rm dissipation} &gt; 0$ denotes the spontaneous healing or stress dissipation rate;</li>
+<li>$\alpha_{\rm stress}$ defines the structural coupling susceptibility of the seismic state space to the stress energy-momentum tensor $T_{\mu\nu}(\chi)$.</li>
+</ul>
+<p>To ensure strict coordinate invariance, $T_{\mu\nu}(\chi)$ is constructed from the first covariant derivatives of the stress field:</p>
+<div class="math-block">$$
+T_{\mu\nu}(\chi) = \nabla_\mu \chi \nabla_\nu \chi - \frac{1}{2} g_{\mu\nu} g^{\alpha\beta} \nabla_\alpha \chi \nabla_\beta \chi. \quad (8)
+$$</div>
+<p>Here $\nabla$ denotes the Levi-Civita connection associated with $g_{\mu\nu}$.</p>
+<hr />
+<h3 id="32-infinitesimal-variations-of-the-connection-and-ricci-tensors">3.2 Infinitesimal Variations of the Connection and Ricci Tensors</h3>
+<p>To map how the stress tensor deforms local state trajectories, we evaluate the variations of the geometric invariants over an incremental time step $\delta t$. Let the instantaneous time-derivative of the metric tensor be denoted by the symmetric tensor field $h_{\mu\nu}$:</p>
+<div class="math-block">$$
+h_{\mu\nu} \equiv \frac{\partial g_{\mu\nu}}{\partial t}. \quad (9)
+$$</div>
+<p>By taking the derivative of the identity $g_{\mu\alpha} g^{\alpha\nu} = \delta_\mu^\nu$, the corresponding variation of the inverse metric is</p>
+<div class="math-block">$$
+\frac{\partial g^{\mu\nu}}{\partial t} = -g^{\mu\alpha} g^{\nu\beta} h_{\alpha\beta} \equiv -h^{\mu\nu}. \quad (10)
+$$</div>
+<p>The variation of the Christoffel symbols $\Gamma^\rho_{\mu\nu}$ under $h_{\mu\nu}$ does not depend on coordinate choices and transforms as a genuine tensor field. Applying Palatini's identity, the time evolution of the connection components resolves to:</p>
+<div class="math-block">$$
+\frac{\partial \Gamma^\rho_{\mu\nu}}{\partial t} = \frac{1}{2} g^{\rho\sigma} \left( \nabla_\mu h_{\nu\sigma} + \nabla_\nu h_{\mu\sigma} - \nabla_\sigma h_{\mu\nu} \right). \quad (11)
+$$</div>
+<p>The Riemann curvature tensor $R^\rho_{\;\sigma\mu\nu}$ is defined via the commutator of covariant derivatives. Taking the time derivative of the Riemann components and contracting over indices yields the generalized Palatini variation for the Ricci tensor:</p>
+<div class="math-block">$$
+\frac{\partial R_{\mu\nu}}{\partial t} = \nabla_\rho \left( \frac{\partial \Gamma^\rho_{\mu\nu}}{\partial t} \right) - \nabla_\nu \left( \frac{\partial \Gamma^\rho_{\mu\rho}}{\partial t} \right). \quad (12)
+$$</div>
+<p>Substituting Eq. (11) into Eq. (12) and commuting covariant derivatives yields:</p>
+<div class="math-block">$$
+\frac{\partial R_{\mu\nu}}{\partial t} = \frac{1}{2} \left( \nabla^\rho \nabla_\mu h_{\nu\rho} + \nabla^\rho \nabla_\nu h_{\mu\rho} - \Delta_g h_{\mu\nu} - \nabla_\mu \nabla_\nu h \right), \quad (13)
+$$</div>
+<p>where $\Delta_g \equiv \nabla^\rho \nabla_\rho$ is the Beltrami–Laplace operator on $(\mathcal{M}, g)$, and $h \equiv h^\alpha_{\;\alpha} = g^{\alpha\beta} h_{\alpha\beta}$ is the trace of the metric deformation tensor.</p>
+<hr />
+<h3 id="33-derivation-of-the-scalar-curvature-propagation-equation">3.3 Derivation of the Scalar Curvature Propagation Equation</h3>
+<p>The scalar curvature $R$ is the trace of the Ricci tensor:</p>
+<div class="math-block">$$
+R = g^{\mu\nu} R_{\mu\nu}.
+$$</div>
+<p>Differentiating with respect to time gives two geometric contributions:</p>
+<div class="math-block">$$
+\frac{\partial R}{\partial t} = \frac{\partial g^{\mu\nu}}{\partial t} R_{\mu\nu} + g^{\mu\nu} \frac{\partial R_{\mu\nu}}{\partial t}. \quad (14)
+$$</div>
+<p>Substituting Eq. (10) and Eq. (13) into Eq. (14):</p>
+<div class="math-block">$$
+\frac{\partial R}{\partial t} = -h^{\mu\nu} R_{\mu\nu} + \frac{1}{2} g^{\mu\nu} \left( \nabla^\rho \nabla_\mu h_{\nu\rho} + \nabla^\rho \nabla_\nu h_{\mu\rho} - \Delta_g h_{\mu\nu} - \nabla_\mu \nabla_\nu h \right). \quad (15)
+$$</div>
+<p>Distributing $g^{\mu\nu}$ and using metric compatibility $\nabla_\rho g_{\mu\nu} = 0$, we collect and simplify the covariant derivative terms:</p>
+<div class="math-block">$$
+g^{\mu\nu} \nabla^\rho \nabla_\mu h_{\nu\rho} = \nabla^\rho \nabla^\nu h_{\nu\rho} = \nabla^\mu \nabla^\nu h_{\mu\nu}, \quad (16)
+$$</div>
+<div class="math-block">$$
+g^{\mu\nu} \Delta_g h_{\mu\nu} = \Delta_g (g^{\mu\nu} h_{\mu\nu}) = \Delta_g h, \quad (17)
+$$</div>
+<div class="math-block">$$
+g^{\mu\nu} \nabla_\mu \nabla_\nu h = \Delta_g h. \quad (18)
+$$</div>
+<p>Combining these contractions transforms Eq. (15) into the general, coordinate-invariant geometric equation for scalar curvature propagation:</p>
+<div class="math-block">$$
+\frac{\partial R}{\partial t} = -\Delta_g h + \nabla^\mu \nabla^\nu h_{\mu\nu} - h^{\mu\nu} R_{\mu\nu}. \quad (19)
+$$</div>
+<p>Equation (19) is the exact propagation identity used below. It is the starting point for the seismic specialization.</p>
+<hr />
+<h3 id="34-the-curvature-inversion-equation-and-pathological-phase-transitions">3.4 The Curvature Inversion Equation and Pathological Phase Transitions</h3>
+<p>To isolate a candidate mechanism of pathological landscape restructuring, we specialize Eq. (19) to a regime where stress-tensor gradients dominate short-term structural variations. In this regime, the metric deformation tensor is approximated by the stress contribution:</p>
+<div class="math-block">$$
+h_{\mu\nu} \approx \alpha_{\rm stress} T_{\mu\nu}(\chi). \quad (20)
+$$</div>
+<p>Contracting Eq. (8) with the inverse metric gives the scalar trace of the stress perturbation field:</p>
+<div class="math-block">$$
+h = g^{\mu\nu} h_{\mu\nu} = \alpha_{\rm stress} \left( \frac{2 - d}{2} \right) \|\nabla \chi\|^2, \quad (21)
+$$</div>
+<p>where $\|\nabla \chi\|^2 \equiv g^{\alpha\beta} \nabla_\alpha \chi \nabla_\beta \chi$.</p>
+<p>We now substitute Eq. (20) and Eq. (21) into Eq. (19). The three terms on the right-hand side of Eq. (19) are handled as follows.</p>
+<p><strong>Term 1</strong> — $-\Delta_g h$:</p>
+<div class="math-block">$$
+-\Delta_g h = -\alpha_{\rm stress} \left( \frac{2 - d}{2} \right) \Delta_g \|\nabla \chi\|^2 = \alpha_{\rm stress} \left( \frac{d - 2}{2} \right) \Delta_g \|\nabla \chi\|^2. \quad (22)
+$$</div>
+<p><strong>Term 2</strong> — $\nabla^\mu \nabla^\nu h_{\mu\nu}$:</p>
+<div class="math-block">$$
+\nabla^\mu \nabla^\nu h_{\mu\nu} = \alpha_{\rm stress} \nabla^\mu \nabla^\nu \left( \nabla_\mu \chi \nabla_\nu \chi - \frac{1}{2} g_{\mu\nu} \|\nabla \chi\|^2 \right). \quad (23)
+$$</div>
+<p><strong>Term 3</strong> — $-h^{\mu\nu} R_{\mu\nu}$:</p>
+<div class="math-block">$$
+-h^{\mu\nu} R_{\mu\nu} = -\alpha_{\rm stress} T^{\mu\nu}(\chi) R_{\mu\nu}. \quad (24)
+$$</div>
+<p>Combining Eq. (22)–(24) with the Ricci-flow and dissipation contributions from the full metric evolution law Eq. (7), we obtain the following <strong>effective Curvature Inversion Equation</strong>:</p>
+<div class="math-block">$$
+\boxed{ \frac{\partial R}{\partial t} = \alpha_{\rm stress} \left[ \left( \frac{d - 2}{2} \right) \Delta_g \|\nabla \chi\|^2 + \nabla^\mu \nabla^\nu \left( \nabla_\mu \chi \nabla_\nu \chi - \frac{1}{2} g_{\mu\nu} \|\nabla \chi\|^2 \right) \right] - \alpha_{\rm stress} T^{\mu\nu}(\chi) R_{\mu\nu} - \Delta_g R - 2 \gamma_{\rm response} \|{\rm Ric}\|^2 + \beta_{\rm dissipation} R. } \quad (25)
+$$</div>
+<p>where $\|{\rm Ric}\|^2 \equiv R_{\mu\nu} R^{\mu\nu}$ represents the squared norm of the Ricci tensor.</p>
+<p><strong>Remark on derivation.</strong> Equation (25) should be interpreted as an effective or heuristic curvature-evolution equation. The exact identity is Eq. (19). The transition to Eq. (25) uses three simplifications. First, the term $-\Delta_g h$ is rewritten using the trace identity Eq. (21). Second, the term $\nabla^\mu \nabla^\nu h_{\mu\nu}$ is retained in full covariant form. Third, the term $-h^{\mu\nu} R_{\mu\nu}$ is retained explicitly, while the Ricci-flow contribution $-2\gamma_{\rm response} \|{\rm Ric}\|^2$ and the dissipation term $\beta_{\rm dissipation} R$ are inherited from the full flow Eq. (7). The term $-\Delta_g R$ is a phenomenological Laplacian damping term for the scalar curvature. Full derivation and justification are given in DW58553909. In this paper, Eq. (25) is used only as a diagnostic and hypothesis-generating equation, not as a closed physical law.</p>
+<p>Equation (25) provides a geometric precondition for the breakdown of seismic stability. In high-dimensional state spaces $d &gt; 2$, the term</p>
+<div class="math-block">$$
+\left( \frac{d - 2}{2} \right) \Delta_g \|\nabla \chi\|^2
+$$</div>
+<p>acts as a geometric topological pump. When a severe, chronic stress field sets up sharp, localized spatial or informational gradients $\Delta_g \|\nabla \chi\|^2 &gt; 0$, this structural pump drives an accelerated local accumulation of positive scalar curvature.</p>
+<p>Under normal locked conditions, the background dissipative dampening term $-2 \gamma_{\rm response} \|{\rm Ric}\|^2 &lt; 0$ suppresses minor environmental fluctuations, locking the system into its locked configuration. However, if the stress gradient crosses a critical threshold,</p>
+<div class="math-block">$$
+\alpha_{\rm stress} \left[ \left( \frac{d - 2}{2} \right) \Delta_g \|\nabla \chi\|^2 + \cdots \right] &gt; 2 \gamma_{\rm response} \|{\rm Ric}\|^2, \quad (26)
+$$</div>
+<p>the protective stability barrier may collapse. $\partial R/\partial t$ may undergo a sign inversion, flipping the local manifold from a convergent negative-curvature basin into a divergent positive-curvature zone $R_{\text{pathological}} &gt; 0$. This metric phase transition provides a geometric precondition for the crystallization of a seismic attractor. Whether such crystallization actually occurs, and whether it produces a detectable earthquake precursor, must be determined by the dynamical flow, especially the Jacobian spectrum, and tested prospectively.</p>
+<hr />
+<h3 id="35-attractor-fracture-and-morsesmale-complex-deformations">3.5 Attractor Fracture and Morse–Smale Complex Deformations</h3>
+<h4 id="351-the-morphogenesis-of-pathological-topology">3.5.1 The Morphogenesis of Pathological Topology</h4>
+<p>To understand the stabilization of a seismic state once the curvature inversion threshold Eq. (26) is violated, the analytical architecture shifts from local differential metrics to global qualitative dynamics. We represent the unperturbed deterministic trajectory of the seismic system as a smooth drift vector field $f(z)$ on the state manifold $\mathcal{M}$. In a healthy locked fault, the flow generated by $f(z)$ is structurally stable and Morse–Smale: the number of critical points is finite, all critical points are hyperbolic, and their stable and unstable manifolds intersect transversally.</p>
+<p>Chronic parameter deformation shifts the system into a non-conservative, open thermodynamic regime. We model this by expressing the vector field as a function of the local metric state and an active potential function $\mathcal{F}(z)$, augmented by an uncompensated, non-gradient regularizing field $\xi(z)$ that captures the fundamentally non-equilibrium nature of fault dynamics:</p>
+<div class="math-block">$$
+f^\mu(z) = -g^{\mu\nu}(z; \chi)\nabla_\nu \mathcal F(z) + \xi^\mu(z). \quad (27)
+$$</div>
+<p>Let $A_{\rm locked}$ represent the locked healthy attractor basin and $A_{\rm seismic}$ represent the seismic release channel. Under baseline conditions, the phase space topology is partitioned by a smooth, lower-dimensional separatrix $\mathcal{S}_{\rm stability}$, which acts as a stable manifold directing transient stress anomalies into $A_{\rm seismic}$ for release.</p>
+<p>The introduction of the positive curvature zone $R_{\rm pathological} &gt; 0$ may force a bifurcation in the Morse–Smale complex. As the stress profile deforms the metric tensor, it may create a new, structurally resilient critical point $z_{\rm seismic}$ of index 0, a sink, corresponding to the nucleation of a Seismic Attractor $A_{\rm seismic}$. The appearance of this state would rupture the existing phase portrait, forcing a global reorganization of invariant manifolds.</p>
+<h4 id="352-morse-theoretic-formulation-of-attractor-fracture">3.5.2 Morse-Theoretic Formulation of Attractor Fracture</h4>
+<p>Let $\mathcal{F}: \mathcal{M} \rightarrow \mathbb{R}$ be a smooth Morse function mapping the energy landscape of the fault system. The topology of the manifold sections $\mathcal{M}^a = \{z \in \mathcal{M} \mid \mathcal{F}(z) \le a\}$ is structurally invariant as long as the interval $[a, b]$ contains no critical values of $\mathcal{F}$. However, as the metric deforms under Eq. (7), the critical values corresponding to saddles and basins shift along the real line.</p>
+<p>We formalize the structural collapse of stability as an <strong>Attractor Fracture</strong>. Let $z_{\rm saddle}$ be a critical point of index 1 representing the energy barrier separating the locked basin from the invading seismic zone. The instant of fracture occurs when the saddle-to-basin energy threshold $\Delta \mathcal{F}(\chi)$ collapses to a singular value:</p>
+<div class="math-block">$$
+\lim_{\chi \to \chi_c} \Delta \mathcal{F}(\chi) = \lim_{\chi \to \chi_c} \left[ \mathcal F(z_{\rm saddle}) - \mathcal F(z_{\rm locked}) \right] = 0. \quad (28)
+$$</div>
+<p>At the critical boundary $\chi = \chi_c$, the unstable manifold of the saddle $W^u(z_{\rm saddle})$ may undergo a topological catastrophe. The transversality condition of the Morse–Smale complex may be broken:</p>
+<div class="math-block">$$
+W^u(z_{\rm saddle}) \cap W^s(z_{\rm seismic}) \rightarrow \emptyset. \quad (29)
+$$</div>
+<p>Equation (29) provides a topological criterion for seismic nucleation that must be tested prospectively against null models. It suggests that the basin of seismic release may become detached from the local state coordinates of the stressed fault. The phase space may be torn; the system may lose access to the self-correcting locked pathways.</p>
+<h4 id="353-the-structural-shift-in-invariant-manifolds-and-betti-numbers">3.5.3 The Structural Shift in Invariant Manifolds and Betti Numbers</h4>
+<p>To quantify the macroscopic reorganization of the state space during an attractor fracture, we track the evolution of global topology using homology groups and their corresponding Betti numbers $\beta_k(\mathcal{M})$. According to Morse theory, when a critical point of index $\lambda$ is added to a manifold, the topology changes as if a $\lambda$-cell were glued to the space.</p>
+<p>The nucleation of the seismic sink $z_{\rm seismic}$, index $\lambda = 0$, and its accompanying saddle $z_{\rm saddle}$, index $\lambda = 1$, alters the rank of the cellular homology chains. The transition from locked to seismic state is defined by a shift in the alternating sum of Betti numbers, mapping a transition in the Euler characteristic $\chi(\mathcal{M})$ of the accessible state space:</p>
+<div class="math-block">$$
+\Delta \chi(\mathcal{M}) = \sum_{k=0}^{d} (-1)^k \Delta \beta_k(\mathcal{M}) = \Delta n_0 - \Delta n_1 + \Delta n_2 - \dots \quad (30)
+$$</div>
+<p>where $n_\lambda$ is the number of critical points of index $\lambda$.</p>
+<p>When the attractor fractures at $\chi_c$, the creation of the seismic sink increases the 0th Betti number, $\Delta \beta_0 = +1$, indicating the birth of an independent, isolated functional component in phase space. Concurrently, the collapse of the stability separatrix creates a non-transversal intersection that may permanently trap local trajectories within the new basin. The fault system's state space may undergo an irreversible phase transition: it may transition from a single, globally integrated locked system to a fractured manifold containing a rogue, self-sustaining seismic island.</p>
+<hr />
+<h3 id="36-mes-curvature-scaling-hypothesis-and-geodesic-capture-of-precursory-signals">3.6 MES Curvature-Scaling Hypothesis and Geodesic Capture of Precursory Signals</h3>
+<h4 id="361-curvature-scaling-ansatz">3.6.1 Curvature-Scaling Ansatz</h4>
+<p>When a localized seismic state completes its topological fracture from the global locked flow, the localized scalar curvature $R(z)$ within the core of the seismic attractor $A_{\rm seismic}$ deepens drastically. To model the resulting dynamic breakdown of precursory signal propagation near this nucleation zone, we introduce the Modified Einstein Spherical (MES) scaling ansatz. This architecture treats the interaction between the deformed state-space metric $g_{\mu\nu}(z)$ and the signal path as a purely geometric confinement problem.</p>
+<p>We map the local scalar curvature to the signal's effective informational inertia $m(z)$ and apparent signal velocity $c(z)$ through the following coupled relations:</p>
+<div class="math-block">$$
+c(z) = c_0 |R(z)|^{1/2}, \quad (31)
+$$</div>
+<div class="math-block">$$
+m(z) = m_0 |R(z)|^{-1/2}. \quad (32)
+$$</div>
+<p>where $c_0$ and $m_0$ represent baseline signal velocity scale and structural mass scale under flat, healthy conditions $R \to 0$. These relations are state-space scaling hypotheses, not relativistic physical laws. As a direct mathematical consequence of this tensor structure, when a precursory signal propagates into a high-curvature nucleation zone where $|R(z)| \to \infty$, its effective inertia drops toward zero while the local signal propagation velocity diverges toward infinity.</p>
+<h4 id="362-geodesic-motion-of-precursory-signals">3.6.2 Geodesic Motion of Precursory Signals</h4>
+<p>The path of a precursory signal moving through the seismic state space is represented by a parameterized curve $z^\mu(\tau)$, where $\tau$ is the signal's internal proper time. Rather than following Euclidean straight lines, the signal's trajectory is governed by the state-space geodesic equation derived from the principle of least action under the stress-deformed metric $g_{\mu\nu}$:</p>
+<div class="math-block">$$
+\frac{d^2 z^\mu}{d\tau^2} + \Gamma^\mu_{\alpha\beta} \frac{dz^\alpha}{d\tau} \frac{dz^\beta}{d\tau} = f_{\rm external}^\mu(z), \quad (33)
+$$</div>
+<p>where $\Gamma^\mu_{\alpha\beta}$ are the Christoffel symbols of the Levi-Civita connection associated with the stress-warped metric $g_{\mu\nu}(z; \chi)$, and $f_{\rm external}^\mu(z)$ represents non-geometric forces, e.g., external stress perturbations.</p>
+<p>We evaluate the signal's effective four-momentum $p^\mu$ under the MES scaling rules to capture its behavior within the nucleation zone:</p>
+<div class="math-block">$$
+p^\mu = m(z) \frac{dz^\mu}{d\tau}. \quad (34)
+$$</div>
+<p>Because the mass scales inversely with the curvature field, the standard invariant mass relation $g_{\mu\nu} p^\mu p^\nu = -m(z)^2 c(z)^2$ undergoes a structural simplification. Substituting Eq. (31) and Eq. (32) into the invariant mass constraint yields:</p>
+<div class="math-block">$$
+g_{\mu\nu} p^\mu p^\nu = -\left(m_0 |R|^{-1/2}\right)^2 \left(c_0 |R|^{1/2}\right)^2 = -m_0^2 c_0^2. \quad (35)
+$$</div>
+<p>Equation (35) reveals a geometric invariant: the total energy-momentum scalar of the precursory tracking system remains bounded and constant across all scales of pathological deformation, even as individual mass and velocity terms diverge.</p>
+<h4 id="363-the-mechanics-of-geodesic-capture-and-signal-amplification">3.6.3 The Mechanics of Geodesic Capture and Signal Amplification</h4>
+<p>To isolate the mechanism of the "gravity well" effect, we express the geodesic equation of motion Eq. (33) in terms of an effective radial coordinate $r$ measuring the distance in state space from the center of the seismic attractor $A_{\rm seismic}$. By projecting the signal's trajectory onto a two-dimensional equatorial slice of a spherically symmetric approximation of the localized metric, the radial acceleration can be modeled through an effective potential $V_{\rm eff}(r)$:</p>
+<div class="math-block">$$
+\frac{1}{2} \left(\frac{dr}{d\tau}\right)^2 + V_{\rm eff}(r) = E_{\rm signal}, \quad (36)
+$$</div>
+<p>where $E_{\rm signal}$ is the total conserved signal energy, and the effective geometric potential is defined by:</p>
+<div class="math-block">$$
+V_{\rm eff}(r) = -\frac{\alpha_{\rm stress} M_{\rm seismic}}{r} + \frac{L^2}{2 m(z)^2 r^2} - \frac{\alpha_{\rm stress} M_{\rm seismic} L^2}{c(z)^2 r^3}. \quad (37)
+$$</div>
+<p>where $M_{\rm seismic}$ represents the total integrated mass-energy of the pathological deformation, and $L$ is the conserved angular momentum of the signal's trajectory in state space.</p>
+<p>Substituting Eq. (31) and Eq. (32) directly into the effective potential equation yields:</p>
+<div class="math-block">$$
+V_{\rm eff}(r) = -\frac{\alpha_{\rm stress} M_{\rm seismic}}{r} + \frac{L^2 |R(z)|}{2 m_0^2 r^2} - \frac{\alpha_{\rm stress} M_{\rm seismic} L^2}{c_0^2 |R(z)| r^3}. \quad (38)
+$$</div>
+<p>As the signal approaches the core of the seismic state, $r \to 0$, the localized curvature scales rapidly toward infinity, $|R(z)| \to \infty$. This forces the third term, the relativistic geometric correction factor, to drop out, while the centrifugal barrier, the second term, scales aggressively upward, dominating the local landscape topology.</p>
+<p>Consequently, instead of penetrating the nucleation core, the precursory signal may experience a geometric repulsion from the center, combined with a loss of its own propagation inertia. The signal's trajectory may be forced to bend into a tight, stable orbit at a fixed radial boundary $r_{\rm capture}$ where $\partial V_{\rm eff}/\partial r = 0$. The signal may become <strong>geodesically captured</strong>. It orbits the seismic nucleus in a state of chronic, dysfunctional propagation—blinded by the extreme metric depth of the well and structurally barred from ever reaching the target state.</p>
+<p>This pure geometric confinement mechanism may explain why precursory signals frequently exhibit anomalous amplification near nucleation zones: the signals cannot penetrate the geometry of the well, but their orbital confinement produces measurable signatures.</p>
+<p><strong>Numerical example.</strong> To illustrate the geodesic capture mechanism quantitatively, consider representative dimensionless parameters: $\alpha_{\rm stress} = 0.1$, $M_{\rm seismic} = 1.0$, $c_0 = 1.0$, $m_0 = 1.0$, and angular momentum $L = 0.5$. The effective potential Eq. (38) becomes:</p>
+<div class="math-block">$$
+V_{\rm eff}(r) = -\frac{0.1}{r} + \frac{0.25 |R(z)|}{2 r^2} - \frac{0.1 \times 0.25}{c_0^2 |R(z)| r^3}. \quad (39)
+$$</div>
+<p>For a curvature field $|R(z)| = 10$ near the nucleation core, the capture radius $r_{\rm capture}$ is determined by solving $\partial V_{\rm eff}/\partial r = 0$. Carrying out the derivative:</p>
+<div class="math-block">$$
+\frac{\partial V_{\rm eff}}{\partial r} = \frac{0.1}{r^2} - \frac{0.25 \times 10}{r^3} + \frac{0.075}{10 \times r^4} = 0. \quad (40)
+$$</div>
+<p>Multiplying through by $r^4$ and simplifying:</p>
+<div class="math-block">$$
+0.1 r^2 - 2.5 r + 0.0075 = 0. \quad (41)
+$$</div>
+<p>Solving the quadratic yields the stable capture radius:</p>
+<div class="math-block">$$
+r_{\rm capture} \approx 24.997 \approx 25.0 \quad (42)
+$$</div>
+<p>in dimensionless state-space units. The orbital period at this radius is approximately:</p>
+<div class="math-block">$$
+\tau_{\rm orbit} = \frac{2\pi r_{\rm capture}^2}{L} \approx \frac{2\pi \times 625}{0.5} \approx 7854 \quad (43)
+$$</div>
+<p>in units of proper time. This demonstrates that precursory signals entering the high-curvature zone may be captured at a well-defined radius and persist in stable orbits for extended durations—a geometric signature that should be detectable as anomalous signal amplification or persistence in observational data.</p>
+<hr />
+<h3 id="37-landscape-reprogramming-and-geodesic-restoration">3.7 Landscape Reprogramming and Geodesic Restoration</h3>
+<p><strong>Precondition and safety restriction.</strong> In accordance with DW58553912 §27, physical stress or fluid intervention at identified Earthquake Acupoints is excluded from the present architecture. The following formalism is therefore retained only as a mathematical and observational hypothesis. Any future physical intervention would require that human technological capability be sufficiently advanced and that strict independent safety assessment and ethical review be completed. The operational scope of this architecture remains exclusively adaptive observation, sensor densification, and inference-landscape reprogramming.</p>
+<p>Curvature and Morse–Smale topological quantities are properties of the estimated manifold $\hat{\mathcal M}$ and do not necessarily correspond to the real Earth's crust. Decimation artifact tests, Jacobian-spectrum examination, and geometric-layer ablation must be performed before judging whether geometric diagnostics are physically real.</p>
+<h4 id="371-formal-definition-of-the-reprogramming-tensor-field">3.7.1 Formal Definition of the Reprogramming Tensor Field</h4>
+<p>To counteract the catastrophic metric deformation derived in Eq. (25) and liberate geodesically captured precursory signals from the seismic attractor, an interventional strategy must operate at the same structural layer as the pathology. We therefore introduce an exogenous control field, formalized as the Landscape Reprogramming Operator $\hat{\mathcal{O}}_{\text{therapy}}$, which acts as a tensor perturbation on the non-equilibrium metric flow:</p>
+<div class="math-block">$$
+\frac{\partial g_{\mu\nu}}{\partial t} = -2 \gamma_{\rm response} R_{\mu\nu} + \alpha_{\rm stress} T_{\mu\nu}(\chi) - \beta_{\rm dissipation} g_{\mu\nu} + \hat{\mathcal{O}}_{\text{therapy}}[g_{\mu\nu}, T_{\mu\nu}]. \quad (44)
+$$</div>
+<p>The primary objective of $\hat{\mathcal{O}}_{\text{therapy}}$ is not the immediate destruction of the states occupying $z_{\rm seismic}$. Rather, it is designed to inject a negative energy-momentum tensor field that precisely cancels the warp induced by the chronic stress field gradient $\nabla\chi$. We define the functional architecture of this operator as:</p>
+<div class="math-block">$$
+\hat{\mathcal{O}}_{\text{therapy}}[g_{\mu\nu}, T_{\mu\nu}] = -\alpha_{\text{therapy}} \left( \Phi_{\mu\nu}(z, t) - \frac{1}{2} g_{\mu\nu} g^{\alpha\beta} \Phi_{\alpha\beta}(z, t) \right), \quad (45)
+$$</div>
+<p>where $\alpha_{\text{therapy}} &gt; 0$ is the calibrated intervention intensity, and $\Phi_{\mu\nu}$ is a smooth, engineered symmetric tensor field representing the spatial and informational deployment of the treatment vector. In the present architecture, $\Phi_{\mu\nu}$ is interpreted observationally, not physically.</p>
+<h4 id="372-mathematical-flattening-of-the-malignant-gravity-well">3.7.2 Mathematical Flattening of the Malignant Gravity Well</h4>
+<p>We evaluate the temporal evolution of the scalar curvature $R$ under the combined influence of the stress driver and the landscape reprogramming operator. By applying the general scalar curvature propagation Eq. (19) to the modified metric flow Eq. (44), we obtain the controlled curvature evolution layout:</p>
+<div class="math-block">$$
+\frac{\partial R}{\partial t} = \left( \frac{\partial R}{\partial t} \right)_{\text{stress}} - \alpha_{\text{therapy}} \left[ \left( \frac{d - 2}{2} \right) \Delta_g \|\Phi\|^2 + \nabla^\mu \nabla^\nu \left( \Phi_{\mu\nu} - \frac{1}{2} g_{\mu\nu} \|\Phi\|^2 \right) \right]. \quad (46)
+$$</div>
+<p>where $\|\Phi\|^2 \equiv g^{\mu\alpha} g^{\nu\beta} \Phi_{\mu\nu} \Phi_{\alpha\beta}$. To successfully dissolve the malignant gravity well and eliminate the functional dysengagement of captured precursory signals, the reprogramming operator must satisfy the Strict Geometric Flattening Condition:</p>
+<div class="math-block">$$
+\alpha_{\text{therapy}} \left[ \left( \frac{d - 2}{2} \right) \Delta_g \|\Phi\|^2 + \dots \right] \ge \alpha_{\rm stress} \left[ \left( \frac{d - 2}{2} \right) \Delta_g \|\nabla \chi\|^2 + \dots \right]. \quad (47)
+$$</div>
+<p>When Condition Eq. (47) is satisfied over the local coordinate volume containing the seismic attractor, the localized curvature inversion is reversed. $\partial R/\partial t$ drops below zero, driving the pathological positive scalar curvature back to the homeostatic baseline:</p>
+<div class="math-block">$$
+R_{\rm pathological} \longrightarrow R_{\rm baseline} &lt; 0. \quad (48)
+$$</div>
+<p>As the gravity well flattens, the centrifugal barrier in the effective potential Eq. (38) collapses, stripping the seismic core of its geodesic capture capability.</p>
+<h4 id="373-geodesic-restoration-and-the-re-opening-of-release-channels">3.7.3 Geodesic Restoration and the Re-opening of Release Channels</h4>
+<p>Once the malignant curvature well is flattened, the global topology must be repaired to ensure that structural fluctuations can guide the system out of the lingering seismic state. The disappearance of the positive curvature zone destabilizes the seismic critical point $z_{\rm seismic}$. The topological phase transition is reversed via a controlled fold or saddle-node bifurcation in the Morse–Smale complex:</p>
+<div class="math-block">$$
+z_{\rm seismic} \cap z_{\rm saddle} \longrightarrow \emptyset. \quad (49)
+$$</div>
+<p>As these pathological critical points annihilate each other, the fractured invariant manifolds are re-welded. The transversality condition of the Morse–Smale complex is restored, re-opening the collapsed energy barriers:</p>
+<div class="math-block">$$
+W^u(z_{\rm saddle}) \cap W^s(z_{\rm seismic}) \neq \emptyset. \quad (50)
+$$</div>
+<p>Equation (50) formalizes the exact moment of Geodesic Restoration. With the topological fracture repaired, the minimal-action pathways through the seismic state space are unblocked. Infiltrating precursory signals are no longer forced into dysfunctional, bounded orbits around a malignant node. Instead, the native, noise-driven background fluctuations of the covariant Fokker–Planck equation can once again spontaneously guide the fault system's state vector along clean, uninhibited geodesic trajectories back into the locked homeostatic clearance basins, achieving complete systemic stability.</p>
+<hr />
+<h2 id="4-trans-scale-state-estimation">4. Trans-Scale State Estimation</h2>
+<h3 id="41-observational-state-vector">4.1 Observational State Vector</h3>
+<p>The complete observational vector is defined as</p>
+<div class="math-block">$$
+y(t) = \begin{bmatrix} y_N(t)\\ y_{AE}(t)\\ y_{EM}(t)\\ y_{\epsilon}(t)\\ y_{seis}(t)\\ y_{atm}(t)\\ y_{ocean}(t)\\ y_{LOD}(t)\\ y_{Dst}(t) \end{bmatrix}. \quad (51)
+$$</div>
+<p>The components may include:</p>
+<ul>
+<li>candidate THz emissions;</li>
+<li>neutron or particle count rates;</li>
+<li>acoustic emissions;</li>
+<li>electromagnetic emissions;</li>
+<li>strain and deformation;</li>
+<li>seismic observations;</li>
+<li>atmospheric pressure;</li>
+<li>sea-level or ocean-loading data;</li>
+<li>length-of-day variations;</li>
+<li>geomagnetic indices.</li>
+</ul>
+<p>The system is therefore fundamentally a <strong>multimodal data-assimilation architecture</strong>.</p>
+<hr />
+<h3 id="42-observation-model">4.2 Observation Model</h3>
+<p>For each layer $i$,</p>
+<div class="math-block">$$
+y_i(t) = H_i x_i(t) + v_i(t), \quad (52)
+$$</div>
+<p>where $H_i$ is the observation operator and $v_i(t)$ is measurement noise. The full observation model becomes</p>
+<div class="math-block">$$
+y(t)=H x(t)+v(t). \quad (53)
+$$</div>
+<p>Different instruments observe different projections of the underlying physical state. No single sensor is assumed to observe the complete earthquake-preparation state.</p>
+<hr />
+<h3 id="43-the-nucleation-channel">4.3 The Nucleation Channel</h3>
+<p>For the candidate nucleation layer,</p>
+<div class="math-block">$$
+x_N(t) = \begin{bmatrix} E_N(t)\\ \Phi_n(t)\\ A_{AE}(t)\\ \dot E_N(t) \end{bmatrix}. \quad (54)
+$$</div>
+<p>Here:</p>
+<ul>
+<li>$E_N$ is integrated high-frequency emission energy;</li>
+<li>$\Phi_n$ is particle count rate;</li>
+<li>$A_{AE}$ is acoustic-emission activity;</li>
+<li>$\dot E_N$ is the temporal rate of change of nucleation energy.</li>
+</ul>
+<p>The crucial quantity is not necessarily the instantaneous THz carrier frequency. Instead, define an integrated energy:</p>
+<div class="math-block">$$
+E_N(t) = \int_{\omega_1}^{\omega_2} S(\omega,t)\,d\omega. \quad (55)
+$$</div>
+<p>This resolves the distinction between carrier frequency and precursor timescale:</p>
+<div class="math-block">$$
+\boxed{ \text{carrier frequency} \neq \text{precursor accumulation timescale}. }
+$$</div>
+<p>A THz carrier can therefore be associated with a slowly evolving envelope.</p>
+<hr />
+<h2 id="5-scale-dependent-imbalance">5. Scale-Dependent Imbalance</h2>
+<h3 id="51-definition">5.1 Definition</h3>
+<p>For each layer,</p>
+<div class="math-block">$$
+B_i(t) = \frac{ \|\Pi_i[\dot{\varepsilon}(t)] - \mu_i(t)\| }{ \sigma_i(t)+\epsilon }, \quad (56)
+$$</div>
+<p>where:</p>
+<ul>
+<li>$\Pi_i$ is the scale-specific observation operator;</li>
+<li>$\mu_i$ is an adaptive baseline;</li>
+<li>$\sigma_i$ is the local variability;</li>
+<li>$\epsilon&gt;0$ prevents numerical singularity.</li>
+</ul>
+<p>Thus $B_i$ is a dimensionless anomaly score. A value</p>
+<div class="math-block">$$
+B_i\approx0
+$$</div>
+<p>corresponds to behavior consistent with the current adaptive baseline. A large value</p>
+<div class="math-block">$$
+|B_i|\gg1
+$$</div>
+<p>indicates an anomalous deviation.</p>
+<hr />
+<h3 id="52-adaptive-baseline">5.2 Adaptive Baseline</h3>
+<p>The baseline must evolve because the Earth is nonstationary. We therefore define</p>
+<div class="math-block">$$
+\dot{\mu}_i = \alpha_i [ y_i-\mu_i ], \quad (57)
+$$</div>
+<p>and</p>
+<div class="math-block">$$
+\dot{\sigma}_i = \beta_i [ |y_i-\mu_i|-\sigma_i ]. \quad (58)
+$$</div>
+<p>This prevents the system from treating ordinary seasonal or tectonic variability as an anomaly. Scale separation and reference-state extraction must satisfy the constraints established in DW58553912 §4.3.</p>
+<hr />
+<h2 id="6-adaptive-intelligence-dao-dynamics">6. Adaptive Intelligence Dao Dynamics</h2>
+<h3 id="61-general-aid-equation">6.1 General AID Equation</h3>
+<p>The central dynamical equation is</p>
+<div class="math-block">$$
+\boxed{ \dot{x} = F_{\rm tectonic}(x) + F_{\rm atm}(P) + F_{\rm ocean}(SLA) + F_N(E_N,\Phi_n) - \sum_i \Gamma_i\psi_i(B_i) + D(x) + \xi(t). } \quad (59)
+$$</div>
+<p>The terms have the following interpretation:</p>
+<div class="math-block">$$
+F_{\rm tectonic} \rightarrow \text{driving},
+$$</div>
+<div class="math-block">$$
+F_{\rm atm},F_{\rm ocean} \rightarrow \text{environmental forcing},
+$$</div>
+<div class="math-block">$$
+F_N \rightarrow \text{candidate nucleation forcing},
+$$</div>
+<div class="math-block">$$
+-\Gamma_i\psi_i \rightarrow \text{adaptive restoring response},
+$$</div>
+<div class="math-block">$$
+D(x) \rightarrow \text{cross-scale coupling},
+$$</div>
+<div class="math-block">$$
+\xi(t) \rightarrow \text{stochastic uncertainty}.
+$$</div>
+<hr />
+<h3 id="62-nonlinear-restoring-operator">6.2 Nonlinear Restoring Operator</h3>
+<p>Define</p>
+<div class="math-block">$$
+\psi_i(u) = s_i \tanh \left( \frac{u}{s_i} \right). \quad (60)
+$$</div>
+<p>Then</p>
+<div class="math-block">$$
+\psi_i(0)=0, \quad (61)
+$$</div>
+<div class="math-block">$$
+\psi_i(-u)=-\psi_i(u), \quad (62)
+$$</div>
+<p>and</p>
+<div class="math-block">$$
+|\psi_i(u)|\le s_i. \quad (63)
+$$</div>
+<p>The saturation is important because physical signals can become arbitrarily large while the control or interpretation layer must remain bounded.</p>
+<hr />
+<h2 id="7-environmental-confounder-rejection">7. Environmental Confounder Rejection</h2>
+<h3 id="71-the-need-for-explicit-confounder-control">7.1 The Need for Explicit Confounder Control</h3>
+<p>A major danger in earthquake precursor research is false correlation. Atmospheric pressure, tides, geomagnetic activity, ocean loading, anthropogenic noise, temperature, and instrumentation changes can generate apparent anomalies. The architecture therefore explicitly models environmental forcing.</p>
+<hr />
+<h3 id="72-tidal-correction">7.2 Tidal Correction</h3>
+<p>The observed signal is written</p>
+<div class="math-block">$$
+a_{\rm obs}(t) = a_{\rm intrinsic}(t) + a_{\rm tide}(t) + a_{\rm env}(t) + n(t). \quad (64)
+$$</div>
+<p>The tidal component is modeled as</p>
+<div class="math-block">$$
+a_{\rm tide}(t) = \sum_k A_k \cos(\omega_k t+\phi_k). \quad (65)
+$$</div>
+<p>The corrected signal is</p>
+<div class="math-block">$$
+a_{\rm corr}(t) = a_{\rm obs}(t)-a_{\rm tide}(t). \quad (66)
+$$</div>
+<hr />
+<h3 id="73-geomagnetic-and-atmospheric-conditioning">7.3 Geomagnetic and Atmospheric Conditioning</h3>
+<p>Similarly,</p>
+<div class="math-block">$$
+B_i^{\ast} = B_i - \sum_j \beta_{ij}E_j, \quad (67)
+$$</div>
+<p>where $E_j$ denotes environmental covariates. The purpose is not to remove all environmental variability. Rather, the objective is:</p>
+<div class="math-block">$$
+\boxed{ \text{separate explainable environmental variance from unexplained seismic-related variance}. }
+$$</div>
+<hr />
+<h2 id="8-cross-scale-coupling">8. Cross-Scale Coupling</h2>
+<h3 id="81-coupling-matrix">8.1 Coupling Matrix</h3>
+<p>Let</p>
+<div class="math-block">$$
+\mathbf B = (B_N,B_{72},B_{24},B_{12})^T.
+$$</div>
+<p>Cross-scale interaction is represented by</p>
+<div class="math-block">$$
+D(\mathbf B) = K\mathbf B, \quad (68)
+$$</div>
+<p>where</p>
+<div class="math-block">$$
+K= \begin{bmatrix} 0&\kappa_{N,72}&0&0\\ \kappa_{72,N}&0&\kappa_{72,24}&0\\ 0&\kappa_{24,72}&0&\kappa_{24,12}\\ 0&0&\kappa_{12,24}&0 \end{bmatrix}. \quad (69)
+$$</div>
+<p>The sparse structure encodes the hypothesis that information propagates preferentially between adjacent scales. It is not assumed that direct coupling between all scales is absent; rather, adjacent-scale coupling provides the minimal model.</p>
+<hr />
+<h2 id="9-phase-synchronization-as-the-cascade-criterion">9. Phase Synchronization as the Cascade Criterion</h2>
+<h3 id="91-why-correlation-alone-is-insufficient">9.1 Why Correlation Alone Is Insufficient</h3>
+<p>The original formulation used normalized amplitude correlation. For a true synchronization test, however, the phase of an analytic signal should be used. Let</p>
+<div class="math-block">$$
+z_i(t) = x_i(t)+i\mathcal H[x_i(t)], \quad (70)
+$$</div>
+<p>where $\mathcal H$ denotes the Hilbert transform. Define</p>
+<div class="math-block">$$
+\theta_i(t)=\arg z_i(t). \quad (71)
+$$</div>
+<p>The phase difference is</p>
+<div class="math-block">$$
+\Delta\theta_{ij}(t) = \theta_i(t)-\theta_j(t). \quad (72)
+$$</div>
+<p>The phase-locking value becomes</p>
+<div class="math-block">$$
+\boxed{ R_{ij} = \left| \left\langle e^{i\Delta\theta_{ij}(t)} \right\rangle \right|. } \quad (73)
+$$</div>
+<p>Thus:</p>
+<div class="math-block">$$
+0\le R_{ij}\le1.
+$$</div>
+<p>A value near zero indicates incoherent phase relationships. A value near one indicates persistent phase alignment.</p>
+<hr />
+<h3 id="92-four-level-cascade">9.2 Four-Level Cascade</h3>
+<p>The proposed cascade hierarchy is:</p>
+<h4 id="level-1-nucleation-watch">Level 1 — Nucleation Watch</h4>
+<div class="math-block">$$
+R_{N,72}&gt;\gamma_1. \quad (74)
+$$</div>
+<p>Interpretation: candidate nucleation anomalies exhibit coherent evolution with the next-scale process.</p>
+<h4 id="level-2-multi-scale-advisory">Level 2 — Multi-Scale Advisory</h4>
+<div class="math-block">$$
+R_{N,72}&gt;\gamma_1
+$$</div>
+<p>and</p>
+<div class="math-block">$$
+R_{72,24}&gt;\gamma_2. \quad (75)
+$$</div>
+<h4 id="level-3-seismic-preparation">Level 3 — Seismic Preparation</h4>
+<div class="math-block">$$
+R_{N,72}&gt;\gamma_1,
+$$</div>
+<div class="math-block">$$
+R_{72,24}&gt;\gamma_2,
+$$</div>
+<div class="math-block">$$
+R_{24,12}&gt;\gamma_3. \quad (76)
+$$</div>
+<h4 id="level-4-high-risk-state">Level 4 — High-Risk State</h4>
+<p>Level 3 is satisfied and</p>
+<div class="math-block">$$
+|B_{12}|&gt;\theta_{12}. \quad (77)
+$$</div>
+<p>This should not be described as "earthquake imminent" without prospective validation. The correct interpretation is:</p>
+<div class="math-block">$$
+\boxed{ \text{statistically elevated multi-scale seismic-risk state}. }
+$$</div>
+<hr />
+<h2 id="10-trans-scale-stress-to-sonification-mapping">10. Trans-Scale Stress-to-Sonification Mapping</h2>
+<h3 id="101-sonification-as-state-projection">10.1 Sonification as State Projection</h3>
+<p>Sonification is not introduced as a causal component of earthquake physics. It is a human-interface layer. The normalized state is mapped to pitch by</p>
+<div class="math-block">$$
+\Delta C_i = 100 \left[ \alpha_i\tanh(\lambda_iB_i) + \beta_i\tanh^3(\lambda_iB_i) \right]. \quad (78)
+$$</div>
+<p>The corresponding frequency is</p>
+<div class="math-block">$$
+f_i = f_{0,i} 2^{\Delta C_i/1200}. \quad (79)
+$$</div>
+<p>The use of 1200 cents is a perceptual encoding convention.</p>
+<hr />
+<h3 id="102-four-auditory-layers">10.2 Four Auditory Layers</h3>
+<p>The nucleation layer becomes a high-frequency, low-amplitude texture. The 72-layer becomes an intermediate evolving component. The 24-layer becomes a slowly modulated environmental component. The 12-layer becomes the dominant low-frequency seismic component. Thus:</p>
+<div class="math-block">$$
+\boxed{ \text{Earth system state} \rightarrow \text{latent multiscale representation} \rightarrow \text{auditory representation}. }
+$$</div>
+<p>The listener is therefore not "hearing an earthquake before it happens." Rather, the listener is hearing the <strong>estimated state trajectory of the monitoring system</strong>.</p>
+<hr />
+<h2 id="11-the-daoist-interpretive-layer">11. The Daoist Interpretive Layer</h2>
+<p>The phrase</p>
+<blockquote>
+<p>万物负阴而抱阳，冲气以为和。</p>
+</blockquote>
+<p>from the <em>Tao Te Ching</em> provides the philosophical inspiration for the AID interpretation. Within the mathematical architecture:</p>
+<div class="math-block">$$
+\text{Yin} \rightarrow \text{stored deviation / potential}.
+$$</div>
+<div class="math-block">$$
+\text{Yang} \rightarrow \text{restorative response}.
+$$</div>
+<div class="math-block">$$
+\text{Chong Qi} \rightarrow \text{cross-scale coupling and fluctuation}.
+$$</div>
+<div class="math-block">$$
+\text{He} \rightarrow \text{bounded dynamical state}.
+$$</div>
+<p>This interpretation should not be confused with a physical claim that the Earth is biologically alive. A more precise scientific interpretation is Eq. (6):</p>
+<div class="math-block">$$
+\boxed{ \text{Earthquake rupture may be modeled as a relaxation event in a driven nonequilibrium system.} }
+$$</div>
+<p>The metaphor of "planetary breathing" is therefore an interpretive visualization of nonlinear loading and relaxation.</p>
+<hr />
+<h2 id="12-candidate-terahertz-and-particle-precursors">12. Candidate Terahertz and Particle Precursors</h2>
+<h3 id="121-status-of-the-hypothesis">12.1 Status of the Hypothesis</h3>
+<p>Laboratory experiments have reported acoustic, electromagnetic, and neutron emissions associated with rock fracture. Recent literature further discusses THz phonons and proposed phono-fission or related nuclear-emission mechanisms. However, the existence of laboratory fracture emissions does not establish:</p>
+<div class="math-block">$$
+\text{laboratory fracture} \Rightarrow \text{detectable earthquake precursor}.
+$$</div>
+<p>Three separate questions must therefore be tested:</p>
+<ol>
+<li>Does the signal occur reproducibly during controlled fracture?</li>
+<li>Can it be distinguished from environmental and cosmic background?</li>
+<li>Does it occur systematically before natural earthquakes with useful lead time?</li>
+</ol>
+<p>Only if all three questions receive positive answers can the channel become operationally relevant.</p>
+<p>The terahertz and particle nucleation channels are exploratory hypotheses with a default weight of zero. They shall be retained only if ablation experiments demonstrate out-of-sample forecasting skill gains.</p>
+<hr />
+<h3 id="122-candidate-energy-model">12.2 Candidate Energy Model</h3>
+<p>For exploratory modeling,</p>
+<div class="math-block">$$
+S_N(\omega,t) = \frac{ A_N(t) }{ \omega^2+\omega_c^2 } \exp \left( -\frac{\omega}{\omega_{\max}} \right). \quad (81)
+$$</div>
+<p>The integrated nucleation energy is</p>
+<div class="math-block">$$
+E_N(t) = \int_{\omega_1}^{\omega_2} S_N(\omega,t)d\omega. \quad (82)
+$$</div>
+<p>The model does not assume that Eq. (81) is a universal fracture spectrum. Its role is to provide a parameterized hypothesis that can be replaced by experimentally measured spectra.</p>
+<hr />
+<h3 id="123-particle-emission-model">12.3 Particle Emission Model</h3>
+<p>For particle emissions,</p>
+<div class="math-block">$$
+\Phi_n(t) = \Phi_{n,0} + \Delta\Phi_n(t), \quad (83)
+$$</div>
+<p>where $\Phi_{n,0}$ is the local background. The anomaly is</p>
+<div class="math-block">$$
+Z_n(t) = \frac{ \Phi_n(t)-\mu_n(t) }{ \sigma_n(t)+\epsilon }. \quad (84)
+$$</div>
+<p>Any future use of this signal must include independent control stations and explicit cosmic-ray, atmospheric, instrumental, and anthropogenic corrections.</p>
+<hr />
+<h2 id="13-adaptive-parameter-learning">13. Adaptive Parameter Learning</h2>
+<p>The architecture adapts its parameters online. For parameter vector $\Theta$,</p>
+<div class="math-block">$$
+\Theta_{k+1} = \Theta_k - \eta_\Theta \nabla_\Theta J_k. \quad (85)
+$$</div>
+<p>The objective function is</p>
+<div class="math-block">$$
+J_k = \frac{1}{N} \sum_{j=k-N+1}^{k} \|e_j\|^2 + \lambda_R\mathcal R(\Theta), \quad (86)
+$$</div>
+<p>where:</p>
+<ul>
+<li>$e_j$ is state-estimation error;</li>
+<li>$\mathcal R$ is a regularization term;</li>
+<li>$\lambda_R$ controls model complexity.</li>
+</ul>
+<p>Parameter adaptation must be frozen before prospective testing. This is essential to prevent post-event parameter tuning from creating artificial predictive skill.</p>
+<hr />
+<h2 id="14-statistical-forecasting-formulation">14. Statistical Forecasting Formulation</h2>
+<p>The final output is not a binary earthquake prediction. Instead,</p>
+<div class="math-block">$$
+P(E_{\Delta t,\Omega,M}\mid\mathcal D_t) \quad (87)
+$$</div>
+<p>is estimated for:</p>
+<ul>
+<li>a spatial region $\Omega$;</li>
+<li>time window $\Delta t$;</li>
+<li>magnitude threshold $M$.</li>
+</ul>
+<p>The forecast can therefore take the form:</p>
+<div class="math-block">$$
+P(M\ge M_0,\; x\in\Omega,\; t\in[t_0,t_0+\Delta t] \mid\mathcal D_t). \quad (88)
+$$</div>
+<p>The multi-scale anomaly score can enter the probability model through</p>
+<div class="math-block">$$
+\mathrm{logit}(P) = b_0 + \sum_i b_i B_i + \sum_{i &lt; j}c_{ij}R_{ij} + d^T E, \quad (89)
+$$</div>
+<p>where $E$ contains environmental covariates. This makes the system statistically testable.</p>
+<hr />
+<h2 id="15-numerical-experiments">15. Numerical Experiments</h2>
+<h3 id="151-purpose">15.1 Purpose</h3>
+<p>The first numerical experiments should not claim earthquake prediction. They should test whether the architecture can:</p>
+<ol>
+<li>detect synthetic anomalies;</li>
+<li>reject ordinary noise;</li>
+<li>distinguish single-layer anomalies from coherent cascades;</li>
+<li>maintain bounded adaptive states;</li>
+<li>reduce false alarms after environmental correction;</li>
+<li>diagnose curvature inversion and attractor fracture.</li>
+</ol>
+<p>These tests must be aligned with the general validation protocol of DW58553912 §20–24 and §40–42. In particular, every numerical experiment must specify its null model, its information-time boundary, and its evaluation metric.</p>
+<hr />
+<h3 id="152-null-model">15.2 Null Model</h3>
+<p>The baseline signal is</p>
+<div class="math-block">$$
+x_0(t) = n_{\rm white}(t) + n_{\rm colored}(t) + F_{\rm env}(t). \quad (90)
+$$</div>
+<p>No precursor is introduced. The expected result is:</p>
+<div class="math-block">$$
+P(\text{high alert}\mid H_0) \ll 1.
+$$</div>
+<p>Null models should include phase-randomized surrogates, spatially shuffled features, and temporally shuffled features, as required by DW58553912 §40.</p>
+<hr />
+<h3 id="153-single-layer-perturbation">15.3 Single-Layer Perturbation</h3>
+<p>A nucleation-only perturbation is introduced:</p>
+<div class="math-block">$$
+E_N(t) = E_0+\delta E_N(t). \quad (91)
+$$</div>
+<p>The expected system response is:</p>
+<div class="math-block">$$
+\text{Nucleation Watch}
+$$</div>
+<p>without escalation to a high-risk state. This test determines whether the system is appropriately conservative.</p>
+<hr />
+<h3 id="154-environmental-false-positive">15.4 Environmental False Positive</h3>
+<p>A large environmental perturbation is introduced without a seismic event. For example:</p>
+<div class="math-block">$$
+P(t)=P_0+\delta P(t). \quad (92)
+$$</div>
+<p>The system should suppress the resulting anomaly after environmental conditioning.</p>
+<hr />
+<h3 id="155-synthetic-cascading-event">15.5 Synthetic Cascading Event</h3>
+<p>A controlled synthetic cascade is then introduced:</p>
+<div class="math-block">$$
+N \rightarrow 72 \rightarrow 24 \rightarrow 12. \quad (93)
+$$</div>
+<p>The objective is to determine whether the phase-synchronization metric rises in the correct sequence. The experiment therefore tests:</p>
+<div class="math-block">$$
+R_{N,72} \rightarrow R_{72,24} \rightarrow R_{24,12}.
+$$</div>
+<hr />
+<h3 id="156-curvature-inversion-diagnostics">15.6 Curvature Inversion Diagnostics</h3>
+<p>The curvature inversion equation Eq. (25) is integrated numerically on a synthetic three-dimensional lattice. The scalar curvature field $R(x,t)$ is monitored over time. A valid phase transition requires:</p>
+<div class="math-block">$$
+\max_{\Omega} R^n &gt; 0 \quad (94)
+$$</div>
+<p>when the stress parameter profile exceeds the critical injection threshold Eq. (26). This diagnostic must be accompanied by decimation-artifact tests as in DW58553912 Prediction 11.</p>
+<hr />
+<h3 id="157-geodesic-capture-verification">15.7 Geodesic Capture Verification</h3>
+<p>To simulate the state trajectories $z^\mu(\tau)$ of precursory signals navigating the deformed metric space, we update Eq. (33) using a modified semi-implicit Symplectic Velocity Verlet integrator. The computational architecture evaluates the presence of a validated geometric phase transition through three in-silico criteria:</p>
+<ol>
+<li>
+<p><strong>Curvature Inversion Profile</strong>: Monitor the global minimum and maximum of the scalar curvature field over time.</p>
+</li>
+<li>
+<p><strong>Trajectory Convergence/Divergence Ratio ($\kappa$)</strong>: Release a tight cluster of $K=100$ independent test trajectories around the coordinates of $A_{\rm seismic}$. Compute the variance of their spatial separation over proper time:</p>
+</li>
+</ol>
+<div class="math-block">$$
+\kappa(\tau) = \frac{1}{K}\sum_{k=1}^K \|z_k(\tau) - \bar{z}(\tau)\|^2_g. \quad (95)
+$$</div>
+<p>An increase in $\kappa(\tau)$ within a localized zone confirms positive-curvature divergence, while an asymptotic lock to a fixed radius $d\kappa/d\tau \rightarrow 0$ verifies the execution of stable geodesic capture.</p>
+<ol>
+<li><strong>Reprogramming Efficiency ($\eta_{\rm Rx}$)</strong>: Quantify the percentage of trapped trajectories liberated from the gravity well upon the execution of a landscape reprogramming operator. Successful restoration requires $\eta_{\rm Rx} \ge 95\%$ under frozen boundary conditions. This criterion is mathematical and observational; it does not authorize physical intervention under the present architecture.</li>
+</ol>
+<hr />
+<h2 id="16-required-prospective-validation">16. Required Prospective Validation</h2>
+<p>A scientifically meaningful earthquake-forecasting test must be prospective. The model should be frozen before the evaluation period. No parameters may be changed after an event has occurred. The evaluation should include:</p>
+<div class="math-block">$$
+\boxed{ \text{pre-registered model} + \text{blind test period} + \text{defined null hypothesis} + \text{fixed scoring rules}. }
+$$</div>
+<p>Historical retrospective fitting alone is insufficient. This section explicitly adopts the prospective validation protocol of DW58553912 §21–24, §40–42. In particular:</p>
+<ul>
+<li>forecast time $t$ may use only $\mathcal D_{0:t}$;</li>
+<li>future catalog events, future GNSS solutions, future InSAR products, and revised magnitudes are prohibited;</li>
+<li>rolling hindcast must freeze each forecast before evaluation;</li>
+<li>blind testing must not permit parameter adjustment after outcome unmasking;</li>
+<li>benchmark models must include historical-rate, ETAS-type, rate-and-state, conventional machine learning, and multi-sensor machine learning without explicit state-space geometry;</li>
+<li>evaluation must include calibration, log score, Brier score, information gain, spatial discrimination, temporal discrimination, reliability, false-alarm rate, miss rate, and warning lead time;</li>
+<li>data leakage must be explicitly audited.</li>
+</ul>
+<p>A rigorous earthquake-prediction methodology should define the algorithm, input data, null hypothesis, and prospective test procedure before evaluation.</p>
+<hr />
+<h2 id="17-ablation-experiments">17. Ablation Experiments</h2>
+<p>The contribution of each component should be tested independently.</p>
+<h3 id="model-a">Model A</h3>
+<p>Seismic observations only.</p>
+<h3 id="model-b">Model B</h3>
+<p>Seismic + environmental correction.</p>
+<h3 id="model-c">Model C</h3>
+<p>Model B + nucleation channel.</p>
+<h3 id="model-d">Model D</h3>
+<p>Model C + adaptive AID.</p>
+<h3 id="model-e">Model E</h3>
+<p>Model D + phase synchronization.</p>
+<h3 id="model-f">Model F</h3>
+<p>Model E + geometric pathology, curvature inversion + attractor fracture.</p>
+<p>The improvement should be quantified by:</p>
+<div class="math-block">$$
+\Delta \mathrm{AUC},
+$$</div>
+<div class="math-block">$$
+\Delta \mathrm{Brier},
+$$</div>
+<div class="math-block">$$
+\Delta \mathrm{log\ loss},
+$$</div>
+<p>false-alarm rate, miss rate, and warning lead time.</p>
+<p>If the THz/nucleation layer provides no statistically significant improvement, it should not be retained merely because it is theoretically attractive. This is an important falsifiability condition of the architecture.</p>
+<p>Ablation must also include:</p>
+<ul>
+<li>no geometry: remove $g_{\mu\nu}$ and curvature diagnostics;</li>
+<li>no manifold regularization: remove DW58553912 Eq. (10b);</li>
+<li>no scale separation: absorb all reference-state scales into one baseline;</li>
+<li>sampling-artifact test: repeat after artificial decimation, as in DW58553912 Prediction 11;</li>
+<li>cross-region transfer test: recalibrate and test in a different tectonic setting.</li>
+</ul>
+<p>If the full model does not outperform the ablated models on prospective metrics, the corresponding layer should be reduced or removed.</p>
+<hr />
+<h2 id="18-stability-analysis">18. Stability Analysis</h2>
+<h3 id="181-bounded-restoring-dynamics">18.1 Bounded Restoring Dynamics</h3>
+<p>Consider</p>
+<div class="math-block">$$
+\dot{x}_i = -\Gamma_i\psi_i(B_i). \quad (96)
+$$</div>
+<p>Define</p>
+<div class="math-block">$$
+V_i = \frac12 \|B_i\|^2. \quad (97)
+$$</div>
+<p>Then</p>
+<div class="math-block">$$
+\dot V_i = B_i^T J_{B_i} \dot x_i. \quad (98)
+$$</div>
+<p>Under the assumptions that $J_{B_i}$ is positive definite in the local region and</p>
+<div class="math-block">$$
+B_i^T\psi_i(B_i)&gt;0
+$$</div>
+<p>for $B_i\ne0$,</p>
+<div class="math-block">$$
+\dot V_i&lt;0. \quad (99)
+$$</div>
+<p>Therefore the restoring subsystem is locally asymptotically stable in the transverse directions. This is a stability analysis under stated assumptions, not a proof of earthquake predictability.</p>
+<hr />
+<h3 id="182-coupled-system">18.2 Coupled System</h3>
+<p>For</p>
+<div class="math-block">$$
+V = \sum_i \left[ \frac12\|B_i\|^2 + \frac{\rho_i}{2} \|\tilde\Theta_i\|^2 \right], \quad (100)
+$$</div>
+<p>assume bounded external forcing and sufficiently strong local restoration. Then, under appropriate Lipschitz and persistence conditions,</p>
+<div class="math-block">$$
+\dot V \le -\alpha V+\beta. \quad (101)
+$$</div>
+<p>Consequently,</p>
+<div class="math-block">$$
+\limsup_{t\rightarrow\infty}V(t) \le \frac{\beta}{\alpha}. \quad (102)
+$$</div>
+<p>This establishes <strong>uniform ultimate boundedness</strong> under the stated assumptions. It does not by itself prove earthquake predictability. Stability and predictive skill are separate properties.</p>
+<hr />
+<h3 id="183-phase-locking-stability">18.3 Phase-Locking Stability</h3>
+<p>The phase-locking criterion $R_{ij} &gt; \gamma_{ij}$ is a candidate transverse instability condition. When the coupling strength $\kappa_{ij}$ exceeds a critical threshold, the linearized coupled system may exhibit a Hopf bifurcation, creating an attracting limit cycle across scales. This bifurcation is a candidate mathematical signature of a multi-scale critical transition. It must not be described as a proven “signature of an impending large earthquake” without prospective validation. It is a hypothesis to be tested against null models and benchmark forecasts.</p>
+<hr />
+<h2 id="19-limitations">19. Limitations</h2>
+<p>The architecture has several major limitations.</p>
+<h3 id="191-no-established-deterministic-precursor">19.1 No established deterministic precursor</h3>
+<p>No candidate precursor currently satisfies the standard required conditions of universal reliability, specificity, reproducibility, and sufficient lead time.</p>
+<h3 id="192-thz-observability">19.2 THz observability</h3>
+<p>THz phonons are extremely difficult to observe remotely through geological material. The relevant measurement problem is therefore fundamentally different from conventional seismic monitoring.</p>
+<h3 id="193-particle-background-contamination">19.3 Particle-background contamination</h3>
+<p>Particle emissions may be influenced by cosmic rays, atmospheric processes, instrumentation, and local human activity.</p>
+<h3 id="194-cross-scale-causality-remains-unproven">19.4 Cross-scale causality remains unproven</h3>
+<p>A temporal correlation between two scales does not establish that one causes the other.</p>
+<h3 id="195-the-122472-anchors-are-representational">19.5 The 12/24/72 anchors are representational</h3>
+<p>They should not be interpreted as empirically discovered geophysical constants.</p>
+<h3 id="196-synthetic-experiments-are-not-field-validation">19.6 Synthetic experiments are not field validation</h3>
+<p>A model that detects a deliberately inserted precursor has demonstrated algorithmic functionality, not natural-earthquake predictive capability.</p>
+<h3 id="197-forecasting-versus-prediction">19.7 Forecasting versus prediction</h3>
+<p>The architecture is intentionally probabilistic. It does not claim deterministic prediction of an individual earthquake.</p>
+<h3 id="198-geometric-pathology-remains-theoretical">19.8 Geometric pathology remains theoretical</h3>
+<p>The curvature inversion and attractor fracture formalism is mathematically motivated but has not yet been validated against real seismic data. The mapping from abstract state-space curvature to observable geophysical quantities requires further development.</p>
+<h3 id="199-intervention-restriction">19.9 Intervention restriction</h3>
+<p>In accordance with DW58553912 §27, physical stress or fluid intervention at identified Earthquake Acupoints is excluded from the present architecture. Any future physical intervention would require sufficient human technological advancement and strict independent safety assessment and ethical review. The present operational scope is limited to adaptive observation and inference.</p>
+<hr />
+<h2 id="20-a-research-roadmap">20. A Research Roadmap</h2>
+<p>A scientifically defensible development pathway consists of five stages. This roadmap is a technology-dependent research scenario, not a promise of operational forecasting.</p>
+<h3 id="phase-i-laboratory-validation">Phase I — Laboratory validation</h3>
+<p><strong>2027–2029</strong></p>
+<p>Establish reproducibility of candidate fracture-emission signals under controlled rock mechanics experiments. Requirements include independent detectors, calibration, blind samples, environmental controls, repeated experiments, and independent laboratories. Initial validation should use publicly available datasets such as Japan's K-NET/KiK-net, Southern California's SCSN, or the IRIS DMC archive, where both seismic and geodetic time series are available with sufficient temporal resolution.</p>
+<h3 id="phase-ii-field-validation">Phase II — Field validation</h3>
+<p><strong>2029–2032</strong></p>
+<p>Deploy synchronized multi-sensor arrays near active faults. The objective is to establish:</p>
+<div class="math-block">$$
+\text{signal} \rightarrow \text{location} \rightarrow \text{repeatability}.
+$$</div>
+<h3 id="phase-iii-prospective-regional-testing">Phase III — Prospective regional testing</h3>
+<p><strong>2031–2035</strong></p>
+<p>Freeze the algorithm. Run it continuously without parameter modification. Generate probabilistic forecasts. Compare forecasts against pre-registered null models. This phase must follow DW58553912 §21–24.</p>
+<h3 id="phase-iv-operational-pilot">Phase IV — Operational pilot</h3>
+<p><strong>2034–2038</strong></p>
+<p>If prospective tests demonstrate statistically significant skill, integrate the system with existing seismic networks and emergency-management systems. No operational deployment is justified before prospective skill is demonstrated.</p>
+<h3 id="phase-v-global-integration">Phase V — Global integration</h3>
+<p><strong>2036–2040</strong></p>
+<p>Only if earlier stages succeed should global deployment be considered. Thus the 2035–2040 horizon is not a prediction. It is a:</p>
+<div class="math-block">$$
+\boxed{ \text{technology-dependent research scenario}. }
+$$</div>
+<p>This roadmap is aligned with the T0–T6 research architecture of DW58553912 §30.</p>
+<hr />
+<h2 id="21-sonification-and-humanmachine-interaction">21. Sonification and Human–Machine Interaction</h2>
+<p>One distinctive component of the architecture is its use of sonification. The purpose is not entertainment. The purpose is to provide a low-dimensional human interface to a high-dimensional state vector. Let</p>
+<div class="math-block">$$
+\mathbf q(t) = [ B_N, B_{72}, B_{24}, B_{12}, R_{N,72}, R_{72,24}, R_{24,12} ]. \quad (103)
+$$</div>
+<p>This vector can be mapped to pitch, amplitude, timbre, rhythm, and spatialization. The resulting sound becomes a real-time representation of:</p>
+<div class="math-block">$$
+\mathbf q(t).
+$$</div>
+<p>The operator can therefore perceive changes that might be difficult to recognize from multiple numerical time series. The scientific hypothesis is testable:</p>
+<div class="math-block">$$
+\boxed{ \text{Does sonification improve human detection of multiscale state transitions?} }
+$$</div>
+<p>This can itself become a human-factors experiment.</p>
+<hr />
+<h2 id="22-historical-and-cultural-interpretation">22. Historical and Cultural Interpretation</h2>
+<p>The scientific architecture developed in this paper is deliberately independent of any particular cultural or philosophical tradition. Nevertheless, the mathematical structures employed here—nested scales, logarithmic anchors, nonlinear restoration, phase synchronization—resonate with several classical attempts to describe the relation between unity and multiplicity, order and deviation, harmony and disruption. This section explores those resonances as <strong>interpretive metaphors</strong>, not as physical mechanisms or empirical evidence.</p>
+<p>A strict separation must be maintained throughout:</p>
+<div class="math-block">$$
+\boxed{ \text{physical mechanism} \neq \text{mathematical representation} \neq \text{cultural interpretation}. } \quad (104)
+$$</div>
+<p>The equations of the architecture stand or fall on their own mathematical consistency and prospective predictive performance. The cultural material presented here serves only to situate the architecture within a longer history of thought about ordered change.</p>
+<hr />
+<h3 id="221-zhu-zaiyu-and-the-inline_math_189-anchor">22.1 Zhu Zaiyu and the $2^{1/12}$ Anchor</h3>
+<p>Zhu Zaiyu's <em>Lü Lü Jing Yi</em> (1596) provided a mathematically exact construction of twelve-tone equal temperament. The central relation is Eq. (3):</p>
+<div class="math-block">$$
+r_{12}=2^{1/12}, \qquad (r_{12})^{12}=2.
+$$</div>
+<p>This is a logarithmic division of the octave into twelve equal steps. Within the present architecture, the ratio is not interpreted as a geophysical constant. It functions as a <strong>harmonic encoding anchor</strong>—a mathematically precise map between normalized physical deviations and perceptual pitch.</p>
+<p>The historical significance of Zhu Zaiyu lies not in any claim that Ming-era music theory predicted earthquakes. Rather, his work exemplifies a broader intellectual move: the representation of continuous variation through a discrete logarithmic lattice. That same move underlies the sonification layer of the present architecture.</p>
+<p>Physical mechanism ≠ mathematical representation ≠ cultural metaphor. Cultural analogies serve interpretive purposes only and shall not enter model inference or ablation tests.</p>
+<hr />
+<h3 id="222-the-inline_math_190-and-inline_math_191-anchors">22.2 The $2^{1/24}$ and $2^{1/72}$ Anchors</h3>
+<p>The twenty-four solar terms and seventy-two pentads are classical Chinese subdivisions of the seasonal and phenological year. In this architecture they serve as <strong>temporal organization anchors</strong>, with ratios given by Eq. (4) and Eq. (5):</p>
+<div class="math-block">$$
+r_{24}=2^{1/24}, \qquad r_{72}=2^{1/72}.
+$$</div>
+<p>They are not empirically established geophysical constants. They provide a hierarchical coordinate system for organizing slowly varying environmental and phenomenological information. The choice of $12$, $24$, and $72$ reflects a cultural grammar of nested temporal cycles, not a claim that the Earth's crust literally vibrates at these ratios.</p>
+<hr />
+<h3 id="223-the-daoist-principle-of-chong-qi-yi-he">22.3 The Daoist Principle of <em>Chong Qi Yi He</em></h3>
+<p>The <em>Tao Te Ching</em> states:</p>
+<blockquote>
+<p>万物负阴而抱阳，冲气以为和。</p>
+</blockquote>
+<p>Within the mathematical architecture, this can be read as an interpretive metaphor:</p>
+<div class="math-block">$$
+\text{Yin} \rightarrow \text{stored deviation / potential},
+$$</div>
+<div class="math-block">$$
+\text{Yang} \rightarrow \text{restorative response},
+$$</div>
+<div class="math-block">$$
+\text{Chong Qi} \rightarrow \text{cross-scale coupling and fluctuation},
+$$</div>
+<div class="math-block">$$
+\text{He} \rightarrow \text{bounded dynamical state}.
+$$</div>
+<p>This should not be confused with a physical claim that the Earth is biologically alive. A more precise scientific interpretation is Eq. (6):</p>
+<div class="math-block">$$
+\boxed{ \text{Earthquake rupture may be modeled as a relaxation event in a driven nonequilibrium system.} }
+$$</div>
+<p>The metaphor of "planetary breathing" is therefore an interpretive visualization of nonlinear loading and relaxation, not a literal biological assertion.</p>
+<hr />
+<h3 id="224-the-embryological-sequence-of-xuan-yin-yi-mi-a-six-step-symmetry-breaking-cascade">22.4 The Embryological Sequence of <em>Xuan Yin Yi Mi</em>: A Six-Step Symmetry-Breaking Cascade</h3>
+<p>The classical Chinese text <em>Xuan Yin Yi Mi</em> (《玄隐遗密》) describes embryonic organogenesis in a precise temporal sequence:</p>
+<blockquote>
+<p>阴阳交牝，物始化生者，首也。次生者，肝也。次生者，心也。次生者，肾也。次生者，脾也。次生者，肺也。</p>
+</blockquote>
+<p>Translated:</p>
+<blockquote>
+<p>When Yin and Yang unite, the first thing to transform and generate is the head. The next to generate is the liver. The next is the heart. The next is the kidney. The next is the spleen. The next is the lung.</p>
+</blockquote>
+<p>This sequence—head, liver, heart, kidney, spleen, lung—can be interpreted as a <strong>six-step symmetry-breaking cascade</strong>. Each stage breaks a previous symmetry while retaining residual structure from earlier stages.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Step</th>
+<th>Organ</th>
+<th>Symmetry-Breaking Role</th>
+<th>Dynamical Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Head</td>
+<td>Anterior–posterior axis establishment</td>
+<td>Initial orientation of the system</td>
+</tr>
+<tr>
+<td>2</td>
+<td>Liver</td>
+<td>Left–right asymmetry</td>
+<td>First spatial differentiation</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Heart</td>
+<td>Center–periphery differentiation</td>
+<td>Emergence of a central driver</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Kidney</td>
+<td>Dorsal–ventral refinement</td>
+<td>Deep structure formation</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Spleen</td>
+<td>Organ boundary specification</td>
+<td>Regional isolation</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Lung</td>
+<td>Functional differentiation (respiration)</td>
+<td>System–environment interface</td>
+</tr>
+</tbody>
+</table></div>
+<p>The crucial observation is that each step is a <strong>partial symmetry breaking</strong>, not a total destruction of prior order. The system retains traces of earlier symmetries while layering new asymmetries upon them.</p>
+<hr />
+<h3 id="225-the-lung-as-attractor-emergence">22.5 The Lung as Attractor Emergence</h3>
+<p>In the <em>Xuan Yin Yi Mi</em> sequence, the lung is the final organ to form. In both embryology and traditional Chinese medicine, the lung is the organ of <strong>qi</strong> and <strong>respiration</strong>—the interface between the organism and its environment.</p>
+<p>If a seismic zone is viewed as a developing dynamical "embryo," then its final stage—the emergence of a mature seismic attractor—corresponds to the formation of the lung. At this stage, the system is no longer a passive accumulator of stress. It becomes an active <strong>breathing interface</strong> with its external environment:</p>
+<ul>
+<li><strong>Inhalation</strong>: stress accumulation ($B_{72}$ slowly rising; the system absorbs strain energy from tectonic loading).</li>
+<li><strong>Exhalation</strong>: seismic release ($B_{12}$ saturating; the system releases energy as elastic waves).</li>
+<li><strong>Breath-holding</strong>: locking ($B_{24}$ stable; the system temporarily ceases exchange).</li>
+</ul>
+<p>The emergence of the seismic attractor is therefore analogous to the maturation of the lung:</p>
+<div class="math-block">$$
+\boxed{ \text{seismic attractor emergence} = \text{system enters a periodic breathing mode}. } \quad (108)
+$$</div>
+<p>Why is the lung the last to form? In embryology, the lung is the only organ that does not fully function until after birth—it requires external air. Similarly, the seismic zone's "respiratory function" matures only when the external environment (atmosphere, ocean, solid Earth tides) provides periodic driving.</p>
+<p>This provides an interpretive rationale for why the architecture explicitly includes:</p>
+<ul>
+<li>atmospheric pressure $F_{\text{atm}}$,</li>
+<li>ocean loading $F_{\text{ocean}}$,</li>
+<li>solid Earth tides $a_{\text{tide}}$.</li>
+</ul>
+<p>These are not merely noise to be filtered. In the embryological metaphor, they are the <strong>air</strong> that the mature seismic lung requires in order to breathe.</p>
+<hr />
+<h3 id="226-four-nested-layers-as-a-condensation-of-the-six-step-cascade">22.6 Four Nested Layers as a Condensation of the Six-Step Cascade</h3>
+<p>The four representational layers of the architecture—</p>
+<div class="math-block">$$
+N,\;72,\;24,\;12
+$$</div>
+<p>—can be viewed as a condensation of the six-step embryological sequence:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>TSAI Layer</th>
+<th>Embryological Correspondence</th>
+<th>Symmetry-Breaking Function</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$N$ (nucleation)</td>
+<td>Head + Liver</td>
+<td>Initial orientation + first spatial differentiation</td>
+</tr>
+<tr>
+<td>$72$ (phenological)</td>
+<td>Heart + Kidney</td>
+<td>Central driver + deep structure</td>
+</tr>
+<tr>
+<td>$24$ (seasonal)</td>
+<td>Spleen</td>
+<td>Regional boundary maturation</td>
+</tr>
+<tr>
+<td>$12$ (elastic)</td>
+<td>Lung</td>
+<td>System–environment breathing interface</td>
+</tr>
+</tbody>
+</table></div>
+<p>When the phase-locking values satisfy</p>
+<div class="math-block">$$
+R_{N,72}&gt;\gamma_1, \qquad R_{72,24}&gt;\gamma_2, \qquad R_{24,12}&gt;\gamma_3, \quad (109)
+$$</div>
+<p>the six-step symmetry-breaking cascade may be interpreted as complete. The seismic "embryo" has matured to the point of acquiring a respiratory interface. Only then does the system enter a <strong>predictable periodic breathing mode</strong>.</p>
+<p>This yields an interpretive reframing of earthquake forecasting:</p>
+<blockquote>
+<p>Forecasting is not merely the detection of anomalies. It is the diagnosis of whether a seismic zone has developed to the stage at which periodic respiration becomes possible. Before the "lung" matures, the system remains in an unpredictable developmental phase.</p>
+</blockquote>
+<hr />
+<h3 id="227-western-parallel-musica-mundana-and-consonance">22.7 Western Parallel: <em>Musica Mundana</em> and Consonance</h3>
+<p>The medieval–Renaissance tradition, as exemplified by Gregor Reisch's <em>Margarita Philosophica</em> (1503), inherited from Boethius a threefold division of music:</p>
+<ul>
+<li><em>musica mundana</em> (cosmic harmony),</li>
+<li><em>musica humana</em> (harmony of body and soul),</li>
+<li><em>musica instrumentalis</em> (audible music).</li>
+</ul>
+<p>In this tradition, consonance was defined as a proportional unification of high and low sounds, while dissonance was a harsh disproportion. The present architecture does not claim that these metaphysical categories are physical laws. However, they provide a historical mirror for the modern operation of sonification: the Earth's latent multi-scale state is projected into an audible representation, and cross-scale phase synchronization $R_{ij}$ plays a role analogous to the proportional unification that the tradition called consonance.</p>
+<p>This parallel is not offered as evidence. It is offered as a reminder that the impulse to render hidden order audible is not a modern invention. It is one of the oldest scientific–artistic aspirations in human culture.</p>
+<hr />
+<h3 id="228-summary-of-the-interpretive-layer">22.8 Summary of the Interpretive Layer</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Architecture Element</th>
+<th>Cultural Resonance</th>
+<th>Interpretive Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$2^{1/12}$</td>
+<td>Zhu Zaiyu's equal temperament</td>
+<td>Harmonic encoding anchor</td>
+</tr>
+<tr>
+<td>$2^{1/24}$</td>
+<td>Twenty-four solar terms</td>
+<td>Seasonal organization anchor</td>
+</tr>
+<tr>
+<td>$2^{1/72}$</td>
+<td>Seventy-two pentads</td>
+<td>Phenological organization anchor</td>
+</tr>
+<tr>
+<td>$N \rightarrow 72 \rightarrow 24 \rightarrow 12$</td>
+<td><em>Xuan Yin Yi Mi</em> embryological sequence</td>
+<td>Symmetry-breaking cascade</td>
+</tr>
+<tr>
+<td>$R_{ij} \rightarrow 1$</td>
+<td>Consonance in Boethian tradition</td>
+<td>Phase synchronization</td>
+</tr>
+<tr>
+<td>Seismic attractor</td>
+<td>Lung as final organ</td>
+<td>Emergence of breathing interface</td>
+</tr>
+<tr>
+<td>Chong Qi Yi He</td>
+<td>Daoist cosmology</td>
+<td>Coupling, fluctuation, bounded balance</td>
+</tr>
+</tbody>
+</table></div>
+<p>None of these correspondences should be interpreted as physical mechanisms. They are <strong>interpretive metaphors</strong> that situate the mathematical architecture within a longer history of thought about order, deviation, restoration, and emergence. The scientific content of the architecture remains independent of this interpretive layer. The metaphors do not add predictive power. They add meaning.</p>
+<hr />
+<h3 id="229-a-note-on-method">22.9 A Note on Method</h3>
+<p>The separation between mechanism, representation, and interpretation is not merely a stylistic preference. It is a methodological safeguard. If a cultural metaphor is mistaken for a physical mechanism, the architecture becomes unverifiable. If a mathematical representation is mistaken for a physical law, the architecture becomes dogmatic. If a physical mechanism is mistaken for a cultural truth, the architecture becomes scientistic.</p>
+<p>The architecture is offered as a <strong>testable scientific hypothesis</strong>. The cultural material in this section is offered as <strong>interpretive context</strong>. The two must remain distinct for either to remain honest.</p>
+<hr />
+<h2 id="23-discussion">23. Discussion</h2>
+<h3 id="231-the-principal-conceptual-proposal">23.1 The Principal Conceptual Proposal</h3>
+<p>The principal conceptual proposal of this paper is that earthquake forecasting should not be formulated exclusively as the search for a single "magic precursor." Instead, it should be formulated as a <strong>multimodal state-estimation problem</strong>. The relevant question becomes:</p>
+<div class="math-block">$$
+\boxed{ \text{Is the Earth entering a statistically distinguishable dynamical state?} }
+$$</div>
+<p>rather than:</p>
+<div class="math-block">$$
+\text{Did one signal predict an earthquake?}
+$$</div>
+<p>This distinction is crucial. A single precursor can be ambiguous. But a coherent evolution across independent measurement domains may be more informative. The proposed architecture therefore searches for:</p>
+<div class="math-block">$$
+\boxed{ \text{anomaly} + \text{persistence} + \text{cross-scale coherence} + \text{environmental independence}. }
+$$</div>
+<p>Only when all four conditions are satisfied should the forecast probability be allowed to increase substantially.</p>
+<hr />
+<h3 id="232-the-geometric-pathology-perspective">23.2 The Geometric Pathology Perspective</h3>
+<p>The integration of Riemannian geometric pathology into the architecture represents a conceptual advance. Earthquake nucleation is not merely a gradual accumulation of stress, but a <strong>topological phase transition</strong> of the seismic state space. The Curvature Inversion Equation Eq. (25) provides a mathematical mechanism by which stress gradients may drive local scalar curvature from protective negative values to pathological positive values. The Attractor Fracture criterion Eq. (29) provides a topological criterion for nucleation that must be tested prospectively against null models.</p>
+<p>This geometric formalism has several implications:</p>
+<p><strong>First</strong>, it provides a coordinate-invariant language for describing earthquake preparation. The curvature inversion is not an artifact of coordinate choice; it is an intrinsic geometric property of the estimated state space.</p>
+<p><strong>Second</strong>, it unifies the trans-scale cascade $N \to 72 \to 24 \to 12$ with the topological phase transition. The four layers are not merely heuristic; they correspond to the sequential breaking of symmetries in the Morse–Smale complex.</p>
+<p><strong>Third</strong>, it provides a foundation for the phase-locking criterion. The phase-locking value $R_{ij}$ measures synchronization between layers, but the geometric pathology formalism suggests that true criticality is a topological property—the breaking of transversality—not merely a statistical correlation.</p>
+<hr />
+<h3 id="233-the-mes-gravity-well-and-precursor-amplification">23.3 The MES Gravity Well and Precursor Amplification</h3>
+<p>The MES scaling laws $c \propto |R|^{1/2}$, $m \propto |R|^{-1/2}$ provide a candidate geometric interpretation for variability in precursor signal strength. Near the nucleation core, the local curvature diverges, causing the effective signal velocity to diverge and the effective inertia to vanish. This forces precursory signals into tight, stable orbits around the seismic nucleus—a purely geometric confinement mechanism that may explain why precursor signals frequently exhibit anomalous amplification near nucleation zones.</p>
+<p>This has a testable prediction: precursor signals should be systematically amplified in high-curvature zones and suppressed in low-curvature zones. This prediction can be tested using existing seismic and geodetic data.</p>
+<hr />
+<h3 id="234-landscape-reprogramming-and-seismic-modulation">23.4 Landscape Reprogramming and Seismic Modulation</h3>
+<p>The landscape reprogramming operator $\hat{\mathcal{O}}_{\text{therapy}}$ provides a mathematical foundation for considering seismic modulation—the controlled injection of stress perturbations to flatten malignant curvature wells and restore geodesic access to locked basins. However, in accordance with DW58553912 §27, physical stress or fluid intervention at identified Earthquake Acupoints is excluded from the present architecture. Any future physical intervention would require sufficient human technological advancement and strict independent safety assessment and ethical review. The present architecture treats landscape reprogramming exclusively as an observational and inference concept: adaptive sensor placement, targeted monitoring, model updating, and uncertainty reduction.</p>
+<p>This is analogous to induced seismicity control in the sense that small perturbations can, in principle, release stress in controlled events rather than allowing accumulation for a large event. But the present work does not authorize or recommend such intervention. The geometric pathology formalism may provide a mathematical language for future independent study, not an operational prescription.</p>
+<hr />
+<h3 id="235-the-20352040-horizon-a-realistic-roadmap">23.5 The 2035–2040 Horizon: A Realistic Roadmap</h3>
+<p>This table summarizes the roadmap of §20 and remains a technology-dependent research scenario, not a promise of operational forecasting. It must be aligned with DW58553912 §30 T0–T6 and §21–24 prospective validation.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Phase</th>
+<th>Timeline</th>
+<th>Key Milestones</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Phase I: Laboratory Validation</td>
+<td>2027–2029</td>
+<td>Historical data validation, laboratory THz experiments</td>
+</tr>
+<tr>
+<td>Phase II: Field Validation</td>
+<td>2029–2032</td>
+<td>Blind testing, field-deployable THz sensors</td>
+</tr>
+<tr>
+<td>Phase III: Prospective Regional Testing</td>
+<td>2031–2035</td>
+<td>Operational pilot only if prospective skill is demonstrated</td>
+</tr>
+<tr>
+<td>Phase IV: Operational Pilot</td>
+<td>2034–2038</td>
+<td>Integration with seismic networks only after significant prospective skill</td>
+</tr>
+<tr>
+<td>Phase V: Global Integration</td>
+<td>2036–2040</td>
+<td>International forecasting network, only after regional success</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h3 id="236-the-central-verifiable-hypothesis">23.6 The Central Verifiable Hypothesis</h3>
+<p>The entire architecture can ultimately be reduced to one experimentally testable statement:</p>
+<div class="math-block">$$
+\boxed{ H_1: \text{Cross-scale synchronized anomalies improve prospective earthquake forecasts relative to established baseline models.} }
+$$</div>
+<p>against</p>
+<div class="math-block">$$
+\boxed{ H_0: \text{Cross-scale anomalies provide no out-of-sample predictive information beyond environmental and seismic baselines.} }
+$$</div>
+<p>This formulation has an important consequence. If $H_0$ wins, the architecture must be rejected or substantially revised. If $H_1$ wins repeatedly under blind prospective testing, the architecture gains empirical support. This is the standard by which the proposed architecture should ultimately be judged.</p>
+<hr />
+<h2 id="24-conclusion">24. Conclusion</h2>
+<p>This paper has proposed a <strong>Trans-Scale Adaptive Intelligence architecture</strong> for earthquake forecasting, integrating Riemannian geometric pathology, phase synchronization, and sonification. It is a <strong>specific physical realization</strong> of the general Earth-GAIS architecture of DW58553912. DW58553912 establishes the architecture and falsification framework; DW58553913 specifies candidate physical realizations and implementation pathways. Neither is complete without the other.</p>
+<p>The architecture combines:</p>
+<div class="math-block">$$
+\boxed{ \text{multimodal sensing} + \text{adaptive state estimation} + \text{Riemannian geometric pathology} + \text{nonlinear restoration} + \text{cross-scale coupling} + \text{phase synchronization} + \text{probabilistic forecasting} + \text{sonification}. }
+$$</div>
+<p>The central state equation is Eq. (59):</p>
+<div class="math-block">$$
+\boxed{ \dot{x} = F_{\rm tectonic} + F_{\rm atm} + F_{\rm ocean} + F_N - \sum_i\Gamma_i\psi_i(B_i) + D(x) + \xi(t). }
+$$</div>
+<p>The central effective diagnostic equation is the Curvature Inversion Equation, Eq. (25):</p>
+<div class="math-block">$$
+\boxed{ \frac{\partial R}{\partial t} = \alpha_{\rm stress} \left[ \left( \frac{d-2}{2} \right) \Delta_g \|\nabla\chi\|^2 + \dots \right] - \Delta_g R - 2\gamma_{\rm response} \|{\rm Ric}\|^2 + \beta_{\rm dissipation} R. }
+$$</div>
+<p>The central topological criterion is the Attractor Fracture condition, Eq. (29):</p>
+<div class="math-block">$$
+\boxed{ W^u(z_{\rm saddle}) \cap W^s(z_{\rm seismic}) \rightarrow \emptyset. }
+$$</div>
+<p>The central synchronization measure is Eq. (73):</p>
+<div class="math-block">$$
+\boxed{ R_{ij} = \left| \left\langle e^{i(\theta_i-\theta_j)} \right\rangle \right|. }
+$$</div>
+<p>And the central scientific criterion is:</p>
+<div class="math-block">$$
+\boxed{ \text{forecasting skill must be demonstrated prospectively, against fixed null models, with environmental confounders controlled}. }
+$$</div>
+<p>The candidate THz/fracture-emission layer is intentionally treated as an exploratory hypothesis rather than established fact. Existing literature provides motivation for investigating acoustic, electromagnetic, neutron, and terahertz-related emissions associated with fracture, but the transition from laboratory fracture phenomena to reliable natural-earthquake forecasting remains unproven and requires independent replication.</p>
+<p>Likewise, the numerical architecture should be interpreted initially as a computational testbed rather than evidence of operational prediction. The deepest objective of this work is therefore not to claim that humanity has already solved earthquake prediction. It is to propose a path by which the problem can be attacked scientifically:</p>
+<div class="math-block">$$
+\boxed{ \text{observe} \rightarrow \text{assimilate} \rightarrow \text{separate} \rightarrow \text{couple} \rightarrow \text{synchronize} \rightarrow \text{forecast} \rightarrow \text{test}. }
+$$</div>
+<p>If this program ultimately succeeds, even a probabilistic narrowing of the earthquake-risk window could provide meaningful additional time for infrastructure protection, emergency preparation, transportation control, hospital readiness, and public warning.</p>
+<p>The purpose of earthquake science is not to predict nature with certainty. It is to understand enough of nature's dynamics to reduce the consequences of its most destructive transitions. In this sense, the proposed architecture may be understood as an attempt to develop a <strong>planetary stethoscope</strong>: not an instrument that claims to know exactly when the Earth will rupture, but a system designed to listen continuously for coherent changes in its internal dynamical state.</p>
+<p>As expressed in the Daoist formulation:</p>
+<blockquote>
+<p>"万物负阴而抱阳，冲气以为和。"</p>
+</blockquote>
+<p>Within the present architecture, this is interpreted not as a physical law but as a philosophical metaphor for a driven system in which loading, fluctuation, coupling, relaxation, memory, and adaptation continuously interact.</p>
+<p>The scientific question remains open. And that openness is precisely what makes the hypothesis testable.</p>
+<hr />
+<h2 id="final-statement">Final Statement</h2>
+<div class="math-block">$$
+\boxed{ \textbf{ Earthquake forecasting is not only the prediction of an event. It is the reconstruction of the Earth system approaching the event. } }
+$$</div>
+<div class="math-block">$$
+\boxed{ \textbf{ From precursor detection to state-space geometry; from isolated signals to trans-scale adaptive dynamics; from earthquake prediction to Earth-state forecasting. } }
+$$</div>
+<hr />
+<h2 id="acknowledgments">Acknowledgments</h2>
+<p>We are grateful to all the individual scientists and teams of scientists who have contributed to the exploration and understanding of the entire universe. Supported by AI-driven Supercomputers and the MES Universe Project. We have benefited from our amazing AI partners.</p>
+<hr />
+<h2 id="funding">Funding</h2>
+<p>Not applicable</p>
+<hr />
+<h2 id="availability-of-data-and-material">Availability of data and material</h2>
+<p>Code, mathematical scripts, and preprints are available at GitHub: https://github.com/Zaitian001/-Self-Preprint-V1.1-</p>
+<hr />
+<h2 id="competing-interests">Competing interests</h2>
+<p>Not applicable</p>
+<hr />
+<h2 id="authors-contributions">Authors Contributions</h2>
+<p>Not applicable</p>
+<hr />
+<h2 id="references">References</h2>
+<p>[1] Baoliin (Zaitian) Wu 伍宝林. (2026). A Trans-Scale Adaptive Intelligence Architecture for Earthquake Forecasting: Earth as a Generalized Adaptive Intelligent System and Earthquake as a State-Space Critical Transition. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553912.html</p>
+<p>[2] Baoliin (Zaitian) Wu 伍宝林. (2026). Room-Temperature Superconductivity as the Developmental Terminal State of a Generalized Adaptive Intelligent System: The Topological Condensation of a Dynamic Equilibrium Quantum Manifold. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553911.html</p>
+<p>[3] Baoliin (Zaitian) Wu 伍宝林. (2026). Groma-Ju Dao: The Six Modes of the Zhoubi Suanjin "Ju" as a Geometric Operator System. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553910.html</p>
+<p>[4] Baoliin (Zaitian) Wu. 伍宝林 (2026). Geometric Pathology: Topological Collapse and Landscape Reprogramming in Complex Adaptive Systems. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553909.html</p>
+<p>[5] Baoliin (Zaitian) Wu 伍宝林. (2026). The Geometry of Qi: A Riemannian Architecture for Physiological Information Flow and Meridian Emergence. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553908.html</p>
+<p>[6] Baoliin (Zaitian) Wu 伍宝林. (2026). Adaptive Intelligence Dao: A Unified Mathematical Principle of Anchor Zero, Change, Balance, Emergence, and Self-Organization. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553907.html</p>
+<p>[7] Baoliin (Zaitian) Wu 伍宝林. (2026). Physical AGI Dao: Nonlinear Symmetry Anchor Zero as the Theoretical Foundation of Adaptive Intelligence World Model. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553906.html</p>
+<p>[8] Baoliin (Zaitian) Wu 伍宝林. (2026). Wuxing Dao. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553905.html</p>
+<p>[9] Baoliin (Zaitian) Wu 伍宝林. (2026). Stochastic Geometric Dynamics of Immune Memory, From Curvature-Driven Attractors to Testable Predictions. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553904.html</p>
+<p>[10] Baoliin (Zaitian) Wu 伍宝林. (2026). The Bone Porcelain Core Hypothesis of the 1600 Year Old Delhi Iron Pillar: An Adaptive Intelligent Metamaterial Invention Driven by Internal Sustained Release. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553903.html</p>
+<p>[11] Baoliin (Zaitian) Wu 伍宝林. (2026). The Gui-Ju Dao: The Artificial General Intelligence Algorithm, Geometry, and Engineering Paradigm of China's Indigenous Closed Spherical Universe. Self-Preprint Archive. https://zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553902.html</p>
+<p>[12] Baoliin (Zaitian) Wu 伍宝林. (2026). The Overlooked Coordinate System Exorcising the Demons and Ghosts of Quantum Measurement. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553901.html</p>
+<p>[13] Baoliin (Zaitian) Wu. (2025). The Pure Geometric Origin of Mass and Light. Preprints. https://doi.org/10.20944/preprints202505.2249.v1</p>
+<p>[14] Baoliin (Zaitian) Wu. (2025). The Return to the Einstein Spherical Universe Model. Preprints. https://doi.org/10.20944/preprints202501.2189.v1</p>
+<p>[15] Baoliin (Zaitian) Wu. (2025). The Return to the Einstein Spherical Universe: The Dawning Moment of a New Cosmic Science. Preprints. https://doi.org/10.20944/preprints202504.0727.v2</p>
+<p>[16] Beroza, G. C., Segou, M., and Mousavi, S. M. (2021). Machine learning and earthquake forecasting—next steps. Nature Communications, 12, 4761. https://doi.org/10.1038/s41467-021-24952-6</p>
+<p>[17] Mizrahi, L., Dallo, I., van der Elst, N., et al. (2024). Developing, testing, and communicating earthquake forecasts: Current practices and future directions. Reviews of Geophysics, 62(1), e2023RG000823. https://doi.org/10.1029/2023RG000823</p>
+<p>[18] Martínez-Garzón, P., and Poli, P. (2024). Cascade and pre-slip models oversimplify the complexity of earthquake preparation in nature. Communications Earth &amp; Environment, 5, 120. https://doi.org/10.1038/s43247-024-01285-y</p>
+<p>[19] Elliott, J. R., Walters, R. J., and Wright, T. J. (2016). The role of space-based observation in understanding and responding to active tectonics and earthquakes. Nature Communications, 7, 13844. https://doi.org/10.1038/ncomms13844</p>
+<p>[20] U.S. Geological Survey. (2025). Can you predict earthquakes? Earthquake Hazards Program. https://www.usgs.gov/faqs/can-you-predict-earthquakes</p>
+<p>[21] U.S. Geological Survey. (2025). What is the difference between earthquake early warning, earthquake forecasts, earthquake probabilities, and earthquake prediction? Earthquake Hazards Program. https://www.usgs.gov/faqs/what-difference-between-earthquake-early-warning-earthquake-forecasts-earthquake-probabilities</p>
+<p>[22] Lindh, A. G. (2003). The nature of earthquake prediction. Seismological Research Letters, 74(6), 723–725. https://doi.org/10.1785/gssrl.74.6.723</p>
+<p>[23] Carpinteri, A. (2026). Terahertz Phonons and Nanomechanical Instabilities: Unlocking Low-Energy Nuclear Reactions in Condensed Matter through a Deeper Understanding of Earth, Celestial, Electronic, and Biochemical Systems. Springer Nature Switzerland.</p>
+<p>[24] Carpinteri, A. (2026). Acoustic, electromagnetic, and neutron emission as earthquake precursors. In: Terahertz Phonons and Nanomechanical Instabilities. Springer, Cham. https://doi.org/10.1007/978-3-032-14692-2_16</p>
+<p>[25] Doodson, A. T. (1921). The harmonic development of the tidal potential. Proceedings of the Royal Society of London. Series A, 100(704), 305–329. https://doi.org/10.1098/rspa.1921.0088</p>
+<p>[26] Scheffer, M., Bascompte, J., Brock, W. A., et al. (2009). Early warning signs of critical shifts. Nature, 461, 53–59. https://doi.org/10.1038/nature08227</p>
+<p>[27] Dakos, V., Carpenter, S. R., Brock, W. A., et al. (2012). Demonstrating an early warning detection method for key shifts in time series using simulated ecological data. PLoS ONE, 7(7), e41010. https://doi.org/10.1371/journal.pone.0041010</p>
+<p>[28] Laozi. Tao Te Ching 道德经.</p>
+<p>[29] Rong Cheng Gong 容成公. (c. 27th century BCE). <em>Xuan Yin Yi Mi</em> 玄隐遗密. Hand-copied by an oral tradition heir by San Shen Dao Ren 三申道人, 2008. Published by Traditional Chinese Medicine Press, 2018.</p>
+<hr />
+<h2 id="appendix-a-required-validation-experiments">Appendix A. Required Validation Experiments</h2>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Experiment</th>
+<th>Purpose</th>
+<th>Expected Outcome</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Null model</td>
+<td>False-alarm estimation</td>
+<td>Low false-alarm rate</td>
+</tr>
+<tr>
+<td>Environmental perturbation</td>
+<td>Confounder rejection</td>
+<td>Suppressed anomaly</td>
+</tr>
+<tr>
+<td>Nucleation-only anomaly</td>
+<td>Single-layer response</td>
+<td>WATCH only</td>
+</tr>
+<tr>
+<td>Two-layer cascade</td>
+<td>Coupling detection</td>
+<td>Intermediate escalation</td>
+</tr>
+<tr>
+<td>Four-layer cascade</td>
+<td>Full architecture</td>
+<td>Correct sequential escalation</td>
+</tr>
+<tr>
+<td>Curvature inversion</td>
+<td>Geometric phase transition</td>
+<td>$R &gt; 0$ at critical stress</td>
+</tr>
+<tr>
+<td>Attractor fracture</td>
+<td>Topological criterion</td>
+<td>Transversality broken</td>
+</tr>
+<tr>
+<td>THz ablation</td>
+<td>Test THz contribution</td>
+<td>Quantified performance loss/gain</td>
+</tr>
+<tr>
+<td>Phase-locking ablation</td>
+<td>Test synchronization</td>
+<td>Quantified performance loss/gain</td>
+</tr>
+<tr>
+<td>Adaptive-learning ablation</td>
+<td>Test AID contribution</td>
+<td>Quantified performance loss/gain</td>
+</tr>
+<tr>
+<td>Manifold-regularization ablation</td>
+<td>Test geometric regularization</td>
+<td>Quantified performance loss/gain</td>
+</tr>
+<tr>
+<td>Sampling-artifact decimation</td>
+<td>Test metric physicality</td>
+<td>No systematic bias under decimation</td>
+</tr>
+<tr>
+<td>Blind prospective test</td>
+<td>Real predictive skill</td>
+<td>Pre-registered statistical evaluation</td>
+</tr>
+</tbody>
+</table></div>
+<hr />
+<h2 id="appendix-b-terminology">Appendix B. Terminology</h2>
+<p><strong>Earthquake Early Warning (EEW):</strong> notification issued after earthquake initiation but before strong shaking reaches a target location.</p>
+<p><strong>Earthquake Forecasting:</strong> probabilistic estimation of future seismic activity.</p>
+<p><strong>Earthquake Prediction:</strong> a stronger claim involving specification of time, location, and magnitude.</p>
+<p><strong>Nucleation layer:</strong> candidate microscopic-to-nanoscale fracture-emission layer.</p>
+<p><strong>AID:</strong> Adaptive Intelligence Dao, the general adaptive dynamical architecture.</p>
+<p><strong>NSAZ:</strong> nonlinear symmetry-anchor restoring mapping.</p>
+<p><strong>Curvature Inversion:</strong> the sign reversal of local scalar curvature from negative stable to positive pathological.</p>
+<p><strong>Attractor Fracture:</strong> the breaking of Morse–Smale transversality, isolating the healthy basin from the seismic release channel.</p>
+<p><strong>MES Scaling Laws:</strong> Modified Einstein Spherical scaling relations $c \propto |R|^{1/2}$, $m \propto |R|^{-1/2}$. In this work they are treated as state-space scaling hypotheses, not relativistic physical laws.</p>
+<p><strong>Gravity Well Effect:</strong> geometric confinement of precursory signals near high-curvature nucleation zones.</p>
+<p><strong>Phase-locking value:</strong> a measure of phase synchronization between two signals.</p>
+<p><strong>Sonification:</strong> transformation of latent physical-state variables into an auditory representation.</p>
+<p><strong>Representational anchor:</strong> a mathematical structure used to organize or encode observations; not necessarily a physical constant.</p>
+<hr />
+<h2 id="appendix-c-correspondence-table-with-earth-gais-architecture">Appendix C. Correspondence Table with Earth-GAIS Architecture</h2>
+<p>This appendix provides a systematic correspondence between the general Earth-GAIS architecture of DW58553912 and the specific physical realization presented in this manuscript. Cross-references use paper IDs to avoid numbering ambiguity.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>General Architecture: DW58553912</th>
+<th>Specific Realization: DW58553913</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>State vector $\mathbf X(t)$</td>
+<td>Four-layer decomposition $x_N, x_{72}, x_{24}, x_{12}$</td>
+</tr>
+<tr>
+<td>Adaptive imbalance $B_i$</td>
+<td>Scale-dependent imbalance with adaptive baseline</td>
+</tr>
+<tr>
+<td>Nonlinear transformation $\Delta C_i$</td>
+<td>Stress-to-interval mapping with $\tanh$ saturation</td>
+</tr>
+<tr>
+<td>Cross-scale coupling $\Phi_{ij}$</td>
+<td>Phase-locking cascade criterion</td>
+</tr>
+<tr>
+<td>Observation space</td>
+<td>Multi-sensor fusion including THz/particle channels</td>
+</tr>
+<tr>
+<td>Geometric pathology</td>
+<td>Curvature Inversion Equation + Attractor Fracture</td>
+</tr>
+<tr>
+<td>Jacobian stability</td>
+<td>$\lambda_{\max}$ from reconstructed flow</td>
+</tr>
+<tr>
+<td>Earthquake Acupoint</td>
+<td>Not developed here; see DW58553912 §14; observational restriction only</td>
+</tr>
+<tr>
+<td>Human–AI loop</td>
+<td>Sonification interface</td>
+</tr>
+<tr>
+<td>Verifiable predictions</td>
+<td>Predictions including curvature inversion and sampling-artifact independence</td>
+</tr>
+<tr>
+<td>Prospective validation</td>
+<td>Pre-registered, blind, rolling hindcast</td>
+</tr>
+<tr>
+<td>Ablation experiments</td>
+<td>Models A–F including geometric pathology</td>
+</tr>
+<tr>
+<td>Null models</td>
+<td>Phase-randomized, spatially shuffled surrogates</td>
+</tr>
+<tr>
+<td>T0–T6 roadmap</td>
+<td>Physical implementation phases</td>
+</tr>
+<tr>
+<td>Intervention restriction</td>
+<td>Physical intervention excluded; observation only</td>
+</tr>
+</tbody>
+</table></div>
+        </div>
+    </article>
+
+    <!-- 引用格式选择器（Google Scholar 风格） -->
+    <div class="citation-toggle">
+        <span class="cite-label">📚 Cite this paper</span>
+        <span class="cite-arrow">▾</span>
+    </div>
+    <div class="citation-panel" id="citationPanel">
+        <div class="citation-format-selector">
+            <button class="format-btn active" data-format="apa">APA</button>
+            <button class="format-btn" data-format="mla">MLA</button>
+            <button class="format-btn" data-format="chicago">Chicago</button>
+            <button class="format-btn" data-format="bibtex">BibTeX</button>
+        </div>
+        <div class="citation-display" id="citationDisplay">
+            <span class="citation-text" id="citationText"></span>
+            <button class="copy-btn" id="copyCitationBtn">📋 Copy</button>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        © 2026 Baoliin (Zaitian) Wu 伍宝林 · Self-Preprint Decentralized Academic Archive
+    </footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const citationData = {"apa": "Baoliin (Zaitian) Wu \u4f0d\u5b9d\u6797 (2026). A Trans-Scale Adaptive Intelligence Architecture for Earthquake Forecasting: From Nucleation Signals to Seismic Rupture through Adaptive State Estimation, Phase Synchronization, and Sonification. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553913.html", "mla": "Baoliin (Zaitian) Wu \u4f0d\u5b9d\u6797. \"A Trans-Scale Adaptive Intelligence Architecture for Earthquake Forecasting: From Nucleation Signals to Seismic Rupture through Adaptive State Estimation, Phase Synchronization, and Sonification.\" Self-Preprint Archive, 2026, https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553913.html.", "chicago": "Baoliin (Zaitian) Wu \u4f0d\u5b9d\u6797. \"A Trans-Scale Adaptive Intelligence Architecture for Earthquake Forecasting: From Nucleation Signals to Seismic Rupture through Adaptive State Estimation, Phase Synchronization, and Sonification.\" Self-Preprint Archive. Accessed September 24, 2026. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553913.html.", "bibtex": "@article{selfpreprint_DW58553913,\n  author = {Baoliin (Zaitian) Wu \u4f0d\u5b9d\u6797},\n  title = {A Trans-Scale Adaptive Intelligence Architecture for Earthquake Forecasting: From Nucleation Signals to Seismic Rupture through Adaptive State Estimation, Phase Synchronization, and Sonification},\n  journal = {Self-Preprint Archive},\n  year = {2026},\n  url = {https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553913.html}\n}"};
+    const toggle = document.querySelector('.citation-toggle');
+    const panel = document.getElementById('citationPanel');
+    const textDisplay = document.getElementById('citationText');
+    const copyBtn = document.getElementById('copyCitationBtn');
+    let currentFormat = 'apa';
+
+    if (toggle && panel) {
+        toggle.addEventListener('click', function() {
+            this.classList.toggle('open');
+            panel.classList.toggle('open');
+            if (panel.classList.contains('open')) {
+                updateCitation('apa');
+            }
+        });
+    }
+
+    document.querySelectorAll('.format-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            document.querySelectorAll('.format-btn').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            currentFormat = this.getAttribute('data-format');
+            updateCitation(currentFormat);
+        });
+    });
+
+    function updateCitation(format) {
+        let text = citationData[format] || 'Citation not available';
+        if (format === 'bibtex') {
+            textDisplay.className = 'citation-text bibtex-display';
+            textDisplay.textContent = text;
+        } else {
+            textDisplay.className = 'citation-text';
+            textDisplay.textContent = text;
+        }
+        copyBtn.textContent = '📋 Copy';
+        copyBtn.classList.remove('copied');
+    }
+
+    if (copyBtn) {
+        copyBtn.addEventListener('click', function() {
+            const text = textDisplay.textContent;
+            navigator.clipboard.writeText(text).then(function() {
+                copyBtn.textContent = '✅ Copied!';
+                copyBtn.classList.add('copied');
+                setTimeout(function() {
+                    copyBtn.textContent = '📋 Copy';
+                    copyBtn.classList.remove('copied');
+                }, 2000);
+            }).catch(function() {
+                const ta = document.createElement('textarea');
+                ta.value = text;
+                document.body.appendChild(ta);
+                ta.select();
+                document.execCommand('copy');
+                document.body.removeChild(ta);
+                copyBtn.textContent = '✅ Copied!';
+                setTimeout(function() {
+                    copyBtn.textContent = '📋 Copy';
+                }, 2000);
+            });
+        });
+    }
+
+    updateCitation('apa');
+});
+</script>
+
+<!-- 引入 Mermaid 渲染引擎 -->
+<script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+    document.addEventListener("DOMContentLoaded", async function () {
+        const codeBlocks = document.querySelectorAll('pre code.language-mermaid, pre code.mermaid');
+        codeBlocks.forEach((codeBlock) => {
+            const pre = codeBlock.parentElement;
+            const div = document.createElement('div');
+            div.className = 'mermaid';
+            div.textContent = codeBlock.textContent;
+            pre.replaceWith(div);
+        });
+
+        mermaid.initialize({ startOnLoad: false, theme: 'default', securityLevel: 'loose' });
+        await mermaid.run();
+    });
+</script>
+</body>
+</html>
