@@ -389,7 +389,7 @@ window.MathJax = {
         
     <div class="anchor-box">
         🛡️ <strong>Physical Proof of Existence</strong> | Banknote Serial: <code>DW58553915</code>
-        <div class="anchor-hash">SHA-256 Hash: 9f1928959b29079c80596e5a5333af592466c8426fba4e76774f8f9b2e1970bd</div>
+        <div class="anchor-hash">SHA-256 Hash: d7c046f2dcfafd8cc5cef634dda59fa1ebc3374021457777ad03790d66aa2a17</div>
     </div>
     
 
@@ -412,7 +412,7 @@ window.MathJax = {
 <p>The standard model of quantum computation is built upon linear, unitary evolution of a closed quantum system. Its computational power is captured by the class $\mathrm{BQP}$ (Bounded-error Quantum Polynomial time). While $\mathrm{BQP}$ contains celebrated algorithms such as Shor's factoring and Grover's search, it is widely believed to be strictly weaker than $\mathrm{PSPACE}$. The gap between $\mathrm{BQP}$ and $\mathrm{PSPACE}$ has remained one of the central open problems in computational complexity.</p>
 <p>In parallel, the physics of open quantum systems has matured into a rigorous framework describing dissipation, decoherence, and non-unitary dynamics. The Lindblad master equation provides the most general Markovian evolution for a density matrix, preserving complete positivity and trace. Yet, to date, open quantum dynamics has been viewed primarily as a source of noise to be suppressed, rather than as a computational resource.</p>
 <p>This paper proposes a fundamental shift: <strong>nonlinear open quantum dynamics can be harnessed to define a new complexity class, NQP, whose computational power may exceed BQP and potentially reach PSPACE.</strong></p>
-<p>Our starting point is the companion paper [1], which derives a curvature-driven Lindblad master equation from first principles on a closed $S^3$ manifold. There, the scalar curvature $R$ is not a static background but a dynamical field whose quantum fluctuations act as a universal heat bath. The resulting master equation is:</p>
+<p>Our starting point is the companion paper DW58553914 [1], which derives a curvature-driven Lindblad master equation from first principles on a closed $S^3$ manifold. There, the scalar curvature $R$ is not a static background but a dynamical field whose quantum fluctuations act as a universal heat bath. The resulting master equation is:</p>
 <div class="math-block">$$
 \frac{d\hat{\rho}}{dt} = -\frac{i}{\hbar}[\hat{H}_s(R), \hat{\rho}] + \sum_{\omega} \gamma(\omega; R) \left( A(\omega) \hat{\rho} A^\dagger(\omega) - \frac{1}{2} \{A^\dagger(\omega) A(\omega), \hat{\rho}\} \right), \quad (1)
 $$</div>
@@ -422,7 +422,7 @@ $$</div>
 $$</div>
 <p>with $\hat{C}$ a suitable operator and $s_{\mathrm{sat}}$ a saturation scale. This nonlinearity is the key ingredient that distinguishes NQP from BQP.</p>
 <p>The present paper formalizes the NQP machine, defines the complexity class NQP, and proves the Enhancing Theorem $\mathrm{NQP} = \mathrm{PSPACE}$ under explicit physical assumptions. We also stress that the NQP paradigm does not collapse if this equality fails. Even in the worst case, NQP remains a well-defined class containing BQP and contained in PSPACE, and may still offer computational advantages over standard quantum computing.</p>
-<p><strong>Numerical realization.</strong> A central contribution of this paper is the presentation of <strong>V4.51/V4.52</strong>, a fully implemented numerical realization of the NQP machine. V4.51/V4.52 is a Yin-Yang coupled five-element quantum cellular automaton (QCA) on a $19^3$ toroidal lattice, where the local state is a $5 \times 5$ density matrix and the global evolution is governed by a nonlinear Lindblad-type master equation. Crucially, V4.51/V4.52 provides concrete numerical evidence that the four physical assumptions (A1)--(A4) are satisfied, and that the ZQP channel---introduced in the companion paper [1] as a geometric correction term $Z_{jk}$ in the MES cosmology---can be interpreted as a state-dependent nonlinear dissipation channel $\gamma(\rho) = \lambda_{\mathrm{ZQP}} \tanh(\mathrm{Tr}(\hat{C}\rho)/s_{\mathrm{sat}})$. This bridges the geometric framework of [1] and the complexity-theoretic framework of the present paper.</p>
+<p><strong>Numerical realization.</strong> A central contribution of this paper is the presentation of <strong>V4.51/V4.52</strong>, a fully implemented numerical realization of the NQP machine. V4.51/V4.52 is a Yin-Yang coupled five-element quantum cellular automaton (QCA) on a $19^3$ toroidal lattice, where the local state is a $5 \times 5$ density matrix and the global evolution is governed by a nonlinear Lindblad-type master equation. Crucially, V4.51/V4.52 provides concrete numerical evidence that the four physical assumptions (A1)--(A4) are satisfied, and that the ZQP channel---introduced in the companion paper [1] as a geometric correction term $Z_{jk}$ in the MES cosmology---can be interpreted as a state-dependent nonlinear dissipation channel $\gamma(\rho) = \lambda_{\mathrm{ZQP}} \tanh(\mathrm{Tr}(\hat{C}\rho)/s_{\mathrm{sat}})$. This bridges the geometric framework of DW58553914 [1] and the complexity-theoretic framework of the present paper.</p>
 <p>The paper is organized as follows. Section 2 defines the NQP machine. Section 3 introduces the complexity class NQP and establishes basic containments. Section 4 states and proves the Enhancing Theorem with assumptions (A1)--(A4). Section 5 provides explicit reductions from QBF, 3-SAT, graph isomorphism, and nonlinear PDE steady states. Section 6 presents the V4.51/V4.52 numerical realization and verifies assumptions (A1)--(A4). Section 7 discusses robustness and reformulates the equality as an enhancing conjecture. Section 8 outlines physical realization. Section 9 concludes.</p>
 <hr />
 <h2 id="2-the-nqp-machine">2. The NQP Machine</h2>
@@ -459,7 +459,7 @@ $$</div>
 </ol>
 <p>The machine accepts the input if the readout satisfies the acceptance condition.</p>
 <h3 id="23-physical-realization">2.3 Physical Realization</h3>
-<p>The physical realization of an NQP machine follows directly from the curvature-driven Lindblad dynamics of [1]. In practice, one may use:</p>
+<p>The physical realization of an NQP machine follows directly from the curvature-driven Lindblad dynamics of DW58553914 [1]. In practice, one may use:</p>
 <ul>
 <li><strong>Superconducting qubits</strong> coupled to a tunable curvature bath.</li>
 <li><strong>Cold atoms</strong> in optical lattices with engineered curvature gradients.</li>
@@ -605,7 +605,7 @@ $$</div>
 <ol>
 <li><strong>Containment:</strong> $\mathrm{BQP} \subseteq \mathrm{NQP} \subseteq \mathrm{PSPACE}$ holds unconditionally.</li>
 <li><strong>Explicit reductions:</strong> QBF, 3-SAT, graph isomorphism, and nonlinear PDE steady states are all in NQP under (A1)--(A4).</li>
-<li><strong>Physical plausibility:</strong> Curvature-driven bifurcations naturally implement quantifier structures, as shown in the companion paper [1].</li>
+<li><strong>Physical plausibility:</strong> Curvature-driven bifurcations naturally implement quantifier structures, as shown in the companion paper DW58553914 [1].</li>
 <li><strong>Numerical realization:</strong> V4.51/V4.52 satisfies assumptions (A1)--(A4) in a concrete dynamical system (Section 6).</li>
 <li><strong>Analogy:</strong> Just as Shor's algorithm showed BQP ⊋ BPP, NQP may show PSPACE ⊋ BQP.</li>
 </ol>
@@ -660,17 +660,17 @@ D(x) = \lambda_{\mathrm{ZQP}} \tanh\left( \frac{M(x) - \bar{M}(x)}{s_{\mathrm{sa
 $$</div>
 <p>This is exactly the nonlinear dissipation channel of the NQP machine, with $\hat{C} = \hat{M} - \hat{M}_{\mathrm{bar}}$ and $s_{\mathrm{sat}} = 0.50$.</p>
 <h4 id="623-connection-to-zqp">6.2.3 Connection to ZQP</h4>
-<p>In the companion paper [1], ZQP appears as a geometric correction term $Z_{jk}$ in the MES cosmology, with energy density $\rho_Z \propto a^{-6}$. Here we interpret $Z_{jk}$ as the geometric origin of the effective nonlinear dissipation $D(x)$:</p>
+<p>In the companion paper DW58553914 [1], ZQP appears as a geometric correction term $Z_{jk}$ in the MES cosmology, with energy density $\rho_Z \propto a^{-6}$. Here we interpret $Z_{jk}$ as the geometric origin of the effective nonlinear dissipation $D(x)$:</p>
 <div class="math-block">$$
 D(x) \longleftrightarrow Z_{jk}(x). \quad (19)
 $$</div>
-<p>The $\tanh$ saturation ensures that the dissipation is bounded, and the antisymmetry $D \to -D$ under $M \leftrightarrow \bar{M}$ implements the Yin-Yang balance. This provides a direct bridge between the geometric framework of [1] and the complexity-theoretic framework of the present paper.</p>
+<p>The $\tanh$ saturation ensures that the dissipation is bounded, and the antisymmetry $D \to -D$ under $M \leftrightarrow \bar{M}$ implements the Yin-Yang balance. This provides a direct bridge between the geometric framework of DW58553914 [1] and the complexity-theoretic framework of the present paper.</p>
 <h4 id="624-curvature">6.2.4 Curvature</h4>
 <p>The local curvature $R(x)$ is computed as the Frobenius norm of the deviation of the local density matrix from its neighborhood average:</p>
 <div class="math-block">$$
 R(x) = \left\| \rho(x) - \frac{1}{6} \sum_{y \sim x} \rho(y) \right\|_F. \quad (20)
 $$</div>
-<p>This is a discrete realization of the scalar curvature on a toroidal lattice, and it directly implements the curvature-driven dynamics of [1].</p>
+<p>This is a discrete realization of the scalar curvature on a toroidal lattice, and it directly implements the curvature-driven dynamics of DW58553914 [1].</p>
 <h4 id="625-gauge-attention">6.2.5 Gauge Attention</h4>
 <p>The gauge attention mechanism uses the Frobenius norm of the gauge potential:</p>
 <div class="math-block">$$
@@ -785,14 +785,14 @@ $$</div>
 <p>Therefore, V4.51/V4.52 provides a concrete numerical demonstration that the NQP machine is physically realizable.</p>
 <hr />
 <h2 id="7-physical-realization-and-experimental-signatures">7. Physical Realization and Experimental Signatures</h2>
-<p>The physical realization of NQP machines relies on the curvature-driven Lindblad dynamics derived in [1]. The key experimental signatures include:</p>
+<p>The physical realization of NQP machines relies on the curvature-driven Lindblad dynamics derived in DW58553914 [1]. The key experimental signatures include:</p>
 <ol>
 <li><strong>State-dependent dissipation:</strong> $\Gamma(\rho) \propto \tanh(\mathrm{Tr}(\hat{C}\rho)/s_{\mathrm{sat}})$.</li>
 <li><strong>Curvature-dependent frequency shift:</strong> $\Delta\omega \propto R^{1/4}$.</li>
 <li><strong>Decoherence rate:</strong> $T_2 \propto R^{-3/2}$.</li>
 <li><strong>Exceptional points:</strong> Energy splitting $\propto \sqrt{R - R_c}$.</li>
 </ol>
-<p>These signatures can be tested in superconducting qubits, cold atoms, and skyrmion arrays. A detailed experimental roadmap is provided in the companion paper [3].</p>
+<p>These signatures can be tested in superconducting qubits, cold atoms, and skyrmion arrays. A detailed experimental roadmap is provided in the companion paper DW58553917 [3].</p>
 <p>The V4.51/V4.52 numerical realization provides additional evidence for these signatures:</p>
 <ul>
 <li><strong>State-dependent dissipation:</strong> The Yin-Yang coupling $D = \lambda \tanh(\Delta M/s_{\mathrm{sat}})$ is explicitly state-dependent.</li>
@@ -802,7 +802,7 @@ $$</div>
 <hr />
 <h2 id="8-discussion-and-conclusion">8. Discussion and Conclusion</h2>
 <p>We have introduced NQP, a complexity class defined by nonlinear open quantum dynamics on a curved manifold. The class contains BQP and is contained in PSPACE. We have stated and proved the Enhancing Theorem $\mathrm{NQP} = \mathrm{PSPACE}$ under explicit physical assumptions (A1)--(A4), and provided explicit reductions from QBF, 3-SAT, graph isomorphism, and nonlinear PDEs.</p>
-<p>We have further presented V4.51/V4.52, a fully implemented numerical realization of the NQP machine on a $19^3$ toroidal lattice with Yin-Yang coupled five-element quantum cellular automata. V4.51/V4.52 satisfies all four physical assumptions (A1)--(A4) and provides concrete evidence that the NQP machine is physically realizable. The ZQP channel---introduced in [1] as a geometric correction term $Z_{jk}$---admits a natural interpretation as a state-dependent nonlinear dissipation channel, bridging the geometric and complexity-theoretic frameworks.</p>
+<p>We have further presented V4.51/V4.52, a fully implemented numerical realization of the NQP machine on a $19^3$ toroidal lattice with Yin-Yang coupled five-element quantum cellular automata. V4.51/V4.52 satisfies all four physical assumptions (A1)--(A4) and provides concrete evidence that the NQP machine is physically realizable. The ZQP channel---introduced in DW58553914 [1] as a geometric correction term $Z_{jk}$---admits a natural interpretation as a state-dependent nonlinear dissipation channel, bridging the geometric and complexity-theoretic frameworks.</p>
 <p>Crucially, we have emphasized that the NQP paradigm is robust: even if the Enhancing Theorem fails, NQP remains a well-defined complexity class with potentially useful physical realizations. The paradigm shifts the focus from linear unitary quantum computation to nonlinear dissipative quantum dynamics, opening new directions in quantum complexity theory and quantum algorithm design.</p>
 <p>Future work includes:</p>
 <ol>
