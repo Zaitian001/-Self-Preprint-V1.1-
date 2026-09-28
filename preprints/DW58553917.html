@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experimental Roadmap for MES-PUF (NQP-QPUF): Curvature-Driven Open Quantum Systems in Superconducting, Cold-Atom, and Skyrmion Platforms - Self-Preprint Archive</title>
+    <meta name="citation_title" content="Experimental Roadmap for MES-PUF (NQP-QPUF): Curvature-Driven Open Quantum Systems in Superconducting, Cold-Atom, and Skyrmion Platforms">
+    <meta name="citation_publication_date" content="2026/09/28 (First draft: December 7, 2025)">
+    <meta name="citation_fulltext_html_url" content="https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553917.html">
+    <meta name="citation_journal_title" content="Self-Preprint Archive">
+    <meta name="citation_author" content="Baoliin (Zaitian) Wu 伍宝林">
+    <style>
+/* ==========================================================================
+   -Self-Preprint- Academic Theme (Complete Merged & Responsive Version)
+   ========================================================================== */
+*, *::before, *::after { box-sizing: border-box; }
+
+:root {
+    --bg-color: #fcfcfc;
+    --text-color: #2b2b2b;
+    --primary-color: #1a365d;
+    --link-color: #2b6cb0;
+    --border-color: #e2e8f0;
+    --code-bg: #f7fafc;
+    --blockquote-bg: #edf2f7;
+    --meta-color: #718096;
+    --max-width: 860px;
+    --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-serif: Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+body {
+    font-family: var(--font-main);
+    line-height: 1.75;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 2rem 1rem;
+}
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 3rem 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border: 1px solid var(--border-color);
+}
+a { color: var(--link-color); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* 归档列表页 (index.html) */
+.archive-year {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.3rem;
+    color: var(--primary-color);
+}
+.post-item {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+}
+.post-title { font-size: 1.1rem; font-weight: 500; }
+.post-date {
+    font-size: 0.9rem;
+    color: var(--meta-color);
+    font-family: monospace;
+    white-space: nowrap;
+    margin-left: 1rem;
+}
+.post-abstract {
+    font-size: 0.95rem;
+    color: #555;
+    margin: 0.2rem 0 1.2rem 0;
+    font-family: var(--font-serif);
+}
+
+/* 文章单页 (paper_id.html) */
+article h1.paper-title {
+    font-size: 2.2rem;
+    line-height: 1.3;
+    margin-bottom: 0.8rem;
+    letter-spacing: -0.02em;
+    color: var(--primary-color);
+}
+.paper-meta {
+    font-size: 0.92rem;
+    color: var(--meta-color);
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1.2rem;
+}
+.paper-body {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+.paper-body h1, .paper-body h2, .paper-body h3 {
+    font-family: var(--font-main);
+    font-weight: 600;
+    margin-top: 2.2rem;
+    color: var(--primary-color);
+}
+
+/* MathJax & LaTeX 公式排版防护 */
+mjx-container {
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-width: 100%;
+}
+mjx-container[display="true"] {
+    display: block !important;
+    width: 100% !important;
+    margin: 1.5rem 0 !important;
+    text-align: center;
+}
+mjx-container[display="false"] {
+    display: inline-block;
+    vertical-align: middle;
+}
+.math-block {
+    display: block;
+    width: 100%;
+    margin: 1.5rem 0;
+    text-align: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+/* 物理确权卡片 */
+.anchor-box {
+    margin: 2rem 0;
+    padding: 1rem 1.2rem;
+    background: #fafafa;
+    border: 1px solid #eaeaea;
+    border-radius: 6px;
+    font-size: 0.88rem;
+    color: #444;
+}
+.anchor-box strong { color: #111; }
+.anchor-hash {
+    font-family: monospace;
+    font-size: 0.82rem;
+    word-break: break-all;
+    color: #666;
+    margin-top: 0.3rem;
+}
+
+/* 代码与预格式化文本 */
+code, pre {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-size: 0.9rem;
+}
+code {
+    background-color: var(--code-bg);
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+}
+pre {
+    padding: 1rem;
+    overflow-x: auto;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    background-color: var(--code-bg);
+    line-height: 1.45;
+}
+pre code {
+    background-color: transparent;
+    padding: 0;
+    border: none;
+}
+
+/* 引用与表格 */
+blockquote {
+    margin: 1.5rem 0;
+    padding: 0.8rem 1.2rem;
+    background-color: var(--blockquote-bg);
+    border-left: 4px solid var(--primary-color);
+    border-radius: 0 4px 4px 0;
+}
+blockquote p:last-child { margin-bottom: 0; }
+.table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+    -webkit-overflow-scrolling: touch;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+th, td {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-color);
+    text-align: left;
+}
+th {
+    background-color: var(--code-bg);
+    font-weight: 600;
+}
+
+/* 学术插图与图注 */
+img, .paper-body img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1.8rem auto 0.5rem auto;
+    border-radius: 4px;
+}
+figure { margin: 2rem auto; text-align: center; }
+figure img { max-width: 100%; height: auto; margin: 0 auto; }
+figcaption {
+    font-size: 0.9rem;
+    color: var(--meta-color);
+    margin-top: 0.6rem;
+    font-family: var(--font-main);
+    line-height: 1.4;
+}
+
+/* 引用格式选择器 (Google Scholar 风格) */
+.citation-toggle {
+    display: inline-block;
+    margin: 2rem 0 0.5rem 0;
+    padding: 0.5rem 1.2rem;
+    background: #f1f5f9;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: #1e293b;
+    transition: background 0.2s;
+    user-select: none;
+}
+.citation-toggle:hover { background: #e2e8f0; }
+.citation-toggle .cite-arrow {
+    display: inline-block;
+    margin-left: 0.4rem;
+    font-size: 0.7rem;
+    transition: transform 0.3s ease;
+}
+.citation-toggle.open .cite-arrow { transform: rotate(180deg); }
+
+.citation-panel {
+    display: none;
+    margin: 0 0 2rem 0;
+    padding: 1.2rem 1.5rem;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    max-width: 100%;
+}
+.citation-panel.open { display: block; }
+
+.citation-format-selector {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    margin-bottom: 0.8rem;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 0.8rem;
+}
+.format-btn {
+    background: transparent;
+    border: none;
+    padding: 0.3rem 1rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+    color: #64748b;
+    border-radius: 12px;
+    transition: all 0.2s;
+}
+.format-btn:hover { background: #e2e8f0; color: #1e293b; }
+.format-btn.active {
+    background: #1e293b;
+    color: white;
+    font-weight: 500;
+}
+
+.citation-display {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+.citation-text {
+    flex: 1;
+    font-size: 0.88rem;
+    font-family: var(--font-serif);
+    color: #1e293b;
+    background: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    border: 1px solid #e9edf2;
+    word-break: break-word;
+    min-height: 2.2rem;
+}
+.citation-text.bibtex-display {
+    font-family: monospace;
+    font-size: 0.82rem;
+    white-space: pre-wrap;
+}
+.copy-btn {
+    background: #e2e8f0;
+    border: none;
+    border-radius: 4px;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.8rem;
+    cursor: pointer;
+    color: #334155;
+    white-space: nowrap;
+    transition: all 0.2s;
+    align-self: center;
+}
+.copy-btn:hover { background: #cbd5e1; }
+.copy-btn.copied { background: #22c55e; color: white; }
+
+/* 页脚与移动端响应式 */
+footer.site-footer {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.85rem;
+    color: var(--meta-color);
+    text-align: center;
+}
+@media (max-width: 768px) {
+    body { padding: 1rem 0.5rem; }
+    .container { padding: 1.5rem 1rem; }
+    article h1.paper-title { font-size: 1.75rem; }
+    .post-item { flex-direction: column; align-items: flex-start; }
+    .post-date { margin-left: 0; margin-top: 0.2rem; }
+}
+</style>
+    
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    tags: 'ams'
+  },
+  svg: {
+    fontCache: 'global',
+    displayAlign: 'center',
+    displayIndent: '0'
+  },
+  options: {
+    enableMenu: false,
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+};
+</script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+<script>
+  window.addEventListener('load', function () {
+    if (window.MathJax && MathJax.typesetPromise) {
+      MathJax.typesetPromise().catch(function (err) {
+        console.log('MathJax typeset failed: ', err);
+      });
+    }
+  });
+</script>
+
+</head>
+<body>
+    <header class="site-header">
+        <nav>
+            <a href="../index.html">← Archives</a>
+            <a href="../feed.xml">RSS</a>
+        </nav>
+    </header>
+
+    <article>
+        <h1 class="paper-title">Experimental Roadmap for MES-PUF (NQP-QPUF): Curvature-Driven Open Quantum Systems in Superconducting, Cold-Atom, and Skyrmion Platforms</h1>
+        <div class="paper-meta">
+            By <strong>Baoliin (Zaitian) Wu 伍宝林</strong> · Published on 2026-09-28 (First draft: December 7, 2025)
+        </div>
+
+        
+    <div class="anchor-box">
+        🛡️ <strong>Physical Proof of Existence</strong> | Banknote Serial: <code>DW58553917</code>
+        <div class="anchor-hash">SHA-256 Hash: ec0ae567082bd27e3887505f105086f83ab22c9d5d6db15e16be43578157dafd</div>
+    </div>
+    
+
+        <blockquote style="font-family: var(--font-serif); background:#fdfdfd; padding:0.8rem 1.2rem; border-left:3px solid #ccc; margin: 1.5rem 0;"><p>We present a detailed experimental roadmap for realizing and testing the <strong>MES-PUF</strong> (also referred to as <strong>NQP-QPUF</strong>) paradigm---a physically unclonable function based on curvature-driven open quantum dynamics. The theoretical foundation is provided by the companion papers: the derivation of the curvature-driven Lindblad master equation [1], the definition of the nonlinear quantum complexity class NQP [2], and the MES-PUF protocol [3]. Here we translate these theoretical constructs into concrete experimental proposals for three complementary platforms: superconducting qubits, cold atoms in optical lattices, and magnetic skyrmion arrays. For each platform, we specify how to engineer a tunable curvature bath, how to implement the challenge--response protocol, and how to extract the device fingerprint from the exact Bloch trajectories. We provide quantitative estimates for the curvature-dependent decoherence rate $\Gamma(R) \propto R^{3/2}$, the frequency shift $\Delta(R) \propto R^{1/4}$, and the quasi-steady-state lifetime. We list verifiable predictions, including state-dependent dissipation, curvature-induced exceptional points, and topological protection of the fingerprint. We also analyze systematic errors, calibration requirements, and integration with existing quantum control hardware. Crucially, the experimental tests proposed here validate the physical foundations of MES-PUF, which are independent of the complexity assumptions (A1)--(A4) of [2]. The V4.51/V4.52 numerical realization [2] provides a pre-experimental testbed and parameter guidance for the proposed platforms. This roadmap aims to guide the first generation of MES-PUF experiments and to establish a new class of post-quantum physical-layer security primitives.</p></blockquote>
+
+        <div class="paper-body">
+            <p><strong>Baoliin (Zaitian) Wu 伍宝林</strong></p>
+<p><em>Email:</em> zaitian001@gmail.com</p>
+<p><em>ORCiD:</em> <a href="https://orcid.org/0009-0003-2051-5247">0009-0003-2051-5247</a></p>
+<p><em>Affiliation:</em> People's Government of Guangdong Province: Guangzhou, CN</p>
+<p><em>Date:</em> September 28, 2026 (Drafted: December 7, 2025)</p>
+<hr />
+<h2 id="abstract">Abstract</h2>
+<p>We present a detailed experimental roadmap for realizing and testing the <strong>MES-PUF</strong> (also referred to as <strong>NQP-QPUF</strong>) paradigm---a physically unclonable function based on curvature-driven open quantum dynamics. The theoretical foundation is provided by the companion papers: the derivation of the curvature-driven Lindblad master equation [1], the definition of the nonlinear quantum complexity class NQP [2], and the MES-PUF protocol [3]. Here we translate these theoretical constructs into concrete experimental proposals for three complementary platforms: superconducting qubits, cold atoms in optical lattices, and magnetic skyrmion arrays. For each platform, we specify how to engineer a tunable curvature bath, how to implement the challenge--response protocol, and how to extract the device fingerprint from the exact Bloch trajectories. We provide quantitative estimates for the curvature-dependent decoherence rate $\Gamma(R) \propto R^{3/2}$, the frequency shift $\Delta(R) \propto R^{1/4}$, and the quasi-steady-state lifetime. We list verifiable predictions, including state-dependent dissipation, curvature-induced exceptional points, and topological protection of the fingerprint. We also analyze systematic errors, calibration requirements, and integration with existing quantum control hardware. Crucially, the experimental tests proposed here validate the physical foundations of MES-PUF, which are independent of the complexity assumptions (A1)--(A4) of [2]. The V4.51/V4.52 numerical realization [2] provides a pre-experimental testbed and parameter guidance for the proposed platforms. This roadmap aims to guide the first generation of MES-PUF experiments and to establish a new class of post-quantum physical-layer security primitives.</p>
+<p><strong>Keywords:</strong> Experimental roadmap, MES-PUF, NQP-QPUF, Physically unclonable functions, Open quantum systems, Curvature-driven dynamics, Superconducting qubits, Cold atoms, Skyrmions.</p>
+<hr />
+<h2 id="1-introduction">1. Introduction</h2>
+<p>This work builds upon the companion papers [1--3]. The broader Physical AGI Dao framework [12] provides the conceptual background for the nonlinear symmetry anchor zero underlying the ZQP channel.</p>
+<p>To avoid losing sight of its origins in the Modified Einstein Spherical (MES) cosmology, we provisionally refer to this new paradigm as <strong>MES-PUF</strong>, in addition to its technical name NQP-QPUF. The two names are interchangeable; the former emphasizes the geometric foundation, while the latter emphasizes the nonlinear quantum complexity and the physically unclonable function.</p>
+<p>The MES-PUF paradigm introduced in [1--3] proposes a fundamentally new approach to physically unclonable functions (PUFs) by exploiting the curvature-driven open quantum dynamics of a closed $S^3$ manifold. In this architecture, each device possesses a unique nanoscale curvature field $R(x)$, which determines its local decoherence rate $\Gamma(R) \propto R^{3/2}$ and curvature-induced frequency shift $\Delta(R) \propto R^{1/4}$. The response to a control-pulse challenge is an exact Bloch trajectory obtained from the Lindblad master equation. Because $R(x)$ is fixed by fabrication randomness and protected by global topology, it cannot be cloned or reverse-engineered---neither by classical nor by quantum means.</p>
+<p>We emphasize that the security of MES-PUF does not rely on the Enhancing Theorem $\mathrm{NQP} = \mathrm{PSPACE}$ nor on the assumptions (A1)--(A4) of [2]. It rests on physical unclonability, topological protection, irreversible nonlinear dissipation, and the quantum no-cloning theorem. The experiments proposed here therefore test the physical-layer security primitive directly, independent of complexity theory.</p>
+<p><strong>Numerical pre-validation.</strong> Before fabricating physical devices, the V4.51/V4.52 numerical model [2] can be used to test the challenge--response protocol, calibrate the expected fingerprint parameters $(\Gamma, \Omega)$, and optimize pulse sequences. This reduces the risk and cost of the experimental phase. The V4.51/V4.52 model is a $19^3$ toroidal lattice with Yin-Yang coupled five-element quantum cellular automata, where the local state is a $5 \times 5$ density matrix and the evolution is governed by a nonlinear Lindblad-type master equation. The numerical realization satisfies assumptions (A1)--(A4) and provides concrete parameter ranges for the physical platforms.</p>
+<p>While the theoretical foundations are developed in [1--3], the experimental realization remains an open challenge. This paper provides a concrete roadmap for testing the MES-PUF paradigm in three complementary physical platforms:</p>
+<ol>
+<li><strong>Superconducting qubits</strong>, which offer precise control, fast readout, and tunable coupling to engineered baths [10].</li>
+<li><strong>Cold atoms in optical lattices</strong>, which provide clean, isolated quantum systems with controllable curvature gradients [9].</li>
+<li><strong>Magnetic skyrmion arrays</strong>, which naturally exhibit nanoscale curvature variations and topological protection [8].</li>
+</ol>
+<p>For each platform, we describe the physical implementation of the curvature bath, the challenge--response protocol, and the extraction of the device fingerprint. We give quantitative estimates for measurable quantities and list verifiable predictions. We also discuss systematic errors and integration with existing quantum control infrastructure.</p>
+<p>The paper is organized as follows. Section 2 briefly reviews the theoretical background. Section 3 presents the experimental platforms in detail. Section 4 describes the challenge--response protocol implementation. Section 5 lists predicted signatures and verifiable tests. Section 6 analyzes systematic errors. Section 7 discusses integration and applications. Section 8 concludes.</p>
+<hr />
+<h2 id="2-theoretical-background">2. Theoretical Background</h2>
+<h3 id="21-curvature-driven-lindblad-dynamics">2.1 Curvature-Driven Lindblad Dynamics</h3>
+<p>The starting point is the curvature-driven Lindblad master equation derived in [1]:</p>
+<div class="math-block">$$
+\frac{d\hat{\rho}}{dt} = -\frac{i}{\hbar}[\hat{H}_s(R), \hat{\rho}]
++ \sum_{\omega} \gamma(\omega; R) \left( A(\omega) \hat{\rho} A^\dagger(\omega)
+- \frac{1}{2} \{A^\dagger(\omega) A(\omega), \hat{\rho}\} \right), \quad (1)
+$$</div>
+<p>where the dissipation rate scales as $\gamma(\omega; R) \propto R^{3/2}$. This master equation is of the standard Gorini--Kossakowski--Sudarshan--Lindblad form [4--6]. For a qubit, the Hamiltonian is</p>
+<div class="math-block">$$
+\hat{H}_s = \frac{\hbar\omega_0}{2}\hat{\sigma}_z + \frac{\hbar\Delta(R)}{2}\hat{\sigma}_x,
+\quad
+\Delta(R) = \Delta_0 \left(\frac{R}{R_0}\right)^{1/4}. \quad (2)
+$$</div>
+<p>The Lindblad operators are $\sqrt{\gamma_1}\hat{\sigma}_{-}$ and $\sqrt{\gamma_2(R)}\hat{\sigma}_z$, with $\gamma_2(R) \propto R^{3/2}$. The resulting Bloch equations have exact solutions [1]:</p>
+<div class="math-block">$$
+\begin{aligned}
+r_x(t) &= e^{-\Gamma t} \left[ r_x(0) \cos \Omega t + r_y(0) \sin \Omega t \right], \\
+r_y(t) &= e^{-\Gamma t} \left[ r_y(0) \cos \Omega t - r_x(0) \sin \Omega t \right], \\
+r_z(t) &= r_z^{\rm eq} + \left[ r_z(0) - r_z^{\rm eq} \right] e^{-\Gamma t},
+\end{aligned} \quad (3)
+$$</div>
+<p>where $\Gamma(R) = \frac{\gamma_1}{2} + 2\gamma_2(R)$ and $\Omega(R) = \sqrt{\Delta(R)^2 + \omega_0^2}$ (in the small-dissipation limit).</p>
+<h3 id="22-nonlinear-extension-and-v451v452">2.2 Nonlinear Extension and V4.51/V4.52</h3>
+<p>The master equation above is linear in $\rho$. In the NQP architecture [1,2], the effective dissipation rate becomes state-dependent:</p>
+<div class="math-block">$$
+\gamma_{\rm eff}(\rho) = \lambda_{\rm ZQP} \tanh\left( \frac{\mathrm{Tr}(\hat{C}\rho)}{s_{\rm sat}} \right). \quad (4)
+$$</div>
+<p>This is an example of a nonlinear quantum channel; see [7] for related work on coherent quantum dynamics in steady-state manifolds.</p>
+<p>The V4.51/V4.52 numerical realization [2] implements this nonlinearity through the Yin-Yang mass coupling:</p>
+<div class="math-block">$$
+D(x) = \lambda_{\rm ZQP} \tanh\left( \frac{M(x) - \bar{M}(x)}{s_{\rm sat}} \right), \quad (5)
+$$</div>
+<p>with $\hat{C} = \hat{M} - \hat{M}_{\rm bar}$ and $s_{\rm sat} = 0.50$. The numerical model provides concrete parameter ranges for the experimental platforms.</p>
+<h3 id="23-mes-puf-protocol">2.3 MES-PUF Protocol</h3>
+<p>The MES-PUF protocol [3] consists of the following steps:</p>
+<ol>
+<li><strong>Challenge generation:</strong> A verifier generates a random sequence of control pulses $c = \{(\Omega_i, \phi_i, \tau_i)\}$.</li>
+<li><strong>Response measurement:</strong> The device applies the pulses to a qubit and records the Bloch trajectory $r(t)$.</li>
+<li><strong>Fingerprint extraction:</strong> The verifier fits the trajectory to the exact Bloch solution to obtain $(\Gamma, \Omega)$.</li>
+<li><strong>Verification:</strong> The extracted fingerprint is compared to a pre-registered reference.</li>
+<li><strong>Key extraction:</strong> A stable key is derived from the response.</li>
+</ol>
+<p>Security relies on the physical unclonability of $R(x)$, topological protection, and the quantum no-cloning theorem---not on complexity assumptions.</p>
+<hr />
+<h2 id="3-experimental-platforms">3. Experimental Platforms</h2>
+<h3 id="31-superconducting-qubits">3.1 Superconducting Qubits</h3>
+<h4 id="311-device-design">3.1.1 Device Design</h4>
+<p>We propose a transmon qubit coupled to a nonlinear resonator that simulates the curvature bath. The transmon has $\omega_0/2\pi \approx 5$ GHz and is fabricated on a sapphire substrate with aluminum Josephson junctions. The curvature bath is implemented by a superconducting loop with a tunable nonlinear inductance, allowing the effective curvature $R$ to be varied in situ.</p>
+<h4 id="312-curvature-engineering">3.1.2 Curvature Engineering</h4>
+<p>The local curvature $R$ is controlled by the flux threading the loop. By tuning the flux, we can achieve $R/R_0$ in the range $0.1$ to $10$. The curvature-dependent frequency shift $\Delta(R)$ is realized by a tunable coupler that couples the transmon to the nonlinear resonator.</p>
+<h4 id="313-control-and-readout">3.1.3 Control and Readout</h4>
+<p>Control pulses are applied via microwave lines with arbitrary waveform generators. Readout is performed using dispersive measurement with a high-fidelity heterodyne setup. The Bloch trajectory is reconstructed from repeated measurements at different evolution times.</p>
+<h4 id="314-estimated-parameters">3.1.4 Estimated Parameters</h4>
+<p><strong>Table 3.1: Superconducting qubit parameters.</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Symbol</th>
+<th>Estimated Value</th>
+<th>V4.51/V4.52 Numerical Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Qubit frequency</td>
+<td>$\omega_0/2\pi$</td>
+<td>$5$ GHz</td>
+<td>---</td>
+</tr>
+<tr>
+<td>Curvature range</td>
+<td>$R/R_0$</td>
+<td>$0.1 - 10$</td>
+<td>$0.5 - 5$</td>
+</tr>
+<tr>
+<td>Decoherence rate</td>
+<td>$\Gamma(R)$</td>
+<td>$10^4 - 10^6$ s$^{-1}$</td>
+<td>$10^3 - 10^5$ (sim. units)</td>
+</tr>
+<tr>
+<td>Frequency shift</td>
+<td>$\Delta(R)$</td>
+<td>$1 - 10$ MHz</td>
+<td>$0.5 - 5$ (sim. units)</td>
+</tr>
+<tr>
+<td>Readout fidelity</td>
+<td>$\mathcal{F}$</td>
+<td>$&gt; 99\%$</td>
+<td>$98\%$</td>
+</tr>
+<tr>
+<td>Coherence time</td>
+<td>$T_2$</td>
+<td>$10 - 100$ μs</td>
+<td>$20 - 200$ steps</td>
+</tr>
+</tbody>
+</table></div>
+<p><em>Note: V4.51/V4.52 values are in simulation units and are not directly comparable to the physical units in the third column.</em></p>
+<h4 id="315-challenges">3.1.5 Challenges</h4>
+<ul>
+<li>Maintaining calibration stability over long measurement times.</li>
+<li>Minimizing crosstalk between the qubit and the curvature bath.</li>
+<li>Achieving reproducible curvature fields across different devices.</li>
+</ul>
+<h3 id="32-cold-atoms-in-optical-lattices">3.2 Cold Atoms in Optical Lattices</h3>
+<h4 id="321-system">3.2.1 System</h4>
+<p>We use $^{87}$Rb atoms loaded into a one-dimensional optical lattice. The atoms are cooled to the motional ground state and manipulated with Raman transitions.</p>
+<h4 id="322-curvature-engineering">3.2.2 Curvature Engineering</h4>
+<p>The curvature bath is simulated by a spatially varying light shift that mimics the effect of scalar curvature. By using a laser beam with a shaped intensity profile, we create a curvature gradient $\nabla R$ across the lattice. The local curvature $R(x)$ is controlled by the laser intensity and detuning.</p>
+<h4 id="323-control-and-readout">3.2.3 Control and Readout</h4>
+<p>Internal states are manipulated with microwave and Raman pulses. Readout is performed by absorption imaging with single-site resolution. The Bloch trajectory is obtained by measuring the spin population after a variable evolution time.</p>
+<h4 id="324-estimated-parameters">3.2.4 Estimated Parameters</h4>
+<p><strong>Table 3.2: Cold-atom parameters.</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Symbol</th>
+<th>Estimated Value</th>
+<th>V4.51/V4.52 Numerical Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Atomic species</td>
+<td>$^{87}$Rb</td>
+<td>---</td>
+<td>---</td>
+</tr>
+<tr>
+<td>Lattice spacing</td>
+<td>$a$</td>
+<td>$532$ nm</td>
+<td>---</td>
+</tr>
+<tr>
+<td>Curvature range</td>
+<td>$R/R_0$</td>
+<td>$0.1 - 5$</td>
+<td>$0.5 - 5$</td>
+</tr>
+<tr>
+<td>Decoherence rate</td>
+<td>$\Gamma(R)$</td>
+<td>$10^2 - 10^4$ s$^{-1}$</td>
+<td>$10^3 - 10^5$ (sim. units)</td>
+</tr>
+<tr>
+<td>Frequency shift</td>
+<td>$\Delta(R)$</td>
+<td>$10 - 100$ kHz</td>
+<td>$0.5 - 5$ (sim. units)</td>
+</tr>
+<tr>
+<td>Readout fidelity</td>
+<td>$\mathcal{F}$</td>
+<td>$&gt; 95\%$</td>
+<td>$98\%$</td>
+</tr>
+<tr>
+<td>Coherence time</td>
+<td>$T_2$</td>
+<td>$1 - 10$ ms</td>
+<td>$20 - 200$ steps</td>
+</tr>
+</tbody>
+</table></div>
+<p><em>Note: V4.51/V4.52 values are in simulation units and are not directly comparable to physical units.</em></p>
+<h4 id="325-challenges">3.2.5 Challenges</h4>
+<ul>
+<li>Achieving uniform curvature over the atomic sample.</li>
+<li>Suppressing technical noise from laser intensity fluctuations.</li>
+<li>Extending coherence times to match theoretical predictions.</li>
+</ul>
+<h3 id="33-magnetic-skyrmion-arrays">3.3 Magnetic Skyrmion Arrays</h3>
+<h4 id="331-material-system">3.3.1 Material System</h4>
+<p>We use Pt/CoFeB/MgO multilayers grown by sputtering. Skyrmions are stabilized by Dzyaloshinskii--Moriya interaction (DMI) arising from the Pt/Co interface. The curvature field $R(x)$ is determined by gradients in DMI strength and film thickness.</p>
+<h4 id="332-curvature-engineering">3.3.2 Curvature Engineering</h4>
+<p>Gradient DMI is achieved by varying the Pt layer thickness or by using a composition gradient. The local curvature $R(x)$ can be tuned by applying strain via a piezoelectric substrate.</p>
+<h4 id="333-control-and-readout">3.3.3 Control and Readout</h4>
+<p>Skyrmions are manipulated with spin-orbit torque (SOT) pulses delivered through underlying nanowires. Readout is performed using the topological Hall effect (THE) or magnetic force microscopy (MFM). The Bloch trajectory is inferred from the time-dependent THE signal.</p>
+<h4 id="334-estimated-parameters">3.3.4 Estimated Parameters</h4>
+<p><strong>Table 3.3: Skyrmion array parameters.</strong></p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Symbol</th>
+<th>Estimated Value</th>
+<th>V4.51/V4.52 Numerical Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Material</td>
+<td>Pt/CoFeB/MgO</td>
+<td>---</td>
+<td>---</td>
+</tr>
+<tr>
+<td>Skyrmion diameter</td>
+<td>$d$</td>
+<td>$50 - 200$ nm</td>
+<td>---</td>
+</tr>
+<tr>
+<td>Curvature range</td>
+<td>$R/R_0$</td>
+<td>$0.5 - 5$</td>
+<td>$0.5 - 5$</td>
+</tr>
+<tr>
+<td>Decoherence rate</td>
+<td>$\Gamma(R)$</td>
+<td>$10^6 - 10^8$ s$^{-1}$</td>
+<td>$10^3 - 10^5$ (sim. units)</td>
+</tr>
+<tr>
+<td>Frequency shift</td>
+<td>$\Delta(R)$</td>
+<td>$10 - 100$ MHz</td>
+<td>$0.5 - 5$ (sim. units)</td>
+</tr>
+<tr>
+<td>Readout fidelity</td>
+<td>$\mathcal{F}$</td>
+<td>$&gt; 90\%$</td>
+<td>$98\%$</td>
+</tr>
+<tr>
+<td>Retention time</td>
+<td>$\tau$</td>
+<td>$&gt; 10^6$ s</td>
+<td>---</td>
+</tr>
+</tbody>
+</table></div>
+<p><em>Note: V4.51/V4.52 values are in simulation units and are not directly comparable to physical units.</em></p>
+<h4 id="335-challenges">3.3.5 Challenges</h4>
+<ul>
+<li>Achieving uniform DMI gradients over large arrays.</li>
+<li>Reducing disorder and defects that broaden the curvature distribution.</li>
+<li>Integrating fast electrical readout with nanoscale skyrmion manipulation.</li>
+</ul>
+<hr />
+<h2 id="4-challenge-response-protocol-implementation">4. Challenge--Response Protocol Implementation</h2>
+<h3 id="41-pulse-sequence-design">4.1 Pulse Sequence Design</h3>
+<p>The challenge consists of a sequence of $m$ control pulses. Each pulse is characterized by its amplitude $\Omega_i$, phase $\phi_i$, and duration $\tau_i$. A typical challenge has $m = 10$ to $100$ pulses, with $\Omega_i/2\pi$ in the range $1 - 100$ MHz and $\tau_i$ in the range $10 - 1000$ ns.</p>
+<h3 id="42-data-acquisition">4.2 Data Acquisition</h3>
+<p>For each challenge, the following procedure is repeated:</p>
+<ol>
+<li>Initialize the qubit in $|0\rangle$.</li>
+<li>Apply a $\pi/2$ pulse to prepare $|+\rangle$.</li>
+<li>Apply the challenge pulses.</li>
+<li>Allow free evolution for a variable time $t$.</li>
+<li>Measure the Bloch vector components $r_x, r_y, r_z$.</li>
+<li>Repeat for $N$ different evolution times to reconstruct the trajectory.</li>
+</ol>
+<p>The total number of measurements per challenge is $N \times M$, where $M$ is the number of repetitions for averaging.</p>
+<h3 id="43-fingerprint-extraction">4.3 Fingerprint Extraction</h3>
+<p>The recorded trajectory is fitted to the exact Bloch solution:</p>
+<div class="math-block">$$
+r_x(t) = e^{-\Gamma t} \cos(\Omega t + \phi_0),
+\quad
+r_y(t) = -e^{-\Gamma t} \sin(\Omega t + \phi_0). \quad (6)
+$$</div>
+<p>A least-squares fit yields the parameters $\Gamma$, $\Omega$, and $\phi_0$. The pair $(\Gamma, \Omega)$ constitutes the device fingerprint. For increased robustness, multiple challenges can be combined to extract a higher-dimensional fingerprint.</p>
+<h3 id="44-verification-and-key-extraction">4.4 Verification and Key Extraction</h3>
+<p>The verifier compares the extracted fingerprint to the pre-registered reference:</p>
+<div class="math-block">$$
+\text{Accept} \iff \|\mathcal{F} - \mathcal{F}_{\rm ref}\| &lt; \epsilon, \quad (7)
+$$</div>
+<p>where $\epsilon$ is a tolerance determined by the noise level. A stable key is extracted by quantizing the fingerprint components and applying privacy amplification. For a discussion of modeling attacks against PUFs, see [11].</p>
+<h3 id="45-numerical-pre-validation-with-v451v452">4.5 Numerical Pre-Validation with V4.51/V4.52</h3>
+<p>Before fabricating physical devices, the V4.51/V4.52 numerical model [2] can be used for:</p>
+<ol>
+<li><strong>Reference fingerprint generation:</strong> Simulate the challenge--response protocol on a $19^3$ toroidal lattice and extract the fingerprint $(\Gamma, \Omega)$. The numerical model produces fingerprints with $\Gamma \sim 10^3 - 10^5$ (simulation units) and $\Omega \sim 0.5 - 5$ (simulation units).</li>
+<li><strong>Noise robustness testing:</strong> Inject controlled noise into the numerical model and measure the stability of the fingerprint. The V4.51/V4.52 model provides preliminary evidence that the fingerprint remains stable under noise levels up to $\epsilon = 0.1$.</li>
+<li><strong>Pulse sequence optimization:</strong> Use the numerical model to design challenges that maximize the distinguishability of different curvature fields. The gauge attention mechanism in V4.51/V4.52 provides a natural optimization criterion.</li>
+<li><strong>Parameter estimation:</strong> Extract numerical values of $\Gamma(R)$, $\Omega(R)$, and $\tau_{\rm relax}$ to guide the choice of physical parameters. The numerical model gives $\tau_{\rm relax} \sim 5$ steps, consistent with the theoretical prediction $\tau_{\rm relax} \sim 1/\lambda_{\rm ZQP}$.</li>
+<li><strong>Verification of assumptions (A1)--(A4):</strong> The V4.51/V4.52 model provides preliminary numerical evidence that the four physical assumptions of the Enhancing Theorem are satisfied in a concrete dynamical system.</li>
+</ol>
+<p>The numerical pre-validation reduces the risk and cost of the experimental phase by providing concrete parameter ranges and preliminary validation of the physical foundations of MES-PUF.</p>
+<hr />
+<h2 id="5-predicted-signatures-and-verifiable-tests">5. Predicted Signatures and Verifiable Tests</h2>
+<p>The MES-PUF paradigm makes several verifiable predictions that can be tested in the proposed platforms.</p>
+<h3 id="51-state-dependent-dissipation">5.1 State-Dependent Dissipation</h3>
+<p><strong>Prediction:</strong> The dissipation rate depends on the state as</p>
+<div class="math-block">$$
+\Gamma(\rho) \propto \tanh\left( \frac{\mathrm{Tr}(\hat{C}\rho)}{s_{\rm sat}} \right). \quad (8)
+$$</div>
+<p><strong>Test:</strong> Prepare different initial states and measure the decay rate. A nonlinear dependence on $\mathrm{Tr}(\hat{C}\rho)$ confirms the prediction.</p>
+<p><strong>V4.51/V4.52 numerical value:</strong> The Yin-Yang coupling $D = \lambda \tanh(\Delta M / s_{\rm sat})$ with $\lambda = 0.20$ and $s_{\rm sat} = 0.50$ produces a state-dependent dissipation that is numerically stable over 200 steps.</p>
+<h3 id="52-curvature-dependent-frequency-shift">5.2 Curvature-Dependent Frequency Shift</h3>
+<p><strong>Prediction:</strong> The effective Rabi frequency scales as</p>
+<div class="math-block">$$
+\Delta(R) \propto R^{1/4}. \quad (9)
+$$</div>
+<p><strong>Test:</strong> Vary the curvature $R$ and measure the oscillation frequency. A power-law fit should yield exponent $1/4$.</p>
+<p><strong>V4.51/V4.52 numerical value:</strong> The gauge attention rate $\Delta_j \sim \eta G_\mu$ with $\eta = 0.40$ and $G_\mu \sim 0.1$ gives $\Delta_j \sim 0.04$ in simulation units. The scaling of $\Delta_j$ with $R$ remains to be tested in future numerical runs.</p>
+<h3 id="53-decoherence-rate-scaling">5.3 Decoherence Rate Scaling</h3>
+<p><strong>Prediction:</strong> The decoherence rate scales as</p>
+<div class="math-block">$$
+\Gamma(R) \propto R^{3/2}. \quad (10)
+$$</div>
+<p><strong>Test:</strong> Measure $T_2$ as a function of $R$. A log-log plot should yield slope $3/2$.</p>
+<p><strong>V4.51/V4.52 numerical value:</strong> The coherence remains bounded below $0.5$ throughout the 200-step run, providing preliminary evidence consistent with $R^{3/2}$ scaling.</p>
+<h3 id="54-curvature-induced-exceptional-points">5.4 Curvature-Induced Exceptional Points</h3>
+<p><strong>Prediction:</strong> The effective non-Hermitian Hamiltonian exhibits exceptional points at</p>
+<div class="math-block">$$
+R_c = R_0 \left[ \frac{\omega_0^2 + (\gamma_1 - 2\gamma_2)^2}{4\Delta_0^2} \right]^{1/3}. \quad (11)
+$$</div>
+<p>Near $R_c$, the energy splitting scales as $\sqrt{R - R_c}$.</p>
+<p><strong>Test:</strong> Sweep $R$ through $R_c$ and measure the energy splitting via spectroscopy.</p>
+<p><strong>V4.51/V4.52 numerical value:</strong> The bifurcation sequence in V4.51/V4.52 exhibits critical points where the number of cores changes discretely, suggestive of exceptional-point-like behavior, though a direct measurement of the energy splitting remains to be performed.</p>
+<h3 id="55-topological-protection-of-fingerprint">5.5 Topological Protection of Fingerprint</h3>
+<p><strong>Prediction:</strong> The device fingerprint is robust against local perturbations and temperature fluctuations.</p>
+<p><strong>Test:</strong> Measure the fingerprint at different temperatures and after applying local stress. The fingerprint should remain stable within tolerance.</p>
+<p><strong>V4.51/V4.52 numerical value:</strong> The fingerprint remains stable throughout the 200-step run, with gauge intensity bounded between $10^{-3}$ and $10^{-1}$, providing preliminary evidence for topological protection.</p>
+<h3 id="56-independence-from-complexity-assumptions">5.6 Independence from Complexity Assumptions</h3>
+<p><strong>Prediction:</strong> The fingerprint remains stable even when the nonlinear dissipation is weak, confirming that security does not rely on NQP-hardness or on the Enhancing Theorem.</p>
+<p><strong>Test:</strong> Reduce the nonlinear coupling $\lambda_{\rm ZQP}$ and verify that the challenge--response behavior is still unique and reproducible. This confirms that physical unclonability is the primary security source.</p>
+<p><strong>V4.51/V4.52 numerical value:</strong> Reducing $\lambda_{\rm ZQP}$ from 0.20 to 0.10 still produces unique curvature fields, providing preliminary evidence that physical unclonability is preserved.</p>
+<hr />
+<h2 id="6-systematic-errors-and-calibration">6. Systematic Errors and Calibration</h2>
+<h3 id="61-superconducting-qubits">6.1 Superconducting Qubits</h3>
+<ul>
+<li><strong>Flux noise:</strong> Causes fluctuations in $\omega_0$. Mitigated by flux stabilization and dynamical decoupling.</li>
+<li><strong>Readout crosstalk:</strong> Calibrated by measuring the readout fidelity as a function of drive power.</li>
+<li><strong>Bath nonlinearity:</strong> Characterized by independent measurements of the resonator response.</li>
+</ul>
+<h3 id="62-cold-atoms">6.2 Cold Atoms</h3>
+<ul>
+<li><strong>Laser intensity noise:</strong> Stabilized by feedback control.</li>
+<li><strong>Lattice depth fluctuations:</strong> Monitored by measuring the motional sideband spectrum.</li>
+<li><strong>Atomic collisions:</strong> Reduced by using a single atom or a dilute cloud.</li>
+</ul>
+<h3 id="63-skyrmion-arrays">6.3 Skyrmion Arrays</h3>
+<ul>
+<li><strong>DMI gradient non-uniformity:</strong> Characterized by scanning MFM.</li>
+<li><strong>Thermal fluctuations:</strong> Controlled by operating at low temperatures.</li>
+<li><strong>Readout noise:</strong> Reduced by averaging over many skyrmions.</li>
+</ul>
+<hr />
+<h2 id="7-integration-and-applications">7. Integration and Applications</h2>
+<h3 id="71-integration-with-existing-hardware">7.1 Integration with Existing Hardware</h3>
+<p>The MES-PUF protocol can be integrated with existing quantum control hardware. For superconducting qubits, standard microwave equipment and FPGAs are sufficient. For cold atoms, existing optical lattice setups can be adapted. For skyrmion arrays, standard spintronics fabrication and readout tools are required.</p>
+<h3 id="72-applications">7.2 Applications</h3>
+<ul>
+<li><strong>Post-quantum authentication:</strong> MES-PUF provides a physical-layer security primitive resistant to quantum attacks.</li>
+<li><strong>Supply-chain provenance:</strong> Each device has a unique, unclonable fingerprint.</li>
+<li><strong>Hardware root of trust:</strong> The fingerprint can be used to anchor cryptographic keys.</li>
+</ul>
+<hr />
+<h2 id="8-conclusion">8. Conclusion</h2>
+<p>We have presented a detailed experimental roadmap for realizing and testing the MES-PUF paradigm in superconducting qubits, cold atoms, and skyrmion arrays. For each platform, we specified the device design, curvature engineering, control and readout, and estimated parameters. We listed verifiable predictions, including state-dependent dissipation, curvature-dependent frequency shifts, decoherence rate scaling, and exceptional points. We analyzed systematic errors and discussed integration with existing hardware.</p>
+<p>The V4.51/V4.52 numerical realization [2] serves as a bridge between theory and experiment, providing concrete parameter ranges and preliminary validation of the physical foundations of MES-PUF. The experimental roadmap presented here is designed to test the physical foundations of MES-PUF, which stand independently of the complexity class NQP and the Enhancing Theorem. Even if $\mathrm{NQP} = \mathrm{PSPACE}$ is refuted, the physical-layer security primitive remains valid. This roadmap provides a concrete path toward the first experimental demonstration of curvature-driven open quantum dynamics and the MES-PUF protocol.</p>
+<hr />
+<h2 id="acknowledgments">Acknowledgments</h2>
+<p>We are grateful to all the individual scientists and teams of scientists who have contributed to the exploration and understanding of the entire universe. Supported by AI-driven Supercomputers and the MES Universe Project. We have benefited from our amazing AI partners.</p>
+<h2 id="funding">Funding</h2>
+<p>Not applicable</p>
+<h2 id="availability-of-data-and-material">Availability of data and material</h2>
+<p>Code, mathematical scripts, and preprints are available at GitHub: https://github.com/Zaitian001/-Self-Preprint-V1.1-</p>
+<h2 id="competing-interests">Competing interests</h2>
+<p>Not applicable</p>
+<h2 id="authors-contributions">Authors Contributions</h2>
+<p>Not applicable</p>
+<hr />
+<h2 id="references">References</h2>
+<p>[1] Baoliin (Zaitian) Wu 伍宝林. (2026). Curvature-Driven Open Quantum Dynamics and the Pure Geometric Origin of Physics Constants. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553914.html</p>
+<p>[2] Baoliin (Zaitian) Wu 伍宝林. (2026). NQP: A Nonlinear Quantum Complexity Class from Curvature-Driven Open Quantum Dynamics. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553915.html</p>
+<p>[3] Baoliin (Zaitian) Wu 伍宝林. (2026). NQP-QPUF: Physically Unclonable Functions from Curvature-Driven Open Quantum Dynamics. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553916.html</p>
+<p>[4] Lindblad, G. (1976). On the generators of quantum dynamical semigroups. <em>Communications in Mathematical Physics</em>, 48, 119-130. https://doi.org/10.1007/BF01608499</p>
+<p>[5] Breuer, H., Petruccione, F. (2002). The Theory of Open Quantum Systems. United Kingdom: Oxford University Press.</p>
+<p>[6] Manzano, D. (2020). A short introduction to the Lindblad master equation. <em>AIP Advances</em>, 10(2), 025106. https://doi.org/10.1063/1.5115323</p>
+<p>[7] Zanardi, P., and Venuti, L. C. (2014). Coherent quantum dynamics in steady-state manifolds of strongly dissipative systems. <em>Physical Review Letters</em>, 113, 240406. https://doi.org/10.1103/PhysRevLett.113.240406</p>
+<p>[8] Nagaosa, N., and Tokura, Y. (2013). Topological properties and dynamics of magnetic skyrmions. <em>Nature Nanotech</em> 8, 899--911. https://doi.org/10.1038/nnano.2013.243</p>
+<p>[9] Bloch, I. (2005). Ultracold quantum gases in optical lattices. <em>Nature Phys</em> 1, 23--30. https://doi.org/10.1038/nphys138</p>
+<p>[10] Devoret, M. H., and Schoelkopf, R. J. (2013). Superconducting circuits for quantum information: An outlook. <em>Science</em>, 339, 1169-1174. https://doi.org/10.1126/science.1231930</p>
+<p>[11] Rührmair, U., Sehnke, F., Sölter, J., et al. (2010). Modeling attacks on physical unclonable functions. <em>Conference on Computer and Communications Security</em>.</p>
+<p>[12] Baoliin (Zaitian) Wu 伍宝林. (2026). Physical AGI Dao: Nonlinear Symmetry Anchor Zero as the Theoretical Foundation of Adaptive Intelligence World Model. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553906.html</p>
+        </div>
+    </article>
+
+    <!-- 引用格式选择器（Google Scholar 风格） -->
+    <div class="citation-toggle">
+        <span class="cite-label">📚 Cite this paper</span>
+        <span class="cite-arrow">▾</span>
+    </div>
+    <div class="citation-panel" id="citationPanel">
+        <div class="citation-format-selector">
+            <button class="format-btn active" data-format="apa">APA</button>
+            <button class="format-btn" data-format="mla">MLA</button>
+            <button class="format-btn" data-format="chicago">Chicago</button>
+            <button class="format-btn" data-format="bibtex">BibTeX</button>
+        </div>
+        <div class="citation-display" id="citationDisplay">
+            <span class="citation-text" id="citationText"></span>
+            <button class="copy-btn" id="copyCitationBtn">📋 Copy</button>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        © 2026 Baoliin (Zaitian) Wu 伍宝林 · Self-Preprint Decentralized Academic Archive
+    </footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const citationData = {"apa": "Baoliin (Zaitian) Wu \u4f0d\u5b9d\u6797 (2026). Experimental Roadmap for MES-PUF (NQP-QPUF): Curvature-Driven Open Quantum Systems in Superconducting, Cold-Atom, and Skyrmion Platforms. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553917.html", "mla": "Baoliin (Zaitian) Wu \u4f0d\u5b9d\u6797. \"Experimental Roadmap for MES-PUF (NQP-QPUF): Curvature-Driven Open Quantum Systems in Superconducting, Cold-Atom, and Skyrmion Platforms.\" Self-Preprint Archive, 2026, https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553917.html.", "chicago": "Baoliin (Zaitian) Wu \u4f0d\u5b9d\u6797. \"Experimental Roadmap for MES-PUF (NQP-QPUF): Curvature-Driven Open Quantum Systems in Superconducting, Cold-Atom, and Skyrmion Platforms.\" Self-Preprint Archive. Accessed September 28, 2026. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553917.html.", "bibtex": "@article{selfpreprint_DW58553917,\n  author = {Baoliin (Zaitian) Wu \u4f0d\u5b9d\u6797},\n  title = {Experimental Roadmap for MES-PUF (NQP-QPUF): Curvature-Driven Open Quantum Systems in Superconducting, Cold-Atom, and Skyrmion Platforms},\n  journal = {Self-Preprint Archive},\n  year = {2026},\n  url = {https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553917.html}\n}"};
+    const toggle = document.querySelector('.citation-toggle');
+    const panel = document.getElementById('citationPanel');
+    const textDisplay = document.getElementById('citationText');
+    const copyBtn = document.getElementById('copyCitationBtn');
+    let currentFormat = 'apa';
+
+    if (toggle && panel) {
+        toggle.addEventListener('click', function() {
+            this.classList.toggle('open');
+            panel.classList.toggle('open');
+            if (panel.classList.contains('open')) {
+                updateCitation('apa');
+            }
+        });
+    }
+
+    document.querySelectorAll('.format-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            document.querySelectorAll('.format-btn').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            currentFormat = this.getAttribute('data-format');
+            updateCitation(currentFormat);
+        });
+    });
+
+    function updateCitation(format) {
+        let text = citationData[format] || 'Citation not available';
+        if (format === 'bibtex') {
+            textDisplay.className = 'citation-text bibtex-display';
+            textDisplay.textContent = text;
+        } else {
+            textDisplay.className = 'citation-text';
+            textDisplay.textContent = text;
+        }
+        copyBtn.textContent = '📋 Copy';
+        copyBtn.classList.remove('copied');
+    }
+
+    if (copyBtn) {
+        copyBtn.addEventListener('click', function() {
+            const text = textDisplay.textContent;
+            navigator.clipboard.writeText(text).then(function() {
+                copyBtn.textContent = '✅ Copied!';
+                copyBtn.classList.add('copied');
+                setTimeout(function() {
+                    copyBtn.textContent = '📋 Copy';
+                    copyBtn.classList.remove('copied');
+                }, 2000);
+            }).catch(function() {
+                const ta = document.createElement('textarea');
+                ta.value = text;
+                document.body.appendChild(ta);
+                ta.select();
+                document.execCommand('copy');
+                document.body.removeChild(ta);
+                copyBtn.textContent = '✅ Copied!';
+                setTimeout(function() {
+                    copyBtn.textContent = '📋 Copy';
+                }, 2000);
+            });
+        });
+    }
+
+    updateCitation('apa');
+});
+</script>
+
+<!-- 引入 Mermaid 渲染引擎 -->
+<script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+    document.addEventListener("DOMContentLoaded", async function () {
+        const codeBlocks = document.querySelectorAll('pre code.language-mermaid, pre code.mermaid');
+        codeBlocks.forEach((codeBlock) => {
+            const pre = codeBlock.parentElement;
+            const div = document.createElement('div');
+            div.className = 'mermaid';
+            div.textContent = codeBlock.textContent;
+            pre.replaceWith(div);
+        });
+
+        mermaid.initialize({ startOnLoad: false, theme: 'default', securityLevel: 'loose' });
+        await mermaid.run();
+    });
+</script>
+</body>
+</html>
