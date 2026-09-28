@@ -1,0 +1,836 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NQP-QPUF: Physically Unclonable Functions from Curvature-Driven Open Quantum Dynamics - Self-Preprint Archive</title>
+    <meta name="citation_title" content="NQP-QPUF: Physically Unclonable Functions from Curvature-Driven Open Quantum Dynamics">
+    <meta name="citation_publication_date" content="2026/09/28">
+    <meta name="citation_fulltext_html_url" content="https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553916.html">
+    <meta name="citation_journal_title" content="Self-Preprint Archive">
+    <meta name="citation_author" content="Baoliin (Zaitian) Wu 伍宝林">
+    <style>
+/* ==========================================================================
+   -Self-Preprint- Academic Theme (Complete Merged & Responsive Version)
+   ========================================================================== */
+*, *::before, *::after { box-sizing: border-box; }
+
+:root {
+    --bg-color: #fcfcfc;
+    --text-color: #2b2b2b;
+    --primary-color: #1a365d;
+    --link-color: #2b6cb0;
+    --border-color: #e2e8f0;
+    --code-bg: #f7fafc;
+    --blockquote-bg: #edf2f7;
+    --meta-color: #718096;
+    --max-width: 860px;
+    --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-serif: Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+body {
+    font-family: var(--font-main);
+    line-height: 1.75;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 2rem 1rem;
+}
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 3rem 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border: 1px solid var(--border-color);
+}
+a { color: var(--link-color); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* 归档列表页 (index.html) */
+.archive-year {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.3rem;
+    color: var(--primary-color);
+}
+.post-item {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+}
+.post-title { font-size: 1.1rem; font-weight: 500; }
+.post-date {
+    font-size: 0.9rem;
+    color: var(--meta-color);
+    font-family: monospace;
+    white-space: nowrap;
+    margin-left: 1rem;
+}
+.post-abstract {
+    font-size: 0.95rem;
+    color: #555;
+    margin: 0.2rem 0 1.2rem 0;
+    font-family: var(--font-serif);
+}
+
+/* 文章单页 (paper_id.html) */
+article h1.paper-title {
+    font-size: 2.2rem;
+    line-height: 1.3;
+    margin-bottom: 0.8rem;
+    letter-spacing: -0.02em;
+    color: var(--primary-color);
+}
+.paper-meta {
+    font-size: 0.92rem;
+    color: var(--meta-color);
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1.2rem;
+}
+.paper-body {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+.paper-body h1, .paper-body h2, .paper-body h3 {
+    font-family: var(--font-main);
+    font-weight: 600;
+    margin-top: 2.2rem;
+    color: var(--primary-color);
+}
+
+/* MathJax & LaTeX 公式排版防护 */
+mjx-container {
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-width: 100%;
+}
+mjx-container[display="true"] {
+    display: block !important;
+    width: 100% !important;
+    margin: 1.5rem 0 !important;
+    text-align: center;
+}
+mjx-container[display="false"] {
+    display: inline-block;
+    vertical-align: middle;
+}
+.math-block {
+    display: block;
+    width: 100%;
+    margin: 1.5rem 0;
+    text-align: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+/* 物理确权卡片 */
+.anchor-box {
+    margin: 2rem 0;
+    padding: 1rem 1.2rem;
+    background: #fafafa;
+    border: 1px solid #eaeaea;
+    border-radius: 6px;
+    font-size: 0.88rem;
+    color: #444;
+}
+.anchor-box strong { color: #111; }
+.anchor-hash {
+    font-family: monospace;
+    font-size: 0.82rem;
+    word-break: break-all;
+    color: #666;
+    margin-top: 0.3rem;
+}
+
+/* 代码与预格式化文本 */
+code, pre {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-size: 0.9rem;
+}
+code {
+    background-color: var(--code-bg);
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+}
+pre {
+    padding: 1rem;
+    overflow-x: auto;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    background-color: var(--code-bg);
+    line-height: 1.45;
+}
+pre code {
+    background-color: transparent;
+    padding: 0;
+    border: none;
+}
+
+/* 引用与表格 */
+blockquote {
+    margin: 1.5rem 0;
+    padding: 0.8rem 1.2rem;
+    background-color: var(--blockquote-bg);
+    border-left: 4px solid var(--primary-color);
+    border-radius: 0 4px 4px 0;
+}
+blockquote p:last-child { margin-bottom: 0; }
+.table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+    -webkit-overflow-scrolling: touch;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+th, td {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-color);
+    text-align: left;
+}
+th {
+    background-color: var(--code-bg);
+    font-weight: 600;
+}
+
+/* 学术插图与图注 */
+img, .paper-body img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1.8rem auto 0.5rem auto;
+    border-radius: 4px;
+}
+figure { margin: 2rem auto; text-align: center; }
+figure img { max-width: 100%; height: auto; margin: 0 auto; }
+figcaption {
+    font-size: 0.9rem;
+    color: var(--meta-color);
+    margin-top: 0.6rem;
+    font-family: var(--font-main);
+    line-height: 1.4;
+}
+
+/* 引用格式选择器 (Google Scholar 风格) */
+.citation-toggle {
+    display: inline-block;
+    margin: 2rem 0 0.5rem 0;
+    padding: 0.5rem 1.2rem;
+    background: #f1f5f9;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: #1e293b;
+    transition: background 0.2s;
+    user-select: none;
+}
+.citation-toggle:hover { background: #e2e8f0; }
+.citation-toggle .cite-arrow {
+    display: inline-block;
+    margin-left: 0.4rem;
+    font-size: 0.7rem;
+    transition: transform 0.3s ease;
+}
+.citation-toggle.open .cite-arrow { transform: rotate(180deg); }
+
+.citation-panel {
+    display: none;
+    margin: 0 0 2rem 0;
+    padding: 1.2rem 1.5rem;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    max-width: 100%;
+}
+.citation-panel.open { display: block; }
+
+.citation-format-selector {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    margin-bottom: 0.8rem;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 0.8rem;
+}
+.format-btn {
+    background: transparent;
+    border: none;
+    padding: 0.3rem 1rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+    color: #64748b;
+    border-radius: 12px;
+    transition: all 0.2s;
+}
+.format-btn:hover { background: #e2e8f0; color: #1e293b; }
+.format-btn.active {
+    background: #1e293b;
+    color: white;
+    font-weight: 500;
+}
+
+.citation-display {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+.citation-text {
+    flex: 1;
+    font-size: 0.88rem;
+    font-family: var(--font-serif);
+    color: #1e293b;
+    background: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    border: 1px solid #e9edf2;
+    word-break: break-word;
+    min-height: 2.2rem;
+}
+.citation-text.bibtex-display {
+    font-family: monospace;
+    font-size: 0.82rem;
+    white-space: pre-wrap;
+}
+.copy-btn {
+    background: #e2e8f0;
+    border: none;
+    border-radius: 4px;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.8rem;
+    cursor: pointer;
+    color: #334155;
+    white-space: nowrap;
+    transition: all 0.2s;
+    align-self: center;
+}
+.copy-btn:hover { background: #cbd5e1; }
+.copy-btn.copied { background: #22c55e; color: white; }
+
+/* 页脚与移动端响应式 */
+footer.site-footer {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.85rem;
+    color: var(--meta-color);
+    text-align: center;
+}
+@media (max-width: 768px) {
+    body { padding: 1rem 0.5rem; }
+    .container { padding: 1.5rem 1rem; }
+    article h1.paper-title { font-size: 1.75rem; }
+    .post-item { flex-direction: column; align-items: flex-start; }
+    .post-date { margin-left: 0; margin-top: 0.2rem; }
+}
+</style>
+    
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    tags: 'ams'
+  },
+  svg: {
+    fontCache: 'global',
+    displayAlign: 'center',
+    displayIndent: '0'
+  },
+  options: {
+    enableMenu: false,
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+};
+</script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+<script>
+  window.addEventListener('load', function () {
+    if (window.MathJax && MathJax.typesetPromise) {
+      MathJax.typesetPromise().catch(function (err) {
+        console.log('MathJax typeset failed: ', err);
+      });
+    }
+  });
+</script>
+
+</head>
+<body>
+    <header class="site-header">
+        <nav>
+            <a href="../index.html">← Archives</a>
+            <a href="../feed.xml">RSS</a>
+        </nav>
+    </header>
+
+    <article>
+        <h1 class="paper-title">NQP-QPUF: Physically Unclonable Functions from Curvature-Driven Open Quantum Dynamics</h1>
+        <div class="paper-meta">
+            By <strong>Baoliin (Zaitian) Wu 伍宝林</strong> · Published on 2026-09-28
+        </div>
+
+        
+    <div class="anchor-box">
+        🛡️ <strong>Physical Proof of Existence</strong> | Banknote Serial: <code>DW58553916</code>
+        <div class="anchor-hash">SHA-256 Hash: b39d75d128b1a54cf04b459758ebc61be2798ac0f4ef724add03bf4d82d00bea</div>
+    </div>
+    
+
+        <blockquote style="font-family: var(--font-serif); background:#fdfdfd; padding:0.8rem 1.2rem; border-left:3px solid #ccc; margin: 1.5rem 0;"><p>We introduce <strong>NQP-QPUF</strong>, a physically unclonable function (PUF) whose challenge--response behavior is governed by curvature-driven open quantum dynamics on a closed $S^3$ manifold. Each device is characterized by a unique nanoscale curvature field $R(x)$, which determines its local decoherence rate $\Gamma(R) \propto R^{3/2}$ and curvature-induced frequency shift $\Delta(R) \propto R^{1/4}$. The response to a control-pulse challenge is an exact Bloch trajectory obtained from the Lindblad master equation derived in the companion paper. We define a formal challenge--response protocol, prove its security against quantum adversaries, and show that security rests on physical unclonability, topological protection, irreversible nonlinear dissipation, and the quantum no-cloning theorem---<strong>not</strong> on any complexity separation such as $\mathrm{NQP} = \mathrm{PSPACE}$, nor on the physical assumptions (A1)--(A4) of the companion complexity paper. The numerical realization V4.51/V4.52 in DW58553915 [2] validates the <strong>Zaitian Quantum Power (ZQP)</strong> channel $\gamma(\rho) = \lambda \tanh(\mathrm{Tr}(\hat{C}\rho)/s_{\rm sat})$ as physically implementable, providing additional evidence for the physical foundations of NQP-QPUF. Even if the complexity equality fails, NQP-QPUF remains a secure post-quantum physical-layer primitive. We provide explicit experimental parameters for superconducting qubits, cold atoms, and skyrmion arrays, and give verifiable predictions for device fingerprinting.</p></blockquote>
+
+        <div class="paper-body">
+            <h1 id="nqp-qpuf-physically-unclonable-functions-from-curvature-driven-open-quantum-dynamics">NQP-QPUF: Physically Unclonable Functions from Curvature-Driven Open Quantum Dynamics</h1>
+<p><strong>Baoliin (Zaitian) Wu 伍宝林</strong></p>
+<p><em>Email:</em> zaitian001@gmail.com</p>
+<p><em>ORCiD:</em> <a href="https://orcid.org/0009-0003-2051-5247">0009-0003-2051-5247</a></p>
+<p><em>Affiliation:</em> People's Government of Guangdong Province: Guangzhou, CN</p>
+<p><em>Date:</em> September 28, 2026</p>
+<hr />
+<h2 id="abstract">Abstract</h2>
+<p>We introduce <strong>NQP-QPUF</strong>, a physically unclonable function (PUF) whose challenge--response behavior is governed by curvature-driven open quantum dynamics on a closed $S^3$ manifold. Each device is characterized by a unique nanoscale curvature field $R(x)$, which determines its local decoherence rate $\Gamma(R) \propto R^{3/2}$ and curvature-induced frequency shift $\Delta(R) \propto R^{1/4}$. The response to a control-pulse challenge is an exact Bloch trajectory obtained from the Lindblad master equation derived in the companion paper. We define a formal challenge--response protocol, prove its security against quantum adversaries, and show that security rests on physical unclonability, topological protection, irreversible nonlinear dissipation, and the quantum no-cloning theorem---<strong>not</strong> on any complexity separation such as $\mathrm{NQP} = \mathrm{PSPACE}$, nor on the physical assumptions (A1)--(A4) of the companion complexity paper. The numerical realization V4.51/V4.52 in DW58553915 [2] validates the <strong>Zaitian Quantum Power (ZQP)</strong> channel $\gamma(\rho) = \lambda \tanh(\mathrm{Tr}(\hat{C}\rho)/s_{\rm sat})$ as physically implementable, providing additional evidence for the physical foundations of NQP-QPUF. Even if the complexity equality fails, NQP-QPUF remains a secure post-quantum physical-layer primitive. We provide explicit experimental parameters for superconducting qubits, cold atoms, and skyrmion arrays, and give verifiable predictions for device fingerprinting.</p>
+<p><strong>Keywords:</strong> Physically unclonable functions, Open quantum systems, Lindblad equation, Curvature-driven dynamics, Post-quantum cryptography, Topological protection.</p>
+<hr />
+<h2 id="1-introduction">1. Introduction</h2>
+<p>This work builds upon the companion papers [1--3].</p>
+<p>Physical unclonable functions (PUFs) exploit uncontrollable manufacturing variations to produce device-specific challenge--response pairs that cannot be replicated. Classical PUFs rely on static electrical or optical properties. Quantum PUFs (QPUF) use quantum states and measurements, offering stronger security guarantees based on the no-cloning theorem. However, existing QPUF proposals often require precise quantum control and are vulnerable to modeling attacks when the underlying dynamics is linear and thus simulatable by a quantum computer.</p>
+<p>This paper introduces <strong>NQP-QPUF</strong>, a QPUF whose security is rooted in the <strong>nonlinear, curvature-driven open quantum dynamics</strong> of a closed $S^3$ universe. The companion paper DW58553914 [1] derived a curvature-driven Lindblad master equation from first principles, showing that quantum systems on a curved manifold inevitably couple to a universal bath of curvature fluctuations. The resulting decoherence rate and frequency shift depend on the local scalar curvature $R(x)$, which is fixed by nanoscale fabrication randomness and protected by the global topology of $S^3$.</p>
+<p>The central idea is simple: <strong>each device possesses a unique curvature landscape $R(x)$; the dynamical response of a qubit to a control-pulse challenge is an exact Bloch trajectory whose parameters $(\Gamma, \Omega)$ encode $R(x)$.</strong> Because $R(x)$ cannot be cloned or reverse-engineered---neither by classical nor by quantum means---the device acts as a physically unclonable function.</p>
+<p>Crucially, the security of NQP-QPUF does <strong>not</strong> depend on the computational complexity class NQP or on the equality $\mathrm{NQP} = \mathrm{PSPACE}$. It relies on:</p>
+<ol>
+<li><strong>Physical unclonability</strong> of the nanoscale curvature field.</li>
+<li><strong>Topological protection</strong> of global invariants on $S^3$.</li>
+<li><strong>Irreversibility</strong> of nonlinear dissipation.</li>
+<li><strong>Quantum no-cloning theorem</strong>.</li>
+</ol>
+<p>Even if a quantum computer can simulate the Lindblad dynamics, it cannot extract $R(x)$ from the device without destroying it, nor can it fabricate an identical curvature landscape.</p>
+<p><strong>Relation to the companion complexity paper.</strong> The companion paper DW58553915 [2] introduces the complexity class NQP and proves the Enhancing Theorem $\mathrm{NQP} = \mathrm{PSPACE}$ under four explicit physical assumptions (A1)--(A4). We stress that the NQP-QPUF protocol presented here does <strong>not</strong> depend on this equality, nor on the validity of those assumptions. Its security is rooted in the physical uniqueness of the curvature field $R(x)$, the topological protection of global invariants on $S^3$, the irreversibility of nonlinear dissipation, and the quantum no-cloning theorem. The Enhancing Theorem, if valid, would additionally imply that the inverse problem faced by an attacker is NQP-hard; but even if $\mathrm{NQP} = \mathrm{BQP}$, the attacker still cannot extract $R(x)$ from the device without destroying it. Thus NQP-QPUF is a physical-layer primitive whose security is independent of computational complexity assumptions.</p>
+<p><strong>Numerical realization.</strong> The companion paper DW58553915 [2] further presents V4.51/V4.52, a fully implemented numerical realization of the NQP machine that satisfies assumptions (A1)--(A4). While the security of NQP-QPUF does not depend on these assumptions, the numerical realization confirms that the ZQP channel $\gamma(\rho) = \lambda \tanh(\mathrm{Tr}(\hat{C}\rho)/s_{\rm sat})$ is physically implementable. In V4.51/V4.52, the Yin-Yang coupling $D = \lambda_{\rm ZQP} \tanh(\Delta M / s_{\rm sat})$ provides a concrete realization of the nonlinear dissipation channel assumed in the present paper. This bridges the geometric architecture of DW58553914 [1], the complexity architecture of DW58553915, and the cryptographic architecture of the present paper.</p>
+<p>This paper is organized as follows. Section 2 reviews the physical model: curvature-coupled qubits and the exact Bloch solutions. Section 3 defines NQP-QPUF and the challenge--response protocol. Section 4 provides a rigorous security analysis. Section 5 gives experimental parameters and platform-specific implementations. Section 6 discusses robustness to complexity assumptions. Section 7 concludes.</p>
+<hr />
+<h2 id="2-physical-model-curvature-coupled-qubits">2. Physical Model: Curvature-Coupled Qubits</h2>
+<h3 id="21-curvature-driven-lindblad-dynamics">2.1 Curvature-Driven Lindblad Dynamics</h3>
+<p>We consider a qubit coupled to the quantized curvature fluctuations of a closed $S^3$ manifold. The total Hamiltonian is</p>
+<div class="math-block">$$
+\hat{H} = \hat{H}_s + \hat{H}_B + \hat{H}_{SB}, \quad (1)
+$$</div>
+<p>where</p>
+<div class="math-block">$$
+\hat{H}_s = \frac{\hbar\omega_0}{2}\hat{\sigma}_z + \frac{\hbar\Delta(R)}{2}\hat{\sigma}_x,
+\quad
+\Delta(R) = \Delta_0 \left(\frac{R}{R_0}\right)^{1/4}, \quad (2)
+$$</div>
+<div class="math-block">$$
+\hat{H}_{SB} = \lambda \hat{S} \otimes \hat{\phi}(x_0), \quad (3)
+$$</div>
+<p>and $\hat{H}_B$ is the free Hamiltonian of the curvature bath. Tracing out the bath under Born--Markov and rotating-wave approximations yields the Lindblad master equation [1]:</p>
+<div class="math-block">$$
+\frac{d\hat{\rho}}{dt} = -\frac{i}{\hbar}[\hat{H}_s, \hat{\rho}]
++ \sum_{\omega} \gamma(\omega; R) \left( A(\omega) \hat{\rho} A^\dagger(\omega)
+- \frac{1}{2} \{A^\dagger(\omega) A(\omega), \hat{\rho}\} \right), \quad (4)
+$$</div>
+<p>with the curvature-dependent dissipation rate</p>
+<div class="math-block">$$
+\gamma(\omega; R) \propto R^{3/2}. \quad (5)
+$$</div>
+<p>For a qubit, the Lindblad operators are $\sqrt{\gamma_1}\hat{\sigma}_{-}$ and $\sqrt{\gamma_2(R)}\hat{\sigma}_z$, where $\gamma_2(R) \propto R^{3/2}$. The effective non-Hermitian Hamiltonian is</p>
+<div class="math-block">$$
+\hat{H}_{\rm eff} = \frac{\hbar}{2}
+\begin{pmatrix}
+\omega_0 - i(\gamma_1 - 2\gamma_2) & \Delta(R) \\
+\Delta(R) & -\omega_0 + i\gamma_1
+\end{pmatrix}. \quad (6)
+$$</div>
+<h3 id="22-nonlinear-extension-and-connection-to-v451v452">2.2 Nonlinear Extension and Connection to V4.51/V4.52</h3>
+<p>The master equation above is linear in $\rho$. However, in the NQP architecture developed in [1,2], the effective dissipation rate becomes state-dependent:</p>
+<div class="math-block">$$
+\gamma_{\rm eff}(\rho) = \lambda_{\rm ZQP} \tanh\left( \frac{\mathrm{Tr}(\hat{C}\rho)}{s_{\rm sat}} \right), \quad (7)
+$$</div>
+<p>where $\hat{C}$ characterizes the deviation from the quasi-steady-state manifold and $s_{\rm sat}$ is a saturation scale. In the V4.51/V4.52 numerical realization [2], this nonlinearity is implemented through the Yin-Yang mass coupling:</p>
+<div class="math-block">$$
+D(x) = \lambda_{\rm ZQP} \tanh\left( \frac{M(x) - \bar{M}(x)}{s_{\rm sat}} \right), \quad (8)
+$$</div>
+<p>with $\hat{C} = \hat{M} - \hat{M}_{\rm bar}$ and $s_{\rm sat} = 0.50$. The numerical realization confirms that:</p>
+<ul>
+<li>The $\tanh$ saturation is numerically stable;</li>
+<li>The antisymmetry $D \to -D$ under $M \leftrightarrow \bar{M}$ is preserved;</li>
+<li>The relaxation time $\tau_{\rm relax} \sim 1/\lambda_{\rm ZQP} = 5$ steps is polynomial.</li>
+</ul>
+<p>This provides a concrete physical realization of the ZQP channel assumed in the NQP-QPUF protocol.</p>
+<h3 id="23-exact-bloch-solutions">2.3 Exact Bloch Solutions</h3>
+<p>The Bloch vector $\mathbf{r}(t) = (r_x(t), r_y(t), r_z(t))$ evolves as [1]</p>
+<div class="math-block">$$
+\begin{aligned}
+r_x(t) &= e^{-\Gamma t} \left[ r_x(0) \cos \Omega t + r_y(0) \sin \Omega t \right], \\
+r_y(t) &= e^{-\Gamma t} \left[ r_y(0) \cos \Omega t - r_x(0) \sin \Omega t \right], \\
+r_z(t) &= r_z^{\rm eq} + \left[ r_z(0) - r_z^{\rm eq} \right] e^{-\Gamma t},
+\end{aligned} \quad (9)
+$$</div>
+<p>where the decoherence rate $\Gamma = \Gamma(R)$ and the effective Rabi frequency $\Omega = \Omega(R, \omega_0, \Delta)$ are functions of the local curvature $R$. Explicitly,</p>
+<div class="math-block">$$
+\Gamma(R) = \frac{\gamma_1}{2} + 2\gamma_2(R),
+\quad
+\Omega(R) = \sqrt{\Delta(R)^2 + \left(\omega_0 - \frac{i}{2}(\gamma_1 - 2\gamma_2)\right)^2}. \quad (10)
+$$</div>
+<p>In the limit of small dissipation, $\Omega(R) \approx \sqrt{\Delta(R)^2 + \omega_0^2}$.</p>
+<h3 id="24-curvature-randomness">2.4 Curvature Randomness</h3>
+<p>The local curvature $R(x)$ is determined by the nanoscale structure of the device: film thickness variations, interface roughness, strain fields, and DMI gradients. These are uncontrollable at the atomic scale and unique to each device. Therefore, the pair $(\Gamma(R), \Omega(R))$ constitutes a device-specific fingerprint.</p>
+<hr />
+<h2 id="3-nqp-qpuf-definition-and-protocol">3. NQP-QPUF: Definition and Protocol</h2>
+<h3 id="31-formal-definition">3.1 Formal Definition</h3>
+<p>An <strong>NQP-QPUF</strong> is a five-tuple</p>
+<div class="math-block">$$
+\mathcal{P}_{\rm QPUF} = (\mathcal{Q}, \mathcal{C}, \mathcal{R}, \mathcal{V}, \mathcal{K}), \quad (11)
+$$</div>
+<p>where:</p>
+<ul>
+<li>$\mathcal{Q}$ is the quasi-steady-state quantum manifold determined by the curvature field $R(x)$.</li>
+<li>$\mathcal{C}$ is the challenge set: control-pulse sequences $c = \{(\Omega_i, \phi_i, \tau_i)\}_{i=1}^m$.</li>
+<li>$\mathcal{R}$ is the response function: maps a challenge $c$ to a sampled Bloch trajectory $r = \{r_x(t_k), r_y(t_k), r_z(t_k)\}_{k=1}^N$.</li>
+<li>$\mathcal{V}$ is the verification algorithm: compares the response to a pre-registered reference.</li>
+<li>$\mathcal{K}$ is the key space: stable bit strings extracted from the response.</li>
+</ul>
+<h3 id="32-challenge-response-protocol">3.2 Challenge--Response Protocol</h3>
+<p><strong>Setup.</strong> During fabrication, each device is characterized by its unique curvature field $R(x)$. The manufacturer records a set of reference challenges and responses in a secure database.</p>
+<p><strong>Challenge generation.</strong> A verifier generates a random challenge $c = \{(\Omega_1, \phi_1, \tau_1), \ldots, (\Omega_m, \phi_m, \tau_m)\}$ and sends it to the device.</p>
+<p><strong>Response measurement.</strong> The device performs the following steps for each pulse:</p>
+<ol>
+<li>Initialize the qubit in $|0\rangle$.</li>
+<li>Apply a $\pi/2$ pulse to prepare $|+\rangle$.</li>
+<li>Apply the control pulse $(\Omega_i, \phi_i)$ for duration $\tau_i$.</li>
+<li>Allow free evolution and sample the Bloch vector at intervals $\Delta t$.</li>
+<li>Record the trajectory $r(t) = (r_x(t), r_y(t), r_z(t))$.</li>
+</ol>
+<p><strong>Response fitting.</strong> The verifier fits the recorded trajectory to the exact Bloch solution:</p>
+<div class="math-block">$$
+r_x(t) = e^{-\Gamma t} \cos(\Omega t + \phi_0),
+\quad
+r_y(t) = -e^{-\Gamma t} \sin(\Omega t + \phi_0). \quad (12)
+$$</div>
+<p>This yields the device fingerprint $\mathcal{F} = (\Gamma, \Omega, \Delta, \ldots)$.</p>
+<p><strong>Verification.</strong> The verifier compares the extracted fingerprint to the pre-registered reference:</p>
+<div class="math-block">$$
+\text{Accept} \iff \|\mathcal{F} - \mathcal{F}_{\rm ref}\| &lt; \epsilon. \quad (13)
+$$</div>
+<p>Alternatively, the full trajectory $r(t)$ can be compared using a distance metric.</p>
+<p><strong>Key extraction.</strong> A stable key is extracted from the response:</p>
+<div class="math-block">$$
+K = \text{Extract}(r_x(t_1), r_y(t_1), \ldots, r_z(t_N)). \quad (14)
+$$</div>
+<p>Privacy amplification yields the final key.</p>
+<h3 id="33-example-challenge">3.3 Example Challenge</h3>
+<p>A simple challenge consists of a single pulse with $\Omega_1 = 2\pi \times 10$ MHz, $\phi_1 = 0$, and $\tau_1 = 1$ μs. The response is the decaying Rabi oscillation. The decay envelope $e^{-\Gamma t}$ directly yields $\Gamma(R)$, and the oscillation frequency yields $\Omega(R)$. More complex challenges with multiple pulses produce richer trajectories, increasing the challenge space.</p>
+<hr />
+<h2 id="4-security-analysis">4. Security Analysis</h2>
+<p>We prove that NQP-QPUF is secure against polynomial-time quantum adversaries. Security is defined by three properties: <strong>unclonability</strong>, <strong>unpredictability</strong>, and <strong>unforgeability</strong>.</p>
+<h3 id="41-unclonability">4.1 Unclonability</h3>
+<p><strong>Theorem 1 (Unclonability).</strong> <em>No polynomial-time quantum adversary can produce a device with the same challenge--response behavior as a given NQP-QPUF, except with negligible probability.</em></p>
+<p><strong>Proof.</strong> The challenge--response behavior is determined by the curvature field $R(x)$. This field arises from nanoscale fabrication randomness, which is uncontrollable and unique. To clone the device, the adversary would need to reproduce $R(x)$ exactly. This requires atomic-level control over film thickness, interface roughness, strain, and DMI gradients. Such control is not available to any known classical or quantum technology. Moreover, the curvature field is protected by the global topology of $S^3$: local perturbations cannot change the global topological invariants that contribute to $R(x)$. Therefore, cloning is physically impossible. $\square$</p>
+<h3 id="42-unpredictability">4.2 Unpredictability</h3>
+<p><strong>Theorem 2 (Unpredictability).</strong> <em>For any challenge $c$ not previously queried, the probability that a polynomial-time quantum adversary correctly predicts the response is at most $1/2 + \mathrm{negl}(n)$.</em></p>
+<p><strong>Proof.</strong> The response is a Bloch trajectory determined by $\Gamma(R)$ and $\Omega(R)$. The adversary does not know $R(x)$. The mapping from $R$ to $(\Gamma, \Omega)$ is nonlinear and sensitive to microscopic details. Even if the adversary knows the functional form, the precise values of $R$ at the qubit location are unknown. The adversary can attempt to model the device by solving the Lindblad equation, but this requires knowledge of $R$, which is hidden. Quantum tomography cannot extract $R$ without destroying the device. Therefore, prediction is no better than random. $\square$</p>
+<h3 id="43-unforgeability">4.3 Unforgeability</h3>
+<p><strong>Theorem 3 (Unforgeability).</strong> <em>No polynomial-time quantum adversary can forge a valid response to a challenge without access to the device.</em></p>
+<p><strong>Proof.</strong> A forged response must match the pre-registered reference within tolerance $\epsilon$. The reference was generated by the genuine device. To forge it, the adversary must either (i) know $R(x)$ exactly, or (ii) solve the inverse problem of finding a Bloch trajectory consistent with the reference. Both tasks are infeasible: (i) is prevented by physical unclonability, and (ii) is an instance of a nonlinear inverse problem that is NQP-hard <strong>under assumptions (A1)--(A4) of DW58553915 [2]</strong>. Even in the worst case where $\mathrm{NQP} = \mathrm{BQP}$, the adversary still cannot extract $R(x)$ without destroying the device, nor fabricate an identical curvature landscape. Thus unforgeability holds regardless of the complexity relationship between NQP, BQP, and PSPACE. $\square$</p>
+<h3 id="44-security-against-quantum-attacks">4.4 Security Against Quantum Attacks</h3>
+<p>Shor's algorithm targets mathematical hardness (factoring, discrete log). NQP-QPUF does not rely on mathematical hardness; its security is physical. Grover's algorithm provides only a quadratic speedup for unstructured search, which is insufficient to break the exponential challenge space. Quantum cloning is prohibited by the no-cloning theorem. Therefore, NQP-QPUF is resistant to known quantum attacks.</p>
+<h3 id="45-robustness-to-complexity-assumptions">4.5 Robustness to Complexity Assumptions</h3>
+<p>The security proofs above do <strong>not</strong> rely on the equality $\mathrm{NQP} = \mathrm{PSPACE}$. They rely on:</p>
+<ul>
+<li>Physical unclonability of $R(x)$,</li>
+<li>Topological protection of global invariants,</li>
+<li>Irreversibility of nonlinear dissipation,</li>
+<li>Quantum no-cloning theorem.</li>
+</ul>
+<p>Even if $\mathrm{NQP} = \mathrm{BQP}$, the adversary still cannot extract $R(x)$ from the device without destroying it, and cannot fabricate an identical curvature landscape. Thus NQP-QPUF remains secure.</p>
+<h3 id="46-security-independent-of-complexity-assumptions">4.6 Security Independent of Complexity Assumptions</h3>
+<p>The security proofs in Sections 4.1--4.4 do <strong>not</strong> rely on $\mathrm{NQP} = \mathrm{PSPACE}$, nor on assumptions (A1)--(A4) of DW58553915 [2]. They rely on four physical facts:</p>
+<ol>
+<li><strong>Physical unclonability:</strong> The curvature field $R(x)$ arises from nanoscale fabrication randomness and cannot be replicated.</li>
+<li><strong>Topological protection:</strong> Global invariants on $S^3$ protect the fingerprint against local perturbations.</li>
+<li><strong>Irreversibility:</strong> Nonlinear dissipation makes inverse reconstruction physically infeasible.</li>
+<li><strong>Quantum no-cloning:</strong> Unknown quantum states cannot be cloned.</li>
+</ol>
+<p>The numerical realization in DW58553915 [2] further confirms that the physical unclonability of $R(x)$ is preserved in a concrete dynamical system: the V4.51/V4.52 model generates unique curvature fields from random initialization, and these fields remain stable throughout the evolution.</p>
+<p>Even if a quantum computer can simulate the Lindblad dynamics, it cannot extract $R(x)$ from the device without destroying it, nor can it fabricate an identical curvature landscape. Therefore, NQP-QPUF remains secure even if $\mathrm{NQP} = \mathrm{BQP}$ or if the Enhancing Theorem is refuted.</p>
+<hr />
+<h2 id="5-experimental-parameters-and-platforms">5. Experimental Parameters and Platforms</h2>
+<h3 id="51-superconducting-qubits">5.1 Superconducting Qubits</h3>
+<ul>
+<li><strong>Qubit:</strong> Transmon with $\omega_0/2\pi \approx 5$ GHz.</li>
+<li><strong>Curvature bath:</strong> Tunable coupler to a nonlinear resonator that simulates curvature fluctuations.</li>
+<li><strong>Decoherence rate:</strong> $\Gamma(R) \sim 10^4 - 10^6$ s$^{-1}$.</li>
+<li><strong>Frequency shift:</strong> $\Delta(R) \sim 1 - 10$ MHz.</li>
+<li><strong>Readout:</strong> Dispersive readout with $\epsilon \sim 10^{-3}$.</li>
+</ul>
+<h3 id="52-cold-atoms">5.2 Cold Atoms</h3>
+<ul>
+<li><strong>System:</strong> $^{87}$Rb atoms in an optical lattice.</li>
+<li><strong>Curvature bath:</strong> Engineered via laser intensity gradients.</li>
+<li><strong>Decoherence rate:</strong> $\Gamma(R) \sim 10^2 - 10^4$ s$^{-1}$.</li>
+<li><strong>Frequency shift:</strong> $\Delta(R) \sim 10 - 100$ kHz.</li>
+<li><strong>Readout:</strong> Absorption imaging with single-site resolution.</li>
+</ul>
+<h3 id="53-skyrmion-arrays">5.3 Skyrmion Arrays</h3>
+<ul>
+<li><strong>Material:</strong> Pt/CoFeB/MgO multilayers.</li>
+<li><strong>Curvature field:</strong> Determined by DMI gradients and strain.</li>
+<li><strong>Decoherence rate:</strong> $\Gamma(R) \sim 10^6 - 10^8$ s$^{-1}$.</li>
+<li><strong>Frequency shift:</strong> $\Delta(R) \sim 10 - 100$ MHz.</li>
+<li><strong>Readout:</strong> Topological Hall effect with $\epsilon \sim 10^{-2}$.</li>
+</ul>
+<h3 id="54-verifiable-predictions">5.4 Verifiable Predictions</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Prediction</th>
+<th>Formula</th>
+<th>Measurement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>State-dependent dissipation</td>
+<td>$\Gamma(\rho) \propto \tanh(\mathrm{Tr}(\hat{C}\rho)/s_{\rm sat})$</td>
+<td>Fit Bloch decay</td>
+</tr>
+<tr>
+<td>Curvature-dependent frequency shift</td>
+<td>$\Delta\omega \propto R^{1/4}$</td>
+<td>Rabi oscillations</td>
+</tr>
+<tr>
+<td>Decoherence rate</td>
+<td>$T_2 \propto R^{-3/2}$</td>
+<td>Ramsey interferometry</td>
+</tr>
+<tr>
+<td>Exceptional points</td>
+<td>$\Omega \propto \sqrt{R - R_c}$</td>
+<td>Spectroscopy</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="55-numerical-pre-validation-with-v451v452">5.5 Numerical Pre-Validation with V4.51/V4.52</h3>
+<p>Before fabricating physical devices, the V4.51/V4.52 numerical model [2] can be used to:</p>
+<ol>
+<li><strong>Generate reference fingerprints:</strong> Simulate the challenge--response protocol on a $19^3$ toroidal lattice and extract the fingerprint $(\Gamma, \Omega)$.</li>
+<li><strong>Test noise robustness:</strong> Inject controlled noise into the numerical model and measure the stability of the fingerprint.</li>
+<li><strong>Optimize pulse sequences:</strong> Use the numerical model to design challenges that maximize the distinguishability of different curvature fields.</li>
+<li><strong>Estimate experimental parameters:</strong> Extract numerical values of $\Gamma(R)$, $\Omega(R)$, and $\tau_{\rm relax}$ to guide the choice of physical parameters.</li>
+</ol>
+<p>The V4.51/V4.52 verification of assumptions (A1)--(A4) provides additional confidence that the physical foundations of NQP-QPUF are sound.</p>
+<hr />
+<h2 id="6-discussion">6. Discussion</h2>
+<h3 id="61-independence-from-complexity-assumptions">6.1 Independence from Complexity Assumptions</h3>
+<p>The NQP-QPUF protocol is a physical-layer security primitive. Its security does not depend on the computational complexity class NQP or on the equality $\mathrm{NQP} = \mathrm{PSPACE}$. Even if that equality fails, the device remains unclonable and unpredictable because the curvature field $R(x)$ is physically unique and topologically protected. The numerical realization in DW58553915 [2] provides further evidence that the ZQP channel is physically implementable and that the fingerprint is stable.</p>
+<h3 id="62-comparison-with-existing-pufs">6.2 Comparison with Existing PUFs</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Classical PUF</th>
+<th>Quantum PUF</th>
+<th>NQP-QPUF</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Security source</td>
+<td>Manufacturing variation</td>
+<td>Quantum no-cloning</td>
+<td>Curvature topology + nonlinear dissipation</td>
+</tr>
+<tr>
+<td>Response</td>
+<td>Static electrical</td>
+<td>Quantum state</td>
+<td>Bloch trajectory</td>
+</tr>
+<tr>
+<td>Modeling resistance</td>
+<td>Weak</td>
+<td>Moderate</td>
+<td>Strong (nonlinear, NQP-hard)</td>
+</tr>
+<tr>
+<td>Quantum resistance</td>
+<td>No</td>
+<td>Yes</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>Physical unclonability</td>
+<td>Moderate</td>
+<td>High</td>
+<td>Very high</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="63-limitations">6.3 Limitations</h3>
+<ul>
+<li>The protocol requires precise control over pulse sequences.</li>
+<li>Long-term stability of the curvature field must be verified.</li>
+<li>Integration with existing cryptographic infrastructure requires standardization.</li>
+<li>The V4.51/V4.52 numerical realization is a discrete model; scaling to larger lattices and longer time scales requires further study.</li>
+</ul>
+<hr />
+<h2 id="7-conclusion">7. Conclusion</h2>
+<p>We have introduced NQP-QPUF, a physically unclonable function based on curvature-driven open quantum dynamics. The protocol exploits the exact Bloch solutions of the Lindblad master equation to extract a device fingerprint from the local curvature field $R(x)$. We proved unclonability, unpredictability, and unforgeability against polynomial-time quantum adversaries. Crucially, the security is independent of complexity assumptions such as $\mathrm{NQP} = \mathrm{PSPACE}$, and independent of the physical assumptions (A1)--(A4) of the companion complexity paper; it rests on physical unclonability, topological protection, irreversible nonlinear dissipation, and the quantum no-cloning theorem.</p>
+<p>The V4.51/V4.52 numerical realization [2] provides additional evidence that the ZQP channel is physically realizable, strengthening the case for NQP-QPUF as a post-quantum primitive. We provided experimental parameters for superconducting qubits, cold atoms, and skyrmion arrays, and gave verifiable predictions. NQP-QPUF offers a new paradigm for post-quantum physical-layer security.</p>
+<hr />
+<h2 id="acknowledgments">Acknowledgments</h2>
+<p>We are grateful to all the individual scientists and teams of scientists who have contributed to the exploration and understanding of the entire universe. Supported by AI-driven Supercomputers and the MES Universe Project. We have benefited from our amazing AI partners.</p>
+<h2 id="funding">Funding</h2>
+<p>Not applicable</p>
+<h2 id="availability-of-data-and-material">Availability of data and material</h2>
+<p>Code, mathematical scripts, and preprints are available at GitHub: https://github.com/Zaitian001/-Self-Preprint-V1.1-</p>
+<h2 id="competing-interests">Competing interests</h2>
+<p>Not applicable</p>
+<h2 id="authors-contributions">Authors Contributions</h2>
+<p>Not applicable</p>
+<hr />
+<h2 id="references">References</h2>
+<p>[1] Baoliin (Zaitian) Wu 伍宝林. (2026). Curvature-Driven Open Quantum Dynamics and the Pure Geometric Origin of Physics Constants. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553914.html</p>
+<p>[2] Baoliin (Zaitian) Wu 伍宝林 (2026). NQP: A Nonlinear Quantum Complexity Class from Curvature-Driven Open Quantum Dynamics. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553915.html</p>
+<p>[3] Baoliin (Zaitian) Wu 伍宝林 (2026). Experimental Roadmap for NQP-QPUF: Curvature-Driven Open Quantum Systems in Superconducting, Cold-Atom, and Skyrmion Platforms. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553917.html</p>
+<p>[4] Lindblad, G. (1976). On the generators of quantum dynamical semigroups. <em>Communications in Mathematical Physics</em>, 48, 119-130. https://doi.org/10.1007/BF01608499</p>
+<p>[5] Breuer, H., Petruccione, F. (2002). The Theory of Open Quantum Systems. United Kingdom: Oxford University Press.</p>
+<p>[6] Nielsen, M. A., Chuang, I. L. (2000). Quantum Computation and Quantum Information. India: Cambridge University Press.</p>
+<p>[7] Manzano, D. (2020). A short introduction to the Lindblad master equation. <em>AIP Advances</em>, 10(2), 025106. https://doi.org/10.1063/1.5115323</p>
+<p>[8] Zanardi, P., and Venuti, L. C. (2014). Coherent quantum dynamics in steady-state manifolds of strongly dissipative systems. <em>Physical Review Letters</em>, 113, 240406. https://doi.org/10.1103/PhysRevLett.113.240406</p>
+<p>[9] Rührmair, U., Sehnke, F., Sölter, J., et al. (2010). Modeling attacks on physical unclonable functions. <em>Conference on Computer and Communications Security</em>.</p>
+<p>[10] Pastawski, F., and Preskill, J. (2016). Error correction for encoded quantum open systems. <em>Physical Review A</em>, 93, 052325. https://doi.org/10.1103/PhysRevA.93.052325</p>
+<p>[11] Ferens M., Dushku E., and Kosta S. (2026). Modeling of physical unclonable functions (PUF): A systematic literature review. <em>Computers &amp; Security</em>. 166, 104885. https://doi.org/10.1016/j.cose.2026.104885.</p>
+<p>[12] Baoliin (Zaitian) Wu 伍宝林. (2026). Physical AGI Dao: Nonlinear Symmetry Anchor Zero as the Theoretical Foundation of Adaptive Intelligence World Model. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553906.html</p>
+        </div>
+    </article>
+
+    <!-- 引用格式选择器（Google Scholar 风格） -->
+    <div class="citation-toggle">
+        <span class="cite-label">📚 Cite this paper</span>
+        <span class="cite-arrow">▾</span>
+    </div>
+    <div class="citation-panel" id="citationPanel">
+        <div class="citation-format-selector">
+            <button class="format-btn active" data-format="apa">APA</button>
+            <button class="format-btn" data-format="mla">MLA</button>
+            <button class="format-btn" data-format="chicago">Chicago</button>
+            <button class="format-btn" data-format="bibtex">BibTeX</button>
+        </div>
+        <div class="citation-display" id="citationDisplay">
+            <span class="citation-text" id="citationText"></span>
+            <button class="copy-btn" id="copyCitationBtn">📋 Copy</button>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        © 2026 Baoliin (Zaitian) Wu 伍宝林 · Self-Preprint Decentralized Academic Archive
+    </footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const citationData = {"apa": "Baoliin (Zaitian) Wu \u4f0d\u5b9d\u6797 (2026). NQP-QPUF: Physically Unclonable Functions from Curvature-Driven Open Quantum Dynamics. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553916.html", "mla": "Baoliin (Zaitian) Wu \u4f0d\u5b9d\u6797. \"NQP-QPUF: Physically Unclonable Functions from Curvature-Driven Open Quantum Dynamics.\" Self-Preprint Archive, 2026, https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553916.html.", "chicago": "Baoliin (Zaitian) Wu \u4f0d\u5b9d\u6797. \"NQP-QPUF: Physically Unclonable Functions from Curvature-Driven Open Quantum Dynamics.\" Self-Preprint Archive. Accessed September 28, 2026. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553916.html.", "bibtex": "@article{selfpreprint_DW58553916,\n  author = {Baoliin (Zaitian) Wu \u4f0d\u5b9d\u6797},\n  title = {NQP-QPUF: Physically Unclonable Functions from Curvature-Driven Open Quantum Dynamics},\n  journal = {Self-Preprint Archive},\n  year = {2026},\n  url = {https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553916.html}\n}"};
+    const toggle = document.querySelector('.citation-toggle');
+    const panel = document.getElementById('citationPanel');
+    const textDisplay = document.getElementById('citationText');
+    const copyBtn = document.getElementById('copyCitationBtn');
+    let currentFormat = 'apa';
+
+    if (toggle && panel) {
+        toggle.addEventListener('click', function() {
+            this.classList.toggle('open');
+            panel.classList.toggle('open');
+            if (panel.classList.contains('open')) {
+                updateCitation('apa');
+            }
+        });
+    }
+
+    document.querySelectorAll('.format-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            document.querySelectorAll('.format-btn').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            currentFormat = this.getAttribute('data-format');
+            updateCitation(currentFormat);
+        });
+    });
+
+    function updateCitation(format) {
+        let text = citationData[format] || 'Citation not available';
+        if (format === 'bibtex') {
+            textDisplay.className = 'citation-text bibtex-display';
+            textDisplay.textContent = text;
+        } else {
+            textDisplay.className = 'citation-text';
+            textDisplay.textContent = text;
+        }
+        copyBtn.textContent = '📋 Copy';
+        copyBtn.classList.remove('copied');
+    }
+
+    if (copyBtn) {
+        copyBtn.addEventListener('click', function() {
+            const text = textDisplay.textContent;
+            navigator.clipboard.writeText(text).then(function() {
+                copyBtn.textContent = '✅ Copied!';
+                copyBtn.classList.add('copied');
+                setTimeout(function() {
+                    copyBtn.textContent = '📋 Copy';
+                    copyBtn.classList.remove('copied');
+                }, 2000);
+            }).catch(function() {
+                const ta = document.createElement('textarea');
+                ta.value = text;
+                document.body.appendChild(ta);
+                ta.select();
+                document.execCommand('copy');
+                document.body.removeChild(ta);
+                copyBtn.textContent = '✅ Copied!';
+                setTimeout(function() {
+                    copyBtn.textContent = '📋 Copy';
+                }, 2000);
+            });
+        });
+    }
+
+    updateCitation('apa');
+});
+</script>
+
+<!-- 引入 Mermaid 渲染引擎 -->
+<script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+    document.addEventListener("DOMContentLoaded", async function () {
+        const codeBlocks = document.querySelectorAll('pre code.language-mermaid, pre code.mermaid');
+        codeBlocks.forEach((codeBlock) => {
+            const pre = codeBlock.parentElement;
+            const div = document.createElement('div');
+            div.className = 'mermaid';
+            div.textContent = codeBlock.textContent;
+            pre.replaceWith(div);
+        });
+
+        mermaid.initialize({ startOnLoad: false, theme: 'default', securityLevel: 'loose' });
+        await mermaid.run();
+    });
+</script>
+</body>
+</html>
