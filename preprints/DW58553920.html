@@ -1,0 +1,1227 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chirality as Curvature: Emergence from Attractor Basin Separatrix Asymmetry - Self-Preprint Archive</title>
+    <meta name="citation_title" content="Chirality as Curvature: Emergence from Attractor Basin Separatrix Asymmetry">
+    <meta name="citation_publication_date" content="2026/10/09">
+    <meta name="citation_fulltext_html_url" content="https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553920.html">
+    <meta name="citation_journal_title" content="Self-Preprint Archive">
+    <meta name="citation_author" content="Baoliin (Zaitian) Wu 伍宝林">
+    <style>
+/* ==========================================================================
+   -Self-Preprint- Academic Theme (Complete Merged & Responsive Version)
+   ========================================================================== */
+*, *::before, *::after { box-sizing: border-box; }
+
+:root {
+    --bg-color: #fcfcfc;
+    --text-color: #2b2b2b;
+    --primary-color: #1a365d;
+    --link-color: #2b6cb0;
+    --border-color: #e2e8f0;
+    --code-bg: #f7fafc;
+    --blockquote-bg: #edf2f7;
+    --meta-color: #718096;
+    --max-width: 860px;
+    --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-serif: Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+body {
+    font-family: var(--font-main);
+    line-height: 1.75;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 2rem 1rem;
+}
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 3rem 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border: 1px solid var(--border-color);
+}
+a { color: var(--link-color); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* 归档列表页 (index.html) */
+.archive-year {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.3rem;
+    color: var(--primary-color);
+}
+.post-item {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+}
+.post-title { font-size: 1.1rem; font-weight: 500; }
+.post-date {
+    font-size: 0.9rem;
+    color: var(--meta-color);
+    font-family: monospace;
+    white-space: nowrap;
+    margin-left: 1rem;
+}
+.post-abstract {
+    font-size: 0.95rem;
+    color: #555;
+    margin: 0.2rem 0 1.2rem 0;
+    font-family: var(--font-serif);
+}
+
+/* 文章单页 (paper_id.html) */
+article h1.paper-title {
+    font-size: 2.2rem;
+    line-height: 1.3;
+    margin-bottom: 0.8rem;
+    letter-spacing: -0.02em;
+    color: var(--primary-color);
+}
+.paper-meta {
+    font-size: 0.92rem;
+    color: var(--meta-color);
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1.2rem;
+}
+.paper-body {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+.paper-body h1, .paper-body h2, .paper-body h3 {
+    font-family: var(--font-main);
+    font-weight: 600;
+    margin-top: 2.2rem;
+    color: var(--primary-color);
+}
+
+/* MathJax & LaTeX 公式排版防护 */
+mjx-container {
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-width: 100%;
+}
+mjx-container[display="true"] {
+    display: block !important;
+    width: 100% !important;
+    margin: 1.5rem 0 !important;
+    text-align: center;
+}
+mjx-container[display="false"] {
+    display: inline-block;
+    vertical-align: middle;
+}
+.math-block {
+    display: block;
+    width: 100%;
+    margin: 1.5rem 0;
+    text-align: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+/* 物理确权卡片 */
+.anchor-box {
+    margin: 2rem 0;
+    padding: 1rem 1.2rem;
+    background: #fafafa;
+    border: 1px solid #eaeaea;
+    border-radius: 6px;
+    font-size: 0.88rem;
+    color: #444;
+}
+.anchor-box strong { color: #111; }
+.anchor-hash {
+    font-family: monospace;
+    font-size: 0.82rem;
+    word-break: break-all;
+    color: #666;
+    margin-top: 0.3rem;
+}
+
+/* 代码与预格式化文本 */
+code, pre {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-size: 0.9rem;
+}
+code {
+    background-color: var(--code-bg);
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+}
+pre {
+    padding: 1rem;
+    overflow-x: auto;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    background-color: var(--code-bg);
+    line-height: 1.45;
+}
+pre code {
+    background-color: transparent;
+    padding: 0;
+    border: none;
+}
+
+/* 引用与表格 */
+blockquote {
+    margin: 1.5rem 0;
+    padding: 0.8rem 1.2rem;
+    background-color: var(--blockquote-bg);
+    border-left: 4px solid var(--primary-color);
+    border-radius: 0 4px 4px 0;
+}
+blockquote p:last-child { margin-bottom: 0; }
+.table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+    -webkit-overflow-scrolling: touch;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+th, td {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-color);
+    text-align: left;
+}
+th {
+    background-color: var(--code-bg);
+    font-weight: 600;
+}
+
+/* 学术插图与图注 */
+img, .paper-body img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1.8rem auto 0.5rem auto;
+    border-radius: 4px;
+}
+figure { margin: 2rem auto; text-align: center; }
+figure img { max-width: 100%; height: auto; margin: 0 auto; }
+figcaption {
+    font-size: 0.9rem;
+    color: var(--meta-color);
+    margin-top: 0.6rem;
+    font-family: var(--font-main);
+    line-height: 1.4;
+}
+
+/* 引用格式选择器 (Google Scholar 风格) */
+.citation-toggle {
+    display: inline-block;
+    margin: 2rem 0 0.5rem 0;
+    padding: 0.5rem 1.2rem;
+    background: #f1f5f9;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: #1e293b;
+    transition: background 0.2s;
+    user-select: none;
+}
+.citation-toggle:hover { background: #e2e8f0; }
+.citation-toggle .cite-arrow {
+    display: inline-block;
+    margin-left: 0.4rem;
+    font-size: 0.7rem;
+    transition: transform 0.3s ease;
+}
+.citation-toggle.open .cite-arrow { transform: rotate(180deg); }
+
+.citation-panel {
+    display: none;
+    margin: 0 0 2rem 0;
+    padding: 1.2rem 1.5rem;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    max-width: 100%;
+}
+.citation-panel.open { display: block; }
+
+.citation-format-selector {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    margin-bottom: 0.8rem;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 0.8rem;
+}
+.format-btn {
+    background: transparent;
+    border: none;
+    padding: 0.3rem 1rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+    color: #64748b;
+    border-radius: 12px;
+    transition: all 0.2s;
+}
+.format-btn:hover { background: #e2e8f0; color: #1e293b; }
+.format-btn.active {
+    background: #1e293b;
+    color: white;
+    font-weight: 500;
+}
+
+.citation-display {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+.citation-text {
+    flex: 1;
+    font-size: 0.88rem;
+    font-family: var(--font-serif);
+    color: #1e293b;
+    background: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    border: 1px solid #e9edf2;
+    word-break: break-word;
+    min-height: 2.2rem;
+}
+.citation-text.bibtex-display {
+    font-family: monospace;
+    font-size: 0.82rem;
+    white-space: pre-wrap;
+}
+.copy-btn {
+    background: #e2e8f0;
+    border: none;
+    border-radius: 4px;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.8rem;
+    cursor: pointer;
+    color: #334155;
+    white-space: nowrap;
+    transition: all 0.2s;
+    align-self: center;
+}
+.copy-btn:hover { background: #cbd5e1; }
+.copy-btn.copied { background: #22c55e; color: white; }
+
+/* 页脚与移动端响应式 */
+footer.site-footer {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.85rem;
+    color: var(--meta-color);
+    text-align: center;
+}
+@media (max-width: 768px) {
+    body { padding: 1rem 0.5rem; }
+    .container { padding: 1.5rem 1rem; }
+    article h1.paper-title { font-size: 1.75rem; }
+    .post-item { flex-direction: column; align-items: flex-start; }
+    .post-date { margin-left: 0; margin-top: 0.2rem; }
+}
+</style>
+    
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    tags: 'ams'
+  },
+  svg: {
+    fontCache: 'global',
+    displayAlign: 'center',
+    displayIndent: '0'
+  },
+  options: {
+    enableMenu: false,
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+};
+</script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+<script>
+  window.addEventListener('load', function () {
+    if (window.MathJax && MathJax.typesetPromise) {
+      MathJax.typesetPromise().catch(function (err) {
+        console.log('MathJax typeset failed: ', err);
+      });
+    }
+  });
+</script>
+
+</head>
+<body>
+    <header class="site-header">
+        <nav>
+            <a href="../index.html">← Archives</a>
+            <a href="../feed.xml">RSS</a>
+        </nav>
+    </header>
+
+    <article>
+        <h1 class="paper-title">Chirality as Curvature: Emergence from Attractor Basin Separatrix Asymmetry</h1>
+        <div class="paper-meta">
+            By <strong>Baoliin (Zaitian) Wu 伍宝林</strong> · Published on 2026-10-09
+        </div>
+
+        
+    <div class="anchor-box">
+        🛡️ <strong>Physical Proof of Existence</strong> | Banknote Serial: <code>DW58553920</code>
+        <div class="anchor-hash">SHA-256 Hash: 764d9ca31bc2c9c122b9cb47a6c60f5e4814cb56eb46d98eb69066c8e952f114</div>
+    </div>
+    
+
+        <blockquote style="font-family: var(--font-serif); background:#fdfdfd; padding:0.8rem 1.2rem; border-left:3px solid #ccc; margin: 1.5rem 0;"><p>The origin of homochirality—the predominance of one enantiomeric form in biological systems—remains a fundamental problem in chemistry and the origin of life. Nonlinear effects in asymmetric synthesis and asymmetric autocatalysis demonstrate that small initial chiral imbalances can be amplified under suitable reaction conditions. However, the relationship between reaction kinetics, state-space geometry, and the selection of a particular handedness remains an open theoretical question.</p>
+<p>Here we propose a geometric-dynamical architecture in which chiral selection is associated with the geometry of the separatrix between competing enantiomeric attractor basins. We represent the accessible chemical states by a statistical manifold equipped with a Fisher information metric and distinguish the metric from the nonequilibrium potential governing chemical dynamics. A consistently defined separatrix-curvature descriptor, denoted by $\Delta\kappa_{\mathcal S}$, is introduced to quantify a specified form of geometric asymmetry under a defined mirror correspondence.</p>
+<p>We establish a <strong>conditional equivalence theorem</strong>: within a model class satisfying explicit structural assumptions, nonzero chiral-selection bias, nonzero separatrix-curvature asymmetry, and non-invariance of the Fisher metric under a mirror involution are equivalent. The proof is mathematically exact within these assumptions; the physical validity of the assumptions for particular chemical systems remains to be established independently.</p>
+<p>We further develop two related hypotheses. First, topological descriptors of chemical state-space dynamics may help characterize the robustness of autocatalytic amplification, provided a nontrivial invariant and its relationship to measurable chemical observables can be established. Second, separatrix geometry may influence nonlinear amplification through its effect on transition actions and rates. A conditional stochastic model illustrates how an exponential dependence of transition rates can produce a hyperbolic-tangent response, while identifying the additional assumptions required for that result.</p>
+<p>Four experimentally testable research directions are proposed: reconstructing dynamical state-space geometry, testing topological robustness, measuring geometric contributions to amplification thresholds, and distinguishing geometry-mediated effects of external fields from conventional chemical mechanisms.</p>
+<p>This work is a companion to <em>Inaugurating the Era of Super Cell: Curvature-Driven Geometric Synthetic Biology for Cell Fate Reprogramming</em> (DW58553919). Together, the papers propose <strong>Geometric Selection Theory</strong> as a cross-scale research programme connecting molecular handedness and cellular fate selection through the geometry of competing dynamical basins. The present manuscript establishes a conditional mathematical framework and a set of falsifiable hypotheses, rather than claiming that a universal geometric mechanism of homochirality has already been demonstrated.</p></blockquote>
+
+        <div class="paper-body">
+            <h1 id="chirality-as-curvature-emergence-from-attractor-basin-separatrix-asymmetry">Chirality as Curvature: Emergence from Attractor Basin Separatrix Asymmetry</h1>
+<p><strong>Baoliin (Zaitian) Wu 伍宝林</strong></p>
+<p><em>ORCiD:</em> <a href="https://orcid.org/0009-0003-2051-5247">0009-0003-2051-5247</a></p>
+<p><em>Email:</em> <a href="mailto:zaitian001@gmail.com">zaitian001@gmail.com</a></p>
+<p><em>Affiliation:</em> People's Government of Guangdong Province: Guangzhou, CN</p>
+<p><em>Date:</em> October 9, 2026</p>
+<hr />
+<h2 id="abstract">Abstract</h2>
+<p>The origin of homochirality—the predominance of one enantiomeric form in biological systems—remains a fundamental problem in chemistry and the origin of life. Nonlinear effects in asymmetric synthesis and asymmetric autocatalysis demonstrate that small initial chiral imbalances can be amplified under suitable reaction conditions. However, the relationship between reaction kinetics, state-space geometry, and the selection of a particular handedness remains an open theoretical question.</p>
+<p>Here we propose a geometric-dynamical architecture in which chiral selection is associated with the geometry of the separatrix between competing enantiomeric attractor basins. We represent the accessible chemical states by a statistical manifold equipped with a Fisher information metric and distinguish the metric from the nonequilibrium potential governing chemical dynamics. A consistently defined separatrix-curvature descriptor, denoted by $\Delta\kappa_{\mathcal S}$, is introduced to quantify a specified form of geometric asymmetry under a defined mirror correspondence.</p>
+<p>We establish a <strong>conditional equivalence theorem</strong>: within a model class satisfying explicit structural assumptions, nonzero chiral-selection bias, nonzero separatrix-curvature asymmetry, and non-invariance of the Fisher metric under a mirror involution are equivalent. The proof is mathematically exact within these assumptions; the physical validity of the assumptions for particular chemical systems remains to be established independently.</p>
+<p>We further develop two related hypotheses. First, topological descriptors of chemical state-space dynamics may help characterize the robustness of autocatalytic amplification, provided a nontrivial invariant and its relationship to measurable chemical observables can be established. Second, separatrix geometry may influence nonlinear amplification through its effect on transition actions and rates. A conditional stochastic model illustrates how an exponential dependence of transition rates can produce a hyperbolic-tangent response, while identifying the additional assumptions required for that result.</p>
+<p>Four experimentally testable research directions are proposed: reconstructing dynamical state-space geometry, testing topological robustness, measuring geometric contributions to amplification thresholds, and distinguishing geometry-mediated effects of external fields from conventional chemical mechanisms.</p>
+<p>This work is a companion to <em>Inaugurating the Era of Super Cell: Curvature-Driven Geometric Synthetic Biology for Cell Fate Reprogramming</em> (DW58553919). Together, the papers propose <strong>Geometric Selection Theory</strong> as a cross-scale research programme connecting molecular handedness and cellular fate selection through the geometry of competing dynamical basins. The present manuscript establishes a conditional mathematical framework and a set of falsifiable hypotheses, rather than claiming that a universal geometric mechanism of homochirality has already been demonstrated.</p>
+<p><strong>Keywords:</strong> homochirality; chirality; information geometry; Fisher metric; separatrix; curvature asymmetry; autocatalysis; nonlinear dynamics; topological invariants; Kagan nonlinear effect; Soai reaction; Geometric Selection Theory</p>
+<hr />
+<h2 id="1-introduction">1. Introduction</h2>
+<h3 id="11-the-homochirality-problem">1.1 The Homochirality Problem</h3>
+<p>Biological systems exhibit a striking preference for particular molecular handedness. Proteins in known terrestrial life predominantly use L-amino acids, while nucleic acids predominantly employ D-sugars. This biochemical regularity raises two distinct questions:</p>
+<ol>
+<li>How can a chemical system develop a nonzero preference between two enantiomeric states?</li>
+<li>How can nonlinear reaction networks amplify and maintain such a preference under realistic dynamical and environmental conditions?</li>
+</ol>
+<p>These questions must be distinguished. The emergence of a nonzero enantiomeric excess does not by itself explain the magnitude, stability, or ultimate biological universality of homochirality.</p>
+<p>In a racemic mixture, the enantiomeric excess is</p>
+<div class="math-block">$$
+ee=\frac{N_L-N_D}{N_L+N_D}. \quad (1)
+$$</div>
+<p>Here $N_L$ and $N_D$ denote the amounts of the two enantiomers. A racemic mixture has $ee=0$; a nonzero value indicates an imbalance, while the sign identifies which enantiomer predominates under the stated convention.</p>
+<p>The challenge is to understand how reaction dynamics can transform a small initial imbalance into a substantial final excess, and under what conditions such amplification occurs.</p>
+<h3 id="12-nonlinear-amplification-and-asymmetric-autocatalysis">1.2 Nonlinear Amplification and Asymmetric Autocatalysis</h3>
+<p>Research on nonlinear effects in asymmetric synthesis and the Soai reaction established important experimental examples of chiral amplification.</p>
+<p>The nonlinear effect investigated by Puchot and colleagues showed that product enantiomeric excess need not depend linearly on catalyst enantiomeric excess. The relationship depends on the reaction mechanism, catalyst aggregation, and other chemical conditions.</p>
+<p>The Soai reaction provides a particularly important example of asymmetric autocatalysis: a chiral product participates in catalysing its own formation, allowing a small chiral imbalance to be amplified under suitable conditions.</p>
+<p>These findings motivate a geometric question:</p>
+<p><strong>Can the geometry of the accessible chemical state space provide additional predictive information about chiral selection beyond the reaction-rate parameters traditionally used to describe it?</strong></p>
+<p>This question does not presume that kinetic explanations are inadequate. Rather, it asks whether geometric quantities can be derived from, or add predictive power to, established dynamical models.</p>
+<h3 id="13-existing-dynamical-explanations">1.3 Existing Dynamical Explanations</h3>
+<p>Frank's model describes spontaneous asymmetric synthesis through autocatalytic production and mutual inhibition between enantiomeric species. Subsequent stochastic and reaction-network models have explored symmetry-breaking transitions, fluctuations, bifurcations, and nonlinear amplification.</p>
+<p>These models establish an important point: chiral selection can arise from the structure and dynamics of a chemical reaction network without requiring a pre-existing large chiral imbalance.</p>
+<p>Their mathematical descriptions also provide a natural starting point for the present work. Nonlinear reaction systems can possess multiple stable states, unstable intermediate states, and basin boundaries separating competing outcomes.</p>
+<p>The present proposal is to investigate whether geometric descriptors of these structures can help characterize the transition between racemic and chiral states.</p>
+<h3 id="14-the-geometric-dynamical-hypothesis">1.4 The Geometric-Dynamical Hypothesis</h3>
+<p>We propose that chiral selection may be associated with the geometry of the separatrix between competing enantiomeric attractor basins.</p>
+<p>The hypothesis has four components.</p>
+<p><strong>First, statistical state geometry.</strong> Accessible chemical states are represented by a statistical manifold $\mathcal M$ with a Fisher information metric $g$, where such a metric is well defined and non-degenerate.</p>
+<p><strong>Second, dynamical basin structure.</strong> A specified reaction model defines the dynamical evolution of chemical states. Where competing attractors exist, their basins are separated by a boundary or separatrix.</p>
+<p><strong>Third, geometric asymmetry.</strong> A carefully defined descriptor $\Delta\kappa_{\mathcal S}$ quantifies a specified asymmetry of the separatrix under a mirror correspondence.</p>
+<p><strong>Fourth, nonlinear state selection.</strong> A dynamical coupling between this geometric descriptor and a measurable chiral-selection bias is proposed as a model-specific hypothesis.</p>
+<p>The fourth component is essential. Geometry alone does not establish that one enantiomer will be selected. A quantitative relationship between geometry and dynamics must be derived or experimentally supported.</p>
+<h3 id="15-relationship-to-the-super-cell-paper">1.5 Relationship to the Super Cell Paper</h3>
+<p>This manuscript is a companion to <em>Inaugurating the Era of Super Cell: Curvature-Driven Geometric Synthetic Biology for Cell Fate Reprogramming</em> (DW58553919).</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">Concept</th>
+<th style="text-align: left;">Molecular scale</th>
+<th style="text-align: left;">Cellular scale</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">State space</td>
+<td style="text-align: left;">Chemical state manifold</td>
+<td style="text-align: left;">Cell-fate state manifold</td>
+</tr>
+<tr>
+<td style="text-align: left;">Competing states</td>
+<td style="text-align: left;">Enantiomeric states</td>
+<td style="text-align: left;">Cellular phenotypes</td>
+</tr>
+<tr>
+<td style="text-align: left;">Dynamical structure</td>
+<td style="text-align: left;">Chemical attractor basins</td>
+<td style="text-align: left;">Phenotypic attractor basins</td>
+</tr>
+<tr>
+<td style="text-align: left;">Basin boundary</td>
+<td style="text-align: left;">Chemical separatrix</td>
+<td style="text-align: left;">Cell-fate separatrix</td>
+</tr>
+<tr>
+<td style="text-align: left;">Geometric descriptor</td>
+<td style="text-align: left;">Separatrix-curvature asymmetry</td>
+<td style="text-align: left;">Corresponding geometric descriptor</td>
+</tr>
+<tr>
+<td style="text-align: left;">Selection process</td>
+<td style="text-align: left;">Chiral amplification</td>
+<td style="text-align: left;">Cell-fate selection or reprogramming</td>
+</tr>
+<tr>
+<td style="text-align: left;">Central research question</td>
+<td style="text-align: left;">Does geometry improve prediction of chiral selection?</td>
+<td style="text-align: left;">Does geometry improve prediction of cell-fate transitions?</td>
+</tr>
+</tbody>
+</table></div>
+<p>The two works share a research architecture but concern different physical systems. Their common structure does not establish that the same constitutive equations or quantitative laws apply at both scales.</p>
+<p>We use <strong>Geometric Selection Theory</strong> to denote this proposed research programme: the study of whether geometric and topological properties of competing dynamical basins can provide predictive principles for discrete state selection in complex systems.</p>
+<h3 id="16-structure-of-the-paper">1.6 Structure of the Paper</h3>
+<p>Section 2 develops the statistical and dynamical state-space framework. Section 3 defines separatrix-curvature asymmetry and proves the conditional equivalence theorem. Section 4 examines the possible role of topology in autocatalytic robustness. Section 5 develops a conditional stochastic model of nonlinear amplification. Section 6 presents four testable research directions. Section 7 discusses the implications, limitations, and relationship to the companion paper. Section 8 concludes.</p>
+<hr />
+<h2 id="2-the-chiral-state-manifold">2. The Chiral State Manifold</h2>
+<h3 id="21-statistical-representation-of-chemical-states">2.1 Statistical Representation of Chemical States</h3>
+<p>Let $\mathcal M$ denote a parameter manifold describing the accessible macroscopic states of a chemical system.</p>
+<p>A state $\theta\in\mathcal M$ is associated with a probability distribution over microscopic configurations:</p>
+<div class="math-block">$$
+p(x\mid\theta). \quad (2)
+$$</div>
+<p>The coordinates $\theta=(\theta^1,\ldots,\theta^n)$ may include concentrations, enantiomeric excess, temperature, and other observables, provided the chosen parametrization defines a statistically identifiable model.</p>
+<p>We adopt the following modelling premises.</p>
+<p><strong>Assumption A1: Statistical state representation.</strong> The chemical states under investigation admit a differentiable family of probability distributions with identifiable parameters.</p>
+<p><strong>Assumption A2: Specified statistical ensemble.</strong> Where a maximum-entropy representation is used, the relevant constraints and statistical ensemble are explicitly specified. In an exponential-family model,</p>
+<div class="math-block">$$
+p(x\mid\lambda) = \exp\left[ \sum_a\lambda^a f_a(x)-\psi(\lambda) \right], \quad (3)
+$$</div>
+<p>where $\psi(\lambda)$ is the log-partition function and the distribution is normalized.</p>
+<p><strong>Assumption A3: Statistical consistency.</strong> The inference procedure respects the relevant invariance properties under admissible reparametrization and sufficient-statistic transformations.</p>
+<p>These assumptions establish a modelling framework; they do not imply that every chemical system is in equilibrium, maximizes entropy under the same constraints, or possesses a globally identifiable statistical manifold.</p>
+<h3 id="22-fisher-information-geometry">2.2 Fisher Information Geometry</h3>
+<p>For a differentiable statistical model, the Fisher information metric is defined by</p>
+<div class="math-block">$$
+g_{ab}(\theta) = \mathbb E_\theta \left[ \frac{\partial\ln p}{\partial\theta^a} \frac{\partial\ln p}{\partial\theta^b} \right]. \quad (4)
+$$</div>
+<p>When the required regularity conditions hold, this metric measures the local distinguishability of nearby probability distributions.</p>
+<p>For the exponential-family representation in Equation (3), the Fisher metric in natural-parameter coordinates satisfies</p>
+<div class="math-block">$$
+g_{ab}(\lambda) = \frac{\partial^2\psi} {\partial\lambda^a\partial\lambda^b} = \mathrm{Cov}_{\lambda}(f_a,f_b). \quad (5)
+$$</div>
+<p>If $\eta_a=\mathbb E_\lambda[f_a]$ denotes the corresponding expectation parameter and the relevant Legendre transformation is regular, then the dual coordinate representation satisfies</p>
+<div class="math-block">$$
+g^{(\eta)}_{ab} = -\frac{\partial^2 S} {\partial\eta_a\partial\eta_b}, \quad (6)
+$$</div>
+<p>where $S$ is the Shannon entropy of the corresponding exponential-family distribution.</p>
+<p>Equations (5) and (6) express dual-coordinate representations of information geometry. They must not be interpreted as asserting that the same Hessian matrix represents the metric in arbitrary coordinates.</p>
+<p>Under the regularity conditions of Chentsov's theorem, the Fisher metric is characterized, up to an overall positive factor, by its invariance under appropriate stochastic transformations and sufficient-statistic operations.</p>
+<p><strong>Proposition 1.</strong> For a regular statistical model satisfying the conditions of the relevant information-geometric uniqueness theorem, the Fisher information metric provides the canonical metric associated with statistical distinguishability, up to the permitted normalization.</p>
+<p>The proposition does not establish a universal physical law for chemical dynamics. It supplies a principled metric for describing the statistical state space when the assumptions are satisfied.</p>
+<h3 id="23-nonequilibrium-dynamics-and-the-potential-landscape">2.3 Nonequilibrium Dynamics and the Potential Landscape</h3>
+<p>Chemical amplification generally involves nonequilibrium processes. We therefore distinguish the statistical metric $g$ from the function governing dynamical evolution.</p>
+<p>Let $\Phi:\mathcal M\to\mathbb R$ denote a specified dynamical potential or, where appropriate, a nonequilibrium quasipotential.</p>
+<p>Its covariant Hessian is</p>
+<div class="math-block">$$
+H_{ab} = \nabla_a\nabla_b\Phi. \quad (7)
+$$</div>
+<p>The metric $g$ and the Hessian $H$ are distinct objects. The Fisher metric is positive definite when the statistical model is regular and identifiable. The Hessian of a nonequilibrium potential may be indefinite, particularly near saddle points and basin boundaries.</p>
+<p>A quasipotential is not automatically a thermodynamic free energy. Its meaning depends on the stochastic dynamical model from which it is derived.</p>
+<p>Where the dynamics admit two stable enantiomeric states, we denote their attractors by $A_L$ and $A_D$, and their basins by $B_L$ and $B_D$. The boundary between these basins is denoted by</p>
+<div class="math-block">$$
+\mathcal S=\partial B_L\cap\partial B_D, \quad (8)
+$$</div>
+<p>when this expression accurately describes the relevant basin boundary.</p>
+<p>The existence and regularity of $\mathcal S$ must be established for the chosen dynamical system. In gradient systems, basin boundaries may be associated with stable manifolds of saddle points, but this relationship is not universal for arbitrary nonequilibrium dynamics.</p>
+<h3 id="24-mirror-involution-and-nonlinear-symmetry-breaking">2.4 Mirror Involution and Nonlinear Symmetry Breaking</h3>
+<p>Let</p>
+<div class="math-block">$$
+\mathcal P:\mathcal M\to\mathcal M, \qquad \mathcal P^2=\mathrm{id}, \quad (9)
+$$</div>
+<p>denote a smooth involution representing the exchange of the two enantiomeric states.</p>
+<p>For a mirror-symmetric statistical model, the metric satisfies</p>
+<div class="math-block">$$
+\mathcal P^*g=g, \quad (10)
+$$</div>
+<p>where $\mathcal P^*g$ is the pullback metric.</p>
+<p>For the dynamics to be mirror-equivariant, the dynamical law must also transform consistently under $\mathcal P$. Metric invariance alone does not guarantee that the reaction dynamics, external fields, boundary conditions, or nonequilibrium driving are mirror-symmetric.</p>
+<p>We therefore distinguish:</p>
+<ul>
+<li><strong>Mirror symmetry:</strong> invariance under a specified mirror involution.</li>
+<li><strong>Nonlinear dynamical symmetry:</strong> invariance or equivariance of a specified nonlinear evolution law under a defined transformation.</li>
+<li><strong>Mirror-symmetry breaking:</strong> failure of the relevant mirror-invariance condition in the specified system or state.</li>
+<li><strong>Nonlinear chiral selection:</strong> dynamical amplification or selection of one enantiomeric state over the other.</li>
+</ul>
+<p>This terminology preserves mathematical precision while emphasizing the nonlinear dynamics central to the proposed theory.</p>
+<hr />
+<h2 id="3-chirality-as-separatrix-curvature-asymmetry">3. Chirality as Separatrix-Curvature Asymmetry</h2>
+<h3 id="31-defining-the-geometric-descriptor">3.1 Defining the Geometric Descriptor</h3>
+<p>The central geometric object is the separatrix $\mathcal S$ between competing attractor basins.</p>
+<p>In a two-dimensional Riemannian state manifold, a sufficiently regular separatrix is locally a curve. Let</p>
+<div class="math-block">$$
+\gamma(s)\in\mathcal S \quad (11)
+$$</div>
+<p>be a unit-speed parametrization, where $s$ is arc length.</p>
+<p>Its geodesic curvature is</p>
+<div class="math-block">$$
+\kappa_g(s) = \left\langle \nabla_{\dot\gamma}\dot\gamma,n \right\rangle_g, \quad (12)
+$$</div>
+<p>where $n$ is a specified unit normal to the curve within the state manifold.</p>
+<p>In higher-dimensional manifolds, the separatrix is generally a hypersurface. Its geometry may be characterized by the second fundamental form, principal curvatures, mean curvature, or another explicitly defined geometric invariant.</p>
+<p>A signed curvature depends on the chosen normal orientation. Consequently, comparing curvature at mirror-related points requires a consistent convention for the mirror map, tangent correspondence, and normal transformation.</p>
+<p>Let $s$ and $\mathcal P(s)$ denote corresponding points under the prescribed mirror operation. Define the separatrix-curvature asymmetry descriptor by</p>
+<div class="math-block">$$
+\Delta\kappa_{\mathcal S}(s) = \kappa_{\mathcal S}(s) - \kappa_{\mathcal S}^{\mathrm{mir}}(s), \quad (13)
+$$</div>
+<p>where $\kappa_{\mathcal S}^{\mathrm{mir}}(s)$ is the curvature predicted at the corresponding point under the explicitly specified mirror transformation and orientation convention.</p>
+<p>Equation (13) is an operational definition, not a universal scalar invariant. Its coordinate independence and invariance under admissible reparametrizations must be demonstrated for the particular construction.</p>
+<p>For a global analysis, one may define a scalar descriptor such as</p>
+<div class="math-block">$$
+\mathscr K_{\mathcal S} = \int_{\mathcal S} w(s)\, \Delta\kappa_{\mathcal S}(s)\,d\mu_{\mathcal S}, \quad (14)
+$$</div>
+<p>where $w(s)$ is a specified weighting function and $d\mu_{\mathcal S}$ is the induced measure on the separatrix.</p>
+<p>The weighting, normalization, orientation convention, and physical units must be specified before comparing different systems. If the signed contributions cancel, a zero global integral does not necessarily imply pointwise mirror symmetry. Accordingly, the descriptor used in the theorem must be chosen to have the required diagnostic properties.</p>
+<p>For notational simplicity, the remainder of this section writes the selected descriptor as</p>
+<div class="math-block">$$
+\Delta\kappa_{\mathcal S}. \quad (15)
+$$</div>
+<h3 id="32-chiral-bias-as-an-observable">3.2 Chiral Bias as an Observable</h3>
+<p>We define a signed chiral-selection bias $B$ through an explicitly specified observable.</p>
+<p>For a system whose relevant observable is the enantiomeric excess, one possible choice is</p>
+<div class="math-block">$$
+B=ee_{\mathrm{ss}}, \quad (16)
+$$</div>
+<p>where $ee_{\mathrm{ss}}$ denotes the enantiomeric excess in a specified steady state or other explicitly defined observation window.</p>
+<p>This choice is appropriate only when such a state or observation window is well defined. For time-dependent reactions, one may instead define $B$ as the excess at a prescribed time or as a specified time-averaged quantity.</p>
+<p>The distinction matters because a system can exhibit a nonzero transient excess while ultimately returning to a racemic state, or can display unequal transition rates without having unequal equilibrium free energies.</p>
+<p>In this manuscript, $B\ne0$ means that the selected observable exhibits a nonzero preference under the stated measurement protocol.</p>
+<h3 id="33-the-central-theorem">3.3 The Central Theorem</h3>
+<p><strong>Theorem 2 (Conditional Equivalence of Chiral Bias, Separatrix-Curvature Asymmetry, and Metric Symmetry Breaking).</strong></p>
+<p>Let $(\mathcal M,g)$ be a smooth statistical state manifold describing a chemical system with two competing states related by a smooth involution $\mathcal P$, where $\mathcal P^2=\mathrm{id}$.</p>
+<p>Let $\mathcal S$ be a sufficiently regular separatrix between the corresponding dynamical basins. Let $\Delta\kappa_{\mathcal S}$ be a consistently defined scalar descriptor of separatrix-curvature asymmetry.</p>
+<p>Suppose the following conditions hold.</p>
+<p><strong>(C1) Regular statistical geometry.</strong> The state manifold admits a differentiable, non-degenerate Fisher information metric $g$, and the mirror involution acts smoothly on the manifold.</p>
+<p><strong>(C2) Identifiable separatrix geometry.</strong> The separatrix and its curvature descriptor are well defined, and $\Delta\kappa_{\mathcal S}$ is invariant under the admissible coordinate transformations and orientation conventions specified by the model.</p>
+<p><strong>(C3) Faithful geometric order parameter.</strong> Within the selected model class, the curvature descriptor detects precisely the relevant mirror-symmetry breaking of the metric:</p>
+<div class="math-block">$$
+\Delta\kappa_{\mathcal S}=0 \quad\Longleftrightarrow\quad \mathcal P^*g=g. \quad (17)
+$$</div>
+<p>This is a model-specific structural condition. It does not follow from the existence or uniqueness of the Fisher metric alone.</p>
+<p><strong>(C4) Nontrivial geometric coupling to selection.</strong> The chiral-selection observable satisfies</p>
+<div class="math-block">$$
+B=\lambda\Delta\kappa_{\mathcal S}, \qquad \lambda\ne0, \quad (18)
+$$</div>
+<p>where $\lambda$ is a finite coupling coefficient with the units required by the chosen normalization.</p>
+<p>Equation (18) is a constitutive hypothesis. It must be derived from a specified dynamical model or supported by independent quantitative evidence.</p>
+<p>Then, within this model class, the following statements are equivalent:</p>
+<p>(i) The selected observable exhibits nonzero chiral bias, $B\ne0$.</p>
+<p>(ii) The separatrix-curvature asymmetry is nonzero, $\Delta\kappa_{\mathcal S}\ne0$.</p>
+<p>(iii) The Fisher metric is not invariant under the mirror involution, $\mathcal P^*g\ne g$.</p>
+<p><strong>Proof.</strong></p>
+<p>By Assumption (C4),</p>
+<div class="math-block">$$
+B=\lambda\Delta\kappa_{\mathcal S}, \qquad \lambda\ne0. \quad (19)
+$$</div>
+<p>Since $\lambda$ is nonzero,</p>
+<div class="math-block">$$
+B\ne0 \quad\Longleftrightarrow\quad \Delta\kappa_{\mathcal S}\ne0. \quad (20)
+$$</div>
+<p>Thus, statements (i) and (ii) are equivalent.</p>
+<p>By Assumption (C3),</p>
+<div class="math-block">$$
+\Delta\kappa_{\mathcal S}=0 \quad\Longleftrightarrow\quad \mathcal P^*g=g. \quad (21)
+$$</div>
+<p>Taking the logical negation of both sides gives</p>
+<div class="math-block">$$
+\Delta\kappa_{\mathcal S}\ne0 \quad\Longleftrightarrow\quad \mathcal P^*g\ne g. \quad (22)
+$$</div>
+<p>Thus, statements (ii) and (iii) are equivalent.</p>
+<p>Combining Equations (20) and (22) yields</p>
+<div class="math-block">$$
+\boxed{ B\ne0 \quad\Longleftrightarrow\quad \Delta\kappa_{\mathcal S}\ne0 \quad\Longleftrightarrow\quad \mathcal P^*g\ne g }. \quad (23)
+$$</div>
+<p>Therefore, the three statements are equivalent under Assumptions (C1)–(C4). $\square$</p>
+<h3 id="34-interpretation-and-scope">3.4 Interpretation and Scope</h3>
+<p>Theorem 2 provides a mathematically explicit conditional relationship between chiral bias, separatrix geometry, and metric symmetry breaking.</p>
+<p>Its logical structure is important.</p>
+<p>First, the equivalence between $B\ne0$ and $\Delta\kappa_{\mathcal S}\ne0$ follows from the nonzero coupling in C4.</p>
+<p>Second, the equivalence between $\Delta\kappa_{\mathcal S}\ne0$ and $\mathcal P^*g\ne g$ follows from C3.</p>
+<p>The proof does not independently establish either structural condition. In particular, a scalar curvature descriptor does not generally determine an entire metric, and metric asymmetry need not be detectable by every possible scalar descriptor.</p>
+<p>Likewise, a nonzero geometric descriptor does not automatically cause a chemical system to select one enantiomer. The causal or constitutive relationship must be established for the specified dynamics.</p>
+<p>The theorem should therefore be interpreted as a conditional equivalence theorem within a restricted model class, not as an unconditional law of stereochemistry.</p>
+<h3 id="35-physical-interpretation">3.5 Physical Interpretation</h3>
+<p>The proposed physical interpretation is that separatrix geometry may encode information about the relative accessibility of competing dynamical outcomes.</p>
+<p>A curvature descriptor alone, however, does not establish that one basin is energetically deeper, that a barrier is lower, or that a transition rate is greater. Those conclusions require a specified relationship between geometry and the dynamical law.</p>
+<p>A geometric contribution to selection might arise if the geometry of the state manifold affects the optimal transition path, the local noise structure, the effective action, or another quantity controlling basin-to-basin transitions.</p>
+<p>The principal research question is therefore not simply whether $\Delta\kappa_{\mathcal S}\ne0$, but whether this descriptor improves quantitative predictions of chiral selection beyond established kinetic and thermodynamic variables.</p>
+<hr />
+<h2 id="4-autocatalysis-dynamical-cycles-and-topological-robustness">4. Autocatalysis, Dynamical Cycles, and Topological Robustness</h2>
+<h3 id="41-autocatalysis-as-a-dynamical-process">4.1 Autocatalysis as a Dynamical Process</h3>
+<p>An autocatalytic reaction is characterized by a product or product-containing species participating in the production of additional material of the same catalytic type.</p>
+<p>The resulting chemical dynamics may include feedback, transient oscillations, stable fixed points, limit cycles, or more complicated trajectories, depending on the reaction network and operating conditions.</p>
+<p>Let a chemical state evolve according to</p>
+<div class="math-block">$$
+\dot x=F(x;\mu), \quad (24)
+$$</div>
+<p>where $x$ represents the chemical state variables and $\mu$ denotes the kinetic parameters and external controls.</p>
+<p>A periodic solution satisfies</p>
+<div class="math-block">$$
+x(t+T)=x(t), \quad T&gt;0. \quad (25)
+$$</div>
+<p>Periodicity does not imply that the trajectory is a geodesic of the Fisher metric. A geodesic instead satisfies</p>
+<div class="math-block">$$
+\nabla_{\dot\gamma}\dot\gamma=0. \quad (26)
+$$</div>
+<p>To identify a chemical cycle with a geodesic, one would need to derive the relevant metric, parameterize the trajectory appropriately, and demonstrate that the geodesic equation holds. No such identification is assumed universally here.</p>
+<p>The geometric proposal is more general: dynamical cycles and their state-space structures may provide useful descriptors of autocatalytic organization, whether or not the cycles are geodesics.</p>
+<h3 id="42-topological-invariants-and-their-requirements">4.2 Topological Invariants and Their Requirements</h3>
+<p>A closed trajectory $\gamma$ defines a homology class</p>
+<div class="math-block">$$
+[\gamma]\in H_1(\mathcal M,\mathbb Z) \quad (27)
+$$</div>
+<p>when the relevant topological construction is well defined.</p>
+<p>If $[\gamma]$ is nontrivial, continuous deformations within the applicable class may preserve that homology class. This fact alone does not guarantee that the periodic orbit persists under every perturbation, nor does it establish any conserved chemical observable.</p>
+<p>Similarly, a Berry connection $\mathcal A$ may define a geometric phase along a closed path,</p>
+<div class="math-block">$$
+\varphi_{\mathrm B} = \oint_\gamma\mathcal A, \quad (28)
+$$</div>
+<p>but this phase is not generally an integer multiple of $2\pi$. Quantization requires additional structure and conditions.</p>
+<p>A genuine topological protection claim must therefore identify:</p>
+<ol>
+<li>The relevant topological space or bundle.</li>
+<li>The invariant being calculated.</li>
+<li>The class of perturbations under which the invariant is preserved.</li>
+<li>The mathematical result establishing persistence or robustness.</li>
+<li>The independently measurable chemical quantity linked to the invariant.</li>
+</ol>
+<p>Without these elements, topological protection remains a research hypothesis rather than an established mechanism.</p>
+<h3 id="43-topological-robustness-hypothesis">4.3 Topological Robustness Hypothesis</h3>
+<p><strong>Hypothesis T1 (Topological Contribution to Autocatalytic Robustness).</strong></p>
+<p>For a specified autocatalytic reaction network, a suitably defined topological descriptor of its dynamical state space may contribute predictive information about the persistence of dynamical regimes under continuous perturbations.</p>
+<p>This hypothesis does not assert that the enantiomeric excess is itself a topological invariant, nor that it cannot change continuously.</p>
+<p>A candidate mathematical programme is:</p>
+<ul>
+<li>Construct a dynamical model from a specified reaction network.</li>
+<li>Identify stable states, periodic orbits, basin boundaries, and relevant invariant sets.</li>
+<li>Compute appropriate topological descriptors where mathematically justified.</li>
+<li>Determine how these descriptors change under controlled perturbations.</li>
+<li>Compare their predictive performance with conventional kinetic models.</li>
+</ul>
+<p>The topological contribution would be supported only if a reproducible relationship between the invariant and a measurable property of the reaction were demonstrated.</p>
+<h3 id="44-application-to-the-soai-reaction">4.4 Application to the Soai Reaction</h3>
+<p>The Soai reaction is a useful test case because it exhibits strong asymmetric autocatalytic amplification.</p>
+<p>The proposed geometric-topological analysis would ask whether a state-space representation of the reaction provides additional predictive information about:</p>
+<ul>
+<li>the dependence of product ee on initial ee;</li>
+<li>the stability of observed amplification under perturbations;</li>
+<li>the existence and location of dynamical transitions;</li>
+<li>the role of aggregation and catalyst speciation;</li>
+<li>the relationship between basin structure and the probability of selecting either enantiomer.</li>
+</ul>
+<p>These questions must be studied using a chemically appropriate kinetic model. A geometric descriptor should not replace established reaction mechanisms without demonstrating equivalent or superior explanatory and predictive performance.</p>
+<h3 id="45-distinguishing-robustness-from-conservation">4.5 Distinguishing Robustness from Conservation</h3>
+<p>A crucial distinction is that robustness does not necessarily mean invariance.</p>
+<p>A reaction may remain strongly biased toward one enantiomer across a broad range of conditions while its measured ee changes continuously. This is compatible with dynamical robustness but does not imply topological conservation of ee.</p>
+<p>Accordingly, the present work proposes topology as a possible source of structural robustness in selected dynamical regimes. It does not claim that the chiral purity of the Soai reaction is protected against all continuous perturbations by a winding number.</p>
+<hr />
+<h2 id="5-nonlinear-amplification-as-a-conditional-geometric-effect">5. Nonlinear Amplification as a Conditional Geometric Effect</h2>
+<h3 id="51-the-general-nonlinear-response">5.1 The General Nonlinear Response</h3>
+<p>Let $e_c$ denote catalyst enantiomeric excess and $e_p$ denote product enantiomeric excess under a specified reaction protocol.</p>
+<p>The general relationship is</p>
+<div class="math-block">$$
+e_p=f(e_c;\mu), \quad (29)
+$$</div>
+<p>where $\mu$ denotes other relevant reaction parameters.</p>
+<p>The function $f$ depends on the reaction mechanism. Nonlinear behavior may result from autocatalysis, catalyst aggregation, mutual inhibition, saturation, competing pathways, or other kinetic processes.</p>
+<p>The geometric hypothesis asks whether a separatrix descriptor can explain or predict part of this response.</p>
+<h3 id="52-a-conditional-stochastic-model">5.2 A Conditional Stochastic Model</h3>
+<p>Consider a stochastic dynamical system whose rare transitions between two metastable states are described by a large-deviation approximation.</p>
+<p>Under appropriate assumptions, the transition rate from state $i$ to state $j$ can take the form</p>
+<div class="math-block">$$
+\Gamma_{i\to j} \asymp A_{ij} \exp\left(-\frac{S_{i\to j}}{\epsilon_n}\right), \quad (30)
+$$</div>
+<p>where $S_{i\to j}$ is the relevant minimum action, $A_{ij}$ is a prefactor, and $\epsilon_n$ is a small-noise scale.</p>
+<p>The symbol $\asymp$ indicates leading exponential-order behavior rather than an exact equality.</p>
+<p>Suppose, as a model-specific hypothesis, that a small geometric perturbation changes one transition action according to</p>
+<div class="math-block">$$
+S_{L\to D} = S_0-a\Delta\kappa_{\mathcal S} +O\!\left((\Delta\kappa_{\mathcal S})^2\right), \quad (31)
+$$</div>
+<p>where $a$ is a coupling coefficient determined by the dynamics and the normalization of the curvature descriptor.</p>
+<p>Then, at leading exponential order,</p>
+<div class="math-block">$$
+\Gamma_{L\to D} \asymp A_{L\to D} \exp\left[ -\frac{S_0-a\Delta\kappa_{\mathcal S}} {\epsilon_n} \right]. \quad (32)
+$$</div>
+<p>If the prefactor varies slowly and higher-order terms are negligible, this expression suggests an exponential sensitivity of the transition rate to the geometric perturbation.</p>
+<p>Equation (31) is not a universal identity. It must be derived for the particular stochastic system. In particular, the coefficient $a$ depends on the action functional, drift, noise covariance, and the way in which the geometric perturbation enters the model.</p>
+<h3 id="53-a-hyperbolic-tangent-response-under-additional-assumptions">5.3 A Hyperbolic-Tangent Response Under Additional Assumptions</h3>
+<p>A hyperbolic-tangent relationship follows if the two transition rates satisfy the specific symmetric exponential form</p>
+<div class="math-block">$$
+\Gamma_{L\to D} = \Gamma_0e^x, \qquad \Gamma_{D\to L} = \Gamma_0e^{-x}, \quad (33)
+$$</div>
+<p>where</p>
+<div class="math-block">$$
+x=\frac{a\Delta\kappa_{\mathcal S}}{\epsilon_n}. \quad (34)
+$$</div>
+<p>The normalized rate imbalance is then</p>
+<div class="math-block">$$
+B_{\mathrm{rate}} = \frac{\Gamma_{L\to D}-\Gamma_{D\to L}} {\Gamma_{L\to D}+\Gamma_{D\to L}}. \quad (35)
+$$</div>
+<p>Substituting Equation (33) gives</p>
+<div class="math-block">$$
+B_{\mathrm{rate}} = \frac{e^x-e^{-x}}{e^x+e^{-x}} = \tanh x. \quad (36)
+$$</div>
+<p>Thus,</p>
+<div class="math-block">$$
+\boxed{ B_{\mathrm{rate}} = \tanh\left( \frac{a\Delta\kappa_{\mathcal S}}{\epsilon_n} \right) }. \quad (37)
+$$</div>
+<p>For small $x$,</p>
+<div class="math-block">$$
+B_{\mathrm{rate}} = x+O(x^3), \quad (38)
+$$</div>
+<p>whereas for large positive or negative $x$, the rate imbalance approaches $+1$ or $-1$, respectively.</p>
+<p>This provides a mathematically explicit example of a nonlinear response generated by exponential transition-rate sensitivity.</p>
+<p>However, three qualifications are essential.</p>
+<p>First, Equation (37) describes a normalized transition-rate imbalance. It does not automatically equal the final product ee.</p>
+<p>Second, the symmetric rate form in Equation (33) is an additional assumption. It must be justified by the particular dynamical model.</p>
+<p>Third, even if the rate imbalance follows Equation (37), the mapping from this quantity to the final chemical product distribution depends on the reaction network and observation protocol.</p>
+<p>Accordingly, Equation (37) is a conditional model result, not a universal derivation of the Kagan nonlinear effect.</p>
+<h3 id="54-geometric-threshold-hypothesis">5.4 Geometric Threshold Hypothesis</h3>
+<p><strong>Hypothesis G1 (Geometric Contribution to Nonlinear Amplification).</strong></p>
+<p>Within a specified stochastic reaction model, separatrix geometry may influence nonlinear chiral amplification through its effect on transition actions, rates, or basin accessibility.</p>
+<p>The model should define an operational amplification threshold. For example, one may define $I_{\mathrm{th}}$ as the smallest value of a specified control parameter $I$ at which a pre-registered amplification criterion is met.</p>
+<p>A possible dimensionless scaling hypothesis is</p>
+<div class="math-block">$$
+I_{\mathrm{th}} = F\!\left( \widehat{\mathscr K}_{\mathcal S}, \widehat\mu, \widehat\epsilon_n \right), \quad (39)
+$$</div>
+<p>where the hatted variables denote dimensionless, explicitly defined quantities.</p>
+<p>A linear relation between $I_{\mathrm{th}}$ and a curvature descriptor may be tested as a special case, but it cannot be assumed without a model-specific derivation.</p>
+<p>This formulation avoids assigning a universal proportionality between a dimensional curvature and an unspecified threshold. It also permits a fair comparison with conventional kinetic explanations.</p>
+<h3 id="55-what-would-establish-a-geometric-contribution">5.5 What Would Establish a Geometric Contribution?</h3>
+<p>A convincing result would require more than an observed correlation between a fitted curvature descriptor and product ee.</p>
+<p>At minimum, the analysis should:</p>
+<ol>
+<li>Specify the reaction network and kinetic equations.</li>
+<li>Define the state manifold and curvature descriptor independently of the final ee.</li>
+<li>Derive how the descriptor enters the dynamical equations or transition action.</li>
+<li>Estimate parameters using a calibration dataset.</li>
+<li>Compare geometric and conventional kinetic models on independent data.</li>
+<li>Quantify uncertainty and test whether the geometric descriptor improves prediction.</li>
+</ol>
+<p>Only after these steps could the geometric mechanism be considered quantitatively supported for the reaction under investigation.</p>
+<hr />
+<h2 id="6-experimental-predictions-and-falsifiable-tests">6. Experimental Predictions and Falsifiable Tests</h2>
+<p>The following research directions are designed to distinguish the geometric hypothesis from established explanations. Each prediction requires operational definitions and independent measurements.</p>
+<h3 id="61-prediction-1-geometric-descriptors-improve-prediction-of-chiral-selection">6.1 Prediction 1: Geometric Descriptors Improve Prediction of Chiral Selection</h3>
+<p><strong>Prediction.</strong> A properly reconstructed state-space geometry may provide predictive information about chiral selection beyond the variables included in an established kinetic model.</p>
+<p>For a specified reaction network, let $X$ denote the conventional kinetic variables and let $\mathscr K_{\mathcal S}$ denote an independently estimated geometric descriptor.</p>
+<p>The test is whether</p>
+<div class="math-block">$$
+P(ee\mid X,\mathscr K_{\mathcal S})
+$$</div>
+<p>predicts held-out measurements more accurately than</p>
+<div class="math-block">$$
+P(ee\mid X) \quad (40)
+$$</div>
+<p>under a pre-specified evaluation protocol.</p>
+<p><strong>Experimental and computational protocol:</strong></p>
+<ol>
+<li>Select a reaction with reproducible chiral amplification.</li>
+<li>Construct a kinetic model and identify its accessible dynamical states.</li>
+<li>Reconstruct the relevant state-space geometry using independently defined observables.</li>
+<li>Estimate the geometric descriptor without using the final ee as the sole fitting target.</li>
+<li>Compare predictions on independent reaction conditions.</li>
+<li>Quantify uncertainty and assess sensitivity to the reconstruction procedure.</li>
+</ol>
+<p>The prediction would be weakened if the geometric descriptor failed to improve out-of-sample performance or if its apparent contribution disappeared after controlling for established kinetic variables.</p>
+<p>This prediction does not assert that isolated mirror-image molecules must possess different energy Hessian spectra. Under mirror-symmetric conditions, corresponding enantiomers are expected to have equivalent energy spectra after the appropriate coordinate transformation.</p>
+<h3 id="62-prediction-2-topological-descriptors-may-predict-dynamical-robustness">6.2 Prediction 2: Topological Descriptors May Predict Dynamical Robustness</h3>
+<p><strong>Prediction.</strong> For a specified autocatalytic network, an independently defined topological invariant may help predict the persistence of a dynamical regime under a defined class of perturbations.</p>
+<p><strong>Experimental and computational protocol:</strong></p>
+<ol>
+<li>Specify the reaction network and dynamical model.</li>
+<li>Identify the invariant set or periodic orbit to be studied.</li>
+<li>Define the topological invariant and the admissible perturbation class.</li>
+<li>Establish the mathematical conditions under which the invariant is preserved.</li>
+<li>Measure dynamical stability and chiral amplification across controlled perturbations.</li>
+<li>Compare the invariant's predictive contribution with conventional stability measures.</li>
+</ol>
+<p>A plateau in product ee would not, by itself, establish topological protection. Evidence would require a demonstrated relationship between the invariant and the persistence of a defined dynamical property, together with appropriate controls.</p>
+<p>The hypothesis would be weakened if the proposed invariant were undefined, changed under the stated perturbations, or failed to predict robustness beyond conventional dynamical variables.</p>
+<h3 id="63-prediction-3-geometric-contributions-to-amplification-thresholds">6.3 Prediction 3: Geometric Contributions to Amplification Thresholds</h3>
+<p><strong>Prediction.</strong> If separatrix geometry affects transition actions, an appropriately normalized geometric descriptor may correlate with the onset or magnitude of nonlinear amplification across a controlled catalyst series.</p>
+<p><strong>Protocol:</strong></p>
+<ol>
+<li>Select a chemically related series of catalysts or reaction conditions.</li>
+<li>Measure catalyst ee, product ee, conversion, reaction rates, and relevant speciation variables.</li>
+<li>Reconstruct or calculate the geometric descriptor using a pre-specified procedure.</li>
+<li>Define the amplification threshold before examining the comparative results.</li>
+<li>Fit a model relating the threshold to geometric and conventional kinetic variables.</li>
+<li>Evaluate the model on independent data.</li>
+</ol>
+<p>A proposed linear scaling should be tested as one candidate model rather than assumed in advance. Competing nonlinear, saturating, and kinetic-only models should be included.</p>
+<p>The prediction would be supported if the geometric descriptor exhibited reproducible explanatory or predictive value, with uncertainty estimates that excluded trivial or confounded explanations.</p>
+<h3 id="64-prediction-4-external-perturbations-and-geometry-mediated-chiral-selection">6.4 Prediction 4: External Perturbations and Geometry-Mediated Chiral Selection</h3>
+<p><strong>Prediction.</strong> An external field may alter chiral reaction outcomes through changes in the reaction dynamics and potentially through changes in a reconstructed state-space geometric descriptor.</p>
+<p>This possibility is termed <strong>geometry-mediated chiral selection</strong> in the present framework. It is not assumed that an external field automatically creates a geometric autocatalytic mechanism.</p>
+<p><strong>Protocol:</strong></p>
+<ol>
+<li>Select a reaction whose response to an external field can be measured reproducibly.</li>
+<li>Apply controlled field strengths and orientations.</li>
+<li>Measure ee, conversion, reaction rates, and other relevant chemical observables.</li>
+<li>Include field-free controls and controls for heating, transport, photochemistry, and other known field-mediated mechanisms.</li>
+<li>Independently estimate the proposed geometric descriptor.</li>
+<li>Test whether changes in the descriptor predict reaction outcomes beyond established physical and chemical variables.</li>
+</ol>
+<p>An observed field-induced ee would not alone demonstrate a geometric mechanism. The hypothesis requires evidence that the geometric descriptor has an independent, reproducible relationship to the response.</p>
+<h3 id="65-summary-of-predictions">6.5 Summary of Predictions</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">Prediction</th>
+<th style="text-align: left;">Measurable target</th>
+<th style="text-align: left;">Principal test</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Geometric contribution to chiral selection</td>
+<td style="text-align: left;">Held-out prediction of ee</td>
+<td style="text-align: left;">Compare kinetic-only and geometry-augmented models</td>
+</tr>
+<tr>
+<td style="text-align: left;">Topological contribution to robustness</td>
+<td style="text-align: left;">Persistence of a defined dynamical regime</td>
+<td style="text-align: left;">Test invariant-based predictions under controlled perturbations</td>
+</tr>
+<tr>
+<td style="text-align: left;">Geometric contribution to thresholds</td>
+<td style="text-align: left;">Amplification onset or magnitude</td>
+<td style="text-align: left;">Compare dimensionless threshold models across a catalyst series</td>
+</tr>
+<tr>
+<td style="text-align: left;">Geometry-mediated external-field response</td>
+<td style="text-align: left;">Field-dependent ee and geometric descriptors</td>
+<td style="text-align: left;">Separate geometric contributions from conventional field effects</td>
+</tr>
+</tbody>
+</table></div>
+<p>All four predictions are falsifiable. None should be treated as established merely because the proposed geometric architecture can accommodate the corresponding observation.</p>
+<hr />
+<h2 id="7-discussion">7. Discussion</h2>
+<h3 id="71-the-main-mathematical-contribution">7.1 The Main Mathematical Contribution</h3>
+<p>The principal mathematical contribution is Theorem 2, which establishes a conditional equivalence between a defined chiral-selection observable, a specified separatrix-curvature descriptor, and mirror-symmetry breaking of the Fisher metric.</p>
+<p>The proof is straightforward once the structural assumptions are accepted. The substantive scientific question is whether those assumptions can be derived or validated for chemically realistic systems.</p>
+<p>The theorem therefore provides a precise research target: construct a model in which the curvature descriptor is well defined, demonstrate that it faithfully detects the relevant metric symmetry breaking, and independently establish its coupling to chiral selection.</p>
+<p>This approach is more restrictive than a general claim that geometry influences chemistry, but it is also more testable.</p>
+<h3 id="72-nonlinear-symmetry-and-mirror-symmetry">7.2 Nonlinear Symmetry and Mirror Symmetry</h3>
+<p>The proposed theory uses nonlinear dynamics to explain how small perturbations can be amplified into a macroscopic chiral bias.</p>
+<p>Nevertheless, nonlinear dynamics and mirror symmetry are different concepts.</p>
+<p>A nonlinear system can preserve mirror symmetry exactly. Conversely, a system can break mirror symmetry through an external chiral field or asymmetric boundary condition even if its dynamics are not strongly nonlinear.</p>
+<p>The relevant question is whether a specified nonlinear reaction network exhibits mirror-equivariant dynamics and, under defined conditions, develops a symmetry-broken state.</p>
+<p>The present framework treats the mirror involution as the mathematical operation used to define the symmetry relation. Nonlinear dynamical selection is the process whose outcomes are investigated.</p>
+<h3 id="73-relationship-to-existing-chemical-mechanisms">7.3 Relationship to Existing Chemical Mechanisms</h3>
+<p>The geometric framework is intended to complement established reaction-network and kinetic models.</p>
+<p>A reaction model may already explain chiral amplification through autocatalysis, mutual inhibition, aggregation, or nonlinear feedback. The geometric programme becomes scientifically useful if it can:</p>
+<ul>
+<li>identify state-space structure not evident from a purely parameter-based description;</li>
+<li>provide a coordinate-consistent geometric representation;</li>
+<li>improve prediction of transition thresholds or robustness;</li>
+<li>connect dynamical structure to experimentally measurable quantities;</li>
+<li>generate predictions that distinguish it from competing explanations.</li>
+</ul>
+<p>If the geometric descriptor is merely a re-expression of existing kinetic variables, it may still provide a useful representation but would not establish a new independent physical mechanism.</p>
+<h3 id="74-relationship-to-geometric-selection-theory">7.4 Relationship to Geometric Selection Theory</h3>
+<p>The companion Super Cell paper investigates whether state-space geometry can help characterize cell-fate transitions.</p>
+<p>At the molecular scale, the competing states are enantiomeric states. At the cellular scale, the competing states are phenotypic attractors.</p>
+<p>The shared architecture is the study of competing dynamical states, their basin boundaries, and possible geometric descriptors of transitions.</p>
+<p>However, the molecular and cellular systems differ in their governing equations, observables, timescales, and sources of noise. A common mathematical vocabulary does not establish that they obey identical quantitative laws.</p>
+<p>Geometric Selection Theory should therefore be regarded as a cross-domain research programme. Its generality will depend on independent demonstrations that the proposed descriptors are well defined and predictive in each application.</p>
+<h3 id="75-implications-for-the-origin-of-life">7.5 Implications for the Origin of Life</h3>
+<p>Homochirality is an important problem in prebiotic chemistry because biological function depends on molecular stereochemistry.</p>
+<p>The present framework suggests one possible line of investigation: determine whether the state-space geometry of prebiotic reaction networks provides predictive information about the emergence and amplification of chiral bias.</p>
+<p>This is a conditional proposal. The existence of a geometric descriptor does not imply that every chiral chemical system will spontaneously become homochiral. The outcome depends on the reaction network, thermodynamic constraints, stochastic fluctuations, environmental conditions, and the presence or absence of chiral influences.</p>
+<p>A geometric explanation would become compelling if it identified measurable conditions under which chiral amplification becomes more likely, more stable, or quantitatively more predictable than conventional models indicate.</p>
+<h3 id="76-limitations">7.6 Limitations</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th style="text-align: left;">Challenge</th>
+<th style="text-align: left;">Scientific issue</th>
+<th style="text-align: left;">Required next step</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;">Curvature descriptor</td>
+<td style="text-align: left;">The descriptor may depend on orientation, normalization, or model choice</td>
+<td style="text-align: left;">Define it operationally and demonstrate coordinate consistency</td>
+</tr>
+<tr>
+<td style="text-align: left;">Assumption C3</td>
+<td style="text-align: left;">A scalar descriptor need not characterize the full metric symmetry</td>
+<td style="text-align: left;">Prove the equivalence for a restricted model or replace it with a sufficient descriptor</td>
+</tr>
+<tr>
+<td style="text-align: left;">Assumption C4</td>
+<td style="text-align: left;">The coupling between geometry and chiral bias is not universal</td>
+<td style="text-align: left;">Derive it from a specified dynamical model or validate it independently</td>
+</tr>
+<tr>
+<td style="text-align: left;">Nonequilibrium potential</td>
+<td style="text-align: left;">A quasipotential depends on the stochastic dynamics</td>
+<td style="text-align: left;">Specify the stochastic process and action functional</td>
+</tr>
+<tr>
+<td style="text-align: left;">Topological protection</td>
+<td style="text-align: left;">A topological invariant does not automatically protect chemical observables</td>
+<td style="text-align: left;">Identify the invariant, perturbation class, and measurable consequence</td>
+</tr>
+<tr>
+<td style="text-align: left;">Nonlinear threshold</td>
+<td style="text-align: left;">The threshold depends on the chosen control parameter and criterion</td>
+<td style="text-align: left;">Define a dimensionless threshold and derive its scaling</td>
+</tr>
+<tr>
+<td style="text-align: left;">Experimental reconstruction</td>
+<td style="text-align: left;">Finite data may not uniquely identify state-space geometry</td>
+<td style="text-align: left;">Use independent probes, uncertainty quantification, and out-of-sample validation</td>
+</tr>
+<tr>
+<td style="text-align: left;">Cross-scale generalization</td>
+<td style="text-align: left;">Molecular and cellular systems have different dynamics</td>
+<td style="text-align: left;">Validate each application independently</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="77-future-directions">7.7 Future Directions</h3>
+<p>The immediate research priorities are:</p>
+<ol>
+<li><strong>Model-specific proof of C3.</strong> Construct a state-space model in which the curvature descriptor is demonstrably sufficient for the relevant metric symmetry condition.</li>
+<li><strong>Independent derivation of C4.</strong> Establish a dynamical relationship between the descriptor and chiral-selection bias without defining one solely through the other.</li>
+<li><strong>Reaction-network reconstruction.</strong> Apply the framework to a specified autocatalytic network and compare its predictions with an established kinetic baseline.</li>
+<li><strong>Topological analysis.</strong> Identify a mathematically appropriate invariant and determine whether it predicts persistence of a defined dynamical regime.</li>
+<li><strong>Quantitative threshold testing.</strong> Define operational amplification thresholds and compare dimensionless scaling laws.</li>
+<li><strong>External-field controls.</strong> Distinguish geometric contributions from established field-dependent reaction mechanisms.</li>
+<li><strong>Cross-scale validation.</strong> Investigate whether analogous geometric descriptors are useful in cell-fate models without assuming universal equations.</li>
+</ol>
+<hr />
+<h2 id="8-conclusion">8. Conclusion</h2>
+<p>This work proposes a geometric-dynamical framework for investigating homochirality through the state-space structure of competing enantiomeric attractor basins.</p>
+<p>Its central mathematical result is a conditional equivalence theorem. Under explicit assumptions, a nonzero chiral-selection observable, a nonzero separatrix-curvature asymmetry, and mirror-symmetry breaking of the Fisher metric are equivalent descriptions within the specified model class.</p>
+<p>The theorem is rigorous as a conditional statement. Its applicability to real chemical systems depends on the independent validity of the geometric-identification and geometry-to-selection assumptions.</p>
+<p>The manuscript also develops two research hypotheses. Topological descriptors may contribute to the characterization of autocatalytic robustness when a suitable invariant and its physical significance can be established. Separatrix geometry may influence nonlinear amplification by modifying transition actions or rates, but quantitative threshold laws must be derived from specified reaction dynamics.</p>
+<p>Four experimental directions are proposed: testing geometric contributions to prediction, investigating topological robustness, measuring geometric contributions to amplification thresholds, and evaluating geometry-mediated external-field effects.</p>
+<p>Together with the companion Super Cell paper, this work advances Geometric Selection Theory as a proposed cross-scale programme for studying whether geometric properties of competing dynamical states can help predict selection outcomes.</p>
+<p>The scientific value of the programme will depend on its ability to produce quantitative, falsifiable predictions that improve upon existing explanations. The decisive next step is to reconstruct a specific chemical state space, define its geometric descriptors independently, derive their relationship to the reaction dynamics, and test that relationship on independent experimental data.</p>
+<p>If these tests succeed, state-space geometry may become a useful additional principle for understanding chiral selection and nonlinear chemical amplification. Until then, the framework should be understood as a conditional mathematical architecture and a testable research hypothesis, rather than an established universal law of homochirality.</p>
+<hr />
+<h2 id="appendix-a-scientific-status-of-the-main-claims">Appendix A. Scientific Status of the Main Claims</h2>
+<p>This manuscript distinguishes three categories of statements.</p>
+<h3 id="a1-established-mathematical-and-scientific-background">A.1 Established Mathematical and Scientific Background</h3>
+<p>The following are established within their respective conditions of applicability:</p>
+<ul>
+<li>Riemannian metrics, connections, curvature, and covariant Hessians are standard mathematical constructions.</li>
+<li>Fisher information geometry provides a canonical metric for regular statistical models under the relevant information-geometric assumptions.</li>
+<li>Freidlin–Wentzell large-deviation theory describes exponential-order behavior of rare transitions for appropriate stochastic dynamical systems.</li>
+<li>Reaction-network models, autocatalysis, and nonlinear symmetry-breaking dynamics provide established approaches to chemical amplification.</li>
+<li>Nontrivial topological invariants can remain unchanged under specified continuous deformations, provided the relevant mathematical conditions hold.</li>
+</ul>
+<h3 id="a2-proposed-theoretical-architecture">A.2 Proposed Theoretical Architecture</h3>
+<p>The following are proposals developed in this manuscript:</p>
+<ul>
+<li>A state-space geometric representation of chiral selection.</li>
+<li>The use of a separatrix-curvature descriptor to characterize competing enantiomeric basins.</li>
+<li>The conditional equivalence theorem under Assumptions C1–C4.</li>
+<li>A programme for testing topological descriptors of autocatalytic robustness.</li>
+<li>A geometric contribution to nonlinear amplification through transition-action sensitivity.</li>
+<li>Geometric Selection Theory as a cross-scale research programme.</li>
+</ul>
+<h3 id="a3-testable-hypotheses">A.3 Testable Hypotheses</h3>
+<p>The following remain open research questions:</p>
+<ul>
+<li>Whether C3 holds for any specified chemically realistic model.</li>
+<li>Whether C4 can be derived from a reaction network or independently supported by data.</li>
+<li>Whether geometric descriptors improve prediction of chiral amplification beyond established kinetic variables.</li>
+<li>Whether an appropriate topological invariant predicts a measurable robustness property.</li>
+<li>Whether a geometric threshold law holds for a defined catalyst series.</li>
+<li>Whether external-field effects include an independently measurable geometry-mediated contribution.</li>
+</ul>
+<p>No hypothesis in this category is treated as established merely because it is mathematically compatible with the proposed framework.</p>
+<p>A suitable validation programme should include operational definitions, baseline comparisons, uncertainty quantification, independent datasets, and replication.</p>
+<hr />
+<h2 id="acknowledgments">Acknowledgments</h2>
+<p>We are grateful to all the individual scientists and teams of scientists who have contributed to the exploration and understanding of the universe. We acknowledge the role of AI-driven supercomputing resources and the MES Universe Project in the broader research context. We have benefited from our AI collaborators.</p>
+<h2 id="funding">Funding</h2>
+<p>Not applicable.</p>
+<h2 id="availability-of-data-and-materials">Availability of Data and Materials</h2>
+<p>Code, mathematical scripts, and preprints are available at GitHub:</p>
+<p>https://github.com/Zaitian001/-Self-Preprint-V1.1-</p>
+<h2 id="competing-interests">Competing Interests</h2>
+<p>Not applicable.</p>
+<h2 id="author-contributions">Author Contributions</h2>
+<p>Baoliin (Zaitian) Wu 伍宝林 is the sole author of this manuscript and is responsible for all aspects of the research, including conceptualization, methodology, theoretical formulation, and manuscript writing.</p>
+<hr />
+<h2 id="references">References</h2>
+<p>[1] Puchot C., Samuel O., Dunach E. et al. (1986). Nonlinear effects in asymmetric synthesis. Examples in asymmetric oxidations and aldolization reactions. <em>Journal of the American Chemical Society</em>, 108(9), 2353–2357. https://doi.org/10.1021/ja00269a036</p>
+<p>[2] Soai, K., Shibata, T., Morioka, H. et al. (1995). Asymmetric autocatalysis and amplification of enantiomeric excess of a chiral molecule. <em>Nature</em>, 378, 767–768. https://doi.org/10.1038/378767a0</p>
+<p>[3] Frank, F. C. (1953). On spontaneous asymmetric synthesis. <em>Biochimica et Biophysica Acta</em>, 11, 459–463. https://doi.org/10.1016/0006-3002(53)90082-1</p>
+<p>[4] Kondepudi, D., and Nelson, G. (1985). Weak neutral currents and the origin of biomolecular chirality. <em>Nature</em>, 314, 438–441. https://doi.org/10.1038/314438a0</p>
+<p>[5] Baoliin (Zaitian) Wu 伍宝林. (2026). Inaugurating the Era of Super Cell: Curvature-Driven Geometric Synthetic Biology for Cell Fate Reprogramming. <em>Self-Preprint Archive</em>. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553919.html</p>
+<p>[6] Baoliin (Zaitian) Wu 伍宝林. (2026). Optogenetic Geometric Medicine: Curvature-Driven Reprogramming of Physiological State Manifolds. <em>Self-Preprint Archive</em>. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553918.html</p>
+<p>[7] Baoliin (Zaitian) Wu 伍宝林. (2026). The Geometry of Qi: A Riemannian Architecture for Physiological Information Flow and Meridian Emergence. <em>Self-Preprint Archive</em>. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553908.html</p>
+<p>[8] Baoliin (Zaitian) Wu 伍宝林. (2026). Curvature-Driven Open Quantum Dynamics and the Pure Geometric Origin of Physics Constants. <em>Self-Preprint Archive</em>. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553914.html</p>
+<p>[9] Censov, N. N. (1981). Statistical decision rules and optimal inference. American Mathematical Society.</p>
+<p>[10] Amari, S. (2016). Information Geometry and Its Applications. Springer Tokyo.</p>
+<p>[11] Freidlin, M. I., and Wentzell, A. D. (2012). Random Perturbations of Dynamical Systems. Springer Berlin.</p>
+<p>[12] Milnor, J. (1963). Morse Theory. Princeton University Press.</p>
+<p>[13] Thouless, D. J., Kohmoto, M., Nightingale, M. P., and den Nijs, M. (1982). Quantized Hall conductance in a two-dimensional periodic potential. <em>Physical Review Letters</em>, 49, 405. https://doi.org/10.1103/PhysRevLett.49.405</p>
+<p>[14] Haldane, F. D. M. (1988). Model for a quantum Hall effect without Landau levels: Condensed-matter realization of the "parity anomaly". <em>Physical Review Letters</em>, 61, 2015. https://doi.org/10.1103/PhysRevLett.61.2015</p>
+<p>[15] Hasan, M. Z., and Kane, C. L. (2010). Colloquium: Topological insulators. <em>Reviews of Modern Physics</em>, 82, 3045. https://doi.org/10.1103/RevModPhys.82.3045</p>
+<p>[16] Ori, H., Duque, M., Frank Hayward, R. et al. (2023). Observation of topological action potentials in engineered tissues. <em>Nature Physics</em>, 19, 290–296. https://doi.org/10.1038/s41567-022-01853-z</p>
+<p>[17] Nag Chowdhury, S., and Meyer-Ortmanns, H. (2025). Topologically protected edge oscillations in nonlinear dynamical units. <em>Physical Review E</em>, 112, 044204. https://doi.org/10.1103/lskh-hp3x</p>
+<p>[18] Wang, J., Xu, L., Wang, E., and Huang, S. (2010). The potential landscape of genetic circuits imposes the arrow of time in stem cell differentiation. <em>Biophysical Journal</em>, 99, 29–39. https://doi.org/10.1016/j.bpj.2010.03.058</p>
+<p>[19] Zhou, J. X., and Huang, S. (2010). Understanding gene circuits at cell-fate branch points for rational cell reprogramming. <em>Trends in Genetics</em>, 27, 55–62. https://doi.org/10.1016/j.tig.2010.11.002</p>
+<p>[20] Baoliin (Zaitian) Wu. (2025). The Return to the Einstein Spherical Universe: The Dawning Moment of a New Cosmic Science. <em>Preprints</em>. https://doi.org/10.20944/preprints202504.0727.v2</p>
+<p>[21] Baoliin (Zaitian) Wu. (2025). The Pure Geometric Origin of Mass and Light. <em>Preprints</em>. https://doi.org/10.20944/preprints202505.2249.v1</p>
+<p>[22] Ollivier, Y. (2008). Ricci curvature of Markov chains on metric spaces. <em>Journal of Functional Analysis</em>, 256(3), 810–864. https://doi.org/10.1016/j.jfa.2008.11.001</p>
+<p>[23] Mora, T., and Bialek, W. (2011). Are biological systems poised at criticality? <em>Journal of Statistical Physics</em>, 144, 268–302. https://doi.org/10.1007/s10955-011-0229-4</p>
+<p>[24] Beggs, J. M., and Plenz, D. (2003). Neuronal avalanches in neocortical circuits. <em>Journal of Neuroscience</em>, 23(35), 11167–11177. https://doi.org/10.1523/jneurosci.23-35-11167.2003</p>
+<p>[25] Hopfield, J. J. (1982). Neural networks and physical systems with emergent collective computational abilities. <em>Proceedings of the National Academy of Sciences</em>, 79(8), 2554–2558. https://doi.org/10.1073/pnas.79.8.2554</p>
+<p>[26] Amit, D. J., Gutfreund, H., and Sompolinsky, H. (1985). Storing infinite numbers of patterns in a spin-glass model of neural networks. <em>Physical Review Letters</em>, 55, 1530. https://doi.org/10.1103/PhysRevLett.55.1530</p>
+        </div>
+    </article>
+
+    <!-- 引用格式选择器（Google Scholar 风格） -->
+    <div class="citation-toggle">
+        <span class="cite-label">📚 Cite this paper</span>
+        <span class="cite-arrow">▾</span>
+    </div>
+    <div class="citation-panel" id="citationPanel">
+        <div class="citation-format-selector">
+            <button class="format-btn active" data-format="apa">APA</button>
+            <button class="format-btn" data-format="mla">MLA</button>
+            <button class="format-btn" data-format="chicago">Chicago</button>
+            <button class="format-btn" data-format="bibtex">BibTeX</button>
+        </div>
+        <div class="citation-display" id="citationDisplay">
+            <span class="citation-text" id="citationText"></span>
+            <button class="copy-btn" id="copyCitationBtn">📋 Copy</button>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        © 2026 Baoliin (Zaitian) Wu 伍宝林 · Self-Preprint Decentralized Academic Archive
+    </footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const citationData = {"apa": "Baoliin (Zaitian) Wu \u4f0d\u5b9d\u6797 (2026). Chirality as Curvature: Emergence from Attractor Basin Separatrix Asymmetry. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553920.html", "mla": "Baoliin (Zaitian) Wu \u4f0d\u5b9d\u6797. \"Chirality as Curvature: Emergence from Attractor Basin Separatrix Asymmetry.\" Self-Preprint Archive, 2026, https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553920.html.", "chicago": "Baoliin (Zaitian) Wu \u4f0d\u5b9d\u6797. \"Chirality as Curvature: Emergence from Attractor Basin Separatrix Asymmetry.\" Self-Preprint Archive. Accessed October 09, 2026. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553920.html.", "bibtex": "@article{selfpreprint_DW58553920,\n  author = {Baoliin (Zaitian) Wu \u4f0d\u5b9d\u6797},\n  title = {Chirality as Curvature: Emergence from Attractor Basin Separatrix Asymmetry},\n  journal = {Self-Preprint Archive},\n  year = {2026},\n  url = {https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553920.html}\n}"};
+    const toggle = document.querySelector('.citation-toggle');
+    const panel = document.getElementById('citationPanel');
+    const textDisplay = document.getElementById('citationText');
+    const copyBtn = document.getElementById('copyCitationBtn');
+    let currentFormat = 'apa';
+
+    if (toggle && panel) {
+        toggle.addEventListener('click', function() {
+            this.classList.toggle('open');
+            panel.classList.toggle('open');
+            if (panel.classList.contains('open')) {
+                updateCitation('apa');
+            }
+        });
+    }
+
+    document.querySelectorAll('.format-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            document.querySelectorAll('.format-btn').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            currentFormat = this.getAttribute('data-format');
+            updateCitation(currentFormat);
+        });
+    });
+
+    function updateCitation(format) {
+        let text = citationData[format] || 'Citation not available';
+        if (format === 'bibtex') {
+            textDisplay.className = 'citation-text bibtex-display';
+            textDisplay.textContent = text;
+        } else {
+            textDisplay.className = 'citation-text';
+            textDisplay.textContent = text;
+        }
+        copyBtn.textContent = '📋 Copy';
+        copyBtn.classList.remove('copied');
+    }
+
+    if (copyBtn) {
+        copyBtn.addEventListener('click', function() {
+            const text = textDisplay.textContent;
+            navigator.clipboard.writeText(text).then(function() {
+                copyBtn.textContent = '✅ Copied!';
+                copyBtn.classList.add('copied');
+                setTimeout(function() {
+                    copyBtn.textContent = '📋 Copy';
+                    copyBtn.classList.remove('copied');
+                }, 2000);
+            }).catch(function() {
+                const ta = document.createElement('textarea');
+                ta.value = text;
+                document.body.appendChild(ta);
+                ta.select();
+                document.execCommand('copy');
+                document.body.removeChild(ta);
+                copyBtn.textContent = '✅ Copied!';
+                setTimeout(function() {
+                    copyBtn.textContent = '📋 Copy';
+                }, 2000);
+            });
+        });
+    }
+
+    updateCitation('apa');
+});
+</script>
+
+<!-- 引入 Mermaid 渲染引擎 -->
+<script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+    document.addEventListener("DOMContentLoaded", async function () {
+        const codeBlocks = document.querySelectorAll('pre code.language-mermaid, pre code.mermaid');
+        codeBlocks.forEach((codeBlock) => {
+            const pre = codeBlock.parentElement;
+            const div = document.createElement('div');
+            div.className = 'mermaid';
+            div.textContent = codeBlock.textContent;
+            pre.replaceWith(div);
+        });
+
+        mermaid.initialize({ startOnLoad: false, theme: 'default', securityLevel: 'loose' });
+        await mermaid.run();
+    });
+</script>
+</body>
+</html>
