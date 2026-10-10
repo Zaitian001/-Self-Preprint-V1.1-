@@ -389,7 +389,7 @@ window.MathJax = {
         
     <div class="anchor-box">
         🛡️ <strong>Physical Proof of Existence</strong> | Banknote Serial: <code>DW58553919</code>
-        <div class="anchor-hash">SHA-256 Hash: 29938247662daf99975d10c19f512c42e8eb5ab566516b5b1fcc6c9d03f590eb</div>
+        <div class="anchor-hash">SHA-256 Hash: fdee63746f12da30032b366b07fca653344c87b18d076122f98598b15ff06f5d</div>
     </div>
     
 
@@ -416,7 +416,7 @@ window.MathJax = {
 <h2 id="1-introduction">1. Introduction</h2>
 <h3 id="11-the-grammarsemantics-gap-in-synthetic-biology">1.1 The Grammar–Semantics Gap in Synthetic Biology</h3>
 <p>Synthetic biology has achieved remarkable milestones: minimal genomes, synthetic genetic circuits, and artificial cells capable of basic metabolic functions. Yet a fundamental limitation persists. Current approaches operate on <strong>state variables</strong>—genes, proteins, metabolites, signalling molecules—while the <strong>geometry of the cell fate landscape</strong> remains largely untouched.</p>
-<p>This creates what we term the <strong>grammar–semantics gap</strong>: a cell can be "genetically perfect but therapeutically useless"—edits are exactly as designed, yet the cell drifts toward unintended fates, fails to maintain its engineered state, or exhibits instability under stress. As Raju (2026) has noted, current evaluation frameworks excel at measuring "what was done to the cell" (indel rates, off-target scores, sequence fidelity) but are blind to "what the cell became"—a nonlinear dynamical system occupying a specific position on a high-dimensional state manifold.</p>
+<p>This creates what we term the <strong>grammar–semantics gap</strong>: a cell can be "genetically perfect but therapeutically useless"—edits are exactly as designed, yet the cell drifts toward unintended fates, fails to maintain its engineered state, or exhibits instability under stress. As Raju (2026) has noted, current evaluation architectures excel at measuring "what was done to the cell" (indel rates, off-target scores, sequence fidelity) but are blind to "what the cell became"—a nonlinear dynamical system occupying a specific position on a high-dimensional state manifold.</p>
 <p>The gap is both technical and conceptual. Molecular interventions change state variables and system parameters, and those changes can in turn reshape the dynamical landscape. GSB proposes that an explicit geometric representation can provide an additional level at which to predict and control cell fate: the organization of states, attractor basins, transition pathways, and separatrices. The central claim is not that genes or molecules are irrelevant, but that their effects should also be evaluated at the level of the state-space structure they help generate.</p>
 <h3 id="12-from-artificial-cells-to-super-cells-a-paradigm-shift">1.2 From Artificial Cells to Super Cells: A Paradigm Shift</h3>
 <p>The artificial cell programme asks: <strong>"Can we build a cell from scratch?"</strong> This question has driven remarkable progress—from minimal bacterial genomes to synthetic vesicles capable of gene expression and metabolism.</p>
@@ -482,7 +482,7 @@ window.MathJax = {
 </ul>
 <p>Under this hypothesis, reprogramming is a <strong>controlled geometric perturbation</strong>: external signals inject a drift perturbation $\delta f^\mu$ that locally modifies curvature, thereby reshaping the attractor landscape and guiding the cell to a target fate.</p>
 <h3 id="14-sister-paper-chirality-as-curvature">1.4 Sister Paper: Chirality as Curvature</h3>
-<p>This work is a <strong>sister paper</strong> to <em>Chirality as Curvature: Emergence from Attractor Basin Separatrix Asymmetry</em> (Wu, 2026). Both papers share a common geometric-topological framework:</p>
+<p>This work is a <strong>sister paper</strong> to <em>Chirality as Curvature: Emergence from Attractor Basin Separatrix Asymmetry</em> (Wu, 2026). Both papers share a common geometric-topological architecture:</p>
 <div class="table-wrap"><table>
 <thead>
 <tr>
@@ -532,9 +532,9 @@ window.MathJax = {
 <p>The chirality paper advances the principle at the <strong>molecular scale</strong>; the present paper develops a corresponding cellular-scale hypothesis. The cross-scale connection is a theoretical programme whose generality depends on the definitions, derivations, and independent evidence supplied in each domain.</p>
 <p>Together, they are proposed as two components of <strong>Geometric Selection Theory</strong>: the hypothesis that discrete choices in complex adaptive systems may be predicted, and under suitable conditions influenced, by geometric asymmetries of separatrices between competing attractor basins.</p>
 <h3 id="15-paper-structure">1.5 Paper Structure</h3>
-<p>Section 2 presents the theoretical framework: geometrisation of the Waddington landscape, curvature-driven dynamics, and topological protection. Section 3 defines the Super Cell and its five criteria. Section 4 develops the geometric reprogramming protocol. Section 5 presents the optimal control formulation. Section 6 provides experimental predictions. Section 7 compares the Super Cell paradigm with existing synthetic biology approaches. Section 8 discusses limitations and future directions.</p>
+<p>Section 2 presents the theoretical architecture: geometrisation of the Waddington landscape, curvature-driven dynamics, and topological protection. Section 3 defines the Super Cell and its five criteria. Section 4 develops the geometric reprogramming protocol. Section 5 presents the optimal control formulation. Section 6 provides experimental predictions. Section 7 compares the Super Cell paradigm with existing synthetic biology approaches. Section 8 discusses limitations and future directions.</p>
 <hr />
-<h2 id="2-theoretical-framework-geometrisation-of-cell-fate">2. Theoretical Framework: Geometrisation of Cell Fate</h2>
+<h2 id="2-theoretical-architecture-geometrisation-of-cell-fate">2. Theoretical Architecture: Geometrisation of Cell Fate</h2>
 <h3 id="21-the-waddington-landscape-as-a-riemannian-manifold">2.1 The Waddington Landscape as a Riemannian Manifold</h3>
 <p>The classical Waddington landscape represents cell differentiation as movement through a state space containing valleys, ridges, and branch points. GSB turns this picture into an explicit modelling proposal while keeping separate the geometry of the state space and the dynamics evolving on it.</p>
 <p>Let $z=(z^1,\ldots,z^N)$ denote measured cell-state variables, including selected transcriptomic, proteomic, metabolic, epigenetic, morphological, electrophysiological, or functional observables. After reconstruction and validation, the accessible states may be represented by a manifold $\mathcal M$ of effective dimension $d\ll N$. The manifold is an inferred model of accessible states, not an assumption that every embedding algorithm recovers a unique biological geometry.</p>
@@ -542,7 +542,7 @@ window.MathJax = {
 <div class="math-block">$$
 g_{ab}(z)=\mathbb E_{x\sim p(x\mid z)}\left[\partial_a\log p(x\mid z)\,\partial_b\log p(x\mid z)\right] \quad (1)
 $$</div>
-<p>Other constructions may use a validated response metric, an embedding-induced metric, or a model-based metric. The chosen construction, regularisation, sampling assumptions, and uncertainty must be reported. The Fisher metric is a standard information-geometric construction; uniqueness claims require the relevant assumptions and are not needed for the present framework.</p>
+<p>Other constructions may use a validated response metric, an embedding-induced metric, or a model-based metric. The chosen construction, regularisation, sampling assumptions, and uncertainty must be reported. The Fisher metric is a standard information-geometric construction; uniqueness claims require the relevant assumptions and are not needed for the present architecture.</p>
 <p>Let $\Phi(z)$ denote a landscape or quasipotential when such a scalar representation is justified. Its covariant Hessian is</p>
 <div class="math-block">$$
 H_{\mu\nu}(z)=\nabla_\mu\nabla_\nu\Phi(z) \quad (2)
@@ -729,7 +729,7 @@ $$</div>
 </table></div>
 <p>Gene editing often changes system parameters and can thereby change the inferred landscape geometry. GSB proposes to make those downstream state-space effects explicit design targets. A gene edit may alter a parameter without changing a relevant topological descriptor, or it may reorganise the state space in ways that are not obvious from the edit alone. A landscape-editing intervention is successful only if it measurably changes the desired state-transition or stability outcome.</p>
 <p><strong>The key GSB proposition</strong>: molecular interventions should be evaluated not only by the parameter changes they produce, but also by the resulting landscape, state-transition, and stability changes. Whether an intervention must alter topology, rather than other geometric or dynamical features, depends on the target problem.</p>
-<p>This proposition is conceptually aligned with the molecular-scale chirality framework (Wu, 2026), where separatrix curvature asymmetry is proposed as a selection mechanism. Both applications require their own derivations and independent validation; neither implies that molecular or genetic interventions are intrinsically insufficient.</p>
+<p>This proposition is conceptually aligned with the molecular-scale chirality architecture (Wu, 2026), where separatrix curvature asymmetry is proposed as a selection mechanism. Both applications require their own derivations and independent validation; neither implies that molecular or genetic interventions are intrinsically insufficient.</p>
 <h3 id="43-optogenetic-control-of-cell-fate">4.3 Optogenetic Control of Cell Fate</h3>
 <p>Optogenetics is a candidate intervention modality because it can provide temporally controlled inputs to selected cellular pathways. A proposed causal chain to test is:</p>
 <div class="math-block">$$
@@ -744,10 +744,10 @@ $$</div>
 <li><strong>Mechanical</strong>: Substrate stiffness, shear stress, and cell shape can alter the landscape through mechanotransduction pathways. The advantage is physiological relevance; the disadvantage is limited reversibility.</li>
 <li><strong>Genetic</strong>: Transcription factor overexpression or CRISPR activation can shift the landscape by changing the expression levels of key regulators. The advantage is durability; the disadvantage is irreversibility.</li>
 </ul>
-<p>All these modalities can be unified in the geometric framework as perturbations $\delta f^\mu$ to the drift term, differing primarily in their spatial resolution, temporal precision, reversibility, and biological constraints.</p>
+<p>All these modalities can be unified in the geometric architecture as perturbations $\delta f^\mu$ to the drift term, differing primarily in their spatial resolution, temporal precision, reversibility, and biological constraints.</p>
 <hr />
 <h2 id="5-optimal-landscape-editing">5. Optimal Landscape Editing</h2>
-<h3 id="51-the-freidlinwentzell-framework">5.1 The Freidlin–Wentzell Framework</h3>
+<h3 id="51-the-freidlinwentzell-architecture">5.1 The Freidlin–Wentzell Architecture</h3>
 <p>For a controlled small-noise model</p>
 <div class="math-block">$$
 dz=f(z,u)\,dt+\sqrt{2\varepsilon}B(z)\,dW_t \quad (8)
@@ -775,10 +775,10 @@ $$</div>
 u_k^{\min}\leq u_k(t)\leq u_k^{\max},\qquad z(t)\in\mathcal S_{\mathrm{safe}} \quad (13)
 $$</div>
 <p>Here $\mathcal R_g$ is a declared geometric regulariser, $\mathcal C_{\mathrm{stab}}$ is a stability cost derived from a defined dynamical measure, $\mathcal L_{\mathrm{target}}$ penalises failure to reach or maintain the desired functional state, and $\mathcal S_{\mathrm{safe}}$ is a safety set. The weights $\alpha,\beta,\gamma,\lambda$ require scaling and sensitivity analysis. If a potential function is used in the terminal objective, its sign must match the definition of the target state; a generic inequality such as $\Phi(z(T))\geq\Phi_{\min}$ should not be imposed without checking that convention.</p>
-<p>The optimisation is a proposed computational framework, not a proof that every target fate is reachable. Reachability, controllability, model identifiability, uncertainty, and biological constraints must be analysed for each application.</p>
+<p>The optimisation is a proposed computational architecture, not a proof that every target fate is reachable. Reachability, controllability, model identifiability, uncertainty, and biological constraints must be analysed for each application.</p>
 <h3 id="53-geometric-interpretation-of-the-optimal-solution">5.3 Geometric Interpretation of the Optimal Solution</h3>
 <p>The optimal trajectory is the path that minimises the specified action and control costs while satisfying target and safety constraints. In a gradient-potential system, a transition may pass near a relevant saddle or mountain-pass region; in a nonequilibrium system, the minimum-action path need not coincide with a geodesic or the lowest geometric-curvature channel.</p>
-<p><strong>GSB prediction:</strong> adding well-estimated geometric descriptors to a dynamical control model may improve prediction or intervention efficiency beyond a matched baseline. This should be tested through out-of-sample comparisons, ablation of curvature terms, uncertainty analysis, and prospective validation. The geometry-first framework treats curvature as a candidate explanatory and design variable, not as a substitute for the governing dynamics.</p>
+<p><strong>GSB prediction:</strong> adding well-estimated geometric descriptors to a dynamical control model may improve prediction or intervention efficiency beyond a matched baseline. This should be tested through out-of-sample comparisons, ablation of curvature terms, uncertainty analysis, and prospective validation. The geometry-first architecture treats curvature as a candidate explanatory and design variable, not as a substitute for the governing dynamics.</p>
 <hr />
 <h2 id="6-experimental-predictions">6. Experimental Predictions</h2>
 <h3 id="61-prediction-1-curvature-associated-fate-thresholds">6.1 Prediction 1: Curvature-Associated Fate Thresholds</h3>
@@ -787,7 +787,7 @@ $$</div>
 <div class="math-block">$$
 I_{\mathrm{th}}=\beta_0+\beta_R\,\Delta R+\boldsymbol{\beta}^{\top}\mathbf{x}+\epsilon \quad (14)
 $$</div>
-<p>where $I_{\mathrm{th}}$ is a prespecified intervention threshold, $\Delta R$ is a defined curvature contrast, and $\mathbf{x}$ contains relevant confounders such as baseline state, viability, cell-cycle phase, and actuator expression. The sign and magnitude of $\beta_R$ are empirical questions, not fixed by the framework.</p>
+<p>where $I_{\mathrm{th}}$ is a prespecified intervention threshold, $\Delta R$ is a defined curvature contrast, and $\mathbf{x}$ contains relevant confounders such as baseline state, viability, cell-cycle phase, and actuator expression. The sign and magnitude of $\beta_R$ are empirical questions, not fixed by the architecture.</p>
 <p><strong>Test:</strong> reconstruct geometry from one dataset, estimate the threshold in independent experiments, and compare against models using molecular state, Euclidean distance, and standard dynamical features without curvature.</p>
 <h3 id="62-prediction-2-geometric-predictors-of-dynamical-stability">6.2 Prediction 2: Geometric Predictors of Dynamical Stability</h3>
 <p><strong>Hypothesis:</strong> curvature-informed descriptors can improve prediction of recovery, state retention, or transition susceptibility after controlled perturbations.</p>
@@ -924,9 +924,9 @@ $$</div>
 <li><strong>It does claim</strong>: A geometry-first research programme for modelling and controlling cell-state transitions, with explicit mathematical objects, operational criteria, a five-step protocol, and testable hypotheses.</li>
 <li><strong>It does not claim</strong>: That Super Cells have already been experimentally realised; that curvature alone determines cell fate; that a particular curvature sign guarantees stability; or that topology automatically protects biological function.</li>
 </ul>
-<p>This distinction is essential for scientific integrity. The Super Cell is a <strong>theoretical framework and a research programme</strong>, not a completed achievement.</p>
+<p>This distinction is essential for scientific integrity. The Super Cell is a <strong>cutting-edge theoretical architecture and an engineering aspiration</strong>, not a completed achievement.</p>
 <h3 id="82-sister-paper-chirality-as-curvature">8.2 Sister Paper: Chirality as Curvature</h3>
-<p>This paper is a sister paper to <em>Chirality as Curvature: Emergence from Attractor Basin Separatrix Asymmetry</em> (Wu, 2026). The two papers share a common geometric-topological framework and together constitute <strong>Geometric Selection Theory</strong>:</p>
+<p>This paper is a sister paper to <em>Chirality as Curvature: Emergence from Attractor Basin Separatrix Asymmetry</em> (DW58553920). The two papers share a common geometric-topological architecture and together constitute <strong>Geometric Selection Theory</strong>:</p>
 <div class="table-wrap"><table>
 <thead>
 <tr>
@@ -1024,16 +1024,16 @@ $$</div>
 <li><strong>Landscape editing in stem cells</strong>: Apply the geometric reprogramming protocol to induced pluripotent stem cells, targeting specific differentiation fates.</li>
 <li><strong>Optogenetic landscape control</strong>: Develop optogenetic tools for precise spatiotemporal control of curvature perturbations $\delta R$.</li>
 <li><strong>Topological invariant engineering</strong>: Design landscapes with specific topological invariants that protect desired cell fates.</li>
-<li><strong>Multi-scale integration</strong>: Extend the framework from single cells to tissues and organs, incorporating cell–cell communication and mechanical coupling.</li>
+<li><strong>Multi-scale integration</strong>: Extend the architecture from single cells to tissues and organs, incorporating cell–cell communication and mechanical coupling.</li>
 <li><strong>Clinical translation</strong>: Develop Super Cells for regenerative medicine, immunotherapy, and cancer treatment.</li>
-<li><strong>Geometric Selection Theory</strong>: Extend the framework to other domains—immunology, ecology, neuroscience—to test the universality of separatrix curvature asymmetry as a selection principle.</li>
+<li><strong>Geometric Selection Theory</strong>: Extend the architecture to other domains—immunology, ecology, neuroscience—to test the universality of separatrix curvature asymmetry as a selection principle.</li>
 </ol>
 <h3 id="86-the-super-cell-as-a-general-paradigm">8.6 The Super Cell as a General Paradigm</h3>
 <p>If the Super Cell paradigm is validated, it suggests a broader principle:</p>
 <div class="math-block">$$
 \text{Complex adaptive systems} \rightarrow \text{structured state-space geometry} \rightarrow \text{programmable attractor landscapes} \rightarrow \text{non-natural function combinations}
 $$</div>
-<p>The biological Super Cell would then represent one possible manifestation of a general phenomenon, applicable to any sufficiently complex adaptive system with a constrained state space and dynamically stable states. This general principle is the core of <strong>Geometric Selection Theory</strong>, shared with the molecular-scale chirality framework (Wu, 2026).</p>
+<p>The biological Super Cell would then represent one possible manifestation of a general phenomenon, applicable to any sufficiently complex adaptive system with a constrained state space and dynamically stable states. This general principle is the core of <strong>Geometric Selection Theory</strong>, shared with the molecular-scale chirality architecture (DW58553920).</p>
 <hr />
 <h2 id="9-conclusion">9. Conclusion</h2>
 <p>This paper proposes <strong>Geometric Synthetic Biology (GSB)</strong> as a geometry-first research programme for cell-fate modelling, intervention, and validation. Its central position is affirmative: the geometry of accessible cell states should be treated as a potentially important explanatory and engineering layer, not merely as a visual metaphor. At the same time, the strength of each specific biological conclusion depends on the definitions and evidence appropriate to that conclusion.</p>
@@ -1053,9 +1053,9 @@ $$</div>
 <h2 id="appendix-a-scientific-status-of-the-main-claims">Appendix A. Scientific Status of the Main Claims</h2>
 <p>The manuscript distinguishes three categories:</p>
 <p><strong>Established mathematical or scientific background:</strong> Riemannian metrics and curvature are defined mathematical objects; stochastic dynamical systems can be analysed using large-deviation theory under stated assumptions; single-cell data can be used to infer low-dimensional state representations; optogenetic actuators can control selected cellular pathways.</p>
-<p><strong>Proposed framework:</strong> GSB; the Super Cell engineering objective; the five-step geometric workflow; the combined geometry–dynamics–control optimisation; and the use of curvature and topology as design or prediction features.</p>
+<p><strong>Proposed architecture:</strong> GSB; the Super Cell engineering objective; the five-step geometric workflow; the combined geometry–dynamics–control optimisation; and the use of curvature and topology as design or prediction features.</p>
 <p><strong>Testable hypotheses:</strong> whether curvature improves prediction of cell-fate thresholds or stability; whether topology-associated descriptors predict functional robustness; whether optogenetic schedules interact with geometric features; whether the proposed memory scaling holds; and whether geometry-informed design yields validated functional combinations.</p>
-<p>No hypothesis in the third category is treated as established solely because it is compatible with the framework. Evidence should include operational definitions, uncertainty quantification, baseline comparisons, independent replication, and prospective validation where feasible.</p>
+<p>No hypothesis in the third category is treated as established solely because it is compatible with the architecture. Evidence should include operational definitions, uncertainty quantification, baseline comparisons, independent replication, and prospective validation where feasible.</p>
 <hr />
 <h2 id="acknowledgments">Acknowledgments</h2>
 <p>We are grateful to all the individual scientists and teams of scientists who have contributed to the exploration and understanding of the entire universe. Supported by AI-driven Supercomputers and the MES Universe Project. We have benefited from our amazing AI partners.</p>
@@ -1065,12 +1065,12 @@ $$</div>
 <p>Code, mathematical scripts, and preprints are available at GitHub: https://github.com/Zaitian001/-Self-Preprint-V1.1-</p>
 <h2 id="competing-interests">Competing interests</h2>
 <p>Not applicable</p>
-<h2 id="authors-contributions">Authors Contributions</h2>
+<h2 id="author-contributions">Author Contributions</h2>
 <p>Baoliin (Zaitian) Wu 伍宝林 is the sole author of this manuscript and is responsible for all aspects of the research, including conceptualization, methodology, theoretical formulation, and manuscript writing.</p>
 <hr />
 <h2 id="references">References</h2>
 <p>[1] Raju, P. C. (2026). From syntax to semantics: Geometric stability as the missing axis of perturbation biology. arXiv. https://doi.org/10.48550/arXiv.2603.00678</p>
-<p>[2] Huang, S. (2011). The molecular and mathematical basis of Waddington's epigenetic landscape: A framework for post-Darwinian biology? BioEssays, 34, 149–157. https://doi.org/10.1002/bies.201100031</p>
+<p>[2] Huang, S. (2011). The molecular and mathematical basis of Waddington's epigenetic landscape: A architecture for post-Darwinian biology? BioEssays, 34, 149–157. https://doi.org/10.1002/bies.201100031</p>
 <p>[3] Wang, J., Xu, L., Wang, E., and Huang, S. (2010). The potential landscape of genetic circuits imposes the arrow of time in stem cell differentiation. Biophysical Journal, 99, 29–39. https://doi.org/10.1016/j.bpj.2010.03.058</p>
 <p>[4] Zhou, J. X., and Huang, S. (2010). Understanding gene circuits at cell-fate branch points for rational cell reprogramming. Trends in Genetics, 27, 55–62. https://doi.org/10.1016/j.tig.2010.11.002</p>
 <p>[5] Waddington, C. H. (1957). <em>The Strategy of the Genes: A Discussion of Some Aspects of Theoretical Biology</em>. London: Allen &amp; Unwin.</p>
@@ -1097,8 +1097,8 @@ $$</div>
 <p>[26] Baoliin (Zaitian) Wu 伍宝林. (2026). Curvature-Driven Open Quantum Dynamics and the Pure Geometric Origin of Physics Constants. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553914.html</p>
 <p>[27] Baoliin (Zaitian) Wu 伍宝林. (2026). Geometric Pathology: Topological Collapse and Landscape Reprogramming in Complex Adaptive Systems. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553909.html</p>
 <p>[28] Baoliin (Zaitian) Wu 伍宝林. (2026). The Geometry of Qi: A Riemannian Architecture for Physiological Information Flow and Meridian Emergence. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553908.html</p>
-<p>[29] Baoliin (Zaitian) Wu 伍宝林. (2026). Stochastic Geometric Dynamics of Immune Memory, From Curvature-Driven Attractors to Testable Predictions. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553904.html</p>
-<p>[30] Baoliin (Zaitian) Wu. (2025). The Return to the Einstein Spherical Universe: The Dawning Moment of a New Cosmic Science. Preprints. https://doi.org/10.20944/preprints202504.0727.v2</p>
+<p>[29] Baoliin (Zaitian) Wu 伍宝林. (2026). Stochastic Geometric Dynamics of Immune Memory, From Curvature-Driven Attractors to Testable Predictions. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553904.html
+[30] Baoliin (Zaitian) Wu. (2025). The Return to the Einstein Spherical Universe: The Dawning Moment of a New Cosmic Science. Preprints. https://doi.org/10.20944/preprints202504.0727.v2</p>
 <p>[31] Baoliin (Zaitian) Wu. (2025). The Pure Geometric Origin of Mass and Light. Preprints. https://doi.org/10.20944/preprints202505.2249.v1</p>
         </div>
     </article>
@@ -1127,7 +1127,7 @@ $$</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function() {
-    const citationData = {"apa": "Baoliin (Zaitian) Wu \u4f0d\u5b9d\u6797 (2026). Inaugurating the Era of Super Cell: Curvature-Driven Geometric Synthetic Biology for Cell Fate Reprogramming. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553919.html", "mla": "Baoliin (Zaitian) Wu \u4f0d\u5b9d\u6797. \"Inaugurating the Era of Super Cell: Curvature-Driven Geometric Synthetic Biology for Cell Fate Reprogramming.\" Self-Preprint Archive, 2026, https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553919.html.", "chicago": "Baoliin (Zaitian) Wu \u4f0d\u5b9d\u6797. \"Inaugurating the Era of Super Cell: Curvature-Driven Geometric Synthetic Biology for Cell Fate Reprogramming.\" Self-Preprint Archive. Accessed October 09, 2026. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553919.html.", "bibtex": "@article{selfpreprint_DW58553919,\n  author = {Baoliin (Zaitian) Wu \u4f0d\u5b9d\u6797},\n  title = {Inaugurating the Era of Super Cell: Curvature-Driven Geometric Synthetic Biology for Cell Fate Reprogramming},\n  journal = {Self-Preprint Archive},\n  year = {2026},\n  url = {https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553919.html}\n}"};
+    const citationData = {"apa": "Baoliin (Zaitian) Wu \u4f0d\u5b9d\u6797 (2026). Inaugurating the Era of Super Cell: Curvature-Driven Geometric Synthetic Biology for Cell Fate Reprogramming. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553919.html", "mla": "Baoliin (Zaitian) Wu \u4f0d\u5b9d\u6797. \"Inaugurating the Era of Super Cell: Curvature-Driven Geometric Synthetic Biology for Cell Fate Reprogramming.\" Self-Preprint Archive, 2026, https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553919.html.", "chicago": "Baoliin (Zaitian) Wu \u4f0d\u5b9d\u6797. \"Inaugurating the Era of Super Cell: Curvature-Driven Geometric Synthetic Biology for Cell Fate Reprogramming.\" Self-Preprint Archive. Accessed October 10, 2026. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553919.html.", "bibtex": "@article{selfpreprint_DW58553919,\n  author = {Baoliin (Zaitian) Wu \u4f0d\u5b9d\u6797},\n  title = {Inaugurating the Era of Super Cell: Curvature-Driven Geometric Synthetic Biology for Cell Fate Reprogramming},\n  journal = {Self-Preprint Archive},\n  year = {2026},\n  url = {https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553919.html}\n}"};
     const toggle = document.querySelector('.citation-toggle');
     const panel = document.getElementById('citationPanel');
     const textDisplay = document.getElementById('citationText');
