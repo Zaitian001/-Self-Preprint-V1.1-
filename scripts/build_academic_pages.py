@@ -751,7 +751,7 @@ def generate_index_html(papers: list) -> str:
     </main>
 
     <footer class="site-footer">
-         © {datetime.date.today().year} {authors_str} | Independent theoretical physicist | Powered by Self-Preprint Engine | Cryptographically Timestamped
+         © {datetime.date.today().year} | Baoliin (Zaitian) Wu 伍宝林 Independent theoretical physicist | Powered by Self-Preprint Engine | Cryptographically Timestamped
     </footer>
 </body>
 </html>
