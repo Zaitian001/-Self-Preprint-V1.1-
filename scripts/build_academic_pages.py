@@ -605,7 +605,7 @@ def generate_paper_html(meta: dict, body_html: str, paper_id: str, currency_data
     </div>
 
     <footer class="site-footer">
-        © {datetime.date.today().year} {authors_str} · {Independent theoretical physicist} | Self-Preprint Decentralized Academic Archive
+        © {datetime.date.today().year} {authors_str} | Independent theoretical physicist | Self-Preprint Decentralized Academic Archive
     </footer>
 
 <script>
@@ -751,7 +751,7 @@ def generate_index_html(papers: list) -> str:
     </main>
 
     <footer class="site-footer">
-         © {datetime.date.today().year} {authors_str} · {Independent theoretical physicist} | Powered by Self-Preprint Engine | Cryptographically Timestamped
+         © {datetime.date.today().year} {authors_str} | Independent theoretical physicist | Powered by Self-Preprint Engine | Cryptographically Timestamped
     </footer>
 </body>
 </html>
