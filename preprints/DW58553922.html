@@ -1,0 +1,1330 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Geometric Mass Dilution: A Scheme for Observable Quantum Tunneling of Macroscopic Objects via Parity-Degenerate Cavities - Self-Preprint Archive</title>
+    <meta name="citation_title" content="Geometric Mass Dilution: A Scheme for Observable Quantum Tunneling of Macroscopic Objects via Parity-Degenerate Cavities">
+    <meta name="citation_publication_date" content="2026/10/22">
+    <meta name="citation_fulltext_html_url" content="https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553922.html">
+    <meta name="citation_journal_title" content="Self-Preprint Archive">
+    <meta name="citation_author" content="Baoliin (Zaitian) Wu 伍宝林">
+    <style>
+/* ==========================================================================
+   -Self-Preprint- Academic Theme (Complete Merged & Responsive Version)
+   ========================================================================== */
+*, *::before, *::after { box-sizing: border-box; }
+
+:root {
+    --bg-color: #fcfcfc;
+    --text-color: #2b2b2b;
+    --primary-color: #1a365d;
+    --link-color: #2b6cb0;
+    --border-color: #e2e8f0;
+    --code-bg: #f7fafc;
+    --blockquote-bg: #edf2f7;
+    --meta-color: #718096;
+    --max-width: 860px;
+    --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-serif: Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+body {
+    font-family: var(--font-main);
+    line-height: 1.75;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 2rem 1rem;
+}
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 3rem 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border: 1px solid var(--border-color);
+}
+a { color: var(--link-color); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* 归档列表页 (index.html) */
+.archive-year {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.3rem;
+    color: var(--primary-color);
+}
+.post-item {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+}
+.post-title { font-size: 1.1rem; font-weight: 500; }
+.post-date {
+    font-size: 0.9rem;
+    color: var(--meta-color);
+    font-family: monospace;
+    white-space: nowrap;
+    margin-left: 1rem;
+}
+.post-abstract {
+    font-size: 0.95rem;
+    color: #555;
+    margin: 0.2rem 0 1.2rem 0;
+    font-family: var(--font-serif);
+}
+
+/* 文章单页 (paper_id.html) */
+article h1.paper-title {
+    font-size: 2.2rem;
+    line-height: 1.3;
+    margin-bottom: 0.8rem;
+    letter-spacing: -0.02em;
+    color: var(--primary-color);
+}
+.paper-meta {
+    font-size: 0.92rem;
+    color: var(--meta-color);
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1.2rem;
+}
+.paper-body {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+.paper-body h1, .paper-body h2, .paper-body h3 {
+    font-family: var(--font-main);
+    font-weight: 600;
+    margin-top: 2.2rem;
+    color: var(--primary-color);
+}
+
+/* MathJax & LaTeX 公式排版防护 */
+mjx-container {
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-width: 100%;
+}
+mjx-container[display="true"] {
+    display: block !important;
+    width: 100% !important;
+    margin: 1.5rem 0 !important;
+    text-align: center;
+}
+mjx-container[display="false"] {
+    display: inline-block;
+    vertical-align: middle;
+}
+.math-block {
+    display: block;
+    width: 100%;
+    margin: 1.5rem 0;
+    text-align: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+/* 物理确权卡片 */
+.anchor-box {
+    margin: 2rem 0;
+    padding: 1rem 1.2rem;
+    background: #fafafa;
+    border: 1px solid #eaeaea;
+    border-radius: 6px;
+    font-size: 0.88rem;
+    color: #444;
+}
+.anchor-box strong { color: #111; }
+.anchor-hash {
+    font-family: monospace;
+    font-size: 0.82rem;
+    word-break: break-all;
+    color: #666;
+    margin-top: 0.3rem;
+}
+
+/* 代码与预格式化文本 */
+code, pre {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-size: 0.9rem;
+}
+code {
+    background-color: var(--code-bg);
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+}
+pre {
+    padding: 1rem;
+    overflow-x: auto;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    background-color: var(--code-bg);
+    line-height: 1.45;
+}
+pre code {
+    background-color: transparent;
+    padding: 0;
+    border: none;
+}
+
+/* 引用与表格 */
+blockquote {
+    margin: 1.5rem 0;
+    padding: 0.8rem 1.2rem;
+    background-color: var(--blockquote-bg);
+    border-left: 4px solid var(--primary-color);
+    border-radius: 0 4px 4px 0;
+}
+blockquote p:last-child { margin-bottom: 0; }
+.table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+    -webkit-overflow-scrolling: touch;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+th, td {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-color);
+    text-align: left;
+}
+th {
+    background-color: var(--code-bg);
+    font-weight: 600;
+}
+
+/* 学术插图与图注 */
+img, .paper-body img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1.8rem auto 0.5rem auto;
+    border-radius: 4px;
+}
+figure { margin: 2rem auto; text-align: center; }
+figure img { max-width: 100%; height: auto; margin: 0 auto; }
+figcaption {
+    font-size: 0.9rem;
+    color: var(--meta-color);
+    margin-top: 0.6rem;
+    font-family: var(--font-main);
+    line-height: 1.4;
+}
+
+/* 引用格式选择器 (Google Scholar 风格) */
+.citation-toggle {
+    display: inline-block;
+    margin: 2rem 0 0.5rem 0;
+    padding: 0.5rem 1.2rem;
+    background: #f1f5f9;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: #1e293b;
+    transition: background 0.2s;
+    user-select: none;
+}
+.citation-toggle:hover { background: #e2e8f0; }
+.citation-toggle .cite-arrow {
+    display: inline-block;
+    margin-left: 0.4rem;
+    font-size: 0.7rem;
+    transition: transform 0.3s ease;
+}
+.citation-toggle.open .cite-arrow { transform: rotate(180deg); }
+
+.citation-panel {
+    display: none;
+    margin: 0 0 2rem 0;
+    padding: 1.2rem 1.5rem;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    max-width: 100%;
+}
+.citation-panel.open { display: block; }
+
+.citation-format-selector {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    margin-bottom: 0.8rem;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 0.8rem;
+}
+.format-btn {
+    background: transparent;
+    border: none;
+    padding: 0.3rem 1rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+    color: #64748b;
+    border-radius: 12px;
+    transition: all 0.2s;
+}
+.format-btn:hover { background: #e2e8f0; color: #1e293b; }
+.format-btn.active {
+    background: #1e293b;
+    color: white;
+    font-weight: 500;
+}
+
+.citation-display {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+.citation-text {
+    flex: 1;
+    font-size: 0.88rem;
+    font-family: var(--font-serif);
+    color: #1e293b;
+    background: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    border: 1px solid #e9edf2;
+    word-break: break-word;
+    min-height: 2.2rem;
+}
+.citation-text.bibtex-display {
+    font-family: monospace;
+    font-size: 0.82rem;
+    white-space: pre-wrap;
+}
+.copy-btn {
+    background: #e2e8f0;
+    border: none;
+    border-radius: 4px;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.8rem;
+    cursor: pointer;
+    color: #334155;
+    white-space: nowrap;
+    transition: all 0.2s;
+    align-self: center;
+}
+.copy-btn:hover { background: #cbd5e1; }
+.copy-btn.copied { background: #22c55e; color: white; }
+
+/* 页脚与移动端响应式 */
+footer.site-footer {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.85rem;
+    color: var(--meta-color);
+    text-align: center;
+}
+@media (max-width: 768px) {
+    body { padding: 1rem 0.5rem; }
+    .container { padding: 1.5rem 1rem; }
+    article h1.paper-title { font-size: 1.75rem; }
+    .post-item { flex-direction: column; align-items: flex-start; }
+    .post-date { margin-left: 0; margin-top: 0.2rem; }
+}
+</style>
+    
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    tags: 'ams'
+  },
+  svg: {
+    fontCache: 'global',
+    displayAlign: 'center',
+    displayIndent: '0'
+  },
+  options: {
+    enableMenu: false,
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+};
+</script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+<script>
+  window.addEventListener('load', function () {
+    if (window.MathJax && MathJax.typesetPromise) {
+      MathJax.typesetPromise().catch(function (err) {
+        console.log('MathJax typeset failed: ', err);
+      });
+    }
+  });
+</script>
+
+</head>
+<body>
+    <header class="site-header">
+        <nav>
+            <a href="../index.html">← Archives</a>
+            <a href="../feed.xml">RSS</a>
+        </nav>
+    </header>
+
+    <article>
+        <h1 class="paper-title">Geometric Mass Dilution: A Scheme for Observable Quantum Tunneling of Macroscopic Objects via Parity-Degenerate Cavities</h1>
+        <div class="paper-meta">
+            By <strong>Baoliin (Zaitian) Wu 伍宝林</strong> · Published on 2026-10-22
+        </div>
+
+        
+    <div class="anchor-box">
+        🛡️ <strong>Physical Proof of Existence</strong> | Banknote Serial: <code>DW58553922</code>
+        <div class="anchor-hash">SHA-256 Hash: f7cd1e49e560e22897e5bc7d193e1ae2ddb01d79f4d3730cfc85b5bfcc7d56d3</div>
+    </div>
+    
+
+        <blockquote style="font-family: var(--font-serif); background:#fdfdfd; padding:0.8rem 1.2rem; border-left:3px solid #ccc; margin: 1.5rem 0;"><p>Standard quantum mechanics predicts that the WKB transmission exponent for a rectangular barrier is proportional to the square root of the object's mass when barrier geometry and energy are held fixed. We examine <strong>Geometric Mass Dilution (GMD)</strong> as a phenomenological hypothesis within the author's <strong>MES (Modified Einstein Spherical) cosmological architecture</strong> [4–6]. MES curvature scalings are treated here as model postulates, not as experimentally established laws. GMD introduces a measurement interval $\tau$ and a dimensionless state-complexity proxy into a proposed effective-mass function. The manuscript distinguishes two sub-hypotheses: GMD-A, concerning experimentally controllable coherence and decoherence dynamics, and GMD-B, the stronger claim that an effective inertial mass entering tunneling dynamics changes beyond standard Hamiltonian effects.
+A numerical audit gives $S_{\mathrm{WKB}} \approx 6.7\times10^7$ for a silica sphere of radius $75$ nm and mass $3.9\times10^{-18}$ kg crossing a rectangular barrier of width $100$ nm and height above energy of $1$ meV. This yields $T\sim e^{-6.7\times10^7}$ in the leading WKB approximation. The proposed GMD mass law is not derived from a fundamental action, and a finite-resolution regularization removes a divergence and sets a formal reference-state normalization by construction, but does not establish the physical validity of that normalization. Likewise, writing a total Hamiltonian does not by itself prove energy conservation under explicitly time-dependent driving or open-system Lindblad evolution.
+We propose a staged research program using levitated optomechanics, parity-controlled double-well potentials, independent coherence measurements, and calibrated tunneling statistics. This paper frames GMD as a <strong>candidate—not established—form of physical manifold programming</strong>: controlled changes in system representation or state-space organization may alter dynamics, but a claim of altered effective inertia requires separate identification. Geometric Pathology and manifold programming are treated as complementary methodological perspectives, not equivalent theories. The proposed architecture is falsifiable in principle, but the present manuscript establishes a research hypothesis and test plan—not a demonstrated mass-dilution effect or experimental feasibility claim. All statements are classified by evidence status, and GMD-A is kept logically separate from GMD-B.</p></blockquote>
+
+        <div class="paper-body">
+            <h1 id="geometric-mass-dilution-a-scheme-for-observable-quantum-tunneling-of-macroscopic-objects-via-parity-degenerate-cavities">Geometric Mass Dilution: A Scheme for Observable Quantum Tunneling of Macroscopic Objects via Parity-Degenerate Cavities</h1>
+<p><strong>Baoliin (Zaitian) Wu 伍宝林</strong></p>
+<p><em>ORCID:</em> <a href="https://orcid.org/0009-0003-2051-5247">0009-0003-2051-5247</a></p>
+<p><em>Email:</em> zaitian001@gmail.com</p>
+<p><em>Affiliation:</em> People's Government of Guangdong Province, Guangzhou, CN</p>
+<p><strong>October 22, 2026</strong></p>
+<p><strong>Paper ID: DW58553922</strong></p>
+<hr />
+<h2 id="abstract">Abstract</h2>
+<p>Standard quantum mechanics predicts that the WKB transmission exponent for a rectangular barrier is proportional to the square root of the object's mass when barrier geometry and energy are held fixed. We examine <strong>Geometric Mass Dilution (GMD)</strong> as a phenomenological hypothesis within the author's <strong>MES (Modified Einstein Spherical) cosmological architecture</strong> [4–6]. MES curvature scalings are treated here as model postulates, not as experimentally established laws. GMD introduces a measurement interval $\tau$ and a dimensionless state-complexity proxy into a proposed effective-mass function. The manuscript distinguishes two sub-hypotheses: GMD-A, concerning experimentally controllable coherence and decoherence dynamics, and GMD-B, the stronger claim that an effective inertial mass entering tunneling dynamics changes beyond standard Hamiltonian effects.</p>
+<p>A numerical audit gives $S_{\mathrm{WKB}} \approx 6.7\times10^7$ for a silica sphere of radius $75$ nm and mass $3.9\times10^{-18}$ kg crossing a rectangular barrier of width $100$ nm and height above energy of $1$ meV. This yields $T\sim e^{-6.7\times10^7}$ in the leading WKB approximation. The proposed GMD mass law is not derived from a fundamental action, and a finite-resolution regularization removes a divergence and sets a formal reference-state normalization by construction, but does not establish the physical validity of that normalization. Likewise, writing a total Hamiltonian does not by itself prove energy conservation under explicitly time-dependent driving or open-system Lindblad evolution.</p>
+<p>We propose a staged research program using levitated optomechanics, parity-controlled double-well potentials, independent coherence measurements, and calibrated tunneling statistics. This paper frames GMD as a <strong>candidate—not established—form of physical manifold programming</strong>: controlled changes in system representation or state-space organization may alter dynamics, but a claim of altered effective inertia requires separate identification. Geometric Pathology and manifold programming are treated as complementary methodological perspectives, not equivalent theories. The proposed architecture is falsifiable in principle, but the present manuscript establishes a research hypothesis and test plan—not a demonstrated mass-dilution effect or experimental feasibility claim. All statements are classified by evidence status, and GMD-A is kept logically separate from GMD-B.</p>
+<p><strong>Keywords:</strong> geometric mass dilution, manifold programming, geometric pathology, macroscopic quantum tunneling, levitated optomechanics, parity degeneracy, decoherence, MES universe model, energy accounting, failure mode analysis, evidence-level classification L1–L4</p>
+<hr />
+<h2 id="0-evidence-level-classification-l1l4">0. Evidence-Level Classification (L1–L4)</h2>
+<p>Throughout this paper, we adopt the four-level evidence hierarchy established in the self-preprint DW58553905 [7]:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Label</th>
+<th>Nature of Evidence</th>
+<th>Example in This Paper</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>L1</strong></td>
+<td>Strict mathematical theorem, or reproducible mathematical calculation</td>
+<td>A result obtained by direct derivation or calculation from stated inputs and standard mathematics, without reliance on unverified physical assumptions. The theorem branch requires a complete proof chain; the calculation branch requires stated inputs, transparent steps, and reproducibility.</td>
+<td>Dimensional consistency of Eq. (4) (deductive); rectangular-barrier WKB exponent $S_{\mathrm{WKB}} \approx 6.7\times10^7$ (numerical)</td>
+</tr>
+<tr>
+<td><strong>L2</strong></td>
+<td>Strict mathematical construction, or conditional mathematical derivation</td>
+<td>A definitional construction or algebraic consequence that depends on explicitly stated assumptions or construction choices; the derivation does not validate those assumptions physically.</td>
+<td>Regularized mass function $f_{\mathrm{reg}}$ (construction); curvature-dependent Planck-time scaling conditional on the MES definitions in Appendix B (conditional derivation)</td>
+</tr>
+<tr>
+<td><strong>L3</strong></td>
+<td>Testable modeling hypothesis</td>
+<td>Proposed relationship whose complete derivation or empirical validation remains outstanding</td>
+<td>MES curvature scaling; GMD dilution function; candidate Lindblad evolution of $\rho$ and derived $D_{\mathrm{PR}}$; total Hamiltonian; candidate manifold-programming interpretation</td>
+</tr>
+<tr>
+<td><strong>L4</strong></td>
+<td>Unverified conjecture or engineering blueprint</td>
+<td>Exploratory concept or architectural proposal</td>
+<td>$\tau$ divergence at parity-degenerate point</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>MES postulates</strong> (inherited from DW58553914, DW58553921) are labeled <strong>P</strong> and treated as the theoretical baseline of this paper.</p>
+<hr />
+<h2 id="1-introduction">1. Introduction</h2>
+<h3 id="11-the-macroscopic-tunneling-deadlock">1.1 The Macroscopic Tunneling Deadlock</h3>
+<p>Quantum tunneling is one of the most striking manifestations of quantum mechanics. A particle of mass $M$ incident on a potential barrier $V(x)$ of width $L$ and height $V_0$ has a transmission probability given, in the WKB approximation, by</p>
+<div class="math-block">$$
+T \sim \exp\left( -\frac{2}{\hbar} \int_{0}^{L} \sqrt{2M(V(x)-E)} \, dx \right). \quad (1)
+$$</div>
+<p>For a rectangular barrier, the exponent is</p>
+<div class="math-block">$$
+S_{\text{WKB}} = \frac{2L}{\hbar} \sqrt{2M(V_0 - E)}. \quad (1\text{a})
+$$</div>
+<p>For microscopic particles, this probability can be substantial. For macroscopic objects, the exponent grows, and the tunneling probability becomes astronomically small.</p>
+<p><strong>Numerical correction (L1).</strong> For a silica nanoparticle of radius $75$ nm, the mass is</p>
+<div class="math-block">$$
+M = \frac{4\pi}{3} \rho R^3 \approx 3.9 \times 10^{-18} \text{ kg} \approx 2.4 \times 10^9 \text{ amu}, \quad (1\text{b})
+$$</div>
+<p>where $\rho \approx 2.2 \times 10^3$ kg/m$^3$.</p>
+<p>For a barrier of height $V_0 - E = 1$ meV and width $L = 100$ nm, the WKB exponent is</p>
+<div class="math-block">$$
+S_{\text{WKB}} = \frac{2L}{\hbar}\sqrt{2M(V_0-E)} \approx 6.7\times10^7. \quad (1\text{c})
+$$</div>
+<p>The corresponding leading-order transmission estimate is $T_{\text{std}}\sim e^{-6.7\times10^7}$. This value follows from the stated rectangular-barrier parameters; it is not a universal threshold for macroscopic tunneling. The standard WKB exponent scales as $\sqrt{M}$ when barrier width and height are fixed, not linearly in $M$.</p>
+<p>This suppression follows from the standard WKB expression under the stated assumptions. The distinctive GMD-B claim—that a geometric-control protocol changes the inertial parameter entering the tunneling dynamics beyond standard Hamiltonian and environmental effects—requires a dedicated test and is not established by the baseline calculation.</p>
+<h3 id="12-the-mes-cosmological-architecture">1.2 The MES Cosmological Architecture</h3>
+<p>The MES (Modified Einstein Spherical) universe model, developed in a series of the author's self-preprints [4,5,6], posits that the universe is a topologically closed $S^3$ manifold equipped with a dynamical scalar curvature field. Physical constants and particle properties emerge from the curvature of this manifold.</p>
+<p>The MES architecture adopts the following curvature scaling relations as <strong>testable modeling hypotheses (L3)</strong>:</p>
+<div class="math-block">$$
+c(R) = c_0 \left( \frac{R}{R_0} \right)^{1/2}, \quad \hbar(R) = \hbar_0 \left( \frac{R_0}{R} \right)^{1/2}, \quad m(R) = m_0 \left( \frac{R_0}{R} \right)^{1/2}. \quad (\text{MES-1})
+$$</div>
+<p>[Source: [5], Eq. (3)–(4); [4], Eq. (19)–(21); L3]</p>
+<p>These imply two curvature invariants:</p>
+<div class="math-block">$$
+\hbar(R) c(R) = \hbar_0 c_0, \quad m(R) c(R) = m_0 c_0. \quad (\text{MES-2})
+$$</div>
+<p>[Source: [5], Eq. (3)–(4); L3]</p>
+<p>The MES architecture also proposes a decoherence rate scaling $\Gamma(R) \propto R^{3/2}$ and redefines effective mass as "the local effective inertia of the open quantum geometric field under the constraint of the universal curvature network" [6]. In the MES architecture, gravity is itself a curvature-driven emergent phenomenon and is therefore not treated as an independent contributor to the measurement interval $\tau$.</p>
+<p><strong>Important status note.</strong> The MES scaling relations (MES-1) are explicitly labeled as "linked hypotheses" in DW58553921 [4], not as derived consequences of the closed $S^3$ geometry. The present paper adopts MES-1 as its theoretical baseline and extends it with the GMD hypothesis.</p>
+<h3 id="13-geometric-mass-dilution-gmd-the-core-hypothesis">1.3 Geometric Mass Dilution (GMD): The Core Hypothesis</h3>
+<p>We introduce <strong>Geometric Mass Dilution (GMD)</strong> as a phenomenological extension of the MES architecture. The central hypothesis is that an effective inertial parameter in a reduced description may depend on local curvature $R$, a measurable control or observation interval $\tau$, and a separately defined state-complexity statistic. The physical meaning of $\tau$ must be operationally specified by an independently measurable protocol; it is not assumed that observation alone changes a system merely because it is observed.</p>
+<p>The unregularized expression considered in earlier drafts was</p>
+<div class="math-block">$$
+f_{\mathrm{raw}}(\tau,R,D)=\left(\frac{\tau_0(R)}{\tau}\right)^2\chi(D). \quad (2)
+$$</div>
+<p>where $\tau_0(R)$ is a curvature-dependent Planck-time scale under the MES assumptions, and $\chi$ is a nonnegative state-complexity factor. The choice $\chi(D)=\sqrt{1-1/D}$ is only one phenomenological option and is not adopted as a verified physical law. The raw expression diverges as $\tau\to0$ for fixed nonzero $\tau_0$ and nonzero $\chi$; it therefore cannot serve as a complete model across the standard limit.</p>
+<p>For the quantitative discussion, we adopt the single <strong>candidate regularized function</strong></p>
+<div class="math-block">$$
+f_{\mathrm{reg}}(\tau,R,D)=\frac{\tau_0(R)^2}{\tau^2+\tau_0(R)^2}\frac{\chi(D)}{\chi(D_{\mathrm{ref}})}. \quad (3)
+$$</div>
+<p>Here $D$ denotes whichever state-complexity observable is explicitly selected and measured for a given test; $D_{\mathrm{ref}}$ is a pre-registered reference state with $\chi(D_{\mathrm{ref}})&gt;0$. This form has $f_{\mathrm{reg}}(0,R,D_{\mathrm{ref}})=1$ by construction, and for $\tau\gg\tau_0(R)$ its temporal factor approaches $[\tau_0(R)/\tau]^2$. This normalization is a modeling choice. It does not derive the mass law, establish that $\tau_0$ is the relevant physical crossover scale, or show that the state-complexity factor modifies inertia.</p>
+<p>The effective-mass hypothesis is therefore written as</p>
+<div class="math-block">$$
+M_{\mathrm{eff}}(R,\tau,D)=M_{\mathrm{bare}}(R)f_{\mathrm{reg}}(\tau,R,D). \quad (4)
+$$</div>
+<p>No unique numerical $M_{\mathrm{eff}}$ is claimed until the observable $D$, function $\chi$, reference state, and crossover scale are independently specified or calibrated. Even after calibration, a measured change in an inferred effective parameter must be distinguished from changes in the potential, drive, environmental coupling, state preparation, and readout.</p>
+<p>For a fixed barrier and unchanged $\hbar$, inserting this candidate $M_{\mathrm{eff}}$ into a WKB expression gives a conditional algebraic change in the exponent proportional to $\sqrt{M_{\mathrm{eff}}}$. This substitution is not a derivation of the mass law and does not establish that the physical barrier or Hamiltonian remains unchanged.</p>
+<p><img alt="Figure 1. Conceptual schematic of the geometric mass dilution (GMD) architecture" src="images/DW58553922/Figure_1.png" /></p>
+<p><strong>Figure 1. Conceptual schematic of the geometric mass dilution (GMD) architecture.</strong> A macro-object is confined in an optical cavity, where geometric modulation is hypothesized to reduce the effective mass and modify the tunneling dynamics. The right panel illustrates the potential experimental readout. The mechanism is a candidate phenomenological hypothesis requiring independent validation; no mass-dilution effect is demonstrated.</p>
+<h3 id="14-scope-of-this-paper">1.4 Scope of This Paper</h3>
+<p>The broader geometric program draws on the author's earlier work on closed-spherical geometry and AGI [1], geometric mass [2], and quantum-measurement coordinates [3]. These works provide conceptual context only; they are not empirical evidence for GMD.</p>
+<p>This paper presents a staged research plan to test the GMD hypothesis using a levitated optomechanical platform. It aims to:</p>
+<ol>
+<li>Calibrate a cavity-controlled double-well and measure parity splitting; the conjectured divergence of $\tau$ near a degeneracy point remains L4.</li>
+<li>Test whether a pre-registered control protocol changes a declared state-complexity observable, without assuming that a true correlation dimension decreases toward unity.</li>
+<li>Measure tunneling statistics and compare them with a calibrated standard driven open-system model.</li>
+<li>Test algebraic identities implied by the MES scaling assumptions, while keeping those assumptions distinct from empirical validation.</li>
+<li>Analyze failure modes and separate experimental limitations from falsification of a specified model.</li>
+<li>Formulate a candidate total Hamiltonian and a complete work-and-heat budget; energy conservation is not presumed from a Hamiltonian decomposition alone.</li>
+</ol>
+<hr />
+<h2 id="2-mes-cosmological-foundations-and-their-implications-for-geometric-mass-dilution">2. MES Cosmological Foundations and Their Implications for Geometric Mass Dilution</h2>
+<h3 id="21-mes-fundamental-postulates-inherited">2.1 MES Fundamental Postulates (Inherited)</h3>
+<p><strong>Postulate 1 (Closed Spherical Geometry).</strong> The universe is modeled as a closed spatial $S^3$ manifold equipped with a dynamical scalar curvature field $R(x,t)$. [Source: [4], Postulate 1; L3]</p>
+<p><strong>Postulate 2 (Curvature-Dependent Physical Constants).</strong> Physical constants scale with local curvature as:</p>
+<div class="math-block">$$
+c(R) = c_0 (R/R_0)^{1/2}, \quad \hbar(R) = \hbar_0 (R_0/R)^{1/2}, \quad m(R) = m_0 (R_0/R)^{1/2}, \quad (\text{P-1})
+$$</div>
+<p>with the algebraic constraints:</p>
+<div class="math-block">$$
+\hbar(R) c(R) = \hbar_0 c_0, \quad m(R) c(R) = m_0 c_0. \quad (\text{P-2})
+$$</div>
+<p>[Source: [5], Eq. (3)–(4); [4], Eq. (19)–(21); L3]</p>
+<p><strong>Postulate 3 (Curvature-Dependent Planck Time).</strong> Under the scaling (P-1), with the gravitational constant derived self-consistently as $G(R) = \hbar(R)c(R)/m_p(R)^2 \propto R$, the Planck time becomes:</p>
+<div class="math-block">$$
+\tau_0(R) = \tau_{0,0} \left( \frac{R_0}{R} \right). \quad (\text{P-3})
+$$</div>
+<p>[Derived from P-1 and the self-consistent definition of $G$; L2; see Appendix B]</p>
+<p><strong>Postulate 4 (Curvature-Dependent Decoherence).</strong> The decoherence rate scales as:</p>
+<div class="math-block">$$
+\Gamma(R) = \Gamma_0 (R/R_0)^{3/2}. \quad (\text{P-4})
+$$</div>
+<p>[Source: [16], Eq. (12); [5], Eq. (7); L3]</p>
+<p><strong>Postulate 5 (Geometric Inertia).</strong> The effective inertial mass of a body is redefined as "the local effective inertia of the open quantum geometric field under the constraint of the universal curvature network." [Source: [6], Section 3; L3]</p>
+<p><strong>Postulate 6 (Gravity as Curvature-Driven Emergence).</strong> In the MES architecture, gravity is itself a curvature-driven emergent phenomenon, treated on the same footing as mass. It is therefore not an independent contributor to the measurement interval $\tau$. [Source: [4]; L3]</p>
+<h3 id="22-from-mes-postulates-to-the-gmd-formula-step-by-step-derivation">2.2 From MES Postulates to the GMD Formula: Step-by-Step Derivation</h3>
+<p><strong>Step 1: Curvature-dependence of bare mass (L3, inherited from P-1).</strong></p>
+<div class="math-block">$$
+M_{\text{bare}}(R) = M_0 (R_0/R)^{1/2}. \quad (\text{GMD-1})
+$$</div>
+<p><strong>Step 2: Curvature-dependence of the Planck time (L2, derived from P-1 and P-3).</strong></p>
+<div class="math-block">$$
+\tau_0(R) = \tau_{0,0} (R_0/R). \quad (\text{GMD-2})
+$$</div>
+<p><strong>Step 3: Introduction of the measurement interval $\tau$ (L4, new assumption).</strong></p>
+<p>We hypothesize that the observer's measurement interval $\tau$ is an independent geometric parameter, not fixed by the MES postulates. In standard quantum mechanics, $\tau \to 0$. In the GMD regime, $\tau$ can be extended by the parity-degenerate cavity.</p>
+<p><strong>Step 4: Candidate regularized dilution function (L2/L3, construction plus hypothesis).</strong></p>
+<p>For a single consistent quantitative parametrization, we adopt</p>
+<div class="math-block">$$
+f_{\mathrm{reg}}(\tau,R,D)=\frac{\tau_0(R)^2}{\tau^2+\tau_0(R)^2}\frac{\chi(D)}{\chi(D_{\mathrm{ref}})}. \quad (\text{GMD-3})
+$$</div>
+<p>An unregularized inverse‑square ansatz is presented for comparison in Appendix A. The function $\chi$ and the measured state-complexity variable $D$ must be declared before fitting or predicting data.</p>
+<p><strong>Step 5: Effective mass (L2/L3, conditional inference).</strong></p>
+<p>Substituting the MES bare-mass scaling and conditional Planck-time scaling gives</p>
+<div class="math-block">$$
+M_{\mathrm{eff}}=M_0\left(\frac{R_0}{R}\right)^{1/2}\frac{\tau_{0,0}^2(R_0/R)^2}{\tau^2+\tau_{0,0}^2(R_0/R)^2}\frac{\chi(D)}{\chi(D_{\mathrm{ref}})}. \quad (\text{GMD-4})
+$$</div>
+<p>This is an internally consistent algebraic expression given the stated model choices; it is not a first-principles derivation or evidence that the physical inertial mass changes.</p>
+<p><strong>Step 6: Experimental-regime simplification (L3).</strong></p>
+<p>For the illustrative regime $R\approx R_0$, the candidate function reduces to</p>
+<div class="math-block">$$
+M_{\mathrm{eff}}\approx M_0\frac{\tau_{0,0}^2}{\tau^2+\tau_{0,0}^2}\frac{\chi(D)}{\chi(D_{\mathrm{ref}})}. \quad (\text{GMD-5})
+$$</div>
+<p><strong>Step 7: Conditional numerical scaling (L3).</strong></p>
+<p>For $\tau\sim10^{-3}$ s and $\tau_{0,0}\sim10^{-44}$ s, the temporal factor is approximately $10^{-82}$ when $R\approx R_0$. This is an algebraic consequence of the candidate function, not a physical mass prediction. No numerical $M_{\mathrm{eff}}$ is reported until $\chi(D)$, $D_{\mathrm{ref}}$, and the measurement protocol are specified. If the selected complexity factor approaches zero, it further suppresses the proposed function; the resulting effect on tunneling must be derived from the full dynamical model rather than inferred from this factor alone.</p>
+<h3 id="23-inheritance-vs-new-inference-vs-hypothesis-summary-table">2.3 Inheritance vs. New Inference vs. Hypothesis: Summary Table</h3>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Element</th>
+<th>Status</th>
+<th>Source</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$S^3$ closed geometry</td>
+<td>MES postulate (P), L3</td>
+<td>[4], Postulate 1</td>
+</tr>
+<tr>
+<td>$c(R)$, $\hbar(R)$, $m(R)$ scaling</td>
+<td>MES postulate (P), L3</td>
+<td>[5], Eq. (3); [4], Eq. (19)–(21)</td>
+</tr>
+<tr>
+<td>$\tau_0(R)$ scaling</td>
+<td>Derived (L2), conditional on $G(R) \propto R$</td>
+<td>This paper, Appendix B</td>
+</tr>
+<tr>
+<td>$\Gamma(R) \propto R^{3/2}$</td>
+<td>MES postulate (P), L3</td>
+<td>[16], Eq. (12); [5], Eq. (7)</td>
+</tr>
+<tr>
+<td>Geometric inertia</td>
+<td>MES postulate (P), L3</td>
+<td>[6], Section 3</td>
+</tr>
+<tr>
+<td>Gravity as emergent</td>
+<td>MES postulate (P), L3</td>
+<td>[4]</td>
+</tr>
+<tr>
+<td>Measurement interval $\tau$</td>
+<td>New assumption (L4)</td>
+<td>This paper</td>
+</tr>
+<tr>
+<td>Regularized dilution function $f_{\mathrm{reg}}$</td>
+<td>Construction (L2) + modeling hypothesis (L3)</td>
+<td>This paper, Eq. (GMD-3), Appendix A</td>
+</tr>
+<tr>
+<td>$M_{\text{eff}}$ formula</td>
+<td>Conditional inference (L2/L3)</td>
+<td>This paper, Eq. (GMD-4)</td>
+</tr>
+<tr>
+<td>Total Hamiltonian</td>
+<td>New hypothesis (L3)</td>
+<td>This paper, Section 2.12</td>
+</tr>
+<tr>
+<td>Lindblad evolution of $\rho$ and derived $D_{\mathrm{PR}}$</td>
+<td>Candidate open-system model (L3); does not determine $D_2$</td>
+<td>This paper, Appendix C.2</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="24-curvature-dependent-decoherence">2.4 Curvature-Dependent Decoherence</h3>
+<p>From Postulate 4 (P-4):</p>
+<div class="math-block">$$
+\Gamma(R) = \Gamma_0 (R/R_0)^{3/2}. \quad (5)
+$$</div>
+<p>This scaling provides a quantitative basis for the state-complexity control freezing protocol. In the parity-degenerate cavity, the effective curvature $R$ can in principle be tuned by adjusting the optical potential—though we emphasize that the connection between <strong>optical potential curvature</strong> and <strong>spacetime curvature $R$</strong> is not established (L4). We therefore treat the $\Gamma \propto R^{3/2}$ scaling as a theoretical prediction (L3) requiring experimental verification.</p>
+<h3 id="25-parity-degeneracy-and-the-measurement-interval">2.5 Parity Degeneracy and the Measurement Interval</h3>
+<p>In a standard symmetric double-well potential with finite barrier height, the two lowest energy eigenstates are the symmetric and antisymmetric superpositions, with an energy splitting $\Delta = E_+ - E_- &gt; 0$. Equal well depths do <strong>not</strong> imply $E_+ = E_-$. The splitting vanishes only in the limit of infinite barrier height (zero tunneling coupling).</p>
+<p>We define the <strong>parity-degenerate point</strong> as the limit in which the tunneling coupling is negligibly small compared to all other energy scales. In this limit, the measurement interval $\tau$ is hypothesized to diverge (L4). The derivation of this divergence from a microscopic model remains an open problem.</p>
+<h3 id="26-state-complexity-control-and-decoherence">2.6 State-Complexity Control and Decoherence</h3>
+<p>We hypothesize that decoherence is governed by Eq. (5). To freeze decoherence, we propose:</p>
+<ol>
+<li>Test whether a pre-registered pulse sequence reproducibly changes a declared state-complexity observable; do not assume in advance that a true correlation dimension decreases toward 1.</li>
+<li>Reduce the environmental coupling by canceling the background curvature through the cavity's optical potential.</li>
+</ol>
+<p>The pulse sequence is designed to implement $C_4$ symmetry operations on the phase-space lattice. A candidate Lindblad model and distinct definitions for $D_{\mathrm{PR}}$ and $D_2$ are given in Appendix C.</p>
+<p><strong>Caveat.</strong> Reducing decoherence does not automatically reduce the inertial mass. The connection between decoherence control and mass dilution is a <strong>model assumption (L3)</strong>. We therefore separate GMD into two independently testable sub-hypotheses:</p>
+<ul>
+<li><strong>GMD-A:</strong> Geometric control can modify the system's effective decoherence and coherence time (L3).</li>
+<li><strong>GMD-B:</strong> After excluding ordinary control effects, the system exhibits an effective mass or tunneling scaling that cannot be explained by standard Hamiltonians (L4).</li>
+</ul>
+<h3 id="27-terminology-three-distinct-time-scales">2.7 Terminology: Three Distinct Time Scales</h3>
+<p>To avoid conceptual confusion, we explicitly distinguish three time scales used in this paper:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Name</th>
+<th>Physical Meaning</th>
+<th>Typical Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>$\tau$</td>
+<td>Measurement interval</td>
+<td>Characteristic time over which the observer's coordinate frame projects the system onto a definite spatial basis; controlled by the pulse sequence and cavity modulation</td>
+<td>$10^{-5}$–$10^{-3}$ s (GMD regime)</td>
+</tr>
+<tr>
+<td>$\tau_c$</td>
+<td>Cavity photon lifetime</td>
+<td>Decay time of the intracavity field; determined by cavity finesse and mirror losses</td>
+<td>$\sim 10^{-6}$ s for $F = 10^5$, $L_{\text{cav}} = 1$ cm</td>
+</tr>
+<tr>
+<td>$T_2$</td>
+<td>Decoherence time</td>
+<td>Coherence time of the particle's center-of-mass motion; determined by environmental coupling and the state-complexity control protocol</td>
+<td>$10^{-6}$–$10^{-3}$ s (target)</td>
+</tr>
+</tbody>
+</table></div>
+<p>The GMD regime requires $\tau \gg \tau_c$ and $\tau \sim T_2$, so that the measurement interval dominates over both the cavity dynamics and the residual decoherence.</p>
+<h3 id="28-geometric-state-space-reconstruction-and-dynamical-identifiability">2.8 Geometric State-Space Reconstruction and Dynamical Identifiability</h3>
+<p>This section imports a methodological distinction from the author's <strong>Geometric Pathology</strong> architecture [17]: geometry of a state space, dynamics on that state space, and empirical identification of a mechanism are related but non-equivalent questions. This methodological connection does not constitute evidence for GMD, nor does it transfer biological or complex‑adaptive‑system results directly to a quantum optomechanical platform.</p>
+<p>$D_2$ in the GMD ansatz is not identified with the density-matrix statistic in Appendix C. A true correlation dimension must be independently defined and estimated; $D_{\mathrm{PR}}$ is an optional, distinct proxy and must not be substituted for $D_2$ without a justified mapping.</p>
+<h4 id="281-operational-state-space-and-metric">2.8.1 Operational state space and metric</h4>
+<p>Let $\mathbf{x}(t)$ denote a vector of experimentally reconstructed observables, for example particle position and momentum quadratures, cavity quadratures, and calibrated control variables. A state-space metric $g_{ij}(\mathbf{x})$ may be estimated only after specifying the observables, their uncertainties, and the reconstruction procedure. The metric is a statistical or dynamical descriptor of the selected representation; it must not be identified automatically with spacetime curvature $R$ or with the curvature of the optical potential.</p>
+<p>A candidate line element is</p>
+<div class="math-block">$$
+ds^2 = g_{ij}(\mathbf{x})\,dx^i dx^j. \quad (\text{GP-1})
+$$</div>
+<p>Equation (GP-1) is a definition once $g_{ij}$ has been operationally specified; it is not a derivation of the GMD mass law.</p>
+<h4 id="282-dynamics-and-stability-are-separate-from-geometry">2.8.2 Dynamics and stability are separate from geometry</h4>
+<p>A reconstructed state-space geometry does not establish that a state is an attractor. For a deterministic reduced model $\dot{\mathbf{x}}=\mathbf{F}(\mathbf{x},t)$, local stability must be tested using the Jacobian $J_{ij}=\partial F_i/\partial x_j$ and its eigenvalues, while stochastic dynamics require an explicit noise model and appropriate stability or escape-rate analysis. Any claimed reduction in decoherence must be supported by independently measured coherence times or a validated open-system model.</p>
+<h4 id="283-mechanism-identifiability">2.8.3 Mechanism identifiability</h4>
+<p>A change in observed tunneling rate can arise from several mechanisms that must be discriminated: (i) changes in barrier height or width; (ii) ordinary drive-induced transitions or heating; (iii) changes in environmental decoherence; (iv) state preparation and detection bias; or (v) a genuine change in the inertial parameter entering the kinetic term. The fifth interpretation is the distinctive GMD-B claim and cannot be inferred from a rate increase alone. Barrier spectroscopy, independent mass calibration, control-sequence reversals, temperature and pressure scans, and a standard open-system model should be used to test competing explanations.</p>
+<h4 id="284-falsifiable-separation-of-gmd-a-and-gmd-b">2.8.4 Falsifiable separation of GMD-A and GMD-B</h4>
+<p>GMD-A is supported only if the control protocol produces reproducible coherence or decoherence changes beyond calibrated ordinary-control effects. GMD-B requires an additional, independently identifiable deviation in tunneling or inertial dynamics that remains after those effects are modeled. Evidence for GMD-A does not imply GMD-B. A null result constrains only the parameter region actually reached and measured; it falsifies a specified GMD-B model only when its predicted signal and uncertainty are fixed in advance and excluded by the data.</p>
+<p><strong>Geometric caveat.</strong> State-space statistical curvature, optical-potential curvature, and spacetime scalar curvature are different mathematical and physical quantities. Any mapping among them must be defined and experimentally or theoretically justified rather than assumed.</p>
+<h4 id="285-gmd-as-a-candidate-form-of-physical-manifold-programming">2.8.5 GMD as a Candidate Form of Physical Manifold Programming</h4>
+<p>Within the MES research architecture, <strong>manifold programming</strong> is used here as a working methodological term for a controlled intervention that reproducibly changes a system's accessible state-space organization, its dynamical law or vector field, or the stability and accessibility of its states. The term does not mean that a physical manifold is literally rewritten, and it does not imply a change in inertial mass. In a quantum-optomechanical implementation, the controlled objects may include cavity parameters, parity splitting, drive protocols, couplings, and the experimentally reconstructed state distribution.</p>
+<p>GMD may therefore be investigated as a <strong>candidate physical realization of manifold programming</strong> if a controlled geometric or cavity intervention produces a reproducible, independently characterized change in the system's state-space description and dynamics. This is a research connection, not an established equivalence. In particular, a changed optical potential, a changed state-space metric, or a changed coherence time is not by itself evidence that the inertial mass in the kinetic term has changed.</p>
+<p>The proposed causal sequence is:</p>
+<div class="math-block">$$
+\text{geometric control} \rightarrow \text{state-space reconstruction} \rightarrow \text{dynamical response} \rightarrow \text{effective-inertia hypothesis} \rightarrow \text{verifiable test}. \quad (\text{GP-2})
+$$</div>
+<p>Equation (GP-2) is a research logic diagram, not a derived physical law. Each arrow represents a separate claim requiring operational definitions, quantitative modeling, and evidence. A result at an earlier stage does not establish a later stage.</p>
+<h4 id="286-three-levels-of-manifold-programming-claims">2.8.6 Three Levels of Manifold-Programming Claims</h4>
+<p>For experimental clarity, the proposed connection is divided into three levels:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Level</th>
+<th>Claim</th>
+<th>Minimum evidence required</th>
+<th>What it does not establish</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>G1: State-space programming</strong></td>
+<td>Controlled intervention changes the experimentally reconstructed accessible-state distribution, constraints, or operational geometry</td>
+<td>A declared reconstruction method, uncertainty estimates, reproducibility, and controls for measurement artefacts</td>
+<td>A new dynamical law or a change in inertial mass</td>
+</tr>
+<tr>
+<td><strong>G2: Dynamical programming</strong></td>
+<td>The intervention reproducibly changes stability, coherence, transition rates, or state accessibility</td>
+<td>Independent dynamical measurements and comparison with a standard driven open-system model</td>
+<td>GMD-B or mass dilution</td>
+</tr>
+<tr>
+<td><strong>G3: Effective-inertia programming</strong></td>
+<td>An independently identifiable effective inertial parameter entering the kinetic term changes beyond conventional explanations</td>
+<td>A self-consistent dynamical model, calibrated barrier and drive, independent mass/inertia constraints, and pre-registered tests that discriminate alternative mechanisms</td>
+<td>A universal or fundamental mass law beyond the tested regime</td>
+</tr>
+</tbody>
+</table></div>
+<p>G1 and G2 are experimentally meaningful outcomes even if G3 fails. Conversely, an apparent tunneling enhancement cannot be assigned to G3 unless changes in barrier geometry, external driving, heating, environmental decoherence, state preparation, and detection efficiency have been constrained. This hierarchy keeps the weaker state-space and coherence claims separate from the stronger GMD-B claim.</p>
+<h4 id="287-complementarity-with-geometric-pathology">2.8.7 Complementarity with Geometric Pathology</h4>
+<p>The author's Geometric Pathology architecture [17] studies how structural organization and dynamical stability of complex-system state spaces may deteriorate or undergo transitions. Manifold programming, as used in this paper, asks the complementary intervention-oriented question: can controlled changes reproducibly reshape a system's accessible states or dynamics? The two perspectives can inform a common methodological program, but they are not exact opposites, and no one-to-one reversible transformation between them is assumed. A system's geometric descriptor does not by itself establish attraction, pathology, controllability, or physical causation; these require separate dynamical and empirical tests.</p>
+<p>For GMD, the practical implication is modest but useful: use the state-space methodology to organize candidate observables and intervention tests, while retaining an independent derivation and falsification burden for the effective-mass hypothesis. The geometric-programming interpretation does not repair the currently missing derivation of the dilution function, prove energy conservation, or demonstrate macroscopic tunneling enhancement.</p>
+<h3 id="29-effective-mass-dilution-conditional-numerical-scaling">2.9 Effective Mass Dilution: Conditional Numerical Scaling</h3>
+<p>For the candidate regularized function in Eq. (GMD-3), take $R\approx R_0$, $\tau\sim10^{-3}$ s, and $\tau_{0,0}\sim10^{-44}$ s. The temporal factor is</p>
+<div class="math-block">$$
+\frac{\tau_{0,0}^2}{\tau^2+\tau_{0,0}^2}\approx10^{-82}. \quad (6)
+$$</div>
+<p>Thus the model would give</p>
+<div class="math-block">$$
+\frac{M_{\mathrm{eff}}}{M_{\mathrm{bare}}}\approx10^{-82}\frac{\chi(D)}{\chi(D_{\mathrm{ref}})}. \quad (6\text{a})
+$$</div>
+<p>This is a conditional algebraic substitution into a phenomenological function, not a physical prediction. It depends critically on the assumption that $\tau_{0,0}$ is the relevant crossover scale and that the chosen state-complexity ratio is defined and calibrated. No numerical mass or tunneling enhancement is claimed from this expression alone. If $\chi(D)/\chi(D_{\mathrm{ref}})$ is very small, the proposed effective-mass factor becomes smaller still; the full dynamical consequences remain to be derived.</p>
+<h3 id="210-modified-tunneling-probability">2.10 Modified Tunneling Probability</h3>
+<p>For a double-well potential with barrier height $V_0 - E \sim 1$ meV and width $L \sim 100$ nm, the GMD exponent becomes:</p>
+<div class="math-block">$$
+S_{\text{GMD}} = \frac{2L}{\hbar} \sqrt{2M_{\text{eff}}(V_0 - E)}. \quad (7)
+$$</div>
+<p>For a fixed rectangular barrier, the exponent obeys the conditional identity $S_{\mathrm{GMD}}=S_{\mathrm{bare}}\sqrt{M_{\mathrm{eff}}/M_{\mathrm{bare}}}$ if $\hbar$, $L$, and $V_0-E$ remain unchanged. With $S_{\mathrm{bare}}\approx6.7\times10^7$, this relation must be evaluated using a specified, regularized $M_{\mathrm{eff}}$. An extremely small assumed mass can make this algebraic exponent small, but that conditional result is not evidence that such a mass is physically realized.</p>
+<p>No observable tunneling rate is predicted here until the regularized mass function, barrier dynamics, preparation probability, decoherence, and detection efficiency are specified. A small WKB exponent alone does not determine an experimental event rate.</p>
+<h3 id="211-algebraic-self-consistency-constraints">2.11 Algebraic Self-Consistency Constraints</h3>
+<p>The scaling relations (P-1) imply two algebraic constraints:</p>
+<div class="math-block">$$
+\hbar(R) c(R) = \hbar_0 c_0 = \text{constant}, \quad (8)
+$$</div>
+<div class="math-block">$$
+m(R) c(R) = m_0 c_0 = \text{constant}. \quad (9)
+$$</div>
+<p>Both relations follow algebraically from (P-1) and (P-2) (L2). They provide <strong>verification criteria</strong> for GMD. If the measured tunneling rate enhancement is accompanied by a change in the product $\hbar c$ or $mc$ that violates these constraints, the GMD mechanism is ruled out.</p>
+<p><strong>Caveat.</strong> Measuring a change in the cavity resonance frequency is not sufficient to establish a change in the speed of light $c$, because the resonance frequency also depends on the cavity length, refractive index, and temperature (L4).</p>
+<h3 id="212-total-hamiltonian-and-energy-accounting">2.12 Total Hamiltonian and Energy Accounting</h3>
+<p>Energy accounting is a consistency requirement, but it must be derived from a dynamical model. A useful starting decomposition is</p>
+<div class="math-block">$$
+H_{\mathrm{model}}(t)=H_{\mathrm{particle}}(t)+H_{\mathrm{cavity}}(t)+H_{\mathrm{int}}(t). \quad (10)
+$$</div>
+<p>with candidate terms</p>
+<div class="math-block">$$
+H_{\mathrm{particle}}(t)=\frac{p^2}{2M_{\mathrm{eff}}(t)}+V(x,t), \quad (11)
+$$</div>
+<div class="math-block">$$
+H_{\mathrm{cavity}}=\hbar\omega_c a^\dagger a, \quad (12)
+$$</div>
+<div class="math-block">$$
+H_{\mathrm{int}}(t)=g(t)a^\dagger a\frac{p^2}{2M_0}. \quad (13)
+$$</div>
+<p>These expressions define a phenomenological ansatz, not a derived interaction. The control pulse, $M_{\mathrm{eff}}(t)$, and $g(t)$ may be explicitly time dependent. For a closed quantum system evolving unitarily under a Hamiltonian $H(t)$, the expectation value obeys</p>
+<div class="math-block">$$
+\frac{d}{dt}\langle H\rangle=\left\langle\frac{\partial H}{\partial t}\right\rangle. \quad (14)
+$$</div>
+<p>Consequently, $d\langle H\rangle/dt=0$ does not follow when the Hamiltonian is explicitly time dependent. In an open system with Lindblad evolution, additional dissipative terms enter the energy balance. A conservation statement requires either (i) an autonomous enlarged Hamiltonian that includes the pulse source and relevant reservoirs, or (ii) an explicit work-and-heat balance including drive work, cavity leakage, environmental exchange, and particle-cavity interaction energy.</p>
+<p>The equality</p>
+<div class="math-block">$$
+\Delta E_{\mathrm{particle}}=-\Delta E_{\mathrm{cavity}} \quad (15)
+$$</div>
+<p>is therefore not imposed as a general identity. It is a testable special-case prediction only if all other energy channels are negligible or independently measured and the interaction model derives that balance. The form of $H_{\mathrm{int}}$ must ultimately be obtained from a microscopic coupling or a stated effective action; it cannot be selected solely to enforce the desired conservation result.</p>
+<h3 id="213-energy-budget-what-can-and-cannot-be-concluded">2.13 Energy Budget: What Can and Cannot Be Concluded</h3>
+<p>For $H_{\mathrm{particle}}=p^2/[2M_{\mathrm{eff}}(t)]+V(x,t)$, the explicit time derivative contains</p>
+<div class="math-block">$$
+\frac{\partial H_{\mathrm{particle}}}{\partial t}=-\frac{p^2}{2M_{\mathrm{eff}}^2}\frac{dM_{\mathrm{eff}}}{dt}+\frac{\partial V}{\partial t}. \quad (16)
+$$</div>
+<p>This expression identifies work associated with a changing effective-mass parameter and a driven potential. It does not, by itself, identify which subsystem receives that energy. To calculate a transfer, one must solve the coupled equations for the particle, cavity, drive source, and environment using specified initial conditions and coupling parameters.</p>
+<p>A future estimate $|\Delta E|$ must calculate the measured output quadrature or photon-number estimator, propagate quantum and technical noise, and distinguish coherent signal accumulation from statistical averaging.</p>
+<p>The cavity energy capacity alone cannot establish detectability. For independent repetitions with an unbiased estimator, statistical uncertainty often improves as $N^{-1/2}$, whereas a coherent signal may accumulate linearly only under a specified phase-stable protocol; systematic drift and correlated noise need separate treatment. A QND readout proposal therefore requires a complete measurement model and noise budget before a signal-to-noise claim can be made.</p>
+<p><strong>Current status:</strong> the total-Hamiltonian decomposition is a candidate modeling architecture (L3). Energy conservation, the magnitude and sign of particle-cavity energy transfer, and its detectability remain open calculations, not established results.</p>
+<hr />
+<h2 id="3-experimental-scheme">3. Experimental Scheme</h2>
+<h3 id="31-platform-levitated-optomechanics">3.1 Platform: Levitated Optomechanics</h3>
+<p>We choose a levitated optomechanical system as the experimental platform. A silica (SiO$_2$) nanoparticle is trapped in a high-finesse optical cavity in ultra-high vacuum (UHV). Levitated optomechanics offers:</p>
+<ul>
+<li><strong>Extreme isolation</strong> from the environment.</li>
+<li><strong>High tunability</strong>: the optical potential can be dynamically shaped.</li>
+<li><strong>State-of-the-art control</strong>: ground-state cooling has been demonstrated [8–10,13].</li>
+<li><strong>Quantum delocalization</strong>: coherent expansion over tens of nanometers has been achieved [11,12].</li>
+</ul>
+<h3 id="32-corrected-experimental-parameters">3.2 Corrected Experimental Parameters</h3>
+<p><strong>Particle mass (L1).</strong> For a silica nanoparticle of radius $R = 75$ nm:</p>
+<div class="math-block">$$
+M \approx 3.9 \times 10^{-18} \text{ kg} \approx 2.4 \times 10^9 \text{ amu}. \quad (17)
+$$</div>
+<p><strong>Alternative parameters.</strong> If a mass of $5 \times 10^7$ amu is desired:</p>
+<div class="math-block">$$
+R \approx 21 \text{ nm}. \quad (18)
+$$</div>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th>Value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cavity finesse</td>
+<td>$F &gt; 10^5$</td>
+</tr>
+<tr>
+<td>Cavity length</td>
+<td>$L_{\text{cav}} \sim 1$ cm</td>
+</tr>
+<tr>
+<td>Wavelength</td>
+<td>$\lambda \sim 1064$ nm</td>
+</tr>
+<tr>
+<td>Nanoparticle</td>
+<td>SiO$_2$, $R = 75$ nm, $M \approx 2.4 \times 10^9$ amu</td>
+</tr>
+<tr>
+<td>Double-well separation</td>
+<td>$d \sim 150$ nm</td>
+</tr>
+<tr>
+<td>Barrier height</td>
+<td>$V_0 - E \sim 1$ meV</td>
+</tr>
+<tr>
+<td>Modulation frequency</td>
+<td>$\omega_{\text{mod}} \sim 2$ MHz</td>
+</tr>
+<tr>
+<td>Vacuum</td>
+<td>$&lt; 10^{-10}$ mbar</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="33-parity-controlled-double-well-design">3.3 Parity-Controlled Double-Well Design</h3>
+<p>We consider a Fabry–Pérot cavity with a controllable optical potential. A candidate double-well potential is</p>
+<div class="math-block">$$
+V(x,t)=V_0\cos^2(kx)+V_1\cos(2kx+\phi(t)). \quad (19)
+$$</div>
+<p>When $\phi(t)$ is controlled so that the tunneling coupling is small relative to declared experimental energy scales, the system may approach an operational near-degeneracy regime. Equal well depths alone do not imply exact degeneracy of the lowest symmetric and antisymmetric eigenstates; a finite barrier generally leaves a nonzero splitting. The conjectured divergence of the measurement interval $\tau$ at a parity-degenerate point remains L4 and is not derived here. The protocol must distinguish measurements made near this point from measurements made after a controlled change to finite tunneling coupling.</p>
+<h3 id="34-state-complexity-control-protocol">3.4 State-Complexity Control Protocol</h3>
+<p>A sequence of rapid optical pulses is proposed as a controlled intervention, not as an established decoherence-freezing mechanism:</p>
+<ol>
+<li><strong>Pulse sequence:</strong> Specify pulse duration, separation, amplitude, phase, and calibration uncertainty before data collection.</li>
+<li><strong>State reconstruction:</strong> Measure the selected observables and report reconstruction uncertainty. If $D_{\mathrm{PR}}$ is used, compute it from density-matrix moments; if $D_2$ is claimed, estimate it separately from a phase-space correlation integral over a justified scaling interval.</li>
+<li><strong>Feedback:</strong> Record the feedback law and the control-to-potential transfer function.</li>
+<li><strong>Environmental controls:</strong> Measure heating, pressure dependence, optical scattering, and ordinary dynamical-decoupling effects.</li>
+</ol>
+<p><strong>Caveat.</strong> Optical-potential curvature is not identified with spacetime curvature $R$. Any change in a state-complexity statistic or coherence time is an empirical result to be measured, not assumed. Appendix C distinguishes density-matrix evolution from correlation-dimension estimation.</p>
+<h3 id="35-tunneling-measurement-protocol">3.5 Tunneling Measurement Protocol</h3>
+<p>The protocol separates baseline calibration, state preparation, control intervention, and readout:</p>
+<ol>
+<li><strong>Baseline calibration:</strong> Measure the double-well potential, barrier width and height, parity splitting, drive transfer function, and environmental decoherence.</li>
+<li><strong>Initialization:</strong> Prepare a specified localized or energy eigenstate and independently estimate preparation fidelity.</li>
+<li><strong>Control intervention:</strong> Apply the pre-registered cavity/pulse protocol. If the barrier is changed to enable a measurable transition, record the time-dependent potential and treat the system as driven and potentially non-equilibrium rather than assuming it remains at the same near-degeneracy point.</li>
+<li><strong>Detection:</strong> After a pre-registered hold time, measure position using a calibrated readout method and estimate detection efficiency and false-positive rate.</li>
+<li><strong>Repetition:</strong> Set trial count by power analysis and account for correlated noise, drift, and systematic uncertainty. Repetition alone does not guarantee a detectable GMD signal.</li>
+</ol>
+<h3 id="36-algebraic-self-consistency-tests">3.6 Algebraic Self-Consistency Tests</h3>
+<p>To test the constraints (8) and (9):</p>
+<ol>
+<li><strong>Effective mass measurement:</strong> The particle's oscillation frequency is measured via its power spectral density.</li>
+<li><strong>Effective speed of light measurement:</strong> The cavity's resonance frequency is measured with high precision.</li>
+<li><strong>Constraint verification:</strong> The products $\hbar(R)c(R)$ and $m(R)c(R)$ are computed from the measured values.</li>
+</ol>
+<p><strong>Verification:</strong> If the measured products deviate from the constraints by more than the experimental uncertainty, GMD is ruled out.</p>
+<h3 id="37-energy-transfer-measurement">3.7 Energy Transfer Measurement</h3>
+<p>To test the energy conservation condition (15):</p>
+<ol>
+<li><strong>Particle kinetic energy measurement:</strong> The particle's kinetic energy is extracted from its momentum distribution via time-of-flight or position variance.</li>
+<li><strong>Cavity energy measurement:</strong> The intracavity photon number is measured via homodyne detection.</li>
+<li><strong>Correlation analysis:</strong> The particle kinetic energy change $\Delta E_{\text{particle}}$ is compared with the cavity energy change $\Delta E_{\text{cavity}}$ as a function of $\tau$ and $D_2$.</li>
+</ol>
+<p><strong>Verification:</strong> Construct the full measured energy-balance residual including particle energy, cavity energy, drive work, cavity leakage, interaction energy, and estimated environmental exchange. A nonzero residual beyond the combined uncertainty challenges the specified complete model; a mismatch between particle and cavity energies alone does not rule out Eq. (10) because omitted channels may carry energy.</p>
+<hr />
+<h2 id="4-expected-signals-and-verifiable-predictions">4. Expected Signals and Verifiable Predictions</h2>
+<h3 id="41-tunneling-probability-scaling-law">4.1 Tunneling Probability Scaling Law</h3>
+<p>The conditional WKB relation is</p>
+<div class="math-block">$$
+S_{\mathrm{GMD}}=S_{\mathrm{bare}}\sqrt{\frac{M_{\mathrm{eff}}}{M_{\mathrm{bare}}}}. \quad (20)
+$$</div>
+<p>provided the barrier profile, incident energy, and $\hbar$ are unchanged. Here $S_{\mathrm{bare}}$ is dimensionless and the mass ratio is dimensionless. A full prediction must substitute a fully specified regularized mass law and include any GMD-induced changes to the potential or open-system dynamics; no independent dimensionless $\alpha$ is assumed.</p>
+<p>Standard quantum mechanics predicts:</p>
+<div class="math-block">$$
+T_{\text{std}} \propto \exp\left( -\beta \sqrt{M_0} \right), \quad (21)
+$$</div>
+<p>where $\beta$ includes the barrier parameters.</p>
+<p><strong>Key distinction.</strong> The candidate GMD parametrization adds dependence on $\tau$, $R$, and a declared state-complexity observable $D$; its empirical value must be assessed against a calibrated standard model.</p>
+<h3 id="42-parity-modulated-switching-conditional-signature">4.2 Parity-Modulated Switching: Conditional Signature</h3>
+<p>A resonance near $\omega_{\mathrm{mod}}\approx\omega_{\mathrm{trap}}$ is a candidate phenomenological signature, not a derived prediction of the current model. Neither a sharp resonance nor a quality factor $Q&gt;10^4$ follows from the equations presented here. Quantitative predictions require specified driven open-system dynamics, coupling strengths, damping rates, and a measurement transfer function.</p>
+<h3 id="43-state-complexity-dependence-open-hypothesis">4.3 State-Complexity Dependence: Open Hypothesis</h3>
+<p>The current model does not establish a universal monotonic relation between $D_2$ and tunneling rate. A candidate dependence may be tested only after the state-complexity observable, $\chi(D)$, and regularized mass function are pre-registered. Since a complexity factor can approach zero near a chosen boundary, the sign of the predicted effect cannot be inferred from the label "fractal dimension" alone.</p>
+<h3 id="44-curvature-dependent-decoherence-signature">4.4 Curvature-Dependent Decoherence Signature</h3>
+<p>The MES scaling $\Gamma\propto R^{3/2}$ is a conditional model hypothesis inherited from the MES architecture, not a consequence of the GMD mass function. Testing it requires an operational definition of the relevant curvature variable and independent control of ordinary changes in optical potential, temperature, and environmental coupling.</p>
+<h3 id="45-algebraic-constraint-violation">4.5 Algebraic Constraint Violation</h3>
+<p>If the products $\hbar(R)c(R)$ or $m(R)c(R)$ deviate from their reference values, GMD is ruled out (L2).</p>
+<h3 id="46-energy-transfer-signature">4.6 Energy Transfer Signature</h3>
+<p>A coupled energy-transfer signature is a possible test only after the drive, cavity loss, environment, and interaction Hamiltonian are included in a closed energy budget. Equation (15) is not a general identity in the current model.</p>
+<h3 id="47-comparison-with-standard-quantum-mechanics">4.7 Comparison with Standard Quantum Mechanics</h3>
+<p>A quantitative comparison must be generated from a fixed parameter set and a common model for transmission probability, attempt frequency, preparation, decoherence, and detection efficiency.</p>
+<hr />
+<h2 id="5-feasibility-and-technical-challenges">5. Feasibility and Technical Challenges</h2>
+<h3 id="51-current-state-of-the-art">5.1 Current State of the Art</h3>
+<p>Levitated optomechanics has advanced rapidly:</p>
+<ul>
+<li><strong>Ground-state cooling</strong> has been achieved for nanoparticles in optical cavities [8–10,13].</li>
+<li><strong>Quantum delocalization</strong> over tens of nanometers has been demonstrated [11,12].</li>
+<li><strong>UHV technology</strong> ($&lt; 10^{-10}$ mbar) is standard.</li>
+</ul>
+<h3 id="52-key-challenges-and-mitigations">5.2 Key Challenges and Mitigations</h3>
+<p>The measurement-backaction and quantum-noise constraints relevant to quantum-limited and QND-style readout are treated in standard quantum-measurement analyses [14,15]. Their inclusion motivates the need for a complete measurement model; it does not imply that the proposed GMD signal is detectable.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Challenge</th>
+<th>Mitigation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Precise parity degeneracy tuning</td>
+<td>Active feedback locking; precision $&lt; 1$ ppm</td>
+</tr>
+<tr>
+<td>Maintaining $D_2 \approx 1$</td>
+<td>Optimize pulse sequence; machine learning</td>
+</tr>
+<tr>
+<td>Low signal-to-noise for tunneling</td>
+<td>Quantum-limited detection</td>
+</tr>
+<tr>
+<td>Gravity and vibration</td>
+<td>Vibration-isolated cryostat; microgravity</td>
+</tr>
+<tr>
+<td>Heating from modulation</td>
+<td>Low-loss mirrors; optimized waveforms</td>
+</tr>
+<tr>
+<td>Curvature-dependent constant measurements</td>
+<td>High-precision cavity spectroscopy</td>
+</tr>
+<tr>
+<td>Energy transfer measurement</td>
+<td>QND homodyne detection with squeezed probe beams</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="53-staged-research-plan">5.3 Staged Research Plan</h3>
+<p><strong>Phase 1 (12–18 months): Platform development and state-complexity modeling.</strong></p>
+<ul>
+<li>Construct parity-degenerate cavity.</li>
+<li>Achieve ground-state cooling of $10^6$ amu particle.</li>
+<li>Numerically integrate Eq. (C2) to predict density-matrix evolution and calculate $D_{\mathrm{PR}}(t)$; estimate a phase-space correlation dimension $D_2$ separately only if a validated reconstruction protocol and scaling regime are available.</li>
+<li><strong>Go/no-go criterion:</strong> Stable double-well potential with tunable barrier.</li>
+</ul>
+<p><strong>Phase 2 (6–12 months): Decoherence characterization.</strong></p>
+<ul>
+<li>Measure decoherence rate as a function of cavity parameters.</li>
+<li>Test the $\Gamma \propto R^{3/2}$ scaling.</li>
+<li><strong>Go/no-go criterion:</strong> Pre-register a quantitative target and uncertainty budget; any observed suppression must be distinguished from ordinary dynamical decoupling and environmental changes. No universal one-order-of-magnitude threshold is assumed by the current theory.</li>
+</ul>
+<p><strong>Phase 3 (12–18 months): Tunneling measurements.</strong></p>
+<ul>
+<li>Prepare the system in the GMD state.</li>
+<li>Measure tunneling rate with $&gt; 5\sigma$ significance.</li>
+<li><strong>Go/no-go criterion:</strong> Compare measured event statistics with a calibrated standard open-system model; an excess is interpretable only after barrier, drive, preparation, decoherence, and detection uncertainties are included.</li>
+</ul>
+<p><strong>Phase 4 (6–12 months): Constraint tests and energy transfer measurement.</strong></p>
+<ul>
+<li>Test the algebraic constraints $\hbar c = \text{const}$ and $mc = \text{const}$.</li>
+<li>Measure particle-cavity energy transfer.</li>
+<li><strong>Go/no-go criterion:</strong> Evaluate pre-registered residuals against a fully specified model and full energy balance; no energy-transfer prediction is considered established in advance.</li>
+</ul>
+<p><strong>Total estimated duration: 36–60 months.</strong>
+<strong>Estimated cost: \$3–6 million.</strong></p>
+<h3 id="54-failure-mode-analysis">5.4 Failure Mode Analysis</h3>
+<p>If the experiment does not observe tunneling enhancement beyond the standard quantum mechanical background, it is essential to distinguish between a genuine falsification of GMD and an experimental limitation. We identify four failure modes:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Failure Mode</th>
+<th>Diagnostic</th>
+<th>Implication for GMD</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>FM-1: $\tau$ below threshold</strong></td>
+<td>Independent measurement of $\tau$ via cavity spectroscopy; check whether $\tau \geq 10^{-4}$ s</td>
+<td>If $\tau \ll 10^{-4}$ s, GMD is not tested</td>
+</tr>
+<tr>
+<td><strong>FM-2: pre-registered state-complexity target not reached</strong></td>
+<td>Independent estimation of the selected statistic: $D_{\mathrm{PR}}$ from density-matrix moments or $D_2$ from a justified phase-space correlation-integral scaling range</td>
+<td>If the target is not reached, the pre-registered state-complexity regime has not been tested</td>
+</tr>
+<tr>
+<td><strong>FM-3: Barrier parameters deviate</strong></td>
+<td>Independent calibration of $V_0$, $L$, $M$; check whether parameters deviate by $&gt; 10\%$</td>
+<td>If parameters deviate, the WKB baseline must be recalculated</td>
+</tr>
+<tr>
+<td><strong>FM-4: GMD mechanism incorrect</strong></td>
+<td>All of FM-1, FM-2, FM-3 are independently excluded, yet no signal is observed</td>
+<td>GMD is falsified at the L3 level</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Key criterion.</strong> A null result can be interpreted as a falsification of GMD <strong>only if FM-1, FM-2, and FM-3 are simultaneously and independently ruled out</strong>. Until then, the null result can only place constraints on the GMD parameter space $(\tau, D_2, R)$.</p>
+<p><strong>Quantitative criteria for FM-1 and FM-2:</strong></p>
+<ul>
+<li><strong>FM-1:</strong> The measurement interval $\tau$ is independently determined from the cavity linewidth and modulation response. If the measured $\tau$ is at least $10^{-4}$ s, the experiment is in the GMD regime. If $\tau &lt; 10^{-5}$ s, the experiment is in the standard quantum regime.</li>
+<li><strong>FM-2:</strong> The state-complexity statistic is independently estimated from a declared reconstruction method. If a true correlation dimension is intended, it must instead be defined from a correlation integral and a scaling regime, with uncertainty and finite-sample bias reported. Thresholds such as $D_2\leq1.5$ or $D_2&gt;3$ are not universal and are not retained as established regime boundaries; any threshold must be pre-registered and justified by calibration and uncertainty analysis.</li>
+</ul>
+<p><strong>Statistical criterion for FM-4:</strong> A null result is declared a falsification only if the 95% confidence interval for the tunneling rate excludes the GMD prediction by at least $3\sigma$.</p>
+<hr />
+<h2 id="6-discussion">6. Discussion</h2>
+<h3 id="61-implications-for-quantum-foundations">6.1 Implications for Quantum Foundations</h3>
+<p>If a specified GMD-B model survives controls and is supported by reproducible evidence, it would motivate a reassessment of the effective inertial parameter used in that tested quantum-dynamical regime. Such a result would not, by itself, establish that mass is universally determined by an observer's coordinate frame; that broader interpretation would require an independently derived theory and tests across distinct systems and regimes.</p>
+<h3 id="62-relation-to-other-macroscopic-quantum-experiments">6.2 Relation to Other Macroscopic Quantum Experiments</h3>
+<p>GMD is distinct from other proposals:</p>
+<ul>
+<li><strong>Matter-wave interferometry</strong> with large molecules tests quantum coherence but does not modify the effective mass.</li>
+<li><strong>Optomechanical squeezing</strong> manipulates the wavepacket but does not alter the tunneling exponent.</li>
+<li><strong>Tests of spontaneous collapse models</strong>, such as Continuous Spontaneous Localization (CSL) and Diósi-Penrose (DP) gravitational collapse, predict <strong>enhanced decoherence and suppression of tunneling</strong> for large masses. In stark contrast, GMD predicts <strong>suppressed decoherence and enhanced tunneling</strong> under specific geometric conditions ($\tau \to \infty$, $D_2 \to 1$). This provides only a candidate qualitative comparison and does <strong>not</strong> constitute a unique or decisive experimental signature. The relevant predictions depend on the specific CSL/DP parameters, environmental decoherence, preparation, and readout model; quantitative parameter-space overlap and nuisance parameters must be analyzed before claiming discriminating power.</li>
+</ul>
+<h3 id="63-curvature-driven-mass-redefinition-and-candidate-manifold-programming">6.3 Curvature-Driven Mass Redefinition and Candidate Manifold Programming</h3>
+<p>The MES architecture [4–6] postulates curvature-linked relations for mass and physical constants; in this manuscript these relations remain modeling hypotheses rather than experimentally established laws. GMD is intended as a possible tabletop test of a stronger proposition: whether a controlled geometric or cavity intervention can produce a measurable change in the effective inertial parameter governing tunneling. It is therefore premature to call GMD an operational realization of curvature-driven mass redefinition.</p>
+<p>The manifold-programming perspective supplies a staged way to test the idea. First, establish whether the intervention changes a declared state-space representation (G1); second, determine whether it changes dynamics beyond standard driving and open-system effects (G2); only then test whether an independent effective-inertia shift is required (G3). Geometric Pathology [17] contributes methods for distinguishing structural descriptors from dynamical stability, while manifold programming emphasizes controlled intervention. Their connection is methodological and does not establish the GMD mechanism.</p>
+<h3 id="64-potential-applications">6.4 Potential Applications</h3>
+<p>If GMD can be controlled, it would enable macroscopic quantum tunneling devices, quantum-enhanced sensing, geometric quantum computing, and fundamental tests of quantum gravity (L4).</p>
+<h3 id="65-limitations-and-open-questions">6.5 Limitations and Open Questions</h3>
+<ol>
+<li><strong>Derivation of $\tau$ from first principles.</strong> Can $\tau$ be derived from the cavity's optical mode structure?</li>
+<li><strong>Fractal freezing efficiency.</strong> What is the maximum achievable reduction of $D_2$?</li>
+<li><strong>Curvature-dependent constants.</strong> Are the scaling relations (P-1) exact?</li>
+<li><strong>Algebraic constraints.</strong> Are Eqs. (8) and (9) exact?</li>
+<li><strong>Form of the interaction Hamiltonian.</strong> Can $H_{\text{int}}$ be derived from the MES action principle?</li>
+<li><strong>Operational definition of manifold programming.</strong> Which reconstructed state-space observables and interventions provide a robust distinction between ordinary parameter control and a genuinely new dynamical mechanism?</li>
+<li><strong>GMD-B identifiability.</strong> Can a change in the kinetic inertial parameter be distinguished from conventional changes in potential, driving, decoherence, preparation, and readout?</li>
+</ol>
+<hr />
+<h2 id="7-conclusion">7. Conclusion</h2>
+<p>We have presented a staged, falsifiable research program for <strong>Geometric Mass Dilution (GMD)</strong>, a phenomenological hypothesis that an effective inertial parameter may depend on a measurement interval, a state-complexity statistic, and geometric control. For the stated silica-particle and rectangular-barrier parameters, the corrected baseline is $S_{\mathrm{WKB}}\approx6.7\times10^7$ and $T\sim e^{-6.7\times10^7}$. The proposed GMD law could algebraically reduce this exponent if it implied a sufficiently small effective mass, but neither the law nor the corresponding mass change is derived or experimentally established.</p>
+<p>This paper frames GMD as a <strong>candidate form of physical manifold programming</strong>, not as an established equivalence with Geometric Pathology. The proposed hierarchy is G1 (state-space reconstruction), G2 (dynamical change), and G3 (independently identified effective-inertia change). The regularized mass function is now a single stated phenomenological candidate. The density-matrix participation statistic $D_{\mathrm{PR}}$ is explicitly separated from the phase-space correlation dimension $D_2$. Evidence at G1 or G2 would not establish G3; each stage requires separate operational definitions, controls, and falsifiable predictions. Geometric Pathology contributes a methodological distinction between structural geometry and dynamical stability, while manifold programming emphasizes controlled intervention. This connection organizes the research program but does not itself validate the GMD mechanism.</p>
+<p>The plan provides candidate tests organized by evidence level; several numerical predictions remain to be derived:</p>
+<ul>
+<li><strong>L1 (strict theorem or reproducible calculation):</strong> WKB exponent in both its algebraic form $S_{\mathrm{WKB}} = (2L/\hbar)\sqrt{2M(V_0-E)}$ and its numerical evaluation $S_{\mathrm{WKB}} \approx 6.7\times10^7$ for the stated barrier; particle mass $M \approx 2.4\times10^9$ amu for $R = 75$ nm silica sphere.</li>
+<li><strong>L2 (strict construction or conditional derivation):</strong> Regularized mass function $f_{\mathrm{reg}}$ (construction); algebraic constraint verification (conditional on P-1); curvature-dependent Planck-time derivation $\tau_0(R) = \tau_{0,0}(R_0/R)$ (conditional on $G \propto R$).</li>
+<li><strong>L3 (testable modeling hypothesis):</strong> GMD mass-dilution function, MES curvature scaling, open-system dynamics, and coupled energy budget remain modeling hypotheses requiring derivation and validation.</li>
+<li><strong>L4 (unverified conjecture or engineering blueprint):</strong> $\tau$ divergence at parity-degenerate point; application to macroscopic quantum devices.</li>
+</ul>
+<p><strong>Three bottom lines must be maintained:</strong></p>
+<ol>
+<li><strong>Numerical reproducibility.</strong> The WKB baseline is a direct calculation from declared inputs; it is not a new tunneling law.</li>
+<li><strong>Dynamical closure.</strong> Energy conservation must be demonstrated in an autonomous enlarged model or a complete work-and-heat balance.</li>
+<li><strong>Evidence separation.</strong> Mathematical identities, phenomenological assumptions, numerical predictions, and experimental conclusions must remain distinct.</li>
+<li><strong>Manifold-programming hierarchy.</strong> State-space change (G1), dynamical change (G2), and effective-inertia change (G3) are separate claims. The first two can motivate further study but cannot be presented as proof of the third.</li>
+</ol>
+<p>If future tests support GMD-B after ordinary dynamical and environmental explanations are excluded, the result would motivate a substantial revision of current effective-mass modeling. At present, that interpretation remains conditional and is not established by this manuscript.</p>
+<hr />
+<h2 id="appendix-a-raw-ansatz-regularization-and-standard-limit-conditions">Appendix A: Raw Ansatz, Regularization, and Standard-Limit Conditions</h2>
+<p>An unregularized phenomenological ansatz considered during model development is</p>
+<div class="math-block">$$
+f_{\mathrm{raw}}(\tau,R,D)=\left(\frac{\tau_0(R)}{\tau}\right)^2\chi(D). \quad (\text{A1})
+$$</div>
+<p>It is dimensionless, but it diverges as $\tau\to0$ for fixed $\tau_0(R)&gt;0$ and nonzero $\chi(D)$. Dimensional consistency does not resolve this limit or validate the physical interpretation.</p>
+<p>This paper uses one regularized candidate for the quantitative discussion:</p>
+<div class="math-block">$$
+f_{\mathrm{reg}}(\tau,R,D)=\frac{\tau_0(R)^2}{\tau^2+\tau_0(R)^2}\frac{\chi(D)}{\chi(D_{\mathrm{ref}})}. \quad (\text{A2})
+$$</div>
+<p>Assume $\tau_0(R)&gt;0$ and $\chi(D_{\mathrm{ref}})&gt;0$. Then the temporal factor lies between zero and one, tends to one as $\tau\to0$, and approaches $[\tau_0(R)/\tau]^2$ when $\tau\gg\tau_0(R)$. The full function satisfies $f_{\mathrm{reg}}(0,R,D_{\mathrm{ref}})=1$. At other values of $D$, the zero-interval limit is $\chi(D)/\chi(D_{\mathrm{ref}})$; therefore recovery of a unit standard-limit factor requires either the reference state or an independently justified condition on $\chi$.</p>
+<p>A provisional choice is $\chi(D)=\sqrt{1-1/D}$ for $D&gt;1$, but this paper does not treat this as established physics. The meaning of $D$ must be fixed: a phase-space correlation dimension and a density-matrix participation-rank statistic are distinct observables. They cannot be interchanged without a validated mapping. If $\chi(D)$ approaches zero, the model predicts suppression of $f_{\mathrm{reg}}$ in that limit; the consequences for tunneling depend on the full dynamical model and must not be inferred from the factor alone.</p>
+<p>The parameter $\tau_0(R)$ is inherited conditionally from the MES scaling postulates. The regularized function is a phenomenological interpolation, not a consequence of the uncertainty principle, a measurement theorem, or a fundamental action. Its crossover scale and state-complexity dependence require independent calibration. Until those quantities are defined, the manuscript does not claim a unique numerical $M_{\mathrm{eff}}$ or a quantitative tunneling enhancement.</p>
+<h2 id="appendix-b-curvature-dependent-planck-time-with-self-consistent-gravitational-constant">Appendix B: Curvature-Dependent Planck Time with Self-Consistent Gravitational Constant</h2>
+<p>The Planck time is</p>
+<div class="math-block">$$
+\tau_0 = \sqrt{\frac{\hbar G}{c^5}}. \quad (\text{B1})
+$$</div>
+<p>We do <strong>not</strong> assume $G$ constant. In the MES architecture, the gravitational constant is defined self-consistently through the Planck mass:</p>
+<div class="math-block">$$
+G(R) = \frac{\hbar(R) c(R)}{m_p(R)^2}, \quad (\text{B2})
+$$</div>
+<p>where the Planck mass $m_p(R)$ obeys the same curvature scaling as all other masses (Postulate 2):</p>
+<div class="math-block">$$
+m_p(R) = m_{p,0} \left( \frac{R_0}{R} \right)^{1/2}. \quad (\text{B3})
+$$</div>
+<p>Substituting the curvature-dependent constants (P-1):</p>
+<div class="math-block">$$
+G(R) = \frac{\hbar_0 (R_0/R)^{1/2} \cdot c_0 (R/R_0)^{1/2}}{m_{p,0}^2 (R_0/R)} = G_0 \left( \frac{R}{R_0} \right). \quad (\text{B4})
+$$</div>
+<p>Therefore, the gravitational constant scales linearly with curvature: $G(R) \propto R$.</p>
+<p>Substituting (B4) and (P-1) into (B1):</p>
+<div class="math-block">$$
+\tau_0(R) = \sqrt{\frac{\hbar_0 (R_0/R)^{1/2} \cdot G_0 (R/R_0)}{c_0^5 (R/R_0)^{5/2}}} = \tau_{0,0} \left( \frac{R_0}{R} \right). \quad (\text{B5})
+$$</div>
+<p>The corrected exponent is $1$ (L2, conditional on the self-consistent definition of $G$).</p>
+<h2 id="appendix-c-open-system-dynamics-and-state-complexity-observables">Appendix C: Open-System Dynamics and State-Complexity Observables</h2>
+<h3 id="c1-iterated-map-construction">C.1 Iterated-Map Construction</h3>
+<p>The proposed pulse protocol has previously been represented by the iterated map</p>
+<div class="math-block">$$
+Z_{n+1}=Z_n^2+C_n. \quad (\text{C1})
+$$</div>
+<p>where $C_n$ is a time-dependent control parameter intended to reshape a phase-space distribution. Equation (C1) is a mathematical proposal only. A mapping from $C_n$ and the complex variable $Z_n$ to experimentally controlled pulse amplitudes, particle quadratures, and the measured state distribution has not been derived. No general result establishes that this map reduces a correlation dimension or suppresses decoherence.</p>
+<h3 id="c2-lindblad-dynamics-and-density-matrix-participation-rank">C.2 Lindblad Dynamics and Density-Matrix Participation Rank</h3>
+<p>A candidate open-system model is</p>
+<div class="math-block">$$
+\frac{d\rho}{dt}=-\frac{i}{\hbar}[H_{\mathrm{eff}},\rho]+\mathcal{L}[\rho]. \quad (\text{C2})
+$$</div>
+<p>with</p>
+<div class="math-block">$$
+\mathcal{L}[\rho]=\sum_k \gamma_k(t)\left(L_k\rho L_k^\dagger-\frac{1}{2}\{L_k^\dagger L_k,\rho\}\right), \quad (\text{C3})
+$$</div>
+<p>where each rate must satisfy $\gamma_k(t)\geq0$ for the standard Lindblad form. The operators $L_k$, rates $\gamma_k(t)$, and their relation to the optical pulse protocol must be specified and calibrated. Referring to these operators as implementing $C_4$ symmetry is not sufficient to determine their physical action.</p>
+<p>The density-matrix statistic considered here is</p>
+<div class="math-block">$$
+D_{\mathrm{PR}}(t)=\frac{[\mathrm{Tr}(\rho^2)]^2}{\mathrm{Tr}(\rho^4)}. \quad (\text{C4})
+$$</div>
+<p>We call this a <strong>density-matrix participation-rank statistic</strong>. It is not the conventional phase-space correlation dimension $D_2$. Its numerical value alone does not establish fractality, decoherence freezing, or a change in inertial mass. Given a fully specified $H_{\mathrm{eff}}$, Lindblad operators, rates, and initial state, Eq. (C2) can be integrated to obtain $\rho(t)$ and then $D_{\mathrm{PR}}(t)$; it does not automatically yield a correlation-dimension trajectory.</p>
+<h3 id="c3-operational-definition-of-a-correlation-dimension">C.3 Operational Definition of a Correlation Dimension</h3>
+<p>If the GMD hypothesis is to use a true correlation dimension $D_2$, the experiment must reconstruct a declared phase-space trajectory or state distribution and estimate a correlation integral, for example</p>
+<div class="math-block">$$
+C(\epsilon)=\frac{1}{N(N-1)}\sum_{i\ne j}\Theta(\epsilon-\|\mathbf{x}_i-\mathbf{x}_j\|), \quad (\text{C5})
+$$</div>
+<p>where $\mathbf{x}_i$ are reconstructed phase-space samples and $\Theta$ is the step function. A candidate estimate is the slope $D_2=d\log C(\epsilon)/d\log\epsilon$ over a justified scaling interval. In practice, the existence and width of such an interval, finite-sample bias, measurement noise, embedding choices, and confidence intervals must all be reported. If no robust scaling interval exists, a correlation dimension should not be reported as a measured quantity.</p>
+<p>Consequently, this work does not assume that $D_{\mathrm{PR}}=D_2$, nor that one is a validated proxy for the other. The GMD mass function must use whichever observable is actually defined, and its dependence $\chi(D)$ must be specified before fitting or testing the model.</p>
+<p><strong>Status.</strong> Equations (C1)–(C5) define a candidate modeling and measurement program (L3/L4). They do not establish that a pulse sequence drives the system toward a pure state, reduces a correlation dimension, freezes decoherence, or changes the effective inertial mass.</p>
+<h2 id="appendix-d-algebraic-self-consistency-constraints">Appendix D: Algebraic Self-Consistency Constraints</h2>
+<p>From the scaling relations (P-1):</p>
+<div class="math-block">$$
+\hbar(R) c(R) = \hbar_0 c_0, \quad (\text{D1})
+$$</div>
+<p>which is Eq. (8). The mass constraint</p>
+<div class="math-block">$$
+m(R) c(R) = m_0 c_0 \quad (\text{D2})
+$$</div>
+<p>follows from (P-1) and (P-2) (L2).</p>
+<hr />
+<h2 id="acknowledgments">Acknowledgments</h2>
+<p>We are grateful to all the individual scientists and teams of scientists who have contributed to the exploration and understanding of the entire universe. Supported by AI-driven Supercomputers and the MES Universe Project. We have benefited from our amazing AI partners.</p>
+<h2 id="funding">Funding</h2>
+<p>Not applicable</p>
+<h2 id="availability-of-data-and-material">Availability of data and material</h2>
+<p>Code, mathematical scripts, and preprints are available at GitHub: https://github.com/Zaitian001/-Self-Preprint-V1.1-</p>
+<h2 id="competing-interests">Competing interests</h2>
+<p>Not applicable</p>
+<h2 id="author-contributions">Author Contributions</h2>
+<p>Baoliin (Zaitian) Wu 伍宝林 is the sole author of this manuscript and is responsible for all aspects of the research, including conceptualization, methodology, theoretical formulation, and manuscript writing.</p>
+<hr />
+<h2 id="references">References</h2>
+<p>[1] Baoliin (Zaitian) Wu 伍宝林. (2026). The Gui-Ju Dao: The Artificial General Intelligence Algorithm, Geometry, and Engineering Paradigm of China's Indigenous Closed Spherical Universe. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553902.html</p>
+<p>[2] Baoliin (Zaitian) Wu. (2025). The Pure Geometric Origin of Mass and Light. Preprints. https://doi.org/10.20944/preprints202505.2249.v1</p>
+<p>[3] Baoliin (Zaitian) Wu 伍宝林. (2026). The Overlooked Coordinate System Exorcising the Demons and Ghosts of Quantum Measurement. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553901.html</p>
+<p>[4] Baoliin (Zaitian) Wu 伍宝林. (2026). All Things as Wuxing Attractors: MES Universe Curvature Knots and Variable Light Speed. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553921.html</p>
+<p>[5] Baoliin (Zaitian) Wu 伍宝林. (2026). Curvature-Driven Open Quantum Dynamics and the Pure Geometric Origin of Physics Constants. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553914.html</p>
+<p>[6] Baoliin (Zaitian) Wu 伍宝林. (2026). Room-Temperature Superconductivity as the Developmental Terminal State of a Generalized Adaptive Intelligent System: The Topological Condensation of a Dynamic Equilibrium Quantum Manifold. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553911.html</p>
+<p>[7] Baoliin (Zaitian) Wu 伍宝林. (2026). Wuxing Dao. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553905.html</p>
+<p>[8] Delić, U., Reisenbauer, M., Dare, K., et al. (2020). Cooling of a levitated nanoparticle to the motional quantum ground state. Science, 367, 892–895. https://doi.org/10.1126/science.aba3993</p>
+<p>[9] Magrini, L., Rosenzweig, P., Bach, C. et al. (2021). Real-time optimal quantum control of mechanical motion at room temperature. Nature 595, 373–377. https://doi.org/10.1038/s41586-021-03602-3</p>
+<p>[10] Tebbenjohanns, F., Mattana, M.L., Rossi, M. et al. (2021). Quantum control of a nanoparticle optically levitated in cryogenic free space. Nature 595, 378–382. https://doi.org/10.1038/s41586-021-03617-w</p>
+<p>[11] Roda-Llordes, M., Riera-Campeny, A., Candoli, D. et al. (2024). Macroscopic Quantum Superpositions via Dynamics in a Wide Double-Well Potential. Physical Review Letters 132, 023601. https://doi.org/10.1103/PhysRevLett.132.023601</p>
+<p>[12] Rossi, M., Militaru, A., Carlon Zambon, N. et al. (2025). Quantum Delocalization of a Levitated Nanoparticle. Physical Review Letters 135, 083601. https://doi.org/10.1103/2yzc-fsm3</p>
+<p>[13] Troyer, S., Fechtel, F., Hummer, L. et al. (2026). Quantum ground-state cooling of two librational modes of a nanorotor. Nat. Phys. 22, 584–590. https://doi.org/10.1038/s41567-026-03219-1</p>
+<p>[14] Caves, Carlton M., Thorne, Kip S., Drever, Ronald W. P. et al. (1980). On the measurement of a weak classical force coupled to a quantum-mechanical oscillator. I. Issues of principle. Reviews of Modern Physics 52, 341. https://doi.org/10.1103/RevModPhys.52.341</p>
+<p>[15] Clerk, A. A., Devoret, M. H., Girvin, S. M. et al. (2010). Introduction to quantum noise, measurement, and amplification. Reviews of Modern Physics 82, 1155. https://doi.org/10.1103/RevModPhys.82.1155</p>
+<p>[16] Baoliin (Zaitian) Wu 伍宝林. (2026). Experimental Roadmap for MES-PUF (NQP-QPUF): Curvature-Driven Open Quantum Systems in Superconducting, Cold-Atom, and Skyrmion Platforms. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553917.html</p>
+<p>[17] Baoliin (Zaitian) Wu 伍宝林. (2026). Geometric Pathology: Topological Collapse and Landscape Reprogramming in Complex Adaptive Systems. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553909.html</p>
+        </div>
+    </article>
+
+    <!-- 引用格式选择器（Google Scholar 风格） -->
+    <div class="citation-toggle">
+        <span class="cite-label">📚 Cite this paper</span>
+        <span class="cite-arrow">▾</span>
+    </div>
+    <div class="citation-panel" id="citationPanel">
+        <div class="citation-format-selector">
+            <button class="format-btn active" data-format="apa">APA</button>
+            <button class="format-btn" data-format="mla">MLA</button>
+            <button class="format-btn" data-format="chicago">Chicago</button>
+            <button class="format-btn" data-format="bibtex">BibTeX</button>
+        </div>
+        <div class="citation-display" id="citationDisplay">
+            <span class="citation-text" id="citationText"></span>
+            <button class="copy-btn" id="copyCitationBtn">📋 Copy</button>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        © 2026 Baoliin (Zaitian) Wu 伍宝林 | Independent theoretical physicist | Self-Preprint Decentralized Academic Archive
+    </footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const citationData = {"apa": "Baoliin (Zaitian) Wu \u4f0d\u5b9d\u6797 (2026). Geometric Mass Dilution: A Scheme for Observable Quantum Tunneling of Macroscopic Objects via Parity-Degenerate Cavities. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553922.html", "mla": "Baoliin (Zaitian) Wu \u4f0d\u5b9d\u6797. \"Geometric Mass Dilution: A Scheme for Observable Quantum Tunneling of Macroscopic Objects via Parity-Degenerate Cavities.\" Self-Preprint Archive, 2026, https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553922.html.", "chicago": "Baoliin (Zaitian) Wu \u4f0d\u5b9d\u6797. \"Geometric Mass Dilution: A Scheme for Observable Quantum Tunneling of Macroscopic Objects via Parity-Degenerate Cavities.\" Self-Preprint Archive. Accessed October 22, 2026. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553922.html.", "bibtex": "@article{selfpreprint_DW58553922,\n  author = {Baoliin (Zaitian) Wu \u4f0d\u5b9d\u6797},\n  title = {Geometric Mass Dilution: A Scheme for Observable Quantum Tunneling of Macroscopic Objects via Parity-Degenerate Cavities},\n  journal = {Self-Preprint Archive},\n  year = {2026},\n  url = {https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553922.html}\n}"};
+    const toggle = document.querySelector('.citation-toggle');
+    const panel = document.getElementById('citationPanel');
+    const textDisplay = document.getElementById('citationText');
+    const copyBtn = document.getElementById('copyCitationBtn');
+    let currentFormat = 'apa';
+
+    if (toggle && panel) {
+        toggle.addEventListener('click', function() {
+            this.classList.toggle('open');
+            panel.classList.toggle('open');
+            if (panel.classList.contains('open')) {
+                updateCitation('apa');
+            }
+        });
+    }
+
+    document.querySelectorAll('.format-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            document.querySelectorAll('.format-btn').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            currentFormat = this.getAttribute('data-format');
+            updateCitation(currentFormat);
+        });
+    });
+
+    function updateCitation(format) {
+        let text = citationData[format] || 'Citation not available';
+        if (format === 'bibtex') {
+            textDisplay.className = 'citation-text bibtex-display';
+            textDisplay.textContent = text;
+        } else {
+            textDisplay.className = 'citation-text';
+            textDisplay.textContent = text;
+        }
+        copyBtn.textContent = '📋 Copy';
+        copyBtn.classList.remove('copied');
+    }
+
+    if (copyBtn) {
+        copyBtn.addEventListener('click', function() {
+            const text = textDisplay.textContent;
+            navigator.clipboard.writeText(text).then(function() {
+                copyBtn.textContent = '✅ Copied!';
+                copyBtn.classList.add('copied');
+                setTimeout(function() {
+                    copyBtn.textContent = '📋 Copy';
+                    copyBtn.classList.remove('copied');
+                }, 2000);
+            }).catch(function() {
+                const ta = document.createElement('textarea');
+                ta.value = text;
+                document.body.appendChild(ta);
+                ta.select();
+                document.execCommand('copy');
+                document.body.removeChild(ta);
+                copyBtn.textContent = '✅ Copied!';
+                setTimeout(function() {
+                    copyBtn.textContent = '📋 Copy';
+                }, 2000);
+            });
+        });
+    }
+
+    updateCitation('apa');
+});
+</script>
+
+<!-- 引入 Mermaid 渲染引擎 -->
+<script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+    document.addEventListener("DOMContentLoaded", async function () {
+        const codeBlocks = document.querySelectorAll('pre code.language-mermaid, pre code.mermaid');
+        codeBlocks.forEach((codeBlock) => {
+            const pre = codeBlock.parentElement;
+            const div = document.createElement('div');
+            div.className = 'mermaid';
+            div.textContent = codeBlock.textContent;
+            pre.replaceWith(div);
+        });
+
+        mermaid.initialize({ startOnLoad: false, theme: 'default', securityLevel: 'loose' });
+        await mermaid.run();
+    });
+</script>
+</body>
+</html>
