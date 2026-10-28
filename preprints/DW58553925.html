@@ -1,0 +1,780 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Is the Countable Rhythm of Yin–Yang Waxing and Waning - Self-Preprint Archive</title>
+    <meta name="citation_title" content="Time Is the Countable Rhythm of Yin–Yang Waxing and Waning">
+    <meta name="citation_publication_date" content="2026/10/27">
+    <meta name="citation_fulltext_html_url" content="https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553925.html">
+    <meta name="citation_journal_title" content="Self-Preprint Archive">
+    <meta name="citation_author" content="Baoliin (Zaitian) Wu 伍宝林">
+    <style>
+/* ==========================================================================
+   -Self-Preprint- Academic Theme (Complete Merged & Responsive Version)
+   ========================================================================== */
+*, *::before, *::after { box-sizing: border-box; }
+
+:root {
+    --bg-color: #fcfcfc;
+    --text-color: #2b2b2b;
+    --primary-color: #1a365d;
+    --link-color: #2b6cb0;
+    --border-color: #e2e8f0;
+    --code-bg: #f7fafc;
+    --blockquote-bg: #edf2f7;
+    --meta-color: #718096;
+    --max-width: 860px;
+    --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-serif: Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+body {
+    font-family: var(--font-main);
+    line-height: 1.75;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 2rem 1rem;
+}
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 3rem 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border: 1px solid var(--border-color);
+}
+a { color: var(--link-color); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* 归档列表页 (index.html) */
+.archive-year {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.3rem;
+    color: var(--primary-color);
+}
+.post-item {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+}
+.post-title { font-size: 1.1rem; font-weight: 500; }
+.post-date {
+    font-size: 0.9rem;
+    color: var(--meta-color);
+    font-family: monospace;
+    white-space: nowrap;
+    margin-left: 1rem;
+}
+.post-abstract {
+    font-size: 0.95rem;
+    color: #555;
+    margin: 0.2rem 0 1.2rem 0;
+    font-family: var(--font-serif);
+}
+
+/* 文章单页 (paper_id.html) */
+article h1.paper-title {
+    font-size: 2.2rem;
+    line-height: 1.3;
+    margin-bottom: 0.8rem;
+    letter-spacing: -0.02em;
+    color: var(--primary-color);
+}
+.paper-meta {
+    font-size: 0.92rem;
+    color: var(--meta-color);
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1.2rem;
+}
+.paper-body {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+.paper-body h1, .paper-body h2, .paper-body h3 {
+    font-family: var(--font-main);
+    font-weight: 600;
+    margin-top: 2.2rem;
+    color: var(--primary-color);
+}
+
+/* MathJax & LaTeX 公式排版防护 */
+mjx-container {
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-width: 100%;
+}
+mjx-container[display="true"] {
+    display: block !important;
+    width: 100% !important;
+    margin: 1.5rem 0 !important;
+    text-align: center;
+}
+mjx-container[display="false"] {
+    display: inline-block;
+    vertical-align: middle;
+}
+.math-block {
+    display: block;
+    width: 100%;
+    margin: 1.5rem 0;
+    text-align: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+/* 物理确权卡片 */
+.anchor-box {
+    margin: 2rem 0;
+    padding: 1rem 1.2rem;
+    background: #fafafa;
+    border: 1px solid #eaeaea;
+    border-radius: 6px;
+    font-size: 0.88rem;
+    color: #444;
+}
+.anchor-box strong { color: #111; }
+.anchor-hash {
+    font-family: monospace;
+    font-size: 0.82rem;
+    word-break: break-all;
+    color: #666;
+    margin-top: 0.3rem;
+}
+
+/* 代码与预格式化文本 */
+code, pre {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-size: 0.9rem;
+}
+code {
+    background-color: var(--code-bg);
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+}
+pre {
+    padding: 1rem;
+    overflow-x: auto;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    background-color: var(--code-bg);
+    line-height: 1.45;
+}
+pre code {
+    background-color: transparent;
+    padding: 0;
+    border: none;
+}
+
+/* 引用与表格 */
+blockquote {
+    margin: 1.5rem 0;
+    padding: 0.8rem 1.2rem;
+    background-color: var(--blockquote-bg);
+    border-left: 4px solid var(--primary-color);
+    border-radius: 0 4px 4px 0;
+}
+blockquote p:last-child { margin-bottom: 0; }
+.table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+    -webkit-overflow-scrolling: touch;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+th, td {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-color);
+    text-align: left;
+}
+th {
+    background-color: var(--code-bg);
+    font-weight: 600;
+}
+
+/* 学术插图与图注 */
+img, .paper-body img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1.8rem auto 0.5rem auto;
+    border-radius: 4px;
+}
+figure { margin: 2rem auto; text-align: center; }
+figure img { max-width: 100%; height: auto; margin: 0 auto; }
+figcaption {
+    font-size: 0.9rem;
+    color: var(--meta-color);
+    margin-top: 0.6rem;
+    font-family: var(--font-main);
+    line-height: 1.4;
+}
+
+/* 引用格式选择器 (Google Scholar 风格) */
+.citation-toggle {
+    display: inline-block;
+    margin: 2rem 0 0.5rem 0;
+    padding: 0.5rem 1.2rem;
+    background: #f1f5f9;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: #1e293b;
+    transition: background 0.2s;
+    user-select: none;
+}
+.citation-toggle:hover { background: #e2e8f0; }
+.citation-toggle .cite-arrow {
+    display: inline-block;
+    margin-left: 0.4rem;
+    font-size: 0.7rem;
+    transition: transform 0.3s ease;
+}
+.citation-toggle.open .cite-arrow { transform: rotate(180deg); }
+
+.citation-panel {
+    display: none;
+    margin: 0 0 2rem 0;
+    padding: 1.2rem 1.5rem;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    max-width: 100%;
+}
+.citation-panel.open { display: block; }
+
+.citation-format-selector {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    margin-bottom: 0.8rem;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 0.8rem;
+}
+.format-btn {
+    background: transparent;
+    border: none;
+    padding: 0.3rem 1rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+    color: #64748b;
+    border-radius: 12px;
+    transition: all 0.2s;
+}
+.format-btn:hover { background: #e2e8f0; color: #1e293b; }
+.format-btn.active {
+    background: #1e293b;
+    color: white;
+    font-weight: 500;
+}
+
+.citation-display {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+.citation-text {
+    flex: 1;
+    font-size: 0.88rem;
+    font-family: var(--font-serif);
+    color: #1e293b;
+    background: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    border: 1px solid #e9edf2;
+    word-break: break-word;
+    min-height: 2.2rem;
+}
+.citation-text.bibtex-display {
+    font-family: monospace;
+    font-size: 0.82rem;
+    white-space: pre-wrap;
+}
+.copy-btn {
+    background: #e2e8f0;
+    border: none;
+    border-radius: 4px;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.8rem;
+    cursor: pointer;
+    color: #334155;
+    white-space: nowrap;
+    transition: all 0.2s;
+    align-self: center;
+}
+.copy-btn:hover { background: #cbd5e1; }
+.copy-btn.copied { background: #22c55e; color: white; }
+
+/* 页脚与移动端响应式 */
+footer.site-footer {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.85rem;
+    color: var(--meta-color);
+    text-align: center;
+}
+@media (max-width: 768px) {
+    body { padding: 1rem 0.5rem; }
+    .container { padding: 1.5rem 1rem; }
+    article h1.paper-title { font-size: 1.75rem; }
+    .post-item { flex-direction: column; align-items: flex-start; }
+    .post-date { margin-left: 0; margin-top: 0.2rem; }
+}
+</style>
+    
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    tags: 'ams'
+  },
+  svg: {
+    fontCache: 'global',
+    displayAlign: 'center',
+    displayIndent: '0'
+  },
+  options: {
+    enableMenu: false,
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+};
+</script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+<script>
+  window.addEventListener('load', function () {
+    if (window.MathJax && MathJax.typesetPromise) {
+      MathJax.typesetPromise().catch(function (err) {
+        console.log('MathJax typeset failed: ', err);
+      });
+    }
+  });
+</script>
+
+</head>
+<body>
+    <header class="site-header">
+        <nav>
+            <a href="../index.html">← Archives</a>
+            <a href="../feed.xml">RSS</a>
+        </nav>
+    </header>
+
+    <article>
+        <h1 class="paper-title">Time Is the Countable Rhythm of Yin–Yang Waxing and Waning</h1>
+        <div class="paper-meta">
+            By <strong>Baoliin (Zaitian) Wu 伍宝林</strong> · Published on 2026-10-27
+        </div>
+
+        
+    <div class="anchor-box">
+        🛡️ <strong>Physical Proof of Existence</strong> | Banknote Serial: <code>DW58553925</code>
+        <div class="anchor-hash">SHA-256 Hash: ebb0a9615affa652273efaaf4e427cbdb7edad3950674da0d542f2f5dee1772d</div>
+    </div>
+    
+
+        <blockquote style="font-family: var(--font-serif); background:#fdfdfd; padding:0.8rem 1.2rem; border-left:3px solid #ccc; margin: 1.5rem 0;"><p>"Time is the countable rhythm of Yin–Yang waxing and waning 时间是阴阳消长的可计数节律." This paper proposes and defends a definition of time formulated at the intersection of classical Chinese cosmology and modern physics. While modern physics has largely vindicated relationalism over substantivalism, it lacks a canonical positive definition of what time actually <em>is</em>. We argue that the classical Chinese tradition provides precisely such a positive definition. The <em>Baihu Tong</em> explicitly equates time with the periodicity of Yin–Yang waxing and waning; the <em>Wenshi Zhenjing</em> anchors time in "never-ending movement 运而不已"; and the <em>Zhoubi Suanjing</em> establishes that Yin–Yang is the cosmic laws of numbers. Crucially, we provide a philological reconstruction of Aristotle's <em>Physics</em> through the lens of Chinese cosmology, revealing that his <em>arithmos kineseōs</em> was originally a rhythm-order rather than an abstract number, and his "Now" corresponds to the Chinese concept of <em>Ji</em> 几 (the critical threshold of phase transition). We provide a proposed operational translation: "Yin–Yang waxing and waning" is illustrated by phase-related variables, while "countable rhythm" is represented by phase accumulation and cycle counting; phase locking is one possible measurement method, not a necessary condition for all counting. From this definition, three consequences follow. First, the "static" is not a fundamental feature of nature but a quasi-static projection of a dynamic rhythm onto an observer's reference frame. Second, the arrow of time is a perspectival phenomenon arising from macroscopic entropy gradients under coarse-graining. Third, the history of timekeeping—from the gnomon to the nuclear clock—is unified as the search for progressively quieter Yin–Yang rhythms. We state an open-scale axiom and a stronger all-scale rhythm-existence axiom, motivated by "the largest has no exterior, the smallest has no interior 大而无外，小而无内". We separately state an in-principle measurability postulate; these are theoretical commitments whose physical standing requires further modelling and testing.</p></blockquote>
+
+        <div class="paper-body">
+            <h1 id="time-is-the-countable-rhythm-of-yinyang-waxing-and-waning">Time Is the Countable Rhythm of Yin–Yang Waxing and Waning</h1>
+<p><strong>Baoliin (Zaitian) Wu 伍宝林</strong></p>
+<p><em>ORCID:</em> <a href="https://orcid.org/0009-0003-2051-5247">0009-0003-2051-5247</a></p>
+<p><em>Email:</em> zaitian001@gmail.com</p>
+<p><em>Affiliation:</em> People's Government of Guangdong Province, Guangzhou, CN</p>
+<p><strong>October 27, 2026</strong></p>
+<p><strong>Paper ID: DW58553925</strong></p>
+<hr />
+<h2 id="abstract">Abstract</h2>
+<blockquote>
+<p>时也，期也，阴阳消息之期也。
+"Time is periodicity; it is the periodicity of Yin–Yang waxing and waning."
+— <em>Baihu Tong</em> 白虎通</p>
+</blockquote>
+<p><strong>"Time is the countable rhythm of Yin–Yang waxing and waning 时间是阴阳消长的可计数节律."</strong> This paper proposes and defends a definition of time formulated at the intersection of classical Chinese cosmology and modern physics. While modern physics has largely vindicated relationalism over substantivalism, it lacks a canonical positive definition of what time actually <em>is</em>. We argue that the classical Chinese tradition provides precisely such a positive definition. The <em>Baihu Tong</em> explicitly equates time with the periodicity of Yin–Yang waxing and waning; the <em>Wenshi Zhenjing</em> anchors time in "never-ending movement 运而不已"; and the <em>Zhoubi Suanjing</em> establishes that Yin–Yang is the cosmic laws of numbers. Crucially, we provide a philological reconstruction of Aristotle's <em>Physics</em> through the lens of Chinese cosmology, revealing that his <em>arithmos kineseōs</em> was originally a rhythm-order rather than an abstract number, and his "Now" corresponds to the Chinese concept of <em>Ji</em> 几 (the critical threshold of phase transition). We provide a proposed operational translation: "Yin–Yang waxing and waning" is illustrated by phase-related variables, while "countable rhythm" is represented by phase accumulation and cycle counting; phase locking is one possible measurement method, not a necessary condition for all counting. From this definition, three consequences follow. First, the "static" is not a fundamental feature of nature but a quasi-static projection of a dynamic rhythm onto an observer's reference frame. Second, the arrow of time is a perspectival phenomenon arising from macroscopic entropy gradients under coarse-graining. Third, the history of timekeeping—from the gnomon to the nuclear clock—is unified as the search for progressively quieter Yin–Yang rhythms. We state an open-scale axiom and a stronger all-scale rhythm-existence axiom, motivated by "the largest has no exterior, the smallest has no interior 大而无外，小而无内". We separately state an in-principle measurability postulate; these are theoretical commitments whose physical standing requires further modelling and testing.</p>
+<p><strong>Keywords:</strong> time; Yin–Yang; countable rhythm; conjugate variables; quasi-static projection; arrow of time; timekeeping; relationalism</p>
+<hr />
+<h2 id="1-introduction">1. Introduction</h2>
+<p>What is time? The question is among the oldest in philosophy and remains open in physics. Two families of answers dominate. <strong>Substantivalism</strong> treats time as an entity or container in which events are located; <strong>relationalism</strong> treats time as a system of relations among events, defined by change and comparison. Modern physics has largely vindicated relationalism—special relativity makes simultaneity frame-dependent, general relativity makes proper time a line integral along a worldline, and quantum gravity suggests that time may not be fundamental at all. Yet relationalism has never acquired a canonical positive definition. To say that time is "a system of relations" is to say what time is <em>not</em> (not a substance) rather than what it <em>is</em>.</p>
+<p><img alt="Figure 1. Time Is the Countable Rhythm of Yin–Yang Waxing and Waning" src="images/DW58553925/Figure_1.png" /></p>
+<p><strong>Figure 1. Time Is the Countable Rhythm of Yin–Yang Waxing and Waning.</strong> The central Taiji symbol represents the Yin-Yang Universe Model, mapping Yin (contraction, potential) and Yang (expansion, actuality) to conjugate variables. The surrounding panels detail the operational and mathematical architecture of the proposed definition: <strong>(1)</strong> The countable rhythm is formalized by continuous phase accumulation $\phi(t)$ and cycle counting $N$. <strong>(2)</strong> Conjugate variables $(q, p)$ serve as a mathematical analogy for Yin–Yang dynamics, oscillating in phase space. <strong>(3)</strong> Phase locking allows for reference-based comparison and cycle readout. <strong>(4)</strong> The "static" is modeled as a quasi-static projection of the dynamic rhythm onto an observer's slice. <strong>(5)</strong> The arrow of time is perspectival, arising from coarse-grained entropy $S_{\mathrm{cg}}$ under specific macroscopic conditions. <strong>(6–8)</strong> The architecture adopts three explicit theoretical postulates: Open-Scale, All-Scale Existence, and In-Principle Measurability. The right-hand scale illustrates the applicability from the cosmic to the subatomic, echoing "the largest has no exterior, the smallest has no interior."</p>
+<p>This paper proposes a positive definition drawn from a tradition that Western philosophy of physics has rarely consulted:</p>
+<blockquote>
+<p><strong>Time is the countable rhythm of Yin–Yang waxing and waning.</strong></p>
+</blockquote>
+<p>The definition is rooted in explicit classical statements. The <em>Baihu Tong</em> 白虎通 defines time directly: "Time is periodicity; it is the periodicity of Yin–Yang waxing and waning. 时也，期也，阴阳消息之期也" . The <em>Wenshi Zhenjing</em> 文始真经 states: "Time is never-ending movement. 运而不已者为时". The <em>Zhoubi Suanjing</em> 周髀算经 declares: "The cosmic laws of numbers originate from the circle and the square. 数之法出于圆方", while Zhao Shuang's commentary clarifies that this refers to Yin–Yang and odd–even numbers, not to the geometric shape of heaven and earth. Furthermore, when we strip away medieval Latin geometricizations and return to the Greek text of Aristotle's <em>Physics</em>, we find a striking resonance with this Chinese cosmological architecture.</p>
+<p>The definition has three components. <strong>Yin–Yang</strong> names a pair of complementary, mutually defining poles. <strong>Waxing and waning</strong> 消息/消长 names their dynamic, reciprocal transformation. <strong>Countable rhythm</strong> 可计数节律 names the repeatable, partitionable order that this transformation exhibits when compared against a reference process.</p>
+<p>The paper is structured as follows. Section 2 recovers the classical sources. Section 3 states the definition. Section 4 provides the physical translation into conjugate-variable oscillation and phase locking, including a dialogue with Aristotle. Section 5 derives the quasi-static character of the "static." Section 6 treats the arrow of time as perspectival. Section 7 reads the history of timekeeping as empirical support. Section 8 addresses the boundaries of the definition. Section 9 concludes.</p>
+<hr />
+<h2 id="2-classical-sources">2. Classical Sources</h2>
+<h3 id="21-where-do-the-names-of-time-and-space-come-from">2.1 Where Do the Names of Time and Space Come From?</h3>
+<p>Where do the names of <strong>time</strong> and <strong>space</strong> come from? Where do the names of <strong>heaven</strong>, <strong>earth</strong>, and <strong>homo</strong> come from? Where do the names of <strong>all things</strong> come from?</p>
+<blockquote>
+<p>《无能子》曰：万物之名亦岂自然著哉？……皆妄作者强名之也。人久习之，不见其强名之初，故讼之而不敢移焉。</p>
+</blockquote>
+<p>Wunengzi says: <em>How can the names of all things be naturally generated? ... They are all forced names given by delusional authors. People have been accustomed to it for a long time and have not seen where the names come from, so they dare not change them even if they are suspicious.</em></p>
+<blockquote>
+<p>《文始真经》曰：有天有地，有人有物，皆思成之，盖不可以尘计。安知今之天地，非有思者乎？惟圣人知我无我，知物无物，皆因思虑计之而有。</p>
+</blockquote>
+<p>Wenshi Zhenjing says: <em>There are heaven and earth, homo and things, all of which are created by consciousness and thinking, and cannot be calculated such as dust. How do we know that the present universe was not created by thinkers? Only the saints know that so-called My-mind is No My-mind, and know that things have no things, all of which are created by consciousness and thinking.</em></p>
+<blockquote>
+<p>《鬼谷子》曰：粤若稽古，圣人之在天地间也，为众生之先，观阴阳之开阖以命物。</p>
+</blockquote>
+<p>Guiguzi says: <em>Looking back to ancient times, we find that the saints, in their presence between heaven and earth, served as pioneers for all living beings; by observing the Yin–Yang Waxing and Waning, they defined and gave the names of all things.</em></p>
+<h3 id="22-naming-as-protocol-the-cross-traditional-logic-of-qiangming">2.2 Naming as Protocol: The Cross-Traditional Logic of <em>Qiangming</em> 强名</h3>
+<p>If <strong>time is the countable rhythm of Yin–Yang waxing and waning</strong>, we must first address a foundational epistemological problem: how can the ultimate, ceaseless dynamic of the cosmos be named and measured at all?</p>
+<p>Across major philosophical and religious traditions, a universal structural triad emerges regarding the limits of representation:</p>
+<ol>
+<li>The ultimate is inexpressible.</li>
+<li>A provisional name (<em>qiangming</em> 强名) is nevertheless assigned.</li>
+<li>The provisional and operational nature of this designation is explicitly marked.</li>
+</ol>
+<p>This pattern is well-documented across diverse textual traditions. In classical Daoism, the <em>Daodejing</em> (Ch. 25) acknowledges its own inadequacy— <em>"I do not know its name; I force a word for it and call it Dao"</em>—immediately setting this forced name into motion as a temporal rhythm (<em>passing, going far, returning</em>). In Indian philosophy, Patañjali’s <em>Yoga Sūtra</em> defines <em>Īśvara</em> via negation (<em>via negativa</em>) before introducing the syllable <em>OṂ</em> not as an ontological name (<em>nāman</em>), but as an operational indicium (<em>vācaka</em>)—an interface designed to guide practice rather than capture essence. Similarly, the <em>Vajracchedikā Prajñāpāramitā Sūtra</em> employs its characteristic threefold formula (e.g., regarding <em>paramāṇu</em> and <em>lokadhātu</em>) to de-reify both extremes of scale into conventional designations (<em>prajñapti</em>). Western negative theology (<em>via negativa</em>) and the <em>Bhagavad Gītā</em>'s identification of Krishna with <em>Kāla</em> (Time/Destiny) exhibit the exact same formal structure.</p>
+<p>What unites these traditions is that <strong>naming is not an ontological description, but a protocol-level locking</strong>.</p>
+<p>This epistemological modesty directly governs the classical Chinese definitions of time. When the <em>Baihu Tong</em> equates time with Yin–Yang periodicity, the <em>Wenshi Zhenjing</em> anchors it in ceaseless movement (<em>yun er bu yi</em>), and the <em>Zhoubi Suanjing</em> treats circle and square as the numerical grammar of Yin–Yang, these assertions should not be read as rigid metaphysical dogmas. Much like forced names (<em>qiangming</em>), they are <strong>operational proposals</strong>—strategic coordinates deployed to map and measure a ceaseless dynamic. Just as the <em>Vajracchedikā</em> refuses to reify scale endpoints, our architecture treats the Planck scale or cosmological horizons not as absolute boundaries, but as protocol limits of phase-locking and countability.</p>
+<h3 id="23-the-baihu-tong-the-direct-definition">2.3 The <em>Baihu Tong</em>: The Direct Definition</h3>
+<p>The <em>Baihu Tong</em> 白虎通, a foundational text of Han dynasty cosmology, contains the most direct classical definition of time:</p>
+<blockquote>
+<p>时也，期也，阴阳消息之期也。</p>
+</blockquote>
+<p>"Time is periodicity; it is the periodicity of Yin–Yang waxing and waning."</p>
+<p>"时" (time) is defined as "期" (periodicity/countable rhythm), and this periodicity is exactly the "期" of "阴阳消息" (Yin–Yang waxing and waning). The term "消息" (xiaoxi) is a standard Han dynasty term for the alternation of Yin-Yang—the twelve "xiaoxi hexagrams" 十二消息卦 map precisely onto the Yin-Yang waxing and waning across the year.</p>
+<p>This single sentence contains all three elements of the proposed definition: <strong>阴阳</strong> (Yin–Yang), <strong>消息</strong> (waxing and waning), and <strong>期</strong> (periodicity/countable rhythm). The classical Chinese tradition thus independently arrived at a relational-operational definition of time that anticipates modern phase-locking metrology.</p>
+<h3 id="24-the-wenshi-zhenjing-the-ontological-anchor">2.4 The <em>Wenshi Zhenjing</em>: The Ontological Anchor</h3>
+<p>The <em>Wenshi Zhenjing</em> 文始真经, attributed to Yin Xi 尹喜, provides the ontological anchor for the definition:</p>
+<blockquote>
+<p>运而不已者为时，包而有在者为方。</p>
+</blockquote>
+<p>"Time is never-ending movement. Space is all-embracing existence."</p>
+<p>The sentence pairs <em>shi</em> 时 (time) with <em>fang</em> 方 (space). "运而不已" means "never-ending movement." Time is what is grasped when ceaseless operation is articulated; space is what is grasped when encompassing presence is articulated. Then <em>Wenshi Zhenjing</em> explains: "运而不已，四时生焉；包而有在，四方立焉" (Never-ending movement generates time; all-embracing existence establishes space). Time is thus anchored in the <strong>never-ending movement of the universe</strong>, not in a container external to it.</p>
+<h3 id="25-the-zhoubi-suanjing-the-numerical-grammar">2.5 The <em>Zhoubi Suanjing</em>: The Numerical Grammar</h3>
+<p>The <em>Zhoubi Suanjing</em> 周髀算经 opens with Shang Gao's reply to the Duke of Zhou: "方属地，圆属天，天圆地方" (square belongs to earth, circle belongs to heaven; heaven is round, earth is square). Zhao Shuang's third-century commentary forecloses a naive geometric reading:</p>
+<blockquote>
+<p>天动为圆，其数奇；地静为方，其数耦。此配阴阳之义，非实天地之体也。</p>
+</blockquote>
+<p>"Heaven's motion is circle, its number odd; earth's stillness is square, its number even. This is the meaning of pairing Yin and Yang; it is not the actual body of heaven and earth." Zhao Shuang's gloss is decisive: circle and square are <strong>odd–even numbers, motion–stillness, Yin–Yang pairing</strong>, not geometric shapes. Circle and square are the <strong>numerical grammar</strong> of Yin–Yang. Number becomes possible because Yin–Yang, odd–even, motion–stillness are articulated as a countable order.</p>
+<h3 id="26-classical-extensions-cosmological-constancy-and-operational-rhythm">2.6 Classical Extensions: Cosmological Constancy and Operational Rhythm</h3>
+<p>Beyond the <em>Zhoubi Suanjing</em> and the <em>Baihu Tong</em>, two additional classical sources deepen the ontological and operational dimensions of the definition.</p>
+<p>Dong Zhongshu (c. 179–104 BCE) in the <em>Chunqiu Fanlu</em> 春秋繁露 offers the most direct ontological grounding for the claim that Yin–Yang alternation is not merely one among many natural rhythms, but the constitutive structure of temporal order itself:</p>
+<blockquote>
+<p>天地之常，一阴一阳。……迹阴阳终岁之行，以观天之所亲而任。</p>
+</blockquote>
+<p>"The constant principle of Heaven and Earth is simply Yin and Yang. … Trace the course of Yin and Yang through the full year to observe what Heaven draws near to and employs."</p>
+<p>The key term <em>chang</em> 常—"constant principle"—is a categorical rather than empirical claim. Dong asserts that Yin–Yang alternation is the invariant background against which all change becomes intelligible. The phrase <em>ji Yin-Yang zhong sui zhi xing</em> 迹阴阳终岁之行—"trace the course of Yin and Yang through the full year"—operationalizes this constancy: counting is not an afterthought applied to time; the very act of <em>tracing</em> 迹 the annual circuit of Yin and Yang <em>is</em> the construction of time as a countable quantity.</p>
+<p>Complementing Dong's cosmological framing, the <em>Guiguzi</em> 鬼谷子 (c. 4th–3rd century BCE) supplies the operational microstructure of Yin–Yang rhythm at the scale of action and communication. Its opening chapter defines <em>bai he</em> 捭阖—"opening and closing"—as the fundamental oscillatory unit underlying all agency:</p>
+<blockquote>
+<p>捭之者，开也，言也，阳也；阖之者，闭也，默也，阴也。
+(To <em>bai</em> is to open, to speak, to be Yang; to <em>he</em> is to close, to be silent, to be Yin.)</p>
+<p>阳动而行，阴止而藏；阳动而出，阴随而入。阳还终始，阴极阳生。
+(Yang moves and proceeds, Yin stops and stores; Yang moves outward, Yin follows inward. Yang returns from end to beginning; Yin at its extreme gives birth to Yang.)</p>
+</blockquote>
+<p>This text demonstrates that the Yin–Yang rhythm is not restricted to astronomical or seasonal scales. A single act of speech (Yang) followed by silence (Yin) constitutes one minimal countable cycle. The closed-loop formulation <em>Yang huan zhong shi, Yin ji Yang sheng</em> precisely mirrors the phase-locked oscillation condition in Eq. (4): two conjugate modes alternately dominate, and the reversal at the extreme of each phase guarantees periodicity. The <em>Guiguzi</em> thus supplies the <strong>behavioral-dynamical</strong> layer of the definition: every act of an agent—opening/closing, speaking/listening, acting/resting—is simultaneously an instance of time-constitution at the micro-scale.</p>
+<h3 id="27-the-resulting-intuition">2.7 The Resulting Intuition</h3>
+<p>From these sources, a single intuition emerges: <strong>time is not a container in which change occurs; it is the countable articulation of a ceaseless cosmic operation.</strong> The <em>Baihu Tong</em> supplies the direct definition; the <em>Wenshi</em> supplies the ontological anchor; the <em>Zhoubi</em> supplies the numerical grammar; the <em>Chunqiu Fanlu</em> and <em>Guiguzi</em> supply the cosmological constancy and operational microstructure. The proposed definition is the explicit formulation of this intuition.</p>
+<hr />
+<h2 id="3-the-definition">3. The Definition</h2>
+<h3 id="31-statement">3.1 Statement</h3>
+<blockquote>
+<p><strong>Definition.</strong> Time is the countable rhythm of Yin–Yang waxing and waning.</p>
+</blockquote>
+<p>Three terms require specification.</p>
+<p><strong>Yin–Yang</strong> denotes a pair of complementary poles that are defined reciprocally: neither pole has independent existence; each is what it is only in relation to the other.</p>
+<p><strong>Waxing and waning</strong> denotes the dynamic, reciprocal transformation of the poles: as one waxes the other wanes, and the transformation is cyclic rather than monotonic.</p>
+<p><strong>Countable rhythm</strong> denotes the repeatable, partitionable order exhibited by the waxing and waning when compared against a reference process. "Rhythm" already contains the idea of dynamic balance: a rhythm is an order that persists <em>through</em> change, not <em>despite</em> it. "Countable" adds the operational condition: the rhythm must admit periodization and comparison.</p>
+<h3 id="32-formal-statement">3.2 Formal Statement</h3>
+<p>Let $\Phi(t)$ denote an unwrapped phase of a Yin–Yang oscillation, and let $\omega_0 = 2\pi/T_0$ be a constant reference angular frequency. Define the phase-based elapsed-time estimate relative to this reference as:</p>
+<div class="math-block">$$
+\tau_{\Phi} \equiv \frac{\Phi(t)-\Phi(t_0)}{\omega_0}, \quad T_0=\frac{2\pi}{\omega_0} \quad (1)
+$$</div>
+<p>The corresponding accumulated cycle count is $N_{\Phi}=[\Phi(t)-\Phi(t_0)]/(2\pi)$, which need not be an integer for arbitrary endpoints. If the endpoints are chosen at the same phase after exactly $N$ complete cycles, then $\Delta\Phi=2\pi N$ and $\tau_{\Phi}=NT_0$. For a nonuniform oscillator, this expression is a reference-based phase estimate; its interpretation as physical elapsed time depends on the calibration and stability of the reference. Equation (1) therefore formalizes one operational realization of the proposal: elapsed time can be estimated by accumulated phase relative to a reference rhythm.</p>
+<h3 id="33-what-the-definition-is-not">3.3 What the Definition Is Not</h3>
+<p>The definition is <strong>not substantival</strong>: it does not posit a time-substance. It is <strong>not purely relational in the bare sense</strong>: it does not merely say that time is a system of relations, but specifies <em>which</em> relations—Yin–Yang waxing and waning—constitute it. It is <strong>not a reduction to mechanics</strong>: it does not claim that time <em>is</em> motion, but that time is the countable order <em>of</em> a certain kind of motion.</p>
+<hr />
+<h2 id="4-physical-translation">4. Physical Translation</h2>
+<h3 id="41-yinyang-as-conjugate-variables">4.1 Yin–Yang as Conjugate Variables</h3>
+<p>A periodic oscillation can be represented by a pair of phase-related variables. For a harmonic oscillator of mass $m$, amplitude $A$, angular frequency $\omega$, and initial phase $\phi_0$:</p>
+<div class="math-block">$$
+q(t)=A\cos(\omega t+\phi_0), \quad p(t)=m\dot q(t)=-mA\omega\sin(\omega t+\phi_0) \quad (2)
+$$</div>
+<p>Here $p$ is the canonical momentum. If a normalized momentum is used instead, the factor $m$ may be absorbed into the variable definition. The pair $(q,p)$ is a mathematically useful illustration of complementary, phase-related variables, but its identification with Yin–Yang is a proposed mapping or analogy, not an established physical identity. When $q$ is maximal, $p$ is zero; as $q$ changes, $p$ varies in quadrature. The phase is:</p>
+<div class="math-block">$$
+\Phi(t)=\omega t+\phi_0, \quad N_{\Phi}=\frac{\Phi(t)-\Phi(t_0)}{2\pi} \quad (3)
+$$</div>
+<p>For constant $\omega$, $N_{\Phi}$ gives the accumulated number of cycles, which is an integer only when the endpoints delimit complete cycles. Equation (3) is a bridge between the proposed philosophical vocabulary and the operational vocabulary of phase accumulation: <strong>waxing and waning is represented by oscillation; countability is represented by cycle counting.</strong></p>
+<h3 id="42-countability-as-phase-locking">4.2 Countability as Phase Locking</h3>
+<p>One way to compare a rhythm against a reference is <strong>phase locking</strong>: two oscillators are locked when their phase difference remains bounded over a specified interval:</p>
+<div class="math-block">$$
+|\Phi_1(t)-\Phi_2(t)|\leq C \quad \text{for } t\in I \quad (4)
+$$</div>
+<p>where $C$ is a finite constant and $I$ is the stated locking interval. Phase locking can support robust comparison and cycle readout, but it is not a necessary condition for every form of cycle counting: cycles may also be counted by threshold crossings or other calibrated reference procedures. Equation (4) therefore describes one important operational method, not a universal mathematical definition of countability.</p>
+<h3 id="43-compatibility-with-existing-positions">4.3 Compatibility with Existing Positions</h3>
+<p>Aristotle says: <em>δῆλον οὖν ὅτι ὁ χρόνος ἀριθμός ἐστι κινήσεως κατὰ τὸ πρότερον καὶ ὕστερον, καὶ συνεχής (κινήσεως γάρ τινος).</em></p>
+<p><strong>Aristotelian Reconstruction.</strong> In <em>Physics</em> IV, Aristotle's definition of time is traditionally rendered as "the number of motion with respect to before and after" (δῆλον οὖν ὅτι ὁ χρόνος ἀριθμός ἐστι κινήσεως κατὰ τὸ πρότερον καὶ ὕστερον, καὶ συνεχής). However, reading through the lens of Chinese cosmology reveals a deeper resonance that medieval Latin translations obscured:</p>
+<ol>
+<li><strong>ἀριθμός (arithmos)</strong> is not an abstract number but "a measurable order or rhythm" (akin to <em>rhythmos</em>). When rendered in classical Chinese, it is <strong>"度" (measure/degree)</strong>—the rhythmic order captured by the mind within ceaseless change.</li>
+<li><strong>κατὰ τὸ πρότερον καὶ ὕτερον (before and after)</strong> maps directly to the <strong>"消息之先后" (sequence of waxing and waning)</strong> of Yin and Yang.</li>
+<li><strong>συνεχής (synechēs)</strong> means "closely held together, continuous," precisely echoing the <em>Wenshi Zhenjing</em>'s <strong>"运而不已" (never-ending movement)</strong>.</li>
+</ol>
+<p>Thus, a philologically grounded translation of Aristotle, liberated from geometric linearity, reads: <strong>"Time is the measure of movement, following the sequence of waxing and waning; because it attaches to never-ending movement, its body is continuous and unbroken"</strong> 时者，运之度也，依乎消息之先后，附于不息之运，故其体连绵不绝. This eliminates the dichotomy between Greek and Chinese thought: Aristotle, like the <em>Baihu Tong</em>, defines time as the rhythmic order of a dynamic polarity.</p>
+<p><strong>The "Now" and "Ji" 几/幾.</strong> This reconstruction also resolves the Aristotelian paradox of the "Now" (<em>To Nyn</em>). In Western geometry, the Now is a dimensionless, vanishing point. But if time is the rhythm of Yin–Yang, the Now corresponds to the Chinese concept of <strong>"几/幾"</strong>—"the subtle incipience of motion" 动之微, the critical threshold where Yin and Yang undergo phase transition. The Now is not an empty geometric cut; it is the phase-locking reset point of the cosmic rhythm, where the old phase ends and the new begins.</p>
+<p><strong>Relationalism (Rovelli).</strong> Rovelli argues that time is not a fundamental entity but a relational structure that emerges from the comparison of physical processes. The proposed definition is relational in this sense, but adds a dynamical vocabulary: the relations are not arbitrary but are structured as Yin–Yang waxing and waning.</p>
+<p><strong>Envariance (Zurek).</strong> Zurek's environment-assisted invariance derives the Born rule from the symmetry of entangled states. The proposed definition does not attempt to derive quantum probabilities, but shares with envariance the insight that <strong>countability is grounded in symmetry</strong>.</p>
+<hr />
+<h2 id="5-the-static-as-quasi-static-projection">5. The Static as Quasi-Static Projection</h2>
+<h3 id="51-the-problem-of-the-static">5.1 The Problem of the Static</h3>
+<p>If time is a rhythm, what is a "static" moment? The static appears to be the absence of rhythm. But on the proposed definition, the static cannot be fundamental: a static moment is either a rhythm of infinite period or a projection of a rhythm onto a slice.</p>
+<h3 id="52-projection-formalism">5.2 Projection Formalism</h3>
+<p>Let $\mathcal{M}$ be a state space or dynamical manifold, $\gamma\subset\mathcal{M}$ a trajectory, and $\Sigma$ a specified observation slice or constraint surface. When the intersection is well-defined, the observed slice is represented by $\gamma\cap\Sigma$; more generally, a projection or observation map must be specified by the model:</p>
+<div class="math-block">$$
+\pi_\Sigma(\gamma)=\gamma\cap\Sigma \quad \text{(when defined)} \quad (5)
+$$</div>
+<p>Equation (5) formalizes a possible representation of a static observation as a slice through a trajectory. By itself, it does not prove that all static configurations are derivative or that dynamic rhythm is ontologically fundamental; those remain interpretive claims of the proposed architecture.</p>
+<h3 id="53-dependence-on-frame-slice-and-measurement-basis">5.3 Dependence on Frame, Slice, and Measurement Basis</h3>
+<p>The projection depends on three choices: (1) the reference frame defining the slice; (2) the time slice selected; (3) the measurement basis used to read out the configuration. The static is therefore <strong>quasi-static</strong>: it is static only relative to a frame, a slice, and a basis. There is no absolute static, because there is no absolute frame, slice, or basis.</p>
+<h3 id="54-consequence">5.4 Consequence</h3>
+<p>The consequence is ontological: <strong>the dynamic rhythm is fundamental; the static is derivative.</strong> This inverts the common intuition that time is a succession of static moments. On the proposed definition, there are no static moments <em>prior</em> to the rhythm; there are only slices <em>through</em> the rhythm.</p>
+<hr />
+<h2 id="6-the-arrow-of-time-as-a-perspectival-phenomenon">6. The Arrow of Time as a Perspectival Phenomenon</h2>
+<h3 id="61-the-problem-of-the-arrow">6.1 The Problem of the Arrow</h3>
+<p>The fundamental equations of classical and quantum mechanics are time-reversal symmetric. Yet the macroscopic world exhibits a robust arrow: entropy increases, memories form, causes precede effects. If time is a countable rhythm, where does the arrow come from?</p>
+<h3 id="62-the-arrow-as-perspectival">6.2 The Arrow as Perspectival</h3>
+<p>The proposed answer is that <strong>the arrow is not a property of the rhythm itself but of the observer's relation to the rhythm.</strong> The rhythm is cyclic—Yin–Yang waxing and waning returns to itself. The arrow arises from the <strong>irreversible accumulation of entropy</strong> along the trajectory:</p>
+<div class="math-block">$$
+\frac{dS_{\mathrm{cg}}}{dt}\geq 0 \quad (6)
+$$</div>
+<p>Here $S_{\mathrm{cg}}$ denotes a coarse-grained thermodynamic entropy under conditions in which the usual macroscopic entropy-increase description applies. The inequality is not a universal pointwise law for every subsystem or every microscopic trajectory, and it does not by itself derive memory, causality, or the full arrow of time. It illustrates how a macroscopic orientation can arise in a coarse-grained description.</p>
+<h3 id="63-compatibility-with-the-definition">6.3 Compatibility with the Definition</h3>
+<p>The definition accommodates the arrow without abandoning the rhythm: <strong>the cyclic rhythm gives the measure; the irreversible accumulation gives the direction.</strong> Time as countable rhythm provides the metric; the entropy gradient provides the orientation. The rhythm is the order, the arrow is the orientation of that order for a coarse-graining observer.</p>
+<h3 id="64-consequence">6.4 Consequence</h3>
+<p>The consequence is that <strong>the arrow is not a fundamental feature of time but a feature of the observer's relation to time.</strong> This is consistent with Rovelli's relationalism and with the thermodynamic account of the arrow, but adds a specific claim: the arrow is the <strong>orientation of a cyclic rhythm under coarse-graining</strong>.</p>
+<hr />
+<h2 id="7-the-history-of-timekeeping-as-empirical-support">7. The History of Timekeeping as Empirical Support</h2>
+<h3 id="71-the-unifying-logic">7.1 The Unifying Logic</h3>
+<p>If time is the countable rhythm of Yin–Yang waxing and waning, then the history of timekeeping should exhibit a single logic: <strong>the search for progressively quieter Yin–Yang rhythms</strong>—rhythms that are less susceptible to environmental perturbation, more stable, and more precisely countable.</p>
+<h3 id="72-the-sequence">7.2 The Sequence</h3>
+<p><strong>Gnomon and sundial.</strong> The gnomon reads the waxing and waning of the sun's shadow: the shadow shortens as Yang waxes toward the summer solstice, lengthens as Yin waxes toward the winter solstice.</p>
+<p><strong>Water clock and sand glass.</strong> The flow of water or sand provides a rhythm independent of the sun. The Yin–Yang pair is the filling and emptying of the vessels.</p>
+<p><strong>Mechanical clock.</strong> The escapement regulates the waxing and waning of a pendulum or balance wheel, converting a free oscillation into a counted rhythm.</p>
+<p><strong>Atomic clock.</strong> The oscillation is the transition between two hyperfine levels of caesium-133. The Yin–Yang pair is the two levels; the countability is the frequency $9\,192\,631\,770$ Hz.</p>
+<p><strong>Optical and nuclear clocks.</strong> The oscillation is pushed to higher frequencies and deeper into the atom: from outer-electron transitions to nuclear transitions. The logic is the same—find a rhythm that is <strong>more shielded from environmental perturbation</strong>.</p>
+<h3 id="73-the-general-form">7.3 The General Form</h3>
+<p>For a clock that counts $N$ complete cycles of a stable reference oscillator, the elapsed reference time is:</p>
+<div class="math-block">$$
+\tau=N T_{\mathrm{ref}}=N\frac{2\pi}{\omega_{\mathrm{ref}}} \quad (7)
+$$</div>
+<p>This expression assumes a well-defined reference period and a count of complete cycles; real clocks also require calibration and account for uncertainty and environmental effects. The history of timekeeping is thus the history of improving the stability and readout of $\omega_{\mathrm{ref}}$—quieter Yin–Yang rhythms.</p>
+<hr />
+<h2 id="8-boundaries-no-terminal-point">8. Boundaries: No Terminal Point</h2>
+<h3 id="81-the-temptation-of-a-terminal-point">8.1 The Temptation of a Terminal Point</h3>
+<p>It is tempting to suppose that the definition has a lower bound: the Planck time $t_P \approx 5.39 \times 10^{-44}\,\text{s}$, below which "countable rhythm" loses meaning. This temptation should be resisted. The Planck time is not a terminal point of countability; it is the <strong>resolution boundary of current locking protocols</strong>.</p>
+<h3 id="82-the-lesson-of-history">8.2 The Lesson of History</h3>
+<p>The history of measurement is a history of terminal points being redefined as starting points. The diffraction limit of optical microscopy was overcome by electron and near-field microscopy; the stability limit of atomic clocks was overcome by optical and nuclear clocks. There is no reason to suppose that the Planck scale is different.</p>
+<h3 id="83-scale-invariance">8.3 Scale Invariance: "大而无外，小而无内"</h3>
+<p>The classical formula "the largest has no exterior, the smallest has no interior 大而无外，小而无内" captures the correct structure:</p>
+<ul>
+<li><strong>No largest rhythm</strong>: there is no external frame from which to cap the largest cycle. The "one revolution of the Dao" is the largest countable cycle <em>within the current architecture</em>, but if the universe has nested or open topology, this revolution is a phase segment of a larger cycle.</li>
+<li><strong>No smallest rhythm</strong>: there is no indivisible rhythm-atom. The sub-Planckian landscape is not "rhythmless chaos" but <strong>a finer Yin–Yang waxing and waning that the current locking protocol cannot resolve</strong>—just as the atom was not "indivisible" but "requiring a new grammar."</li>
+</ul>
+<p><strong>Classical Motivation for the Open-Scale Axiom</strong></p>
+<p>The claim that the rhythm definition admits no terminal scale finds a striking classical precedent in the <em>Guiguzi</em> 鬼谷子, which explicitly asserts the scale-free character of Yin–Yang alternation:</p>
+<blockquote>
+<p>由此言之，无所不出，无所不入，无所不可。可以说人，可以说家，可以说国，可以说天下。为小无内，为大无外。</p>
+</blockquote>
+<p>"From this it follows: there is nowhere it cannot go out, nowhere it cannot enter, nothing it cannot accomplish. It can be applied to a person, to a family, to a state, to the world. The smallest has no interior, the largest has no exterior."</p>
+<p>The phrase <em>the largest has no exterior, the smallest has no interior 大而无外，小而无内</em> motivates the proposed <strong>open-scale axiom</strong>: the theory does not stipulate an absolute lower or upper boundary for its scale domain. At the small end, the architecture postulates the possibility of finer rhythm structures ("no interior"); at the large end, it postulates no finite terminal bound ("no exterior"). This philosophical motivation does not itself prove scale invariance or establish the physical existence of rhythms at every scale; the latter is stated separately as Axiom B. The Planck time is not adopted as a terminal grain of time in this architecture, although whether any physical limit exists requires a separate argument.</p>
+<h3 id="84-formal-postulates-open-scale-all-scale-existence-and-measurement">8.4 Formal Postulates: Open Scale, All-Scale Existence, and Measurement</h3>
+<p>The strong claim of this paper is not merely that current measurement limits should not be mistaken for limits on existence. The architecture adopts the following postulates, whose consequences are conditional on their acceptance.</p>
+<p><strong>Axiom A — Open-Scale Axiom.</strong> Let $\mathcal T\subset(0,\infty)$ be the set of rhythm periods admitted by the theory, and let $\mathcal D\subset(0,\infty)$ be the set of admitted positive time intervals. Require:</p>
+<div class="math-block">$$
+\inf\mathcal T=0, \quad \sup\mathcal D=+\infty \quad (8)
+$$</div>
+<p>This means that $\mathcal T$ has no strictly positive uniform lower bound and $\mathcal D$ has no finite upper bound. It does not mean that a zero period or an infinite interval is attained, nor that every positive period is admitted.</p>
+<p><strong>Axiom B — All-Scale Rhythm Existence Axiom.</strong> Let $\mathcal S$ be the full scale domain stipulated by the theory, and let $\mathcal R(s)$ denote the set of physically realizable rhythms at scale $s$. Require:</p>
+<div class="math-block">$$
+\forall s\in\mathcal S, \quad \mathcal R(s)\neq\varnothing \quad (9)
+$$</div>
+<p>This is the paper's strong ontological postulate: at every scale in the stipulated domain, at least one physically realizable rhythm is postulated to exist. To express the intended all-scale claim, $\mathcal S$ must be understood as the full scale domain of the theory, not merely the subset currently accessible to instruments. Axiom B is independent of Axiom A: the absence of a uniform lower or upper bound does not by itself prove that a rhythm exists at every scale.</p>
+<p><strong>Operational Postulate C — In-Principle Measurability.</strong> Let $\mathcal M$ be the class of physically admissible measurement arrangements, and let $O(M,s)$ indicate whether arrangement $M$ can identify a rhythm at scale $s$ under specified conditions. The strong operational claim is:</p>
+<div class="math-block">$$
+\forall s\in\mathcal S, \quad \exists M\in\mathcal M:\ O(M,s)=1 \quad (10)
+$$</div>
+<p>This states that each scale in $\mathcal S$ has at least one physically admissible measurement arrangement capable of identifying its rhythm. It is stronger than saying that instruments may improve in the future. It requires a physical account of coupling, signal discrimination, resolution, sensitivity, noise, disturbance, and resource constraints. The existence of a mathematical symbol $M$ is not by itself proof that such an instrument can be physically constructed.</p>
+<p>Axioms A and B express the open-scale and all-scale existence commitments of the architecture; Postulate C makes explicit the additional measurement commitment proposed here. They are theoretical postulates, not conclusions established by the historical examples of clocks. Their physical standing depends on whether the architecture can develop internally consistent dynamics and testable consequences.</p>
+<h3 id="85-consequence">8.5 Consequence</h3>
+<p>If Axioms A and B are adopted, the definition is intended to apply throughout the stipulated scale domain without an assumed terminal point, and at least one physically realizable rhythm is postulated to exist at each scale in that domain. If Operational Postulate C is also adopted, each such scale is in principle identifiable by some physically admissible measurement arrangement. These are conditional consequences of the postulates, not independent empirical demonstrations. The claim does not entail scale invariance: the rhythm’s physical realization and governing dynamics may differ across scales.</p>
+<hr />
+<h2 id="9-conclusion">9. Conclusion</h2>
+<p>We have proposed and defended a definition: <strong>time is the countable rhythm of Yin–Yang waxing and waning.</strong> The definition has classical roots in the <em>Baihu Tong</em>, the <em>Wenshi Zhenjing</em>, the <em>Zhoubi Suanjing</em>, the <em>Chunqiu Fanlu</em>, and the <em>Guiguzi</em>; a precise physical translation into conjugate-variable oscillation and phase locking; and three consequences: the static is a quasi-static projection, the arrow is perspectival, and the history of timekeeping is the search for quieter rhythms.</p>
+<p>By reconstructing Aristotle's <em>Physics</em> through the philological lens of Chinese cosmology, we have shown that the Greek <em>arithmos</em> and the Chinese <em>du</em> 度 converge on the same truth: time is not a geometric container but the measurable rhythm of a never-ending dynamic. The "Now" is not an empty point but the <em>Ji</em> 几/幾 of phase transition. The architecture adopts an open-scale axiom and a stronger all-scale rhythm-existence axiom, motivated in part by "great without exterior, small without interior." These are explicit theoretical commitments; the additional claim of in-principle measurability is stated separately.</p>
+<p>The definition is not a metaphor. It is a relational–operational account that specifies <em>which</em> relations constitute time and <em>how</em> they are counted. Whether it will prove fruitful in the foundations of physics and in metrology is a question for future work—but at minimum, if asked <strong>"What is time,"</strong> an answer worth taking seriously is: </p>
+<p><strong>"Time is the countable rhythm of Yin–Yang waxing and waning."</strong></p>
+<hr />
+<h2 id="acknowledgments">Acknowledgments</h2>
+<p>We are grateful to all the individual scientists and teams of scientists who have contributed to the exploration and understanding of the entire universe. Supported by AI-driven Supercomputers and the MES Universe Project. We have benefited from our amazing AI partners.</p>
+<h2 id="funding">Funding</h2>
+<p>Not applicable.</p>
+<h2 id="availability-of-data-and-material">Availability of data and material</h2>
+<p>Code, mathematical scripts, and preprints are available at GitHub: https://github.com/Zaitian001/-Self-Preprint-V1.1-</p>
+<h2 id="competing-interests">Competing interests</h2>
+<p>Not applicable.</p>
+<h2 id="author-contributions">Author Contributions</h2>
+<p>Baoliin (Zaitian) Wu 伍宝林 is the sole author of this manuscript and is responsible for all aspects of the research, including conceptualization, methodology, theoretical formulation, and manuscript writing.</p>
+<hr />
+<h2 id="references">References</h2>
+<p>[1] Aristotle. (1831). Φυσικής Ακροάσεως [Physicorum libri VIII]. In I. Bekker (Ed.), Aristoteles Opera (Vol. 1, pp. 184–267). Academia Regia Borussica. (Original work published ca. 350 BCE)</p>
+<p>[2] Ban Gu 班固. <em>Baihu Tong</em> 白虎通. (Original work published 79 CE)</p>
+<p>[3] Wunengzi 无能子. (Original work published 887 CE)</p>
+<p>[4] Shang Gao 商高. <em>Zhoubi Suanjing</em> 周髀算经. (Original work transmitted orally by Shang Gao and recorded in manuscript by Zhou Gong ca. 1046 BCE)</p>
+<p>[5] Yin Xi 尹喜. <em>Wenshi Zhenjing</em> 文始真经. (Original work published ca. 485 BCE)</p>
+<p>[6] Dong Zhongshu 董仲舒. <em>Chunqiu Fanlu</em> 春秋繁露. (Original work published ca. 135 BCE)</p>
+<p>[7] Guiguzi 鬼谷子. (Original work published ca. 360 BCE)</p>
+<p>[8] Rovelli, C. (2018). The order of time. Riverhead Books.</p>
+<p>[9] Rovelli, C. (2011). “Forget time”. Foundations of Physics, 41, 1475–1490. https://doi.org/10.1007/s10701-011-9561-4</p>
+<p>[10] Zurek, W. H. (2003). "Environment-Assisted Invariance, Entanglement, and Probabilities in Quantum Physics." <em>Physical Review Letters</em> 90, 120404. https://doi.org/10.1103/PhysRevLett.90.120404</p>
+<p>[11] Baoliin (Zaitian) Wu 伍宝林. (2026). Curvature-Driven Open Quantum Dynamics and the Pure Geometric Origin of Physics Constants. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553914.html</p>
+<p>[12] Baoliin (Zaitian) Wu. (2025). The Pure Geometric Origin of Mass and Light. Preprints. https://doi.org/10.20944/preprints202505.2249.v1</p>
+<p>[13] Baoliin (Zaitian) Wu. (2025). The Return to the Einstein Spherical Universe Model. Preprints. https://doi.org/10.20944/preprints202501.2189.v1</p>
+<p>[14] Baoliin (Zaitian) Wu. (2025). The Return to the Einstein Spherical Universe: The Dawning Moment of a New Cosmic Science. Preprints. https://doi.org/10.20944/preprints202504.0727.v2</p>
+<p>[15] Baoliin (Zaitian) Wu 伍宝林. (2026). The Overlooked Coordinate System Exorcising the Demons and Ghosts of Quantum Measurement. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553901.html</p>
+<p>[16] Baoliin (Zaitian) Wu 伍宝林. (2026). Wuxing Dao. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553905.html</p>
+<p>[17] Baoliin (Zaitian) Wu 伍宝林. (2026). The Gui-Ju Dao: The Artificial General Intelligence Algorithm, Geometry, and Engineering Paradigm of China's Indigenous Closed Spherical Universe. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553902.html</p>
+<p>[18] Baoliin (Zaitian) Wu 伍宝林. (2026). Groma-Ju Dao: The Six Modes of the Zhoubi Suanjin "Ju" as a Geometric Operator System. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553910.html</p>
+<p>[19] Laozi 老子. Daodejing 道德经. (Original work published ca. 535 BCE; Confucius first met Laozi)</p>
+<p>[20] Patañjali. <em>Yoga Sūtra</em>. (Original work published ca. 150 BCE)</p>
+<p>[21] Gautama Buddha (attributed). <em>Vajracchedikā Prajñāpāramitā Sūtra</em> 金刚经.</p>
+<p>[22] Pseudo-Dionysius the Areopagite. <em>The Mystical Theology</em>. (Original work published ca. 580 CE)</p>
+<p>[23] Vyasa (attributed). <em>Bhagavad Gītā</em>. (Original work published ca. 200 BCE)</p>
+        </div>
+    </article>
+
+    <!-- 引用格式选择器（Google Scholar 风格） -->
+    <div class="citation-toggle">
+        <span class="cite-label">📚 Cite this paper</span>
+        <span class="cite-arrow">▾</span>
+    </div>
+    <div class="citation-panel" id="citationPanel">
+        <div class="citation-format-selector">
+            <button class="format-btn active" data-format="apa">APA</button>
+            <button class="format-btn" data-format="mla">MLA</button>
+            <button class="format-btn" data-format="chicago">Chicago</button>
+            <button class="format-btn" data-format="bibtex">BibTeX</button>
+        </div>
+        <div class="citation-display" id="citationDisplay">
+            <span class="citation-text" id="citationText"></span>
+            <button class="copy-btn" id="copyCitationBtn">📋 Copy</button>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        © 2026 Baoliin (Zaitian) Wu 伍宝林 | Independent theoretical physicist | Self-Preprint Decentralized Academic Archive
+    </footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const citationData = {"apa": "Baoliin (Zaitian) Wu \u4f0d\u5b9d\u6797 (2026). Time Is the Countable Rhythm of Yin\u2013Yang Waxing and Waning. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553925.html", "mla": "Baoliin (Zaitian) Wu \u4f0d\u5b9d\u6797. \"Time Is the Countable Rhythm of Yin\u2013Yang Waxing and Waning.\" Self-Preprint Archive, 2026, https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553925.html.", "chicago": "Baoliin (Zaitian) Wu \u4f0d\u5b9d\u6797. \"Time Is the Countable Rhythm of Yin\u2013Yang Waxing and Waning.\" Self-Preprint Archive. Accessed October 28, 2026. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553925.html.", "bibtex": "@article{selfpreprint_DW58553925,\n  author = {Baoliin (Zaitian) Wu \u4f0d\u5b9d\u6797},\n  title = {Time Is the Countable Rhythm of Yin\u2013Yang Waxing and Waning},\n  journal = {Self-Preprint Archive},\n  year = {2026},\n  url = {https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553925.html}\n}"};
+    const toggle = document.querySelector('.citation-toggle');
+    const panel = document.getElementById('citationPanel');
+    const textDisplay = document.getElementById('citationText');
+    const copyBtn = document.getElementById('copyCitationBtn');
+    let currentFormat = 'apa';
+
+    if (toggle && panel) {
+        toggle.addEventListener('click', function() {
+            this.classList.toggle('open');
+            panel.classList.toggle('open');
+            if (panel.classList.contains('open')) {
+                updateCitation('apa');
+            }
+        });
+    }
+
+    document.querySelectorAll('.format-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            document.querySelectorAll('.format-btn').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            currentFormat = this.getAttribute('data-format');
+            updateCitation(currentFormat);
+        });
+    });
+
+    function updateCitation(format) {
+        let text = citationData[format] || 'Citation not available';
+        if (format === 'bibtex') {
+            textDisplay.className = 'citation-text bibtex-display';
+            textDisplay.textContent = text;
+        } else {
+            textDisplay.className = 'citation-text';
+            textDisplay.textContent = text;
+        }
+        copyBtn.textContent = '📋 Copy';
+        copyBtn.classList.remove('copied');
+    }
+
+    if (copyBtn) {
+        copyBtn.addEventListener('click', function() {
+            const text = textDisplay.textContent;
+            navigator.clipboard.writeText(text).then(function() {
+                copyBtn.textContent = '✅ Copied!';
+                copyBtn.classList.add('copied');
+                setTimeout(function() {
+                    copyBtn.textContent = '📋 Copy';
+                    copyBtn.classList.remove('copied');
+                }, 2000);
+            }).catch(function() {
+                const ta = document.createElement('textarea');
+                ta.value = text;
+                document.body.appendChild(ta);
+                ta.select();
+                document.execCommand('copy');
+                document.body.removeChild(ta);
+                copyBtn.textContent = '✅ Copied!';
+                setTimeout(function() {
+                    copyBtn.textContent = '📋 Copy';
+                }, 2000);
+            });
+        });
+    }
+
+    updateCitation('apa');
+});
+</script>
+
+<!-- 引入 Mermaid 渲染引擎 -->
+<script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+    document.addEventListener("DOMContentLoaded", async function () {
+        const codeBlocks = document.querySelectorAll('pre code.language-mermaid, pre code.mermaid');
+        codeBlocks.forEach((codeBlock) => {
+            const pre = codeBlock.parentElement;
+            const div = document.createElement('div');
+            div.className = 'mermaid';
+            div.textContent = codeBlock.textContent;
+            pre.replaceWith(div);
+        });
+
+        mermaid.initialize({ startOnLoad: false, theme: 'default', securityLevel: 'loose' });
+        await mermaid.run();
+    });
+</script>
+</body>
+</html>
