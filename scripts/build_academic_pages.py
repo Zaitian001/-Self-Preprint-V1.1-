@@ -2,13 +2,13 @@
 # -*- coding: utf-8 -*-
 
 """
-Self-Preprint V1.2 - Lilian Weng Style Minimal Academic Archive Generator
-自动读取 PREPRINTS/*.md，渲染极简学术归档首页 (index.html)、论文单页、RSS 及 Sitemap。
-支持 PREPRINTS/images 插图自动同步。
-已修复 Abstract 摘要 Markdown 语法解析、首页与单页全局 LaTeX 公式渲染，并内置 Google Scholar 风格的“引用本文”活态按钮。
+Self-Preprint V1.2 - Lilian Weng Style Minimal Academic Archive Generator (Incremental Support)
+自动读取 PREPRINTS/*.md，增量渲染极简学术归档单页 HTML，更新 index.html、RSS 及 Sitemap。
+支持 PREPRINTS/images 插图自动增量同步。
 """
 
 import os
+import sys
 import re
 import glob
 import json
@@ -88,7 +88,7 @@ def render_markdown(text: str) -> str:
         rendered = [f"<p>{line}</p>" if line.strip() else "<br/>" for line in lines]
         html = "\n".join(rendered)
 
-    # 还原块级公式 (转义 < 与 >，防止 bra-ket 被浏览器误认为 HTML 标签)
+    # 还原块级公式
     for i, content in enumerate(block_math_list):
         escaped_content = content.replace("<", "&lt;").replace(">", "&gt;")
         placeholder = f"[[[BLOCK_MATH_{i}]]]"
@@ -104,6 +104,12 @@ def render_markdown(text: str) -> str:
     # 自动为表格包裹响应式外壳
     html = re.sub(r'(<table>.*?</table>)', r'<div class="table-wrap">\1</div>', html, flags=re.DOTALL)
     return html
+
+def should_build_html(md_path: Path, html_path: Path) -> bool:
+    """检查是否需要重新生成 HTML 单页（目标不存在或 md 文件修改时间较新）"""
+    if not html_path.exists():
+        return True
+    return md_path.stat().st_mtime > html_path.stat().st_mtime
 
 # ==================== CSS 样式 ====================
 CSS_STYLE = """
@@ -477,7 +483,6 @@ def generate_paper_html(meta: dict, body_html: str, paper_id: str, currency_data
     title = meta.get("title", paper_id)
     authors_raw = meta.get("authors", meta.get("author", "Anonymous"))
     
-    # 格式化作者列表：显示用逗号，BibTeX 用 ' and '
     if isinstance(authors_raw, list):
         authors_list = [str(a).strip() for a in authors_raw]
         authors_str = ", ".join(authors_list)
@@ -488,7 +493,6 @@ def generate_paper_html(meta: dict, body_html: str, paper_id: str, currency_data
         bibtex_authors = " and ".join(authors_list) if len(authors_list) > 1 else authors_str
 
     date_str = str(meta.get("date", datetime.date.today().isoformat()))
-    # 稳健提取年份
     year_match = re.search(r'\b(19|20)\d{2}\b', date_str)
     year_str = year_match.group(0) if year_match else str(datetime.date.today().year)
 
@@ -498,7 +502,6 @@ def generate_paper_html(meta: dict, body_html: str, paper_id: str, currency_data
     pdf_filename = meta.get("pdf", f"{paper_id}.pdf")
     has_pdf = (BASE_DIR / "public" / "pdf" / pdf_filename).exists()
 
-    # Highwire Press 元数据 (Google Scholar & Zotero)
     highwire_tags = [
         f'<meta name="citation_title" content="{title}">',
         f'<meta name="citation_publication_date" content="{date_str.replace("-", "/")}">',
@@ -512,7 +515,6 @@ def generate_paper_html(meta: dict, body_html: str, paper_id: str, currency_data
         highwire_tags.append(f'<meta name="citation_author" content="{author}">')
     highwire_meta_str = "\n    ".join(highwire_tags)
 
-    # 物理确权 + 陀螺坐标
     serial = currency_data.get("serial", "N/A")
     currency_hash = currency_data.get("hash", "N/A")
     gyro_str = ""
@@ -525,7 +527,7 @@ def generate_paper_html(meta: dict, body_html: str, paper_id: str, currency_data
         prec_deg = gyro_proj["precession_angle_deg"]
         gyro_str = f"<br/>🌀 <strong>Gyroscopic Vector</strong>: <code>({coords['x']}, {coords['y']}, {coords['z']})</code> | Precession: <code>{prec_deg}°</code>"
     except Exception as e:
-        print(f"[WARN] 陀螺坐标计算跳过: {e}")
+        pass
 
     anchor_html = f"""
     <div class="anchor-box">
@@ -536,7 +538,6 @@ def generate_paper_html(meta: dict, body_html: str, paper_id: str, currency_data
 
     pdf_link = f' · <a href="../pdf/{pdf_filename}" target="_blank">PDF</a>' if has_pdf else ''
 
-    # 生成引用格式数据
     citation_data = {
         "apa": f"{authors_str} ({year_str}). {title}. Self-Preprint Archive. {SITE_URL}/preprints/{paper_id}.html",
         "mla": f"{authors_str}. \"{title}.\" Self-Preprint Archive, {year_str}, {SITE_URL}/preprints/{paper_id}.html.",
@@ -586,7 +587,6 @@ def generate_paper_html(meta: dict, body_html: str, paper_id: str, currency_data
         </div>
     </article>
 
-    <!-- 引用格式选择器（Google Scholar 风格） -->
     <div class="citation-toggle">
         <span class="cite-label">📚 Cite this paper</span>
         <span class="cite-arrow">▾</span>
@@ -678,7 +678,6 @@ document.addEventListener('DOMContentLoaded', function() {{
 }});
 </script>
 
-<!-- 引入 Mermaid 渲染引擎 -->
 <script type="module">
     import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
 
@@ -703,7 +702,7 @@ document.addEventListener('DOMContentLoaded', function() {{
 
 # ==================== 首页生成 ====================
 def generate_index_html(papers: list) -> str:
-    """生成类似 lilianweng.github.io 的极简归档首页（支持 MathJax 公式渲染）"""
+    """生成极简归档首页"""
     papers_by_year = {}
     for p in papers:
         year = p["date"].split("-")[0] if "-" in p["date"] else "Archive"
@@ -759,7 +758,7 @@ def generate_index_html(papers: list) -> str:
 
 # ==================== 主构建函数 ====================
 def build():
-    """全量构建过程"""
+    """增量构建过程"""
     OUTPUT_DIR.mkdir(exist_ok=True)
     (OUTPUT_DIR / "preprints").mkdir(exist_ok=True)
 
@@ -770,40 +769,53 @@ def build():
         if images_dst.exists():
             shutil.rmtree(images_dst)
         shutil.copytree(images_src, images_dst)
-        print("[INFO] 插图目录已成功同步至 public/preprints/images")
 
     papers = []
+    rebuilt_count = 0
+    skipped_count = 0
 
     if PREPRINTS_DIR.exists():
-        md_files = glob.glob(str(PREPRINTS_DIR / "*.md"))
-        print(f"[INFO] 找到 {len(md_files)} 篇 Markdown 预印本，开始生成归档页面...")
+        # 支持参数指定单篇构建：python build_academic_pages.py PREPRINTS/DW58553927.md
+        if len(sys.argv) > 1:
+            target_md_files = [Path(p).resolve() for p in sys.argv[1:] if p.endswith('.md')]
+        else:
+            target_md_files = None
 
-        for md_path in md_files:
-            paper_id = Path(md_path).stem
+        all_md_files = [Path(p) for p in glob.glob(str(PREPRINTS_DIR / "*.md"))]
+        print(f"[INFO] 共检测到 {len(all_md_files)} 篇 Markdown 论文...")
+
+        for md_path in all_md_files:
+            paper_id = md_path.stem
+            out_page = OUTPUT_DIR / "preprints" / f"{paper_id}.html"
+
             with open(md_path, "r", encoding="utf-8") as f:
                 content = f.read()
 
             meta, body_text = parse_frontmatter(content)
-            body_html = render_markdown(body_text)
-
-            # 读取防伪存证 JSON
-            currency_info = {"serial": "N/A", "hash": "N/A"}
-            reg_json = REGISTRY_DIR / f"{paper_id}.json"
-            if reg_json.exists():
-                with open(reg_json, "r", encoding="utf-8") as rf:
-                    c_data = json.load(rf)
-                    currency_info["serial"] = c_data.get("serial", "N/A")
-                    currency_info["hash"] = c_data.get("hash", "N/A")
-
-            # 生成文章单页 HTML
-            page_html = generate_paper_html(meta, body_html, paper_id, currency_info)
-            out_page = OUTPUT_DIR / "preprints" / f"{paper_id}.html"
-            with open(out_page, "w", encoding="utf-8") as f:
-                f.write(page_html)
-
-            # 提取无格式摘要用于首页/RSS
             raw_abstract = meta.get("abstract", "")
             rendered_abstract = render_markdown(raw_abstract) if raw_abstract else ""
+
+            # 判断是否需要重新渲染单页 HTML
+            is_targeted = (target_md_files is not None and md_path in target_md_files)
+            is_incremental = (target_md_files is None and should_build_html(md_path, out_page))
+
+            if is_targeted or is_incremental:
+                body_html = render_markdown(body_text)
+
+                currency_info = {"serial": "N/A", "hash": "N/A"}
+                reg_json = REGISTRY_DIR / f"{paper_id}.json"
+                if reg_json.exists():
+                    with open(reg_json, "r", encoding="utf-8") as rf:
+                        c_data = json.load(rf)
+                        currency_info["serial"] = c_data.get("serial", "N/A")
+                        currency_info["hash"] = c_data.get("hash", "N/A")
+
+                page_html = generate_paper_html(meta, body_html, paper_id, currency_info)
+                with open(out_page, "w", encoding="utf-8") as f:
+                    f.write(page_html)
+                rebuilt_count += 1
+            else:
+                skipped_count += 1
 
             papers.append({
                 "id": paper_id,
@@ -814,15 +826,17 @@ def build():
                 "url": f"{SITE_URL}/preprints/{paper_id}.html"
             })
 
+    print(f"⚡ [增量模式] 重新生成了 {rebuilt_count} 篇 HTML 单页，跳过未修改论文 {skipped_count} 篇。")
+
     # 按发布日期倒序排列
     papers.sort(key=lambda x: x["date"], reverse=True)
 
-    # 2. 生成极简归档首页 index.html
+    # 2. 重新更新首页 index.html
     index_html = generate_index_html(papers)
     with open(OUTPUT_DIR / "index.html", "w", encoding="utf-8") as f:
         f.write(index_html)
 
-    # 3. 生成 sitemap.xml
+    # 3. 重新更新 sitemap.xml
     urlset = ET.Element("urlset", xmlns="http://www.sitemaps.org/schemas/sitemap/0.9")
     url_home = ET.SubElement(urlset, "url")
     ET.SubElement(url_home, "loc").text = f"{SITE_URL}/index.html"
@@ -834,7 +848,7 @@ def build():
     ET.indent(tree, space="  ")
     tree.write(OUTPUT_DIR / "sitemap.xml", encoding="utf-8", xml_declaration=True)
 
-    # 4. 生成 feed.xml (RSS 2.0)
+    # 4. 重新更新 feed.xml (RSS 2.0)
     rss = ET.Element("rss", version="2.0")
     channel = ET.SubElement(rss, "channel")
     ET.SubElement(channel, "title").text = "Self-Preprint Academic Archive"
@@ -850,7 +864,7 @@ def build():
     ET.indent(rss_tree, space="  ")
     rss_tree.write(OUTPUT_DIR / "feed.xml", encoding="utf-8", xml_declaration=True)
 
-    print("[SUCCESS] 论文归档、插图同步、RSS 及 Sitemap 已全部构建完成！")
+    print("[SUCCESS] 论文归档 HTML、RSS 及 Sitemap 增量更新已全部完成！")
 
 if __name__ == "__main__":
     build()
