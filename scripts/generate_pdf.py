@@ -2,13 +2,9 @@
 # -*- coding: utf-8 -*-
 
 """
-Self-Preprint PDF Generator with Physical Proof Cover Page (V1.2 Optimized)
+Self-Preprint PDF Generator with Physical Proof Cover Page (V1.2 Incremental)
 利用 pandoc + xelatex 将 PREPRINTS/*.md 编译为包含防伪封面的学术 PDF。
-包含：
-  - LaTeX \tag{} 语法兼容补丁
-  - YAML Frontmatter 重复剥离保护
-  - CJK 中文字体参数精准转义
-  - 临时文件自动安全清理
+支持增量编译：仅编译新增或被修改过的 .md 论文，也可指定单篇论文进行编译。
 """
 
 import os
@@ -111,6 +107,18 @@ def build_cover_md(paper_id: str, title: str, author: str, date_str: str, curren
 """
 
 
+def should_build_pdf(md_path: Path) -> bool:
+    """判断是否需要重新编译 PDF（目标文件不存在或 md 文件较新）"""
+    paper_id = md_path.stem
+    output_pdf_path = OUTPUT_PDF_DIR / f"{paper_id}.pdf"
+    
+    if not output_pdf_path.exists():
+        return True
+    
+    # 比较 md 文件与 pdf 文件的最后修改时间
+    return md_path.stat().st_mtime > output_pdf_path.stat().st_mtime
+
+
 def build_pdf(md_path: Path) -> bool:
     """单篇 PDF 编译 (含封面、正文清洗、附录拼接)"""
     paper_id = md_path.stem
@@ -123,7 +131,7 @@ def build_pdf(md_path: Path) -> bool:
 
     meta, body = extract_metadata_and_body(raw_content)
     title = meta.get("title", paper_id)
-    author = extract_author(meta)  # ← 使用修正后的函数
+    author = extract_author(meta)
     date_str = str(meta.get("date", datetime.now().strftime("%Y-%m-%d")))
 
     # 2. 修复公式中的 \tag{} 兼容问题
@@ -179,7 +187,7 @@ def build_pdf(md_path: Path) -> bool:
 
         print(f"📄 正在编译 PDF: {paper_id}")
         try:
-            result = subprocess.run(
+            subprocess.run(
                 cmd,
                 capture_output=True,
                 text=True,
@@ -201,30 +209,46 @@ def build_pdf(md_path: Path) -> bool:
 
 
 def main():
-    """批量编译所有 Markdown 论文"""
+    """增量或按需编译 PDF 论文"""
     if not shutil.which('pandoc'):
         print("❌ pandoc 未安装，请先安装: sudo apt-get install pandoc texlive-xetex fonts-noto-cjk")
         sys.exit(1)
 
-    md_files = glob.glob(str(PREPRINTS_DIR / "*.md"))
-    if not md_files:
-        print("ℹ️ 未找到任何 .md 论文，跳过 PDF 生成。")
+    # 支持命令行参数：如果指定了文件路径，则仅编译指定的文件
+    if len(sys.argv) > 1:
+        target_files = [Path(p).resolve() for p in sys.argv[1:] if p.endswith('.md')]
+    else:
+        target_files = [Path(p) for p in glob.glob(str(PREPRINTS_DIR / "*.md"))]
+
+    if not target_files:
+        print("ℹ️ 未找到符合要求的 .md 论文，跳过 PDF 生成。")
         return
 
-    print(f"📂 找到 {len(md_files)} 篇论文，开始生成 PDF...\n")
+    # 过滤出需要编译的文件（增量逻辑）
+    if len(sys.argv) == 1:
+        files_to_build = [f for f in target_files if should_build_pdf(f)]
+        skipped_count = len(target_files) - len(files_to_build)
+        if skipped_count > 0:
+            print(f"⚡ [增量模式] 已跳过 {skipped_count} 篇未变更的论文 PDF。")
+    else:
+        files_to_build = target_files
+
+    if not files_to_build:
+        print("🎉 所有 PDF 均已是最新状态，无需重新生成！")
+        return
+
+    print(f"📂 准备为 {len(files_to_build)} 篇论文生成 PDF...\n")
 
     success_count = 0
-    for md_path in md_files:
-        if build_pdf(Path(md_path)):
+    for md_path in files_to_build:
+        if build_pdf(md_path):
             success_count += 1
         print("-" * 40)
 
-    print(f"\n📊 总结：成功生成 {success_count}/{len(md_files)} 个 PDF 文件。")
-    if success_count < len(md_files):
+    print(f"\n📊 总结：成功生成 {success_count}/{len(files_to_build)} 个 PDF 文件。")
+    if success_count < len(files_to_build):
         print("⚠️ 部分 PDF 生成失败，请检查日志。")
         sys.exit(1)
-    else:
-        print("🎉 所有 PDF 均已成功生成！")
 
 
 if __name__ == "__main__":
