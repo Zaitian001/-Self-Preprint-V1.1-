@@ -2,14 +2,9 @@
 # -*- coding: utf-8 -*-
 
 """
-Self-Preprint V1.2 - Watermark Generator with JSON Proof & Gyroscopic Gui-Ju Anchors
+Self-Preprint V1.2 - Watermark Generator with JSON Proof & Gyroscopic Gui-Ju Anchors (Incremental Optimized)
 为每篇论文生成防伪水印图，并同时生成 JSON 存证文件。
-JSON 文件包含：
-  - 论文 ID、SHA-256 哈希、纸币序列号、生成时间戳
-  - 陀螺坐标系拓扑坐标 (x, y, z) 与进动角
-  - 规矩道洛书几何盐 (Geometric Salt) 及矩阵尺度 (Matrix Scale)
-
-强化版：增加 CI 运行环境容错、中文字体/DejaVu 字体自动降级、缺失底图自动绘制防护。
+支持增量跳过：仅当 .md 源码或 raw 底图发生修改、或输出文件缺失时才重新生成水印与存证。
 """
 
 import hashlib
@@ -55,7 +50,6 @@ def find_system_font(height):
     """在 Linux (GitHub Runner) 系统中寻找可用字体，并进行 fallback 降级"""
     font_size = max(12, int(height * 0.04))
 
-    # Linux (Ubuntu Runner) 标准字体扩展路径
     linux_fonts = [
         "/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf",
         "/usr/share/fonts/truetype/dejavu/DejaVuSans.ttf",
@@ -83,7 +77,6 @@ def create_fallback_raw_image(output_path, paper_id, serial):
     image = Image.new("RGB", (width, height), (248, 249, 250))
     draw = ImageDraw.Draw(image)
     
-    # 绘制边框
     draw.rectangle([20, 20, width - 20, height - 20], outline=(200, 205, 210), width=3)
     draw.rectangle([30, 30, width - 30, height - 30], outline=(220, 225, 230), width=1)
 
@@ -112,32 +105,27 @@ def apply_watermark(raw_img_path, output_img_path, paper_hash):
     width, height = base_image.size
     font = find_system_font(height)
 
-    # 水印文字
     watermark_text = f"SELF-PREPRINT SECURED: {paper_hash[:8]}...{paper_hash[-8:]}\nHASH: {paper_hash}"
 
-    # 制作倾斜画布
     temp_size = (int(width * 1.5), int(height * 1.5))
     temp_layer = Image.new("RGBA", temp_size, (0, 0, 0, 0))
     draw = ImageDraw.Draw(temp_layer)
 
-    # 计算文本尺寸
     text_bbox = draw.textbbox((0, 0), watermark_text, font=font)
     text_width = text_bbox[2] - text_bbox[0]
     text_height = text_bbox[3] - text_bbox[1]
 
-    # 居中绘制半透明深红色字样
     x = (temp_size[0] - text_width) // 2
     y = (temp_size[1] - text_height) // 2
     draw.text(
         (x, y),
         watermark_text,
-        fill=(220, 20, 60, int(255 * 0.35)),  # 35% 不透明度
+        fill=(220, 20, 60, int(255 * 0.35)),
         font=font,
         align="center",
         spacing=10,
     )
 
-    # 旋转 25 度并剪切合并
     rotated_temp = temp_layer.rotate(25, resample=Image.BICUBIC)
     crop_x = (temp_size[0] - width) // 2
     crop_y = (temp_size[1] - height) // 2
@@ -150,12 +138,26 @@ def apply_watermark(raw_img_path, output_img_path, paper_hash):
     print(f"✓ 成功输出防伪图像: {output_img_path}")
 
 
+def should_regenerate(paper_path: Path, raw_img_path: Path, output_img_path: Path, output_json_path: Path) -> bool:
+    """增量校验：输出文件不存在，或源文件/raw底图较新时需要重新生成"""
+    if not output_img_path.exists() or not output_json_path.exists():
+        return True
+    
+    paper_mtime = paper_path.stat().st_mtime
+    raw_mtime = raw_img_path.stat().st_mtime if raw_img_path.exists() else 0
+    
+    img_mtime = output_img_path.stat().st_mtime
+    json_mtime = output_json_path.stat().st_mtime
+    
+    # 若源码或底图修改时间晚于输出产物，则需重新编译
+    return max(paper_mtime, raw_mtime) > min(img_mtime, json_mtime)
+
+
 def main():
     preprints_dir = BASE_DIR / "PREPRINTS"
     raw_dir = BASE_DIR / "CURRENCY_REGISTRY" / "raw"
     output_dir = BASE_DIR / "CURRENCY_REGISTRY"
 
-    # 自动建包防护
     os.makedirs(output_dir, exist_ok=True)
     os.makedirs(raw_dir, exist_ok=True)
 
@@ -180,20 +182,29 @@ def main():
     matrix_scale = getattr(ENGINE, "matrix_scale", 1.0) if ENGINE_AVAILABLE else 1.0
     print(f"🧭 规矩道矩阵尺度 (Matrix Scale): {matrix_scale:.15f}\n")
 
+    rebuilt_count = 0
+    skipped_count = 0
+
     # 遍历 PREPRINTS 目录下的所有 Markdown 论文
-    for filename in os.listdir(preprints_dir):
+    for filename in sorted(os.listdir(preprints_dir)):
         if not filename.endswith(".md"):
             continue
 
         paper_id = os.path.splitext(filename)[0]
-        paper_path = os.path.join(preprints_dir, filename)
+        paper_path = preprints_dir / filename
 
         raw_img_name = f"{paper_id}_raw.jpg"
-        raw_img_path = os.path.join(raw_dir, raw_img_name)
-        output_img_path = os.path.join(output_dir, f"{paper_id}.jpg")
-        output_json_path = os.path.join(output_dir, f"{paper_id}.json")
+        raw_img_path = raw_dir / raw_img_name
+        output_img_path = output_dir / f"{paper_id}.jpg"
+        output_json_path = output_dir / f"{paper_id}.json"
 
-        print(f"\n⚡ 正在处理: {filename} <--> {raw_img_name}")
+        # 增量判断
+        if not should_regenerate(paper_path, raw_img_path, output_img_path, output_json_path):
+            skipped_count += 1
+            continue
+
+        print(f"\n⚡ 正在处理水印与存证: {filename}")
+        rebuilt_count += 1
         paper_hash = calculate_sha256(paper_path)
         print(f"-> 论文 SHA-256: {paper_hash}")
 
@@ -218,7 +229,6 @@ def main():
                 print(f"⚠️ 陀螺投影计算异常: {e}")
                 coords, prec_deg, origin_coords, topological_balance = {"x": 0.0, "y": 0.0, "z": 0.0}, 0.0, [0.0, 0.0, 0.0], True
         else:
-            # 确定性伪随机算子 fallback
             h_int = int(paper_hash[:8], 16)
             coords = {
                 "x": round((h_int % 1000) / 1000.0, 6),
@@ -247,7 +257,6 @@ def main():
             "hash": paper_hash,
             "serial": serial,
             "generated_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime()),
-            # --- 陀螺坐标系锚点 ---
             "gyroscopic_frame": {
                 "origin": origin_coords,
                 "coordinates": {
@@ -258,7 +267,6 @@ def main():
                 "precession_angle_deg": prec_deg,
                 "topological_balance": topological_balance
             },
-            # --- 规矩道洛书李代数锚点 ---
             "gui_ju_engine": {
                 "matrix_scale": matrix_scale,
                 "geometric_salt": geometric_salt,
@@ -270,8 +278,8 @@ def main():
             json.dump(json_data, f, indent=2, ensure_ascii=False)
         
         print(f"✓ 成功生成存证 JSON: {output_json_path}")
-        print(f"   🌀 陀螺坐标: ({coords['x']}, {coords['y']}, {coords['z']}) 进动角: {prec_deg}°")
-        print(f"   🧬 几何盐: {geometric_salt[:48]}...")
+
+    print(f"\n📊 [水印增量构建统计] 重新生成: {rebuilt_count} 篇 | 跳过未修改: {skipped_count} 篇")
 
 
 if __name__ == "__main__":
