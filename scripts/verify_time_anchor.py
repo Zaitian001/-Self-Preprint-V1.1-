@@ -63,11 +63,17 @@ class GuiJuSpatiotemporalAnchor:
         print("\n🔍 启动本地时空链全息区间验证...")
 
         for json_path in registry_dir.glob("*.json"):
+            # 【修复 1】过滤掉隐藏的 .watermark_manifest.json 等缓存文件
+            if json_path.name.startswith('.'):
+                continue
+                
+            paper_id = json_path.stem # 兜底默认值，防止异常时变量未定义
             try:
                 with open(json_path, 'r') as f:
                     data = json.load(f)
-                paper_id = data.get('paper_id')
+                paper_id = data.get('paper_id', paper_id)
                 generated_at = data.get('generated_at')
+                
                 if not paper_id or not generated_at:
                     continue
 
@@ -79,15 +85,20 @@ class GuiJuSpatiotemporalAnchor:
                     results[paper_id] = False
                     continue
 
-                is_valid = gen_time <= commit_time
+                # 【修复 2】引入 300 秒的时钟宽容度 (Tolerance)
+                # 防止 GitHub Runner 机器时钟跑得比 GitHub 服务器快导致误报
+                time_diff = (gen_time - commit_time).total_seconds()
+                is_valid = time_diff <= 300
+                
                 if is_valid:
-                    print(f"✅ [{paper_id}] 生成时间 {gen_time} ≤ Git 提交 {commit_time}")
+                    print(f"✅ [{paper_id}] 生成时间 {gen_time} ≤ Git 提交 {commit_time} (偏差 {time_diff:.1f}s)")
+                    results[paper_id] = True
                 else:
-                    print(f"❌ [{paper_id}] 生成时间 {gen_time} > Git 提交 {commit_time} (可能存在后门篡改)")
-                results[paper_id] = is_valid
+                    print(f"❌ [{paper_id}] 时间倒流 {time_diff:.1f}s (可能存在篡改)")
+                    results[paper_id] = False
 
             except Exception as e:
-                print(f"[ERROR] 处理 {json_path} 时出错: {e}")
+                print(f"[ERROR] 处理 {json_path.name} 时出错: {e}")
                 results[paper_id] = False
 
         return results
@@ -264,5 +275,5 @@ if __name__ == "__main__":
     engine = GuiJuSpatiotemporalAnchor()
     result = engine.verify_all(multi_platform_anchors=multi_anchors)
 
-    # 退出码（用于 CI）
+    # 退出码（用于 CI 阻断）
     exit(0 if result["overall_status"] == "SECURE" else 1)
