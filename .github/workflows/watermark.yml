@@ -107,7 +107,7 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action Bot"
           
-          git add CURRENCY_REGISTRY/
+          git add CURRENCY_REGISTRY/*.json CURRENCY_REGISTRY/*.jpg
           
           if [ -n "$(git status --porcelain)" ]; then
             git commit -m "chore: auto-generate secured banknote watermark [skip ci]"
