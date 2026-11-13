@@ -4,7 +4,8 @@
 """
 Self-Preprint V1.2 - Watermark Generator with JSON Proof & Gyroscopic Gui-Ju Anchors (Incremental Optimized)
 为每篇论文生成防伪水印图，并同时生成 JSON 存证文件。
-支持增量跳过：仅当 .md 源码或 raw 底图发生修改、或输出文件缺失时才重新生成水印与存证。
+支持增量跳过：仅当 .md 源码或 raw 底图内容发生变化、或输出文件缺失时才重新生成水印与存证。
+支持命令行参数：python watermark_ci.py PREPRINTS/xxx.md PREPRINTS/yyy.md
 """
 
 import hashlib
@@ -44,6 +45,29 @@ def calculate_sha256(filepath):
         while chunk := f.read(8192):
             hasher.update(chunk)
     return hasher.hexdigest()
+
+
+def load_manifest():
+    """加载增量构建清单"""
+    manifest_path = BASE_DIR / "CURRENCY_REGISTRY" / ".watermark_manifest.json"
+    if manifest_path.exists():
+        try:
+            with open(manifest_path, "r", encoding="utf-8") as f:
+                return json.load(f)
+        except Exception as e:
+            print(f"⚠️ 读取 Manifest 失败: {e}")
+    return {}
+
+
+def save_manifest(manifest):
+    """保存增量构建清单"""
+    manifest_path = BASE_DIR / "CURRENCY_REGISTRY" / ".watermark_manifest.json"
+    try:
+        manifest_path.parent.mkdir(parents=True, exist_ok=True)
+        with open(manifest_path, "w", encoding="utf-8") as f:
+            json.dump(manifest, f, indent=2, ensure_ascii=False)
+    except Exception as e:
+        print(f"⚠️ 保存 Manifest 失败: {e}")
 
 
 def find_system_font(height):
@@ -138,19 +162,26 @@ def apply_watermark(raw_img_path, output_img_path, paper_hash):
     print(f"✓ 成功输出防伪图像: {output_img_path}")
 
 
-def should_regenerate(paper_path: Path, raw_img_path: Path, output_img_path: Path, output_json_path: Path) -> bool:
-    """增量校验：输出文件不存在，或源文件/raw底图较新时需要重新生成"""
+def should_regenerate(paper_path: Path, raw_img_path: Path, output_img_path: Path, output_json_path: Path, manifest: dict, paper_id: str) -> bool:
+    """增量校验（基于内容哈希）：输出文件不存在，或源文件/raw底图内容与 Manifest 记录不一致时重新生成"""
     if not output_img_path.exists() or not output_json_path.exists():
         return True
+        
+    current_paper_hash = calculate_sha256(paper_path)
+    if not raw_img_path.exists():
+        # 底图不存在，后续需要生成 fallback 图
+        return True
+        
+    current_raw_hash = calculate_sha256(raw_img_path)
     
-    paper_mtime = paper_path.stat().st_mtime
-    raw_mtime = raw_img_path.stat().st_mtime if raw_img_path.exists() else 0
+    record = manifest.get(paper_id, {})
+    saved_paper_hash = record.get("paper_sha256")
+    saved_raw_hash = record.get("raw_sha256")
     
-    img_mtime = output_img_path.stat().st_mtime
-    json_mtime = output_json_path.stat().st_mtime
-    
-    # 若源码或底图修改时间晚于输出产物，则需重新编译
-    return max(paper_mtime, raw_mtime) > min(img_mtime, json_mtime)
+    if current_paper_hash != saved_paper_hash or current_raw_hash != saved_raw_hash:
+        return True
+        
+    return False
 
 
 def main():
@@ -164,6 +195,24 @@ def main():
     if not os.path.exists(preprints_dir):
         print(f"未找到 {preprints_dir} 目录，跳过运行。")
         return
+
+    # --- 解析命令行参数 ---
+    if len(sys.argv) > 1:
+        # 过滤出传入的 .md 文件，并转为绝对路径
+        target_md_files = [Path(p).resolve() for p in sys.argv[1:] if p.endswith('.md')]
+        print(f"🎯 [定向模式] 收到 {len(target_md_files)} 个指定的待处理文件。")
+    else:
+        # 未传参数，回退到全量扫描（依然受 Manifest 保护）
+        target_md_files = [preprints_dir / p for p in sorted(os.listdir(preprints_dir)) if p.endswith('.md')]
+        print(f"🌐 [全量模式] 未指定文件，将扫描 PREPRINTS 目录下的所有论文。")
+
+    if not target_md_files:
+        print("ℹ️ 没有需要处理的 Markdown 文件，退出。")
+        return
+
+    # 加载增量清单
+    manifest = load_manifest()
+    manifest_updated = False
 
     # --- 初始化全局物理引擎 ---
     gyro_frame = None
@@ -185,13 +234,19 @@ def main():
     rebuilt_count = 0
     skipped_count = 0
 
-    # 遍历 PREPRINTS 目录下的所有 Markdown 论文
-    for filename in sorted(os.listdir(preprints_dir)):
-        if not filename.endswith(".md"):
+    for paper_path in target_md_files:
+        # 确保文件存在且是 .md
+        if not paper_path.exists() or paper_path.suffix != '.md':
+            print(f"⚠️ 跳过无效文件: {paper_path}")
             continue
 
-        paper_id = os.path.splitext(filename)[0]
-        paper_path = preprints_dir / filename
+        paper_id = paper_path.stem
+        filename = paper_path.name
+        
+        # 确保只处理 PREPRINTS 目录下的文件
+        if paper_path.parent != preprints_dir:
+            print(f"⚠️ 跳过非 PREPRINTS 目录下的文件: {paper_path}")
+            continue
 
         raw_img_name = f"{paper_id}_raw.jpg"
         raw_img_path = raw_dir / raw_img_name
@@ -199,25 +254,28 @@ def main():
         output_json_path = output_dir / f"{paper_id}.json"
 
         # 增量判断
-        if not should_regenerate(paper_path, raw_img_path, output_img_path, output_json_path):
+        if not should_regenerate(paper_path, raw_img_path, output_img_path, output_json_path, manifest, paper_id):
             skipped_count += 1
             continue
 
         print(f"\n⚡ 正在处理水印与存证: {filename}")
         rebuilt_count += 1
-        paper_hash = calculate_sha256(paper_path)
-        print(f"-> 论文 SHA-256: {paper_hash}")
-
+        
         # 1. 检查原始图片是否存在，若不存在则自动生成基础底图
         serial = paper_id
         if not os.path.exists(raw_img_path):
             print(f"-> 未找到原始图片 '{raw_img_name}'，自动为其生成确权占位底图...")
             create_fallback_raw_image(raw_img_path, paper_id, serial)
 
-        # 2. 生成水印图片
+        # 2. 计算最新内容哈希（在底图生成之后计算，确保 raw_hash 有效）
+        paper_hash = calculate_sha256(paper_path)
+        raw_hash = calculate_sha256(raw_img_path)
+        print(f"-> 论文 SHA-256: {paper_hash}")
+
+        # 3. 生成水印图片
         apply_watermark(raw_img_path, output_img_path, paper_hash)
 
-        # 3. 计算陀螺坐标系投影（拓扑坐标与进动角）
+        # 4. 计算陀螺坐标系投影（拓扑坐标与进动角）
         if gyro_frame:
             try:
                 gyro_proj = gyro_frame.project(paper_hash)
@@ -239,7 +297,7 @@ def main():
             origin_coords = [0.0, 0.0, 0.0]
             topological_balance = True
 
-        # 4. 生成规矩道动态几何盐 (Geometric Salt)
+        # 5. 生成规矩道动态几何盐 (Geometric Salt)
         if ENGINE_AVAILABLE and hasattr(ENGINE, "get_geometric_salt"):
             try:
                 geometric_salt = ENGINE.get_geometric_salt(paper_hash, serial)
@@ -251,7 +309,7 @@ def main():
             geometric_salt = hashlib.sha256(f"{paper_hash}:{serial}".encode()).hexdigest()
             zero_energy = True
 
-        # 5. 构建完整的 JSON 存证
+        # 6. 构建完整的 JSON 存证
         json_data = {
             "paper_id": paper_id,
             "hash": paper_hash,
@@ -278,6 +336,18 @@ def main():
             json.dump(json_data, f, indent=2, ensure_ascii=False)
         
         print(f"✓ 成功生成存证 JSON: {output_json_path}")
+
+        # 7. 更新 Manifest 记录
+        manifest[paper_id] = {
+            "paper_sha256": paper_hash,
+            "raw_sha256": raw_hash,
+            "generated_at": time.strftime("%Y-%m-%dT%H:%M:%SZ", time.gmtime())
+        }
+        manifest_updated = True
+
+    if manifest_updated:
+        save_manifest(manifest)
+        print("📝 [Manifest] 已更新增量构建清单。")
 
     print(f"\n📊 [水印增量构建统计] 重新生成: {rebuilt_count} 篇 | 跳过未修改: {skipped_count} 篇")
 
