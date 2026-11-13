@@ -14,5 +14,5 @@ Thumbs.db
 # 忽略增量构建清单（极其重要！配合 CI 缓存使用，切勿提交）
 CURRENCY_REGISTRY/.watermark_manifest.json
 
-# 忽略构建输出产物（如果你不希望 public 目录提交，由 action 自动部署的话）
-# public/
+# 忽略构建输出产物（由 action 自动部署到 gh-pages 分支，无需提交到 main 分支）
+public/
