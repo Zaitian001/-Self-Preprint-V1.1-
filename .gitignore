@@ -1,0 +1,18 @@
+# 忽略 Python 编译缓存
+__pycache__/
+*.py[cod]
+*$py.class
+
+# 忽略虚拟环境
+venv/
+.env/
+
+# 忽略系统级文件
+.DS_Store
+Thumbs.db
+
+# 忽略增量构建清单（极其重要！配合 CI 缓存使用，切勿提交）
+CURRENCY_REGISTRY/.watermark_manifest.json
+
+# 忽略构建输出产物（如果你不希望 public 目录提交，由 action 自动部署的话）
+# public/
