@@ -64,7 +64,7 @@ jobs:
       # ============================================================
       # 🚀 核心增量优化：恢复缓存 & 获取变动文件
       # ============================================================
-      - name: 6. 恢复构建缓存 (水印、JSON、PDF及Manifest)
+      - name: 6. 恢复构建缓存 (水印、JSON、PDF、HTML及Manifest)
         uses: actions/cache@v4
         with:
           path: |
@@ -72,7 +72,10 @@ jobs:
             CURRENCY_REGISTRY/**.json
             CURRENCY_REGISTRY/.watermark_manifest.json
             public/pdf/**.pdf
-          # 当 PREPRINTS 下的 md 发生变化时，key 改变，触发新缓存
+            public/preprints/**.html      # 🚨 新增：缓存所有已生成的论文 HTML
+            public/index.html             # 🚨 新增：缓存首页
+            public/feed.xml               # 🚨 新增：缓存 RSS
+            public/sitemap.xml            # 🚨 新增：缓存 Sitemap
           key: build-cache-${{ runner.os }}-${{ hashFiles('PREPRINTS/**.md') }}
           restore-keys: |
             build-cache-${{ runner.os }}-
