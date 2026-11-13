@@ -2,14 +2,18 @@ name: Auto Generate Preprint Watermark & Build Site
 
 on:
   push:
+    branches: [ main ]
     paths:
       - 'PREPRINTS/**.md'
+      - 'CURRENCY_REGISTRY/raw/**.jpg' # 如果底图也可能直接修改，加上这个
       - 'scripts/**'
       - '.github/workflows/**'
   workflow_dispatch:
 
 permissions:
   contents: write
+  pages: write
+  id-token: write
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
@@ -23,15 +27,15 @@ jobs:
       # ============================================================
       # 1. 基础环境与全局依赖准备
       # ============================================================
-      - name: 1. 拉取仓库代码
+      - name: 1. 拉取仓库代码 (获取完整历史)
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 0 
 
-      - name: 2. 配置 Node 环境（解决 Node 20 弃用警告）
+      - name: 2. 配置 Node 环境
         uses: actions/setup-node@v4
         with:
-          node-version: '24'
+          node-version: '20' # 降回 20 或保持 24 均可，20 更稳定
 
       - name: 3. 安装 Python 环境
         uses: actions/setup-python@v5
@@ -58,22 +62,47 @@ jobs:
             libfontconfig1
 
       # ============================================================
+      # 🚀 核心增量优化：恢复缓存 & 获取变动文件
+      # ============================================================
+      - name: 6. 恢复构建缓存 (水印、JSON、PDF及Manifest)
+        uses: actions/cache@v4
+        with:
+          path: |
+            CURRENCY_REGISTRY/**.jpg
+            CURRENCY_REGISTRY/**.json
+            CURRENCY_REGISTRY/.watermark_manifest.json
+            public/pdf/**.pdf
+          # 当 PREPRINTS 下的 md 发生变化时，key 改变，触发新缓存
+          key: build-cache-${{ runner.os }}-${{ hashFiles('PREPRINTS/**.md') }}
+          restore-keys: |
+            build-cache-${{ runner.os }}-
+
+      - name: 7. 获取本次 Push 变更的 Markdown 文件列表
+        id: changed-files
+        run: |
+          # 如果是手动触发(workflow_dispatch)或首次提交，可能没有 HEAD^，做个防呆
+          if git rev-parse HEAD^ >/dev/null 2>&1; then
+            CHANGED_MD=$(git diff --name-only HEAD^ HEAD -- 'PREPRINTS/*.md' | tr '\n' ' ')
+          else
+            CHANGED_MD=""
+          fi
+          echo "CHANGED_MD=$CHANGED_MD" >> $GITHUB_ENV
+          echo "本次检测到的变动文件: [$CHANGED_MD]"
+
+      # ============================================================
       # 阶段一：水印生成与 JSON 存证
       # ============================================================
-      - name: 6. 运行 CI 水印配对脚本 (兼容不同脚本命名)
+      - name: 8. 运行 CI 水印配对脚本 (精准增量)
         run: |
-          if [ -f "scripts/generate_watermarks.py" ]; then
-            python scripts/generate_watermarks.py
-          elif [ -f "scripts/generate_watermark.py" ]; then
-            python scripts/generate_watermark.py
-          elif [ -f "scripts/watermark_ci.py" ]; then
-            python scripts/watermark_ci.py
+          if [ -n "$CHANGED_MD" ]; then
+            echo "执行定向增量生成..."
+            python scripts/watermark_ci.py $CHANGED_MD
           else
-            echo "❌ 未在 scripts/ 目录找到水印脚本，请核对文件名。"
-            exit 1
+            echo "未检测到特定的 MD 变动，执行全量兜底扫描（由 Manifest 进行跳过保护）..."
+            python scripts/watermark_ci.py
           fi
 
-      - name: 7. 自动提交并推送生成的水印图与 JSON 至 main 分支 (含冲突防崩机制)
+      - name: 9. 自动提交并推送生成的水印图与 JSON 至 main 分支
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action Bot"
@@ -82,11 +111,7 @@ jobs:
           
           if [ -n "$(git status --porcelain)" ]; then
             git commit -m "chore: auto-generate secured banknote watermark [skip ci]"
-            
-            # 拉取远程 main 最新提交并变基
-            # 若遇 JSON / 水印图片冲突，优先保留本次 CI 重新生成的最新文件 (-X theirs)
             git pull --rebase origin main -X theirs || git rebase --skip
-            
             git push origin main
           else
             echo "没有检测到新生成的水印图片/JSON，跳过提交。"
@@ -95,23 +120,27 @@ jobs:
       # ============================================================
       # 阶段二：学术网页构建 + PDF 生成
       # ============================================================
-      - name: 8. 构建学术 HTML 与 RSS/Sitemap 索引
+      - name: 10. 构建学术 HTML 与 RSS/Sitemap 索引
         env:
           SITE_URL: "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}"
         run: |
-          if [ -f "scripts/build_academic_pages.py" ]; then
+          if [ -n "$CHANGED_MD" ]; then
+            python scripts/build_academic_pages.py $CHANGED_MD
+          else
             python scripts/build_academic_pages.py
           fi
 
-      - name: 9. 自动生成学术 PDF（含防伪封面与附录）
+      - name: 11. 自动生成学术 PDF（含防伪封面与附录）
         env:
           SITE_URL: "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}"
         run: |
-          if [ -f "scripts/generate_pdf.py" ]; then
+          if [ -n "$CHANGED_MD" ]; then
+            python scripts/generate_pdf.py $CHANGED_MD
+          else
             python scripts/generate_pdf.py
           fi
 
-      - name: 9.5 上传生成的 PDF 到 GitHub Actions Artifacts
+      - name: 11.5 上传生成的 PDF 到 GitHub Actions Artifacts
         uses: actions/upload-artifact@v4
         if: always()
         with:
@@ -120,22 +149,24 @@ jobs:
           retention-days: 30
 
       # ============================================================
-      # 阶段三：部署至 GitHub Pages
+      # 阶段三：时空锚定安全验证 (前置拦截)
       # ============================================================
-      - name: 10. 部署所有产物到 GitHub Pages (gh-pages 分支)
+      - name: 12. 验证多平台时空因果性与防篡改审计
+        run: |
+          if [ -f "scripts/verify_time_anchor.py" ]; then
+            # 注意：请确保你的 verify_time_anchor.py 已经加上了时钟宽容度补丁
+            python scripts/verify_time_anchor.py --auto-git
+          fi
+        # 这里去掉了 continue-on-error: true，一旦防篡改失败，直接阻断部署！
+        continue-on-error: false
+
+      # ============================================================
+      # 阶段四：部署至 GitHub Pages
+      # ============================================================
+      - name: 13. 部署所有产物到 GitHub Pages (gh-pages 分支)
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ./public
           publish_branch: gh-pages
           keep_files: false
-
-      # ============================================================
-      # 阶段四：多平台时空锚定验证（可选）
-      # ============================================================
-      - name: 11. 验证多平台时空因果性 (T₁…T₇)
-        run: |
-          if [ -f "scripts/verify_time_anchor.py" ]; then
-            python scripts/verify_time_anchor.py --auto-git
-          fi
-        continue-on-error: true
