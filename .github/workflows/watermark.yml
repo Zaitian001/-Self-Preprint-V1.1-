@@ -110,11 +110,18 @@ jobs:
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action Bot"
           
+          # 只添加你想提交的特定文件
           git add CURRENCY_REGISTRY/*.json CURRENCY_REGISTRY/*.jpg
           
-          if [ -n "$(git status --porcelain)" ]; then
+          # 【终极防呆】检查暂存区（staged）是否有变动。
+          # git diff --cached --quiet 如果有变动返回 1，没有变动返回 0。
+          # 所以我们用 `!` 取反，如果有变动则进入 if 分支。
+          if ! git diff --cached --quiet; then
             git commit -m "chore: auto-generate secured banknote watermark [skip ci]"
+            
+            # 拉取远程 main 最新提交并变基，遇到冲突优先保留 CI 生成的版本
             git pull --rebase origin main -X theirs || git rebase --skip
+            
             git push origin main
           else
             echo "没有检测到新生成的水印图片/JSON，跳过提交。"
