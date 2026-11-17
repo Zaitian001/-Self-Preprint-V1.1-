@@ -1,0 +1,966 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating Gold with AI Power - Self-Preprint Archive</title>
+    <meta name="citation_title" content="Creating Gold with AI Power">
+    <meta name="citation_publication_date" content="2026/11/17">
+    <meta name="citation_fulltext_html_url" content="https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553929.html">
+    <meta name="citation_journal_title" content="Self-Preprint Archive">
+    <meta name="citation_author" content="Baoliin (Zaitian) Wu 伍宝林">
+    <style>
+/* ==========================================================================
+   -Self-Preprint- Academic Theme (Complete Merged & Responsive Version)
+   ========================================================================== */
+*, *::before, *::after { box-sizing: border-box; }
+
+:root {
+    --bg-color: #fcfcfc;
+    --text-color: #2b2b2b;
+    --primary-color: #1a365d;
+    --link-color: #2b6cb0;
+    --border-color: #e2e8f0;
+    --code-bg: #f7fafc;
+    --blockquote-bg: #edf2f7;
+    --meta-color: #718096;
+    --max-width: 860px;
+    --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-serif: Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+body {
+    font-family: var(--font-main);
+    line-height: 1.75;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 2rem 1rem;
+}
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 3rem 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border: 1px solid var(--border-color);
+}
+a { color: var(--link-color); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* 归档列表页 (index.html) */
+.archive-year {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.3rem;
+    color: var(--primary-color);
+}
+.post-item {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+}
+.post-title { font-size: 1.1rem; font-weight: 500; }
+.post-date {
+    font-size: 0.9rem;
+    color: var(--meta-color);
+    font-family: monospace;
+    white-space: nowrap;
+    margin-left: 1rem;
+}
+.post-abstract {
+    font-size: 0.95rem;
+    color: #555;
+    margin: 0.2rem 0 1.2rem 0;
+    font-family: var(--font-serif);
+}
+
+/* 文章单页 (paper_id.html) */
+article h1.paper-title {
+    font-size: 2.2rem;
+    line-height: 1.3;
+    margin-bottom: 0.8rem;
+    letter-spacing: -0.02em;
+    color: var(--primary-color);
+}
+.paper-meta {
+    font-size: 0.92rem;
+    color: var(--meta-color);
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1.2rem;
+}
+.paper-body {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+.paper-body h1, .paper-body h2, .paper-body h3 {
+    font-family: var(--font-main);
+    font-weight: 600;
+    margin-top: 2.2rem;
+    color: var(--primary-color);
+}
+
+/* MathJax & LaTeX 公式排版防护 */
+mjx-container {
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-width: 100%;
+}
+mjx-container[display="true"] {
+    display: block !important;
+    width: 100% !important;
+    margin: 1.5rem 0 !important;
+    text-align: center;
+}
+mjx-container[display="false"] {
+    display: inline-block;
+    vertical-align: middle;
+}
+.math-block {
+    display: block;
+    width: 100%;
+    margin: 1.5rem 0;
+    text-align: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+/* 物理确权卡片 */
+.anchor-box {
+    margin: 2rem 0;
+    padding: 1rem 1.2rem;
+    background: #fafafa;
+    border: 1px solid #eaeaea;
+    border-radius: 6px;
+    font-size: 0.88rem;
+    color: #444;
+}
+.anchor-box strong { color: #111; }
+.anchor-hash {
+    font-family: monospace;
+    font-size: 0.82rem;
+    word-break: break-all;
+    color: #666;
+    margin-top: 0.3rem;
+}
+
+/* 代码与预格式化文本 */
+code, pre {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-size: 0.9rem;
+}
+code {
+    background-color: var(--code-bg);
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+}
+pre {
+    padding: 1rem;
+    overflow-x: auto;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    background-color: var(--code-bg);
+    line-height: 1.45;
+}
+pre code {
+    background-color: transparent;
+    padding: 0;
+    border: none;
+}
+
+/* 引用与表格 */
+blockquote {
+    margin: 1.5rem 0;
+    padding: 0.8rem 1.2rem;
+    background-color: var(--blockquote-bg);
+    border-left: 4px solid var(--primary-color);
+    border-radius: 0 4px 4px 0;
+}
+blockquote p:last-child { margin-bottom: 0; }
+.table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+    -webkit-overflow-scrolling: touch;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+th, td {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-color);
+    text-align: left;
+}
+th {
+    background-color: var(--code-bg);
+    font-weight: 600;
+}
+
+/* 学术插图与图注 */
+img, .paper-body img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1.8rem auto 0.5rem auto;
+    border-radius: 4px;
+}
+figure { margin: 2rem auto; text-align: center; }
+figure img { max-width: 100%; height: auto; margin: 0 auto; }
+figcaption {
+    font-size: 0.9rem;
+    color: var(--meta-color);
+    margin-top: 0.6rem;
+    font-family: var(--font-main);
+    line-height: 1.4;
+}
+
+/* 引用格式选择器 (Google Scholar 风格) */
+.citation-toggle {
+    display: inline-block;
+    margin: 2rem 0 0.5rem 0;
+    padding: 0.5rem 1.2rem;
+    background: #f1f5f9;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: #1e293b;
+    transition: background 0.2s;
+    user-select: none;
+}
+.citation-toggle:hover { background: #e2e8f0; }
+.citation-toggle .cite-arrow {
+    display: inline-block;
+    margin-left: 0.4rem;
+    font-size: 0.7rem;
+    transition: transform 0.3s ease;
+}
+.citation-toggle.open .cite-arrow { transform: rotate(180deg); }
+
+.citation-panel {
+    display: none;
+    margin: 0 0 2rem 0;
+    padding: 1.2rem 1.5rem;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    max-width: 100%;
+}
+.citation-panel.open { display: block; }
+
+.citation-format-selector {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    margin-bottom: 0.8rem;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 0.8rem;
+}
+.format-btn {
+    background: transparent;
+    border: none;
+    padding: 0.3rem 1rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+    color: #64748b;
+    border-radius: 12px;
+    transition: all 0.2s;
+}
+.format-btn:hover { background: #e2e8f0; color: #1e293b; }
+.format-btn.active {
+    background: #1e293b;
+    color: white;
+    font-weight: 500;
+}
+
+.citation-display {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+.citation-text {
+    flex: 1;
+    font-size: 0.88rem;
+    font-family: var(--font-serif);
+    color: #1e293b;
+    background: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    border: 1px solid #e9edf2;
+    word-break: break-word;
+    min-height: 2.2rem;
+}
+.citation-text.bibtex-display {
+    font-family: monospace;
+    font-size: 0.82rem;
+    white-space: pre-wrap;
+}
+.copy-btn {
+    background: #e2e8f0;
+    border: none;
+    border-radius: 4px;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.8rem;
+    cursor: pointer;
+    color: #334155;
+    white-space: nowrap;
+    transition: all 0.2s;
+    align-self: center;
+}
+.copy-btn:hover { background: #cbd5e1; }
+.copy-btn.copied { background: #22c55e; color: white; }
+
+/* 页脚与移动端响应式 */
+footer.site-footer {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.85rem;
+    color: var(--meta-color);
+    text-align: center;
+}
+@media (max-width: 768px) {
+    body { padding: 1rem 0.5rem; }
+    .container { padding: 1.5rem 1rem; }
+    article h1.paper-title { font-size: 1.75rem; }
+    .post-item { flex-direction: column; align-items: flex-start; }
+    .post-date { margin-left: 0; margin-top: 0.2rem; }
+}
+</style>
+    
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    tags: 'ams'
+  },
+  svg: {
+    fontCache: 'global',
+    displayAlign: 'center',
+    displayIndent: '0'
+  },
+  options: {
+    enableMenu: false,
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+};
+</script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+<script>
+  window.addEventListener('load', function () {
+    if (window.MathJax && MathJax.typesetPromise) {
+      MathJax.typesetPromise().catch(function (err) {
+        console.log('MathJax typeset failed: ', err);
+      });
+    }
+  });
+</script>
+
+</head>
+<body>
+    <header class="site-header">
+        <nav>
+            <a href="../index.html">← Archives</a>
+            <a href="../feed.xml">RSS</a>
+        </nav>
+    </header>
+
+    <article>
+        <h1 class="paper-title">Creating Gold with AI Power</h1>
+        <div class="paper-meta">
+            By <strong>Baoliin (Zaitian) Wu 伍宝林</strong> · Published on 2026-11-17
+        </div>
+
+        
+    <div class="anchor-box">
+        🛡️ <strong>Physical Proof of Existence</strong> | Banknote Serial: <code>DW58553929</code>
+        <div class="anchor-hash">SHA-256 Hash: d37799cbdee786b7dfe45483f86e4cd9e6292f25ac1ddf33ea305ec1220e8d99</div>
+    </div>
+    
+
+        <blockquote style="font-family: var(--font-serif); background:#fdfdfd; padding:0.8rem 1.2rem; border-left:3px solid #ccc; margin: 1.5rem 0;"><p>This paper is the sister paper to DW58553928, Creating Gold: New Beginning for Creating Matter. It retains the title and the Modified Einstein Spherical (MES) foundations of the pair, including the three Gold Truths as foundational postulates of the MES cosmology architecture and the curvature-dependent fields inherited unchanged from DW58553914. It develops five research channels—deformation (C1), rotation and Coriolis mixing (C2), strong-field dressing (C3), particle-number-sector and reaction-network construction (C4), and environmental interaction/internal conversion (C5)—within the same GTCN and reaction-channel state space. A direct-sum Hilbert space organizes nuclear species, internal states, and open reaction channels; nonzero off-diagonal interaction operators provide physical bridges between sectors. The direct sum alone does not imply a reaction: candidate paths must satisfy conservation laws, thresholds, nonzero matrix elements, and coupled-channel dynamics. The Bottleneck Loop is retained as a proposed, testable physical-cycle hypothesis. AI is treated as a computational discovery and orchestration system, with the research objective of processing data for thousands of nuclides within hours where data access and computational workload permit. The five-channel evidence-state vector records each channel as supported, ruled out within a declared domain, or unresolved. The GTCN remains the same-dimensional, same-level geometric structure used in the sister paper; any dimension-raising extension requires explicit embedding, projection, and characteristic-class conditions. The paper develops the connection from direct-sum channel space to physical reaction paths and from Floquet quasienergy structure to continuum-coupled particle emission and adaptive target-state control. A methodological analogy drawn from the Zhuangzi's parable of Wheelwright Pian clarifies why static open-loop prescriptions cannot replace responsive closed-loop control over dynamic nuclear coupling. No completed gold-transmutation experiment or numerical channel verdict is claimed; the paper specifies the calculations and independent tests required to decide them.</p></blockquote>
+
+        <div class="paper-body">
+            <h1 id="creating-gold-with-ai-power">Creating Gold with AI Power</h1>
+<p><strong>Baoliin (Zaitian) Wu 伍宝林</strong></p>
+<p><em>ORCID:</em> <a href="https://orcid.org/0009-0003-2051-5247">0009-0003-2051-5247</a></p>
+<p><em>Email:</em> zaitian001@gmail.com</p>
+<p><em>Affiliation:</em> People's Government of Guangdong Province, Guangzhou, CN</p>
+<p><strong>November 16, 2026</strong></p>
+<p><strong>Paper ID: DW58553929</strong></p>
+<hr />
+<h2 id="abstract">Abstract</h2>
+<p>This paper is the sister paper to DW58553928, <em>Creating Gold: New Beginning for Creating Matter</em>. It retains the title and the Modified Einstein Spherical (MES) foundations of the pair, including the three Gold Truths as foundational postulates of the MES cosmology architecture and the curvature-dependent fields inherited from DW58553914. Its purpose is to turn the unresolved physical realization problem for Gold-197 into a coordinated AI-assisted research program.</p>
+<p>The paper retains five research channels: deformation (C1), rotation and Coriolis mixing (C2), strong-field dressing (C3), particle-number-sector and reaction-network construction (C4), and environmental interaction/internal conversion (C5). These channels have different physical roles but are integrated within one GTCN and one reaction-channel state space. A direct-sum Hilbert space organizes nuclear species, internal states, and open reaction channels; nonzero off-diagonal interaction operators provide the physical bridges between sectors. The existence of a direct sum alone does not imply a reaction, so candidate paths are derived from conservation laws, thresholds, matrix elements, and coupled-channel dynamics.</p>
+<p>The Bottleneck Loop is retained as a proposed new physical-cycle hypothesis: the effective behavior of one channel may depend on another, and the resulting feedback may produce a collective response not present in isolated-channel calculations. Its coupling edges are specified as testable hypotheses. AI is treated as a computational discovery and orchestration system, with the explicit research objective of processing data for thousands of nuclides in hours where data access and computational workload permit, then prioritizing full nuclear-structure, Floquet, open-channel, and reaction-network calculations.</p>
+<p>The former four-state classification is replaced by the five-channel evidence-state vector $\mathbf s=(s_1,s_2,s_3,s_4,s_5)$ with $s_i\in\{A,R,U\}$. The GTCN remains the same-dimensional, same-level geometric structure used in DW58553928; any dimension-raising extension must satisfy explicit embedding, projection, and characteristic-class conditions. The paper develops a path from direct-sum channel space to physical reaction networks and from Floquet quasienergy structure to continuum-coupled particle emission and adaptive target-state control. A methodological analogy drawn from the Zhuangzi's parable of Wheelwright Pian clarifies why static open-loop prescriptions cannot replace responsive closed-loop control over dynamic nuclear coupling. No completed gold-transmutation experiment or numerical channel verdict is claimed; the paper specifies the calculations and independent tests required to decide them.</p>
+<p><strong>Keywords:</strong> Creating Gold; Creating Matter; AI-Assisted Verification; Five Research Channels; Reaction-Channel Hilbert Space; Continuum Coupling; Five-Channel Evidence-State Vector; Bottleneck Loop; Gold Truths; Geometry First; Global Topological Curvature Network; Floquet Dynamics; Non-Hermitian Dynamics; Gold-197; Nuclear Reaction Network; New Physics</p>
+<hr />
+<h2 id="1-introduction">1. Introduction</h2>
+<h3 id="11-a-new-beginning-for-creating-matter">1.1 A New Beginning for Creating Matter</h3>
+<p><strong>The goal is to create the first new beginning for creating matter.</strong> This includes, but is not limited to, showing that the suspension can be decomposed into verifiable questions, each with a precise criterion, and that the answers—whether positive or negative—advance the program.</p>
+<p>This paper is the sister paper to DW58553928 (<em>Creating Gold: New Beginning for Creating Matter</em>). It takes the same Creating Gold paradigm and turns the suspension of Type 3 into a structured research program.</p>
+<p>DW58553928 proposed Creating Gold as the first exercise of a new beginning for creating matter. Its central claim was methodological: a target state can be specified as a distinguished attractor in a declared state space, and its creation can be organized as a finite, verifiable sequence of operator applications—target encoding, path planning, window transition, condensation, and stabilization.</p>
+<p>DW58553928 distinguished three levels of existence:</p>
+<ul>
+<li><strong>Type 1</strong> — formal constructive specification within an axiom system;</li>
+<li><strong>Type 2</strong> — realization in a mathematical model conditional on consistency;</li>
+<li><strong>Type 3</strong> — correspondence to a physical process.</li>
+</ul>
+<p>DW58553928 claimed a preliminary Type-1 formal research architecture, left Type 2 conditional, and left Type 3 unresolved pending the required nuclear and environmental calculations. The suspension was not a rhetorical hedge. It was the precise statement that the required environmental and nuclear parameters had not been computed, and that the question of physical realizability therefore remained open.</p>
+<h3 id="12-the-core-obstacle-and-the-five-channels">1.2 The Core Obstacle and the Five Channels</h3>
+<p>DW58553928 identified the core obstacle for Gold-197: all its valence orbits are bound. The $1h_{11/2}$ proton hole is bound by approximately 8 MeV, well below the proton separation energy $S_p \approx 5.78\ \text{MeV}$. The Berggren complex structure is therefore not activated in the low-lying valence space; the nuclear operator is approximately real, and the exceptional point has no intrinsic non-Hermitian source. The question that Type 3 leaves open is: <strong>can continuum coupling be activated by some other means?</strong></p>
+<p>This paper identifies five candidate channels:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Channel</th>
+<th>Mechanism</th>
+<th>Type of question</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>C1 Deformation</td>
+<td>Scan $\beta_2,\gamma$ until a valence sub-state reaches the emission threshold</td>
+<td>Existential</td>
+</tr>
+<tr>
+<td>C2 Rotation (Coriolis)</td>
+<td>Rotating frame breaks time reversal and mixes $j$-orbitals</td>
+<td>Growth-rate</td>
+</tr>
+<tr>
+<td>C3 Strong-field dressing</td>
+<td>Floquet quasi-energy crossing between bound and continuum</td>
+<td>Supremum</td>
+</tr>
+<tr>
+<td>C4 Particle-number sector</td>
+<td>Path through a neighbouring nucleus whose valence state is near threshold</td>
+<td>Existential</td>
+</tr>
+<tr>
+<td>C5 Environment</td>
+<td>Internal conversion, radiative, and phonon contributions to the bound-state decoherence rate</td>
+<td>Numerical-value</td>
+</tr>
+</tbody>
+</table></div>
+<p>The five channels have different physical roles and different verification obligations. A result for one channel does not determine the status of the others. Their joint evidence is recorded in the five-channel evidence-state vector, while the GTCN represents their geometric and topological relationships.</p>
+<h3 id="13-three-gold-truths">1.3 Three Gold Truths</h3>
+<p>The Creating Gold paradigm is anchored by three Gold Truths. They are foundational postulates of the MES cosmology architecture and are self-evident within that architecture. Their wording and status are preserved identically in the sister papers.</p>
+<blockquote>
+<p><strong>Gold Truth I (Geometry First).</strong> There are no independently existing physical constants, no abstract pure time, and no isolated biological entities. All physics is geometry. Every observable physical quantity and biological state is a natural emergence of the geometric structure of the MES universe curvature web.</p>
+</blockquote>
+<p><strong>Formal location.</strong> Gold Truth I is supported by the curvature–mass postulate, the observer-origin geometry, and the non-Hermitian effective drive. Physical constants are not parameters external to the manifold; they are functions of the local curvature scale. The MES universe introduces curvature-dependent fields:</p>
+<div class="math-block">$$
+c(R) = c_0 \left(\frac{R}{R_0}\right)^{1/2}, \quad \hbar(R) = \hbar_0 \left(\frac{R_0}{R}\right)^{1/2}, \quad m(R) = m_0 \left(\frac{R_0}{R}\right)^{1/2}, \quad (1)
+$$</div>
+<p>with two curvature invariants:</p>
+<div class="math-block">$$
+\hbar(R)c(R) = \hbar_0 c_0, \quad m(R)c(R) = m_0 c_0. \quad (2)
+$$</div>
+<p>Thus $\hbar$ is not fundamental; it is geometric, tied to curvature action density. The speed $c$ is not universal; it is a curvature-determined signal velocity. Mass scales geometrically via curvature-stored inertia; mass is redefined as a curvature-driven emergence.</p>
+<blockquote>
+<p><strong>Gold Truth II (Time as Rhythm).</strong> "Time is the countable rhythm of Yin–Yang waxing and waning 时间是阴阳消长的可计数节律."</p>
+</blockquote>
+<p><strong>Formal location.</strong> Time is not an independent background; it is the countable rhythm of Yin–Yang waxing and waning. In the mathematical model, this rhythm is represented by the finite transition interval $\tau_{Ji} &gt; 0$ and by the countable parameter $\tau$ along which the construction chain is indexed.</p>
+<blockquote>
+<p><strong>Gold Truth III (Mother and Child).</strong> "Obtain the mother to know the child; obtain the child to guard the mother 既得其母以知其子, 既知其子复守其母." The MES universe curvature web is the mother; the global topological curvature network is the child; their mutual guarding is guaranteed by the Gauss–Codazzi embedding constraint.</p>
+</blockquote>
+<p><strong>Formal location.</strong> The mother is the MES universe curvature web (L0). The child is the Global Topological Curvature Network (GTCN, L1). The forward direction—obtain the mother to know the child—is represented by the channel-scale geometric projection. The reverse direction—obtain the child to guard the mother—is represented within the MES architecture by the embedding-compatibility system. For a codimension-one embedding, the Gauss and Codazzi equations may be written, under a declared curvature-sign convention, as</p>
+<div class="math-block">$$
+R^{(M)}_{abcd}|_{\mathcal N}=R^{(\mathcal N)}_{abcd}+\varepsilon(K_{ac}K_{bd}-K_{ad}K_{bc}), \quad (3)
+$$</div>
+<div class="math-block">$$
+\nabla_a K_{bc}-\nabla_b K_{ac}=R^{(M)}_{n cab}, \quad (4)
+$$</div>
+<p>where $K_{ab}$ is the second fundamental form and $\varepsilon=g(n,n)=\pm1$. For higher codimension, the normal-bundle connection and Ricci equation must also be included. Gold Truth III remains the MES foundational postulate; these tensor equations state the geometric compatibility conditions required for its embedding realization. The scalar contraction is not the complete embedding system. The full tensor form is restated with explicit geometric data in DW58553928, Section 5.3.2, where the four-dimensional GTCN is constructed.</p>
+<h3 id="14-two-guiding-scientific-principles">1.4 Two Guiding Scientific Principles</h3>
+<p>The paper inherits the two symmetric principles of DW58553928.</p>
+<blockquote>
+<p><strong>Principle P1 (Against Overclaiming).</strong> A physical target that has not been realized must not be presented as a completed scientific discovery.</p>
+<p><strong>Principle P2 (Against Overrejection).</strong> An architecture that may have mathematical value must not be rejected merely because its physical realization has not been demonstrated.</p>
+</blockquote>
+<p>Both principles oppose the same error: conflating formal constructive specification with physical realization. P1 forbids overclaiming—presenting a formal construction as a physical achievement. P2 forbids overrejection—treating the absence of physical realization as a refutation of the mathematical architecture.</p>
+<p>In this paper, P1 forbids reporting any channel verdict as a demonstration that gold can be created; P2 forbids treating the openness of any channel as a refutation of the research program.</p>
+<h3 id="15-three-layer-nesting-and-gtcn-consistency">1.5 Three-Layer Nesting and GTCN Consistency</h3>
+<p>This paper uses the same three-layer MES nesting and the same four-dimensional GTCN mathematical level ($d_{\mathrm{GTC}} = 4$) as DW58553928.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Object</th>
+<th>Role</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>L0</td>
+<td>MES universe curvature web $\mathcal O_{\mathrm{web}}$</td>
+<td>Parent geometric structure, MES postulates, curvature-dependent fields ($D_{\mathrm{MES}} \geq 5$)</td>
+</tr>
+<tr>
+<td>L1</td>
+<td>GTCN $\mathcal N_{\mathrm{GTC}}$</td>
+<td>Same-dimensional four-dimensional geometric child ($d_{\mathrm{GTC}} = 4$), with fixed metric, connection, curvature, topology, and embedding data</td>
+</tr>
+<tr>
+<td>L2</td>
+<td>Five-channel reaction and verification network $\mathcal C_5$</td>
+<td>Target-specific channel dynamics, reaction edges, and evidence states embedded in the 4D GTCN</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Fixed dimension ($d_{\mathrm{GTC}} = 4$) and rationale.</strong> Following DW58553928 (§1.6), the GTCN dimension is fixed at <strong>$d_{\mathrm{GTC}} = 4$</strong> ($2m$ with $m=2$). Physically and geometrically, this four-dimensional structure matches the three effective dynamical degrees of freedom required by the coupled channel network (such as the closed feedback cycle $\mathrm{C2} \to \mathrm{C3} \to \mathrm{C5} \to \mathrm{C2}$) plus one local curvature-evolution direction (associated with $R$ and the finite transition window $\tau_{Ji}$). Mathematically, $d_{\mathrm{GTC}} = 4$ provides a non-trivial four-dimensional Gauss–Bonnet–Chern Euler invariant, accommodates codimension-2 exceptional-point submanifolds and encircling loops, and admits a direct codimension-one embedding into a five-dimensional local ambient sector of $\mathcal O_{\mathrm{web}}$.</p>
+<p>A same-dimensional refinement may enrich the metric, connection, curvature, or channel representation while preserving $d_{\mathrm{GTC}} = 4$. Any higher-dimensional extension ($d &gt; 4$) requires explicitly defined added degrees of freedom, a projection or restriction recovering the four-dimensional GTCN, and compatible embedding and characteristic data. The GTCN is not reduced to an illustration or bookkeeping layer.</p>
+<h3 id="16-the-role-of-ai">1.6 The Role of AI</h3>
+<p>Compared to previous technologies, AI represents a new, highly productive, and efficient intelligent supersystem. It links to the entirety of human-known knowledge, it carries unprecedented aspirations for development and hopes for prosperity, and it possesses a revolutionary driving force for <strong>Creating Matter</strong>—which we might term "<strong>AI Power.</strong>"</p>
+<p>AI is treated as an active computational research system: database extraction, normalization, cross-checking, candidate generation, model orchestration, surrogate construction, parameter optimization, reaction-network search, uncertainty analysis, and independent verification.</p>
+<p>The target is to process data for thousands of nuclides within hours when the relevant evaluated data are accessible and the tasks are database-scale or computationally parallelizable. This is a research objective, not a claim that every high-precision many-body calculation can be completed in that time. Data extraction and screening can be massively parallel; nuclear structure, continuum coupling, Floquet dynamics, and reaction cross sections require dedicated physical models and error control.</p>
+<p>AI-generated candidates are not accepted merely because they rank highly. Every promising result must be checked by the underlying solver, conservation laws, uncertainty estimates, and, where feasible, an independent implementation. AI may also discover new cross-channel dependencies and propose revised control protocols; such proposals enter the evidence-state vector only after physical and mathematical verification.</p>
+<h3 id="17-what-this-paper-does-not-claim">1.7 What This Paper Does Not Claim</h3>
+<p>This paper does not claim any of the five channel verdicts. It specifies how each verdict is to be computed, what quantities must be evaluated, and what follows from each possible outcome. The verdicts await computation. The paper's contribution is the <strong>structure</strong> of the verification program, not its outcome.</p>
+<p>This paper is also not a demonstration that gold has been created. It inherits P1 from DW58553928. The five-channel evidence-state vector is a Type-1 organizational structure: it specifies how channel evidence is recorded, not what the physical decision will be.</p>
+<h3 id="18-organization">1.8 Organization</h3>
+<p>Section 2 announces the goal and restates the inherited structure from DW58553928. Section 3 develops the five activation channels. Section 4 classifies the verification obligations. Section 5 presents AI-assisted discovery and computation. Section 6 develops the Bottleneck Loop. Section 7 constructs the five-channel evidence-state vector. Section 8 integrates the channels within the GTCN and reaction-channel geometry. Section 9 discusses transfer to other targets. Section 10 states the boundary of the claims. Appendix A lists the computational tasks required for each channel.</p>
+<hr />
+<h2 id="2-inherited-structure-from-dw58553928">2. Inherited Structure from DW58553928</h2>
+<h3 id="21-postulate-set">2.1 Postulate Set</h3>
+<p>The five channels are developed within the postulate set of DW58553928:</p>
+<ul>
+<li><strong>A1</strong> Curvature–mass postulate:</li>
+</ul>
+<div class="math-block">$$
+m(R) = m_0 \left(\frac{R_0}{R}\right)^{1/2}. \quad (5)
+$$</div>
+<ul>
+<li><strong>A2</strong> Topological condensation postulate.</li>
+<li><strong>A3</strong> Landscape-reprogramming postulate.</li>
+<li><strong>A4</strong> Observer-origin geometry:</li>
+</ul>
+<div class="math-block">$$
+R(\theta) = \exp(\theta A) \in SO(3). \quad (6)
+$$</div>
+<ul>
+<li><strong>A5</strong> Finite transition window $\tau_{Ji} &gt; 0$.</li>
+<li><strong>A6</strong> Non-Hermitian effective drive:</li>
+</ul>
+<div class="math-block">$$
+H_{\text{eff}}(\tau) = H_{\text{real}} + i\Gamma(\tau)\hat K. \quad (7)
+$$</div>
+<ul>
+<li><strong>B1</strong> Proposed cross-scale bridge $\Phi: \mathcal H_{\text{model}} \to \mathcal H_{\text{nuclear}}$.</li>
+</ul>
+<p>None of these postulates is established as an experimental law. The consistency of the set is not proved. The five channels are developed conditionally: if the postulates hold, the channels are the candidate mechanisms for activating continuum coupling.</p>
+<h3 id="22-two-guiding-principles">2.2 Two Guiding Principles</h3>
+<p>The paper inherits the two symmetric principles of DW58553928. They are restated in Section 1.4 and applied throughout.</p>
+<h3 id="23-three-layer-nesting">2.3 Three-Layer Nesting</h3>
+<p>The paper inherits the same-dimensional, same-level GTCN nesting of DW58553928. The five channels form the target-specific L2 network; their geometric representation is the L1 GTCN. The dimension, embedding convention, characteristic structure, and Gold Truth wording must match the sister paper.</p>
+<hr />
+<h2 id="3-five-research-channels-and-their-physical-operators">3. Five Research Channels and Their Physical Operators</h2>
+<p>The five channels are retained as a unified research architecture. They are not identical kinds of mechanism: C1–C3 are candidate activation mechanisms, C4 constructs reaction-sector connectivity, and C5 characterizes environmental and decay processes. Their roles are complementary and are evaluated jointly through the GTCN and the reaction-channel state space.</p>
+<h3 id="31-channel-c1-deformation-driven-threshold-and-resonance-search">3.1 Channel C1: Deformation-Driven Threshold and Resonance Search</h3>
+<p>Let $H_{\mathrm{nuc}}(\beta_2,\gamma)$ be a specified nuclear Hamiltonian, including the central, spin-orbit, Coulomb, and residual-interaction terms. The relevant proton single-particle or many-body resonance is determined relative to the proton-emission threshold. Define the energy relative to that threshold by</p>
+<div class="math-block">$$
+\epsilon_{\alpha}(\beta_2,\gamma) = E_{\alpha}(\beta_2,\gamma)-E_{\mathrm{thr}}, \quad (8)
+$$</div>
+<p>where the convention is that $\epsilon&lt;0$ is below threshold and $\epsilon&gt;0$ is above threshold. A threshold crossing is therefore</p>
+<div class="math-block">$$
+\operatorname{Re}\epsilon_{\alpha}(\beta_2^*,\gamma^*)=0, \quad (9)
+$$</div>
+<p>together with a physically meaningful pole and a nonzero width in the open channel. This avoids equating a single-particle energy to a separation energy without specifying the energy zero and sign convention.</p>
+<p>The calculation must report the Nilsson or deformed Woods–Saxon spectrum, the deformation domain, the proton threshold, resonance-pole trajectories, widths, and model uncertainties. The previously quoted estimate $\Delta\beta_2\sim3$–$5$ is treated as a preliminary model-dependent estimate, not a verified result, until a reproducible parameter scan and validity analysis are supplied.</p>
+<p><strong>AI task.</strong> Run a reproducible chart-wide scan, identify nuclei and substates close to threshold, and prioritize candidates for full calculation. A threshold crossing is not by itself proof of a viable gold-production path.</p>
+<h3 id="32-channel-c2-rotational-coriolis-mixing">3.2 Channel C2: Rotational Coriolis Mixing</h3>
+<p>In a rotating frame, a standard starting Hamiltonian is</p>
+<div class="math-block">$$
+H_{\mathrm{rot}}=H_{\mathrm{Nilsson}}-\omega J_x. \quad (10)
+$$</div>
+<p>The Coriolis term can mix configurations and break time-reversal symmetry for a fixed nonzero rotational frequency. This does not, by itself, prove nonzero Berry curvature, topological winding, continuum coupling, or an exceptional point. Berry curvature must be calculated from parameter-dependent eigenstates over a specified parameter manifold; an EP requires eigenvalue and eigenvector coalescence of a non-Hermitian operator family.</p>
+<p>The calculation must specify the spin and rotational band, the accessible frequency range, Coriolis matrix elements, continuum-channel couplings, and induced widths. The estimate $\omega\sim0.1\,\mathrm{MeV}/\hbar$ is a candidate scale to investigate, not evidence that the required state and coupling are available in $^{197}\mathrm{Au}$.</p>
+<p><strong>AI task.</strong> Diagonalize the cranked Hamiltonian across the stated parameter domain, calculate configuration mixing and continuum matrix elements, and independently verify any Berry curvature or EP claim.</p>
+<h3 id="33-channel-c3-strong-field-dressing-and-floquet-coupling">3.3 Channel C3: Strong-Field Dressing and Floquet Coupling</h3>
+<p>For a periodic drive,</p>
+<div class="math-block">$$
+H(t)=H_0+V(t),\qquad V(t+T)=V(t),\qquad \omega=2\pi/T, \quad (11)
+$$</div>
+<p>the Floquet operator is</p>
+<div class="math-block">$$
+H_F=H(t)-i\hbar\frac{\partial}{\partial t}. \quad (12)
+$$</div>
+<p>The nuclear interaction must be derived from the relevant electromagnetic multipole coupling. For an electric quadrupole interaction, a schematic form is</p>
+<div class="math-block">$$
+V_{E2}(t)=-\frac{1}{6}\sum_{ij}Q_{ij}\,\partial_i E_j(\mathbf r,t), \quad (13)
+$$</div>
+<p>with convention-dependent tensor normalization. Minimal coupling alone does not specify the nuclear quadrupole matrix element. The calculation must include field geometry, gradients, polarization, selection rules, radial and angular matrix elements, Floquet sidebands, and coupling to the appropriate particle-emission continuum.</p>
+<p>A quasienergy crossing or avoided crossing does not itself imply nucleon emission. The relevant quantity is the partial width or transition rate into a specified open channel. If $\Gamma_p$ is an energy width, the corresponding rate is $\gamma_p=\Gamma_p/\hbar$. Rate comparisons must be made with rates, and width comparisons with widths.</p>
+<p>For a Floquet state $|\Phi_F\rangle$ coupled to a proton continuum $|\chi_{p,E}\rangle$, a lowest-order expression is</p>
+<div class="math-block">$$
+\Gamma_p(E)=2\pi\left|\langle\chi_{p,E}|V_{QP}|\Phi_F\rangle\right|^2\rho_p(E), \quad (14)
+$$</div>
+<p>with Floquet sideband energy matching included in the full calculation. The expression is a starting point, not a numerical prediction.</p>
+<p><strong>AI task.</strong> Perform Floquet parameter scans, surrogate-assisted inverse optimization, structured-field mode search, and independent full-solver verification. Any field estimate such as $10^{15}\,\mathrm{V/cm}$ must be traced to a defined Hamiltonian, geometry, and matrix element before being treated as a quantitative threshold.</p>
+<h3 id="34-channel-c4-particle-number-sectors-and-reaction-network-construction">3.4 Channel C4: Particle-Number Sectors and Reaction-Network Construction</h3>
+<p>C4 is the bridge from state-space organization to actual nuclear reactions. Let $\alpha$ label a complete reaction channel, including nuclear species $(A,Z)$, internal states, relative-motion quantum numbers, and emitted or absorbed particles. The reaction-channel Hilbert space is</p>
+<div class="math-block">$$
+\mathcal H_{\mathrm{ch}}=\bigoplus_{\alpha\in\mathcal C}\mathcal H_\alpha. \quad (15)
+$$</div>
+<p>The channel Hamiltonian has off-diagonal interaction blocks</p>
+<div class="math-block">$$
+H_{\mathrm{ch}}=\bigoplus_\alpha H_{\alpha\alpha}+\sum_{\alpha\ne\beta}V_{\alpha\beta},\qquad V_{\alpha\beta}=P_\alpha H P_\beta. \quad (16)
+$$</div>
+<p>The direct sum provides a common state space; the nonzero off-diagonal operators provide the physical bridges. If all relevant $V_{\alpha\beta}$ vanish, or if a transition is forbidden by conservation laws or thresholds, no physical transition follows from the direct-sum construction alone.</p>
+<p>A candidate path $\alpha_0\to\alpha_1\to\cdots\to\alpha_f$ must satisfy, for the complete system, charge and baryon-number conservation, energy conservation, angular-momentum and parity constraints, nonzero reaction matrix elements, open-channel conditions, and adequate transition probabilities. The path may involve capture, transfer, emission, decay, or multi-step reactions; virtual intermediate sectors require a well-defined effective interaction and cannot be treated as real intermediate nuclei.</p>
+<p><strong>AI task.</strong> Extract evaluated masses, levels, separation energies, decay branches, and reaction data; generate candidate paths; calculate missing matrix elements with nuclear models; rank paths with uncertainty-aware scores. The AI objective is to process thousands of nuclides in hours for data extraction and preliminary graph search when data access and computational resources permit. High-precision reaction calculations remain separate, model-dependent tasks.</p>
+<h3 id="35-channel-c5-environment-internal-conversion-and-open-system-dynamics">3.5 Channel C5: Environment, Internal Conversion, and Open-System Dynamics</h3>
+<p>Internal conversion is a nuclear de-excitation process in which nuclear transition energy is transferred to an atomic electron, which may be ejected. It is not automatically a decoherence bath that freezes a rotating state. Its effects must be separated into population decay, energy dissipation, phase decoherence, and possible measurement-induced dynamics.</p>
+<p>A general open-system model may be written</p>
+<div class="math-block">$$
+\frac{d\rho}{dt}=-\frac{i}{\hbar}[H,\rho]+\sum_\mu\left(L_\mu\rho L_\mu^\dagger-\frac12\{L_\mu^\dagger L_\mu,\rho\}\right), \quad (17)
+$$</div>
+<p>where the jump operators $L_\mu$ represent specified channels such as internal conversion, radiative decay, electron scattering, or coupling to material degrees of freedom. Each contribution must be derived from its coupling and density of states. If widths $\Gamma_\mu$ are used, the associated rates are $\gamma_\mu=\Gamma_\mu/\hbar$.</p>
+<p><strong>AI task.</strong> Compute internal-conversion coefficients and nuclear transition strengths; build the atomic-nuclear-environment coupling model; distinguish $T_1$ population lifetime from $T_2$ coherence time; and evaluate whether environmental processes suppress or assist the relevant channel dynamics. No stabilization or freezing effect is assumed in advance.</p>
+<hr />
+<h2 id="4-four-classes-of-verification-obligation">4. Four Classes of Verification Obligation</h2>
+<p>The five research channels generate several mathematical forms of verification. These four classes describe the shape of the proof or calculation required; they are not four mutually exclusive physical feasibility states.</p>
+<h3 id="41-existential-obligations">4.1 Existential Obligations</h3>
+<p>C1 and C4 include existential questions: whether a deformation-dependent resonance exists, and whether a physically admissible path exists in the reaction-channel network. A positive result requires an explicit witness—parameter values, states, nonzero couplings, and a valid path. A negative result requires a controlled search or theorem over a declared domain.</p>
+<h3 id="42-growth-rate-and-response-obligations">4.2 Growth-Rate and Response Obligations</h3>
+<p>C2 requires the response of mixing amplitudes and continuum couplings as functions of rotational frequency and other parameters. The relevant output is not simply whether time-reversal symmetry is broken, but the computed dependence of matrix elements, widths, and state populations.</p>
+<h3 id="43-supremum-and-optimization-obligations">4.3 Supremum and Optimization Obligations</h3>
+<p>C3 requires optimization over field strength, frequency, polarization, geometry, and Floquet sidebands. A positive result identifies a parameter set with a specified partial width or rate. A negative result requires a rigorous upper bound over the declared admissible domain, including model error and numerical uncertainty.</p>
+<h3 id="44-numerical-value-and-open-system-obligations">4.4 Numerical-Value and Open-System Obligations</h3>
+<p>C5 requires numerical evaluation of decay widths, decoherence rates, and coherence times. Widths and rates must not be mixed: $\gamma_\mu=\Gamma_\mu/\hbar$. Internal conversion, radiative decay, and other processes contribute to different entries of the open-system generator and need not all represent pure dephasing.</p>
+<h3 id="45-relationship-between-verification-and-evidence-states">4.5 Relationship Between Verification and Evidence States</h3>
+<p>The four verification classes are methods of establishing evidence. The final record is the five-channel evidence-state vector, not a four-state feasibility lattice. A numerical result may support one channel while leaving the complete reaction pathway unresolved. A global Type-3 conclusion requires the end-to-end path and target verification described in Sections 3 and 7.</p>
+<hr />
+<h2 id="5-ai-assisted-discovery-computation-and-adaptive-research">5. AI-Assisted Discovery, Computation, and Adaptive Research</h2>
+<p>AI is not restricted to a clerical role. Within this program it can serve as a data-engineering system, model orchestrator, inverse optimizer, reaction-path discovery engine, uncertainty analyst, and feedback-control designer. The objective is to use AI to expand the reachable scale of nuclear-theory investigation while retaining auditable physical calculations.</p>
+<h3 id="51-large-scale-nuclide-data-processing">5.1 Large-Scale Nuclide Data Processing</h3>
+<p>An AI-assisted pipeline can ingest evaluated nuclear databases and literature-derived records for thousands of nuclides, normalize identifiers and units, reconcile duplicate or conflicting entries, and build a queryable graph of masses, levels, separation energies, spins, parities, decay modes, and reaction data. Database-scale extraction and preliminary filtering can plausibly be organized for completion within hours, depending on access, data formats, and compute resources.</p>
+<p>The pipeline must attach provenance and uncertainty to every datum. Missing values must remain missing rather than be imputed as physical facts. Quantities absent from evaluated databases require dedicated nuclear-structure or reaction calculations. Thus the research target is not merely "AI reads thousands of nuclei," but "AI produces a reproducible, provenance-aware nuclear reaction knowledge graph that can drive downstream calculations."</p>
+<h3 id="52-inverse-optimization-of-resonant-enhancement">5.2 Inverse Optimization of Resonant Enhancement</h3>
+<p>The forward problem is to calculate the induced partial width or transition rate for a given field and nuclear state. The inverse problem is to find control parameters that optimize a specified observable subject to energy, field, and stability constraints. AI can train surrogate models on full Floquet calculations, identify candidate resonant regions, and propose parameter sets. Every proposed optimum must be re-evaluated by the full solver, with surrogate error and extrapolation uncertainty reported.</p>
+<h3 id="53-structured-mode-matching">5.3 Structured-Mode Matching</h3>
+<p>AI can search structured electromagnetic modes whose spatial gradients and polarization maximize overlap with the actual nuclear multipole transition density. A mode-matching claim must use the full interaction Hamiltonian and the nuclear transition matrix element; matching a field pattern to a spherical harmonic such as $Y_{20}$ is not by itself evidence of enhanced nuclear coupling. Maxwell constraints, field gradients, selection rules, mode normalization, and energy delivery must be included.</p>
+<h3 id="54-decoherence-window-and-lifetime-matching">5.4 Decoherence-Window and Lifetime Matching</h3>
+<p>For a driven transition, the relevant comparison is between the transition time, coherence time, population lifetime, and competing decay times. If $\Gamma$ is an energy width and $T_2$ is a coherence time, the dimensionless product $\Gamma T_2/\hbar$ may be used as a rough timescale indicator. It is not a sufficient activation criterion: the master equation, initial state, target population, and competing jump processes must also be solved.</p>
+<h3 id="55-cross-scale-analogical-transfer">5.5 Cross-Scale Analogical Transfer</h3>
+<p>AI can search for ideas in atomic physics, quantum optics, and condensed matter—dark states, parametric amplification, Floquet engineering, and geometric control—and translate each candidate into an explicit nuclear-scale Hamiltonian term. An analogy becomes a physical proposal only after dimensions, symmetries, conservation laws, selection rules, coupling strengths, and parameter domains have been derived.</p>
+<h3 id="56-formal-bounds-and-independent-verification">5.6 Formal Bounds and Independent Verification</h3>
+<p>AI can assist in conjecture generation, symbolic derivation, numerical exploration, and proof checking. A formal upper bound is accepted only when its assumptions, domain, boundary conditions, approximation errors, and proof certificate are independently auditable. AI output is not itself a proof. Where a numerical surrogate is used, the final verdict must be checked against the full physical solver and independent code or method where feasible.</p>
+<h3 id="57-adaptive-control-of-the-target-state-population">5.7 Adaptive Control of the Target-State Population</h3>
+<p>Let $\boldsymbol\lambda(t)$ denote controllable field parameters and let $\mathbf x(t)$ denote the populations or coherences of selected reaction channels. A feedback law may be written abstractly as</p>
+<div class="math-block">$$
+\dot{\boldsymbol\lambda}=\mathcal F(\boldsymbol\lambda,\mathbf x,\mathbf x_{\mathrm{target}}), \quad (18)
+$$</div>
+<p>where $\mathcal F$ must be implemented by a physically realizable measurement-and-control protocol. The control objective is to maximize target-state population or yield while respecting constraints on energy, field amplitude, heating, competing channels, and nuclear-state survival. The feedback law is a research object to be derived and tested, not an assumed ability of the system to self-select gold.</p>
+<p><strong>Methodological analogy: from static recipes to closed-loop craft.</strong> The necessity of the adaptive feedback law in Eq. (18) echoes the epistemological distinction drawn in the Zhuangzi parable of Wheelwright Pian (<em>Tiandao</em>): static symbols and tabulated parameters alone are merely "the dregs of the ancients" unless coupled to real-time, responsive execution ("attained by the hand and answered by the mind," <em>de zhi yu shou er ying yu xin</em>). In the present <code>emind</code> and AI-orchestrated architecture, this expression is stripped of any psychological or subjective connotation and formulated purely as an oriented feedback architecture: real-time channel observables $\mathbf x(t)$ (the hand) continuously update the control-manifold parameters $\boldsymbol\lambda(t)$ anchored at the observer origin (the mind). Because local curvature perturbations, Coriolis mixing (C2), and environmental decoherence (C5) vary dynamically across the Bottleneck Loop, no fixed open-loop pulse sequence can guarantee target-state convergence; AI-assisted adaptive control is therefore required to navigate the "neither too fast nor too slow" operational regime in real time. Consistent with Principle P1, this analogy does not substitute for a physical derivation; it clarifies why static open-loop formulas fail and why feedback control is structurally required.</p>
+<hr />
+<h2 id="6-the-bottleneck-loop-a-testable-physical-cycle-hypothesis">6. The Bottleneck Loop: A Testable Physical-Cycle Hypothesis</h2>
+<p>The Bottleneck Loop is retained as a central new physical idea of the five-channel architecture. It proposes that the bottleneck of one channel may be altered by another channel, and that these dependencies may form a closed cycle. This is stronger than saying that the channels are merely correlated: it proposes directional physical feedback with calculable consequences.</p>
+<h3 id="61-the-proposed-directed-coupling-network">6.1 The Proposed Directed Coupling Network</h3>
+<p>The candidate network is represented by the directed dependencies C2→C3, C3→C5, C5→C2, C4→C1, and C1→C4; C3→C4 is an additional pathway to test when driven-state population changes subsequent reaction branching. This gives two candidate closed cycles, C2→C3→C5→C2 and C1↔C4. The network may contain further cycles, and its final topology is determined by the derived nonzero couplings rather than fixed by a diagram alone.</p>
+<h3 id="62-physical-meaning-of-the-candidate-edges">6.2 Physical Meaning of the Candidate Edges</h3>
+<ul>
+<li><strong>C2 → C3:</strong> Coriolis mixing may alter the state composition and multipole matrix elements entering the Floquet-driven continuum coupling. Compute the change in the relevant $V_{QP}$ and partial width with and without rotation.</li>
+<li><strong>C4 → C1:</strong> A physically realized reaction path may enter a neighboring nuclear sector with a different deformation landscape and different resonance thresholds.</li>
+<li><strong>C5 → C2:</strong> Environmental coupling may change rotational coherence, lifetime, and state populations. It may enhance a desired transfer in a restricted regime or suppress it through decoherence and decay; the sign is a calculation, not an assumption.</li>
+<li><strong>C1 → C4:</strong> Deformation-dependent structure may change reaction matrix elements, level density, or branching ratios that determine which inter-sector edges are accessible.</li>
+<li><strong>C3 → C4:</strong> Field-dressed states may alter reaction branching or populate intermediate states that open a subsequent reaction channel. This requires a joint driven-reaction calculation.</li>
+<li><strong>C3 → C5:</strong> Driven-state population may change the available internal-conversion and radiative branches, thereby feeding back into the environmental dynamics.</li>
+</ul>
+<p>Each edge must be assigned a coupling operator, initial and final states, control parameters, conservation rules, predicted effect, uncertainty, and a falsification condition. A complete loop requires a consistent set of edge maps whose composition produces a measurable change in a system-level observable. The proposed C2–C3–C5–C2 and C1–C4–C1 cycles are hypotheses until each edge and the composed response are calculated.</p>
+<h3 id="63-loop-gain-and-synergy">6.3 Loop Gain and Synergy</h3>
+<p>A loop gain can be defined only after a common observable and normalization are fixed. For example, if $Y$ is the target-state yield under a fixed initial condition and resource budget, a candidate synergy measure is</p>
+<div class="math-block">$$
+S_Y=\frac{Y_{\mathrm{combined}}}{\max_i Y_i}, \quad (19)
+$$</div>
+<p>where $Y_{\mathrm{combined}}$ and $Y_i$ are computed under the same constraints. $S_Y&gt;1$ indicates enhancement of target yield relative to the best isolated channel under that comparison protocol. It does not establish a universal synergy or a physical effect until the coupled dynamics and uncertainties are evaluated.</p>
+<p>The concrete form of this metric, together with its comparison protocol, is given in the sister paper DW58553928, Section 6.7.4. The two papers use the same normalization convention: if $\Gamma$ denotes an energy width, all terms in a ratio must have energy units; if it denotes a rate, all terms must have inverse-time units.</p>
+<h3 id="64-why-the-loop-matters">6.4 Why the Loop Matters</h3>
+<p>The loop offers a new way to search for mechanisms that are invisible in isolated-channel analysis. AI can identify candidate feedback edges from large parameter scans, but physics determines whether those edges exist. A negative edge result is informative: it removes one proposed feedback mechanism while leaving the remaining network available for investigation.</p>
+<p>The GTCN provides the common geometric representation of the loop. Its nodes, edges, cycles, curvature data, and embedding maps must be built from the corresponding physical operators and channel data. The loop is therefore a testable physical-cycle hypothesis, not merely a metaphor or an assumed enhancement.</p>
+<hr />
+<h2 id="7-five-channel-evidence-state-vector-and-type-3-decision">7. Five-Channel Evidence-State Vector and Type-3 Decision</h2>
+<p>The former four-state classification is replaced by a five-channel evidence-state vector:</p>
+<div class="math-block">$$
+\mathbf s=(s_1,s_2,s_3,s_4,s_5),\qquad s_i\in\{A,R,U\}. \quad (20)
+$$</div>
+<p>Here $A$ means supported within a declared model and parameter domain; $R$ means ruled out within that same domain; and $U$ means unresolved or insufficiently constrained. The vector has $3^5$ formal combinations and preserves the independent status of each channel.</p>
+<h3 id="71-why-a-vector-is-preferable-to-four-global-states">7.1 Why a Vector Is Preferable to Four Global States</h3>
+<p>The former categories overlapped: "at least one channel activated" could include both mixed and globally supported cases. The vector avoids this logical ambiguity and preserves evidence granularity. It also prevents a local channel result from being mistaken for an end-to-end physical result.</p>
+<h3 id="72-type-3-feasibility-requires-an-end-to-end-path">7.2 Type-3 Feasibility Requires an End-to-End Path</h3>
+<p>A Type-3 positive conclusion requires more than one channel marked $A$. It requires a connected sequence of physically allowed reaction edges from the initial state to the target state; conservation laws and thresholds must hold; all required matrix elements and branching probabilities must be quantified; the target-state population must be sufficient under a stated criterion; and the final nuclide must be independently identified.</p>
+<p>If all five specified channels are marked $R$, the valid conclusion is that these five channels are ruled out within their examined model domains. It does not establish universal physical impossibility unless the completeness of the candidate mechanism set is separately proved. An unresolved component remains $U$ and must not be silently converted to either $A$ or $R$.</p>
+<h3 id="73-negative-results-as-research-progress">7.3 Negative Results as Research Progress</h3>
+<p>A negative verdict for one channel closes that candidate within its stated domain and reallocates effort to the remaining channels. A positive verdict identifies a supported component but does not alone prove the complete target pathway. The evidence vector therefore supports cumulative and auditable progress without collapsing distinct physical questions.</p>
+<h3 id="74-relation-to-the-gtcn">7.4 Relation to the GTCN</h3>
+<p>The GTCN can encode the five channel states as labelled geometric data and may reveal topological or geometric organization among different evidence vectors. A one-to-one correspondence between evidence vectors and topological classes is not assumed; it must be established by explicit maps and invariant calculations. The vector is the evidence record; the GTCN is the geometric structure in which its relationships are studied.</p>
+<hr />
+<h2 id="8-the-five-channels-in-the-gtcn">8. The Five Channels in the GTCN</h2>
+<p>The GTCN is the same-dimensional, same-level geometric child used in DW58553928. The five research channels are represented within it by explicit maps from physical parameter spaces and reaction-channel data to geometric structures.</p>
+<h3 id="81-channel-maps-and-geometric-data">8.1 Channel Maps and Geometric Data</h3>
+<p>For each channel $C_i$, define a parameter/state domain $\mathcal P_i$ and a map</p>
+<div class="math-block">$$
+\Psi_i:\mathcal P_i\longrightarrow\mathfrak G(\mathcal N_{\mathrm{GTC}}),\qquad i=1,\ldots,5. \quad (21)
+$$</div>
+<p>The map must state what geometric object is produced: a metric deformation, connection change, curvature contribution, channel edge, boundary/interface datum, or open-system field. These possibilities are not interchangeable. A channel is not assigned a scalar-curvature source without deriving the map and its transformation properties.</p>
+<h3 id="82-fixed-four-dimensional-structure-and-permitted-upgrades">8.2 Fixed Four-Dimensional Structure and Permitted Upgrades</h3>
+<p>The dimension $d_{\mathrm{GTC}} = 4$ and the codimension-one embedding conventions (for local ambient dimension $D_{\mathrm{MES}} = 5$) are inherited unchanged from DW58553928 (§1.6 and §5.3). Same-dimensional upgrades may enrich geometric fields, connection torsion, or network connectivity on the 4-manifold. A higher-dimensional extension ($d &gt; 4$) must define the added coordinates, their physical or mathematical meaning, the projection recovering the four-dimensional GTCN, and compatibility of the embedding and characteristic forms. Both sister papers share the exact same $d_{\mathrm{GTC}} = 4$ specification.</p>
+<h3 id="83-four-dimensional-characteristic-functional-and-unresolved-data">8.3 Four-Dimensional Characteristic Functional and Unresolved Data</h3>
+<p>With $d_{\mathrm{GTC}} = 4$ ($m=2$), the Euler characteristic of a compact oriented GTCN 4-manifold is represented by the four-dimensional Gauss–Bonnet–Chern formula:</p>
+<div class="math-block">$$
+\chi(\mathcal N_{\mathrm{GTC}}) = \int_{\mathcal N_{\mathrm{GTC}}}\mathcal E_{4}(g) + \int_{\partial\mathcal N_{\mathrm{GTC}}}\mathcal B_{3}(g,K), \quad (22)
+$$</div>
+<p>where $\mathcal E_4(g)$ is the normalized quadratic Euler curvature 4-form and $\mathcal B_3(g,K)$ is the three-dimensional boundary transgression form on $\partial\mathcal N_{\mathrm{GTC}}$. This is the same four-dimensional characteristic formula used in DW58553928, Section 5.3.3 (Eq. 39). A generic integral of scalar curvature plus a boundary curvature term is not topological in four dimensions.</p>
+<p>Unresolved channels are retained as unknown fields or unresolved subdomains on the 4-manifold. They are represented by three-dimensional boundary/interface terms only when the geometry provides an actual hypersurface boundary, induced 3-metric, and Gauss–Codazzi matching conditions. Channel C4 is not automatically a boundary contribution: its reaction-sector extension is part of the four-dimensional network interior or an enlarged channel space unless a specific geometric decomposition proves otherwise.</p>
+<h3 id="84-gtcn-and-the-bottleneck-loop">8.4 GTCN and the Bottleneck Loop</h3>
+<p>The Bottleneck Loop appears in the GTCN as a directed cycle only when each proposed edge has a derived physical coupling and the composition is well-defined. The GTCN can then study cycle structure, geometric response, and characteristic invariants of the coupled network. This preserves the full theoretical role of GTCN while making its connection to nuclear dynamics explicit and falsifiable.</p>
+<hr />
+<h2 id="9-from-gold-to-other-targets">9. From Gold to Other Targets</h2>
+<p>The five-channel architecture is not specific to Gold-197. It is a transferable research architecture for target-state construction, provided the state space, physical operators, reaction network, and GTCN channel maps are rebuilt and verified for each new target.</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Extension</th>
+<th>Required replacement</th>
+<th>Verification requirement</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Other elements</td>
+<td>Nuclear data for the new target</td>
+<td>Re-run C1, C4 with new Nilsson diagram and nuclear database</td>
+</tr>
+<tr>
+<td>Other phases of matter</td>
+<td>Different coupling mechanism</td>
+<td>Re-identify the five channels for the new system</td>
+</tr>
+<tr>
+<td>Other physical scales</td>
+<td>Different GTCN projection</td>
+<td>Re-check the Gauss–Codazzi constraint at the new scale</td>
+</tr>
+</tbody>
+</table></div>
+<p>Transferability is a research objective, not a result established by the Gold-197 example. A failed test for one target invalidates the corresponding implementation but does not automatically refute the architecture.</p>
+<hr />
+<h2 id="10-the-boundary-of-the-claims">10. The Boundary of the Claims</h2>
+<h3 id="101-what-this-paper-claims">10.1 What This Paper Claims</h3>
+<ul>
+<li><strong>Type 1:</strong> the five research channels, reaction-channel state space, AI-assisted workflow, and verification obligations are specified as a formal research architecture.</li>
+<li><strong>GTCN:</strong> the GTCN is retained as the same-level geometric child as in DW58553928; its fixed dimension, embedding system, characteristic structure, and channel maps are explicit mathematical construction requirements.</li>
+<li><strong>Bottleneck Loop:</strong> the cross-channel feedback cycle is proposed as a new physical-cycle hypothesis with computable coupling edges and falsification conditions.</li>
+<li><strong>Evidence:</strong> the five-channel evidence-state vector records the independent status of each channel without claiming a global feasibility verdict.</li>
+</ul>
+<h3 id="102-what-this-paper-does-not-claim">10.2 What This Paper Does Not Claim</h3>
+<ul>
+<li>No numerical verdict for C1–C5 is claimed.</li>
+<li>No completed physical realization or experimental production of Gold-197 by the proposed architecture is claimed.</li>
+<li>A direct-sum Hilbert space alone is not claimed to generate physical transitions; nonzero reaction operators and dynamical paths are required.</li>
+<li>A quasienergy crossing alone is not claimed to cause nucleon emission; coupling to an open particle channel and a nonzero partial width are required.</li>
+<li>The GTCN characteristic classification and any one-to-one correspondence with evidence states are not assumed; they must be established mathematically.</li>
+</ul>
+<h3 id="103-how-the-two-principles-are-applied">10.3 How the Two Principles Are Applied</h3>
+<p>P1 is respected by distinguishing a formal research architecture from an experimentally realized nuclear process. P2 is respected by developing the mathematical and computational architecture without treating the absence of a completed experiment as a refutation. The three Gold Truths remain foundational MES postulates, and the MES curvature-dependent fields remain inherited unchanged from DW58553914.</p>
+<p>The Zhuangzi's methodological caution (<em>Tiandao</em>) applies here as it does in the sister paper: written words and static notations, divorced from living dynamical coupling, are merely "the dregs of the ancients." Treating a direct-sum Hilbert space label or a formal operator chain (Type 1) as an accomplished nuclear transmutation (Type 3) commits precisely this error. By keeping Type 1 formal specification distinct from Type 3 physical realization, the Dual Principle ensures that mathematical symbols guide—rather than replace—rigorous dynamical verification.</p>
+<h3 id="104-conclusion">10.4 Conclusion</h3>
+<blockquote>
+<p>This paper develops an AI-assisted, five-channel research program for the Creating Gold paradigm and creates the first new beginning for creating matter. Its central mathematical bridge is the passage from a direct-sum reaction-channel space to physically coupled reaction paths; its central dynamical problem is the passage from Floquet quasienergy structure to continuum-coupled particle emission and controlled target-state population. The Bottleneck Loop is retained as a testable physical-cycle hypothesis, and the GTCN provides the common geometric structure in which the channel network is represented. The five-channel evidence-state vector records what is supported, ruled out within a declared domain, or unresolved. The paper specifies a research program, not a completed transmutation result.</p>
+</blockquote>
+<p>DW58553928 supplies the constructive Creating Gold paradigm and common MES–GTCN foundations; DW58553929 develops the AI-assisted physical and computational research program that investigates its channels and possible realization.</p>
+<hr />
+<h2 id="appendix-a-computational-tasks-for-the-five-channels">Appendix A. Computational Tasks for the Five Channels</h2>
+<h3 id="a1-c1-deformation-and-resonance-pole-mapping">A.1 C1: Deformation and Resonance-Pole Mapping</h3>
+<p>Compute $E_\alpha(\beta_2,\gamma)$ relative to a declared particle-emission threshold across the target and neighboring nuclides. Report resonance poles, partial widths, deformation domain, model uncertainty, and convergence. Do not equate an ambiguously referenced single-particle energy to a separation energy.</p>
+<h3 id="a2-c2-rotational-mixing-and-continuum-coupling">A.2 C2: Rotational Mixing and Continuum Coupling</h3>
+<p>Compute cranked spectra, Coriolis matrix elements, configuration mixing, and couplings to explicit continuum channels over a physically specified spin and frequency range. Calculate Berry curvature only on a declared parameter manifold and test EP conditions through eigenvalue and eigenvector coalescence.</p>
+<h3 id="a3-c3-floquet-and-open-channel-calculation">A.3 C3: Floquet and Open-Channel Calculation</h3>
+<p>Derive the nuclear electromagnetic multipole interaction, compute the Floquet spectrum including sidebands, and calculate partial particle-emission widths from the driven states into open channels. Report field geometry, gradients, selection rules, matrix elements, parameter ranges, and numerical error.</p>
+<h3 id="a4-c4-reaction-channel-network-and-direct-sum-couplings">A.4 C4: Reaction-Channel Network and Direct-Sum Couplings</h3>
+<p>Build the reaction-channel Hilbert space from evaluated nuclide data. For every candidate edge, identify the reaction, initial and final states, emitted or absorbed particles, conservation laws, Q value, threshold, interaction operator, matrix element, cross section or transition probability, and uncertainty. Search for complete paths to the target; do not treat a direct-sum label as a physical transition.</p>
+<h3 id="a5-c5-environmental-and-internal-conversion-dynamics">A.5 C5: Environmental and Internal-Conversion Dynamics</h3>
+<p>Compute internal-conversion coefficients and radiative widths for relevant nuclear transitions. Build a master equation with separately identified population-decay and dephasing channels. Report $T_1$, $T_2$, branching fractions, temperature dependence where justified, and uncertainties.</p>
+<h3 id="a6-joint-task-gtcn-bottleneck-loop-and-evidence-vector">A.6 Joint Task: GTCN, Bottleneck Loop, and Evidence Vector</h3>
+<p>Use the same GTCN dimension, embedding conventions, and characteristic structure as DW58553928. Construct each channel map $\Psi_i$, derive the proposed Bottleneck Loop edges from physical coupling operators, and encode channel verdicts in $\mathbf s\in\{A,R,U\}^5$. Investigate whether the evidence vector has a meaningful geometric or topological classification; do not assume a one-to-one correspondence in advance.</p>
+<h3 id="a7-ai-reproducibility-and-scale">A.7 AI Reproducibility and Scale</h3>
+<p>Record database versions, retrieval timestamps, data provenance, code versions, hardware, model parameters, solver tolerances, surrogate errors, and independent validation results. Benchmark the time required for large-scale nuclide extraction and preliminary graph search separately from the time required for full many-body or reaction calculations.</p>
+<h3 id="a8-adaptive-control-and-the-two-sided-window">A.8 Adaptive Control and the Two-Sided Window</h3>
+<p>The feedback law of Eq. (18) must be implemented by a physically realizable measurement-and-control protocol. The non-emptiness condition for the dynamic window is the two-sided bound stated in the sister paper DW58553928, Eq. (27):</p>
+<div class="math-block">$$
+\tau_{\mathrm{LZ}} &lt; \tau_{Ji} &lt; \frac{1}{\gamma_{\mathrm{env}}^{\mathrm{bound}}(T)}. \quad (23)
+$$</div>
+<p>The lower bound is the adiabatic or Landau–Zener timescale; the upper bound is the environmental decoherence time. The adaptive controller must operate within this window in real time; a fixed open-loop pulse sequence cannot guarantee this. This is the mathematical content of the Wheelwright Pian "neither too fast nor too slow" condition, restated in the closed-loop control language of Section 5.7.</p>
+<hr />
+<h2 id="acknowledgments">Acknowledgments</h2>
+<p>We are grateful to all the individual scientists and teams of scientists who have contributed to the exploration and understanding of the entire universe. Supported by AI-driven Supercomputers and the MES Universe Project. We have benefited from our amazing AI partners.</p>
+<h2 id="funding">Funding</h2>
+<p>Not applicable.</p>
+<h2 id="availability-of-data-and-material">Availability of data and material</h2>
+<p>Code, mathematical scripts, and preprints are available at GitHub: https://github.com/Zaitian001/-Self-Preprint-V1.1-</p>
+<h2 id="competing-interests">Competing interests</h2>
+<p>Not applicable.</p>
+<h2 id="author-contributions">Author Contributions</h2>
+<p>Baoliin (Zaitian) Wu 伍宝林 is the sole author of this manuscript and is responsible for all aspects of the research, including conceptualization, methodology, theoretical formulation, and manuscript writing.</p>
+<h2 id="references">References</h2>
+<p>[1] Baoliin (Zaitian) Wu 伍宝林. (2026). <em>Creating Gold: New Beginning for Creating Matter</em>. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553928.html</p>
+<p>[2] Baoliin (Zaitian) Wu 伍宝林. (2026). <em>Mind Is a Geometric Operator at the Observer's Origin</em>. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553927.html</p>
+<p>[3] Baoliin (Zaitian) Wu 伍宝林. (2026). <em>All Things as Wuxing Attractors: MES Universe Curvature Knots and Variable Light Speed</em>. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553921.html</p>
+<p>[4] Baoliin (Zaitian) Wu 伍宝林. (2026). <em>Room-Temperature Superconductivity as the Developmental Terminal State of a Generalized Adaptive Intelligent System: The Topological Condensation of a Dynamic Equilibrium Quantum Manifold</em>. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553911.html</p>
+<p>[5] Baoliin (Zaitian) Wu 伍宝林. (2026). <em>Geometric Pathology: Topological Collapse and Landscape Reprogramming in Complex Adaptive Systems</em>. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553909.html</p>
+<p>[6] Baoliin (Zaitian) Wu 伍宝林. (2026). <em>Time Is the Countable Rhythm of Yin–Yang Waxing and Waning</em>. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553925.html</p>
+<p>[7] Khalil, H. K. (2002). <em>Nonlinear Systems</em> (3rd ed.). Prentice Hall.</p>
+<p>[8] Milnor, J. (1963). <em>Morse Theory</em>. Princeton University Press.</p>
+<p>[9] Bender, C. M., and Boettcher, S. (1998). Real spectra in non-Hermitian Hamiltonians having PT symmetry. <em>Physical Review Letters, 80</em>, 5243–5246. https://doi.org/10.1103/PhysRevLett.80.5243</p>
+<p>[10] El-Ganainy, R., Makris, K., Khajavikhan, M. et al. (2018). Non-Hermitian physics and PT symmetry. <em>Nature Physics, 14</em>, 11–19. https://doi.org/10.1038/nphys4323</p>
+<p>[11] Ashida, Y., Gong, Z., and Ueda, M. (2020). Non-Hermitian physics. <em>Advances in Physics, 69</em>(3), 249–435. https://doi.org/10.1080/00018732.2021.1876991</p>
+<p>[12] Michel, N., Nazarewicz, W., Płoszajczak, M., and Bennaceur, K. (2002). Gamow Shell Model Description of Neutron-Rich Nuclei. <em>Physical Review Letters, 89</em>, 042502. https://doi.org/10.1103/PhysRevLett.89.042502</p>
+<p>[13] Berggren, T. (1968). On the use of resonant states in eigenfunction expansions of scattering and reaction amplitudes. <em>Nuclear Physics A, 109</em>, 265–287. https://doi.org/10.1016/0375-9474(68)90593-9</p>
+<p>[14] Ring, P., and Schuck, P. (1980). <em>The Nuclear Many-Body Problem</em>. Springer-Verlag.</p>
+<p>[15] Bohr, A., and Mottelson, B. R. (1969). <em>Nuclear Structure, Vol. I: Single-Particle Motion</em>. W. A. Benjamin.</p>
+<p>[16] Ames, A. D., Coogan, S., Egerstedt, M., et al. (2019). Control barrier functions: Theory and applications. <em>Proceedings of the 18th European Control Conference (ECC)</em>, 3420–3431. https://doi.org/10.23919/ECC.2019.8796030</p>
+<p>[17] Breuer, H.-P., and Petruccione, F. (2002). <em>The Theory of Open Quantum Systems</em>. Oxford University Press.</p>
+<p>[18] Misner, C. W., Thorne, K. S., and Wheeler, J. A. (1973). <em>Gravitation</em>. W. H. Freeman.</p>
+<p>[19] Nakahara, M. (2003). <em>Geometry, Topology and Physics</em> (2nd ed.). Taylor &amp; Francis.</p>
+<p>[20] National Nuclear Data Center. (2023). <em>ENSDF evaluated nuclear structure data: $^{197}\mathrm{Au}$</em>. Brookhaven National Laboratory. https://www.nndc.bnl.gov/ensdf/</p>
+<p>[21] Japan Atomic Energy Agency. (2014). <em>Nuclear data: level scheme of $^{197}\mathrm{Au}$</em>. Nuclear Data Center, JAEA. https://wwwndc.jaea.go.jp/</p>
+<p>[22] Kondev, F. G., Wang, M., Huang, W. J., et al. (2021). The NUBASE2020 evaluation of nuclear physics properties. <em>Chinese Physics C, 45</em>(3), 030001. https://doi.org/10.1088/1674-1137/abddae</p>
+<p>[23] Nuclear Data Services. (2026). <em>Nuclear data sheets for A = 197</em>. IAEA Nuclear Data Section. https://www-nds.iaea.org/</p>
+<p>[24] Yoshinaga, N., Yanase, K., Watanabe, C., and Higashiyama, K. (2021). Large-scale nuclear shell-model calculations of isotopes in the southwest region of $^{208}\mathrm{Pb}$. <em>Progress of Theoretical and Experimental Physics, 2021</em>(6), 063D01. https://doi.org/10.1093/ptep/ptab039</p>
+<p>[25] Editorial. (2022). Defining physicists' relationship with AI. <em>Nature Reviews Physics, 4</em>, 735. https://doi.org/10.1038/s42254-022-00544-1</p>
+<p>[26] Zhuangzi. (2013). <em>The Complete Works of Zhuangzi</em> (B. Watson, Trans., Chapter 13: The Way of Heaven). Columbia University Press.</p>
+<p>[27] Zhuangzi 庄子. <em>The Way of Heaven</em> 天道. (Original work published ca. 339 BCE; Zhuangzi turned down the offer to become prime minister)</p>
+<p>[28] Laozi 老子. <em>Daodejing</em> 道德经. (Original work published ca. 535 BCE; Confucius first met Laozi)</p>
+        </div>
+    </article>
+
+    <div class="citation-toggle">
+        <span class="cite-label">📚 Cite this paper</span>
+        <span class="cite-arrow">▾</span>
+    </div>
+    <div class="citation-panel" id="citationPanel">
+        <div class="citation-format-selector">
+            <button class="format-btn active" data-format="apa">APA</button>
+            <button class="format-btn" data-format="mla">MLA</button>
+            <button class="format-btn" data-format="chicago">Chicago</button>
+            <button class="format-btn" data-format="bibtex">BibTeX</button>
+        </div>
+        <div class="citation-display" id="citationDisplay">
+            <span class="citation-text" id="citationText"></span>
+            <button class="copy-btn" id="copyCitationBtn">📋 Copy</button>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        © 2026 Baoliin (Zaitian) Wu 伍宝林 | Independent theoretical physicist | Self-Preprint Decentralized Academic Archive
+    </footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const citationData = {"apa": "Baoliin (Zaitian) Wu \u4f0d\u5b9d\u6797 (2026). Creating Gold with AI Power. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553929.html", "mla": "Baoliin (Zaitian) Wu \u4f0d\u5b9d\u6797. \"Creating Gold with AI Power.\" Self-Preprint Archive, 2026, https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553929.html.", "chicago": "Baoliin (Zaitian) Wu \u4f0d\u5b9d\u6797. \"Creating Gold with AI Power.\" Self-Preprint Archive. Accessed November 17, 2026. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553929.html.", "bibtex": "@article{selfpreprint_DW58553929,\n  author = {Baoliin (Zaitian) Wu \u4f0d\u5b9d\u6797},\n  title = {Creating Gold with AI Power},\n  journal = {Self-Preprint Archive},\n  year = {2026},\n  url = {https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553929.html}\n}"};
+    const toggle = document.querySelector('.citation-toggle');
+    const panel = document.getElementById('citationPanel');
+    const textDisplay = document.getElementById('citationText');
+    const copyBtn = document.getElementById('copyCitationBtn');
+    let currentFormat = 'apa';
+
+    if (toggle && panel) {
+        toggle.addEventListener('click', function() {
+            this.classList.toggle('open');
+            panel.classList.toggle('open');
+            if (panel.classList.contains('open')) {
+                updateCitation('apa');
+            }
+        });
+    }
+
+    document.querySelectorAll('.format-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            document.querySelectorAll('.format-btn').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            currentFormat = this.getAttribute('data-format');
+            updateCitation(currentFormat);
+        });
+    });
+
+    function updateCitation(format) {
+        let text = citationData[format] || 'Citation not available';
+        if (format === 'bibtex') {
+            textDisplay.className = 'citation-text bibtex-display';
+            textDisplay.textContent = text;
+        } else {
+            textDisplay.className = 'citation-text';
+            textDisplay.textContent = text;
+        }
+        copyBtn.textContent = '📋 Copy';
+        copyBtn.classList.remove('copied');
+    }
+
+    if (copyBtn) {
+        copyBtn.addEventListener('click', function() {
+            const text = textDisplay.textContent;
+            navigator.clipboard.writeText(text).then(function() {
+                copyBtn.textContent = '✅ Copied!';
+                copyBtn.classList.add('copied');
+                setTimeout(function() {
+                    copyBtn.textContent = '📋 Copy';
+                    copyBtn.classList.remove('copied');
+                }, 2000);
+            }).catch(function() {
+                const ta = document.createElement('textarea');
+                ta.value = text;
+                document.body.appendChild(ta);
+                ta.select();
+                document.execCommand('copy');
+                document.body.removeChild(ta);
+                copyBtn.textContent = '✅ Copied!';
+                setTimeout(function() {
+                    copyBtn.textContent = '📋 Copy';
+                }, 2000);
+            });
+        });
+    }
+
+    updateCitation('apa');
+});
+</script>
+
+<script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+    document.addEventListener("DOMContentLoaded", async function () {
+        const codeBlocks = document.querySelectorAll('pre code.language-mermaid, pre code.mermaid');
+        codeBlocks.forEach((codeBlock) => {
+            const pre = codeBlock.parentElement;
+            const div = document.createElement('div');
+            div.className = 'mermaid';
+            div.textContent = codeBlock.textContent;
+            pre.replaceWith(div);
+        });
+
+        mermaid.initialize({ startOnLoad: false, theme: 'default', securityLevel: 'loose' });
+        await mermaid.run();
+    });
+</script>
+</body>
+</html>
