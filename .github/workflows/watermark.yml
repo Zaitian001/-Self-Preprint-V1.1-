@@ -133,19 +133,9 @@ jobs:
           fi
 
       # ============================================================
-      # 阶段二：学术网页构建 + PDF 生成
+      # 阶段二：PDF 生成 + 学术网页构建 (注意顺序：先生成 PDF)
       # ============================================================
-      - name: 10. 构建学术 HTML 与 RSS/Sitemap 索引
-        env:
-          SITE_URL: "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}"
-        run: |
-          if [ -n "$CHANGED_MD" ]; then
-            python scripts/build_academic_pages.py $CHANGED_MD
-          else
-            python scripts/build_academic_pages.py
-          fi
-
-      - name: 11. 自动生成学术 PDF（含防伪封面与附录）
+      - name: 10. 自动生成学术 PDF（含防伪封面与附录）
         env:
           SITE_URL: "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}"
         run: |
@@ -155,13 +145,23 @@ jobs:
             python scripts/generate_pdf.py
           fi
 
-      - name: 11.5 上传生成的 PDF 到 GitHub Actions Artifacts
+      - name: 10.5 上传生成的 PDF 到 GitHub Actions Artifacts
         uses: actions/upload-artifact@v4
         if: always()
         with:
           name: generated-pdfs
           path: public/pdf/
           retention-days: 30
+
+      - name: 11. 构建学术 HTML 与 RSS/Sitemap 索引 (必须在 PDF 之后)
+        env:
+          SITE_URL: "https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}"
+        run: |
+          if [ -n "$CHANGED_MD" ]; then
+            python scripts/build_academic_pages.py $CHANGED_MD
+          else
+            python scripts/build_academic_pages.py
+          fi
 
       # ============================================================
       # 阶段三：时空锚定安全验证 (前置拦截)
