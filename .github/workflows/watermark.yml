@@ -48,9 +48,13 @@ jobs:
           pip install pyyaml markdown pillow reportlab pypdf numpy
 
       - name: 5. 安装系统依赖与中英文字体 (含 Pandoc & XeLaTeX)
+        env:
+          DEBIAN_FRONTEND: noninteractive  # 【核心修复】彻底禁止任何交互式弹窗卡死
         run: |
-          sudo apt-get update
-          sudo apt-get install -y \
+          sudo apt-get update -o Acquire::Retries=3
+          
+          # 【核心修复】--no-install-recommends 只装核心，拒绝多余的文档包
+          sudo apt-get install -y --no-install-recommends \
             pandoc \
             texlive-xetex \
             texlive-fonts-recommended \
