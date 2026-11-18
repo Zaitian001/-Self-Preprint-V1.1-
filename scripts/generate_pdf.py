@@ -89,7 +89,8 @@ def build_cover_md(paper_id: str, title: str, author: str, date_str: str, curren
     serial = currency_data.get("serial", "N/A")
     paper_hash = currency_data.get("hash", "N/A")
 
-    return f"""# 🛡️ Physical Proof of Existence
+    # 【修改点】在标题后加入 {.unlisted}，防止防伪封面被 Pandoc 收录进目录
+    return f"""# 🛡️ Physical Proof of Existence {{.unlisted}}
 
 **Title:** {title}  
 **Author:** {author}  
@@ -142,13 +143,14 @@ def build_pdf(md_path: Path) -> bool:
 
     # 4. 生成封面与附录
     cover_md = build_cover_md(paper_id, title, author, date_str, currency_data)
+    # 【修改点】同样在附录标题加入 {.unlisted}，防止附录混入目录
     appendix_md = f"""
 
 \\newpage
 
 ---
 
-## Physical Proof of Existence (Appendix)
+## Physical Proof of Existence (Appendix) {{.unlisted}}
 
 - **Banknote Serial:** `{currency_data.get('serial', 'N/A')}`
 - **SHA-256 Hash:** `{currency_data.get('hash', 'N/A')}`
@@ -175,7 +177,7 @@ def build_pdf(md_path: Path) -> bool:
             '-V', f'author={author}',
             '-V', 'fontsize=11pt',
             '--toc',
-            '--number-sections',
+            # 【修改点】移除了 '--number-sections'，完全尊重原稿自带的编号系统
             f'--resource-path=.:{PREPRINTS_DIR}:{PREPRINTS_DIR / "images"}',
             '-o', str(output_path)
         ]
@@ -192,12 +194,12 @@ def build_pdf(md_path: Path) -> bool:
                 capture_output=True,
                 text=True,
                 check=True,
-                timeout=120
+                timeout=180 # 稍微延长超时时间，防止大型论文编译被强行终止
             )
             print(f"✅ PDF 生成成功: {output_path}")
             return True
         except subprocess.TimeoutExpired:
-            print(f"❌ PDF 编译超时 (120s): {paper_id}")
+            print(f"❌ PDF 编译超时 (180s): {paper_id}")
             return False
         except subprocess.CalledProcessError as e:
             print(f"❌ PDF 编译失败: {paper_id}")
