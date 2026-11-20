@@ -1,0 +1,1405 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MES Element Genesis: Countable Rhythm, Topological Bridges, and Pathways to Elements 119 and 120 - Self-Preprint Archive</title>
+    <meta name="citation_title" content="MES Element Genesis: Countable Rhythm, Topological Bridges, and Pathways to Elements 119 and 120">
+    <meta name="citation_publication_date" content="2026/11/20">
+    <meta name="citation_fulltext_html_url" content="https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553930.html">
+    <meta name="citation_journal_title" content="Self-Preprint Archive">
+    <meta name="citation_pdf_url" content="https://Zaitian001.github.io/-Self-Preprint-V1.1-/pdf/DW58553930.pdf">
+    <meta name="citation_author" content="Baoliin (Zaitian) Wu 伍宝林">
+    <style>
+/* ==========================================================================
+   -Self-Preprint- Academic Theme (Complete Merged & Responsive Version)
+   ========================================================================== */
+*, *::before, *::after { box-sizing: border-box; }
+
+:root {
+    --bg-color: #fcfcfc;
+    --text-color: #2b2b2b;
+    --primary-color: #1a365d;
+    --link-color: #2b6cb0;
+    --border-color: #e2e8f0;
+    --code-bg: #f7fafc;
+    --blockquote-bg: #edf2f7;
+    --meta-color: #718096;
+    --max-width: 860px;
+    --font-main: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-serif: Georgia, Cambria, "Times New Roman", Times, serif;
+}
+
+body {
+    font-family: var(--font-main);
+    line-height: 1.75;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    margin: 0;
+    padding: 2rem 1rem;
+}
+.container {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    background: #ffffff;
+    padding: 3rem 2.5rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    border: 1px solid var(--border-color);
+}
+a { color: var(--link-color); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+/* 归档列表页 (index.html) */
+.archive-year {
+    font-size: 1.4rem;
+    font-weight: 700;
+    margin-top: 2.5rem;
+    margin-bottom: 1rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 0.3rem;
+    color: var(--primary-color);
+}
+.post-item {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 0.8rem;
+}
+.post-title { font-size: 1.1rem; font-weight: 500; }
+.post-date {
+    font-size: 0.9rem;
+    color: var(--meta-color);
+    font-family: monospace;
+    white-space: nowrap;
+    margin-left: 1rem;
+}
+.post-abstract {
+    font-size: 0.95rem;
+    color: #555;
+    margin: 0.2rem 0 1.2rem 0;
+    font-family: var(--font-serif);
+}
+
+/* 文章单页 (paper_id.html) */
+article h1.paper-title {
+    font-size: 2.2rem;
+    line-height: 1.3;
+    margin-bottom: 0.8rem;
+    letter-spacing: -0.02em;
+    color: var(--primary-color);
+}
+.paper-meta {
+    font-size: 0.92rem;
+    color: var(--meta-color);
+    margin-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+    padding-bottom: 1.2rem;
+}
+.paper-body {
+    font-family: var(--font-serif);
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+.paper-body h1, .paper-body h2, .paper-body h3 {
+    font-family: var(--font-main);
+    font-weight: 600;
+    margin-top: 2.2rem;
+    color: var(--primary-color);
+}
+
+/* MathJax & LaTeX 公式排版防护 */
+mjx-container {
+    overflow-x: auto;
+    overflow-y: hidden;
+    max-width: 100%;
+}
+mjx-container[display="true"] {
+    display: block !important;
+    width: 100% !important;
+    margin: 1.5rem 0 !important;
+    text-align: center;
+}
+mjx-container[display="false"] {
+    display: inline-block;
+    vertical-align: middle;
+}
+.math-block {
+    display: block;
+    width: 100%;
+    margin: 1.5rem 0;
+    text-align: center;
+    overflow-x: auto;
+    overflow-y: hidden;
+}
+
+/* 物理确权卡片 */
+.anchor-box {
+    margin: 2rem 0;
+    padding: 1rem 1.2rem;
+    background: #fafafa;
+    border: 1px solid #eaeaea;
+    border-radius: 6px;
+    font-size: 0.88rem;
+    color: #444;
+}
+.anchor-box strong { color: #111; }
+.anchor-hash {
+    font-family: monospace;
+    font-size: 0.82rem;
+    word-break: break-all;
+    color: #666;
+    margin-top: 0.3rem;
+}
+
+/* 代码与预格式化文本 */
+code, pre {
+    font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, Courier, monospace;
+    font-size: 0.9rem;
+}
+code {
+    background-color: var(--code-bg);
+    padding: 0.2em 0.4em;
+    border-radius: 4px;
+    border: 1px solid var(--border-color);
+}
+pre {
+    padding: 1rem;
+    overflow-x: auto;
+    border-radius: 6px;
+    border: 1px solid var(--border-color);
+    background-color: var(--code-bg);
+    line-height: 1.45;
+}
+pre code {
+    background-color: transparent;
+    padding: 0;
+    border: none;
+}
+
+/* 引用与表格 */
+blockquote {
+    margin: 1.5rem 0;
+    padding: 0.8rem 1.2rem;
+    background-color: var(--blockquote-bg);
+    border-left: 4px solid var(--primary-color);
+    border-radius: 0 4px 4px 0;
+}
+blockquote p:last-child { margin-bottom: 0; }
+.table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    margin: 1.5rem 0;
+    -webkit-overflow-scrolling: touch;
+}
+table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.95rem;
+}
+th, td {
+    padding: 0.75rem 1rem;
+    border: 1px solid var(--border-color);
+    text-align: left;
+}
+th {
+    background-color: var(--code-bg);
+    font-weight: 600;
+}
+
+/* 学术插图与图注 */
+img, .paper-body img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 1.8rem auto 0.5rem auto;
+    border-radius: 4px;
+}
+figure { margin: 2rem auto; text-align: center; }
+figure img { max-width: 100%; height: auto; margin: 0 auto; }
+figcaption {
+    font-size: 0.9rem;
+    color: var(--meta-color);
+    margin-top: 0.6rem;
+    font-family: var(--font-main);
+    line-height: 1.4;
+}
+
+/* 引用格式选择器 (Google Scholar 风格) */
+.citation-toggle {
+    display: inline-block;
+    margin: 2rem 0 0.5rem 0;
+    padding: 0.5rem 1.2rem;
+    background: #f1f5f9;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    color: #1e293b;
+    transition: background 0.2s;
+    user-select: none;
+}
+.citation-toggle:hover { background: #e2e8f0; }
+.citation-toggle .cite-arrow {
+    display: inline-block;
+    margin-left: 0.4rem;
+    font-size: 0.7rem;
+    transition: transform 0.3s ease;
+}
+.citation-toggle.open .cite-arrow { transform: rotate(180deg); }
+
+.citation-panel {
+    display: none;
+    margin: 0 0 2rem 0;
+    padding: 1.2rem 1.5rem;
+    background: #f8fafc;
+    border: 1px solid #e2e8f0;
+    border-radius: 8px;
+    max-width: 100%;
+}
+.citation-panel.open { display: block; }
+
+.citation-format-selector {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.3rem;
+    margin-bottom: 0.8rem;
+    border-bottom: 1px solid #e2e8f0;
+    padding-bottom: 0.8rem;
+}
+.format-btn {
+    background: transparent;
+    border: none;
+    padding: 0.3rem 1rem;
+    font-size: 0.85rem;
+    cursor: pointer;
+    color: #64748b;
+    border-radius: 12px;
+    transition: all 0.2s;
+}
+.format-btn:hover { background: #e2e8f0; color: #1e293b; }
+.format-btn.active {
+    background: #1e293b;
+    color: white;
+    font-weight: 500;
+}
+
+.citation-display {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.8rem;
+    flex-wrap: wrap;
+}
+.citation-text {
+    flex: 1;
+    font-size: 0.88rem;
+    font-family: var(--font-serif);
+    color: #1e293b;
+    background: white;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    border: 1px solid #e9edf2;
+    word-break: break-word;
+    min-height: 2.2rem;
+}
+.citation-text.bibtex-display {
+    font-family: monospace;
+    font-size: 0.82rem;
+    white-space: pre-wrap;
+}
+.copy-btn {
+    background: #e2e8f0;
+    border: none;
+    border-radius: 4px;
+    padding: 0.3rem 0.8rem;
+    font-size: 0.8rem;
+    cursor: pointer;
+    color: #334155;
+    white-space: nowrap;
+    transition: all 0.2s;
+    align-self: center;
+}
+.copy-btn:hover { background: #cbd5e1; }
+.copy-btn.copied { background: #22c55e; color: white; }
+
+/* 页脚与移动端响应式 */
+footer.site-footer {
+    margin-top: 4rem;
+    padding-top: 2rem;
+    border-top: 1px solid var(--border-color);
+    font-size: 0.85rem;
+    color: var(--meta-color);
+    text-align: center;
+}
+@media (max-width: 768px) {
+    body { padding: 1rem 0.5rem; }
+    .container { padding: 1.5rem 1rem; }
+    article h1.paper-title { font-size: 1.75rem; }
+    .post-item { flex-direction: column; align-items: flex-start; }
+    .post-date { margin-left: 0; margin-top: 0.2rem; }
+}
+</style>
+    
+<script>
+window.MathJax = {
+  tex: {
+    inlineMath: [['$', '$'], ['\\(', '\\)']],
+    displayMath: [['$$', '$$'], ['\\[', '\\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    tags: 'ams'
+  },
+  svg: {
+    fontCache: 'global',
+    displayAlign: 'center',
+    displayIndent: '0'
+  },
+  options: {
+    enableMenu: false,
+    skipHtmlTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+  }
+};
+</script>
+<script id="MathJax-script" async
+  src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js">
+</script>
+<script>
+  window.addEventListener('load', function () {
+    if (window.MathJax && MathJax.typesetPromise) {
+      MathJax.typesetPromise().catch(function (err) {
+        console.log('MathJax typeset failed: ', err);
+      });
+    }
+  });
+</script>
+
+</head>
+<body>
+    <header class="site-header">
+        <nav>
+            <a href="../index.html">← Archives</a>
+            <a href="../feed.xml">RSS</a>
+        </nav>
+    </header>
+
+    <article>
+        <h1 class="paper-title">MES Element Genesis: Countable Rhythm, Topological Bridges, and Pathways to Elements 119 and 120</h1>
+        <div class="paper-meta">
+            By <strong>Baoliin (Zaitian) Wu 伍宝林</strong> · Published on 2026-11-20 · <a href="../pdf/DW58553930.pdf" target="_blank">PDF</a>
+        </div>
+
+        
+    <div class="anchor-box">
+        🛡️ <strong>Physical Proof of Existence</strong> | Banknote Serial: <code>DW58553930</code>
+        <div class="anchor-hash">SHA-256 Hash: b37402684143b8219a90be93ecd11b23a8abd0769ad5ea39a0b38aca91d9fd60</div>
+    </div>
+    
+
+        <blockquote style="font-family: var(--font-serif); background:#fdfdfd; padding:0.8rem 1.2rem; border-left:3px solid #ccc; margin: 1.5rem 0;"><p>The synthesis of superheavy elements at the frontier of the periodic table—specifically Elements 119 (Ununennium) and 120 (Unbinilium)—is conventionally pursued through brute-force heavy-ion fusion reactions constrained by severe Coulomb barriers, vanishing cross sections, and rapid quasi-fission. Building upon the constructive paradigm of <em>Creating Gold</em> (DW58553928, DW58553929), the $\mathbb{Z}_{5}$ spectral duality of <em>Wuxing Dao</em> (DW58553905), the manifold condensation dynamics of <em>Room-Temperature Superconductivity</em> (DW58553911), and the curvature-dependent physics constants of Modified Einstein Spherical (MES) cosmology (DW58553914), this paper establishes the <strong>MES Constructive Element Genesis Theory</strong>. Rather than viewing $Z=119$ and $Z=120$ merely as sequential increments in atomic number, we formulate them as an <strong>isotonic rhythm doublet</strong> (${}^{303}_{119}X$ and ${}^{304}_{120}X$) situated on the shared candidate neutron shell closure $N=184$: $Z=119$ occupies the penultimate dynamic singularity $\mathcal{A}_{119}=(7,5;8,0)$, whereas $Z=120$ forms the terminal closed-shell deep anchor $\mathcal{A}_{120}=(8,0;8,0)$. We formalize the <strong>Element Rhythm Lattice (ERL)</strong> with explicit closed-endpoint and independently defined proton/neutron exterior extension axioms, and propose a representation map from the $\mathbb{Z}_{5}$ symmetry algebra to the $N=184$ doublet subspace, whose physical realization remains to be constructed and tested. Six proposed bridges—Rhythm, Topological, Curvature, Quantum-Dynamical, Condensation-Stability, and AI-Control—are coupled conceptually with the <strong>cross-scale Zaitian Quantum Power (ZQP) stabilization principle</strong>, whose aqueduct-irrigation implementation is formulated here as a candidate mechanism for testing quasi-fission suppression within a finite transition window $\tau_{Ji}$. We formulate the five research channels (C1–C5) and closed <strong>Bottleneck Loops</strong> ($\mathrm{C2}\to\mathrm{C3}\to\mathrm{C5}\to\mathrm{C2}$ and $\mathrm{C1}\leftrightarrow\mathrm{C4}$) in a Floquet-cranked reaction-channel Hilbert space, and define candidate target-specific topological signatures ($\boldsymbol{\chi}_{119}$ and $\boldsymbol{\chi}_{120}$) inside the fixed four-dimensional Global Topological Curvature Network ($d_{\mathrm{GTC}}=4$). Strictly adhering to the Dual Principles against overclaiming (P1) and overrejection (P2), we introduce an eight-stage verification matrix (V1–V8), an institutional labeling hierarchy ($U \to C_T \to E_T^{\mathrm{calc}} \to E_T^{\mathrm{phys}}$), and a conditional admissibility-boundary definition for open-horizon extensions beyond $Z=120$ ($Z=121, 122, 123, \dots$). No completed physical synthesis or numerical channel verdict is claimed; this work establishes a transferable, falsifiable mathematical and AI-orchestrated research program for constructive element genesis across the periodic table.</p></blockquote>
+
+        <div class="paper-body">
+            <h1 id="mes-element-genesis-countable-rhythm-topological-bridges-and-pathways-to-elements-119-and-120">MES Element Genesis: Countable Rhythm, Topological Bridges, and Pathways to Elements 119 and 120</h1>
+<p><strong>Baoliin (Zaitian) Wu 伍宝林</strong></p>
+<p><em>ORCID:</em> <a href="https://orcid.org/0009-0003-2051-5247">0009-0003-2051-5247</a></p>
+<p><em>Email:</em> zaitian001@gmail.com</p>
+<p><em>Affiliation:</em> People's Government of Guangdong Province, Guangzhou, CN</p>
+<p><strong>November 20, 2026</strong></p>
+<p><strong>Paper ID: DW58553930</strong></p>
+<hr />
+<h2 id="abstract">Abstract</h2>
+<p>The synthesis of superheavy elements at the frontier of the periodic table—specifically Elements 119 (Ununennium) and 120 (Unbinilium)—is conventionally pursued through brute-force heavy-ion fusion reactions constrained by severe Coulomb barriers, vanishing cross sections, and rapid quasi-fission. Building upon the constructive paradigm of <em>Creating Gold</em> (DW58553928, DW58553929), the $\mathbb{Z}_{5}$ spectral duality of <em>Wuxing Dao</em> (DW58553905), the manifold condensation dynamics of <em>Room-Temperature Superconductivity</em> (DW58553911), and the curvature-dependent physics constants of Modified Einstein Spherical (MES) cosmology (DW58553914), this paper establishes the <strong>MES Constructive Element Genesis Theory</strong>. Rather than viewing $Z=119$ and $Z=120$ merely as sequential increments in atomic number, we formulate them as an <strong>isotonic rhythm doublet</strong> (${}^{303}_{119}X$ and ${}^{304}_{120}X$) situated on the shared candidate neutron shell closure $N=184$: $Z=119$ occupies the penultimate dynamic singularity $\mathcal{A}_{119}=(7,5;8,0)$, whereas $Z=120$ forms the terminal closed-shell deep anchor $\mathcal{A}_{120}=(8,0;8,0)$. We formalize the <strong>Element Rhythm Lattice (ERL)</strong> with explicit closed-endpoint and independently defined proton/neutron exterior extension axioms, and propose a representation map from the $\mathbb{Z}_{5}$ symmetry algebra to the $N=184$ doublet subspace, whose physical realization remains to be constructed and tested. Six proposed bridges—Rhythm, Topological, Curvature, Quantum-Dynamical, Condensation-Stability, and AI-Control—are coupled conceptually with the <strong>cross-scale Zaitian Quantum Power (ZQP) stabilization principle</strong>, whose aqueduct-irrigation implementation is formulated here as a candidate mechanism for testing quasi-fission suppression within a finite transition window $\tau_{Ji}$. We formulate the five research channels (C1–C5) and closed <strong>Bottleneck Loops</strong> ($\mathrm{C2}\to\mathrm{C3}\to\mathrm{C5}\to\mathrm{C2}$ and $\mathrm{C1}\leftrightarrow\mathrm{C4}$) in a Floquet-cranked reaction-channel Hilbert space, and define candidate target-specific topological signatures ($\boldsymbol{\chi}_{119}$ and $\boldsymbol{\chi}_{120}$) inside the fixed four-dimensional Global Topological Curvature Network ($d_{\mathrm{GTC}}=4$). Strictly adhering to the Dual Principles against overclaiming (P1) and overrejection (P2), we introduce an eight-stage verification matrix (V1–V8), an institutional labeling hierarchy ($U \to C_T \to E_T^{\mathrm{calc}} \to E_T^{\mathrm{phys}}$), and a conditional admissibility-boundary definition for open-horizon extensions beyond $Z=120$ ($Z=121, 122, 123, \dots$). No completed physical synthesis or numerical channel verdict is claimed; this work establishes a transferable, falsifiable mathematical and AI-orchestrated research program for constructive element genesis across the periodic table.</p>
+<p><strong>Keywords:</strong> MES Element Genesis; Elements 119 and 120; Element Rhythm Lattice; Countable Rhythm; $\mathbb{Z}_{5}$ Spectral Duality; Zaitian Quantum Power; Anti-Quasi-Fission; Global Topological Curvature Network; Bottleneck Loop; Five Research Channels; Non-Hermitian Floquet Dynamics; Conditional Superheavy Boundary Criterion; Constructive Creation; AI-Assisted Verification; MES Cosmology</p>
+<hr />
+<h2 id="1-introduction-from-creating-gold-to-constructive-element-genesis">1. Introduction: From Creating Gold to Constructive Element Genesis</h2>
+<h3 id="11-ascending-from-a-single-nuclide-to-the-periodic-table">1.1 Ascending from a Single Nuclide to the Periodic Table</h3>
+<p>We began our exploration of "Creating Matter" with a single gold atom; <strong>now, we have expanded our scope of study to encompass the entire periodic table of elements</strong>.</p>
+<p>In the companion sister papers <em>Creating Gold: New Beginning for Creating Matter</em> (DW58553928) and <em>Creating Gold with AI Power</em> (DW58553929), we established the foundational methodology of <strong>constructive creation</strong>: representing a desired physical target not as an accidental byproduct of brute-force assembly, but as a distinguished attractor in a declared state space reachable via a finite, verifiable chain of operator applications—target encoding, path planning, window transition, condensation, and stabilization. Stable ${}^{197}\mathrm{Au}$ ($Z=79, N=118$) served as the inaugural benchmark through which the axioms, verification obligations, and multi-channel research architecture were formulated.</p>
+<p>The present work elevates that constructive paradigm to a general theoretical level: <strong>MES Constructive Element Genesis Theory</strong>. Rather than restricting the architecture to nuclear transmutation toward a single stable benchmark, we ask whether the chemical elements themselves—and specifically the unexplored superheavy frontier at <strong>Element 119 (Ununennium)</strong> and <strong>Element 120 (Unbinilium)</strong>—can be systematically formulated as target states within a unified geometric, topological, and quantum-dynamical architecture.</p>
+<p>In conventional nuclear physics, searches beyond Oganesson ($Z=118$) use hot- or warm-fusion heavy-ion reactions, including titanium and chromium beams on actinide targets. The relevant reaction stages must be distinguished: capture, formation of an equilibrated compound nucleus, and survival as an evaporation residue are not represented by one interchangeable cross section. Predicted evaporation-residue cross sections for element 119 are model-dependent and may lie in the femtobarn range for selected entrance channels [36, 37]. Quasi-fission is a prompt reaction-stage process, whereas spontaneous fission is a subsequent radioactive decay of a formed nucleus; they must not be assigned one common timescale. Experimental searches for elements 119 and 120 remain active [36, 38]. Within the Modified Einstein Spherical (MES) research program, we do not treat existing experimental bottlenecks as boundaries on theoretical formulation. Instead, we construct an affirmative mathematical hypothesis for how superheavy target states can be encoded, bridged, and stabilized, while binding every step to explicit verification obligations and falsification criteria.</p>
+<h3 id="12-the-isotonic-rhythm-doublet-why-elements-119-and-120">1.2 The Isotonic Rhythm Doublet: Why Elements 119 and 120?</h3>
+<p>A central conceptual innovation of this paper is that Elements 119 and 120 are not treated merely as consecutive integer increments ($Z = 118 + 1$ and $Z = 118 + 2$) along a linear atomic-number axis. Instead, we formulate their primary target isotopes—${}^{303}_{119}X$ ($Z=119, N=184$) and ${}^{304}_{120}X$ ($Z=120, N=184$)—as an <strong>isotonic rhythm doublet</strong> occupying two distinct proton-rhythm states along the shared candidate neutron shell closure $N=184$:</p>
+<ol>
+<li><strong>Target $C_{119}$ (${}^{303}_{119}X$, $Z=119, N=184$):</strong> Positioned immediately prior to proton shell closure, $Z=119$ carries the countable rhythm address $\mathcal{A}_{119}=(7,5;8,0)$, functioning as a penultimate dynamic singularity sustained by active rotational phase circulation.</li>
+<li><strong>Target $C_{120}$ (${}^{304}_{120}X$, $Z=120, N=184$):</strong> Positioned at the closed-endpoint proton boundary of the eighth period, $Z=120$ carries the doubly integer countable rhythm address $\mathcal{A}_{120}=(8,0;8,0)$, forming a spherically symmetric, zero-drift closed-shell deep anchor.</li>
+</ol>
+<p><em>Note on nuclear structure status:</em> Within this architecture, $Z=114$, $Z=120$, and $N=184$ are adopted as candidate shell-closure nodes of the Element Rhythm Lattice (ERL). In strict compliance with scientific rigor, these candidate closures are treated as structural model inputs subject to independent nuclear-structure verification rather than presupposed empirical facts.</p>
+<h3 id="13-synthesis-of-cross-paper-foundations-the-three-gold-truths-and-core-mes-pillars">1.3 Synthesis of Cross-Paper Foundations: The Three Gold Truths and Core MES Pillars</h3>
+<p>MES Element Genesis synthesizes four foundational pillars developed across the author's preceding research program:</p>
+<ul>
+<li><strong>Algebraic Core (DW58553905, <em>Wuxing Dao</em>):</strong> The cyclic group $\mathbb{Z}_{5}$ with generative operator $S$ and destructive/overcoming operator $K=S^{2}$, providing the spectral duality theorem $\sigma(K)=\sigma(S)^{2}$ and the orthogonal representation decomposition $\mathrm{Sym}_0^{2}(\mathbb{R}^{3})|_{\mathbb{Z}_{5}} \cong \mathbf{1} \oplus \rho_1 \oplus \rho_2$.</li>
+<li><strong>Manifold Condensation &amp; ZQP Feedback (DW58553911, <em>Room-Temperature Superconductivity</em>):</strong> The tensor evolution of a quantum geometric field $\mathcal{G}_{\mu\nu}(\mathbf{x}, t)$, nonlinear saturating negative feedback via Zaitian Quantum Power (ZQP) ($\Gamma_{\mathrm{ZQP}}\tanh(B(\mathcal{G})/s_{\mathrm{sat}})$), apoptotic clearance of incoherent fluctuations, and the conversion of pathological positive-curvature repulsion ridges ("gravity wells") into negative-curvature deep anchors.</li>
+<li><strong>Curvature-Dependent Constants (DW58553914, <em>Curvature-Driven Open Quantum Dynamics</em>):</strong> The MES dynamic quantum equilibrium scaling laws on a curved manifold,</li>
+</ul>
+<div class="math-block">$$
+c(R)=c_{0}\left(\frac{|R|}{R_{0}}\right)^{1/2},\qquad \hbar(R)=\hbar_{0}\left(\frac{R_{0}}{|R|}\right)^{1/2},\qquad m(R)=m_{0}\left(\frac{R_{0}}{|R|}\right)^{1/2}. \quad (1)
+$$</div>
+<p>These scalings preserve the global geometric invariants $\hbar(R)c(R) = \hbar_0 c_0$ and $m(R)c(R) = m_0 c_0$, as well as the topological invariance of the fine-structure constant $\alpha$.</p>
+<ul>
+<li><strong>Constructive Verification Geometry (DW58553928 &amp; DW58553929, <em>Creating Gold</em>):</strong> The five-stage construction chain, the fixed four-dimensional Global Topological Curvature Network ($d_{\mathrm{GTC}} = 4$), the finite Wheelwright-Pian dynamic transition window $\tau_{Ji}$, and the five-channel Bottleneck Loop verification architecture.</li>
+</ul>
+<p>All equations and propositions in this paper remain anchored by the <strong>Three Gold Truths</strong> inherited identically from DW58553928 and DW58553929:</p>
+<blockquote>
+<p><strong>Gold Truth I (Geometry First).</strong> There are no independently existing physical constants, no abstract pure time, and no isolated biological entities. All physics is geometry. Every observable physical quantity and biological state is a natural emergence of the geometric structure of the MES universe curvature web.</p>
+<p><strong>Gold Truth II (Time as Rhythm).</strong> "Time is the countable rhythm of Yin–Yang waxing and waning 时间是阴阳消长的可计数节律."</p>
+<p><strong>Gold Truth III (Mother and Child).</strong> "Obtain the mother to know the child; obtain the child to guard the mother 既得其母以知其子, 既知其子复守其母." The MES universe curvature web ($\mathcal{O}_{\mathrm{web}}$) is the mother; the Global Topological Curvature Network ($\mathcal{N}_{\mathrm{GTC}}$) is the child; their mutual guarding is guaranteed by the Gauss–Codazzi embedding compatibility equations.</p>
+</blockquote>
+<p><strong>Cross-Scale Implication of the MES Rhythmic Principle.</strong> Within the MES architecture, the expression <em>"the largest has no exterior, the smallest has no interior 大而无外，小而无内"</em> describes the scale-unrestricted scope of countable rhythmic dynamics. No physical scale is therefore excluded a priori from possessing characteristic rhythms that are, in principle, countable. On this basis, ZQP stabilization is formulated as a proposed universal MES feedback principle: its underlying dynamical role is intended to extend across scales, while its effective operators, coupling strengths, and characteristic timescales may depend on the physical system. The application developed in this paper is a cross-scale theoretical extension to superheavy-nucleus dynamics; it does not, by itself, establish a particular nuclear stabilization rate or a completed synthesis outcome.</p>
+<h3 id="14-scientific-epistemology-dual-principles-three-levels-of-existence-and-creation-labels">1.4 Scientific Epistemology: Dual Principles, Three Levels of Existence, and Creation Labels</h3>
+<p>To prevent any conflation between formal mathematical construction, numerical simulation, and physical synthesis, this paper enforces the <strong>Dual Principle of Scientific Construction</strong> (DW58553928, Section 1.4):</p>
+<ul>
+<li><strong>Principle P1 (Against Overclaiming).</strong> A physical target that has not been realized must not be presented as a completed scientific discovery.</li>
+<li><strong>Principle P2 (Against Overrejection).</strong> An architecture that may have mathematical value must not be rejected merely because its physical realization has not been demonstrated.</li>
+</ul>
+<p>Accordingly, we maintain a strict separation across the three levels of existence:</p>
+<ol>
+<li><strong>Type 1 (Formal Constructive Specification):</strong> Internal mathematical coherence of the axioms, rhythm lattice, operator definitions, and verification obligations.</li>
+<li><strong>Type 2 (Mathematical Model Existence):</strong> Conditional existence of self-consistent solutions satisfying the coupled nuclear, Floquet, and Gauss–Codazzi embedding equations.</li>
+<li><strong>Type 3 (Physical Realization):</strong> Experimental synthesis, conservation-law compliance, measurable cross sections/lifetimes, and independent physical identification of the target nuclide.</li>
+</ol>
+<p>Furthermore, to track research progress across the entire periodic table without ambiguity, we formalize a three-stage Creation Labeling System:</p>
+<div class="math-block">$$
+U \longrightarrow C_{T} \longrightarrow E_{T} \in \{E_{T}^{\mathrm{calc}},\, E_{T}^{\mathrm{phys}}\}, \quad (2)
+$$</div>
+<p>where $U$ denotes an Unencoded nuclide, $C_T$ denotes a Conditional Creation target equipped with full mathematical encoding and verification criteria, $E_T^{\mathrm{calc}}$ denotes Computationally Established Creation within a verified mathematical model, and $E_T^{\mathrm{phys}}$ denotes Physically Established Creation verified by independent laboratory detection and replication. The present paper establishes the Type-1 formal architecture for $C_{119}$ and $C_{120}$. The current experimental search status and the model dependence of synthesis probabilities are summarized in recent reviews and calculations [36–38].</p>
+<hr />
+<h2 id="2-element-rhythm-lattice-erl-and-inline_math_65-algebraic-encoding">2. Element Rhythm Lattice (ERL) and $\mathbb{Z}_{5}$ Algebraic Encoding</h2>
+<h3 id="21-from-atomic-number-counting-to-the-element-rhythm-lattice">2.1 From Atomic Number Counting to the Element Rhythm Lattice</h3>
+<p>In standard nuclear physics, nuclides are indexed on the two-dimensional Segrè chart $(Z, N) \in \mathbb{Z}_{&gt;0} \times \mathbb{Z}_{\ge 0}$, where proton number $Z$ and neutron number $N$ are treated as uniform integer counters. While magic numbers ($2, 8, 20, 28, 50, 82, 126$) appear empirically as localized shell-gap anomalies in binding-energy surfaces, the coordinate grid itself carries no intrinsic rhythmic or topological structure.</p>
+<p>Guided by <strong>Gold Truth II</strong> (<em>"Time is the countable rhythm of Yin–Yang waxing and waning"</em>), we upgrade the flat $(Z,N)$ grid into the <strong>Element Rhythm Lattice (ERL)</strong>, denoted $\mathcal{L}_{\mathrm{ERL}}$. Rather than replacing the five-stage construction chain established in DW58553928 (target encoding, path planning, window transition, condensation, and stabilization), the ERL supplies the intrinsic <strong>rhythm-coordinate layer</strong> upon which target states and transition bridges are encoded.</p>
+<p>Let $\mathcal{Z}_{\mathrm{node}} = \{Z_0, Z_1, \dots, Z_M\}$ and $\mathcal{N}_{\mathrm{node}} = \{N_0, N_1, \dots, N_K\}$ denote ordered sequences of candidate proton and neutron shell-closure nodes within the Modified Einstein Spherical (MES) architecture:</p>
+<div class="math-block">$$
+\begin{aligned}
+\mathcal{Z}_{\mathrm{node}} &= \{0, 2, 8, 20, 28, 50, 82, 114, 120\}, \qquad M = 8, \\
+\mathcal{N}_{\mathrm{node}} &= \{0, 2, 8, 20, 28, 50, 82, 126, 184\}, \qquad K = 8.
+\end{aligned} \quad (3)
+$$</div>
+<p>Here, $Z_7 = 114$, $Z_8 = 120$, and $N_8 = 184$ are adopted as <strong>candidate superheavy shell-closure nodes</strong> motivated by macroscopic–microscopic and relativistic mean-field nuclear models [12, 15–18, 36]. The predicted shell structure remains model-dependent, especially in regions without measured masses or decay data [36]. In strict accordance with Principle P1, these terminal nodes are treated as declared lattice inputs subject to independent nuclear-structure verification (Section 6), not as presupposed empirical facts.</p>
+<p><strong>Definition 2.1 (Interior Countable Rhythm Coordinate Map).</strong></p>
+<p>For any nuclide $(Z,N)$ situated within an interior half-open cell $[Z_{a-1}, Z_a) \times [N_{b-1}, N_b)$ ($1 \le a \le M$, $1 \le b \le K$), let $\Delta Z_a = Z_a - Z_{a-1}$ and $\Delta N_b = N_b - N_{b-1}$ denote the local shell intervals. The <strong>countable rhythm address</strong> of $(Z,N)$ is defined by the four-tuple:</p>
+<div class="math-block">$$
+\mathcal{A}(Z,N) = (a-1,\, \Delta z;\, b-1,\, \Delta n), \quad \Delta z = Z - Z_{a-1} \in \{0, 1, \dots, \Delta Z_a - 1\}, \quad \Delta n = N - N_{b-1} \in \{0, 1, \dots, \Delta N_b - 1\}, \quad (4)
+$$</div>
+<p>with associated continuous <strong>rhythm phase coordinates</strong>:</p>
+<div class="math-block">$$
+\tau_p(Z) = (a-1) + \frac{\Delta z}{\Delta Z_a}, \qquad \tau_n(N) = (b-1) + \frac{\Delta n}{\Delta N_b}. \quad (5)
+$$</div>
+<p>The integer parts $(a-1, b-1)$ record the completed major shell cycles (the macro-rhythm), whereas the fractional remainders $(\Delta z/\Delta Z_a, \Delta n/\Delta N_b) \in [0, 1)^{2}$ measure the intra-shell waxing and waning phase (the micro-rhythm).</p>
+<h3 id="22-closed-endpoint-axiom-and-terminal-exterior-extension-axiom">2.2 Closed-Endpoint Axiom and Terminal Exterior Extension Axiom</h3>
+<p>A naive application of half-open intervals $[Z_{a-1}, Z_a) \times [N_{b-1}, N_b)$ fails at two critical junctures required for superheavy element genesis:
+1. At the upper terminal proton closure $Z = Z_8 = 120$, a half-open convention would artificially spill $Z=120$ into an undefined ninth period ($a=9$) with unknown interval $\Delta Z_9$.
+2. In hot-fusion synthesis pathways, compound nuclei are typically formed with a neutron excess beyond the $N=184$ closure (e.g., $N = 185$ for ${}^{304}_{119}X^{\ast}$ and ${}^{305}_{120}X^{\ast}$), lying outside the bounded node sequence $\mathcal{N}_{\mathrm{node}}$.</p>
+<p>To eliminate coordinate singularities at the boundary of the known periodic table without inventing unverified higher magic numbers, we establish two formal boundary axioms.</p>
+<p><strong>Axiom E1 (Closed-Endpoint Axiom at $Z = Z_M$).</strong></p>
+<p>On the terminal proton shell interval ($a = M = 8$, spanning $Z \in [114, 120]$ with interval $\Delta Z_8 = 6$), the half-open interval $[Z_{M-1}, Z_M)$ is replaced by the <strong>closed interval</strong> $[Z_{M-1}, Z_M]$. The boundary equivalence relation at the right endpoint is fixed by:</p>
+<div class="math-block">$$
+(M-1,\, \Delta Z_M) \equiv (M,\, 0) \quad \Longleftrightarrow \quad \mathcal{A}(120, 184) = (8, 0;\, 8, 0), \qquad \tau_p(120) = 8.0, \quad \tau_n(184) = 8.0. \quad (6)
+$$</div>
+<p>The neutron terminal endpoint is treated consistently by the corresponding equivalence $(K-1,\,\Delta N_K) \equiv (K,\,0)$ at $N=N_K=184$.</p>
+<p>Under Axiom E1, Element 120 (${}^{304}_{120}X$) is uniquely anchored as a <strong>doubly integer rhythm node</strong> ($\tau_p, \tau_n \in \mathbb{Z}$), whereas Element 119 (${}^{303}_{119}X$, with $\Delta z = 119 - 114 = 5$) occupies the penultimate boundary address immediately preceding closure:</p>
+<div class="math-block">$$
+\mathcal{A}(119, 184) = (7, 5;\, 8, 0), \qquad \tau_p(119) = 7 + \frac{5}{6}, \quad \tau_n(184) = 8.0. \quad (7)
+$$</div>
+<p><strong>Axiom E2 (Terminal Exterior Extension Axiom for $N &gt; N_K$).</strong></p>
+<p>For compound-nucleus or neutron-rich sectors exceeding the terminal neutron node $N_K = 184$, where no upper closure $N_{K+1}$ is presupposed, the ERL is extended by a graded exterior tangent fiber $\mathbb{Z}_{&gt;0}$ encoding the neutron excess $\delta n = N - N_K &gt; 0$:</p>
+<div class="math-block">$$
+\widetilde{\mathcal{A}}(Z, N_K + \delta n) = (a_p,\, \Delta z;\, K,\, +\delta n), \qquad \delta n \in \mathbb{Z}_{&gt;0}. \quad (8)
+$$</div>
+<p>Consequently, the compound-nucleus precursors prior to single-neutron ($1n$) evaporation—specifically ${}^{304}_{119}X^{\ast}$ ($Z=119, N=185$) and ${}^{305}_{120}X^{\ast}$ ($Z=120, N=185$)—possess well-defined extended compound rhythm addresses:</p>
+<div class="math-block">$$
+\widetilde{\mathcal{A}}_{119}^{\mathrm{comp}} = (7, 5;\, 8, +1), \qquad \widetilde{\mathcal{A}}_{120}^{\mathrm{comp}} = (8, 0;\, 8, +1). \quad (9)
+$$</div>
+<p><strong>Axiom E3 (Terminal Exterior Proton Extension Axiom for $Z&gt;120$).</strong></p>
+<p>The proton coordinate is extended independently of E2. For any integer $\delta z&gt;0$, the exterior proton fiber is defined by $\widetilde{\mathcal{A}}(120+\delta z,N)=(8,+\delta z;\,b_n,\Delta n)$, where $(b_n,\Delta n)$ is the interior or E2-extended neutron address as appropriate. Axiom E3 is a coordinate convention only; it does not assert the existence, binding, or synthesizability of any nuclide with $Z&gt;120$.</p>
+<p><strong>Definition 2.2 (Complete ERL Space and Target Encoding Tuple).</strong></p>
+<p>Combining interior cells, closed endpoints, and exterior fibers, the complete Element Rhythm Lattice is the disjoint union:</p>
+<div class="math-block">$$
+\mathcal{L}_{\mathrm{ERL}} = \mathcal{L}_{\mathrm{int}} \sqcup \partial\mathcal{L}_{\mathrm{closed}} \sqcup \mathcal{L}_{\mathrm{ext}}. \quad (10)
+$$</div>
+<p>Inheriting Stage P1 of DW58553928, the formal target encodings for Elements 119 and 120 are defined as the four-tuples:</p>
+<div class="math-block">$$
+\mathcal{T}_{119} = (119,\, 184,\, \mathcal{Q}_{119},\, \mathcal{G}_{119}), \qquad \mathcal{T}_{120} = (120,\, 184,\, \mathcal{Q}_{120},\, \mathcal{G}_{120}), \quad (11)
+$$</div>
+<p>where $\mathcal{Q}_T$ specifies the target nuclear quantum numbers (spin-parity $J^{\pi}$, binding energy, deformation parameters $(\beta_2,\gamma)$, and shell-correction energy) and $\mathcal{G}_T$ specifies the geometric-topological embedding data inside the four-dimensional Global Topological Curvature Network (Section 5).</p>
+<h3 id="23-inline_math_127-group-symmetry-and-the-isotonic-doublet-representation">2.3 $\mathbb{Z}_{5}$ Group Symmetry and the Isotonic Doublet Representation</h3>
+<p>To endow the ERL with an algebraic transformation law, we import the cyclic group $\mathbb{Z}_{5} = \{0, 1, 2, 3, 4\} \pmod 5$ rigorously established in <strong>DW58553905 (<em>Wuxing Dao</em>, Section 2 &amp; Section 9.1)</strong>.</p>
+<p>Let $S$ denote the generative step operator ($g \mapsto g+1 \pmod 5$) and $K = S^{2}$ denote the destructive/overcoming step operator ($g \mapsto g+2 \pmod 5$). On the regular representation $V = \mathbb{C}^{5}$ with Fourier basis $v_j = (1, \omega^{j}, \omega^{2j}, \omega^{3j}, \omega^{4j})^{\top}$ ($\omega = e^{2\pi i / 5}$), they satisfy the <strong>spectral duality theorem</strong>:</p>
+<div class="math-block">$$
+S v_j = \omega^{-j} v_j, \qquad K v_j = \omega^{-2j} v_j \quad \Longrightarrow \quad \sigma(K) = \sigma(S)^{2}, \quad (12)
+$$</div>
+<p>with fundamental spectral gap $\Delta_{\mathbb{Z}_{5}} = \min_{j \neq 0} |1 - \omega^{-j}| = 2\sin(\pi/5) \approx 1.176$. Furthermore, under restriction of the five-dimensional irreducible representation $\mathrm{Sym}_0^{2}(\mathbb{R}^{3})$ of $SO(3)$ to the $\mathbb{Z}_{5}$ subgroup, the representation space decomposes into three orthogonal sectors (DW58553905, Eq. 41):</p>
+<div class="math-block">$$
+\mathrm{Sym}_0^{2}(\mathbb{R}^{3})|_{\mathbb{Z}_{5}} \cong \mathbf{1} \oplus \rho_1 \oplus \rho_2, \quad (13)
+$$</div>
+<p>where $\mathbf{1}$ is the trivial one-dimensional invariant anchor sector, $\rho_1$ is the two-dimensional real representation rotating by $2\pi/5$ (the generative sector), and $\rho_2$ is the two-dimensional real representation rotating by $4\pi/5$ (the destructive/dual winding sector, corresponding to the Schläfli star-pentagram $\{5/2\}$ with winding number $W_2 = 2$).</p>
+<p><strong>Epistemological Boundary Remark:</strong> Following the methodological discipline of DW58553905 (Section 6.2), we do <em>not</em> naively equate the five classical Wuxing categories with physical nuclear forces. Instead, we employ $\mathbb{Z}_{5}$ as the <strong>internal algebraic symmetry of the rhythm-coordinate fiber</strong>, constructing an explicit representation map into the $N=184$ isotonic Hilbert subspace $\mathcal{H}_{\mathrm{iso}}^{(184)} = \mathcal{H}_{119,184} \oplus \mathcal{H}_{120,184}$.</p>
+<p>Even if the $\mathbb{Z}_{5}$ decomposition holds in the abstract representation space, whether a nuclear state transforms according to $\rho_1\oplus\rho_2$ or $\mathbf{1}$ must be tested by explicit eigenstate decomposition of a concrete nuclear Hamiltonian or by experimental observables. The abstract decomposition is not by itself a proof of nuclear-state representation.</p>
+<p><strong>Proposed Representation Ansatz 2.1 ($\mathbb{Z}_{5}$ Mapping for the $N=184$ Isotonic Doublet).</strong></p>
+<p>The algebraic decomposition in Eq. (13) is established for the stated representation space. Its realization on nuclear states is not established by that decomposition alone. We therefore introduce, as a testable ansatz rather than a constructed physical map, a linear intertwining map $\Pi_{\mathrm{iso}}: \mathrm{Sym}_0^{2}(\mathbb{R}^{3})|_{\mathbb{Z}_{5}} \to \mathcal{H}_{\mathrm{iso}}^{(184)}$. The proposed assignment uses the proton rhythm residue $\Delta z = Z - Z_7$ ($\Delta z = 5$ for $Z=119$ and $\Delta z = 6 \equiv 0$ at the closed endpoint $Z=120$). The physical representation carried by either nuclear state must be obtained from a nuclear-structure model or measurement:</p>
+<ol>
+<li><strong>Penultimate Dynamic Singularity ($Z=119, N=184$, $\mathcal{A}_{119}=(7,5;8,0)$):</strong> Because $Z=119$ sits one unit step below closure ($\delta_p = 119 - 120 = -1$) at the fifth intra-shell increment ($\Delta z = 5$), its state $|\Psi_{119,184}\rangle \in \mathcal{H}_{119,184}$ transforms faithfully within the active non-trivial rotational sectors $\rho_1 \oplus \rho_2$:</li>
+</ol>
+<div class="math-block">$$
+\hat{U}_{119}(g)\,|\Psi_{119,184}\rangle = [\rho_1(g) \oplus \rho_2(g)] |\Psi_{119,184}\rangle, \qquad \det(\rho_1(g)\oplus\rho_2(g)-I) \neq 0 \quad (g \neq 0). \quad (14)
+$$</div>
+<p>The nonzero determinant is a property of the representation $\rho_1\oplus\rho_2$ having no trivial eigenvalue; it is not, by itself, a physical conclusion about the nuclear state. Within this ansatz, the $Z=119$ state is assigned to non-trivial rotational sectors. This assignment is a model hypothesis; no nuclear-state representation or physical circulation has yet been derived.</p>
+<ol>
+<li><strong>Terminal Closed Anchor ($Z=120, N=184$, $\mathcal{A}_{120}=(8,0;8,0)$):</strong> At the closed endpoint $Z=120$, the boundary equivalence $(7,6) \equiv (8,0)$ annihilates the fractional phase residue ($\tau_p = 8.0 \in \mathbb{Z}$). Consequently, $|\Psi_{120,184}\rangle \in \mathcal{H}_{120,184}$ maps onto the trivial one-dimensional singlet sector $\mathbf{1}$:</li>
+</ol>
+<div class="math-block">$$
+\hat{U}_{120}(g)|\Psi_{120,184}\rangle = \mathbf{1}(g)|\Psi_{120,184}\rangle = |\Psi_{120,184}\rangle, \qquad \forall g\in\mathbb{Z}_{5}. \quad (15)
+$$</div>
+<p>Within this ansatz, the $Z=120$ state is assigned to the trivial sector. Spherical symmetry, zero drift, and invariance of an actual nuclear state remain to be tested by an explicit Hamiltonian and nuclear wave functions.</p>
+<p><strong>Corollary 2.1 (Conditional Intertwiner Constraint).</strong></p>
+<p>If the proposed assignments in Ansatz 2.1 are realized as representations on the two nuclear-state subspaces, then an exactly $\mathbb{Z}_{5}$-invariant operator has no intertwiner between the non-trivial sector $\rho_1\oplus\rho_2$ and the trivial sector $\mathbf{1}$. This is a conditional representation-theoretic statement, not a claim that a physical $119\leftrightarrow120$ decay exists. Any actual reaction or decay must be specified in the full Hilbert space and conserve charge, baryon number, energy-momentum, angular momentum, and any required lepton quantum numbers. Beta decay preserves mass number $A$ while changing $Z$ and $N$; it cannot directly convert ${}^{303}_{119}X$ into ${}^{304}_{120}X$. Proton-transfer reactions require an explicitly included projectile, target, or ejectile.</p>
+<h3 id="24-topological-erl-channel-graph-and-the-rhythm-rectification-bridge">2.4 Topological ERL Channel Graph and the Rhythm Rectification Bridge</h3>
+<p>To connect discrete rhythm coordinates with physical nuclear reactions, we embed $\mathcal{L}_{\mathrm{ERL}}$ into a directed weighted ERL Topological Channel Graph $\mathcal{G}_{\mathrm{ERL}} = (\mathcal{V}_{\mathrm{ERL}}, \mathcal{E}_{\mathrm{ERL}})$, adopting the direct-sum reaction-channel Hilbert space of DW58553929 (Section 3.4):</p>
+<div class="math-block">$$
+\mathcal{H}_{\mathrm{ch}}=\bigoplus_{\alpha\in\mathcal{V}_{\mathrm{ERL}}}\mathcal{H}_{\alpha},\qquad \hat{H}_{\mathrm{ch}}=\bigoplus_{\alpha}\hat{H}_{\alpha\alpha}+\sum_{\alpha\ne\beta}\hat{V}_{\alpha\beta},\qquad \hat{V}_{\alpha\beta}=\hat{P}_{\alpha}\hat{H}_{\mathrm{ch}}\hat{P}_{\beta}, \quad (16)
+$$</div>
+<p>where each vertex $\alpha = (Z, N, \mathcal{A}(Z,N), \nu_{\mathrm{int}})$ specifies a complete nuclear state sector (including internal excitation $\nu_{\mathrm{int}}$ and emitted/absorbed particles), and each directed edge $e_{\alpha\beta} \in \mathcal{E}_{\mathrm{ERL}}$ carries the transition tuple:</p>
+<div class="math-block">$$
+e_{\alpha\beta}=(\Delta Z,\Delta N,Q_{\alpha\beta},\Delta J^{\pi},\hat{V}_{\alpha\beta},\Gamma_{\alpha\beta}). \quad (17)
+$$</div>
+<p>Within $\mathcal{G}_{\mathrm{ERL}}$, the primary synthesis pathways toward ${}^{303}_{119}X$ and ${}^{304}_{120}X$ proceed via hot-fusion capture into the exterior fiber $\mathcal{L}_{\mathrm{ext}}$ ($\delta n = +1$), followed by Rhythm Rectification Bridges $\mathcal{R}_{119}$ and $\mathcal{R}_{120}$ that project the compound nucleus back onto the $\delta n = 0$ closure hypersurface via single-neutron evaporation:</p>
+<div class="math-block">$$
+\mathcal{R}_{119}:\quad (119,185)^{\ast}\longrightarrow (119,184)+n,\qquad
+\mathcal{R}_{120}:\quad (120,185)^{\ast}\longrightarrow (120,184)+n. \quad (18)
+$$</div>
+<p><strong>Verification Obligation V1 (Rhythm-to-Dynamics Non-Identity).</strong></p>
+<p>Adjacency on the Element Rhythm Lattice ($\delta n = +1 \to 0$) defines a target objective function for path search, not an automatic physical transition. For $\mathcal{R}_{119}$ or $\mathcal{R}_{120}$ to constitute a physically valid bridge, coupled-channel calculations must demonstrate:
+1. Strict conservation of charge ($Z$), baryon number ($A$), total energy ($E^{\ast} &gt; S_n$), angular momentum ($J$), and parity ($\pi$);
+2. Non-vanishing continuum transition matrix elements $\langle \chi_{n,E} \otimes \Psi_{Z,184} | \hat{V}_{\mathrm{evap}} | \Psi_{Z,185}^{\ast} \rangle \neq 0$;
+3. Dominance of the neutron-evaporation partial width $\Gamma_n(E^{\ast})$ over competing quasi-fission and spontaneous-fission widths ($\Gamma_n / \Gamma_{\mathrm{fiss}} \gg 1$), which requires the dynamical curvature and ZQP stabilization bridges constructed in Sections 3 and 4.</p>
+<hr />
+<h2 id="3-six-physical-bridges-and-anti-quasi-fission-zqp-dynamics">3. Six Physical Bridges and Anti-Quasi-Fission ZQP Dynamics</h2>
+<h3 id="31-the-unified-six-bridge-architecture-b1b6">3.1 The Unified Six-Bridge Architecture (B1–B6)</h3>
+<p>Establishing discrete countable rhythm addresses $\mathcal{A}_{119}$ and $\mathcal{A}_{120}$ on the Element Rhythm Lattice (Section 2) solves the problem of <em>target encoding</em>, but it does not by itself supply the physical mechanism required to transport a nuclear system across the superheavy Coulomb barrier and stabilize it against immediate fission. To connect discrete rhythm coordinates with continuous manifold geometry, open quantum dynamics, and adaptive control, we generalize the cross-scale bridge B1 of DW58553928 into a unified <strong>Six-Bridge Architecture</strong> ($\mathrm{B1}$–$\mathrm{B6}$).</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Bridge</th>
+<th>Mathematical Object</th>
+<th>Core Coupling Map</th>
+<th>Functional Role for $C_{119}$ &amp; $C_{120}$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>B1: Rhythm Bridge</strong></td>
+<td>$\mathcal{A}_T \in \mathcal{L}_{\mathrm{ERL}}$</td>
+<td>$(Z,N) \mapsto (a_p, \Delta z;\, b_n, \Delta n)$</td>
+<td>Fixes target rhythm addresses $\mathcal{A}_{119}=(7,5;8,0)$, $\mathcal{A}_{120}=(8,0;8,0)$, and compound extensions $\widetilde{\mathcal{A}}_T^{\mathrm{comp}}$</td>
+</tr>
+<tr>
+<td><strong>B2: Topological Bridge</strong></td>
+<td>$\mathcal{G}_{\mathrm{ERL}} = (\mathcal{V}_{\mathrm{ERL}}, \mathcal{E}_{\mathrm{ERL}})$</td>
+<td>$\Pi_{\mathrm{iso}}: V_{\mathbb{Z}_{5}} \to \mathcal{H}_{\mathrm{ch}}$</td>
+<td>Connects initial projectile-target sectors to $N=184$ targets via conservation-respecting reaction edges and rectification bridges $\mathcal{R}_T$</td>
+</tr>
+<tr>
+<td><strong>B3: Curvature Bridge</strong></td>
+<td>$R(\mathbf{x}) \leftrightarrow m(R), c(R), \hbar(R)$</td>
+<td>$R_T = R_0 (m_0/m_T)^{2}$</td>
+<td>Maps MES scalar curvature onto nuclear effective inertia and barrier stiffness, converting positive-curvature repulsion into negative-curvature anchors</td>
+</tr>
+<tr>
+<td><strong>B4: Quantum-Dynamical Bridge</strong></td>
+<td>$\hat{\mathcal{H}}_F^{(T)}(\boldsymbol{\lambda}),\, \dot{\rho} = \mathcal{L}_R[\rho]$</td>
+<td>$\mathcal{H}_{\mathrm{model}} \xrightarrow{\Phi} \mathcal{H}_{\mathrm{nuclear}}$</td>
+<td>Governs Floquet-cranked dressing, continuum coupling, non-Hermitian exceptional points (EPs), and curvature-driven Lindblad evolution</td>
+</tr>
+<tr>
+<td><strong>B5: Condensation-Stability Bridge</strong></td>
+<td>$\mathcal{G}_{\mu\nu}(\mathbf{x},t),\, \mathcal{J}_{\mathrm{aqueduct}}^{\mu\nu}$</td>
+<td>$\partial_t \mathcal{G}_{\mu\nu} = \mathcal{F}_{\mathrm{ZQP}}[\mathcal{G}]$</td>
+<td>Suppresses quasi-fission via ZQP nonlinear saturation, nonlocal aqueduct irrigation, and apoptotic clearance above thermal/fission rates</td>
+</tr>
+<tr>
+<td><strong>B6: AI-Control Bridge</strong></td>
+<td>$\dot{\boldsymbol{\lambda}} = \mathcal{F}_{\mathrm{AI}}(\boldsymbol{\lambda}, \mathbf{x}, \mathbf{x}_{\mathrm{target}})$</td>
+<td>$\mathcal{O}_{\mathrm{obs}} \to \mathcal{U}_{\mathrm{ctrl}}(\tau_{Ji})$</td>
+<td>Executes real-time closed-loop navigation within the finite Wheelwright-Pian window $\tau_{Ji}$ and cross-validates candidate pathways</td>
+</tr>
+</tbody>
+</table></div>
+<p>In strict adherence to the Rule of Level-Appropriate Claim (DW58553928, Section 1.4), Bridges $\mathrm{B1}$–$\mathrm{B6}$ constitute a <strong>Type-1 formal constructive specification</strong>: each bridge defines a required mathematical transformation, domain, and physical observable that must be independently evaluated before a Type-2 model-existence or Type-3 physical-realization verdict can be issued.</p>
+<h3 id="32-curvaturerhythm-synergy-bridge-b3-and-barrier-renormalization">3.2 Curvature–Rhythm Synergy (Bridge B3) and Barrier Renormalization</h3>
+<p>In conventional heavy-ion fusion toward $Z=119$ and $Z=120$, the dominant dynamical obstacle is the steep Coulomb repulsion barrier $V_C(r) \propto Z_1 Z_2 e^{2} / (4\pi\epsilon_0 r)$ and the resulting dissipative <strong>quasi-fission (QF)</strong> valley, in which the dinuclear system re-separates along the elongation coordinate before forming an equilibrated spherical compound nucleus.</p>
+<p>Within the MES architecture, we inherit unchanged the Dynamic Quantum Equilibrium scaling laws from DW58553914 (Eqs. 3 and 21) and DW58553911 (Eq. 12):</p>
+<div class="math-block">$$
+c(R) = c_0 \left(\frac{|R|}{R_0}\right)^{1/2}, \qquad \hbar(R) = \hbar_0 \left(\frac{R_0}{|R|}\right)^{1/2}, \qquad m(R) = m_0 \left(\frac{R_0}{|R|}\right)^{1/2}, \qquad \epsilon_0(R) = \epsilon_{0,0} \left(\frac{R_0}{|R|}\right)^{1/2}, \quad (19)
+$$</div>
+<p>preserving the global geometric invariants $\hbar(R)c(R) = \hbar_0 c_0$ and $m(R)c(R) = m_0 c_0$, as well as the topological invariance of the fine-structure constant $\alpha = e^{2} / (4\pi\epsilon_0(R)\hbar(R)c(R))$.</p>
+<p>DW58553914 establishes the curvature scalings of $c,\hbar,m$; this paper extends the same curvature scaling to $\epsilon_0(R)$ in order to preserve the topological invariance of $\alpha$. This extension is a modeling choice made in the present work and requires independent testing.</p>
+<p><strong>Definition 3.1 (Target Nuclear Curvature Scale).</strong></p>
+<p>Under Postulate A1 (DW58553928, Eq. 19), a target nuclear state $T \in \{119, 120\}$ with effective inertial mass scale $m_T$ is assigned a reference scalar curvature:</p>
+<div class="math-block">$$
+R_T = R_0 \left(\frac{m_0}{m_T}\right)^{2}. \quad (20)
+$$</div>
+<p><em>Operational Clarification:</em> In compliance with the rigor requirements of Section 1.3, Eq. (20) is a formal MES scaling assignment rather than a substitute for microscopic nuclear mass tables. In concrete nuclear-structure modeling, $m_T$ denotes the <strong>local collective effective inertia</strong> of the fusing quantum geometric manifold (DW58553911, Section 3.6.2), while $R(\mathbf{x})$ denotes the local scalar curvature of the induced quantum geometric tensor $g_{\mu\nu}(\mathbf{x})$ at the nuclear-interaction length scale ($\sim 10^{-15}\ \mathrm{m}$).</p>
+<p><strong>Proposition 3.1 (Curvature-Driven Barrier Reprogramming).</strong></p>
+<p>Suppose external multipole driving and rotational mixing (Channels C1–C3) excite a localized high-curvature region ($|R(\mathbf{x})| \gg R_0$) with negative effective curvature ($R(\mathbf{x}) &lt; 0$ under the attracting-geodesic convention of DW58553905, Eq. 22) around the $N=184$ target configuration. Then the local dynamical parameters undergo simultaneous renormalization:
+1. <strong>Effective Collective Inertia Reduction:</strong> The collective mass parameter resisting compactification scales downward as $m_{\mathrm{coll}}(R) \propto |R|^{-1/2}$, increasing the quantum tunneling and shape-relaxation mobility of the fusing dinuclear system.
+2. <strong>Manifold Coupling Acceleration:</strong> The internal phase-synchronization speed scales upward as $c(R) \propto |R|^{1/2}$, accelerating the redistribution of excitation energy from the relative-motion necking degree of freedom into internal shell-stabilized modes.
+3. <strong>Conversion of Gravity Wells into Deep Anchors:</strong> Following DW58553911 (Section 3.6.3), the pathological positive-curvature repulsion ridge ("gravity well") that normally deflects trajectories into quasi-fission is inverted by the landscape reprogramming operator $\hat{\mathcal{O}}_{\mathrm{therapy}}$ into a stable negative-curvature <strong>deep anchor</strong> ($\Delta_{\mathcal{M}}(\mathbf{x}) \propto |R(\mathbf{x})|$).</p>
+<h3 id="33-the-anti-quasi-fission-zqp-aqueduct-irrigation-equation-bridge-b5">3.3 The Anti-Quasi-Fission ZQP Aqueduct Irrigation Equation (Bridge B5)</h3>
+<p>Even when a fusing trajectory crosses the capture barrier into the compound-nucleus sector $\widetilde{\mathcal{A}}_T^{\mathrm{comp}} = (a_p, \Delta z;\, 8, +1)$, intense Coulomb stress ($Z^{2}/A \approx 46.7$ for ${}^{303}_{119}X$ and $47.4$ for ${}^{304}_{120}X$) drives rapid elongation toward scission. To stabilize the condensing nuclear manifold during the finite transition interval $\tau_{Ji}$, we formulate the <strong>Anti-Quasi-Fission ZQP Aqueduct Irrigation Equation</strong>.</p>
+<p>Let $\mathcal{G}_{\mu\nu}(\mathbf{x}, t)$ be the second-rank symmetric quantum geometric tensor field describing the collective shape and phase-coherence fabric of the fusing nuclear system, and let $\mathcal{G}_{\mathrm{bar}}^{\mu\nu}(\mathbf{x}; Z, 184)$ denote the target spherical equilibrium manifold anchored at $N=184$. Define the scalar deviation invariant from the balanced manifold:</p>
+<div class="math-block">$$
+B(\mathcal{G}) = g^{\mu\nu}[\mathcal{G}_{\mu\nu}(\mathbf{x}, t)-\mathcal{G}_{\mathrm{bar},\mu\nu}(\mathbf{x}; Z,184)]. \quad (21)
+$$</div>
+<p>Combining the Tensor AID Equation (DW58553911, Eq. 1) with a nonlocal phase-space coherence flux, the evolution of $\mathcal{G}_{\mu\nu}(\mathbf{x}, t)$ is governed by:</p>
+<div class="math-block">$$
+\frac{\partial \mathcal{G}_{\mu\nu}}{\partial t} = -\alpha_0(E^{\ast})\,\mathcal{G}_{\mu\nu} - \beta\,(\mathcal{G}^{3})_{\mu\nu} + \gamma(R)\,\nabla^{\lambda}\nabla_{\lambda} \mathcal{G}_{\mu\nu} - \Gamma_{\mathrm{ZQP}}\,\tanh\!\left(\frac{B(\mathcal{G})}{s_{\mathrm{sat}}}\right)\hat{e}_{\mu\nu} + \mathcal{J}_{\mathrm{aqueduct},\mu\nu} + \xi_{\mu\nu}. \quad (22)
+$$</div>
+<p>Here all tensor indices are moved with the same metric $g_{\mu\nu}$, and $(\mathcal{G}^{3})_{\mu\nu}$ is defined by the covariant matrix product $\mathcal{G}_{\mu\alpha}g^{\alpha\beta}\mathcal{G}_{\beta\gamma}g^{\gamma\delta}\mathcal{G}_{\delta\nu}$. The coefficients must carry units such that every term has the dimensions of $\partial_t\mathcal{G}_{\mu\nu}$. Equation (22) is a proposed phenomenological evolution law; its derivation from a microscopic nuclear Hamiltonian is not supplied here. The terms have the following intended roles:
+1. <strong>Excitation-Dependent Ginzburg–Landau Driving ($-\alpha_0(E^{\ast})\mathcal{G}_{\mu\nu} - \beta\mathcal{G}_{\mu\nu}^{3}$):</strong> Here $\alpha_0(E^{\ast}) = \alpha_{0,0}(E^{\ast} - E_{\mathrm{crit}}^{\ast})$ measures the thermal-excitation distance from the shell-damping threshold $E_{\mathrm{crit}}^{\ast}$ (typically $E^{\ast} \gtrsim 30$–$40\ \mathrm{MeV}$ where $N=184$ shell corrections wash out), while $\beta &gt; 0$ enforces boundedness of the condensed tensor amplitude.
+2. <strong>Curvature-Renormalized Spatial Stiffness ($\gamma(R)\nabla^{2} \mathcal{G}_{\mu\nu}$):</strong> Penalizes spatial necking gradients between the projectile and target fragments, with effective diffusivity $\gamma(R) = \nu_{\mathrm{diff},0}(|R(\mathbf{x})|/R_0)^{3/2}$ amplified in high-curvature, low-inertia regions.
+3. <strong>ZQP Nonlinear Saturating Negative Feedback ($-\Gamma_{\mathrm{ZQP}}\tanh(B(\mathcal{G})/s_{\mathrm{sat}})\hat{e}_{\mu\nu}$):</strong> Driven by the <strong>Zaitian Quantum Power (ZQP)</strong> coupling $\Gamma_{\mathrm{ZQP}} \approx 2.4\lambda_{\mathrm{ZQP}}$ (DW58553911, Eq. 17) with saturation scale $s_{\mathrm{sat}}$ and unit tensor direction $\hat{e}_{\mu\nu}$. Crucially, the boundedness of $\tanh(\cdot) \in (-1, 1)$ prevents singular curvature collapse while maintaining a maximal restoring force even under extreme Coulomb elongation fluctuations.
+4. <strong>ZQP Aqueduct Irrigation Source Term ($\mathcal{J}_{\mathrm{aqueduct}}^{\mu\nu}(\mathbf{x}, t)$):</strong> Formalizes the nonlocal transport of geometric phase coherence from negative-curvature "acupoints" ($R &lt; 0, |R| \to \max$, where effective inertia $m \to \min$ and coupling speed $c \to \max$) into the vulnerable dinuclear necking zone:</p>
+<div class="math-block">$$
+\mathcal{J}_{\mathrm{aqueduct}}^{\mu\nu}(\mathbf{x},t)=\int_{\mathcal{M}_{\mathrm{GTC}}}d\mu_g(y)\,\mathcal{K}_{\mathrm{nonloc}}(\mathbf{x},\mathbf{y};R)\,\Theta(\tau_{Ji}-t)[\mathcal{G}_{\mathrm{bar}}^{\mu\nu}(\mathbf{y};Z,184)-\mathcal{G}^{\mu\nu}(\mathbf{x},t)], \quad (23)
+$$</div>
+<p>where $\mathcal{K}_{\mathrm{nonloc}}(\mathbf{x}, \mathbf{y}; R)$ is a phenomenological nonlocal response kernel. The constraint $\nabla^{\mu} \mathcal{G}_{\mu\nu}=J_\nu$ alone does not uniquely determine a Green function; a genuine kernel construction would additionally require a specified linearized differential operator, its Green equation, invariant integration measure, and boundary/causal conditions. The Heaviside function $\Theta(\tau_{Ji}-t)$ restricts the proposed source to $0&lt;t&lt;\tau_{Ji}$. Because $\mathcal{G}^{\mu\nu}(\mathbf{x},t)$ is independent of the integration variable $y$, this source term can be decomposed into a “nonlocal driving term” and a “linear damping term”:</p>
+<div class="math-block">$$
+\mathcal{J}_{\mathrm{aqueduct}}^{\mu\nu}
+=\int d\mu_g(y)\,\mathcal{K}\,\mathcal{G}_{\mathrm{bar}}^{\mu\nu}(\mathbf{y})
+-\mathcal{G}^{\mu\nu}(\mathbf{x},t)\int d\mu_g(y)\,\mathcal{K}.
+$$</div>
+<p>The second term is linear damping, while the first is nonlocal driving; together they define the driving–dissipation structure of the aqueduct-irrigation mechanism.</p>
+<ol>
+<li><strong>Tensor Thermal-Quantum Noise ($\xi_{\mu\nu}(t)$):</strong> Satisfies the curvature-renormalized fluctuation-dissipation relation $\langle \xi_{\mu\nu}(\mathbf{x},t)\xi_{\alpha\beta}(\mathbf{x}',t') \rangle = 2k_B T_{\mathrm{eff}}\gamma(R)\,\delta_{\mu\alpha}\delta_{\nu\beta}\delta^{(3)}(\mathbf{x}-\mathbf{x}')\delta(t-t')$.</li>
+</ol>
+<p>Equation (22) is a phenomenological evolution equation, not an exact equation derived from a nuclear many-body Hamiltonian. Its coefficients $\alpha_0,\beta,\gamma,\Gamma_{\mathrm{ZQP}},s_{\mathrm{sat}}$ must be calibrated using independent models or data; no numerical values are supplied in this paper.</p>
+<h3 id="34-apoptotic-clearance-threshold-and-the-wheelwright-pian-dynamic-window">3.4 Apoptotic Clearance Threshold and the Wheelwright-Pian Dynamic Window</h3>
+<p>For the fusing compound nucleus to survive against quasi-fission and evaporate a neutron along the Rhythm Rectification Bridge $\mathcal{R}_T: (Z, 185) \to (Z, 184) + n$, incoherent necking fluctuations must be cleared faster than the combined rate of quasi-fission, spontaneous fission, and thermal shell melting.</p>
+<p>Linearizing the proposed field equation about a stationary reference configuration $\mathcal{G}_0$ gives a Jacobian (Fréchet derivative) $\mathsf{J}_0= D\mathcal{F}[\mathcal{G}]|_{\mathcal{G}_0}$, where $\mathcal{F}$ denotes the full right-hand side of Eqs. (22)–(23), including the derivative of the cubic term and the nonlocal kernel. If the linearized dynamics is stable, a candidate amplitude-clearance rate may be defined by</p>
+<div class="math-block">$$
+\Gamma_{\mathrm{clear}}^{\mathrm{cand}}=-\max_{\lambda\in\sigma(\mathsf{J}_0)}\mathrm{Re}\lambda, \quad (24)
+$$</div>
+<p>provided the maximum real part is negative. The earlier additive expression involving ZQP feedback, diffusion, and an aqueduct eigenvalue is at most a reduced approximation under a specified mode truncation; it is not an exact Jacobian eigenvalue until the omitted derivatives, tensor contractions, boundary conditions, and mode couplings have been evaluated. The quantity $\nu_{\mathrm{diff},0} k_{\mathrm{neck}}^{2}$ has rate units, and every term retained in any reduced expression must have the same units.</p>
+<p><strong>Proposition 3.2 (Anti-Quasi-Fission Stabilization Criterion).</strong></p>
+<p>Within the reduced single-rate model, a sufficient stabilization criterion for condensation toward the $N=184$ isotonic target manifold ($C_{119}$ or $C_{120}$) is that the candidate apoptotic clearance rate exceed the modeled quasi-fission, spontaneous-fission, and thermal-decoherence rates:</p>
+<div class="math-block">$$
+\Gamma_{\mathrm{clear}}^{\mathrm{cand}}(R_{\mathrm{sat}}, \lambda_{\mathrm{ZQP}}) &gt; \gamma_{\mathrm{QF}}(Z, E^{\ast}) + \gamma_{\mathrm{SF}}(Z) + \gamma_{\mathrm{th}}, \quad (25)
+$$</div>
+<p>where $\hbar(R_{\mathrm{sat}}) = \hbar_0 (R_0 / |R_{\mathrm{sat}}|)^{1/2}$ and $\gamma_{\mathrm{th}}=k_BT_{\mathrm{eff}}/\hbar(R_{\mathrm{sat}})$ is a phenomenological thermal-decoherence rate. This rate must be derived from a bath spectral density in a microscopic treatment; it is not automatically identical to a nuclear decay width.</p>
+<p>The rate criterion in Eq. (25) is related to, but does not by itself prove, the non-emptiness of the <strong>Wheelwright-Pian finite transition window</strong> (Postulate A5, DW58553928, Eq. 27). For a specified target and excitation condition, the proposed interval is bounded below by the Landau–Zener adiabaticity timescale $\tau_{\mathrm{LZ}}(Z,E^{\ast})$ and above by the net dissipative timescale $1/\gamma_{\mathrm{eff}}(Z,E^{\ast},T)$:</p>
+<div class="math-block">$$
+\tau_{\mathrm{LZ}}(Z,E^{\ast})&lt;\tau_{Ji}&lt;\frac{1}{\gamma_{\mathrm{eff}}(Z,E^{\ast},T)},\qquad \gamma_{\mathrm{eff}}(Z,E^{\ast},T)=\max\bigl\{\gamma_{\min},\gamma_{\mathrm{QF}}+\gamma_{\mathrm{SF}}+\gamma_{\mathrm{env}}^{\mathrm{bound}}+\gamma_{\mathrm{th}}-\Gamma_{\mathrm{clear}}^{\mathrm{cand}}\bigr\}, \quad (26)
+$$</div>
+<p>where $\gamma_{\min}&gt;0$ is a strictly positive residual rate floor. It is deliberately distinct from the vacuum permittivity $\epsilon_0(R)$ used in Eq. (19). All $\gamma$ and $\Gamma_{\mathrm{clear}}^{\mathrm{cand}}$ quantities in Eqs. (24)–(26) are rates in $\mathrm{s}^{-1}$; if an energy width is used instead, it must be converted by $\gamma=\Gamma/\hbar$. If independently calculated loss rates make $1/\gamma_{\mathrm{eff}}\leq\tau_{\mathrm{LZ}}$, the transition window is empty. Within the MES cross-scale interpretation, ZQP is treated as a universal stabilization principle. Whether the particular nuclear-scale generator specified here reduces the effective loss rate enough to produce a non-empty interval remains an open quantitative question; no such rate reduction or synthesis window is calculated in this manuscript.</p>
+<hr />
+<h2 id="4-the-five-channel-network-and-superheavy-bottleneck-loops">4. The Five-Channel Network and Superheavy Bottleneck Loops</h2>
+<h3 id="41-migration-of-the-five-research-channels-inline_math_319inline_math_320-to-inline_math_321">4.1 Migration of the Five Research Channels ($\mathrm{C1}$–$\mathrm{C5}$) to $Z \in \{119, 120\}$</h3>
+<p>In <em>Creating Gold with AI Power</em> (DW58553929, Section 3), we demonstrated that activating continuum and inter-sector transitions in tightly bound nuclei requires decomposing the physical problem into five complementary research channels: <strong>Deformation ($\mathrm{C1}$)</strong>, <strong>Rotation ($\mathrm{C2}$)</strong>, <strong>Strong-Field Dressing ($\mathrm{C3}$)</strong>, <strong>Particle-Number Construction ($\mathrm{C4}$)</strong>, and <strong>Environment &amp; Internal Conversion ($\mathrm{C5}$)</strong>.</p>
+<p>In migrating this architecture from stable ${}^{197}\mathrm{Au}$ ($Z=79, N=118$) to the superheavy isotonic doublet ${}^{303}_{119}X$ ($Z=119, N=184$) and ${}^{304}_{120}X$ ($Z=120, N=184$), the physical challenge undergoes a fundamental inversion. Whereas ${}^{197}\mathrm{Au}$ suffers from excessive valence binding ($\sim 8\ \mathrm{MeV}$ below $S_p$), superheavy compound systems at $Z \in \{119, 120\}$ suffer from <strong>extreme Coulomb instability, vanishing fission barriers, and rapid quasi-fission</strong>. Consequently, the five channels are re-engineered into a coordinated <strong>constructive element genesis network</strong>:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Channel</th>
+<th>Physical Mechanism in Superheavy Regime</th>
+<th>Principal Mathematical Operator</th>
+<th>Core Verification Question for $C_{119}$ &amp; $C_{120}$</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>C1: Deformation</strong></td>
+<td>Quadrupole/triaxial/hexadecapole landscape $(\beta_2, \gamma, \beta_4)$ around $N=184$</td>
+<td>$\hat{H}_{\mathrm{nuc}}^{(\alpha)}(\beta_2, \gamma, \beta_4)$</td>
+<td>Does a dynamical deformation valley connect the elongated dinuclear capture state to the spherical $N=184$ shell minimum without scission?</td>
+</tr>
+<tr>
+<td><strong>C2: Rotation (Coriolis)</strong></td>
+<td>Cranked rotating frame mixing high-$j$ intruder orbitals ($1i_{13/2}, 1j_{15/2}, 1k_{17/2}$)</td>
+<td>$-\boldsymbol{\omega}(t)\cdot \hat{\mathbf{J}}^{(\alpha)}$</td>
+<td>Does Coriolis mixing induce controlled Berry curvature and lower the multipole transition barrier without triggering centrifugal fission?</td>
+</tr>
+<tr>
+<td><strong>C3: Strong-Field Dressing</strong></td>
+<td>Periodic multipole/Floquet driving resonant with compound-nucleus dipole/quadrupole modes</td>
+<td>$\hat{V}_{\mathrm{drive}}^{(\alpha)}(t) - i\hbar\partial_t$</td>
+<td>Can Floquet sideband dressing open a continuum-assisted cooling/evaporation window and supply ZQP aqueduct phase coherence?</td>
+</tr>
+<tr>
+<td><strong>C4: Particle-Number Construction</strong></td>
+<td>Direct-sum reaction-channel network spanning fusion capture, $1n$ rectification ($\mathcal{R}_T$), and $\alpha$-decay chains</td>
+<td>$\bigoplus_\alpha \hat{H}_{\alpha\alpha} + \sum_{\alpha\neq\beta}\hat{V}_{\alpha\beta}$</td>
+<td>Does a conservation-respecting reaction path connect projectile-target sectors to $(119,184)$ or $(120,184)$ with $\Gamma_n / \Gamma_{\mathrm{fiss}} \gg 1$?</td>
+</tr>
+<tr>
+<td><strong>C5: Environment &amp; Decay</strong></td>
+<td>Internal conversion ($\mathrm{IC}$), $\gamma$-ray cooling, quasi-fission/spontaneous-fission dissipation, and ZQP feedback</td>
+<td>$\mathcal{L}_{\mathrm{env}}[\rho] - \frac{i}{2}\hat{\Gamma}_{\mathrm{env}}^{(\alpha)}(\rho)$</td>
+<td>Can radiative/IC cooling and ZQP saturation suppress quasi-fission and extend target lifetime long enough for identification?</td>
+</tr>
+</tbody>
+</table></div>
+<h3 id="42-the-superheavy-floquet-cranked-coupled-hamiltonian">4.2 The Superheavy Floquet-Cranked Coupled Hamiltonian</h3>
+<p>To unify all five channels without treating a non-Hermitian no-jump Hamiltonian as a complete open-system evolution, we specify a trace-preserving master-equation architecture on $\mathcal{H}_{\mathrm{ch}} = \bigoplus_{\alpha \in \mathcal{C}_T} \mathcal{H}_\alpha$. For target $T \in \{119,120\}$, let $\hat H_{\mathrm{Herm}}^{(T)}(t)$ contain the Hermitian nuclear, cranking, driving, and inter-sector couplings. The proposed evolution is</p>
+<div class="math-block">$$
+\frac{d\rho}{dt}=-\frac{i}{\hbar}[\hat H_{\mathrm{Herm}}^{(T)}(t),\rho]+\sum_\mu\mathcal{D}[\hat L_\mu^{(T)}(t)]\rho+\mathcal{L}_{\mathrm{ZQP}}^{(T)}[\rho], \quad (27)
+$$</div>
+<p>where $\mathcal{D}[L]\rho=L\rho L^{\dagger}-\tfrac12\{L^{\dagger} L,\rho\}$. The loss, radiative, internal-conversion, and particle-emission channels must be represented by explicitly specified jump operators $L_\mu$ with non-negative rates. $\mathcal{L}_{\mathrm{ZQP}}$ is a proposed trace-preserving, completely positive generator (or a controlled family of such generators); its form and positivity conditions remain to be constructed. A non-Hermitian effective Hamiltonian may be used for the no-jump sector only, with $H_{\mathrm{eff}}=H_{\mathrm{Herm}}-\tfrac{i\hbar}{2}\sum_\mu L_\mu^{\dagger} L_\mu$, and does not replace the full master equation. Until an explicit Lindblad-type generator has been constructed, $\mathcal{L}_{\mathrm{ZQP}}$ can only be treated as a candidate term and must not be used to make numerical claims about survival probabilities. Each Hamiltonian block is specified below:</p>
+<ol>
+<li><strong>Deformed Shell-Model Block ($\mathrm{C1}$):</strong></li>
+</ol>
+<div class="math-block">$$
+\hat{H}_{\mathrm{nuc}}^{(\alpha)}(\beta_2, \gamma, \beta_4) = \hat{H}_{\mathrm{WS}}^{(\alpha)} + \sum_{\lambda \in \{2,4\}} \kappa_\lambda(\beta_\lambda, \gamma)\, \hat{Q}_\lambda \cdot \hat{Q}_\lambda + \hat{V}_{\mathrm{pair}}^{(\alpha)}, \quad (28)
+$$</div>
+<p>where $\hat{H}_{\mathrm{WS}}^{(\alpha)}$ is the deformed Woods–Saxon single-particle Hamiltonian, $\hat{Q}_\lambda$ are the multipole operators governing quadrupole ($\beta_2$), triaxial ($\gamma$), and hexadecapole ($\beta_4$) shapes, and $\hat{V}_{\mathrm{pair}}^{(\alpha)}$ accounts for monopole/quadrupole pairing correlations near $Z \in \{119, 120\}, N=184$.</p>
+<ol>
+<li><strong>Cranked Coriolis Block ($\mathrm{C2}$):</strong></li>
+</ol>
+<div class="math-block">$$
+-\boldsymbol{\omega}(t)\cdot \hat{\mathbf{J}}^{(\alpha)} = -\omega_x(t)\,\hat{J}_x^{(\alpha)}, \quad (29)
+$$</div>
+<p>where cranking around the principal axis $x$ breaks time-reversal symmetry and mixes high-$j$ intruder sub-shells (specifically proton $1i_{13/2}, 2f_{7/2}, 1j_{15/2}$ and neutron $1j_{15/2}, 2g_{9/2}, 1k_{17/2}$ orbitals) that govern the shell-stabilization pocket around $N=184$.</p>
+<ol>
+<li><strong>Periodic Multipole Dressing Block ($\mathrm{C3}$):</strong></li>
+</ol>
+<div class="math-block">$$
+\hat{V}_{\mathrm{drive}}^{(\alpha)}(t) = -\sum_{i} \hat{d}_i^{(\alpha)}(\omega_x)\,E_i(\mathbf{r}, t) - \frac{1}{6}\sum_{i,j} \hat{Q}_{ij}^{(\alpha)}(\omega_x)\,\partial_i E_j(\mathbf{r}, t), \qquad \hat{V}_{\mathrm{drive}}^{(\alpha)}(t + T_F) = \hat{V}_{\mathrm{drive}}^{(\alpha)}(t), \quad (30)
+$$</div>
+<p>with driving frequency $\Omega_F = 2\pi / T_F$. Crucially, the effective dipole ($\hat{d}_i$) and quadrupole ($\hat{Q}_{ij}$) transition operators are evaluated in the Coriolis-mixed basis of $\mathrm{C2}$, encoding the direct physical coupling $\mathrm{C2} \to \mathrm{C3}$.</p>
+<ol>
+<li><strong>Inter-Sector Reaction Coupling Block ($\mathrm{C4}$):</strong></li>
+</ol>
+<div class="math-block">$$
+\hat{V}_{\alpha\beta}(\beta_2, \gamma; t) = \hat{V}_{\mathrm{fus}}^{(Z_1+Z_2 \to Z)} + \hat{V}_{\mathrm{evap}}^{((N+1)\to N)} + \hat{V}_{\mathrm{trans}}^{(\Delta Z, \Delta N)}, \quad (31)
+$$</div>
+<p>where the operators connect fully specified entrance fusion channels, particle-transfer channels, and the single-neutron rectification bridges $\mathcal{R}_{119}$ and $\mathcal{R}_{120}$ (Section 2.4). Each channel must conserve total charge, baryon number, four-momentum, angular momentum, and parity as applicable. The often-cited reaction ${}^{50}\mathrm{Ti}+{}^{249}\mathrm{Bk}$ has entrance-channel totals $Z=119$ and $A=299$; it therefore forms a ${}^{299}_{119}$ compound system, not the $A=304$ precursor required for a one-neutron route to ${}^{303}_{119}X$. It cannot be presented as the entrance channel for the specific $N=184$ target without an additional, explicitly conserved mass-transfer pathway. No direct $119\leftrightarrow120$ weak transition is assumed here.</p>
+<ol>
+<li><strong>State-Dependent Non-Hermitian Environment &amp; ZQP Block ($\mathrm{C5}$):</strong></li>
+</ol>
+<div class="math-block">$$
+\hat{\Gamma}_{\mathrm{loss}}^{(\alpha)} = \hat{\Gamma}_{\mathrm{IC}}^{(\alpha)} + \hat{\Gamma}_{\gamma}^{(\alpha)} + \hat{\Gamma}_{\mathrm{QF/SF}}^{(\alpha)}, \qquad \hat{\Gamma}_{\mathrm{loss}}^{(\alpha)}\succeq0, \quad (32)
+$$</div>
+<p>where all displayed widths are positive semidefinite loss operators. Radiative and internal-conversion channels may cool the system without necessarily removing it from the residue-formation chain; their effect must be tracked through explicit jump channels. ZQP is not represented by subtracting a negative width. Instead, it is assigned to the separate candidate generator $\mathcal{L}_{\mathrm{ZQP}}$ in Eq. (27), which must be shown to preserve trace and complete positivity. The saturation function $\lambda_{\mathrm{ZQP}}\tanh(\mathrm{Tr}(\hat C\rho)/s_{\mathrm{sat}})$ may parameterize its bounded control strength, but does not by itself define a valid quantum channel.</p>
+<h3 id="43-closed-bottleneck-loops-and-synergy-metrics">4.3 Closed Bottleneck Loops and Synergy Metrics</h3>
+<p>Inheriting the network dynamics of DW58553929 (Section 6), the five channels do not operate in isolation; rather, their off-diagonal dependencies form two closed <strong>Superheavy Bottleneck Loops</strong> that govern whether the compound system escapes quasi-fission:</p>
+<ol>
+<li><strong>The Dynamical Coherence &amp; Cooling Loop ($\mathrm{C2} \to \mathrm{C3} \to \mathrm{C5} \to \mathrm{C2}$):</strong></li>
+<li><strong>$\mathrm{C2} \to \mathrm{C3}$ (Coriolis-Assisted Dressing):</strong> Rotational mixing of opposite-parity high-$j$ orbitals enhances electric dipole/quadrupole transition matrix elements in $\hat{V}_{\mathrm{drive}}^{(\alpha)}(t)$, reducing the external field intensity required to populate Floquet sidebands.</li>
+<li><strong>$\mathrm{C3} \to \mathrm{C5}$ (Sideband-Accelerated Cooling):</strong> Floquet quasienergy splitting redistributes compound excitation energy into high-multipolarity radiative ($\hat{\Gamma}_\gamma$) and internal-conversion ($\hat{\Gamma}_{\mathrm{IC}}$) decay branches, rapidly cooling the compound nucleus below the fission barrier while activating ZQP saturation ($\gamma_{\mathrm{ZQP}}$).</li>
+<li>
+<p><strong>$\mathrm{C5} \to \mathrm{C2}$ (Coherence Preservation):</strong> Rapid internal-conversion and radiative energy shedding damps thermal shape fluctuations, preserving the rotational coherence time $T_2(\omega_x)$ of the cranked high-$j$ band against centrifugal stretching.</p>
+</li>
+<li>
+<p><strong>The Structural-Reaction Path Loop ($\mathrm{C1} \leftrightarrow \mathrm{C4}$):</strong></p>
+</li>
+<li><strong>$\mathrm{C1} \to \mathrm{C4}$ (Deformation-Gated Reaction Windows):</strong> Triaxial ($\gamma \neq 0$) and hexadecapole ($\beta_4$) shape excursions lower the inner fusion barrier and increase the neutron-evaporation to fission width ratio $\Gamma_n / \Gamma_{\mathrm{fiss}}$ along the Rhythm Rectification Bridge $\mathcal{R}_T$.</li>
+<li><strong>$\mathrm{C4} \to \mathrm{C1}$ (Sector-Induced Landscape Shift):</strong> Sequential nucleon transfer or neutron evaporation ($(Z, 185) \to (Z, 184) + n$) shifts the nucleus onto the spherical $N=184$ shell-stabilized potential energy surface, locking the shape back toward $\beta_2 \to 0$.</li>
+</ol>
+<p><strong>Definition 4.1 (Normalized Superheavy Loop Synergy Metric).</strong></p>
+<p>Let $Y_T(\mathcal{P}_{\mathrm{loop}})$ denote the computed survival probability (or target-state population $|\langle \Psi_{Z,184} | \rho(\tau_{Ji}) | \Psi_{Z,184}\rangle|$) of target $T \in \{119, 120\}$ under a fixed excitation energy $E^{\ast}$ and integrated drive-fluence budget. The <strong>Bottleneck Loop Synergy Ratio</strong> is defined as:</p>
+<div class="math-block">$$
+S_T^{\mathrm{loop}} = \frac{Y_T(\mathrm{C1} \cup \mathrm{C2} \cup \mathrm{C3} \cup \mathrm{C4} \cup \mathrm{C5})}{\max_{i\in\{1,\ldots,5\}} Y_T(\mathrm{C}_i)}, \quad (33)
+$$</div>
+<p>where all widths and rates in the underlying master equation are normalized in common inverse-time units ($\gamma_\mu = \Gamma_\mu / \hbar$). A regime exhibiting $S_T^{\mathrm{loop}} &gt; 1$ indicates constructive cross-channel synergy; conversely, $S_T^{\mathrm{loop}} \le 1$ indicates destructive interference (such as rotation-induced fission enhancement outweighing cooling) and falsifies that parameter domain.</p>
+<h3 id="44-floquet-quasienergy-manifold-and-codimension-2-exceptional-point-protocol">4.4 Floquet Quasienergy Manifold and Codimension-2 Exceptional Point Protocol</h3>
+<p>When the Hermitian control Hamiltonian and all coefficients of the chosen linear master-equation generator are strictly periodic with common period $T_F$, Sambe's extended Hilbert-space formalism $\mathcal{H}_F = \mathcal{H}_{\mathrm{ch}} \otimes L^{2}([0,T_F])$ defines the time-independent <strong>Floquet-Bottleneck Effective Operator</strong> for the periodic Hamiltonian part. The standard eigenvalue problem below applies to that periodic linear operator (or to a specified no-jump effective Hamiltonian), not directly to an arbitrary nonlinear state-dependent master equation:</p>
+<div class="math-block">$$
+\hat{\mathcal{H}}_F^{(T)}(\boldsymbol{\lambda})
+=\hat{H}_{\mathrm{eff}}^{(T)}(t)-i\hbar\frac{\partial}{\partial t},
+\qquad
+\boldsymbol{\lambda}=(\beta_2,\gamma,\omega_x,\mathcal{E}_0,\Omega_F)
+\in\mathcal{M}_{\mathrm{ctrl}}\subset\mathbb{R}^{5}. \quad (34)
+$$</div>
+<p>This eigenproblem describes the no-jump sector only. A Floquet analysis of the complete trace-preserving open-system evolution must instead be performed on the periodic Liouvillian superoperator generated by Eq. (27). The right and left biorthogonal eigenstates of the no-jump operator satisfy</p>
+<div class="math-block">$$
+\hat{\mathcal{H}}_F^{(T)}|\Phi_{F,n}\rangle
+=\varepsilon_{F,n}|\Phi_{F,n}\rangle,
+\qquad
+\langle\widetilde{\Phi}_{F,n}|\hat{\mathcal{H}}_F^{(T)}
+=\varepsilon_{F,n}\langle\widetilde{\Phi}_{F,n}|, \quad (35)
+$$</div>
+<p>with complex quasienergies $\varepsilon_{F,n} = E_{F,n} - \frac{i}{2}\Gamma_{F,n}$ defined modulo $\hbar\Omega_F$.</p>
+<p><strong>Methodological Rule on Exceptional Points (Codimension-2 Constraint).</strong></p>
+<p>Inheriting the strict mathematical discipline of DW58553928 (Section 4.3 &amp; Section 6.6), a generic non-Hermitian Exceptional Point (EP)—where both complex quasienergies and biorthogonal eigenvectors coalesce ($\varepsilon_{F,n} = \varepsilon_{F,m}$ and $|\Phi_{F,n}\rangle \propto |\Phi_{F,m}\rangle$)—has <strong>real codimension $2$</strong>. Therefore:
+1. Single-parameter sweeps (e.g., varying drive amplitude $\mathcal{E}_0$ or beam energy alone) must <em>not</em> be assumed to intersect an EP unless a verified $\mathcal{PT}$ or chiral symmetry reduces the codimension to $1$.
+2. Numerical searches for EP-assisted state transfer must be conducted over at least <strong>two-dimensional control planes</strong> within $\mathcal{M}_{\mathrm{ctrl}} \subset \mathbb{R}^{5}$—specifically the $(\omega_x, \Omega_F)$ Coriolis-Floquet plane or the $(\beta_2, \mathcal{E}_0)$ deformation-dressing plane—evaluated via biorthogonal overlap $\mathcal{O}_{nm} = |\langle \widetilde{\Phi}_{F,n} | \Phi_{F,m} \rangle|$ and condition-number diagnostics.
+3. Encircling an EP submanifold $\mathcal{M}_{\mathrm{EP}} \subset \mathcal{M}_{\mathrm{ctrl}}$ within the Wheelwright-Pian window $\tau_{\mathrm{LZ}}(Z,E^{\ast}) &lt; \tau_{Ji} &lt; 1/\gamma_{\mathrm{eff}}(Z,E^{\ast},T)$ (Eq. 26) provides a candidate chiral state-transfer protocol toward the $N=184$ target manifold, whose efficiency must be verified against non-adiabatic leakage and competing fission channels.</p>
+<h3 id="45-distinct-target-control-functionals-for-inline_math_444-and-inline_math_445">4.5 Distinct Target Control Functionals for $C_{119}$ and $C_{120}$</h3>
+<p>Because Element 119 ($\mathcal{A}_{119} = (7,5;8,0)$, $\mathbb{Z}_{5}$ sector $\rho_1 \oplus \rho_2$) and Element 120 ($\mathcal{A}_{120} = (8,0;8,0)$, $\mathbb{Z}_{5}$ singlet anchor $\mathbf{1}$) possess distinct algebraic and geometric identities (Ansatz 2.1 and Corollary 2.1), they require separate optimal-control objective functionals over the trajectory $\boldsymbol{\lambda}(t)$ ($t \in [0, \tau_{Ji}]$). Define the effective expectation value of the rhythm address:</p>
+<div class="math-block">$$
+\mathcal{A}_{\mathrm{eff}}(\rho)=\sum_{\alpha}\mathrm{Tr}[\hat P_\alpha\rho]\,\mathcal{A}_\alpha.
+$$</div>
+<p>Here, $\hat P_\alpha$ is the projection operator for channel $\alpha$, and $\mathcal{A}_\alpha$ is the rhythm address of that channel. If $\rho$ has population in multiple channels, $\mathcal{A}_{\mathrm{eff}}$ is the population-weighted average of their addresses. This definition is a modeling convention, not a unique choice.</p>
+<div class="math-block">$$
+\begin{aligned}
+J_{119}[\boldsymbol{\lambda}]
+&=\left\|\rho(\tau_{Ji})-|\Psi_{119,184}\rangle\langle\Psi_{119,184}|\right\|_F^{2}
++\mu_1\left\|\mathcal{A}_{\mathrm{eff}}(\tau_{Ji})-(7,5;8,0)\right\|^{2}
++\mu_2\mathcal{P}_{\mathrm{QF/SF}}[\rho]
++\mu_3\int_0^{\tau_{Ji}}\|\dot{\boldsymbol{\lambda}}(t)\|^{2}\,dt,\\
+J_{120}[\boldsymbol{\lambda}]
+&=\left\|\rho(\tau_{Ji})-|\Psi_{120,184}\rangle\langle\Psi_{120,184}|\right\|_F^{2}
++\mu_1\left\|\mathcal{A}_{\mathrm{eff}}(\tau_{Ji})-(8,0;8,0)\right\|^{2}
++\mu_2\mathcal{P}_{\mathrm{QF/SF}}[\rho]
++\mu_3\int_0^{\tau_{Ji}}\|\dot{\boldsymbol{\lambda}}(t)\|^{2}\,dt,
+\end{aligned} \quad (36)
+$$</div>
+<p>where:
+- The first term measures the Frobenius distance between the evolved physical density matrix $\rho(\tau_{Ji})$ (satisfying $\rho^{\dagger} = \rho$, $\rho \succeq 0$, $\mathrm{Tr}\,\rho = 1$) and the target $N=184$ pure state;
+- The second term penalizes residual rhythm-address deviation (including unrectified $\delta n \neq 0$ neutron-excess components);
+- The third term $\mathcal{P}_{\mathrm{QF/SF}}[\rho] = \int_0^{\tau_{Ji}} \mathrm{Tr}[\hat{\Gamma}_{\mathrm{QF/SF}}\,\rho(t)]\,dt$ penalizes integrated quasi-fission and spontaneous-fission probability loss;
+- The fourth term enforces smooth control-field modulation consistent with the finite transition window $\tau_{Ji}$.</p>
+<p>Minimizing $J_{119}$ and $J_{120}$ subject to conservation laws and Eq. (25) defines the quantitative optimization task executed by the AI closed-loop architecture in Section 6.</p>
+<hr />
+<h2 id="5-topological-identity-in-the-fixed-four-dimensional-gtcn">5. Topological Identity in the Fixed Four-Dimensional GTCN</h2>
+<h3 id="51-dimensional-invariance-inline_math_469-and-three-layer-nesting">5.1 Dimensional Invariance ($d_{\mathrm{GTC}} = 4$) and Three-Layer Nesting</h3>
+<p>In strict consistency with the sister papers <em>Creating Gold: New Beginning for Creating Matter</em> (DW58553928, Sections 1.6 &amp; 5.3) and <em>Creating Gold with AI Power</em> (DW58553929, Section 8), we retain the <strong>three-layer MES geometric nesting</strong> and fix the manifold dimension of the <strong>Global Topological Curvature Network (GTCN)</strong> identically at:</p>
+<div class="math-block">$$
+d_{\mathrm{GTC}} = 4 \quad (m = 2), \qquad D_{\mathrm{MES}} = 5. \quad (37)
+$$</div>
+<p>Extending the constructive paradigm from a single nuclide (${}^{197}\mathrm{Au}$) to the $N=184$ isotonic doublet ($C_{119}$ and $C_{120}$) does <strong>not</strong> permit arbitrarily increasing the dimension of $\mathcal{N}_{\mathrm{GTC}}$. Rather, both targets are encoded as distinct geometric-topological attractor submanifolds embedded within the <strong>same</strong> four-dimensional Riemannian/pseudo-Riemannian manifold $\mathcal{N}_{\mathrm{GTC}}$:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Layer</th>
+<th>Geometric Object</th>
+<th>Fixed Dimension</th>
+<th>Role in MES Element Genesis ($C_{119}$ &amp; $C_{120}$)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>L0 (Mother)</strong></td>
+<td>MES Universe Curvature Web $\mathcal{O}_{\mathrm{web}}$</td>
+<td>$D_{\mathrm{MES}} = 5$ (local sector)</td>
+<td>Ambient geometric manifold carrying Gold Truths I–III and curvature scaling fields $c(R), \hbar(R), m(R)$</td>
+</tr>
+<tr>
+<td><strong>L1 (Child)</strong></td>
+<td>Global Topological Curvature Network $\mathcal{N}_{\mathrm{GTC}}$</td>
+<td>$d_{\mathrm{GTC}} = 4$ ($3+1$ split)</td>
+<td>Smooth oriented 4-manifold with metric $g_{ab}$, connection $\nabla$, and codimension-1 embedding $\iota: \mathcal{N}_{\mathrm{GTC}} \hookrightarrow \mathcal{O}_{\mathrm{web}}$</td>
+</tr>
+<tr>
+<td><strong>L2 (Target Realization)</strong></td>
+<td>Isotonic Doublet &amp; Five-Channel Network $\mathcal{C}_5^{(119,120)}$</td>
+<td>Submanifolds $\mathcal{N}_{119}, \mathcal{N}_{120} \subset \mathcal{N}_{\mathrm{GTC}}$</td>
+<td>Target-specific channel maps $\Psi_i^{(T)}$ encoding the $\mathbb{Z}_{5}$ doublet ($\rho_1 \oplus \rho_2$ vs. $\mathbf{1}$) and Bottleneck Loops</td>
+</tr>
+</tbody>
+</table></div>
+<p>The proposed $3+1$ coordinate decomposition of $d_{\mathrm{GTC}} = 4$ is intended to accommodate:
+1. <strong>Three effective dynamical channel coordinates $(x^{1}, x^{2}, x^{3})$:</strong> Parameterizing the coupled feedback manifold of the Bottleneck Loops ($\mathrm{C2} \to \mathrm{C3} \to \mathrm{C5} \to \mathrm{C2}$ and $\mathrm{C1} \leftrightarrow \mathrm{C4}$) and the $(\beta_2, \omega_x, \mathcal{E}_0)$ control subspace;
+2. <strong>One local curvature-rhythm evolution coordinate $x^{4} \equiv \tau$:</strong> Encoding the countable rhythm progression $\tau_p(Z)$ and the finite Wheelwright-Pian transition window $\tau_{Ji} &gt; 0$.</p>
+<h3 id="52-gausscodazziricci-embedding-compatibility-gold-truth-iii">5.2 Gauss–Codazzi–Ricci Embedding Compatibility (Gold Truth III)</h3>
+<p>Under <strong>Gold Truth III</strong> (<em>"Obtain the mother to know the child; obtain the child to guard the mother"</em>), the codimension-one embedding $\iota: \mathcal{N}_{\mathrm{GTC}} \hookrightarrow \mathcal{O}_{\mathrm{web}}$ ($4 \hookrightarrow 5$) with unit normal vector field $n^{A}$ ($g_{\mathrm{web}}(n,n) = \varepsilon = \pm 1$), induced 4-metric $g_{ab}$, and extrinsic curvature (second fundamental form) $K_{ab} = -\frac{1}{2}(\mathcal{L}_n g)_{ab}$ must satisfy the full tensor <strong>Gauss–Codazzi compatibility equations</strong> (DW58553928, Eqs. 37–38):</p>
+<div class="math-block">$$
+R^{(\mathrm{web})}_{abcd}|_{\mathcal{N}_{\mathrm{GTC}}} = R^{(\mathcal{N})}_{abcd} + \varepsilon(K_{ac}K_{bd} - K_{ad}K_{bc}), \qquad \nabla_a K_{bc} - \nabla_b K_{ac} = R^{(\mathrm{web})}_{n cab}, \quad (38)
+$$</div>
+<p>where $a,b,c,d \in \{1,2,3,4\}$.</p>
+<p>For a target state $T \in \{119, 120\}$, the proposed five research channels are intended to map physical parameter domains $\mathcal{P}_i^{(T)}$ onto geometric perturbations of the GTCN via explicit channel representation maps:</p>
+<div class="math-block">$$
+\Psi_i^{(T)}: \mathcal{P}_i^{(T)} \longrightarrow \mathfrak{G}(\mathcal{N}_{\mathrm{GTC}}), \qquad i \in \{1,2,3,4,5\}, \quad (39)
+$$</div>
+<p>such that the effective induced metric $g_{ab}^{(T)}$ and extrinsic curvature $K_{ab}^{(T)}$ decompose into a shared $N=184$ neutron-closure baseline plus target-specific proton-rhythm contributions:</p>
+<div class="math-block">$$
+g_{ab}^{(T)} = g_{ab}^{(0)}(N=184) + \delta g_{ab}^{(\mathbb{Z}_{5}, T)} + \sum_{i=1}^{5} \Psi_i^{(T)}[g]_{ab}, \qquad K_{ab}^{(T)} = K_{ab}^{(0)}(N=184) + \delta K_{ab}^{(\mathbb{Z}_{5}, T)}. \quad (40)
+$$</div>
+<p><em>Methodological Rule:</em> In compliance with Section 5.3.4 of DW58553928, unresolved channel parameters are retained explicitly as unknown metric/connection fields on an unresolved subdomain $\mathcal{N}_U \subset \mathcal{N}_{\mathrm{GTC}}$ and are never silently converted into artificial boundary curvature unless a regular interface hypersurface $\Sigma = \partial\mathcal{N}_K \cap \partial\mathcal{N}_U$ satisfies Eq. (38).</p>
+<h3 id="53-four-dimensional-gaussbonnetchern-characteristic-functional">5.3 Four-Dimensional Gauss–Bonnet–Chern Characteristic Functional</h3>
+<p>Because $d_{\mathrm{GTC}} = 4$ is an even dimension ($2m$ with $m = 2$), a naive linear integral of scalar curvature is not a topological invariant. Following DW58553928 (Eq. 39) and DW58553929 (Eq. 22), the global topological invariant of a compact oriented four-dimensional GTCN sector $\mathcal{N}_T \subset \mathcal{N}_{\mathrm{GTC}}$ (with smooth 3-boundary $\partial\mathcal{N}_T$) is given by the canonical <strong>four-dimensional Gauss–Bonnet–Chern characteristic functional</strong>:</p>
+<div class="math-block">$$
+\chi(\mathcal{N}_T) = \int_{\mathcal{N}_T} \mathcal{E}_4(g^{(T)}) + \int_{\partial\mathcal{N}_T} \mathcal{B}_3(g^{(T)}, K^{(T)}), \quad (41)
+$$</div>
+<p>where the compact oriented Riemannian four-manifold case is written explicitly; for a pseudo-Riemannian MES sector, the corresponding characteristic-form convention and boundary normalization must be specified consistently. The boundary term must use the same normalization as the bulk Euler form.
+- $\mathcal{E}_4(g^{(T)})$ is the normalized quadratic Euler curvature $4$-form (Pfaffian of the Riemann curvature $2$-form):</p>
+<div class="math-block">$$
+\mathcal{E}_4(g^{(T)}) = \frac{1}{32\pi^{2}}(R_{abcd}R^{abcd}-4R_{ab}R^{ab}+R^{2})\sqrt{|g^{(T)}|}\,d^{4}x, \quad (42)
+$$</div>
+<p>which captures quadratic multi-channel curvature couplings (such as $\mathrm{C2} \to \mathrm{C3} \to \mathrm{C5} \to \mathrm{C2}$ and $\mathrm{C1} \leftrightarrow \mathrm{C4}$) that linear scalar integrals cannot resolve;
+- $\mathcal{B}_3(g^{(T)}, K^{(T)})$ is the Chern–Simons boundary transgression $3$-form on $\partial\mathcal{N}_T$, constructed from the induced 3-metric and the second fundamental form $K_{ab}^{(T)}$ so that $\chi(\mathcal{N}_T) \in \mathbb{Z}$ remains strictly invariant under smooth interior metric deformations.</p>
+<h3 id="54-candidate-topological-signatures-of-elements-119-and-120">5.4 Candidate Topological Signatures of Elements 119 and 120</h3>
+<p>To formalize the geometric-topological identity of any target nuclide $T$, we define the four-component <strong>Topological Signature Vector</strong>:</p>
+<div class="math-block">$$
+\boldsymbol{\chi}_T \equiv ( \chi_{\mathrm{Euler}}(T),\; \chi_{\mathrm{winding}}(T),\; \chi_{\mathrm{Berry}}(T),\; \chi_{\mathrm{curv}}(T) ), \quad (43)
+$$</div>
+<p>whose components carry distinct mathematical definitions and epistemological statuses:
+1. <strong>$\chi_{\mathrm{Euler}}(T) = \chi(\mathcal{N}_T) \in \mathbb{Z}$:</strong> Global topological Euler characteristic computed from Eq. (41) (strict topological invariant).
+2. <strong>$\chi_{\mathrm{winding}}(T) = (W_{\mathbb{Z}_{5}}(T),\, \nu_{\mathrm{EP}}(T)) \in \mathbb{Z}^{2}$:</strong> Composite topological winding pair combining the internal $\mathbb{Z}_{5}$ Schläfli dual graph winding $W_{\mathbb{Z}_{5}}$ and the parameter-space winding number $\nu_{\mathrm{EP}}$ encircling a codimension-2 Floquet exceptional-point submanifold $\mathcal{M}_{\mathrm{EP}}$ (topological homotopy invariant).
+3. <strong>$\chi_{\mathrm{Berry}}(T)$:</strong> For a closed one-dimensional control loop $C$, the normalized Berry phase is $\gamma_B=(1/2\pi)\oint_C\mathrm{Tr}(\mathcal A_\mu)d\lambda^\mu$ modulo the relevant gauge convention. A curvature flux is instead defined over a two-dimensional surface $\Sigma$ with $\partial\Sigma=C$ by $\Phi_B=(1/2\pi)\int_\Sigma\tfrac12\mathrm{Tr}(\Omega_{\mu\nu})d\lambda^\mu\wedge d\lambda^\nu$. If used as the third signature component, set $\chi_{\mathrm{Berry}}(T)=\Phi_B(T)$ for a specified surface and gauge bundle. $\chi_{\mathrm{Berry}}$ is defined only after the closed loop $C$, surface $\Sigma$, and gauge bundle have been specified. Under different gauge conventions, $\Phi_B$ may differ by integer multiples of $2\pi$; therefore, the gauge convention must be fixed when comparing $\chi_{119}$ and $\chi_{120}$. The manuscript does not yet specify such a surface or compute this quantity; it is therefore a proposed diagnostic, not an established invariant value.
+4. <strong>$\chi_{\mathrm{curv}}(T) = R_{\mathrm{sat}}^{(T)} = R_0 (m_0 / m_T)^{2}$:</strong> Local saturated scalar curvature at the $N=184$ deep anchor (local geometric invariant, <em>not</em> a topological invariant).</p>
+<p><strong>Proposition 5.1 (Conditional Topological Distinguishability of the $N=184$ Doublet).</strong></p>
+<p>The representation ansatz in Section 2.3 does not, by itself, imply different Euler characteristics, Berry fluxes, boundary structures, or GTCN submanifold topologies. If explicit, smooth target manifolds $\mathcal N_{119}$ and $\mathcal N_{120}$ are constructed and at least one component of their computed signature vectors differs, then</p>
+<div class="math-block">$$
+\boldsymbol{\chi}_{119}\neq\boldsymbol{\chi}_{120}. \quad (44)
+$$</div>
+<p>At present, the manuscript specifies candidate distinguishing data (including the proposed $\mathbb{Z}_{5}$ sectors and winding assignments) but does not provide explicit manifold charts, transition functions, induced metrics, boundary data, Berry connections, or evaluated characteristic integrals. Consequently, the inequality in Eq. (44) is a <strong>conditional verification target</strong>, not a proved property of the two physical nuclides. The required construction and computation are assigned to V3.</p>
+<p><strong>Methodological Qualification (Non-Bijectivity Rule).</strong></p>
+<p>In accordance with Section 5.3.5 of DW58553928, Proposition 5.1 states a conditional test for whether $C_{119}$ and $C_{120}$ are topologically distinguishable within the 4D GTCN, but it does not assume a universal one-to-one bijection $\boldsymbol{\chi}_T = F(\mathcal{A}_T)$ across arbitrary nuclear regions. Establishing the complete triadic correspondence</p>
+<div class="math-block">$$
+\text{Nuclear identity }(Z,N,\mathcal{Q}_T)\longleftrightarrow\text{ rhythm address }\mathcal{A}_T\longleftrightarrow\text{ topological signature }\boldsymbol{\chi}_T \quad (45)
+$$</div>
+<p>for arbitrary $(Z, N)$ remains a central open verification task (Verification Obligation V3 in Section 6).</p>
+<hr />
+<h2 id="6-the-v1v8-verification-matrix-and-ai-closed-loop-control-protocol">6. The V1–V8 Verification Matrix and AI Closed-Loop Control Protocol</h2>
+<h3 id="61-eight-stage-verification-matrix-inline_math_562inline_math_563">6.1 Eight-Stage Verification Matrix ($\mathrm{V1}$–$\mathrm{V8}$)</h3>
+<p>Following Principle P1 (<em>against overclaiming</em>) and Principle P2 (<em>against overrejection</em>) established in DW58553928, a constructive hypothesis toward Elements 119 and 120 cannot be judged by narrative coherence alone; every mathematical definition and physical bridge must satisfy an explicit, falsifiable verification obligation.</p>
+<p>To govern the evaluation of both $C_{119}$ (${}^{303}_{119}X$) and $C_{120}$ (${}^{304}_{120}X$) independently, we institute the <strong>Eight-Stage MES Element Genesis Verification Matrix ($\mathrm{V1}$–$\mathrm{V8}$)</strong>:</p>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Stage</th>
+<th>Verification Domain</th>
+<th>Required Mathematical / Physical Deliverable</th>
+<th>Quantitative Acceptance Criterion</th>
+<th>Explicit Failure Mode</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>V1: Rhythm Address</strong></td>
+<td>Element Rhythm Lattice ($\mathcal{L}_{\mathrm{ERL}}$)</td>
+<td>Well-defined addresses $\mathcal{A}_T$, closed-endpoint equivalence (Axiom E1), and exterior extension $\widetilde{\mathcal{A}}_T^{\mathrm{comp}}$ (Axiom E2)</td>
+<td>Zero boundary singularities at $Z=120$ and $N=184+\delta n$; abstract $\mathbb{Z}_{5}$ decomposition and conditional nuclear representation assignment</td>
+<td>Coordinate ambiguity or unverified assumption of $N&gt;184$ magic closures</td>
+</tr>
+<tr>
+<td><strong>V2: Nuclear Structure</strong></td>
+<td>Microscopic &amp; Macroscopic-Microscopic Structure</td>
+<td>Deformed Woods–Saxon / Skyrme-HFB / RMF potential energy surfaces $(\beta_2,\gamma,\beta_4)$, single-particle spectra, and shell-correction energies $\delta E_{\mathrm{shell}}$</td>
+<td>Benchmark agreement with known actinide/transactinide ($Z \le 118$) masses, $Q_\alpha$, and isomers; model-dependent shell-pocket assessment near $N=184$</td>
+<td>Dissolving of $N=184$ shell stabilization or uncalibrated heuristic mass substitution</td>
+</tr>
+<tr>
+<td><strong>V3: GTCN Topology</strong></td>
+<td>Fixed 4D GTCN Embedding ($d_{\mathrm{GTC}}=4$)</td>
+<td>Explicit channel maps $\Psi_i^{(T)}$, induced 4-metric $g_{ab}^{(T)}$, Gauss–Codazzi compatibility (Eq. 38), and signature vector $\boldsymbol{\chi}_T$ (Eq. 43)</td>
+<td>Satisfaction of Gauss–Codazzi tensor identities and explicitly computed topological separation, if present, $\boldsymbol{\chi}_{119} \neq \boldsymbol{\chi}_{120}$</td>
+<td>Embedding inconsistency, arbitrary dimension raising ($d&gt;4$), or silent conversion of unknown fields into boundary curvature</td>
+</tr>
+<tr>
+<td><strong>V4: Reaction Path</strong></td>
+<td>Direct-Sum Reaction Graph ($\mathcal{G}_{\mathrm{ERL}}$)</td>
+<td>End-to-end reaction path from projectile-target entrance channel to $(Z, 184)$, including $1n$ rectification $\mathcal{R}_T$</td>
+<td>Strict conservation of $(Z, A, E, J, \pi)$; non-zero continuum matrix elements $\hat{V}_{\alpha\beta}$; $\Gamma_n / \Gamma_{\mathrm{fiss}} \gg 1$</td>
+<td>Disconnected reaction sectors, threshold violation, or vanishing fusion/evaporation cross section</td>
+</tr>
+<tr>
+<td><strong>V5: Curvature Bridge</strong></td>
+<td>MES Curvature–Inertia Renormalization</td>
+<td>Operational definition of local curvature $R(\mathbf{x})$ and collective inertia $m(R) \propto |R|^{-1/2}$ across the fusion barrier</td>
+<td>Self-consistent barrier lowering and absence of unregularized curvature divergences</td>
+<td>Uncalibrated dimensional constants or unphysical singular collapse ($R \to -\infty$)</td>
+</tr>
+<tr>
+<td><strong>V6: Quantum Dynamics</strong></td>
+<td>Non-Hermitian Floquet &amp; Bottleneck Loops</td>
+<td>Solution of Floquet-cranked master equation (Eqs. 27, 34), 2D codimension-2 EP search, and loop synergy ratio $S_T^{\mathrm{loop}}$</td>
+<td>Verified EP coalescence (if claimed), $S_T^{\mathrm{loop}} &gt; 1$, and complete positivity ($\rho^{\dagger} = \rho, \rho \succeq 0, \mathrm{Tr}\,\rho = 1$)</td>
+<td>Absence of EPs in 2D parameter scans, destructive loop interference ($S_T^{\mathrm{loop}} \le 1$), or unit-mixing errors ($\Gamma$ vs. $\gamma$)</td>
+</tr>
+<tr>
+<td><strong>V7: Condensation &amp; Stability</strong></td>
+<td>ZQP Aqueduct Irrigation &amp; Window Bounds</td>
+<td>Evaluation of anti-quasi-fission criterion (Eq. 25) and non-emptiness of Wheelwright-Pian window $\tau_{\mathrm{LZ}}(Z,E^{\ast}) &lt; \tau_{Ji} &lt; 1/\gamma_{\mathrm{eff}}(Z,E^{\ast},T)$</td>
+<td>$\Gamma_{\mathrm{clear}}^{\mathrm{cand}} &gt; \gamma_{\mathrm{QF}} + \gamma_{\mathrm{SF}} + \gamma_{\mathrm{th}}$ and survival lifetime $T_{1/2} \ge \tau_{\mathrm{detect}}$</td>
+<td>Quasi-fission dominance ($\tau_{Ji} = \emptyset$) or failure of target-neighborhood forward invariance</td>
+</tr>
+<tr>
+<td><strong>V8: AI Closed Loop</strong></td>
+<td>Adaptive Control &amp; Cross-Model Audit</td>
+<td>Closed-loop control trajectory $\boldsymbol{\lambda}(t)$ minimizing $J_T$ (Eq. 36) verified across independent numerical solvers</td>
+<td>Reproducibility across distinct physical models and independent code implementations with quantified uncertainty bounds</td>
+<td>Single-model circular confirmation or unverified surrogate extrapolation</td>
+</tr>
+</tbody>
+</table></div>
+<p>In V7, $\tau_{\mathrm{detect}}$ is the detection timescale specified by the experiment or calculation; the illustrative value $\sim1\,\mu\mathrm{s}$ is not a numerical claim, and the actual value depends on the apparatus and identification chain.</p>
+<h3 id="62-verification-obligation-v2-the-mes-rhythm-compatibility-functional">6.2 Verification Obligation V2: The MES Rhythm Compatibility Functional</h3>
+<p>A critical methodological safeguard in $\mathrm{V2}$ is preventing heuristic rhythm coordinates from being conflated with physical nuclear binding energies. Accordingly, we formalize the <strong>MES Rhythm Compatibility Functional</strong> $\mathcal{H}_{\mathrm{rhythm}}(Z, N)$ strictly as a <em>pre-screening topological-rhythm filter</em> over the Element Rhythm Lattice:</p>
+<div class="math-block">$$
+\mathcal{H}_{\mathrm{rhythm}}(Z, N) = w_p \cos(2\pi \tau_p(Z)) + w_n \cos(2\pi \tau_n(N)) - \lambda_{\mathrm{sym}} \frac{(N - Z)^{2}}{A}, \quad (46)
+$$</div>
+<p>where $\tau_p(Z)$ and $\tau_n(N)$ are the fractional rhythm phases defined in Eqs. (5)–(7), $w_p, w_n &gt; 0$ are dimensionless shell-closure weights, and $\lambda_{\mathrm{sym}} &gt; 0$ penalizes excessive isospin asymmetry $(N-Z)^{2}/A$.</p>
+<p><strong>Operational Protocol for V2:</strong></p>
+<ol>
+<li><strong>Stage 1 (Heuristic Screening):</strong> $\mathcal{H}_{\mathrm{rhythm}}(Z,N)$ ranks candidate nuclides on $\mathcal{L}_{\mathrm{ERL}}$ by proximity to doubly integer rhythm nodes ($\tau_p, \tau_n \in \mathbb{Z}$), highlighting ${}^{304}_{120}X$ ($\tau_p=8.0, \tau_n=8.0$) as a local rhythm maximum and ${}^{303}_{119}X$ ($\tau_p=7+5/6, \tau_n=8.0$) as its immediate isotonic neighbor.</li>
+<li><strong>Stage 2 (Independent Nuclear-Structure Evaluation):</strong> Every candidate selected by $\mathcal{H}_{\mathrm{rhythm}}$ must subsequently be evaluated using <strong>independent, calibrated nuclear many-body solvers</strong>—specifically macroscopic–microscopic deformed Woods–Saxon/folded-Yukawa models and self-consistent Hartree–Fock–Bogoliubov (HFB) or Relativistic Mean-Field (RMF) energy density functionals—to compute actual total binding energies $B(Z,N)$, proton/neutron separation energies ($S_p, S_n$), $\alpha$-decay energies ($Q_\alpha$), and fission barrier heights ($B_f$).</li>
+<li><strong>Prohibition of Formula Substitution:</strong> $\mathcal{H}_{\mathrm{rhythm}}(Z,N)$ must <em>never</em> be inserted into reaction $Q$-value or barrier-penetration equations as a substitute for physical nuclear mass models.</li>
+</ol>
+<h3 id="63-verification-obligation-v4-complete-edge-specification-on-inline_math_635">6.3 Verification Obligation V4: Complete Edge Specification on $\mathcal{G}_{\mathrm{ERL}}$</h3>
+<p>In $\mathrm{V4}$, constructing a candidate synthesis pathway toward ${}^{303}_{119}X$ or ${}^{304}_{120}X$ requires specifying an explicit directed path. For the proposed terminal $1n$ routes, the compound precursors must be ${}^{304}_{119}X^{\ast}$ ($Z=119,N=185,A=304$) and ${}^{305}_{120}X^{\ast}$ ($Z=120,N=185,A=305$), respectively. Every entrance channel must sum to the corresponding total $Z$ and $A$. The 2026 calculation for ${}^{50}\mathrm{Ti}+{}^{249}\mathrm{Bk}$ concerns a predicted element-119 production probability for an $A=299$ entrance system and is not, by itself, a mass-balanced route to the specific ${}^{304}_{119}X^{\ast}$ precursor [37]. No experimentally validated entrance channel to either stated $N=184$ target is asserted here. The required path is a directed sequence $\mathcal{P}_{\mathrm{rxn}}: \alpha_0 \to \alpha_1 \to \cdots \to \alpha_f$ on the ERL Topological Channel Graph $\mathcal{G}_{\mathrm{ERL}} = (\mathcal{V}_{\mathrm{ERL}}, \mathcal{E}_{\mathrm{ERL}})$ (Section 2.4). Every individual transition edge $e_{\alpha\beta} \in \mathcal{P}_{\mathrm{rxn}}$ must be documented by the six-component verification record:</p>
+<div class="math-block">$$
+e_{\alpha\beta} = ( \Delta Z_{\alpha\beta},\; \Delta N_{\alpha\beta},\; Q_{\alpha\beta},\; \Delta J^{\pi}_{\alpha\beta},\; \mathcal{M}_{\alpha\beta},\; \sigma_{\alpha\beta}(E) \text{ or } \Gamma_{\alpha\beta} ), \quad (47)
+$$</div>
+<p>subject to four mandatory physical constraints:
+1. <strong>Exact Conservation Laws:</strong> $\Delta Z_{\mathrm{total}} = 0$, $\Delta A_{\mathrm{total}} = 0$, total four-momentum conservation, and strict angular-momentum/parity selection rules ($|J_\alpha - J_\beta| \le L_{\mathrm{trans}} \le J_\alpha + J_\beta$, $\pi_\alpha \pi_\beta = (-1)^{L_{\mathrm{trans}}}$) across the combined nucleus-plus-ejectile system.
+2. <strong>Non-Vanishing Inter-Sector Matrix Elements:</strong> Explicit evaluation of the off-diagonal transition amplitude $\mathcal{M}_{\alpha\beta} = \langle \Psi_\beta | \hat{V}_{\alpha\beta} | \Psi_\alpha \rangle \neq 0$, prohibiting phenomenological jumps between non-adjacent $(Z,N)$ sectors without specified multi-nucleon transfer or sequential decay operators.
+3. <strong>Rhythm Rectification Branching Balance:</strong> Along the terminal single-neutron evaporation bridges $\mathcal{R}_{119}: (119,185)^{\ast} \to (119,184) + n$ and $\mathcal{R}_{120}: (120,185)^{\ast} \to (120,184) + n$, the $1n$ residue survival probability $W_{\mathrm{sur}}(E^{\ast})$ is bounded by the statistical competition ratio:</p>
+<div class="math-block">$$
+W_{1n}^{\mathrm{approx}}(E^{\ast}) = P_{\mathrm{CN}}(E^{\ast})\,P_{1n|\mathrm{CN}}(E^{\ast}), \qquad P_{1n|\mathrm{CN}}\approx\frac{\Gamma_n}{\Gamma_n+\Gamma_{\mathrm{fiss}}+\Gamma_{\gamma}+\Gamma_{\mathrm{other,non\text{-}n}}}, \quad (48)
+$$</div>
+<p>If $\Gamma_{\mathrm{other}}$ includes $\Gamma_{\gamma}$, the formula treats “cooling” as a “competing removal” channel; if it does not, the competition from $\gamma$ emission is omitted. The correct form is the expression above, with $\Gamma_{\gamma}$ explicitly listed as a non-neutron competing channel. $P_{\mathrm{CN}}$ is the compound-nucleus formation probability, and $P_{1n|\mathrm{CN}}$ is a simplified approximation to the one-neutron branching ratio. This is a one-step approximation: $\gamma$ emission consumes excitation energy and may also affect survival of the evaporation residue through subsequent evaporation steps. The complete evaporation-residue cross section must be calculated using a Hauser–Feshbach-type sequential-evaporation treatment and cannot be obtained from this ratio alone.</p>
+<ol>
+<li><strong>Independent Decay-Chain Identification:</strong> Because superheavy nuclei at $Z \in \{119, 120\}$ are identified experimentally via time- and position-correlated $\alpha$-decay chains terminating in known spontaneous-fission or $\alpha$-emitting descendants, $\mathrm{V4}$ must also compute the predicted $\alpha$-decay energies $Q_\alpha(Z,N)$ and partial half-lives $T_{1/2}^{\alpha}$ linking $(119,184)$ and $(120,184)$ to known transactinide anchor nuclides ($Z \le 118$).</li>
+</ol>
+<h3 id="64-five-channel-evidence-state-vector-inline_math_680">6.4 Five-Channel Evidence-State Vector $\mathbf{s}_T \in \{A, R, U\}^{5}$</h3>
+<p>Inheriting the granular evidence representation of DW58553928 (Section 6.7.3) and DW58553929 (Section 7), the empirical and computational standing of each candidate mechanism ($\mathrm{C1}$–$\mathrm{C5}$) for target $T \in \{119, 120\}$ is recorded in an independent <strong>Five-Channel Evidence-State Vector</strong>:</p>
+<div class="math-block">$$
+\mathbf{s}_T = ( s_1^{(T)},\, s_2^{(T)},\, s_3^{(T)},\, s_4^{(T)},\, s_5^{(T)} ), \qquad s_i^{(T)} \in \{A, R, U\}, \quad (49)
+$$</div>
+<p>where:
+- <strong>$A$ (Supported within Declared Domain):</strong> The channel operator, parameter domain, and quantitative verification criterion are satisfied under independent cross-checked calculation;
+- <strong>$R$ (Ruled Out within Declared Domain):</strong> Controlled search or upper-bound theorem demonstrates that the channel fails to meet its quantitative threshold within the stated parameter domain;
+- <strong>$U$ (Unresolved):</strong> Required matrix elements, continuum widths, or environmental decoherence rates remain uncomputed or insufficiently constrained.</p>
+<p>At the current Type-1 formal specification stage of DW58553930, both target vectors stand explicitly at the unresolved baseline:</p>
+<div class="math-block">$$
+\mathbf{s}_{119}^{(0)}=(U,U,U,U,U),\qquad \mathbf{s}_{120}^{(0)}=(U,U,U,U,U). \quad (50)
+$$</div>
+<p>Crucially, achieving a positive Type-3 or $E_T^{\mathrm{calc}}$ verdict does not require all five components of $\mathbf{s}_T$ to equal $A$ (for instance, if a viable pathway succeeds without rotational cranking, $s_2^{(T)} = R$ is fully compatible with overall synthesis provided a connected, conservation-respecting end-to-end pathway is established across the remaining channels).</p>
+<h3 id="65-ai-orchestrated-closed-loop-control-and-cross-model-verification-protocol-bridge-b6">6.5 AI-Orchestrated Closed-Loop Control and Cross-Model Verification Protocol (Bridge B6)</h3>
+<p>Within the MES Element Genesis architecture, Artificial Intelligence ("AI Power") operates strictly as an auditable computational discovery, inverse-optimization, and closed-loop control orchestration system—never as an opaque oracle whose internal ranking substitutes for physical conservation laws.</p>
+<h4 id="1-real-time-closed-loop-control-law-within-inline_math_691">1. Real-Time Closed-Loop Control Law within $\tau_{Ji}$</h4>
+<p>To navigate the dynamic Wheelwright-Pian transition window $\tau_{\mathrm{LZ}}(Z,E^{\ast}) &lt; \tau_{Ji} &lt; 1/\gamma_{\mathrm{eff}}(Z,E^{\ast},T)$ (Eq. 26) despite time-varying quadrupole deformation ($\mathrm{C1}$), Coriolis mixing ($\mathrm{C2}$), and internal-conversion dissipation ($\mathrm{C5}$), we formalize the closed-loop feedback control law (Bridge $\mathrm{B6}$):</p>
+<div class="math-block">$$
+\dot{\boldsymbol{\lambda}}(t)=-\eta_{\mathrm{ctrl}}\nabla_{\boldsymbol{\lambda}}J_T[\boldsymbol{\lambda}(t),\rho(t)]+\mathcal{K}_{\mathrm{fb}}(\mathcal{O}_{\mathrm{obs}}(t)-\mathcal{O}_{\mathrm{ref}}^{(T)}(t)),\qquad t\in[0,\tau_{Ji}], \quad (51)
+$$</div>
+<p>where:
+- $\boldsymbol{\lambda}(t) = (\beta_2(t), \gamma(t), \omega_x(t), \mathcal{E}_0(t), \Omega_F(t)) \in \mathcal{M}_{\mathrm{ctrl}}$ is the time-dependent control vector;
+- $J_T$ is the target-specific objective functional for $C_{119}$ or $C_{120}$ defined in Eq. (36);
+- $\mathcal{O}_{\mathrm{obs}}(t) = \mathrm{Tr}[\hat{\mathcal{O}}_{\mathrm{probe}}\,\rho(t)]$ represents real-time diagnostic observables feeding back against the reference trajectory $\mathcal{O}_{\mathrm{ref}}^{(T)}(t)$ anchored at the observer's origin (the <em>emind</em> closed-loop architecture of DW58553928, Section 3). $\hat{\mathcal{O}}_{\mathrm{probe}}$ is selected from the set of diagnostics observable for target $T$, for example, $\{\hat{H}_{\mathrm{GDR}},\hat{Q}_{\mathrm{frag}},\hat{N}_{n},\dots\}$. The specific selection must match the diagnostic capabilities of the experiment or calculation and must be documented in V8.</p>
+<h4 id="2-four-stage-ai-workflow-and-anti-circularity-audit-inline_math_706">2. Four-Stage AI Workflow and Anti-Circularity Audit ($\mathrm{V8}$)</h4>
+<p>To execute the $\mathrm{V1}$–$\mathrm{V8}$ matrix across the superheavy region ($Z\in[112,122],\ N\in[160,190]$) while eliminating hallucination or single-model circularity, the AI orchestration pipeline enforces four mandatory protocols:
+1. <strong>Provenance-Tagged Nuclide Knowledge Graph Ingestion:</strong> Extract evaluated masses, separation energies, level schemes, and decay branches from authoritative nuclear databases (ENSDF, NUBASE2020, IAEA Nuclear Data Services) across thousands of nuclides, tagging every entry with source provenance and experimental uncertainty while keeping unmeasured quantities explicitly marked as missing ($U$).
+2. <strong>Surrogate-Assisted Inverse Search over $\mathcal{M}_{\mathrm{ctrl}}$:</strong> Train physics-informed neural operators / Gaussian-process surrogates on high-cost Floquet-cranked and coupled-channel calculations to locate candidate resonant windows, Bottleneck Loop synergy pockets ($S_T^{\mathrm{loop}} &gt; 1$), and codimension-2 EP submanifolds $\mathcal{M}_{\mathrm{EP}}$.
+3. <strong>Full-Solver Physical Re-Evaluation:</strong> Every candidate parameter tuple $\boldsymbol{\lambda}^{\ast}$ proposed by an AI surrogate must be re-integrated using full, unapproximated numerical solvers for the Lindblad master equation, deformed Woods–Saxon/HFB structure, and Hauser–Feshbach statistical evaporation codes, verifying trace preservation ($|\mathrm{Tr}\,\rho(t)-1| &lt; 10^{-10}$), positivity ($\rho(t) \succeq 0$), and exact conservation laws.
+4. <strong>Independent Cross-Model Verification Rule:</strong> No single AI agent or single nuclear parameterization may both propose a candidate pathway and certify its $\mathrm{V1}$–$\mathrm{V8}$ pass status. Every $A$-verdict in $\mathbf{s}_T$ requires concordant confirmation across at least two independent physical parameterizations (e.g., macroscopic–microscopic Woods–Saxon vs. microscopic Skyrme/RMF density functionals) and two independent numerical implementations, with full code, random seeds, solver tolerances, and error bars archived for external audit. If two independent models produce conflicting $A/R$ verdicts, the channel remains at $U$ until adjudicated by a third-party calculation or experiment; majority voting must not replace physical adjudication.</p>
+<hr />
+<h2 id="7-institutional-creation-labeling-system-general-principle-and-open-horizon-boundary">7. Institutional Creation Labeling System, General Principle, and Open-Horizon Boundary</h2>
+<h3 id="71-the-three-stage-institutional-creation-labeling-system-inline_math_723">7.1 The Three-Stage Institutional Creation Labeling System ($U \to C_T \to E_T$)</h3>
+<p>To scale constructive element genesis from individual benchmark exercises (${}^{197}\mathrm{Au}$, ${}^{303}_{119}X$, ${}^{304}_{120}X$) across the entire periodic table without conflating formal hypothesis construction, numerical verification, and physical discovery, we establish a standardized <strong>Three-Stage Creation Labeling System</strong>:</p>
+<div class="math-block">$$
+U \;\longrightarrow\; C_T \;\longrightarrow\; E_T \in \{ E_T^{\mathrm{calc}},\, E_T^{\mathrm{phys}} \}. \quad (52)
+$$</div>
+<div class="table-wrap"><table>
+<thead>
+<tr>
+<th>Stage Label</th>
+<th>Formal Designation</th>
+<th>Epistemological Status &amp; Entry Criteria</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>$U$</strong></td>
+<td><strong>Unencoded</strong></td>
+<td>Target nuclide $(Z,N)$ has not yet been assigned a rhythm address $\mathcal{A}_T$, target quantum tuple $\mathcal{Q}_T$, or GTCN embedding specification $\mathcal{G}_T$.</td>
+</tr>
+<tr>
+<td><strong>$C_T$</strong></td>
+<td><strong>Conditional Creation</strong></td>
+<td>Target $T=(Z,N)$ possesses a complete Type-1 formal constructive specification: rhythm encoding, ERL reaction graph edges, Bottleneck Loop operators, 4D GTCN embedding obligations, and explicit V1–V8 verification criteria.</td>
+</tr>
+<tr>
+<td><strong>$E_T^{\mathrm{calc}}$</strong></td>
+<td><strong>Computationally Established Creation</strong></td>
+<td>Target $T$ has satisfied all mathematical and numerical obligations ($\mathrm{V1}$–$\mathrm{V8}$) within a consistent, cross-model verified computational architecture (Type-2 realization).</td>
+</tr>
+<tr>
+<td><strong>$E_T^{\mathrm{phys}}$</strong></td>
+<td><strong>Physically Established Creation</strong></td>
+<td>Target $T$ has achieved experimental synthesis, conservation-law-compliant reaction realization, independent physical identification, and multi-laboratory replication (Type-3 realization).</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Definition 7.1 (Formal Conjunctive Criteria for $E_T^{\mathrm{calc}}$ and $E_T^{\mathrm{phys}}$).</strong></p>
+<p>For any target nuclide $T = (Z, N)$, computational establishment requires the simultaneous satisfaction of five Boolean verification predicates:</p>
+<div class="math-block">$$
+E_T^{\mathrm{calc}} \;:=\; C_T \;\land\; M_T \;\land\; P_T \;\land\; S_T \;\land\; I_T, \quad (53)
+$$</div>
+<p>where:
+- $C_T$: Complete Type-1 target encoding and verification specification;
+- $M_T$: Demonstrated existence of self-consistent mathematical solutions satisfying the nuclear-structure, Floquet-Lindblad, and Gauss–Codazzi embedding equations ($\mathrm{V2, V3, V5, V6}$);
+- $P_T$: Connected, conservation-respecting reaction pathway from admissible entrance channels to $(Z,N)$ with non-zero transition amplitudes ($\mathrm{V4}$);
+- $S_T$: Satisfied condensation stability and non-empty transition window $\tau_{Ji} &gt; 0$ yielding survival above detection thresholds ($\mathrm{V7}$);
+- $I_T$: Unambiguous theoretical identification signature (e.g., predicted $Q_\alpha$ decay chain, half-life $T_{1/2}$, and $\boldsymbol{\chi}_T$ topological invariant) audited across independent codes ($\mathrm{V8}$).</p>
+<p>Physical establishment strictly requires computational establishment augmented by empirical detection and independent replication:</p>
+<div class="math-block">$$
+E_T^{\mathrm{phys}} \;:=\; E_T^{\mathrm{calc}} \;\land\; D_T \;\land\; R_T, \quad (54)
+$$</div>
+<p>where $D_T$ denotes direct experimental detection of the target nuclide and its correlated decay chain under controlled laboratory conditions, and $R_T$ denotes independent experimental replication by a separate facility or collaboration. <strong>Under Principle P1, computational confirmation ($E_T^{\mathrm{calc}}$) never substitutes for physical confirmation ($E_T^{\mathrm{phys}}$).</strong></p>
+<h3 id="72-dedicated-verification-archives-for-inline_math_761-and-inline_math_762">7.2 Dedicated Verification Archives for $C_{119}$ and $C_{120}$</h3>
+<p>In accordance with Section 1.2, Proposition 5.1, and Eq. (50), Elements 119 and 120 are maintained as two <strong>separate, independently audited verification archives</strong> rather than a single merged entry:</p>
+<ol>
+<li><strong>Archive $C_{119} \to E_{119}$ ($^{303}_{119}X$, $Z=119, N=184$):</strong></li>
+<li><em>Rhythm &amp; Algebraic Identity:</em> $\mathcal{A}_{119} = (7,5;8,0)$, compound extension $\widetilde{\mathcal{A}}_{119}^{\mathrm{comp}} = (7,5;8,+1)$, active $\mathbb{Z}_5$ rotational representation $\rho_1 \oplus \rho_2$ with dual winding $W_{\mathbb{Z}_5}(119) = 2$.</li>
+<li><em>Rectification Bridge:</em> $\mathcal{R}_{119}: (119,185)^* \to (119,184) + n$.</li>
+<li>
+<p><em>Current Status:</em> <strong>$C_{119}$ (Conditional Creation — Type 1 Established)</strong>; evidence-state vector $\mathbf{s}_{119} = (U,U,U,U,U)$; $E_{119}^{\mathrm{calc}}$ and $E_{119}^{\mathrm{phys}}$ strictly open.</p>
+</li>
+<li>
+<p><strong>Archive $C_{120} \to E_{120}$ ($^{304}_{120}X$, $Z=120, N=184$):</strong></p>
+</li>
+<li><em>Rhythm &amp; Algebraic Identity:</em> Closed-endpoint address $\mathcal{A}_{120} = (8,0;8,0)$, compound extension $\widetilde{\mathcal{A}}_{120}^{\mathrm{comp}} = (8,0;8,+1)$, trivial $\mathbb{Z}_5$-invariant singlet anchor $\mathbf{1}$ with $W_{\mathbb{Z}_5}(120) = 0$.</li>
+<li><em>Rectification Bridge:</em> $\mathcal{R}_{120}: (120,185)^* \to (120,184) + n$.</li>
+<li><em>Current Status:</em> <strong>$C_{120}$ (Conditional Creation — Type 1 Established)</strong>; evidence-state vector $\mathbf{s}_{120} = (U,U,U,U,U)$; $E_{120}^{\mathrm{calc}}$ and $E_{120}^{\mathrm{phys}}$ strictly open.</li>
+</ol>
+<p><strong>Provisional Constructive Designations (Subject to Principle P1 and IUPAC Protocol).</strong></p>
+<p>In strict compliance with Principle P1 (<em>against overclaiming</em>) and the nomenclature rules of the International Union of Pure and Applied Chemistry (IUPAC), official element naming rights remain exclusively reserved for future physical realization ($E_T^{\mathrm{phys}}$) and independent experimental replication; the systematic placeholder names <em>Ununennium</em> ($\mathrm{Uue}$) and <em>Unbinilium</em> ($\mathrm{Ubn}$) remain standard in all empirical contexts. Within the Type-1 formal constructive archive of DW58553930—and avoiding symbol collisions with established elements such as rhodium ($\mathrm{Rh}$) and titanium ($\mathrm{Ti}$)—the $N=184$ isotonic rhythm doublet may be assigned provisional theoretical designators reflecting their respective algebraic and stabilization roles in the MES architecture:</p>
+<ul>
+<li><strong>Provisional Designator for $C_{119}$ ($^{303}_{119}X$, $Z=119, N=184$): <em>Wuxingium</em> (Symbol: $\mathrm{Wx}$).</strong> Reflecting its penultimate rhythm address $\mathcal{A}_{119}=(7,5;8,0)$ and its proposed assignment to the active non-trivial rotational sectors $\rho_1 \oplus \rho_2$ of the $\mathbb{Z}_5$ spectral-duality group (Ansatz 2.1), where dynamic phase circulation and curvature-to-mass renormalization sustain the system immediately prior to shell closure.</li>
+<li><strong>Provisional Designator for $C_{120}$ ($^{304}_{120}X$, $Z=120, N=184$): <em>Zaitianium</em> (Symbol: $\mathrm{Zt}$).</strong> Reflecting its doubly integer closed-endpoint address $\mathcal{A}_{120}=(8,0;8,0)$, its mapping onto the $\mathbb{Z}_5$-invariant singlet anchor $\mathbf{1}$ at the observer's origin, and its stabilization via the cross-scale <strong>Zaitian Quantum Power (ZQP)</strong> aqueduct-irrigation principle (Section 3.3).</li>
+</ul>
+<p>$\mathrm{Wx}$ and $\mathrm{Zt}$ serve strictly as provisional theoretical labels within this paper’s Type-1 archive; while they do not replace standard systematic designations ($\mathrm{Uue}$, $\mathrm{Ubn}$) in current experimental literature or databases, they remain available as potential candidate names for future IUPAC consideration upon physical realization ($E_T^{\mathrm{phys}}$).</p>
+<h3 id="73-the-mes-constructive-element-genesis-principle">7.3 The MES Constructive Element Genesis Principle</h3>
+<p>Generalizing from $^{197}\mathrm{Au}$ (DW58553928) and the $N=184$ superheavy doublet ($C_{119}, C_{120}$), we formulate the overarching conditional research program of <strong>MES Constructive Element Genesis Theory</strong>:</p>
+<blockquote>
+<p><strong>MES Constructive Element Genesis Principle (Conditional Research Hypothesis).</strong>
+Within the Modified Einstein Spherical architecture, the constructive synthesis of any target nuclide or organized matter state $T$ can be formulated as a five-component structural decomposition:</p>
+</blockquote>
+<div class="math-block">$$
+\mathfrak{C}_T = \mathfrak{A}_T \oplus \mathfrak{G}_T \oplus \mathfrak{B}_T \oplus \mathfrak{D}_T \oplus \mathfrak{S}_T, \quad (55)
+$$</div>
+<blockquote>
+<p>where:
+- $\mathfrak{A}_T$: <strong>Rhythm Encoding</strong> on the Element Rhythm Lattice ($\mathcal{A}_T \in \mathcal{L}_{\mathrm{ERL}}$);
+- $\mathfrak{G}_T$: <strong>Geometric-Topological Identity</strong> embedded in the fixed four-dimensional GTCN ($\boldsymbol{\chi}_T$ on $\mathcal{N}_{\mathrm{GTC}}$);
+- $\mathfrak{B}_T$: <strong>Cross-Scale &amp; Cross-Sector Bridges</strong> ($\mathrm{B1}$–$\mathrm{B6}$ linking curvature scaling, reaction channels, and control manifolds);
+- $\mathfrak{D}_T$: <strong>Non-Equilibrium Constructive Dynamics</strong> (Floquet-cranked Bottleneck Loops and ZQP aqueduct irrigation operating inside the finite transition window $\tau_{Ji}$);
+- $\mathfrak{S}_T$: <strong>Stabilization &amp; Verification Protocol</strong> (apoptotic clearance above fission/thermal rates, $\mathrm{V1}$–$\mathrm{V8}$ matrix auditing, and $U \to C_T \to E_T$ certification).</p>
+</blockquote>
+<p>This principle constitutes a transferable <strong>organizing grammar</strong> across physical scales—from nuclear isotopes ($Z,N$) and exotic atoms to topological condensed-matter manifolds (DW58553911) and complex self-organizing systems (DW58553905)—with the strict requirement that every new domain must independently reconstruct its operators, conservation laws, and empirical tests.</p>
+<h3 id="74-strict-boundary-of-claims-under-p1-and-p2">7.4 Strict Boundary of Claims under P1 and P2</h3>
+<p>In accordance with the <strong>Dual Principle of Scientific Construction</strong> (DW58553928, Section 9.4), we delineate the exact epistemological boundaries of this manuscript:</p>
+<ol>
+<li><strong>What This Paper Establishes (Type 1):</strong></li>
+<li>The formal axiomatic extension of the Element Rhythm Lattice ($\mathcal{L}_{\mathrm{ERL}}$) via the Closed-Endpoint Axiom ($Z=120$), neutron exterior extension ($N&gt;184$), and independent proton exterior extension ($Z&gt;120$).</li>
+<li>The abstract $\mathbb{Z}_5$ representation decomposition and a proposed, unverified assignment of its sectors to the $C_{119}$ and $C_{120}$ nuclear-state subspaces.</li>
+<li>The unified Six-Bridge Architecture ($\mathrm{B1}$–$\mathrm{B6}$), the Anti-Quasi-Fission ZQP Aqueduct Irrigation Equation (Eq. 22), and the Floquet-cranked Superheavy Bottleneck Loop Hamiltonian (Eq. 27).</li>
+<li>
+<p>The fixed four-dimensional GTCN embedding architecture and a conditional test for whether $\boldsymbol{\chi}_{119} \neq \boldsymbol{\chi}_{120}$, the $\mathrm{V1}$–$\mathrm{V8}$ verification matrix, the $U \to C_T \to E_T^{\mathrm{calc}} \to E_T^{\mathrm{phys}}$ labeling system, and the conditional admissibility-boundary definition for $Z &gt; 120$ (Section 7.5).</p>
+</li>
+<li>
+<p><strong>What This Paper Does Not Claim (Type 2 &amp; Type 3 Suspended):</strong></p>
+</li>
+<li><strong>No physical synthesis ($E_{119}^{\mathrm{phys}}, E_{120}^{\mathrm{phys}}$) is claimed:</strong> Elements 119 and 120 have not been synthesized by the mechanisms proposed herein.</li>
+<li><strong>No numerical channel verdict ($E_{119}^{\mathrm{calc}}, E_{120}^{\mathrm{calc}}$) is claimed:</strong> All five components of $\mathbf{s}_{119}$ and $\mathbf{s}_{120}$ remain explicitly unresolved ($U$) pending full nuclear many-body, Floquet, and statistical evaporation calculations.</li>
+<li><strong>No replacement of established nuclear physics is claimed:</strong> The MES Rhythm Compatibility Functional $\mathcal{H}_{\mathrm{rhythm}}(Z,N)$ is a heuristic pre-screening filter, not a substitute for microscopic nuclear mass models or experimental cross-section measurements.</li>
+<li><strong>No automatic transition from rhythm adjacency is claimed:</strong> Rhythm rectification bridges $\mathcal{R}_{119}$ and $\mathcal{R}_{120}$ define target search objectives that remain subject to strict conservation laws, energy thresholds, and $\Gamma_n / \Gamma_{\mathrm{fiss}}$ branching ratios.</li>
+</ol>
+<h3 id="75-open-horizon-extension-beyond-inline_math_856-conditional-mathematical-and-physical-boundaries">7.5 Open-Horizon Extension Beyond $Z=120$: Conditional Mathematical and Physical Boundaries</h3>
+<p>Axiom E3 extends the proton rhythm coordinate beyond $Z=120$ without imposing a finite upper limit on the integer index. The resulting exterior address is</p>
+<div class="math-block">$$
+\widetilde{\mathcal{A}}(120+\delta z,N)=\bigl(8,+\delta z;\,b_n,\Delta n\bigr), \qquad \delta z\in\mathbb{Z}_{&gt;0}. \quad (56)
+$$</div>
+<p>This is a statement about the formal indexing space only. It does not establish that every exterior lattice point corresponds to a bound or synthesizable nucleus. A physical upper boundary, if one exists, must be determined from nuclear structure, reaction dynamics, and atomic electronic structure; the three constraints below are conceptually distinct and have not yet been jointly calibrated within MES.</p>
+<ol>
+<li><strong>Macroscopic fissility constraint (conditional MES hypothesis).</strong></li>
+</ol>
+<p>In a liquid-drop description, a fissility parameter compares Coulomb destabilization with surface-energy stabilization. The surface tension $\sigma_S$ has dimensions of energy per area, whereas $m(R)c(R)^2$ has dimensions of energy. Therefore the proportionality $\sigma_S(R)\propto m(R)c(R)^2$ is dimensionally incomplete. A possible dimensionally consistent ansatz would require a separately defined characteristic length $\ell_S(R)$, for example $\sigma_S(R)\propto m(R)c(R)^2/\ell_S(R)^2$; no such length law is derived in this paper. Moreover, the fissility ratio depends on the curvature scaling of both Coulomb and surface contributions, nuclear radius, density, and deformation. The inherited MES scalings in Eq. (19) alone do not determine those dependencies. We therefore retain only the conditional parametrization</p>
+<div class="math-block">$$
+x_{\mathrm{fiss}}^{\mathrm{MES}}(Z,A;R)=x_{\mathrm{fiss}}^{(0)}(Z,A)\,F_{\mathrm{MES}}(R), \qquad x_{\mathrm{fiss}}^{\mathrm{MES}}&lt;1, \quad (57)
+$$</div>
+<p>where $F_{\mathrm{MES}}(R)$ is an as-yet-undetermined dimensionless ratio of the MES-renormalized Coulomb and surface contributions, normalized so that $F_{\mathrm{MES}}(R_0)=1$. The specific power law $F_{\mathrm{MES}}=(R_0/|R|)^{1/2}$ is a conjecture, not a consequence of Eq. (19), and is not used to claim an enlarged stability domain until derived and tested. Accordingly, this paper does not treat $F_{\mathrm{MES}}(R)=(R_0/|R|)^{1/2}$ as a result derived from Eq. (19). It is only a candidate power law to be tested and is not used in any numerical stability claim.</p>
+<ol>
+<li><strong>Dynamical stabilization constraint.</strong></li>
+</ol>
+<p>Let the effective rate be the consistently defined quantity in Eq. (26), including quasi-fission, spontaneous-fission, environmental, and thermal-decoherence contributions, together with a candidate clearance rate. For a given $Z$, define the admissible Wheelwright–Pian time-window set</p>
+<div class="math-block">$$
+\mathcal{W}_{Ji}(Z)=\left\{\tau:\tau_{\mathrm{LZ}}(Z)&lt;\tau&lt;\frac{1}{\gamma_{\mathrm{eff}}(Z,E^{\ast},T)}\right\}. \quad (58)
+$$</div>
+<p>The arguments $E^{\ast},T$ are omitted for brevity, but the window criterion must retain the full dependence. The window is empty if and only if $\tau_{\mathrm{LZ}}(Z)\ge 1/\gamma_{\mathrm{eff}}(Z,E^{\ast},T)$. A finite ZQP saturation ceiling may be postulated only after the complete generator and its admissible parameter domain are specified. The monotonic or exponential growth of $\gamma_{\mathrm{QF}}$ with $Z$ is not established here; it must be calculated from reaction dynamics rather than assumed.</p>
+<ol>
+<li><strong>Supercritical QED electronic-structure boundary.</strong></li>
+</ol>
+<p>The point-nucleus Dirac-Coulomb problem becomes singular at $Z\alpha\sim 1$, giving the familiar scale $Z\sim\alpha^{-1}\approx 137$. This is not the same as the finite-size supercritical threshold at which a bound $1s$ level dives into the negative-energy continuum. For realistic extended nuclear charge distributions, that threshold is typically discussed near $Z_{\mathrm{crit}}\sim 170\text{–}173$, with dependence on the charge distribution, nuclear radius, screening, and many-body QED corrections [12]. It is an electronic-structure/vacuum-instability boundary, not a demonstrated absolute limit on the existence of a nuclear species. Vacuum pair creation does not, by itself, prove a continuous phase transition from chemical elements to bulk nuclear-curvature matter. Such a transition remains a separate MES conjecture requiring a microscopic model. $Z_{\mathrm{crit}}\sim 170\text{–}173$ is an electronic-structure threshold at which the $1s$ level dives into the negative-energy continuum for a finite nuclear charge distribution. It is not an absolute upper limit on nuclear existence. This paper treats it only as one candidate boundary and does not calculate how it might shift in an MES environment.</p>
+<p><strong>Proposition 7.1 (Conditional Physical Admissibility Boundary).</strong></p>
+<p>For a specified nuclear model, reaction model, and MES curvature prescription, define the candidate admissible set</p>
+<div class="math-block">$$
+\mathcal{Z}_{\mathrm{admissible}}=\left\{Z&gt;120:\begin{array}{l}\text{there exists an isotope }A(Z)\text{ with }x_{\mathrm{fiss}}^{\mathrm{MES}}(Z,A;R)&lt;1,\\ \mathcal{W}_{Ji}(Z)\ne\varnothing,\qquad Z&lt;Z_{\mathrm{QED}}^{\mathrm{crit}}\end{array}\right\}.
+$$</div>
+<p>If this set is nonempty and the relevant functions and domains are specified, define</p>
+<div class="math-block">$$
+Z_{\max}^{\mathrm{MES}}=\sup\mathcal{Z}_{\mathrm{admissible}}. \quad (59)
+$$</div>
+<p>This is a conditional definition of a boundary, not a numerical prediction. The current manuscript does not calculate $x_{\mathrm{fiss}}^{\mathrm{MES}}$, $\mathcal{W}_{Ji}$, or a unique $Z_{\mathrm{QED}}^{\mathrm{crit}}$ for a MES nuclear environment. It therefore does not establish $120&lt;Z_{\max}^{\mathrm{MES}}$ or the numerical estimate $Z_{\max}^{\mathrm{MES}}\lesssim 173$. In particular, the QED scale near 173 should be interpreted as a conventional finite-nucleus electronic-structure benchmark, not as a universal periodic-table theorem.</p>
+<h3 id="76-conclusion">7.6 Conclusion</h3>
+<blockquote>
+<p>Beginning from a single gold benchmark ($^{197}\mathrm{Au}$) in DW58553928 and DW58553929, this work expands constructive creation into a unified theoretical program for the periodic table: <strong>MES Constructive Element Genesis Theory</strong>. By reformulating Elements 119 and 120 as an isotonic rhythm doublet ($^{303}_{119}X$ and $^{304}_{120}X$) anchored on the $N=184$ candidate shell closure, we have unified $\mathbb{Z}_5$ spectral duality, MES curvature-inertia scaling, ZQP nonlinear aqueduct irrigation, five-channel Bottleneck Loops, fixed four-dimensional GTCN topology, and a conditional open-horizon admissibility definition into a single auditable research architecture.</p>
+</blockquote>
+<p>In keeping with the Zhuangzi's parable of Wheelwright Pian (<em>Tiandao</em>), static symbols and rhythm tables alone remain merely "the dregs of the ancients" unless brought to life through responsive closed-loop dynamics within the finite transition window $\tau_{Ji}$. By pairing bold constructive unification (Principle P2) with uncompromising verification discipline and institutional labeling rigor (Principle P1), DW58553930 establishes a mathematical blueprint and AI-assisted research roadmap for testing whether constructive pathways can open the eighth period of the chemical elements and explore the superheavy horizon beyond. The proposed nuclear-scale implementations of the bridges, curvature renormalizations, and control operators remain to be established through explicit mathematical generators, numerical predictions, and experimental observables; this qualification concerns their specific realization in superheavy-nucleus dynamics, not the scale-unrestricted premise of the MES rhythmic principle.</p>
+<hr />
+<h2 id="appendix-a-open-mathematical-and-nuclear-physics-tasks-for-inline_math_889-and-inline_math_890">Appendix A. Open Mathematical and Nuclear-Physics Tasks for $C_{119}$ and $C_{120}$</h2>
+<p>To transition $C_{119}$ and $C_{120}$ from Type-1 formal specification toward $E_{119}^{\mathrm{calc}}$ and $E_{120}^{\mathrm{calc}}$ evaluation, the following eight open problems must be resolved and independently audited:</p>
+<p><strong>A1. Axiom Consistency and Operator Domain Rigor ($\mathrm{V1}$):</strong> Prove formal consistency of the extended ERL axioms (E1–E3) coupled with MES postulates A1–A6, and establish self-adjointness of the Hermitian channel Hamiltonian $\hat{H}_{\mathrm{Herm}}^{(T)}(t)$ and trace-preservation/complete-positivity conditions for the full master-equation generator in Eq. (27).</p>
+<p><strong>A2. Microscopic Calibration of the $N=184$ Shell Pocket ($\mathrm{V2}$):</strong> Perform benchmarked deformed Woods–Saxon, Skyrme-HFB, and Relativistic Mean-Field (RMF) scans across $Z \in [112, 122]$, $N \in [176, 188]$ to quantify shell-correction energies $\delta E_{\mathrm{shell}}$, fission barrier heights $B_f(\beta_2,\gamma,\beta_4)$, and $\alpha$-decay $Q_\alpha$ chains for $^{303}_{119}X$ and $^{304}_{120}X$.</p>
+<p><strong>A3. Explicit Construction of 4D GTCN Channel Maps ($\mathrm{V3}$):</strong> Construct explicit differentiable maps $\Psi_i^{(T)}: \mathcal{P}_i^{(T)} \to \mathfrak{G}(\mathcal{N}_{\mathrm{GTC}})$, verify the full Gauss–Codazzi tensor compatibility equations (Eq. 38) for the $4 \hookrightarrow 5$ embedding, and numerically integrate the four-dimensional Gauss–Bonnet–Chern functional (Eq. 41) to evaluate whether $\boldsymbol{\chi}_{119} \neq \boldsymbol{\chi}_{120}$.</p>
+<p><strong>A4. Reaction-Path Graph Search and Evaporation Competition ($\mathrm{V4}$):</strong> Build the provenance-tagged reaction graph $\mathcal{G}_{\mathrm{ERL}}$ across evaluated nuclear databases (ENSDF/NUBASE2020/IAEA) and compute coupled-channel capture cross sections and statistical evaporation branching ratios $\Gamma_n / \Gamma_{\mathrm{fiss}}$ along $\mathcal{R}_{119}$ and $\mathcal{R}_{120}$.</p>
+<p><strong>A5. Operational Definition and Regularization of Nuclear Curvature $R(\mathbf{x})$ ($\mathrm{V5}$):</strong> Derive the microscopic mapping from the electronic/nucleonic quantum geometric tensor $g_{\mu\nu}(\mathbf{x})$ to the effective scalar curvature $R(\mathbf{x})$ entering $m(R) \propto |R|^{-1/2}$, ensuring smooth Born–Infeld or ZQP saturation without unphysical curvature singularities.</p>
+<p><strong>A6. Two-Dimensional Codimension-2 EP Search and Loop Synergy ($\mathrm{V6}$):</strong> Execute high-resolution two-dimensional parameter scans over $(\omega_x, \Omega_F)$ and $(\beta_2, \mathcal{E}_0)$ in Sambe–Floquet space to locate genuine exceptional points ($\mathcal{M}_{\mathrm{EP}}$), verify biorthogonal eigenvector coalescence, and evaluate the Bottleneck Loop synergy ratio $S_T^{\mathrm{loop}}$ (Eq. 33).</p>
+<p><strong>A7. Quantitative Evaluation of the Anti-Quasi-Fission Window ($\mathrm{V7}$):</strong> Compute realistic quasi-fission rates $\gamma_{\mathrm{QF}}(Z,E^{\ast})$, spontaneous-fission rates $\gamma_{\mathrm{SF}}(Z)$, and environmental decoherence rates (with energy widths converted consistently to rates) to test whether ZQP aqueduct irrigation (Eq. 22) satisfies $\Gamma_{\mathrm{clear}}^{\mathrm{cand}} &gt; \gamma_{\mathrm{QF}} + \gamma_{\mathrm{SF}} + \gamma_{\mathrm{th}}$ and opens a non-empty Wheelwright-Pian interval $\tau_{\mathrm{LZ}}(Z,E^{\ast}) &lt; \tau_{Ji} &lt; 1/\gamma_{\mathrm{eff}}(Z,E^{\ast},T)$.</p>
+<p><strong>A8. Multi-Solver AI Cross-Validation and Uncertainty Quantification ($\mathrm{V8}$):</strong> Implement the closed-loop feedback controller (Eq. 51) across at least two independent nuclear-structure parameterizations and two independent master-equation solvers, archiving full provenance, surrogate error bounds, and reproducibility certificates.</p>
+<hr />
+<h2 id="acknowledgments">Acknowledgments</h2>
+<p>We are grateful to all the individual scientists and teams of scientists who have contributed to the exploration and understanding of the entire universe. Supported by AI-driven Supercomputers and the MES Universe Project. We have benefited from our amazing AI partners.</p>
+<h2 id="funding">Funding</h2>
+<p>Not applicable.</p>
+<h2 id="availability-of-data-and-material">Availability of data and material</h2>
+<p>Code, mathematical scripts, and preprints are available at GitHub: <a href="https://github.com/Zaitian001">https://github.com/Zaitian001</a></p>
+<h2 id="competing-interests">Competing interests</h2>
+<p>Not applicable.</p>
+<h2 id="author-contributions">Author Contributions</h2>
+<p>Baoliin (Zaitian) Wu 伍宝林 is the sole author of this manuscript and is responsible for all aspects of the research, including conceptualization, methodology, theoretical formulation, and manuscript writing.</p>
+<hr />
+<h2 id="references">References</h2>
+<h3 id="authors-related-mes-preprints">Author's related MES preprints</h3>
+<p>[1] Baoliin (Zaitian) Wu 伍宝林. (2026). <em>Creating Gold: New Beginning for Creating Matter</em>. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553928.html</p>
+<p>[2] Baoliin (Zaitian) Wu 伍宝林. (2026). <em>Creating Gold with AI Power</em>. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553929.html</p>
+<p>[3] Baoliin (Zaitian) Wu 伍宝林. (2026). <em>Mind Is a Geometric Operator at the Observer's Origin</em>. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553927.html</p>
+<p>[4] Baoliin (Zaitian) Wu 伍宝林. (2026). <em>Time Is the Countable Rhythm of Yin–Yang Waxing and Waning</em>. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553925.html</p>
+<p>[5] Baoliin (Zaitian) Wu 伍宝林. (2026). <em>All Things as Wuxing Attractors: MES Universe Curvature Knots and Variable Light Speed</em>. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553921.html</p>
+<p>[6] Baoliin (Zaitian) Wu 伍宝林. (2026). <em>Curvature-Driven Open Quantum Dynamics and the Pure Geometric Origin of Physics Constants</em>. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553914.html</p>
+<p>[7] Baoliin (Zaitian) Wu 伍宝林. (2026). <em>Room-Temperature Superconductivity as the Developmental Terminal State of a Generalized Adaptive Intelligent System: The Topological Condensation of a Dynamic Equilibrium Quantum Manifold</em>. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553911.html</p>
+<p>[8] Baoliin (Zaitian) Wu 伍宝林. (2026). <em>Geometric Pathology: Topological Collapse and Landscape Reprogramming in Complex Adaptive Systems</em>. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553909.html</p>
+<p>[9] Baoliin (Zaitian) Wu 伍宝林. (2026). <em>Physical AGI Dao: Nonlinear Symmetry Anchor Zero as the Theoretical Foundation of Adaptive Intelligence World Model</em>. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553906.html</p>
+<p>[10] Baoliin (Zaitian) Wu 伍宝林. (2026). <em>Wuxing Dao</em>. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553905.html</p>
+<h3 id="superheavy-nucleus-structure-and-synthesis">Superheavy-nucleus structure and synthesis</h3>
+<p>[11] Oganessian, Yu. Ts., &amp; Utyonkov, V. K. (2015). Super-heavy element research. <em>Reports on Progress in Physics, 78</em>(3), 036301. https://doi.org/10.1088/0034-4885/78/3/036301</p>
+<p>[12] Giuliani, S. A., Matheson, Z., Nazarewicz, W., Olsen, E., Reinhard, P.-G., Sadhukhan, J., Schuetrumpf, B., Schunck, N., &amp; Schwerdtfeger, P. (2019). Colloquium: Superheavy elements: Oganesson and beyond. <em>Reviews of Modern Physics, 91</em>(1), 011001. https://doi.org/10.1103/RevModPhys.91.011001</p>
+<p>[13] Hofmann, S., Heinz, S., Mann, R., et al. (2016). Review of even element super-heavy nuclei and search for element 120. <em>The European Physical Journal A, 52</em>(6), 180. https://doi.org/10.1140/epja/i2016-16180-4</p>
+<p>[14] Khuyagbaatar, J., Yakushev, A., Düllmann, Ch. E., et al. (2020). Search for elements 119 and 120. <em>Physical Review C, 102</em>(6), 064602. https://doi.org/10.1103/PhysRevC.102.064602</p>
+<p>[15] Sobiczewski, A., &amp; Pomorski, K. (2007). Description of structure and properties of superheavy nuclei. <em>Progress in Particle and Nuclear Physics, 58</em>(1), 292–349. https://doi.org/10.1016/j.ppnp.2006.12.001</p>
+<p>[16] Ćwiok, S., Dobaczewski, J., Heenen, P.-H., Magierski, P., &amp; Nazarewicz, W. (1996). Shell structure of the superheavy elements. <em>Nuclear Physics A, 611</em>(2–3), 211–246. https://doi.org/10.1016/S0375-9474(96)00337-5</p>
+<p>[17] Rutz, K., Bender, M., Bürvenich, T., Schilling, T., Reinhard, P.-G., Maruhn, J. A., &amp; Greiner, W. (1997). Superheavy nuclei in self-consistent nuclear calculations. <em>Physical Review C, 56</em>(1), 238–243. https://doi.org/10.1103/PhysRevC.56.238</p>
+<p>[18] Zagrebaev, V., &amp; Greiner, W. (2008). Synthesis of superheavy nuclei: A search for new production reactions. <em>Physical Review C, 78</em>(3), 034610. https://doi.org/10.1103/PhysRevC.78.034610</p>
+<p>[19] Adamian, G. G., Antonenko, N. V., &amp; Scheid, W. (2012). Clustering effects within the dinuclear model. In C. Beck (Ed.), <em>Clusters in Nuclei, Vol. 2</em> (Lecture Notes in Physics, Vol. 848, pp. 165–227). Springer. https://doi.org/10.1007/978-3-642-24707-1_4</p>
+<h3 id="floquet-open-system-and-non-hermitian-dynamics">Floquet, open-system, and non-Hermitian dynamics</h3>
+<p>[20] Sambe, H. (1973). Steady states and quasienergies of a quantum-mechanical system in an oscillating field. <em>Physical Review A, 7</em>(6), 2203–2213. https://doi.org/10.1103/PhysRevA.7.2203</p>
+<p>[21] Shirley, J. H. (1965). Solution of the Schrödinger equation with a Hamiltonian periodic in time. <em>Physical Review, 138</em>(4B), B979–B987. https://doi.org/10.1103/PhysRev.138.B979</p>
+<p>[22] Bender, C. M., &amp; Boettcher, S. (1998). Real spectra in non-Hermitian Hamiltonians having PT symmetry. <em>Physical Review Letters, 80</em>(24), 5243–5246. https://doi.org/10.1103/PhysRevLett.80.5243</p>
+<p>[23] El-Ganainy, R., Makris, K. G., Khajavikhan, M., Musslimani, Z. H., Rotter, S., &amp; Christodoulides, D. N. (2018). Non-Hermitian physics and PT symmetry. <em>Nature Physics, 14</em>, 11–19. https://doi.org/10.1038/nphys4323</p>
+<p>[24] Ashida, Y., Gong, Z., &amp; Ueda, M. (2020). Non-Hermitian physics. <em>Advances in Physics, 69</em>(3), 249–435. https://doi.org/10.1080/00018732.2021.1876991</p>
+<p>[25] Michel, N., Nazarewicz, W., Płoszajczak, M., &amp; Bennaceur, K. (2002). Gamow shell model description of neutron-rich nuclei. <em>Physical Review Letters, 89</em>(4), 042502. https://doi.org/10.1103/PhysRevLett.89.042502</p>
+<p>[26] Berggren, T. (1968). On the use of resonant states in eigenfunction expansions of scattering and reaction amplitudes. <em>Nuclear Physics A, 109</em>(2), 265–287. https://doi.org/10.1016/0375-9474(68)90593-9</p>
+<p>[27] Breuer, H.-P., &amp; Petruccione, F. (2002). <em>The Theory of Open Quantum Systems</em>. Oxford University Press.</p>
+<h3 id="geometry-nuclear-data-ai-and-classical-sources">Geometry, nuclear data, AI, and classical sources</h3>
+<p>[28] Misner, C. W., Thorne, K. S., &amp; Wheeler, J. A. (1973). <em>Gravitation</em>. W. H. Freeman.</p>
+<p>[29] Nakahara, M. (2003). <em>Geometry, Topology and Physics</em> (2nd ed.). Taylor &amp; Francis.</p>
+<p>[30] Kondev, F. G., Wang, M., Huang, W. J., et al. (2021). The NUBASE2020 evaluation of nuclear physics properties. <em>Chinese Physics C, 45</em>(3), 030001. https://doi.org/10.1088/1674-1137/abddae</p>
+<p>[31] National Nuclear Data Center. (2023). <em>ENSDF evaluated nuclear structure data: $^{197}\mathrm{Au}$</em>. Brookhaven National Laboratory. https://www.nndc.bnl.gov/ensdf/</p>
+<p>[32] Editorial. (2022). Defining physicists' relationship with AI. <em>Nature Reviews Physics, 4</em>, 735. https://doi.org/10.1038/s42254-022-00544-1</p>
+<p>[33] Zhuangzi. (2013). <em>The Complete Works of Zhuangzi</em> (B. Watson, Trans., Chapter 13: The Way of Heaven). Columbia University Press.</p>
+<p>[34] Zhuangzi 庄子. <em>The Way of Heaven</em> 天道. (Original work published ca. 339 BCE; Zhuangzi turned down the offer to become prime minister)</p>
+<p>[35] Laozi 老子. <em>Daodejing</em> 道德经. (Original work published ca. 535 BCE; Confucius first met Laozi)</p>
+<p>[36] Gates, J. M., &amp; Pore, J. L. (2026). The quest for superheavy nuclei: An experimental perspective. <em>Annual Review of Nuclear and Particle Science, 76</em>, 41–67. https://doi.org/10.1146/annurev-nucl-100324-103404</p>
+<p>[37] Wang, N., Li, C., &amp; Yao, H. (2026). Production probability of superheavy nuclei in fusion. <em>Physical Review C, 114</em>(3), 034616. https://doi.org/10.1103/PhysRevC.114.034616</p>
+<p>[38] Joint Institute for Nuclear Research. (2026, September 28). <em>140th session of JINR Scientific Council took place in Dubna</em>. https://www.jinr.ru/posts/140th-session-of-jinr-scientific-council-took-place-in-dubna/</p>
+        </div>
+    </article>
+
+    <div class="citation-toggle">
+        <span class="cite-label">📚 Cite this paper</span>
+        <span class="cite-arrow">▾</span>
+    </div>
+    <div class="citation-panel" id="citationPanel">
+        <div class="citation-format-selector">
+            <button class="format-btn active" data-format="apa">APA</button>
+            <button class="format-btn" data-format="mla">MLA</button>
+            <button class="format-btn" data-format="chicago">Chicago</button>
+            <button class="format-btn" data-format="bibtex">BibTeX</button>
+        </div>
+        <div class="citation-display" id="citationDisplay">
+            <span class="citation-text" id="citationText"></span>
+            <button class="copy-btn" id="copyCitationBtn">📋 Copy</button>
+        </div>
+    </div>
+
+    <footer class="site-footer">
+        © 2026 Baoliin (Zaitian) Wu 伍宝林 | Independent theoretical physicist | Self-Preprint Decentralized Academic Archive
+    </footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const citationData = {"apa": "Baoliin (Zaitian) Wu \u4f0d\u5b9d\u6797 (2026). MES Element Genesis: Countable Rhythm, Topological Bridges, and Pathways to Elements 119 and 120. Self-Preprint Archive. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553930.html", "mla": "Baoliin (Zaitian) Wu \u4f0d\u5b9d\u6797. \"MES Element Genesis: Countable Rhythm, Topological Bridges, and Pathways to Elements 119 and 120.\" Self-Preprint Archive, 2026, https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553930.html.", "chicago": "Baoliin (Zaitian) Wu \u4f0d\u5b9d\u6797. \"MES Element Genesis: Countable Rhythm, Topological Bridges, and Pathways to Elements 119 and 120.\" Self-Preprint Archive. Accessed November 20, 2026. https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553930.html.", "bibtex": "@article{selfpreprint_DW58553930,\n  author = {Baoliin (Zaitian) Wu \u4f0d\u5b9d\u6797},\n  title = {MES Element Genesis: Countable Rhythm, Topological Bridges, and Pathways to Elements 119 and 120},\n  journal = {Self-Preprint Archive},\n  year = {2026},\n  url = {https://Zaitian001.github.io/-Self-Preprint-V1.1-/preprints/DW58553930.html}\n}"};
+    const toggle = document.querySelector('.citation-toggle');
+    const panel = document.getElementById('citationPanel');
+    const textDisplay = document.getElementById('citationText');
+    const copyBtn = document.getElementById('copyCitationBtn');
+    let currentFormat = 'apa';
+
+    if (toggle && panel) {
+        toggle.addEventListener('click', function() {
+            this.classList.toggle('open');
+            panel.classList.toggle('open');
+            if (panel.classList.contains('open')) {
+                updateCitation('apa');
+            }
+        });
+    }
+
+    document.querySelectorAll('.format-btn').forEach(function(btn) {
+        btn.addEventListener('click', function() {
+            document.querySelectorAll('.format-btn').forEach(b => b.classList.remove('active'));
+            this.classList.add('active');
+            currentFormat = this.getAttribute('data-format');
+            updateCitation(currentFormat);
+        });
+    });
+
+    function updateCitation(format) {
+        let text = citationData[format] || 'Citation not available';
+        if (format === 'bibtex') {
+            textDisplay.className = 'citation-text bibtex-display';
+            textDisplay.textContent = text;
+        } else {
+            textDisplay.className = 'citation-text';
+            textDisplay.textContent = text;
+        }
+        copyBtn.textContent = '📋 Copy';
+        copyBtn.classList.remove('copied');
+    }
+
+    if (copyBtn) {
+        copyBtn.addEventListener('click', function() {
+            const text = textDisplay.textContent;
+            navigator.clipboard.writeText(text).then(function() {
+                copyBtn.textContent = '✅ Copied!';
+                copyBtn.classList.add('copied');
+                setTimeout(function() {
+                    copyBtn.textContent = '📋 Copy';
+                    copyBtn.classList.remove('copied');
+                }, 2000);
+            }).catch(function() {
+                const ta = document.createElement('textarea');
+                ta.value = text;
+                document.body.appendChild(ta);
+                ta.select();
+                document.execCommand('copy');
+                document.body.removeChild(ta);
+                copyBtn.textContent = '✅ Copied!';
+                setTimeout(function() {
+                    copyBtn.textContent = '📋 Copy';
+                }, 2000);
+            });
+        });
+    }
+
+    updateCitation('apa');
+});
+</script>
+
+<script type="module">
+    import mermaid from 'https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs';
+
+    document.addEventListener("DOMContentLoaded", async function () {
+        const codeBlocks = document.querySelectorAll('pre code.language-mermaid, pre code.mermaid');
+        codeBlocks.forEach((codeBlock) => {
+            const pre = codeBlock.parentElement;
+            const div = document.createElement('div');
+            div.className = 'mermaid';
+            div.textContent = codeBlock.textContent;
+            pre.replaceWith(div);
+        });
+
+        mermaid.initialize({ startOnLoad: false, theme: 'default', securityLevel: 'loose' });
+        await mermaid.run();
+    });
+</script>
+</body>
+</html>
